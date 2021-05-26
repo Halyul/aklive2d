@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+Desktop.ini
+__pycache__
+test.db
+*.todo.*
+*.bak
+*.db-journal
+*.test.*
+.pytest_cache
+.vscode
+download
+*.user.*
+.wip

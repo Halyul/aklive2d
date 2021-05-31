@@ -1,0 +1,43 @@
+html {
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../operator/operator_bg.png");
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    filter: invert(1);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.widget-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.fallback {
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../operator/fallback.png");
+    width: 100%;
+    height: 100%;
+}

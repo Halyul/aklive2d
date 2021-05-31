@@ -62,7 +62,7 @@ CURVE_BEZIER = 2
 
 class SkeletonBinary:
 
-    def __init__(self, file_path, save_path, scale=1) -> None:
+    def __init__(self, file_path, save_path, scale=1):
         if file_path.strip().endswith(".skel") is False:
             file_path += ".skel"
         if save_path.strip().endswith(".json") is False:
@@ -78,7 +78,7 @@ class SkeletonBinary:
             self.readSkeletonData()
 
             with open(pathlib.Path.cwd().joinpath(save_path), "w") as f:
-                json.dump(self.dict, f, indent=2, sort_keys=True)
+                json.dump(self.dict, f)
         except Exception as e:
             print(e)
 
@@ -743,10 +743,12 @@ class SkeletonBinary:
         if len(chars) < byteCount:
             chars = [None] * byteCount
         charCount = 0
-        for i in range(byteCount):
+        i = 0
+        while (i < byteCount):
             b = self.read()
             shiftedB = b >> 4
             if shiftedB == -1:
+                # 0b11110000 -> 0b11111111 ?
                 raise ValueError("shiftedB is -1")
             elif shiftedB == 12 or shiftedB == 13:
                 chars[charCount] = chr((b & 0x1F) << 6 | self.read() & 0x3F)

@@ -4,6 +4,23 @@ class Config:
 
     def __init__(self) -> None:
         self.config_path = pathlib.Path.cwd().joinpath("config.yaml")
+        self.valid_keys = dict(
+            config=dict(
+                server=dict,
+                operators=dict
+            ),
+            server=dict(
+                template_folder=str,
+                release_folder=str,
+                operator_folder=str
+            ),
+            operators=dict(
+                source_folder=str,
+                target_folder=str,
+                common_name=str,
+                release_folder=str
+            )
+        )
         self.__read_config()
     
     def __read_config(self):
@@ -15,29 +32,15 @@ class Config:
             self.__validate_config()
 
     def __validate_config(self):
-        config_keys = dict(
-            server=dict,
-            operators=dict
-        )
-        self.__config_check("config", self.config, config_keys)
+        key = "config"
+        self.__config_check(key, self.config, self.valid_keys[key])
         
-        server_keys = dict(
-            template_folder=str,
-            release_folder=str,
-            js_access_folder=str,
-            css_access_folder=str,
-            asset_access_folder=str,
-            version_file=str
-        )
-        self.__config_check("server", self.config["server"], server_keys)
+        key = "server"
+        self.__config_check(key, self.config[key], self.valid_keys[key])
 
-        operators_keys = dict(
-            source_folder=str,
-            target_folder=str,
-            common_name=str
-        )
-        for operator_name, operator_content in self.config["operators"].items():
-            self.__config_check(operator_name, operator_content, operators_keys)
+        key = "operators"
+        for operator_name, operator_content in self.config[key].items():
+            self.__config_check(operator_name, operator_content, self.valid_keys[key])
         
         with open(self.config_path, 'w') as f:
             yaml.safe_dump(self.config, f, allow_unicode=True)

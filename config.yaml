@@ -1,12 +1,10 @@
 operators:
   skadi:
     common_name: dyn_illust_char_1012_skadi2
-    source_folder: ./operator/skadi/extracted/
-    target_folder: ./operator/skadi/
+    release_folder: ./release/{name}/
+    source_folder: ./operator/{name}/extracted/
+    target_folder: ./operator/{name}/
 server:
-  asset_access_folder: /asset/
-  css_access_folder: /build/
-  js_access_folder: /build/
+  operator_folder: /operator/
   release_folder: ./release/
-  template_folder: ./template/
-  version_file: ./VERSION
+  template_folder: /template/

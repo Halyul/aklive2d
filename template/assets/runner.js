@@ -1,0 +1,89 @@
+const params = new URLSearchParams(window.location.search);
+const RATIO = 0.618;
+var fps = 60;
+
+if (params.has("fps")) {
+    var tmp = parseInt(params.get("fps"));
+    if (!isNaN(tmp)) {
+        fps = tmp;
+    }
+}
+
+function supportsWebGL() {
+    try {
+        let canvas = document.createElement("canvas");
+        let ctx = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        return ctx != null;
+    } catch (e) {
+        return false;
+    }
+}
+
+function calculateScale(width, height) {
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+    let scaleX = windowWidth / width;
+    let scaleY = windowHeight / height;
+    return { x: scaleX, y: scaleY };
+};
+
+if (!supportsWebGL()) {
+    alert('WebGL is unavailable. Fallback image will be used.');
+    var e = document.getElementById("container");
+    e.classList.add("fallback");
+    e.parentElement.classList.add("widget-wrapper");
+
+    function fallback() {
+        const scale = calculateScale(window.settings.fallbackImage.width, window.settings.fallbackImage.height);
+        if (scale.x > scale.y) {
+            e.style.width = window.settings.fallbackImage.width * scale.y + "px";
+            e.style.height = window.settings.fallbackImage.height * scale.y + "px";
+        } else if (scale.x < scale.y) {
+            e.style.width = window.settings.fallbackImage.width * scale.x + "px";
+            e.style.height = window.settings.fallbackImage.height * scale.x + "px";
+        }
+    }
+
+    window.addEventListener('resize', fallback, true);
+    fallback();
+} else {
+    var e = document.getElementById("container");
+    var resetTime = window.performance.now();
+	
+	var spinePlayer = new spine.SpinePlayer(e, {
+		jsonUrl: window.settings.jsonUrl,
+		atlasUrl: window.settings.atlasUrl,
+        animation: window.settings.animation,
+        rawDataURIs: window.operator,
+		premultipliedAlpha: true,
+		alpha: true,
+		backgroundColor: "#00000000",
+		fps: fps,
+		viewport: window.settings.viewport,
+        showControls: false,
+        defaultMix: window.settings.defaultMix,
+        success: window.settings.success,
+    });
+    
+    
+}
+
+function resizeLogo() {
+    document.getElementById("logo").width = window.innerWidth / 2 * RATIO
+}
+window.addEventListener('resize', resizeLogo, true);
+resizeLogo()
+
+window.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("gesturestart", e => e.preventDefault());
+
+// wallpaper engine
+window.wallpaperPropertyListener = {
+    applyGeneralProperties: function (properties) {
+        if (properties.fps) {
+            spinePlayer.setFps(properties.fps);
+        }
+    },
+};
+
+console.log("All resources are extracted from Arknights.")

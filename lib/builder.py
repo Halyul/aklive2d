@@ -4,12 +4,14 @@ from lib.skeleton_binary import SkeletonBinary
 from lib.alpha_composite import AlphaComposite
 from lib.atlas_reader import AtlasReader
 from lib.base64_util import *
+from lib.html_processor import HtmlProcessor
 
 class Builder:
 
     def __init__(self, config, operator_names=list()) -> None:
         self.operator_names = operator_names
         self.config = config
+        self.html_processor = HtmlProcessor(config)
 
     def start(self):
         if "all" in self.operator_names:
@@ -175,7 +177,7 @@ class Builder:
         operator_release_path = pathlib.Path.cwd().joinpath(target_path, operator_name)
         release_operator_assets_path = pathlib.Path.cwd().joinpath(operator_release_path, ".{}".format(self.config["server"]["operator_folder"]))
         operator_assets_path = pathlib.Path.cwd().joinpath(self.config["operators"][operator_name]["target_folder"].format(name=operator_name))
-        template_path = pathlib.Path.cwd().joinpath(".{}".format(self.config["server"]["template_folder"]))
+        template_path = pathlib.Path.cwd().joinpath(self.config["server"]["template_folder"])
 
         if operator_release_path.exists() is True:
             shutil.rmtree(operator_release_path)
@@ -200,11 +202,14 @@ class Builder:
             if file.is_file() is True:
                 filename = file.name
                 file_path = pathlib.Path.cwd().joinpath(operator_release_path, filename)
-                
-                shutil.copyfile(
-                    file,
-                    file_path
-                )
+
+                if filename == "index.html":
+                    self.html_processor.build(operator_name, file, file_path)
+                else:
+                    shutil.copyfile(
+                        file,
+                        file_path
+                    )
             elif file.is_dir() is True:
                 filename = file.name
                 file_path = pathlib.Path.cwd().joinpath(operator_release_path, filename)

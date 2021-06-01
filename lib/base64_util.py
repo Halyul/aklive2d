@@ -1,18 +1,23 @@
 import base64
 import pathlib
 
-def encode_image(path, prefix=True):
-    with open(pathlib.Path.cwd().joinpath(path), "rb") as f:
-        bytes = f.read()
-        encoded_bytes = base64.b64encode(bytes)
-        humanreadable_data = encoded_bytes.decode("utf-8")
-        if prefix is True:
-            result = "data:image/png;base64," + humanreadable_data
-        else:
-            result = humanreadable_data
-        return result
+def encode_binary(data=None, type="application/octet-stream", path=None, prefix=True):
+    if data is None and path is None:
+        raise ValueError("Both data and path arguments are None")
+    if data is not None:
+        bytes = data
+    elif path is not None:
+        with open(pathlib.Path.cwd().joinpath(path), "rb") as f:
+            bytes = f.read()
+    encoded_bytes = base64.b64encode(bytes)
+    humanreadable_data = encoded_bytes.decode("utf-8")
+    if prefix is True:
+        result = "data:{};base64,".format(type) + humanreadable_data
+    else:
+        result = humanreadable_data
+    return result
 
-def decode_image(data: str, path):
+def decode_binary(data: str, path):
     if data.strip().startswith("data:") is True:
         data = data.split(",")[1]
     encoded_bytes = data.encode("utf-8")
@@ -22,7 +27,7 @@ def decode_image(data: str, path):
 
 def encode_string(data=None, type="text/plain", path=None, prefix=True, encoding="utf-8"):
     if data is None and path is None:
-        return
+        raise ValueError("Both data and path arguments are None")
     if data is not None:
         bytes = data.encode(encoding)
     elif path is not None:

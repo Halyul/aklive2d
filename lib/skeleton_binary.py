@@ -1,5 +1,6 @@
 import pathlib
 import json
+import shutil
 
 TransformMode = [
     "normal",
@@ -62,22 +63,34 @@ CURVE_BEZIER = 2
 
 class SkeletonBinary:
 
-    def __init__(self, file_path, save_path, scale=1):
+    def __init__(self, file_path, save_path, use_skel, scale=1):
         if file_path.strip().endswith(".skel") is False:
             file_path += ".skel"
-        if save_path.strip().endswith(".json") is False:
-            save_path += ".json"
+            file_path = pathlib.Path.cwd().joinpath(file_path)
+        if save_path.strip().endswith(".json") is False or save_path.strip().endswith(".skel") is False:
+            if use_skel is True:
+                save_path += ".skel"
+            else:
+                save_path += ".json"
+            save_path = pathlib.Path.cwd().joinpath(save_path)
+
+        if use_skel is True:
+            shutil.copyfile(
+                file_path,
+                save_path
+            )
+            return
         
         self.index = 0
         self.scale = scale
         self.dict = dict()
         try:
-            with open(pathlib.Path.cwd().joinpath(file_path), "rb") as f:
+            with open(file_path, "rb") as f:
                 self.binaryData = f.read()
 
             self.readSkeletonData()
 
-            with open(pathlib.Path.cwd().joinpath(save_path), "w") as f:
+            with open(save_path, "w") as f:
                 json.dump(self.dict, f)
         except Exception as e:
             print(e)
@@ -206,7 +219,7 @@ class SkeletonBinary:
                 data["position"] *= self.scale
             data["spacing"] = self.readFloat()
             if data["spacingMode"] == "length" or data["spacingMode"] == "fixed":
-                data["spacing"] = self.scale
+                data["spacing"] *= self.scale
             data["rotateMix"] = self.readFloat()
             data["translateMix"] = self.readFloat()
             self.dict["path"].append(data)
@@ -547,7 +560,6 @@ class SkeletonBinary:
                 e["scaleMix"] = self.readFloat()
                 e["shearMix"] = self.readFloat()
                 timeline[frameIndex] = e
-                # needs a if statement here to decode dyn_illust_char_1012_skadi2.skel
                 if (frameIndex < frameCount - 1):
                     self.readCurve(frameIndex, timeline)
             transforms[self.dict["transform"][transformIndex]["name"]] = timeline
@@ -561,7 +573,7 @@ class SkeletonBinary:
             data = self.dict["path"][pathIndex]
             pathMap = dict()
             for j in range(self.readInt(True)):
-                timelineType = self.readByte()
+                timelineType = self.read()
                 frameCount = self.readInt(True)
                 timeline = [None] * frameCount
                 if timelineType == PATH_POSITION or timelineType == PATH_SPACING:

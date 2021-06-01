@@ -1,5 +1,4 @@
 import threading
-import shutil
 from lib.skeleton_binary import SkeletonBinary
 from lib.alpha_composite import AlphaComposite
 from lib.atlas_reader import AtlasReader
@@ -10,6 +9,7 @@ class Builder:
     def __init__(self, operator_name, config) -> None:
         self.operator_name = operator_name
         self.config = config
+        self.use_skel = config["operators"][operator_name]["use_skel"]
         self.source_path = config["operators"][operator_name]["source_folder"].format(name=operator_name)
         self.target_path = config["operators"][operator_name]["target_folder"].format(name=operator_name)
         self.common_name = config["operators"][operator_name]["common_name"]
@@ -47,7 +47,7 @@ class Builder:
 
             skeleton_binary_thread = threading.Thread(
                 target=SkeletonBinary, 
-                args=(self.source_path + self.common_name, self.target_path + self.common_name),
+                args=(self.source_path + self.common_name, self.target_path + self.common_name, self.use_skel),
                 daemon=True,
             )
             ar_thread = threading.Thread(
@@ -97,18 +97,30 @@ class Builder:
                 png_to_base64_thread.start()
 
             skeleton_binary_thread.join()
-
-            json_base64_thread =threading.Thread(
-                target=self.__json_to_base64, 
-                args=(
-                    self.file_paths["json"],
-                    data,
-                    ".{}".format(self.config["server"]["operator_folder"]) + self.common_name + ".json",
-                ),
-                daemon=True,
-            )
-            json_base64_thread.start()
-            json_base64_thread.join()
+            if self.use_skel is True:
+                skel_base64_thread =threading.Thread(
+                    target=self.__skel_to_base64, 
+                    args=(
+                        self.file_paths["skel"],
+                        data,
+                        ".{}".format(self.config["server"]["operator_folder"]) + self.common_name + ".skel",
+                    ),
+                    daemon=True,
+                )
+                skel_base64_thread.start()
+                skel_base64_thread.join()
+            else:
+                json_base64_thread =threading.Thread(
+                    target=self.__json_to_base64, 
+                    args=(
+                        self.file_paths["json"],
+                        data,
+                        ".{}".format(self.config["server"]["operator_folder"]) + self.common_name + ".json",
+                    ),
+                    daemon=True,
+                )
+                json_base64_thread.start()
+                json_base64_thread.join()
 
             for thread in png_to_base64_threads:
                 thread.join()
@@ -135,6 +147,15 @@ class Builder:
             dict[key] = result
         else:
             return result
+    
+    def __skel_to_base64(self, path, dict=None, key=None):
+        result = encode_binary(
+            path=path
+        )
+        if dict is not None and key is not None:
+            dict[key] = result
+        else:
+            return result
 
     def __atlas_to_base64(self, path, dict=None, key=None):
         with open(pathlib.Path.cwd().joinpath(path), "r") as f:
@@ -146,7 +167,10 @@ class Builder:
             return result
     
     def __png_to_base64(self, path, dict=None, key=None):
-        result = encode_image(path)
+        result = encode_binary(
+            path=path, 
+            type="image/png"
+        )
         if dict is not None and key is not None:
             dict[key] = result
         else:

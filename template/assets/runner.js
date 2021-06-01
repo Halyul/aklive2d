@@ -51,7 +51,8 @@ if (!supportsWebGL()) {
     var resetTime = window.performance.now();
 	
 	var spinePlayer = new spine.SpinePlayer(e, {
-		jsonUrl: window.settings.jsonUrl,
+        jsonUrl: window.settings.jsonUrl,
+        skelUrl: window.settings.skelUrl,
 		atlasUrl: window.settings.atlasUrl,
         animation: window.settings.animation,
         rawDataURIs: window.operator,

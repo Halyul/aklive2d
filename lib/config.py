@@ -7,18 +7,19 @@ class Config:
         self.valid_keys = dict(
             config=dict(
                 server=dict,
-                operators=dict
+                operators=dict,
             ),
             server=dict(
                 template_folder=str,
                 release_folder=str,
-                operator_folder=str
+                operator_folder=str,
             ),
             operators=dict(
                 source_folder=str,
                 target_folder=str,
                 common_name=str,
-                release_folder=str
+                release_folder=str,
+                use_skel=bool,
             )
         )
         self.__read_config()

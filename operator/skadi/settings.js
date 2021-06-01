@@ -14,7 +14,8 @@ window.settings = {
         y: 0,
     },
     animation: "Idle",
-    jsonUrl: "./operator/dyn_illust_char_1012_skadi2.json",
+    // jsonUrl: "./operator/dyn_illust_char_1012_skadi2.json",
+    skelUrl: "./operator/dyn_illust_char_1012_skadi2.skel",
     atlasUrl: "./operator/dyn_illust_char_1012_skadi2.atlas",
     defaultMix: 0,
     success: function (widget) {

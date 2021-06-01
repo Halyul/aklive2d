@@ -6,8 +6,9 @@ operators:
     release_folder: ./release/{name}/
     source_folder: ./operator/{name}/extracted/
     target_folder: ./operator/{name}/
+    title: Skadi the Corrupting Heart
     use_skel: true
 server:
   operator_folder: /operator/
   release_folder: ./release/
-  template_folder: /template/
+  template_folder: ./template/

@@ -1,4 +1,5 @@
 import threading
+import shutil
 from lib.skeleton_binary import SkeletonBinary
 from lib.alpha_composite import AlphaComposite
 from lib.atlas_reader import AtlasReader
@@ -6,48 +7,44 @@ from lib.base64_util import *
 
 class Builder:
 
-    def __init__(self, operator_name, config) -> None:
-        self.operator_name = operator_name
+    def __init__(self, config, operator_names=list()) -> None:
+        self.operator_names = operator_names
         self.config = config
-        self.use_skel = config["operators"][operator_name]["use_skel"]
-        self.source_path = config["operators"][operator_name]["source_folder"].format(name=operator_name)
-        self.target_path = config["operators"][operator_name]["target_folder"].format(name=operator_name)
-        self.common_name = config["operators"][operator_name]["common_name"]
-        self.file_paths = dict(
-            json=self.target_path + self.common_name + ".json",
-            atlas=self.target_path + self.common_name + ".atlas",
-            skel=self.target_path + self.common_name + ".skel",
-        )
 
     def start(self):
-        # self.__build_assets()
-        # self.__set_version()
-        # name = "skadi"
-        # print(self.config[name]["source_folder"].format(name=name))
-        source = "./operator/skadi/extracted/"
-        target = "./operator/skadi/"
-        name = "dyn_illust_char_1012_skadi2"
-        print("build")
+        if "all" in self.operator_names:
+            self.operator_names = [operator_name for operator_name in self.config["operators"]]
+        for operator_name in self.operator_names:
+            self.build_assets(operator_name)
+            self.__release_file(operator_name)
         return
 
-    def stop(self):
-        return
+    def build_assets(self, operator_name):
 
-    def build_assets(self):
-        operator_file = pathlib.Path.cwd().joinpath(self.target_path, "operator.js")
+        use_skel = self.config["operators"][operator_name]["use_skel"]
+        source_path = self.config["operators"][operator_name]["source_folder"].format(name=operator_name)
+        target_path = self.config["operators"][operator_name]["target_folder"].format(name=operator_name)
+        common_name = self.config["operators"][operator_name]["common_name"]
+        file_paths = dict(
+            json=target_path + common_name + ".json",
+            atlas=target_path + common_name + ".atlas",
+            skel=target_path + common_name + ".skel",
+        )
+
+        operator_file = pathlib.Path.cwd().joinpath(target_path, "operator.js")
         if operator_file.exists() is False:
-            print("Building operaotr data...")
+            print("Building operaotr data for {}...".format(operator_name))
 
             alpha_composite_threads = list()
             png_to_base64_threads = list()
             prefix = "window.operator = "
             data = dict()
 
-            ar = AtlasReader(self.source_path + self.common_name, self.target_path + self.common_name)
+            ar = AtlasReader(source_path + common_name, target_path + common_name)
 
             skeleton_binary_thread = threading.Thread(
                 target=SkeletonBinary, 
-                args=(self.source_path + self.common_name, self.target_path + self.common_name, self.use_skel),
+                args=(source_path + common_name, target_path + common_name, use_skel),
                 daemon=True,
             )
             ar_thread = threading.Thread(
@@ -57,9 +54,9 @@ class Builder:
             atlas_base64_thread = threading.Thread(
                 target=self.__atlas_to_base64, 
                 args=(
-                    self.file_paths["atlas"],
+                    file_paths["atlas"],
                     data,
-                    ".{}".format(self.config["server"]["operator_folder"]) + self.common_name + ".atlas",
+                    ".{}".format(self.config["server"]["operator_folder"]) + common_name + ".atlas",
                 ),
                 daemon=True,
             )
@@ -73,7 +70,7 @@ class Builder:
             for item in ar.images:
                 alpha_composite_thread = threading.Thread(
                     target=AlphaComposite, 
-                    args=(self.source_path + item, self.target_path + item),
+                    args=(source_path + item, target_path + item),
                     daemon=True,
                 )
                 alpha_composite_threads.append(alpha_composite_thread)
@@ -86,7 +83,7 @@ class Builder:
                 png_to_base64_thread = threading.Thread(
                     target=self.__png_to_base64, 
                     args=(
-                        self.target_path + item,
+                        target_path + item,
                         data,
                         ".{}".format(self.config["server"]["operator_folder"]) + item,
                     ),
@@ -97,13 +94,13 @@ class Builder:
                 png_to_base64_thread.start()
 
             skeleton_binary_thread.join()
-            if self.use_skel is True:
+            if use_skel is True:
                 skel_base64_thread =threading.Thread(
                     target=self.__skel_to_base64, 
                     args=(
-                        self.file_paths["skel"],
+                        file_paths["skel"],
                         data,
-                        ".{}".format(self.config["server"]["operator_folder"]) + self.common_name + ".skel",
+                        ".{}".format(self.config["server"]["operator_folder"]) + common_name + ".skel",
                     ),
                     daemon=True,
                 )
@@ -113,9 +110,9 @@ class Builder:
                 json_base64_thread =threading.Thread(
                     target=self.__json_to_base64, 
                     args=(
-                        self.file_paths["json"],
+                        file_paths["json"],
                         data,
-                        ".{}".format(self.config["server"]["operator_folder"]) + self.common_name + ".json",
+                        ".{}".format(self.config["server"]["operator_folder"]) + common_name + ".json",
                     ),
                     daemon=True,
                 )
@@ -131,12 +128,9 @@ class Builder:
             with open(operator_file, "w") as f:
                 f.write(jsonContent)
             
-            print("Finished building operaotr data")
-        return
-
-    def __set_version(self):
-        version = input("Enter build version: ")
-        print(version)
+            print("Finished building operaotr data for {}.".format(operator_name))
+        else:
+            print("Operaotr data for {} has been built.".format(operator_name))
         return
 
     def __json_to_base64(self, path, dict=None, key=None):
@@ -175,3 +169,49 @@ class Builder:
             dict[key] = result
         else:
             return result
+
+    def __release_file(self, operator_name):
+        target_path = self.config["server"]["release_folder"]
+        operator_release_path = pathlib.Path.cwd().joinpath(target_path, operator_name)
+        release_operator_assets_path = pathlib.Path.cwd().joinpath(operator_release_path, ".{}".format(self.config["server"]["operator_folder"]))
+        operator_assets_path = pathlib.Path.cwd().joinpath(self.config["operators"][operator_name]["target_folder"].format(name=operator_name))
+        template_path = pathlib.Path.cwd().joinpath(".{}".format(self.config["server"]["template_folder"]))
+
+        if operator_release_path.exists() is True:
+            shutil.rmtree(operator_release_path)
+        operator_release_path.mkdir()
+        release_operator_assets_path.mkdir()
+        
+        
+        for file in operator_assets_path.iterdir():
+            if file.is_file() is True:
+                filename = file.name
+                if filename == self.config["operators"][operator_name]["project_json"] or filename == self.config["operators"][operator_name]["preview"]:
+                    file_path = pathlib.Path.cwd().joinpath(operator_release_path, filename)
+                else:
+                    file_path = pathlib.Path.cwd().joinpath(release_operator_assets_path, filename)
+                
+                shutil.copyfile(
+                    file,
+                    file_path
+                )
+        
+        for file in template_path.iterdir():
+            if file.is_file() is True:
+                filename = file.name
+                file_path = pathlib.Path.cwd().joinpath(operator_release_path, filename)
+                
+                shutil.copyfile(
+                    file,
+                    file_path
+                )
+            elif file.is_dir() is True:
+                filename = file.name
+                file_path = pathlib.Path.cwd().joinpath(operator_release_path, filename)
+
+                shutil.copytree(
+                    file,
+                    file_path
+                )
+        
+        return

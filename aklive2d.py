@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import sys
 
@@ -18,13 +19,13 @@ class AkLive2D:
             description="Arknights Live 2D Wallpaper Builder", 
             formatter_class=argparse.ArgumentDefaultsHelpFormatter
         )
-        parser.add_argument(
-            "-d", 
-            "--debug", 
-            dest="debug", 
-            action="store_true", 
-            help="To debug the app"
-        )
+        # parser.add_argument(
+        #     "-d", 
+        #     "--debug", 
+        #     dest="debug", 
+        #     action="store_true", 
+        #     help="To debug the app"
+        # )
 
         subprasers = parser.add_subparsers(
             title="Available commands", 
@@ -65,12 +66,12 @@ class AkLive2D:
         )
         build.add_argument(
             "-o", 
-            "--operator", 
+            "--operators", 
             dest="operator_names", 
             type=str, 
             default=["all"], 
             nargs='+', 
-            help="Operatro to build", 
+            help="Operators to build", 
             choices=["all"] + [key for key in self.config["operators"]]
         )
 

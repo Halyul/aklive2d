@@ -53,7 +53,8 @@ class AkLive2D:
             dest="operator_name", 
             type=str, 
             required=True, 
-            help="<Required> Operatro to develop"
+            help="<Required> Operatro to develop", 
+            choices=[key for key in self.config["operators"]]
         )
 
         build = subprasers.add_parser(
@@ -67,7 +68,7 @@ class AkLive2D:
             "--operator", 
             dest="operator_names", 
             type=str, 
-            default="all", 
+            default=["all"], 
             nargs='+', 
             help="Operatro to build", 
             choices=["all"] + [key for key in self.config["operators"]]
@@ -78,7 +79,7 @@ class AkLive2D:
             self.running = Server(self.args.port, self.args.operator_name, self.config)
         
         if self.args.command == "build" or self.args.command == "b":
-            self.running = Builder(self.args.operator_names, self.config["operators"])
+            self.running = Builder(self.config, self.args.operator_names)
 
         self.running.start()
     

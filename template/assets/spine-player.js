@@ -4244,6 +4244,7 @@ var spine;
 						mesh.height = height * scale;
 					}
 					mesh.inheritDeform = inheritDeform;
+					// this.linkedMeshes.push(new LinkedMesh(mesh, skinName, slotIndex, parent_4, inheritDeform));
 					this.linkedMeshes.push(new LinkedMesh(mesh, skinName, slotIndex, parent_4));
 					return mesh;
 				}
@@ -4741,6 +4742,13 @@ var spine;
 		return BinaryInput;
 	}());
 	var LinkedMesh = (function () {
+		// function LinkedMesh(mesh, skin, slotIndex, parent, inheritDeform) {
+		// 	this.mesh = mesh;
+		// 	this.skin = skin;
+		// 	this.slotIndex = slotIndex;
+		// 	this.parent = parent;
+		// 	this.inheritDeform = inheritDeform;
+		// }
 		function LinkedMesh(mesh, skin, slotIndex, parent) {
 			this.mesh = mesh;
 			this.skin = skin;

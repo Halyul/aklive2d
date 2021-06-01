@@ -1,6 +1,8 @@
 operators:
   skadi:
     common_name: dyn_illust_char_1012_skadi2
+    preview: preview.jpg
+    project_json: project.json
     release_folder: ./release/{name}/
     source_folder: ./operator/{name}/extracted/
     target_folder: ./operator/{name}/

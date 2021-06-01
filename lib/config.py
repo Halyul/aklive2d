@@ -19,6 +19,8 @@ class Config:
                 target_folder=str,
                 common_name=str,
                 release_folder=str,
+                project_json=str,
+                preview=str,
                 use_skel=bool,
             )
         )

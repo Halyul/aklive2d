@@ -13,7 +13,7 @@ class Server:
 
     def start(self):
         # build assets first
-        Builder(self.operator, self.config).build_assets()
+        Builder(self.config).build_assets(self.operator)
         print("Server is up at 0.0.0.0:{port}".format(port=self.port))
         self.httpd.serve_forever()
         return

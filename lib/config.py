@@ -22,6 +22,7 @@ class Config:
                 project_json=str,
                 preview=str,
                 use_skel=bool,
+                title=str,
             )
         )
         self.__read_config()

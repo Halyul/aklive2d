@@ -1,5 +1,4 @@
 let isPlayingInteract = false;
-document.title = "Skadi the Corrupting Heart"
 
 window.settings = {
     fallbackImage: {

@@ -87,4 +87,4 @@ window.wallpaperPropertyListener = {
     },
 };
 
-console.log("All resources are extracted from Arknights.")
+console.log("All resources are extracted from Arknights. Github: https://github.com/Halyul/aklive2d")

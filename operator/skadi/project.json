@@ -1,25 +1,25 @@
 {
-	"contentrating" : "Everyone",
-	"description" : "Live 2Di - Skadi the Corrupting Heart/浊心斯卡蒂 Live 2D",
-	"file" : "index.html",
-	"general" : 
-	{
-		"properties" : 
-		{
-			"schemecolor" : 
-			{
-				"order" : 0,
-				"text" : "ui_browse_properties_scheme_color",
-				"type" : "color",
-				"value" : "0 0 0"
-			}
-		}
-	},
-	"preview" : "preview.jpg",
-	"tags" : [ "Game" ],
-	"title" : "Skadi the Corrupting Heart - 浊心斯卡蒂",
-	"type" : "web",
-	"version" : 1,
-	"workshopid" : "2492307783",
-	"workshopurl" : "steam://url/CommunityFilePage/2492307783"
+    "contentrating" : "Everyone",
+    "description" : "Live 2Di - Skadi the Corrupting Heart/浊心斯卡蒂 Live 2D",
+    "file" : "index.html",
+    "general" : 
+    {
+        "properties" : 
+        {
+            "schemecolor" : 
+            {
+                "order" : 0,
+                "text" : "ui_browse_properties_scheme_color",
+                "type" : "color",
+                "value" : "0 0 0"
+            }
+        }
+    },
+    "preview" : "preview.jpg",
+    "tags" : [ "Game" ],
+    "title" : "Skadi the Corrupting Heart - 浊心斯卡蒂",
+    "type" : "web",
+    "version" : 1,
+    "workshopid" : "2492307783",
+    "workshopurl" : "steam://url/CommunityFilePage/2492307783"
 }

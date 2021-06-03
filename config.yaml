@@ -5,10 +5,10 @@ operators:
     project_json: project.json
     release_folder: ./release/{name}/
     source_folder: ./operator/{name}/extracted/
-    target_folder: ./operator/{name}/
+    target_folder: ./operator/{name}/processed/
     title: Skadi the Corrupting Heart
     use_skel: true
 server:
-  operator_folder: /operator/
+  operator_folder: ./operator/
   release_folder: ./release/
   template_folder: ./template/

@@ -1,12 +1,16 @@
 # aklive2d
 
-A project that builds showcase webpage for Arknights Live2D-equipped operators. Showcase webpage can be used as a wallpaper for Wallpaper Engine.
+A project that builds showcase webpage for Arknights Live2D-equipped operators. Showcase webpage can be used as a wallpaper for Wallpaper Engine on Windows or [Plash](https://github.com/sindresorhus/Plash) on macOS (not tested).
 
 ## Supported Operators
 
 | Operator | Live Preview | Steam Workshop |
 |----------|--------------|----------------|
 | Skadi the Corrupting Heart | [Link](https://arknights.halyul.dev/skadi/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2492307783) |
+
+- For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
+- For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.
+- For Linux users: You power user should be able to find your solutions!
 
 ## Usage
 

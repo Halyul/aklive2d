@@ -10,7 +10,7 @@
 			{
 				"index" : 5,
 				"order" : 105,
-				"text" : "Background Image",
+				"text" : "ui_background_image",
 				"type" : "file",
 				"value" : ""
 			},
@@ -18,7 +18,7 @@
 			{
 				"index" : 1,
 				"order" : 101,
-				"text" : "Operator Logo",
+				"text" : "ui_operator_logo",
 				"type" : "bool",
 				"value" : true
 			},
@@ -27,7 +27,7 @@
 				"condition" : "logo.value == true",
 				"index" : 2,
 				"order" : 102,
-				"text" : "Logo Image",
+				"text" : "ui_logo_image",
 				"type" : "file",
 				"value" : ""
 			},
@@ -39,7 +39,7 @@
 				"max" : 100,
 				"min" : 0,
 				"order" : 104,
-				"text" : "Logo Opacity",
+				"text" : "ui_logo_opacity",
 				"type" : "slider",
 				"value" : 30
 			},
@@ -53,7 +53,7 @@
 				"order" : 103,
 				"precision" : 2,
 				"step" : 0.10000000000000001,
-				"text" : "Logo Ratio",
+				"text" : "ui_logo_ratio",
 				"type" : "slider",
 				"value" : 61.799999999999997
 			},
@@ -61,9 +61,65 @@
 			{
 				"index" : 0,
 				"order" : 100,
-				"text" : "Notice",
+				"text" : "ui_logo_notice",
 				"type" : "textinput",
 				"value" : "Set FPS target in Settings"
+			},
+			"paddingbottom" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 10,
+				"max" : 100,
+				"min" : -100,
+				"order" : 110,
+				"text" : "ui_position_padding_bottom",
+				"type" : "slider",
+				"value" : -12
+			},
+			"paddingleft" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 7,
+				"max" : 100,
+				"min" : -100,
+				"order" : 107,
+				"text" : "ui_position_padding_left",
+				"type" : "slider",
+				"value" : -5
+			},
+			"paddingright" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 8,
+				"max" : 100,
+				"min" : -100,
+				"order" : 108,
+				"text" : "ui_position_padding_right",
+				"type" : "slider",
+				"value" : -10
+			},
+			"paddingtop" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 9,
+				"max" : 100,
+				"min" : -100,
+				"order" : 109,
+				"text" : "ui_position_padding_top",
+				"type" : "slider",
+				"value" : 0
+			},
+			"position" : 
+			{
+				"index" : 6,
+				"order" : 106,
+				"text" : "ui_position",
+				"type" : "bool",
+				"value" : false
 			},
 			"schemecolor" : 
 			{
@@ -72,13 +128,43 @@
 				"type" : "color",
 				"value" : "0 0 0"
 			}
+		},
+		"localization" : {
+			"en-us" :
+            {
+                "ui_background_image" : "Background Image",
+                "ui_operator_logo" : "Operator Logo",
+                "ui_logo_image" : "Logo Image",
+                "ui_logo_opacity" : "Logo Opacity",
+				"ui_logo_ratio" : "Logo Ratio",
+                "ui_logo_notice" : "Notice",
+                "ui_position_padding_bottom" : "Padding Bottom",
+				"ui_position_padding_left" : "Padding Left",
+				"ui_position_padding_right" : "Padding Right",
+				"ui_position_padding_top" : "Padding Top",
+				"ui_position" : "USE WITH CAUTION: Position"
+            },
+			"zh-chs" :
+            {
+                "ui_background_image" : "背景图片",
+                "ui_operator_logo" : "干员图标",
+                "ui_logo_image" : "图标图片",
+                "ui_logo_opacity" : "图标透明度",
+				"ui_logo_ratio" : "图标比例",
+                "ui_logo_notice" : "通知",
+                "ui_position_padding_bottom" : "底部距离",
+				"ui_position_padding_left" : "左部距离",
+				"ui_position_padding_right" : "右部距离",
+				"ui_position_padding_top" : "上部距离",
+				"ui_position" : "注意使用: 位置"
+            }
 		}
 	},
 	"preview" : "preview.jpg",
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Skadi the Corrupting Heart - 明日方舟：浊心斯卡蒂",
 	"type" : "web",
-	"version" : 1,
+	"version" : 2,
 	"visibility" : "public",
 	"workshopid" : "2492307783",
 	"workshopurl" : "steam://url/CommunityFilePage/2492307783"

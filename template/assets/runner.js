@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 var RATIO = 0.618;
 var fps = 60;
+var viewport = Object.assign({}, window.settings.viewport);
 
 if (params.has("fps")) {
     var tmp = parseInt(params.get("fps"));
@@ -85,7 +86,7 @@ window.wallpaperPropertyListener = {
             spinePlayer.setFps(properties.fps);
         }
     },
-    applyUserProperties: function(properties) {
+    applyUserProperties: function (properties) {
         if (properties.logo) {
             if (!properties.logo.value) {
                 document.getElementById("logo").style.display = "none";
@@ -127,7 +128,27 @@ window.wallpaperPropertyListener = {
             }
             document.body.style.backgroundImage = `url(${background})`
         }
-        
+        if (properties.position) {
+            if (!properties.position.value) {
+                spinePlayer.updateViewport(window.settings.viewport)
+            }
+        }
+        if (properties.paddingleft) {
+            viewport.padLeft = `${properties.paddingleft.value}%`
+            spinePlayer.updateViewport(viewport)
+        }
+        if (properties.paddingright) {
+            viewport.padRight = `${properties.paddingright.value}%`
+            spinePlayer.updateViewport(viewport)
+        }
+        if (properties.paddingtop) {
+            viewport.padTop = `${properties.paddingtop.value}%`
+            spinePlayer.updateViewport(viewport)
+        }
+        if (properties.paddingbottom) {
+            viewport.padBottom = `${properties.paddingbottom.value}%`
+            spinePlayer.updateViewport(viewport)
+        }
     },
 };
 

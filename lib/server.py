@@ -40,7 +40,7 @@ class httpd(SimpleHTTPRequestHandler):
             self.path = self.path.split("?")[0]
         
         split_path = self.path.split("/")
-        access_path = "/{}/".format(split_path[1])
+        access_path = "./{}/".format(split_path[1])
 
         if self.path == "/":
             # self.path = self.config["template_folder"] + "index.html"
@@ -50,7 +50,7 @@ class httpd(SimpleHTTPRequestHandler):
             html = self.html_processor.process(self.operator, self.config["template_folder"] + "index.html")
             self.wfile.write(bytes(html, "utf8"))
             return
-        elif access_path == "/assets/":
+        elif access_path == "./assets/":
             # assets folder
             self.path = self.config["template_folder"] + "assets/" + "/".join([i for i in split_path[2:]])
         elif self.config["operator_folder"] == access_path:

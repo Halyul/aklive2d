@@ -33,7 +33,7 @@ class Builder:
             skel=target_path + common_name + ".skel",
         )
 
-        operator_file = pathlib.Path.cwd().joinpath(target_path, "operator.js")
+        operator_file = pathlib.Path.cwd().joinpath(target_path, "..", "operator.js")
         if operator_file.exists() is False:
             print("Building operaotr data for {}...".format(operator_name))
 
@@ -58,7 +58,7 @@ class Builder:
                 args=(
                     file_paths["atlas"],
                     data,
-                    ".{}".format(self.config["server"]["operator_folder"]) + common_name + ".atlas",
+                    self.config["server"]["operator_folder"] + common_name + ".atlas",
                 ),
                 daemon=True,
             )
@@ -87,7 +87,7 @@ class Builder:
                     args=(
                         target_path + item,
                         data,
-                        ".{}".format(self.config["server"]["operator_folder"]) + item,
+                        self.config["server"]["operator_folder"] + item,
                     ),
                     daemon=True,
                 )
@@ -102,7 +102,7 @@ class Builder:
                     args=(
                         file_paths["skel"],
                         data,
-                        ".{}".format(self.config["server"]["operator_folder"]) + common_name + ".skel",
+                        self.config["server"]["operator_folder"] + common_name + ".skel",
                     ),
                     daemon=True,
                 )
@@ -114,7 +114,7 @@ class Builder:
                     args=(
                         file_paths["json"],
                         data,
-                        ".{}".format(self.config["server"]["operator_folder"]) + common_name + ".json",
+                        self.config["server"]["operator_folder"] + common_name + ".json",
                     ),
                     daemon=True,
                 )
@@ -175,8 +175,8 @@ class Builder:
     def __release_file(self, operator_name):
         target_path = self.config["server"]["release_folder"]
         operator_release_path = pathlib.Path.cwd().joinpath(target_path, operator_name)
-        release_operator_assets_path = pathlib.Path.cwd().joinpath(operator_release_path, ".{}".format(self.config["server"]["operator_folder"]))
-        operator_assets_path = pathlib.Path.cwd().joinpath(self.config["operators"][operator_name]["target_folder"].format(name=operator_name))
+        release_operator_assets_path = pathlib.Path.cwd().joinpath(operator_release_path, self.config["server"]["operator_folder"])
+        operator_assets_path = pathlib.Path.cwd().joinpath(self.config["operators"][operator_name]["target_folder"].format(name=operator_name), "..")
         template_path = pathlib.Path.cwd().joinpath(self.config["server"]["template_folder"])
 
         if operator_release_path.exists() is True:
@@ -200,10 +200,12 @@ class Builder:
         
         for file in template_path.iterdir():
             if file.is_file() is True:
-                filename = file.name
-                file_path = pathlib.Path.cwd().joinpath(operator_release_path, filename)
+                __temp = file.name.split(".")
+                filename = __temp[0]
+                fileext = __temp[1]
+                file_path = pathlib.Path.cwd().joinpath(operator_release_path, file.name)
 
-                if filename == "index.html":
+                if filename == "index" and fileext == "html":
                     self.html_processor.build(operator_name, file, file_path)
                 else:
                     shutil.copyfile(

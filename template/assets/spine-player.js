@@ -11317,6 +11317,16 @@ var spine;
 			this.config.fps = value;
 			this.time.setFps(value);
 		};
+		SpinePlayer.prototype.updateViewport = function (viewport) {
+			if (this.loaded) {
+				var _currentViewport = this.currentViewport;
+				_currentViewport.padLeft = this.percentageToWorldUnit(_currentViewport.width, viewport.padLeft);
+				_currentViewport.padRight = this.percentageToWorldUnit(_currentViewport.width, viewport.padRight);
+				_currentViewport.padBottom = this.percentageToWorldUnit(_currentViewport.height, viewport.padBottom);
+				_currentViewport.padTop = this.percentageToWorldUnit(_currentViewport.height, viewport.padTop);
+				this.currentViewport = _currentViewport;
+			}
+		};
 		SpinePlayer.HOVER_COLOR_INNER = new spine.Color(0.478, 0, 0, 0.25);
 		SpinePlayer.HOVER_COLOR_OUTER = new spine.Color(1, 1, 1, 1);
 		SpinePlayer.NON_HOVER_COLOR_INNER = new spine.Color(0.478, 0, 0, 0.5);

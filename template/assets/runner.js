@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const RATIO = 0.618;
+var RATIO = 0.618;
 var fps = 60;
 
 if (params.has("fps")) {
@@ -84,6 +84,50 @@ window.wallpaperPropertyListener = {
         if (properties.fps) {
             spinePlayer.setFps(properties.fps);
         }
+    },
+    applyUserProperties: function(properties) {
+        if (properties.logo) {
+            if (!properties.logo.value) {
+                document.getElementById("logo").style.display = "none";
+            } else {
+                document.getElementById("logo").style.display = "inherit";
+            }
+        }
+        if (properties.logoratio) {
+            if (properties.logoratio.value) {
+                RATIO = properties.logoratio.value / 100;
+                resizeLogo();
+            }
+        }
+        if (properties.logoopacity) {
+            if (properties.logoopacity.value) {
+                var opacity= properties.logoopacity.value / 100;
+                document.getElementById('logo').style.opacity = opacity;
+            }
+        }
+        if (properties.logoimage) {
+            var logoImage;
+            const e = document.getElementById('logo');
+            if (properties.logoimage.value) {
+                logoImage = 'file:///' + properties.logoimage.value;
+                e.style.filter = "invert(0)";
+            } else {
+                logoImage = "./operator/operator_logo.png"
+                e.style.filter = "invert(1)";
+            }
+            e.src = logoImage;
+            resizeLogo();
+        }
+        if (properties.background) {
+            var background;
+            if (properties.background.value) {
+                background = 'file:///' + properties.background.value;
+            } else {
+                background = "./operator/operator_bg.png"
+            }
+            document.body.style.backgroundImage = `url(${background})`
+        }
+        
     },
 };
 

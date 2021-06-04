@@ -33,13 +33,13 @@ class Builder:
             skel=target_path + common_name + ".skel",
         )
 
-        operator_file = pathlib.Path.cwd().joinpath(target_path, "..", "operator.js")
+        operator_file = pathlib.Path.cwd().joinpath(target_path, "..", "operator_assets.js")
         if operator_file.exists() is False:
             print("Building operaotr data for {}...".format(operator_name))
 
             alpha_composite_threads = list()
             png_to_base64_threads = list()
-            prefix = "window.operator = "
+            prefix = "window.operatorAssets = "
             data = dict()
 
             ar = AtlasReader(source_path + common_name, target_path + common_name)

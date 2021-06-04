@@ -11188,13 +11188,13 @@ var spine;
 		SpinePlayer.prototype.play = function () {
 			var _this = this;
 			this.paused = false;
-			var remove = function () {
-				if (!_this.paused)
-					_this.playerControls.classList.add("spine-player-controls-hidden");
-			};
-			this.cancelId = setTimeout(remove, 1000);
-			this.playButton.classList.remove("spine-player-button-icon-play");
-			this.playButton.classList.add("spine-player-button-icon-pause");
+			// var remove = function () {
+			// 	if (!_this.paused)
+			// 		_this.playerControls.classList.add("spine-player-controls-hidden");
+			// };
+			// this.cancelId = setTimeout(remove, 1000);
+			// this.playButton.classList.remove("spine-player-button-icon-play");
+			// this.playButton.classList.add("spine-player-button-icon-pause");
 			if (this.config.animation) {
 				if (!this.animationState.getCurrent(0)) {
 					this.setAnimation(this.config.animation);
@@ -11203,10 +11203,10 @@ var spine;
 		};
 		SpinePlayer.prototype.pause = function () {
 			this.paused = true;
-			this.playerControls.classList.remove("spine-player-controls-hidden");
+			// this.playerControls.classList.remove("spine-player-controls-hidden");
 			clearTimeout(this.cancelId);
-			this.playButton.classList.remove("spine-player-button-icon-pause");
-			this.playButton.classList.add("spine-player-button-icon-play");
+			// this.playButton.classList.remove("spine-player-button-icon-pause");
+			// this.playButton.classList.add("spine-player-button-icon-play");
 		};
 		SpinePlayer.prototype.setAnimation = function (animation) {
 			this.previousViewport = this.currentViewport;

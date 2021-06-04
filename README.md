@@ -62,9 +62,9 @@ operators:
     use_skel: true # For the Spine model, <true> for using skel file, otherwise use json
 # Development server settings
 server:
-  operator_folder: /operator/ # The path that the showcase webpage accesses game files
+  operator_folder: ./operator/ # The path that the showcase webpage accesses game files
   release_folder: ./release/ # The folder that stores the showcase webpage
-  template_folder: /template/ # The folder that stores the showcase template
+  template_folder: ./template/ # The folder that stores the showcase template
 ```
 ## LICENSE
 
@@ -81,4 +81,4 @@ The `LICENSE` file applies to all files unless listed specifically.
 
 - all files under `operator` folder and its sub-folders
 - all files under `release/*/operator/*` folder
-- `release/*/operator/operator.js`
+- `release/*/operator/operator_assets.js`

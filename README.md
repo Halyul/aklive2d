@@ -13,6 +13,7 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 - For Linux users: You power user should be able to find your solutions!
 
 ## Usage
+### Command Line Tool
 
 ``` bash
 $ python3 aklive2d.py -h  
@@ -47,6 +48,27 @@ optional arguments:
   -o {all,skadi} [{all,skadi} ...], --operators {all,skadi} [{all,skadi} ...]
                         Operators to build (default: ['all'])
 ```
+### Webpage & JavaScript
+
+Add query string `settings` to bring up the settings panel to adjust your settings. Then use appropriate JavaScript code to load your settings
+
+``` javascript
+settings.setFPS(integer) // set FPS
+settings.displayLogo(boolean) // display logo or not
+settings.resizeLogo(float) // the ratio of the logo
+settings.opacityLogo(float) // the opacity of the logo
+settings.setLogo(url, removeInvert) // change the logo, url: image url, removeInvert: boolean
+settings.setBackground(url) // change the background, url: image url
+settings.positionPadding("padLeft", integer) // left padding
+settings.positionPadding("padRight", integer) // right padding
+settings.positionPadding("padTop", integer) // top padding
+settings.positionPadding("padBottom", integer) // bottom padding
+
+settings.open() // open settings panel
+settings.close() // close settings panel
+settings.reset() // reset settings
+```
+
 ## Config
 ``` yaml
 # List all the supported operators under <operators> block

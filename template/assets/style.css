@@ -16,6 +16,8 @@ body {
     background-image: url("../operator/operator_bg.png");
     height: 100%;
     width: 100%;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .logo {
@@ -49,4 +51,5 @@ body {
     background-color: white;
     user-select: auto;
     z-index: 999;
+    display: none;
 }

@@ -41,3 +41,12 @@ body {
     width: 100%;
     height: 100%;
 }
+
+.website-settings {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    user-select: auto;
+    z-index: 999;
+}

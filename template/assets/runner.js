@@ -1,3 +1,5 @@
+const params = new URLSearchParams(window.location.search);
+
 function supportsWebGL() {
     try {
         let canvas = document.createElement("canvas");
@@ -55,6 +57,9 @@ if (!supportsWebGL()) {
             window.operatorSettings.success(e);
             settings.spinePlayerLoaded = true;
             settings.loadViewport();
+            if (params.has("settings")) {
+                settings.open();
+            }
         },
     });
     settings = new Settings({

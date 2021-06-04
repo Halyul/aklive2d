@@ -89,10 +89,10 @@ var Settings = (function () {
             this.spinePlayer.updateViewport(this.viewport);
     };
     Settings.prototype.open = function () {
-        this.el.classList.add("website-settings");
+        this.el.style.display = "inherit";
     };
     Settings.prototype.close = function () {
-        this.el.classList.remove("website-settings");
+        this.el.style.display = "none";
     };
     Settings.prototype.reset = function () {
         this.setFPS(this.fps);
@@ -201,7 +201,7 @@ var Settings = (function () {
                 <button type="button" id="settings_close">Close</button>
             </div>
         `
-
+        this.el.classList.add("website-settings");
         this.el.innerHTML = htmldata;
         document.body.appendChild(this.el);
         
@@ -326,7 +326,7 @@ var Settings = (function () {
         document.getElementById("settings_reset").addEventListener("click", e => {
             _this.reset();
         })
-        document.getElementById("settings_reset").addEventListener("click", e => {
+        document.getElementById("settings_close").addEventListener("click", e => {
             _this.close();
         })
     };

@@ -37,7 +37,7 @@ if (!supportsWebGL()) {
     fallback();
 } else {
     var e = document.getElementById("container");
-	
+    var settings;
 	var spinePlayer = new spine.SpinePlayer(e, {
         jsonUrl: window.operatorSettings.jsonUrl,
         skelUrl: window.operatorSettings.skelUrl,
@@ -51,9 +51,13 @@ if (!supportsWebGL()) {
         showControls: false,
         fps: window.operatorSettings.fps,
         defaultMix: window.operatorSettings.defaultMix,
-        success: window.operatorSettings.success,
+        success: function (e) {
+            window.operatorSettings.success(e);
+            settings.spinePlayerLoaded = true;
+            settings.loadViewport();
+        },
     });
-    var settings = new Settings({
+    settings = new Settings({
         logo: document.getElementById("logo"),
         spinePlayer: spinePlayer,
         operatorSettings: window.operatorSettings

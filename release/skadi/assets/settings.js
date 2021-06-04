@@ -12,7 +12,7 @@ var Settings = (function () {
         this.logoSrc = this.logoEl.src;
         this.opacity = parseFloat(getComputedStyle(this.logoEl).opacity) * 100;
         this.el = document.createElement("div");
-        
+        this.spinePlayerLoaded = false;
     }
     Settings.prototype.validateConfig = function () {
         if (typeof this.logoEl === "string")
@@ -64,7 +64,8 @@ var Settings = (function () {
         this.logoEl.style.opacity = opacity / 100;
     };
     Settings.prototype.positionReset = function () {
-        this.spinePlayer.updateViewport(window.operatorSettings.viewport)
+        if (this.spinePlayerLoaded)
+            this.spinePlayer.updateViewport(window.operatorSettings.viewport)
     };
     Settings.prototype.positionPadding = function (key, value) {
         switch (key) {
@@ -81,7 +82,11 @@ var Settings = (function () {
                 this.viewport.padBottom = `${value}%`;
                 break;
         }
-        this.spinePlayer.updateViewport(this.viewport)
+        this.loadViewport();
+    };
+    Settings.prototype.loadViewport = function () {
+        if (this.spinePlayerLoaded)
+            this.spinePlayer.updateViewport(this.viewport);
     };
     Settings.prototype.open = function () {
         this.el.classList.add("website-settings");

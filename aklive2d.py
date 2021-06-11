@@ -19,13 +19,6 @@ class AkLive2D:
             description="Arknights Live 2D Wallpaper Builder", 
             formatter_class=argparse.ArgumentDefaultsHelpFormatter
         )
-        # parser.add_argument(
-        #     "-d", 
-        #     "--debug", 
-        #     dest="debug", 
-        #     action="store_true", 
-        #     help="To debug the app"
-        # )
 
         subprasers = parser.add_subparsers(
             title="Available commands", 
@@ -83,10 +76,6 @@ class AkLive2D:
             self.running = Builder(self.config, self.args.operator_names)
 
         self.running.start()
-    
-    def stop(self):
-        self.running.stop()
-        return
 
 if __name__ == "__main__":
     aklive2d = AkLive2D()

@@ -47,8 +47,7 @@ class AkLive2D:
             dest="operator_name", 
             type=str, 
             required=True, 
-            help="<Required> Operatro to develop", 
-            choices=[key for key in self.config["operators"]]
+            help="<Required> Operatro to develop",
         )
 
         build = subprasers.add_parser(
@@ -64,8 +63,7 @@ class AkLive2D:
             type=str, 
             default=["all"], 
             nargs='+', 
-            help="Operators to build", 
-            choices=["all"] + [key for key in self.config["operators"]]
+            help="Operators to build"
         )
 
         self.args = parser.parse_args()

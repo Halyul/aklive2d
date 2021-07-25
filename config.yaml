@@ -1,13 +1,4 @@
 operators:
-  skadi:
-    common_name: dyn_illust_char_1012_skadi2
-    preview: preview.jpg
-    project_json: project.json
-    release_folder: ./release/{name}/
-    source_folder: ./operator/{name}/extracted/
-    target_folder: ./operator/{name}/processed/
-    title: Skadi the Corrupting Heart
-    use_skel: true
   chen:
     common_name: placeholder
     preview: preview.jpg
@@ -16,6 +7,15 @@ operators:
     source_folder: ./operator/{name}/extracted/
     target_folder: ./operator/{name}/processed/
     title: Ch'en the Holungday
+    use_skel: true
+  skadi:
+    common_name: dyn_illust_char_1012_skadi2
+    preview: preview.jpg
+    project_json: project.json
+    release_folder: ./release/{name}/
+    source_folder: ./operator/{name}/extracted/
+    target_folder: ./operator/{name}/processed/
+    title: Skadi the Corrupting Heart
     use_skel: true
 server:
   operator_folder: ./operator/

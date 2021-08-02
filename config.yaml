@@ -1,4 +1,13 @@
 operators:
+  nian:
+    common_name: placeholder
+    preview: preview.jpg
+    project_json: project.json
+    release_folder: ./release/{name}/
+    source_folder: ./operator/{name}/extracted/
+    target_folder: ./operator/{name}/processed/
+    title: Nian
+    use_skel: true
   chen:
     common_name: placeholder
     preview: preview.jpg

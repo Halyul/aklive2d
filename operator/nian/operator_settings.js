@@ -3,7 +3,7 @@ let resetTime = window.performance.now();
 window.operatorSettings = {
     fallbackImage: {
         width: 2048,
-        height: 1630,
+        height: 2048,
     },
     viewport: {
         debugRender: false,

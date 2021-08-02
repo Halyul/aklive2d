@@ -197,7 +197,6 @@ class Builder:
         operator_release_path.mkdir()
         release_operator_assets_path.mkdir()
         
-        
         for file in operator_assets_path.iterdir():
             if file.is_file() is True:
                 filename = file.name

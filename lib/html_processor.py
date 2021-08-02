@@ -11,7 +11,8 @@ class HtmlProcessor:
             content = f.read()
         return content.format(
             title=self.config["operators"][operator]["title"],
-            version=self.__get_version()
+            version=self.__get_version(),
+            operator_logo=self.config["operators"][operator]["logo_name"]
         )
     
     def build(self, operator, source_path, target_path):

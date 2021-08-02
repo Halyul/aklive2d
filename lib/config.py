@@ -20,6 +20,7 @@ class Config:
                 common_name=str,
                 fallback_name=str,
                 release_folder=str,
+                logo_name=str,
                 project_json=str,
                 preview=str,
                 use_skel=bool,

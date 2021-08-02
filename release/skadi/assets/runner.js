@@ -1,4 +1,10 @@
 const params = new URLSearchParams(window.location.search);
+var showControls;
+if (params.has("showControls")) {
+    showControls = true;
+} else {
+    showControls = false;
+}
 
 function supportsWebGL() {
     try {
@@ -50,7 +56,8 @@ if (!supportsWebGL()) {
 		alpha: true,
 		backgroundColor: "#00000000",
 		viewport: window.operatorSettings.viewport,
-        showControls: false,
+        showControls: showControls,
+        touch: showControls,
         fps: window.operatorSettings.fps,
         defaultMix: window.operatorSettings.defaultMix,
         success: function (e) {
@@ -67,9 +74,8 @@ if (!supportsWebGL()) {
         spinePlayer: spinePlayer,
         operatorSettings: window.operatorSettings
     });
+    settings.setup()
 }
-
-settings.setup()
 
 // wallpaper engine
 window.wallpaperPropertyListener = {

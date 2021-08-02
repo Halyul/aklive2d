@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "Arknights: Ch'en the Holungday Live 2D\r\n明日方舟：假日威龙陈 Live 2D\r\nThe model is extracted from game with Spine support.\r\n模型来自游戏内提取，支持Spine\r\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\r\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\r\n\r\nLive preview on: https://arknights.halyul.dev/skadi\r\nGithub: https://github.com/Halyul/aklive2d",
+	"description" : "Arknights: Ch'en/Chen the Holungday Live 2D\r\n明日方舟：假日威龙陈 Live 2D\r\nThe model is extracted from game with Spine support.\r\n模型来自游戏内提取，支持Spine\r\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\r\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\r\n\r\nLive preview on: https://arknights.halyul.dev/skadi\r\nGithub: https://github.com/Halyul/aklive2d",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -162,6 +162,6 @@
 	},
 	"preview" : "preview.jpg",
 	"tags" : [ "Game" ],
-	"title" : "Arknights: Ch'en the Holungday - 明日方舟：假日威龙陈",
+	"title" : "Arknights: Ch'en/Chen the Holungday - 明日方舟：假日威龙陈",
 	"type" : "web"
 }

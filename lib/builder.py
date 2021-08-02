@@ -8,10 +8,11 @@ from lib.html_processor import HtmlProcessor
 
 class Builder:
 
-    def __init__(self, config, operator_names=list()) -> None:
+    def __init__(self, config, operator_names=list(), rebuild=False) -> None:
         self.operator_names = operator_names
         self.config = config
         self.html_processor = HtmlProcessor(config)
+        self.rebuild = rebuild
 
     def start(self):
         if "all" in self.operator_names:
@@ -38,7 +39,7 @@ class Builder:
         )
 
         operator_file = pathlib.Path.cwd().joinpath(target_path, "..", "operator_assets.js")
-        if operator_file.exists() is False:
+        if operator_file.exists() is False or self.rebuild is True:
             print("Building operaotr data for {}...".format(operator_name))
 
             alpha_composite_threads = list()

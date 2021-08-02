@@ -21,12 +21,16 @@ class Builder:
             self.__release_file(operator_name)
         return
 
+    def stop(self):
+        return
+
     def build_assets(self, operator_name):
 
         use_skel = self.config["operators"][operator_name]["use_skel"]
         source_path = self.config["operators"][operator_name]["source_folder"].format(name=operator_name)
         target_path = self.config["operators"][operator_name]["target_folder"].format(name=operator_name)
         common_name = self.config["operators"][operator_name]["common_name"]
+        fallback_name = self.config["operators"][operator_name]["fallback_name"]
         file_paths = dict(
             json=target_path + common_name + ".json",
             atlas=target_path + common_name + ".atlas",
@@ -62,13 +66,19 @@ class Builder:
                 ),
                 daemon=True,
             )
+            fallback_thread = threading.Thread(
+                target=AlphaComposite, 
+                args=(source_path + fallback_name, target_path + "../fallback"),
+                daemon=True,
+            )
 
             ar_thread.start()
             skeleton_binary_thread.start()
+            fallback_thread.start()
             ar_thread.join()
             atlas_base64_thread.start()
 
-            # alpha composite
+            # alpha composite for live 2d assets
             for item in ar.images:
                 alpha_composite_thread = threading.Thread(
                     target=AlphaComposite, 
@@ -121,10 +131,12 @@ class Builder:
                 json_base64_thread.start()
                 json_base64_thread.join()
 
+            # join remaining threads
             for thread in png_to_base64_threads:
                 thread.join()
 
             atlas_base64_thread.join()
+            fallback_thread.join()
             
             jsonContent = prefix + str(data)
             with open(operator_file, "w") as f:

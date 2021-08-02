@@ -18,6 +18,7 @@ class Config:
                 source_folder=str,
                 target_folder=str,
                 common_name=str,
+                fallback_name=str,
                 release_folder=str,
                 project_json=str,
                 preview=str,

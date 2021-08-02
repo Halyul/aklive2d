@@ -22,6 +22,9 @@ class AlphaComposite:
     def __open_image(self):
         self.image = Image.open(self.image_path)
         self.mask = Image.open(self.mask_path)
+        if self.image.size != self.mask.size:
+            # resize mask
+            self.mask = self.__resize(self.mask, self.image.size[0], self.image.size[1])
         self.loaded_image = self.image.load()
         self.loaded_mask = self.mask.load()
 
@@ -30,3 +33,7 @@ class AlphaComposite:
             for x in range(self.mask.size[0]):
                 self.loaded_image[x, y] = (self.loaded_image[x, y][0], self.loaded_image[x, y][1], self.loaded_image[x, y][2], self.loaded_mask[x, y][2])
         self.image.save(pathlib.Path.cwd().joinpath(self.save_path))
+
+    # resize image
+    def __resize(self, image, width: int, height: int):
+        return image.resize((width, height))

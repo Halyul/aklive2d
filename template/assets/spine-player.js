@@ -4043,7 +4043,7 @@ var spine;
 			for (var i = 0, nn = void 0; i < n; i++) {
 				var data = new spine.PathConstraintData(input.readString());
 				data.order = input.readInt(true);
-				data.skinRequired = input.readBoolean();
+				// data.skinRequired = input.readBoolean();
 				nn = input.readInt(true);
 				for (var ii = 0; ii < nn; ii++)
 					data.bones.push(skeletonData.bones[input.readInt(true)]);

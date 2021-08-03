@@ -87,7 +87,6 @@ class SkeletonBinary:
         try:
             with open(file_path, "rb") as f:
                 self.binaryData = f.read()
-
             self.readSkeletonData()
 
             with open(save_path, "w") as f:
@@ -205,11 +204,12 @@ class SkeletonBinary:
         for i in range(self.readInt(True)):
             data = dict(
                 name=self.readString(),
-                order=self.readInt(True)
+                order=self.readInt(True),
+                bones=list()
             )
             for j in range(self.readInt(True)):
                 data["bones"].append(self.dict["bones"][self.readInt(True)]["name"])
-            data["target"] = self.dict["bones"][self.readInt(True)]["name"]
+            data["target"] = self.dict["slots"][self.readInt(True)]["name"]
             data["positionMode"] = PositionMode[self.readInt(True)]
             data["spacingMode"] = SpacingMode[self.readInt(True)]
             data["rotateMode"] = RotateMode[self.readInt(True)]
@@ -376,7 +376,7 @@ class SkeletonBinary:
             constantSpeed = self.readBoolean()
             vertexCount = self.readInt(True)
             vertices = self.readVertices(vertexCount)
-            lengths = [0.0] * vertexCount / 3
+            lengths = [0] * int(vertexCount / 3)
             for i in range(len(lengths)):
                 lengths[i] = self.readFloat() * self.scale
             if nonessential is True:

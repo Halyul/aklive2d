@@ -49,6 +49,13 @@ class AkLive2D:
             required=True, 
             help="<Required> Operatro to develop",
         )
+        server.add_argument(
+            "-r", 
+            "--rebuild", 
+            dest="rebuild",
+            action='store_true',
+            help="Rebuild assets"
+        )
 
         build = subprasers.add_parser(
             "build", 
@@ -65,7 +72,6 @@ class AkLive2D:
             nargs='+', 
             help="Operators to build"
         )
-
         build.add_argument(
             "-r", 
             "--rebuild", 
@@ -76,9 +82,8 @@ class AkLive2D:
 
         self.args = parser.parse_args()
         if self.args.command == "server" or self.args.command == "s":
-            self.running = Server(self.args.port, self.args.operator_name, self.config)
-        
-        if self.args.command == "build" or self.args.command == "b":
+            self.running = Server(self.args.port, self.args.operator_name, self.config, self.args.rebuild)
+        elif self.args.command == "build" or self.args.command == "b":
             self.running = Builder(self.config, self.args.operator_names, self.args.rebuild)
 
         self.running.start()

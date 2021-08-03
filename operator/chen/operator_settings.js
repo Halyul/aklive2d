@@ -21,6 +21,8 @@ window.operatorSettings = {
     atlasUrl: "./operator/dyn_illust_char_1013_chen2.atlas",
     defaultMix: 0,
     success: function (widget) {
+        settings.disableInvertFilter();
+        settings.opacityLogo(100);
         widget.animationState.addListener({
             end: (e) => {
                 if (e.animation.name == "Interact") {

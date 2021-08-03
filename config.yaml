@@ -1,8 +1,8 @@
 operators:
   chen:
-    common_name: placeholder
-    fallback_name: char_1012_skadi2_2
-    logo_name: logo_sui
+    common_name: dyn_illust_char_1013_chen2
+    fallback_name: char_1013_chen2_2
+    logo_name: logo_rhodes_override
     preview: preview.jpg
     project_json: project.json
     release_folder: ./release/{name}/
@@ -11,7 +11,7 @@ operators:
     title: Ch'en the Holungday
     use_skel: true
   nian:
-    common_name: placeholder
+    common_name: dyn_illust_char_2014_nian
     fallback_name: char_2014_nian_2
     logo_name: logo_sui
     preview: preview.jpg

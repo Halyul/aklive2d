@@ -13,6 +13,7 @@ var Settings = (function () {
         this.opacity = parseFloat(getComputedStyle(this.logoEl).opacity) * 100;
         this.el = document.createElement("div");
         this.spinePlayerLoaded = false;
+        this.invertFilter = true;
     }
     Settings.prototype.validateConfig = function () {
         if (typeof this.logoEl === "string")
@@ -46,6 +47,7 @@ var Settings = (function () {
     Settings.prototype.setLogo = function (url, removeInvert) {
         this.logoEl.src = url;
         this.resizeLogo(this.ratio);
+        if (!this.invertFilter) return;
         if (removeInvert) {
             this.logoEl.style.filter = "invert(0)";
         } else {
@@ -62,6 +64,10 @@ var Settings = (function () {
     Settings.prototype.opacityLogo = function (value) {
         var opacity = parseFloat(value);
         this.logoEl.style.opacity = opacity / 100;
+    };
+    Settings.prototype.disableInvertFilter = function (el) {
+        this.logoEl.style.filter = "invert(0)";
+        this.invertFilter = false;
     };
     Settings.prototype.positionReset = function () {
         if (this.spinePlayerLoaded)

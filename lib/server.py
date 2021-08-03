@@ -6,15 +6,16 @@ from lib.builder import Builder
 from lib.html_processor import HtmlProcessor
 class Server:
 
-    def __init__(self, port, operator, config) -> None:
+    def __init__(self, port, operator, config, rebuild) -> None:
         self.config = config
         self.operator = operator
         self.port = port
+        self.rebuild = rebuild
         self.httpd = TCPServer(("", port), httpd(operator, config, directory=str(pathlib.Path.cwd())))
 
     def start(self):
         # build assets first
-        Builder(self.config).build_assets(self.operator)
+        Builder(self.config, rebuild=self.rebuild).build_assets(self.operator)
         print("Server is up at 0.0.0.0:{port}".format(port=self.port))
         self.httpd.serve_forever()
         return

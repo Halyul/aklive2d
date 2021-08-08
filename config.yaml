@@ -1,11 +1,12 @@
 operators:
   chen:
     index.html:
+      id: char_1013_chen2
       operator_logo: logo_rhodes_override
       title: Ch'en the Holungday
       version: __get_version
       fallback_name: char_1013_chen2_2
-    operator_settings.js:
+    _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
       filename: dyn_illust_char_1013_chen2
@@ -28,11 +29,12 @@ operators:
       workshopid: 2564643862
   nian:
     index.html:
+      id: char_2014_nian
       operator_logo: logo_sui
       title: Nian
       version: __get_version
       fallback_name: char_2014_nian_2
-    operator_settings.js:
+    _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
       filename: dyn_illust_char_2014_nian
@@ -54,11 +56,12 @@ operators:
       workshopid: 2564642594
   skadi:
     index.html:
+      id: char_1012_skadi2
       operator_logo: logo_egir
       title: Skadi the Corrupting Heart
       version: __get_version
       fallback_name: char_1012_skadi2_2
-    operator_settings.js:
+    _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
       filename: dyn_illust_char_1012_skadi2

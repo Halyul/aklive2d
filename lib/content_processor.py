@@ -5,7 +5,7 @@ class ContentProcessor:
     
     def __init__(self, config, operator_name):
         self.config = config["operators"][operator_name]
-        self.file_to_process = [key for key, value in self.config.items()]
+        self.file_to_process = [key for key, value in self.config.items() if key.startswith("_") is False]
         self.settings = self.config
         self.evalable = [
             "__get_version"
@@ -44,6 +44,10 @@ class ContentProcessor:
                     else:
                         raise Exception("Unsupported function name: {}".format(value))
                 self.settings[item_key][key] = replace_value
+        # copy dict value _operator_settings.js to {id}_settings.js
+        settings_filename = "{}_settings.js".format(self.settings["index.html"]["id"])
+        self.settings[settings_filename] = self.settings["_operator_settings.js"]
+        self.file_to_process.append(settings_filename)
 
     def __get_version(self):
         with open(pathlib.Path.cwd().joinpath("Version"), "r") as f:

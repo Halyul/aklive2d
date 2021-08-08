@@ -13,9 +13,14 @@ class ContentProcessor:
         self.__process_value()
 
     def process(self, file_path):
-        with open(pathlib.Path.cwd().joinpath(file_path), "r") as f:
-            content = Formatter(f.read(), "{# ", " #}")
-        return content.format(**self.settings[file_path.name])
+        file_path = pathlib.Path.cwd().joinpath(file_path)
+        with open(file_path, "r") as f:
+            content = f.read()
+            if file_path.name in self.file_to_process:
+                content = Formatter(content, "{# ", " #}")
+                return content.format(**self.settings[file_path.name])
+            else:
+                return content
     
     def build(self, source_path, target_path):
         if source_path.name in self.file_to_process:

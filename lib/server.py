@@ -3,7 +3,7 @@ from http.server import SimpleHTTPRequestHandler
 from socketserver import TCPServer
 
 from lib.builder import Builder
-from lib.html_processor import HtmlProcessor
+from lib.content_processor import ContentProcessor
 class Server:
 
     def __init__(self, port, operator, config, rebuild) -> None:
@@ -15,7 +15,7 @@ class Server:
 
     def start(self):
         # build assets first
-        Builder(self.config, rebuild=self.rebuild).build_assets(self.operator)
+        Builder(self.config, rebuild=self.rebuild).build(self.operator)
         print("Server is up at 0.0.0.0:{port}".format(port=self.port))
         self.httpd.serve_forever()
         return
@@ -30,7 +30,7 @@ class httpd(SimpleHTTPRequestHandler):
         self.config = config["server"]
         self.operator = operator
         self.template_path = directory
-        self.html_processor = HtmlProcessor(config)
+        self.content_processor = ContentProcessor(config, operator)
 
     def __call__(self, *args, **kwds):
         super().__init__(*args, directory=self.template_path, **kwds)
@@ -48,7 +48,7 @@ class httpd(SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            html = self.html_processor.process(self.operator, self.config["template_folder"] + "index.html")
+            html = self.content_processor.process(self.config["template_folder"] + "index.html")
             self.wfile.write(bytes(html, "utf8"))
             return
         elif access_path == "./assets/":

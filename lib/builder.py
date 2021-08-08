@@ -4,14 +4,13 @@ from lib.skeleton_binary import SkeletonBinary
 from lib.alpha_composite import AlphaComposite
 from lib.atlas_reader import AtlasReader
 from lib.base64_util import *
-from lib.html_processor import HtmlProcessor
+from lib.content_processor import ContentProcessor
 
 class Builder:
 
     def __init__(self, config, operator_names=list(), rebuild=False) -> None:
         self.operator_names = operator_names
         self.config = config
-        self.html_processor = HtmlProcessor(config)
         self.rebuild = rebuild
 
     def start(self):
@@ -191,6 +190,7 @@ class Builder:
         release_operator_assets_path = pathlib.Path.cwd().joinpath(operator_release_path, self.config["server"]["operator_folder"])
         operator_assets_path = pathlib.Path.cwd().joinpath(self.config["operators"][operator_name]["target_folder"].format(name=operator_name), "..")
         template_path = pathlib.Path.cwd().joinpath(self.config["server"]["template_folder"])
+        content_processor = ContentProcessor(self.config, operator_name)
 
         if operator_release_path.exists() is True:
             shutil.rmtree(operator_release_path)
@@ -205,28 +205,15 @@ class Builder:
                 else:
                     file_path = pathlib.Path.cwd().joinpath(release_operator_assets_path, filename)
                 
-                shutil.copyfile(
-                    file,
-                    file_path
-                )
+                content_processor.build(file, file_path)
         
         for file in template_path.iterdir():
             if file.is_file() is True:
-                __temp = file.name.split(".")
-                filename = __temp[0]
-                fileext = __temp[1]
                 file_path = pathlib.Path.cwd().joinpath(operator_release_path, file.name)
 
-                if filename == "index" and fileext == "html":
-                    self.html_processor.build(operator_name, file, file_path)
-                else:
-                    shutil.copyfile(
-                        file,
-                        file_path
-                    )
+                content_processor.build(file, file_path)
             elif file.is_dir() is True:
-                filename = file.name
-                file_path = pathlib.Path.cwd().joinpath(operator_release_path, filename)
+                file_path = pathlib.Path.cwd().joinpath(operator_release_path, file.name)
 
                 shutil.copytree(
                     file,

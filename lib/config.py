@@ -25,6 +25,7 @@ class Config:
                 preview=str,
                 use_skel=bool,
                 title=str,
+                config=dict,
             )
         )
         self.__read_config()
@@ -48,8 +49,8 @@ class Config:
         for operator_name, operator_content in self.config[key].items():
             self.__config_check(operator_name, operator_content, self.valid_keys[key])
         
-        with open(self.config_path, 'w') as f:
-            yaml.safe_dump(self.config, f, allow_unicode=True)
+        # with open(self.config_path, 'w') as f:
+        #     yaml.safe_dump(self.config, f, allow_unicode=True)
     
     def __config_check(self, block_name: str, contents: dict, required_keys: dict):
         checklist = [key for key in required_keys]

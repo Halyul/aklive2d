@@ -17,7 +17,7 @@ class Config:
             ),
             operators={
                 "index.html": dict,
-                "operator_settings.js": dict,
+                "_operator_settings.js": dict,
                 "project.json": dict
             },
             operator=dict(
@@ -29,12 +29,13 @@ class Config:
             ),
             operator_config={
                 "index.html": dict(
+                    id=str,
                     operator_logo=str,
                     title=str,
                     version=str,
                     fallback_name=str,
                 ),
-                "operator_settings.js": dict(
+                "_operator_settings.js": dict(
                     fallbackImage_height=int,
                     fallbackImage_width=int,
                     filename=str,

@@ -18,9 +18,7 @@ function supportsWebGL() {
 
 if (!supportsWebGL()) {
     alert('WebGL is unavailable. Fallback image will be used.');
-    var e = document.getElementById("container");
-    e.classList.add("fallback");
-    e.parentElement.classList.add("widget-wrapper");
+    var e = document.getElementById("fallback");
 
     function calculateScale(width, height) {
         let windowWidth = window.innerWidth;
@@ -39,6 +37,8 @@ if (!supportsWebGL()) {
             e.style.width = window.operatorSettings.fallbackImage.width * scale.x + "px";
             e.style.height = window.operatorSettings.fallbackImage.height * scale.x + "px";
         }
+        e.classList.add("show");
+        document.getElementById("container").classList.add("hide");
     }
 
     window.addEventListener('resize', fallback, true);

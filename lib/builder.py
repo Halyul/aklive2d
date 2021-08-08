@@ -99,7 +99,7 @@ class Builder:
             )
             fallback_thread = threading.Thread(
                 target=AlphaComposite, 
-                args=(source_path + fallback_name, target_path + "../fallback"),
+                args=(source_path + fallback_name, target_path + "../{}".format(fallback_name)),
                 daemon=True,
             )
 

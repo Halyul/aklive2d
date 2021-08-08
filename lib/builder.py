@@ -57,11 +57,11 @@ class Builder:
 
     def __build_assets(self, operator_name):
 
-        use_skel = self.config["operators"][operator_name]["use_skel"]
-        source_path = self.config["operators"][operator_name]["source_folder"].format(name=operator_name)
-        target_path = self.config["operators"][operator_name]["target_folder"].format(name=operator_name)
-        common_name = self.config["operators"][operator_name]["common_name"]
-        fallback_name = self.config["operators"][operator_name]["fallback_name"]
+        use_skel = self.config["operator"]["use_skel"]
+        source_path = self.config["operator"]["source_folder"].format(name=operator_name)
+        target_path = self.config["operator"]["target_folder"].format(name=operator_name)
+        common_name = self.config["operators"][operator_name]["operator_settings.js"]["filename"]
+        fallback_name = self.config["operators"][operator_name]["index.html"]["fallback_name"]
         file_paths = dict(
             json=target_path + common_name + ".json",
             atlas=target_path + common_name + ".atlas",
@@ -219,7 +219,7 @@ class Builder:
         target_path = self.config["server"]["release_folder"]
         operator_release_path = pathlib.Path.cwd().joinpath(target_path, operator_name)
         release_operator_assets_path = pathlib.Path.cwd().joinpath(operator_release_path, self.config["server"]["operator_folder"])
-        operator_assets_path = pathlib.Path.cwd().joinpath(self.config["operators"][operator_name]["target_folder"].format(name=operator_name), "..")
+        operator_assets_path = pathlib.Path.cwd().joinpath(self.config["operator"]["target_folder"].format(name=operator_name), "..")
         template_path = pathlib.Path.cwd().joinpath(self.config["server"]["template_folder"])
 
         if operator_release_path.exists() is True:
@@ -230,7 +230,7 @@ class Builder:
         for file in operator_assets_path.iterdir():
             if file.is_file() is True:
                 filename = file.name
-                if filename == self.config["operators"][operator_name]["project_json"] or filename == self.config["operators"][operator_name]["preview"]:
+                if filename == self.config["operator"]["project_json"] or filename == self.config["operator"]["preview"]:
                     file_path = pathlib.Path.cwd().joinpath(operator_release_path, filename)
                 else:
                     file_path = pathlib.Path.cwd().joinpath(release_operator_assets_path, filename)

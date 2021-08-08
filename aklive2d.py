@@ -5,11 +5,12 @@ import sys
 from lib.config import Config
 from lib.server import Server
 from lib.builder import Builder
+from lib.initializer import Initializer
 
 class AkLive2D:
 
     def __init__(self) -> None:
-        self.config = Config().config
+        self.config = Config().read()
         self.args = None
         self.running = None
 
@@ -80,11 +81,20 @@ class AkLive2D:
             help="Rebuild assets"
         )
 
+        initializer = subprasers.add_parser(
+            "init", 
+            help="Initialize a new operator", 
+            aliases=['i'], 
+            formatter_class=argparse.ArgumentDefaultsHelpFormatter
+        )
+
         self.args = parser.parse_args()
         if self.args.command == "server" or self.args.command == "s":
             self.running = Server(self.args.port, self.args.operator_name, self.config, self.args.rebuild)
         elif self.args.command == "build" or self.args.command == "b":
             self.running = Builder(self.config, self.args.operator_names, self.args.rebuild)
+        elif self.args.command == "init" or self.args.command == "i":
+            self.running = Initializer(self.config)
 
         self.running.start()
 

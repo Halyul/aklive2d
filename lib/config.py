@@ -59,7 +59,14 @@ class Config:
                 )
             }
         )
+
+    def read(self):
         self.__read_config()
+        return self.config
+    
+    def save(self, config):
+        with open(self.config_path, 'w') as f:
+            yaml.safe_dump(config, f, allow_unicode=True)
     
     def __read_config(self):
         try:
@@ -85,8 +92,7 @@ class Config:
             for filename, filetype in self.config[key][operator_name].items():
                 self.__config_check(filename, filetype, self.valid_keys["operator_config"][filename])
         
-        # with open(self.config_path, 'w') as f:
-        #     yaml.safe_dump(self.config, f, allow_unicode=True)
+        self.save(self.config)
     
     def __config_check(self, block_name: str, contents: dict, required_keys: dict):
         checklist = [key for key in required_keys]

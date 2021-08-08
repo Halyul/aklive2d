@@ -1,93 +1,105 @@
+operator:
+  preview: preview.jpg
+  project_json: project.json
+  source_folder: ./operator/{name}/extracted/
+  target_folder: ./operator/{name}/processed/
+  use_skel: true
 operators:
   chen:
-    index.html:
-      id: char_1013_chen2
-      operator_logo: logo_rhodes_override
-      title: Ch'en the Holungday
-      version: __get_version
-      fallback_name: char_1013_chen2_2
     _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
       filename: dyn_illust_char_1013_chen2
       fps: 60
       opacity: 100
+      viewport_bottom: 1
       viewport_left: 0
       viewport_right: 0
       viewport_top: 1
-      viewport_bottom: 1
+    index.html:
+      fallback_name: char_1013_chen2_2
+      id: char_1013_chen2
+      operator_logo: logo_rhodes_override
+      title: Ch'en the Holungday
+      version: __get_version
     project.json:
-      description: 'Arknights: Ch''en/Chen the Holungday Live 2D\n明日方舟：假日威龙陈 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/chen\nGithub: https://github.com/Halyul/aklive2d'
+      description: 'Arknights: Ch''en/Chen the Holungday Live 2D\n明日方舟：假日威龙陈 Live
+        2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease
+        set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在
+        Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/chen\nGithub:
+        https://github.com/Halyul/aklive2d'
       title: 'Arknights: Ch''en/Chen the Holungday - 明日方舟：假日威龙陈'
       ui_logo_opacity: 100
       ui_logo_ratio: 61.8
       ui_operator_logo: 'true'
+      ui_position_padding_bottom: 1
       ui_position_padding_left: 0
       ui_position_padding_right: 0
       ui_position_padding_top: 1
-      ui_position_padding_bottom: 1
       workshopid: 2564643862
   nian:
-    index.html:
-      id: char_2014_nian
-      operator_logo: logo_sui
-      title: Nian
-      version: __get_version
-      fallback_name: char_2014_nian_2
     _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
       filename: dyn_illust_char_2014_nian
       fps: 60
+      viewport_bottom: 5
       viewport_left: 2
       viewport_right: 2
       viewport_top: 3
-      viewport_bottom: 5
+    index.html:
+      fallback_name: char_2014_nian_2
+      id: char_2014_nian
+      operator_logo: logo_sui
+      title: Nian
+      version: __get_version
     project.json:
-      description: 'Arknights: Nian Live 2D\n明日方舟：年 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/nian\nGithub: https://github.com/Halyul/aklive2d'
+      description: 'Arknights: Nian Live 2D\n明日方舟：年 Live 2D\nThe model is extracted
+        from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target
+        in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine >
+        设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/nian\nGithub:
+        https://github.com/Halyul/aklive2d'
       title: 'Arknights: Nian - 明日方舟：年'
       ui_logo_opacity: 30
       ui_logo_ratio: 61.8
       ui_operator_logo: 'true'
+      ui_position_padding_bottom: 5
       ui_position_padding_left: 2
       ui_position_padding_right: 2
       ui_position_padding_top: 3
-      ui_position_padding_bottom: 5
       workshopid: 2564642594
   skadi:
-    index.html:
-      id: char_1012_skadi2
-      operator_logo: logo_egir
-      title: Skadi the Corrupting Heart
-      version: __get_version
-      fallback_name: char_1012_skadi2_2
     _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
       filename: dyn_illust_char_1012_skadi2
       fps: 60
+      viewport_bottom: -12
       viewport_left: -5
       viewport_right: -10
       viewport_top: 0
-      viewport_bottom: -12
+    index.html:
+      fallback_name: char_1012_skadi2_2
+      id: char_1012_skadi2
+      operator_logo: logo_egir
+      title: Skadi the Corrupting Heart
+      version: __get_version
     project.json:
-      description: 'Arknights: Skadi the Corrupting Heart Live 2Di\r\n明日方舟：浊心斯卡蒂 Live 2Di\r\nThe model is extracted from game with Spine support.\r\n模型来自游戏内提取，支持Spine\r\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\r\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\r\n\r\nLive preview on: https://arknights.halyul.dev/skadi\r\nGithub: https://github.com/Halyul/aklive2d'
+      description: 'Arknights: Skadi the Corrupting Heart Live 2Di\r\n明日方舟：浊心斯卡蒂 Live
+        2Di\r\nThe model is extracted from game with Spine support.\r\n模型来自游戏内提取，支持Spine\r\nPlease
+        set your FPS target in Wallpaper Engine > Settings > Performance > FPS\r\n请在
+        Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\r\n\r\nLive preview on: https://arknights.halyul.dev/skadi\r\nGithub:
+        https://github.com/Halyul/aklive2d'
       title: 'Arknights: Skadi the Corrupting Heart - 明日方舟：浊心斯卡蒂'
       ui_logo_opacity: 30
       ui_logo_ratio: 61.8
       ui_operator_logo: 'true'
+      ui_position_padding_bottom: -12
       ui_position_padding_left: -5
       ui_position_padding_right: -10
       ui_position_padding_top: 0
-      ui_position_padding_bottom: -12
       workshopid: 2492307783
 server:
   operator_folder: ./operator/
   release_folder: ./release/
   template_folder: ./template/
-operator:
-  use_skel: true
-  preview: preview.jpg
-  project_json: project.json
-  source_folder: ./operator/{name}/extracted/
-  target_folder: ./operator/{name}/processed/

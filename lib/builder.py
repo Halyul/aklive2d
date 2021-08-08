@@ -60,15 +60,16 @@ class Builder:
         use_skel = self.config["operator"]["use_skel"]
         source_path = self.config["operator"]["source_folder"].format(name=operator_name)
         target_path = self.config["operator"]["target_folder"].format(name=operator_name)
-        common_name = self.config["operators"][operator_name]["operator_settings.js"]["filename"]
+        common_name = self.config["operators"][operator_name]["_operator_settings.js"]["filename"]
         fallback_name = self.config["operators"][operator_name]["index.html"]["fallback_name"]
+        id_name = self.config["operators"][operator_name]["index.html"]["id"]
         file_paths = dict(
             json=target_path + common_name + ".json",
             atlas=target_path + common_name + ".atlas",
             skel=target_path + common_name + ".skel",
         )
 
-        operator_file = pathlib.Path.cwd().joinpath(target_path, "..", "operator_assets.js")
+        operator_file = pathlib.Path.cwd().joinpath(target_path, "..", "{}_assets.js".format(id_name))
         if operator_file.exists() is False or self.rebuild is True:
             print("Building operator data for {}...".format(operator_name))
 

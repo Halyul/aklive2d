@@ -5,8 +5,8 @@ class ContentProcessor:
     
     def __init__(self, config, operator_name):
         self.config = config["operators"][operator_name]
-        self.file_to_process = [key for key, value in self.config["config"].items()]
-        self.settings = self.config["config"]
+        self.file_to_process = [key for key, value in self.config.items()]
+        self.settings = self.config
         self.evalable = [
             "__get_version"
         ]

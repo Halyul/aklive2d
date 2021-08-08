@@ -12,19 +12,50 @@ class Builder:
         self.operator_names = operator_names
         self.config = config
         self.rebuild = rebuild
+        self.content_processor = None
 
     def start(self):
         if "all" in self.operator_names:
             self.operator_names = [operator_name for operator_name in self.config["operators"]]
         for operator_name in self.operator_names:
-            self.build_assets(operator_name)
+            self.build(operator_name)
             self.__release_file(operator_name)
         return
 
     def stop(self):
         return
 
-    def build_assets(self, operator_name):
+    def build(self, operator_name):
+        self.content_processor = ContentProcessor(self.config, operator_name)
+        assets_thread = threading.Thread(
+            target=self.__build_assets, 
+            args=(operator_name,),
+            daemon=True,
+        )
+        settings_thread = threading.Thread(
+            target=self.__build_settings, 
+            args=(operator_name,),
+            daemon=True,
+        )
+        assets_thread.start()
+        settings_thread.start()
+        assets_thread.join()
+        settings_thread.join()
+
+    # use content processor to generate operator settings
+    def __build_settings(self, operator_name):
+        source_path = pathlib.Path.cwd().joinpath("operator", operator_name, "config")
+        target_path = pathlib.Path.cwd().joinpath("operator", operator_name)
+        for file in source_path.iterdir():
+            if file.is_file() is True:
+                file_path = pathlib.Path.cwd().joinpath(target_path, file.name)
+                self.content_processor.build(
+                    file,
+                    file_path
+                )
+        return
+
+    def __build_assets(self, operator_name):
 
         use_skel = self.config["operators"][operator_name]["use_skel"]
         source_path = self.config["operators"][operator_name]["source_folder"].format(name=operator_name)
@@ -39,7 +70,7 @@ class Builder:
 
         operator_file = pathlib.Path.cwd().joinpath(target_path, "..", "operator_assets.js")
         if operator_file.exists() is False or self.rebuild is True:
-            print("Building operaotr data for {}...".format(operator_name))
+            print("Building operator data for {}...".format(operator_name))
 
             alpha_composite_threads = list()
             png_to_base64_threads = list()
@@ -142,9 +173,9 @@ class Builder:
             with open(operator_file, "w") as f:
                 f.write(jsonContent)
             
-            print("Finished building operaotr data for {}.".format(operator_name))
+            print("Finished building operator data for {}.".format(operator_name))
         else:
-            print("Operaotr data for {} has been built.".format(operator_name))
+            print("Operator data for {} has been built.".format(operator_name))
         return
 
     def __json_to_base64(self, path, dict=None, key=None):
@@ -190,7 +221,6 @@ class Builder:
         release_operator_assets_path = pathlib.Path.cwd().joinpath(operator_release_path, self.config["server"]["operator_folder"])
         operator_assets_path = pathlib.Path.cwd().joinpath(self.config["operators"][operator_name]["target_folder"].format(name=operator_name), "..")
         template_path = pathlib.Path.cwd().joinpath(self.config["server"]["template_folder"])
-        content_processor = ContentProcessor(self.config, operator_name)
 
         if operator_release_path.exists() is True:
             shutil.rmtree(operator_release_path)
@@ -205,13 +235,17 @@ class Builder:
                 else:
                     file_path = pathlib.Path.cwd().joinpath(release_operator_assets_path, filename)
                 
-                content_processor.build(file, file_path)
+                shutil.copyfile(
+                    file,
+                    file_path
+                )
         
+        # template folder uses content processor to generate files
         for file in template_path.iterdir():
             if file.is_file() is True:
                 file_path = pathlib.Path.cwd().joinpath(operator_release_path, file.name)
 
-                content_processor.build(file, file_path)
+                self.content_processor.build(file, file_path)
             elif file.is_dir() is True:
                 file_path = pathlib.Path.cwd().joinpath(operator_release_path, file.name)
 

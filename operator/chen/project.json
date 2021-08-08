@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "{# description #}",
+	"description" : "Arknights: Ch'en/Chen the Holungday Live 2D\n明日方舟：假日威龙陈 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/chen\nGithub: https://github.com/Halyul/aklive2d",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -51,7 +51,7 @@
 				"order" : 101,
 				"text" : "ui_operator_logo",
 				"type" : "bool",
-				"value" : {# ui_operator_logo #}
+				"value" : true
 			},
 			"logoimage" : 
 			{
@@ -72,7 +72,7 @@
 				"order" : 104,
 				"text" : "ui_logo_opacity",
 				"type" : "slider",
-				"value" : {# ui_logo_opacity #}
+				"value" : 100
 			},
 			"logoratio" : 
 			{
@@ -86,7 +86,7 @@
 				"step" : 0.1,
 				"text" : "ui_logo_ratio",
 				"type" : "slider",
-				"value" : {# ui_logo_ratio #}
+				"value" : 61.8
 			},
 			"notice" : 
 			{
@@ -106,7 +106,7 @@
 				"order" : 110,
 				"text" : "ui_position_padding_bottom",
 				"type" : "slider",
-				"value" : {# ui_position_padding_bottom #}
+				"value" : 1
 			},
 			"paddingleft" : 
 			{
@@ -118,7 +118,7 @@
 				"order" : 107,
 				"text" : "ui_position_padding_left",
 				"type" : "slider",
-				"value" : {# ui_position_padding_left #}
+				"value" : 0
 			},
 			"paddingright" : 
 			{
@@ -130,7 +130,7 @@
 				"order" : 108,
 				"text" : "ui_position_padding_right",
 				"type" : "slider",
-				"value" : {# ui_position_padding_right #}
+				"value" : 0
 			},
 			"paddingtop" : 
 			{
@@ -142,7 +142,7 @@
 				"order" : 109,
 				"text" : "ui_position_padding_top",
 				"type" : "slider",
-				"value" : {# ui_position_padding_top #}
+				"value" : 1
 			},
 			"position" : 
 			{
@@ -163,9 +163,9 @@
 	},
 	"preview" : "preview.jpg",
 	"tags" : [ "Game" ],
-	"title" : "{# title #}",
+	"title" : "Arknights: Ch'en/Chen the Holungday - 明日方舟：假日威龙陈",
 	"type" : "web",
 	"version" : 1,
-	"workshopid" : "{# workshopid #}",
-	"workshopurl" : "steam://url/CommunityFilePage/{# workshopid #}"
+	"workshopid" : "2564643862",
+	"workshopurl" : "steam://url/CommunityFilePage/2564643862"
 }

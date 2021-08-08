@@ -2,23 +2,23 @@ let isPlayingInteract = false;
 let resetTime = window.performance.now();
 window.operatorSettings = {
     fallbackImage: {
-        width: {# fallbackImage_width #},
-        height: {# fallbackImage_height #},
+        width: 2048,
+        height: 2048,
     },
     viewport: {
         debugRender: false,
-        padLeft: "{# viewport_left #}%",
-        padRight: "{# viewport_right #}%",
-        padTop: "{# viewport_top #}%",
-        padBottom: "{# viewport_bottom #}%",
+        padLeft: "2%",
+        padRight: "2%",
+        padTop: "3%",
+        padBottom: "5%",
         x: 0,
         y: 0,
     },
-    fps: {# fps #},
+    fps: 60,
     animation: "Idle",
-    // jsonUrl: "./operator/{# filename #}.json",
-    skelUrl: "./operator/{# filename #}.skel",
-    atlasUrl: "./operator/{# filename #}.atlas",
+    // jsonUrl: "./operator/dyn_illust_char_2014_nian.json",
+    skelUrl: "./operator/dyn_illust_char_2014_nian.skel",
+    atlasUrl: "./operator/dyn_illust_char_2014_nian.atlas",
     defaultMix: 0,
     success: function (widget) {
         widget.animationState.addListener({

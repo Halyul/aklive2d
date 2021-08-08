@@ -8,25 +8,55 @@ class Config:
             config=dict(
                 server=dict,
                 operators=dict,
+                operator=dict,
             ),
             server=dict(
                 template_folder=str,
                 release_folder=str,
                 operator_folder=str,
             ),
-            operators=dict(
+            operators={
+                "index.html": dict,
+                "operator_settings.js": dict,
+                "project.json": dict
+            },
+            operator=dict(
+                use_skel=bool,
+                preview=str,
+                project_json=str,
                 source_folder=str,
                 target_folder=str,
-                common_name=str,
-                fallback_name=str,
-                release_folder=str,
-                logo_name=str,
-                project_json=str,
-                preview=str,
-                use_skel=bool,
-                title=str,
-                config=dict,
-            )
+            ),
+            operator_config={
+                "index.html": dict(
+                    operator_logo=str,
+                    title=str,
+                    version=str,
+                    fallback_name=str,
+                ),
+                "operator_settings.js": dict(
+                    fallbackImage_height=int,
+                    fallbackImage_width=int,
+                    filename=str,
+                    fps=int,
+                    viewport_left=int,
+                    viewport_right=int,
+                    viewport_top=int,
+                    viewport_bottom=int,
+                ),
+                "project.json": dict(
+                    description=str,
+                    title=str,
+                    ui_logo_opacity=int,
+                    ui_logo_ratio=float,
+                    ui_operator_logo=str,
+                    ui_position_padding_left=int,
+                    ui_position_padding_right=int,
+                    ui_position_padding_top=int,
+                    ui_position_padding_bottom=int,
+                    workshopid=int,
+                )
+            }
         )
         self.__read_config()
     
@@ -45,9 +75,14 @@ class Config:
         key = "server"
         self.__config_check(key, self.config[key], self.valid_keys[key])
 
+        key = "operator"
+        self.__config_check(key, self.config[key], self.valid_keys[key])
+
         key = "operators"
         for operator_name, operator_content in self.config[key].items():
             self.__config_check(operator_name, operator_content, self.valid_keys[key])
+            for filename, filetype in self.config[key][operator_name].items():
+                self.__config_check(filename, filetype, self.valid_keys["operator_config"][filename])
         
         # with open(self.config_path, 'w') as f:
         #     yaml.safe_dump(self.config, f, allow_unicode=True)
@@ -60,7 +95,7 @@ class Config:
                 if key in checklist:
                     required_type = required_keys[key]
                 else:
-                    break
+                    continue
                 if value_type != required_type:
                     raise TypeError("Item {key} in config.yaml is not set up correctly. Type {value_type} is detected, but type {required_type} is required.".format(key=key, value_type=value_type.__name__, required_type=required_type.__name__))
                 else:

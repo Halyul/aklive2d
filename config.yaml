@@ -15,6 +15,7 @@ operators:
         operator_logo: logo_rhodes_override
         title: Ch'en the Holungday
         version: __get_version
+        fallback_name: char_1013_chen2_2
       operator_settings.js:
         fallbackImage_height: 2048
         fallbackImage_width: 2048
@@ -52,6 +53,7 @@ operators:
         operator_logo: logo_sui
         title: Nian
         version: __get_version
+        fallback_name: char_2014_nian_2
       operator_settings.js:
         fallbackImage_height: 2048
         fallbackImage_width: 2048
@@ -88,6 +90,7 @@ operators:
         operator_logo: logo_egir
         title: Skadi the Corrupting Heart
         version: __get_version
+        fallback_name: char_1012_skadi2_2
       operator_settings.js:
         fallbackImage_height: 2048
         fallbackImage_width: 2048

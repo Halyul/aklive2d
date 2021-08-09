@@ -26,21 +26,28 @@ class Builder:
         return
 
     def build(self, operator_name):
+        thread_map = [
+            dict(
+                target=self.__build_assets,
+                args=(operator_name,),
+                daemon=True,
+            ),
+            dict(
+                target=self.__build_settings, 
+                args=(operator_name,),
+                daemon=True,
+            )
+        ]
+        threads = list()
         self.content_processor = ContentProcessor(self.config, operator_name)
-        assets_thread = threading.Thread(
-            target=self.__build_assets, 
-            args=(operator_name,),
-            daemon=True,
-        )
-        settings_thread = threading.Thread(
-            target=self.__build_settings, 
-            args=(operator_name,),
-            daemon=True,
-        )
-        assets_thread.start()
-        settings_thread.start()
-        assets_thread.join()
-        settings_thread.join()
+
+        for item in thread_map:
+            thread = threading.Thread(**item)
+            threads.append(thread)
+            thread.start()
+            
+        for thread in threads:
+            thread.join()
 
     # use content processor to generate operator settings
     def __build_settings(self, operator_name):
@@ -56,119 +63,57 @@ class Builder:
         return
 
     def __build_assets(self, operator_name):
-
         use_skel = self.config["operator"]["use_skel"]
-        source_path = self.config["operator"]["source_folder"].format(name=operator_name)
-        target_path = self.config["operator"]["target_folder"].format(name=operator_name)
-        common_name = self.config["operators"][operator_name]["_operator_settings.js"]["filename"]
-        fallback_name = self.config["operators"][operator_name]["index.html"]["fallback_name"]
-        id_name = self.config["operators"][operator_name]["index.html"]["id"]
         file_paths = dict(
-            json=target_path + common_name + ".json",
-            atlas=target_path + common_name + ".atlas",
-            skel=target_path + common_name + ".skel",
+            source=self.config["operator"]["source_folder"].format(name=operator_name),
+            target=self.config["operator"]["target_folder"].format(name=operator_name),
+            common_name=self.config["operators"][operator_name]["_operator_settings.js"]["filename"],
+            fallback_name=self.config["operators"][operator_name]["index.html"]["fallback_name"],
+            id_name=self.config["operators"][operator_name]["index.html"]["id"]
         )
 
-        operator_file = pathlib.Path.cwd().joinpath(target_path, "..", "{}_assets.js".format(id_name))
+        operator_file = pathlib.Path.cwd().joinpath(file_paths["target"], "..", "{}_assets.js".format(file_paths["id_name"]))
         if operator_file.exists() is False or self.rebuild is True:
             print("Building operator data for {}...".format(operator_name))
 
-            alpha_composite_threads = list()
-            png_to_base64_threads = list()
             prefix = "window.operatorAssets = "
             data = dict()
 
-            ar = AtlasReader(source_path + common_name, target_path + common_name)
-
-            skeleton_binary_thread = threading.Thread(
-                target=SkeletonBinary, 
-                args=(source_path + common_name, target_path + common_name, use_skel),
-                daemon=True,
-            )
-            ar_thread = threading.Thread(
-                target=ar.get_images, 
-                daemon=True,
-            )
-            atlas_base64_thread = threading.Thread(
-                target=self.__atlas_to_base64, 
-                args=(
-                    file_paths["atlas"],
-                    data,
-                    self.config["server"]["operator_folder"] + common_name + ".atlas",
+            thread_map = [
+                dict(
+                    target=self.__ar_thread,
+                    args=(
+                        file_paths,
+                        data
+                    ),
+                    daemon=True,
                 ),
-                daemon=True,
-            )
-            fallback_thread = threading.Thread(
-                target=AlphaComposite, 
-                args=(source_path + fallback_name, target_path + "../{}".format(fallback_name)),
-                daemon=True,
-            )
-
-            ar_thread.start()
-            skeleton_binary_thread.start()
-            fallback_thread.start()
-            ar_thread.join()
-            atlas_base64_thread.start()
-
-            # alpha composite for live 2d assets
-            for item in ar.images:
-                alpha_composite_thread = threading.Thread(
-                    target=AlphaComposite, 
-                    args=(source_path + item, target_path + item),
+                dict(
+                    target=self.__skeleton_binary_thread,
+                    args=(
+                        file_paths,
+                        data,
+                        use_skel
+                    ),
                     daemon=True,
-                )
-                alpha_composite_threads.append(alpha_composite_thread)
-                alpha_composite_thread.start()
-            
-            for thread in alpha_composite_threads:
+                ),
+                dict(
+                    target=self.__fallback_thread,
+                    args=(
+                        file_paths,
+                        data
+                    ),
+                    daemon=True,
+                ),
+            ]
+            threads = list()
+            for item in thread_map:
+                thread = threading.Thread(**item)
+                threads.append(thread)
+                thread.start()
+                
+            for thread in threads:
                 thread.join()
-            
-            for item in ar.images:
-                png_to_base64_thread = threading.Thread(
-                    target=self.__png_to_base64, 
-                    args=(
-                        target_path + item,
-                        data,
-                        self.config["server"]["operator_folder"] + item,
-                    ),
-                    daemon=True,
-                )
-
-                png_to_base64_threads.append(png_to_base64_thread)
-                png_to_base64_thread.start()
-
-            skeleton_binary_thread.join()
-            if use_skel is True:
-                skel_base64_thread =threading.Thread(
-                    target=self.__skel_to_base64, 
-                    args=(
-                        file_paths["skel"],
-                        data,
-                        self.config["server"]["operator_folder"] + common_name + ".skel",
-                    ),
-                    daemon=True,
-                )
-                skel_base64_thread.start()
-                skel_base64_thread.join()
-            else:
-                json_base64_thread =threading.Thread(
-                    target=self.__json_to_base64, 
-                    args=(
-                        file_paths["json"],
-                        data,
-                        self.config["server"]["operator_folder"] + common_name + ".json",
-                    ),
-                    daemon=True,
-                )
-                json_base64_thread.start()
-                json_base64_thread.join()
-
-            # join remaining threads
-            for thread in png_to_base64_threads:
-                thread.join()
-
-            atlas_base64_thread.join()
-            fallback_thread.join()
             
             jsonContent = prefix + str(data)
             with open(operator_file, "w") as f:
@@ -178,6 +123,80 @@ class Builder:
         else:
             print("Operator data for {} has been built.".format(operator_name))
         return
+
+    def __ar_thread(self, file_paths, data):
+        source_path = file_paths["source"]
+        target_path = file_paths["target"]
+        common_name = file_paths["common_name"]
+
+        png_to_base64_threads = list()
+        alpha_composite_threads = list()
+        ar = AtlasReader(source_path + common_name, target_path + common_name)
+        images = ar.get_images()
+        atlas_to_base64_thread = threading.Thread(
+            target=self.__atlas_to_base64, 
+            args=(
+                target_path + common_name + ".atlas",
+                data,
+                self.config["server"]["operator_folder"] + common_name + ".atlas",
+            ),
+            daemon=True,
+        )
+        atlas_to_base64_thread.start()
+
+        for item in images:
+            alpha_composite_thread = threading.Thread(
+                target=AlphaComposite, 
+                args=(source_path + item, target_path + item),
+                daemon=True,
+            )
+            alpha_composite_threads.append(alpha_composite_thread)
+            alpha_composite_thread.start()
+        for thread in alpha_composite_threads:
+            thread.join()
+            
+        for item in images:
+            png_to_base64_thread = threading.Thread(
+                target=self.__png_to_base64, 
+                args=(
+                    target_path + item,
+                    data,
+                    self.config["server"]["operator_folder"] + item,
+                ),
+                daemon=True,
+            )
+
+            png_to_base64_threads.append(png_to_base64_thread)
+            png_to_base64_thread.start()
+        for thread in png_to_base64_threads:
+            thread.join()
+        atlas_to_base64_thread.join()
+
+    def __skeleton_binary_thread(self, file_paths, data, use_skel):
+        source_path = file_paths["source"]
+        target_path = file_paths["target"]
+        common_name = file_paths["common_name"]
+
+        SkeletonBinary(source_path + common_name, target_path + common_name, use_skel)
+        if use_skel is True:
+            self.__skel_to_base64(
+                target_path + common_name + ".skel",
+                data,
+                self.config["server"]["operator_folder"] + common_name + ".skel",
+            )
+        else:
+            self.__json_to_base64(
+                target_path + common_name + ".json",
+                data,
+                self.config["server"]["operator_folder"] + common_name + ".json",
+            )
+
+    def __fallback_thread(self, file_paths, data):
+        source_path = file_paths["source"]
+        target_path = file_paths["target"]
+        fallback_name = file_paths["fallback_name"]
+
+        AlphaComposite(source_path + fallback_name, target_path + "../{}".format(fallback_name))
 
     def __json_to_base64(self, path, dict=None, key=None):
         with open(pathlib.Path.cwd().joinpath(path), "r") as f:

@@ -19,30 +19,33 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 
 ``` bash
 $ python3 aklive2d.py -h  
-usage: aklive2d [-h] {server,s,build,b} ...
+usage: aklive2d [-h] {server,s,build,b,init,i} ...
 
 Arknights Live 2D Wallpaper Builder
 
 optional arguments:
-  -h, --help          show this help message and exit
+  -h, --help            show this help message and exit
 
 Available commands:
-  {server,s,build,b}  <Required> Select the command to run
-    server (s)        Development Server
-    build (b)         Build releases
+  {server,s,build,b,init,i}
+                        <Required> Select the command to run
+    server (s)          Development Server
+    build (b)           Build releases
+    init (i)            Initialize a new operator
 ```
 ``` bash
 $ python3 aklive2d.py s -h
-usage: aklive2d server [-h] [-p PORT] -o OPERATOR_NAME
+usage: aklive2d server [-h] [-p PORT] -o OPERATOR_NAME [-r]
 
 optional arguments:
   -h, --help            show this help message and exit
   -p PORT, --port PORT  Development server port (default: 8080)
   -o OPERATOR_NAME, --operator OPERATOR_NAME
                         <Required> Operatro to develop (default: None)
+  -r, --rebuild         Rebuild assets (default: False)
 ```
 ``` bash
-$ python aklive2d.py b -h
+$ python3 aklive2d.py b -h
 usage: aklive2d build [-h] [-o OPERATOR_NAMES [OPERATOR_NAMES ...]] [-r]
 
 optional arguments:
@@ -50,6 +53,13 @@ optional arguments:
   -o OPERATOR_NAMES [OPERATOR_NAMES ...], --operators OPERATOR_NAMES [OPERATOR_NAMES ...]
                         Operators to build (default: ['all'])
   -r, --rebuild         Rebuild assets (default: False)
+```
+``` bash
+$ python3 aklive2d.py i -h
+usage: aklive2d init [-h]
+
+optional arguments:
+  -h, --help  show this help message and exit
 ```
 ### Webpage & JavaScript
 
@@ -74,21 +84,48 @@ settings.reset() // reset settings
 
 ## Config
 ``` yaml
+# share properties for all operators
+operator:
+  preview: preview.jpg # Steam workshop preview image file
+  project_json: project.json # Steam workshop project file
+  source_folder: ./operator/{name}/extracted/ # The folder that stores extracted game files
+  target_folder: ./operator/{name}/processed/ # The folder that stores processed game files
+  use_skel: true # For the Spine model, <true> for using skel file, otherwise use json
+# Development server settings
 # List all the supported operators under <operators> block
 operators:
-  # Single operator block
-  skadi: # <operator name>/<folder name under "operator" folder>, will be used to replace <{name}>
-    common_name: dyn_illust_char_1012_skadi2 # common file name
-    fallback_name: char_1012_skadi2_2 # fallback image file name
-    logo_name: logo_egir # operator logo file name under operator/_logo folder
-    preview: preview.jpg # Steam workshop preview image file
-    project_json: project.json # Steam workshop project file
-    release_folder: ./release/{name}/ # The folder that stores game files for the showcase webpage
-    source_folder: ./operator/{name}/extracted/ # The folder that stores extracted game files
-    target_folder: ./operator/{name}/ # The folder that stores processed game files
-    title: Skadi the Corrupting Heart # Webpage title
-    use_skel: true # For the Spine model, <true> for using skel file, otherwise use json
-# Development server settings
+  chen: # <operator name>/<folder name under "operator" folder>, will be used to replace <{name}> above
+    _operator_settings.js: # refer to char_1013_chen2_2_settings.js under operator folder
+      fallbackImage_height: 2048 # fallback image height
+      fallbackImage_width: 2048 # fallback image width
+      filename: dyn_illust_char_1013_chen2 # common file name
+      fps: 60 # default fps target in the webpage
+      opacity: 100 # optional property, can be used in the file
+      viewport_bottom: 1 # bottom padding of the model
+      viewport_left: 0 # left padding of the model
+      viewport_right: 0 # right padding of the model
+      viewport_top: 1 # top padding of the model
+    index.html: # refer to index.html under template folder
+      fallback_name: char_1013_chen2_2 # fallback image name
+      id: char_1013_chen2 # id of the operator
+      operator_logo: logo_rhodes_override # operator logo
+      title: Ch'en the Holungday # webpage title
+      version: __get_version # eval __get_version() function
+    project.json: # refer to project.json under operator folder
+      description: 'Arknights: Ch''en/Chen the Holungday Live 2D\n明日方舟：假日威龙陈 Live
+        2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease
+        set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在
+        Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/chen\nGithub:
+        https://github.com/Halyul/aklive2d' # Steam Workshop description
+      title: 'Arknights: Ch''en/Chen the Holungday - 明日方舟：假日威龙陈' # Steam Workshop title
+      ui_logo_opacity: 100 # logo opacity setting in WE
+      ui_logo_ratio: 61.8 # logo ratio setting in WE
+      ui_operator_logo: 'true' # enable/disable logo in WE
+      ui_position_padding_bottom: 1 # bottom padding of the model in WE
+      ui_position_padding_left: 0 # left padding of the model in WE
+      ui_position_padding_right: 0 # right padding of the model in WE
+      ui_position_padding_top: 1 # top padding of the model in WE
+      workshopid: 2564643862 # Steam Workshop id
 server:
   operator_folder: ./operator/ # The path that the showcase webpage accesses game files
   release_folder: ./release/ # The folder that stores the showcase webpage

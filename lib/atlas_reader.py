@@ -22,6 +22,7 @@ class AtlasReader:
                     self.images.append(line)
                 line = f.readline()
         self.copy()
+        return self.images
     
     def copy(self):
         shutil.copyfile(

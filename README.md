@@ -41,7 +41,7 @@ optional arguments:
   -h, --help            show this help message and exit
   -p PORT, --port PORT  Development server port (default: 8080)
   -o OPERATOR_NAME, --operator OPERATOR_NAME
-                        <Required> Operatro to develop (default: None)
+                        <Required> Operator to develop (default: None)
   -r, --rebuild         Rebuild assets (default: False)
 ```
 ``` bash
@@ -56,10 +56,12 @@ optional arguments:
 ```
 ``` bash
 $ python3 aklive2d.py i -h
-usage: aklive2d init [-h]
+usage: aklive2d init [-h] [-c OPERATOR_NAME]
 
 optional arguments:
-  -h, --help  show this help message and exit
+  -h, --help            show this help message and exit
+  -c OPERATOR_NAME, --copy OPERATOR_NAME
+                        YAML pre-defined Operator assets to copy (default: None)
 ```
 ### Webpage & JavaScript
 

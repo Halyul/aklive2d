@@ -65,8 +65,9 @@ class Config:
         return self.config
     
     def save(self, config):
+        yaml.SafeDumper.ignore_aliases = lambda *args : True
         with open(self.config_path, 'w') as f:
-            yaml.safe_dump(config, f, allow_unicode=True)
+            yaml.safe_dump(config, f, allow_unicode=True, default_flow_style=False)
     
     def __read_config(self):
         try:

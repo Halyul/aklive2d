@@ -48,7 +48,7 @@ class AkLive2D:
             dest="operator_name", 
             type=str, 
             required=True, 
-            help="<Required> Operatro to develop",
+            help="<Required> Operator to develop",
         )
         server.add_argument(
             "-r", 
@@ -87,6 +87,13 @@ class AkLive2D:
             aliases=['i'], 
             formatter_class=argparse.ArgumentDefaultsHelpFormatter
         )
+        initializer.add_argument(
+            "-c", 
+            "--copy", 
+            dest="operator_name",
+            type=str, 
+            help="YAML pre-defined Operator assets to copy",
+        )
 
         self.args = parser.parse_args()
         if self.args.command == "server" or self.args.command == "s":
@@ -94,7 +101,7 @@ class AkLive2D:
         elif self.args.command == "build" or self.args.command == "b":
             self.running = Builder(self.config, self.args.operator_names, self.args.rebuild)
         elif self.args.command == "init" or self.args.command == "i":
-            self.running = Initializer(self.config)
+            self.running = Initializer(self.config, self.args.operator_name)
 
         self.running.start()
 

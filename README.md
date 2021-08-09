@@ -6,9 +6,9 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 
 | Operator | Live Preview | Steam Workshop |
 |----------|--------------|----------------|
-| Nian | [Link](https://arknights.halyul.dev/nian/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2492307783) |
+| Nian | [Link](https://arknights.halyul.dev/nian/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2564642594) |
 | Skadi the Corrupting Heart | [Link](https://arknights.halyul.dev/skadi/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2492307783) |
-| Ch'en the Holungday | [Link](https://arknights.halyul.dev/chen/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2492307783) |
+| Ch'en the Holungday | [Link](https://arknights.halyul.dev/chen/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2564643862) |
 
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
 - For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.

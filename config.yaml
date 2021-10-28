@@ -37,6 +37,38 @@ operators:
       ui_position_padding_right: 0
       ui_position_padding_top: 1
       workshopid: 2564643862
+  nearl:
+    _operator_settings.js:
+      fallbackImage_height: 2048
+      fallbackImage_width: 2048
+      filename: dyn_illust_char_1013_nearl2
+      fps: 60
+      opacity: 100
+      viewport_bottom: 1
+      viewport_left: 0
+      viewport_right: 0
+      viewport_top: 1
+    index.html:
+      fallback_name: char_1013_nearl2_2
+      id: char_1013_nearl2
+      operator_logo: logo_rhodes_override
+      title: Nearl the Radiant Knight
+      version: __get_version
+    project.json:
+      description: 'Arknights: Nearl the Radiant Knight Live 2D\n明日方舟：耀骑士临光 Live 2D\nThe
+        model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease
+        set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在
+        Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/nearl\nGithub:
+        https://github.com/Halyul/aklive2d'
+      title: 'Arknights: Nearl the Radiant Knight - 明日方舟：耀骑士临光'
+      ui_logo_opacity: 100
+      ui_logo_ratio: 61.8
+      ui_operator_logo: 'true'
+      ui_position_padding_bottom: 1
+      ui_position_padding_left: 0
+      ui_position_padding_right: 0
+      ui_position_padding_top: 1
+      workshopid: -1
   nian:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -68,6 +100,38 @@ operators:
       ui_position_padding_right: 2
       ui_position_padding_top: 3
       workshopid: 2564642594
+  rosmontis:
+    _operator_settings.js:
+      fallbackImage_height: 2048
+      fallbackImage_width: 2048
+      filename: dyn_illust_char_1013_rosmontis
+      fps: 60
+      opacity: 100
+      viewport_bottom: 1
+      viewport_left: 0
+      viewport_right: 0
+      viewport_top: 1
+    index.html:
+      fallback_name: char_1013_rosmontis
+      id: char_1013_rosmontis
+      operator_logo: logo_rhodes
+      title: Rosmontis
+      version: __get_version
+    project.json:
+      description: 'Arknights: Rosmontis Live 2D\n明日方舟：迷迭香 Live 2D\nThe model is extracted
+        from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target
+        in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine >
+        设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/rosmontis\nGithub:
+        https://github.com/Halyul/aklive2d'
+      title: 'Arknights: Rosmontis - 明日方舟：迷迭香'
+      ui_logo_opacity: 100
+      ui_logo_ratio: 61.8
+      ui_operator_logo: 'true'
+      ui_position_padding_bottom: 1
+      ui_position_padding_left: 0
+      ui_position_padding_right: 0
+      ui_position_padding_top: 1
+      workshopid: -1
   skadi:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -99,6 +163,38 @@ operators:
       ui_position_padding_right: -10
       ui_position_padding_top: 0
       workshopid: 2492307783
+  w:
+    _operator_settings.js:
+      fallbackImage_height: 2048
+      fallbackImage_width: 2048
+      filename: dyn_illust_char_1013_w
+      fps: 60
+      opacity: 100
+      viewport_bottom: 1
+      viewport_left: 0
+      viewport_right: 0
+      viewport_top: 1
+    index.html:
+      fallback_name: char_1013_w
+      id: char_1013_w
+      operator_logo: logo_babel
+      title: W
+      version: __get_version
+    project.json:
+      description: 'Arknights: W Live 2D\n明日方舟：W Live 2D\nThe model is extracted from
+        game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in
+        Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置
+        > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/w\nGithub:
+        https://github.com/Halyul/aklive2d'
+      title: 'Arknights: W - 明日方舟：W'
+      ui_logo_opacity: 100
+      ui_logo_ratio: 61.8
+      ui_operator_logo: 'true'
+      ui_position_padding_bottom: 1
+      ui_position_padding_left: 0
+      ui_position_padding_right: 0
+      ui_position_padding_top: 1
+      workshopid: -1
 server:
   operator_folder: ./operator/
   release_folder: ./release/

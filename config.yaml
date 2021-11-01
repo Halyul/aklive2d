@@ -41,17 +41,17 @@ operators:
     _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
-      filename: dyn_illust_char_1013_nearl2
+      filename: dyn_illust_char_1014_nearl2
       fps: 60
-      opacity: 100
-      viewport_bottom: 1
-      viewport_left: 0
-      viewport_right: 0
-      viewport_top: 1
+      opacity: 30
+      viewport_bottom: 0
+      viewport_left: 2
+      viewport_right: 3
+      viewport_top: 10
     index.html:
-      fallback_name: char_1013_nearl2_2
-      id: char_1013_nearl2
-      operator_logo: logo_rhodes_override
+      fallback_name: char_1014_nearl2_2
+      id: char_1014_nearl2
+      operator_logo: logo_kazimierz
       title: Nearl the Radiant Knight
       version: __get_version
     project.json:
@@ -61,14 +61,14 @@ operators:
         Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/nearl\nGithub:
         https://github.com/Halyul/aklive2d'
       title: 'Arknights: Nearl the Radiant Knight - 明日方舟：耀骑士临光'
-      ui_logo_opacity: 100
+      ui_logo_opacity: 30
       ui_logo_ratio: 61.8
       ui_operator_logo: 'true'
-      ui_position_padding_bottom: 1
-      ui_position_padding_left: 0
-      ui_position_padding_right: 0
-      ui_position_padding_top: 1
-      workshopid: -1
+      ui_position_padding_bottom: 0
+      ui_position_padding_left: 2
+      ui_position_padding_right: 3
+      ui_position_padding_top: 10
+      workshopid: 2642836787
   nian:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -104,17 +104,17 @@ operators:
     _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
-      filename: dyn_illust_char_1013_rosmontis
+      filename: dyn_illust_char_391_rosmon
       fps: 60
       opacity: 100
-      viewport_bottom: 1
+      viewport_bottom: -1
       viewport_left: 0
-      viewport_right: 0
-      viewport_top: 1
+      viewport_right: -14
+      viewport_top: -38
     index.html:
-      fallback_name: char_1013_rosmontis
-      id: char_1013_rosmontis
-      operator_logo: logo_rhodes
+      fallback_name: char_391_rosmon_2
+      id: char_391_rosmon
+      operator_logo: logo_rhodes_override
       title: Rosmontis
       version: __get_version
     project.json:
@@ -127,11 +127,11 @@ operators:
       ui_logo_opacity: 100
       ui_logo_ratio: 61.8
       ui_operator_logo: 'true'
-      ui_position_padding_bottom: 1
+      ui_position_padding_bottom: -1
       ui_position_padding_left: 0
-      ui_position_padding_right: 0
-      ui_position_padding_top: 1
-      workshopid: -1
+      ui_position_padding_right: -14
+      ui_position_padding_top: -38
+      workshopid: 2642834981
   skadi:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -167,16 +167,16 @@ operators:
     _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
-      filename: dyn_illust_char_1013_w
+      filename: dyn_illust_char_113_cqbw
       fps: 60
-      opacity: 100
+      opacity: 30
       viewport_bottom: 1
-      viewport_left: 0
-      viewport_right: 0
-      viewport_top: 1
+      viewport_left: 3
+      viewport_right: -3
+      viewport_top: 0
     index.html:
-      fallback_name: char_1013_w
-      id: char_1013_w
+      fallback_name: char_113_cqbw_2
+      id: char_113_cqbw
       operator_logo: logo_babel
       title: W
       version: __get_version
@@ -187,14 +187,14 @@ operators:
         > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/w\nGithub:
         https://github.com/Halyul/aklive2d'
       title: 'Arknights: W - 明日方舟：W'
-      ui_logo_opacity: 100
+      ui_logo_opacity: 30
       ui_logo_ratio: 61.8
       ui_operator_logo: 'true'
       ui_position_padding_bottom: 1
-      ui_position_padding_left: 0
-      ui_position_padding_right: 0
-      ui_position_padding_top: 1
-      workshopid: -1
+      ui_position_padding_left: 3
+      ui_position_padding_right: -3
+      ui_position_padding_top: 0
+      workshopid: 2642838078
 server:
   operator_folder: ./operator/
   release_folder: ./release/

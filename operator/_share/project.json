@@ -165,7 +165,5 @@
 	"tags" : [ "Game" ],
 	"title" : "{# title #}",
 	"type" : "web",
-	"version" : 1,
-	"workshopid" : "{# workshopid #}",
-	"workshopurl" : "steam://url/CommunityFilePage/{# workshopid #}"
+	"version" : 1
 }

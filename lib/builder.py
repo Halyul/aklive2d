@@ -115,9 +115,13 @@ class Builder:
             for thread in threads:
                 thread.join()
             
-            jsonContent = prefix + str(data)
+            sorted_data = dict()
+            for i in sorted(data.keys()):
+                sorted_data[i] = data[i]
+
+            json_content = prefix + str(sorted_data)
             with open(operator_file, "w") as f:
-                f.write(jsonContent)
+                f.write(json_content)
             
             print("Finished building operator data for {}.".format(operator_name))
         else:

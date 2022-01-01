@@ -2,27 +2,27 @@ let isPlayingInteract = false;
 let resetTime = window.performance.now();
 window.operatorSettings = {
     fallbackImage: {
-        width: {# fallbackImage_width #},
-        height: {# fallbackImage_height #},
+        width: ${format:fallbackImage_width},
+        height: ${format:fallbackImage_height},
     },
     viewport: {
         debugRender: false,
-        padLeft: "{# viewport_left #}%",
-        padRight: "{# viewport_right #}%",
-        padTop: "{# viewport_top #}%",
-        padBottom: "{# viewport_bottom #}%",
+        padLeft: "${format:viewport_left}%",
+        padRight: "${format:viewport_right}%",
+        padTop: "${format:viewport_top}%",
+        padBottom: "${format:viewport_bottom}%",
         x: 0,
         y: 0,
     },
-    fps: {# fps #},
+    fps: ${format:fps},
     animation: "Idle",
-    // jsonUrl: "./operator/{# filename #}.json",
-    skelUrl: "./operator/{# filename #}.skel",
-    atlasUrl: "./operator/{# filename #}.atlas",
+    // jsonUrl: "./operator/${format:filename}.json",
+    skelUrl: "./operator/${format:filename}.skel",
+    atlasUrl: "./operator/${format:filename}.atlas",
     defaultMix: 0,
     success: function (widget) {
         settings.disableInvertFilter();
-        settings.opacityLogo({# opacity #});
+        settings.opacityLogo(${format:opacity});
         widget.animationState.addListener({
             end: (e) => {
                 if (e.animation.name == "Interact") {

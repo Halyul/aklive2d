@@ -44,17 +44,13 @@ class Config:
                     viewport_right=int,
                     viewport_top=int,
                     viewport_bottom=int,
+                    opacity=int,
                 ),
                 "project.json": dict(
                     description=str,
                     title=str,
-                    ui_logo_opacity=int,
                     ui_logo_ratio=float,
                     ui_operator_logo=str,
-                    ui_position_padding_left=int,
-                    ui_position_padding_right=int,
-                    ui_position_padding_top=int,
-                    ui_position_padding_bottom=int,
                     workshopid=int,
                 )
             }

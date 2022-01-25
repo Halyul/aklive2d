@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "Arknights: Everything is a Miracle / Dusk Live 2D\n明日方舟：染尘烟·夕 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/dusk_everything_is_a_miracle\nGithub: https://github.com/Halyul/aklive2d",
+	"description" : "Arknights: Dusk Live 2D\n明日方舟：夕 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/dusk\nGithub: https://github.com/Halyul/aklive2d",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -163,7 +163,7 @@
 	},
 	"preview" : "preview.jpg",
 	"tags" : [ "Game" ],
-	"title" : "Arknights: Everything is a Miracle / Dusk - 明日方舟：染尘烟·夕",
+	"title" : "Arknights: Dusk - 明日方舟：夕",
 	"type" : "web",
 	"version" : 1
 }

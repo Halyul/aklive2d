@@ -77,7 +77,7 @@ class Initializer:
         copy_map = [
             dict(
                 source_name="operator_settings.js",
-                target_name="{}_settings.js".format(self.config["operators"][self.operator_name]["index.html"]["id"]),
+                target_name="{}_settings.js".format(self.config["operators"][self.operator_name]["index.html"]["id"].replace("%23", "#")),
                 source_path=operator_settings_path,
                 target_path=dir_map["config"],
             ),

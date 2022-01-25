@@ -68,7 +68,7 @@ class Builder:
             source=self.config["operator"]["source_folder"].format(name=operator_name),
             target=self.config["operator"]["target_folder"].format(name=operator_name),
             common_name=self.config["operators"][operator_name]["_operator_settings.js"]["filename"],
-            fallback_name=self.config["operators"][operator_name]["index.html"]["fallback_name"],
+            fallback_name=self.config["operators"][operator_name]["index.html"]["fallback_name"].replace("%23", "#"),
             id_name=self.config["operators"][operator_name]["index.html"]["id"].replace("%23", "#")
         )
 

@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Unfettered Freedom / Nian - 明日方舟：乐逍遥·年",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2730943815",
+	"workshopurl" : "steam://url/CommunityFilePage/2730943815"
 }

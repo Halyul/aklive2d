@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Ling - 明日方舟：令",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2730944363",
+	"workshopurl" : "steam://url/CommunityFilePage/2730944363"
 }

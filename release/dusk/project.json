@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Dusk - 明日方舟：夕",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2730942651",
+	"workshopurl" : "steam://url/CommunityFilePage/2730942651"
 }

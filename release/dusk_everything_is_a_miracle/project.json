@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Everything is a Miracle / Dusk - 明日方舟：染尘烟·夕",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2730943249",
+	"workshopurl" : "steam://url/CommunityFilePage/2730943249"
 }

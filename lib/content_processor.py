@@ -40,7 +40,7 @@ class ContentProcessor:
                     replace_value = value
                 self.settings[item_key][key] = replace_value
         # copy dict value _operator_settings.js to {id}_settings.js
-        settings_filename = "{}_settings.js".format(self.settings["index.html"]["id"])
+        settings_filename = "{}_settings.js".format(self.settings["index.html"]["id"].replace("%23", "#"))
         self.settings[settings_filename] = self.settings["_operator_settings.js"]
         self.file_to_process.append(settings_filename)
 

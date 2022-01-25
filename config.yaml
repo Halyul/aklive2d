@@ -36,7 +36,6 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: 2564643862
   dusk_everything_is_a_miracle:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -68,7 +67,6 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: -1
   ling:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -100,7 +98,6 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: -1
   nearl:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -132,7 +129,6 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: 2642836787
   nian:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -164,21 +160,21 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: 2564642594
   nian_unfettered_freedom:
     _operator_settings.js:
       fallbackImage_height: 2048
       fallbackImage_width: 2048
-      filename: dyn_illust_char_2014_nian2
+      filename: dyn_illust_char_2014_nian_nian#4
       fps: 60
       opacity: 30
-      viewport_bottom: 5
-      viewport_left: 2
-      viewport_right: 2
-      viewport_top: 3
+      viewport_bottom: 0
+      viewport_left: 0
+      viewport_right: 0
+      viewport_top: 0
     index.html:
-      fallback_name: char_2014_nian2_2
-      id: char_2014_nian
+      fallback_name: char_2014_nian_nian#4
+      # "#" to "%23"
+      id: char_2014_nian_nian%234
       operator_logo: logo_sui
       title: 'Arknights: Unfettered Freedom / Nian - 明日方舟：乐逍遥·年'
       version: ${func:get_version()}
@@ -196,7 +192,6 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: -1
   rosmontis:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -228,7 +223,6 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: 2642834981
   skadi:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -260,7 +254,6 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: 2492307783
   w:
     _operator_settings.js:
       fallbackImage_height: 2048
@@ -292,7 +285,6 @@ operators:
       ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
       ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
       ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
-      workshopid: 2642838078
 server:
   operator_folder: ./operator/
   release_folder: ./release/

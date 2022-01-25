@@ -51,7 +51,6 @@ class Config:
                     title=str,
                     ui_logo_ratio=float,
                     ui_operator_logo=str,
-                    workshopid=int,
                 )
             }
         )

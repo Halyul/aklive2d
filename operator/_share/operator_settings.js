@@ -33,7 +33,7 @@ window.operatorSettings = {
                 if (window.performance.now() - resetTime >= 8 * 1000 && Math.random() < 0.3) {
                     resetTime = window.performance.now();
                     let entry = widget.animationState.setAnimation(0, "Special", false, 0);
-                    entry.mixDuration = 0.8;
+                    entry.mixDuration = 0.3;
                     widget.animationState.addAnimation(0, "Idle", true, 0);
                 }
             },
@@ -44,7 +44,7 @@ window.operatorSettings = {
             }
             isPlayingInteract = true;
             let entry = widget.animationState.setAnimation(0, "Interact", false, 0);
-            entry.mixDuration = 0.8;
+            entry.mixDuration = 0.3;
             widget.animationState.addAnimation(0, "Idle", true, 0);
         }
     },

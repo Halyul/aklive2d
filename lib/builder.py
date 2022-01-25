@@ -69,7 +69,7 @@ class Builder:
             target=self.config["operator"]["target_folder"].format(name=operator_name),
             common_name=self.config["operators"][operator_name]["_operator_settings.js"]["filename"],
             fallback_name=self.config["operators"][operator_name]["index.html"]["fallback_name"],
-            id_name=self.config["operators"][operator_name]["index.html"]["id"]
+            id_name=self.config["operators"][operator_name]["index.html"]["id"].replace("%23", "#")
         )
 
         operator_file = pathlib.Path.cwd().joinpath(file_paths["target"], "..", "{}_assets.js".format(file_paths["id_name"]))

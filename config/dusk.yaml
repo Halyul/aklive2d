@@ -1,0 +1,26 @@
+_operator_settings.js:
+  fallbackImage_height: 2048
+  fallbackImage_width: 2048
+  filename: dyn_illust_char_2015_dusk
+  fps: 60
+  opacity: 30
+  viewport_bottom: 0
+  viewport_left: 0
+  viewport_right: 0
+  viewport_top: 0
+index.html:
+  fallback_name: char_2015_dusk_2
+  id: char_2015_dusk
+  operator_logo: logo_sui
+  title: 'Arknights: Dusk - 明日方舟：夕'
+  version: ${func:get_version()}
+project.json:
+  description: 'Arknights: Dusk Live 2D\n明日方舟：夕 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/dusk\nGithub: https://github.com/Halyul/aklive2d'
+  title: ${var:index.html->title}
+  ui_logo_opacity: ${var:_operator_settings.js->opacity}
+  ui_logo_ratio: 61.8
+  ui_operator_logo: 'true'
+  ui_position_padding_bottom: ${var:_operator_settings.js->viewport_bottom}
+  ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
+  ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
+  ui_position_padding_top: ${var:_operator_settings.js->viewport_top}

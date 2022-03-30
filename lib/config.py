@@ -1,4 +1,5 @@
 import pathlib, yaml
+from yamlinclude import YamlIncludeConstructor
 
 class Config:
 
@@ -58,14 +59,10 @@ class Config:
         self.__read_config()
         return self.config
     
-    def save(self, config):
-        yaml.SafeDumper.ignore_aliases = lambda *args : True
-        with open(self.config_path, 'w') as f:
-            yaml.safe_dump(config, f, allow_unicode=True, default_flow_style=False)
-    
     def __read_config(self):
         try:
-            self.config = yaml.safe_load(open(self.config_path, "r"))
+            YamlIncludeConstructor.add_to_loader_class(loader_class=yaml.FullLoader, base_dir=pathlib.Path.cwd())
+            self.config = yaml.load(open(self.config_path, "r"), Loader=yaml.FullLoader)
         except Exception as e:
             raise
         else:
@@ -86,8 +83,6 @@ class Config:
             self.__config_check(operator_name, operator_content, self.valid_keys[key])
             for filename, filetype in self.config[key][operator_name].items():
                 self.__config_check(filename, filetype, self.valid_keys["operator_config"][filename])
-        
-        self.save(self.config)
     
     def __config_check(self, block_name: str, contents: dict, required_keys: dict):
         checklist = [key for key in required_keys]

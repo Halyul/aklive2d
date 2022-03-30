@@ -99,7 +99,6 @@ operator:
   project_json: project.json # Steam workshop project file
   source_folder: ./operator/{name}/extracted/ # The folder that stores extracted game files
   target_folder: ./operator/{name}/processed/ # The folder that stores processed game files
-  use_skel: true # For the Spine model, <true> for using skel file, otherwise use json
 # Development server settings
 # List all the supported operators under <operators> block
 operators:

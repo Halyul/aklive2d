@@ -1,0 +1,26 @@
+_operator_settings.js:
+  fallbackImage_height: 2048
+  fallbackImage_width: 2048
+  filename: dyn_illust_char_1012_skadi2
+  fps: 60
+  opacity: 30
+  viewport_bottom: -12
+  viewport_left: -5
+  viewport_right: -10
+  viewport_top: 0
+index.html:
+  fallback_name: char_1012_skadi2_2
+  id: char_1012_skadi2
+  operator_logo: logo_egir
+  title: 'Arknights: Skadi the Corrupting Heart - 明日方舟：浊心斯卡蒂'
+  version: ${func:get_version()}
+project.json:
+  description: 'Arknights: Skadi the Corrupting Heart Live 2Di\r\n明日方舟：浊心斯卡蒂 Live 2Di\r\nThe model is extracted from game with Spine support.\r\n模型来自游戏内提取，支持Spine\r\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\r\n请在Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\r\n\r\nLive preview on: https://arknights.halyul.dev/skadi\r\nGithub: https://github.com/Halyul/aklive2d'
+  title: ${var:index.html->title}
+  ui_logo_opacity: ${var:_operator_settings.js->opacity}
+  ui_logo_ratio: 61.8
+  ui_operator_logo: 'true'
+  ui_position_padding_bottom: ${var:_operator_settings.js->viewport_bottom}
+  ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
+  ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
+  ui_position_padding_top: ${var:_operator_settings.js->viewport_top}

@@ -3,7 +3,6 @@ operator:
   project_json: project.json
   source_folder: ./operator/{name}/extracted/
   target_folder: ./operator/{name}/processed/
-  use_skel: true
 operators:
   chen:
     _operator_settings.js:
@@ -229,10 +228,10 @@ operators:
       filename: dyn_illust_char_250_phatom_sale#4
       fps: 60
       opacity: 30
-      viewport_bottom: 5
-      viewport_left: 2
-      viewport_right: 2
-      viewport_top: 3
+      viewport_bottom: 1
+      viewport_left: 0
+      viewport_right: 0
+      viewport_top: 5
     index.html:
       fallback_name: char_250_phatom_sale%234
       id: char_250_phatom_sale%234

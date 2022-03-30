@@ -106,7 +106,7 @@
 				"order" : 110,
 				"text" : "ui_position_padding_bottom",
 				"type" : "slider",
-				"value" : 5
+				"value" : 1
 			},
 			"paddingleft" : 
 			{
@@ -118,7 +118,7 @@
 				"order" : 107,
 				"text" : "ui_position_padding_left",
 				"type" : "slider",
-				"value" : 2
+				"value" : 0
 			},
 			"paddingright" : 
 			{
@@ -130,7 +130,7 @@
 				"order" : 108,
 				"text" : "ui_position_padding_right",
 				"type" : "slider",
-				"value" : 2
+				"value" : 0
 			},
 			"paddingtop" : 
 			{
@@ -142,7 +142,7 @@
 				"order" : 109,
 				"text" : "ui_position_padding_top",
 				"type" : "slider",
-				"value" : 3
+				"value" : 5
 			},
 			"position" : 
 			{

@@ -21,7 +21,6 @@ class Config:
                 "project.json": dict
             },
             operator=dict(
-                use_skel=bool,
                 preview=str,
                 project_json=str,
                 source_folder=str,

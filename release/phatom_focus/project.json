@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "Arknights: Placeholder / Phatom - 明日方舟：Placeholder·傀影 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/phatom_placeholder\nGithub: https://github.com/Halyul/aklive2d",
+	"description" : "Arknights: Focus / Phatom - 明日方舟：焦点·傀影 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/phatom_focus\nGithub: https://github.com/Halyul/aklive2d",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -163,7 +163,7 @@
 	},
 	"preview" : "preview.jpg",
 	"tags" : [ "Game" ],
-	"title" : "Arknights: Placeholder / Phatom - 明日方舟：Placeholder·傀影",
+	"title" : "Arknights: Focus / Phatom - 明日方舟：焦点·傀影",
 	"type" : "web",
 	"version" : 1
 }

@@ -11,7 +11,7 @@ operators:
   nearl: !include config/nearl.yaml
   nian: !include config/nian.yaml
   nian_unfettered_freedom: !include config/nian_unfettered_freedom.yaml
-  phatom_placeholder: !include config/phatom_placeholder.yaml
+  phatom_focus: !include config/phatom_focus.yaml
   rosmontis: !include config/rosmontis.yaml
   skadi: !include config/skadi.yaml
   w: !include config/w.yaml

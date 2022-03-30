@@ -12,10 +12,10 @@ index.html:
   fallback_name: char_250_phatom_sale%234
   id: char_250_phatom_sale%234
   operator_logo: logo_victoria
-  title: 'Arknights: Placeholder / Phatom - 明日方舟：Placeholder·傀影'
+  title: 'Arknights: Focus / Phatom - 明日方舟：焦点·傀影'
   version: ${func:get_version()}
 project.json:
-  description: 'Arknights: Placeholder / Phatom - 明日方舟：Placeholder·傀影 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/phatom_placeholder\nGithub: https://github.com/Halyul/aklive2d'
+  description: 'Arknights: Focus / Phatom - 明日方舟：焦点·傀影 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/phatom_focus\nGithub: https://github.com/Halyul/aklive2d'
   title: ${var:index.html->title}
   ui_logo_opacity: ${var:_operator_settings.js->opacity}
   ui_logo_ratio: 61.8

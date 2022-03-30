@@ -8,6 +8,7 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 |----------|--------------|----------------|
 | Nian | [Link](https://arknights.halyul.dev/nian/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2564642594) |
 | Unfettered Freedom / Nian | [Link](https://arknights.halyul.dev/nian_unfettered_freedom/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730943815) |
+| Focus / Phatom | [Link](https://arknights.halyul.dev/phatom_focus/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2786960745) |
 | W | [Link](https://arknights.halyul.dev/w/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642838078) |
 | Rosmontis | [Link](https://arknights.halyul.dev/rosmontis/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642834981) |
 | Dusk | [Link](https://arknights.halyul.dev/dusk/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730942651) |

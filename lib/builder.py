@@ -1,6 +1,5 @@
 import threading
 import shutil
-from lib.skeleton_binary import SkeletonBinary
 from lib.alpha_composite import AlphaComposite
 from lib.atlas_reader import AtlasReader
 from lib.base64_util import *
@@ -63,7 +62,6 @@ class Builder:
         return
 
     def __build_assets(self, operator_name):
-        use_skel = self.config["operator"]["use_skel"]
         file_paths = dict(
             source=self.config["operator"]["source_folder"].format(name=operator_name),
             target=self.config["operator"]["target_folder"].format(name=operator_name),
@@ -92,8 +90,7 @@ class Builder:
                     target=self.__skeleton_binary_thread,
                     args=(
                         file_paths,
-                        data,
-                        use_skel
+                        data
                     ),
                     daemon=True,
                 ),
@@ -176,24 +173,23 @@ class Builder:
             thread.join()
         atlas_to_base64_thread.join()
 
-    def __skeleton_binary_thread(self, file_paths, data, use_skel):
+    def __skeleton_binary_thread(self, file_paths, data):
         source_path = file_paths["source"]
         target_path = file_paths["target"]
         common_name = file_paths["common_name"]
-
-        SkeletonBinary(source_path + common_name, target_path + common_name, use_skel)
-        if use_skel is True:
-            self.__skel_to_base64(
-                target_path + common_name + ".skel",
-                data,
-                self.config["server"]["operator_folder"] + common_name + ".skel",
-            )
-        else:
-            self.__json_to_base64(
-                target_path + common_name + ".json",
-                data,
-                self.config["server"]["operator_folder"] + common_name + ".json",
-            )
+        if common_name.strip().endswith(".skel") is False:
+            common_name += ".skel"
+        file_path = pathlib.Path.cwd().joinpath(source_path + common_name)
+        save_path = pathlib.Path.cwd().joinpath(target_path + common_name)
+        shutil.copyfile(
+            file_path,
+            save_path
+        )
+        self.__skel_to_base64(
+            save_path,
+            data,
+            self.config["server"]["operator_folder"] + common_name,
+        )
 
     def __fallback_thread(self, file_paths, data):
         source_path = file_paths["source"]

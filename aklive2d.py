@@ -88,10 +88,11 @@ class AkLive2D:
             formatter_class=argparse.ArgumentDefaultsHelpFormatter
         )
         initializer.add_argument(
-            "-c", 
-            "--copy", 
+            "-o", 
+            "--operator", 
             dest="operator_name",
             type=str, 
+            required=True,
             help="YAML pre-defined Operator assets to copy",
         )
 

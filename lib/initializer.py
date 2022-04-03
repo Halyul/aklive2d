@@ -1,65 +1,21 @@
 import pathlib, shutil
-from lib.config import Config
 
 class Initializer:
 
-    def __init__(self, config, operator_name=None) -> None:
+    def __init__(self, config, operator_name) -> None:
         self.config = config
         self.operator_name = operator_name
-        self.yaml_template = dict(config["operators"]["skadi"])
-        self.predefined = False
-        if operator_name is not None:
-            self.predefined = True
         pass
 
     def start(self):
-        if self.operator_name is None:
-            self.__input()
         self.__copy_files()
-        return
-
-    def __input(self):
-        print("=== Setting up basic info ===")
-        print("Eg.", "skadi")
-        while(True):
-            self.operator_name = input("Operator Name: ")
-            if self.operator_name != "":
-                break
-            else:
-                print("Operator name is empty!")
-        print("=== Setting up _operator_settings.js ===")
-        print("Eg.", self.yaml_template["_operator_settings.js"]["filename"])
-        self.yaml_template["_operator_settings.js"]["filename"] = input("Filename: ") or self.yaml_template["_operator_settings.js"]["filename"]
-
-        print("=== Setting up index.html ===")
-        print("Eg.", self.yaml_template["index.html"]["fallback_name"])
-        self.yaml_template["index.html"]["fallback_name"] = input("Fallback Name: ") or self.yaml_template["index.html"]["fallback_name"]
-        print("Eg.", self.yaml_template["index.html"]["id"])
-        self.yaml_template["index.html"]["id"] = input("ID Name: ") or self.yaml_template["index.html"]["id"]
-        print("Eg.", self.yaml_template["index.html"]["operator_logo"])
-        self.yaml_template["index.html"]["operator_logo"] = input("Operator Logo Name: ") or self.yaml_template["index.html"]["operator_logo"]
-        print("Eg.", self.yaml_template["index.html"]["title"])
-        self.yaml_template["index.html"]["title"] = input("Title: ") or self.yaml_template["index.html"]["title"]
-
-        print("=== Setting up project.json ===")
-        print("Eg.", self.yaml_template["project.json"]["title"])
-        self.yaml_template["project.json"]["title"] = input("Title: ") or self.yaml_template["project.json"]["title"]
-        print("Eg.", self.yaml_template["project.json"]["description"])
-        self.yaml_template["project.json"]["description"] = input("Description: ") or self.yaml_template["project.json"]["description"]
-
-        self.config["operators"][self.operator_name] = self.yaml_template
-        Config().save(self.config)
         return
     
     def __copy_files(self):
         # ./operator/<operator_name>
         operator_assets_path = pathlib.Path.cwd().joinpath(self.config["server"]["operator_folder"], self.operator_name)
         if operator_assets_path.exists() is True:
-            if self.predefined is False:
-                shutil.rmtree(operator_assets_path)
-            else:
-                print("Operator assets folder already exists.")
-                return
+            shutil.rmtree(operator_assets_path)
         operator_assets_path.mkdir()
 
         dir_map = dict(

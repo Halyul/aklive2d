@@ -3,7 +3,7 @@ _operator_settings.js:
   fallbackImage_width: 2048
   filename: dyn_illust_char_1014_nearl2
   fps: 60
-  opacity: 30
+  opacity: 100
   viewport_bottom: 0
   viewport_left: 2
   viewport_right: 3

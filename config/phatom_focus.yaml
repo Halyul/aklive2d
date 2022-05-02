@@ -3,7 +3,7 @@ _operator_settings.js:
   fallbackImage_width: 2048
   filename: dyn_illust_char_250_phatom_sale#4
   fps: 60
-  opacity: 30
+  opacity: 100
   viewport_bottom: 1
   viewport_left: 0
   viewport_right: 0

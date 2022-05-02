@@ -22,6 +22,9 @@ window.operatorSettings = {
     defaultMix: 0,
     success: function (widget) {
         settings.opacityLogo(${format:opacity});
+        let entry = widget.animationState.setAnimation(0, "Start", false, 0);
+        entry.mixDuration = 0.3;
+        widget.animationState.addAnimation(0, "Idle", true, 0);
         widget.animationState.addListener({
             end: (e) => {
                 if (e.animation.name == "Interact") {

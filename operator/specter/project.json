@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Specter the Unchained - 明日方舟：归溟幽灵鲨",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2802596772",
+	"workshopurl" : "steam://url/CommunityFilePage/2802596772"
 }

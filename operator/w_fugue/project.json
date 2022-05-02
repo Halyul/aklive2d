@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Fugue / W - 明日方舟：恍惚·W",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2802584758",
+	"workshopurl" : "steam://url/CommunityFilePage/2802584758"
 }

@@ -21,7 +21,6 @@ window.operatorSettings = {
     atlasUrl: "./operator/dyn_illust_char_2014_nian_nian#4.atlas",
     defaultMix: 0,
     success: function (widget) {
-        settings.disableInvertFilter();
         settings.opacityLogo(30);
         widget.animationState.addListener({
             end: (e) => {

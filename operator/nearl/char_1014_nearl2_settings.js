@@ -21,7 +21,7 @@ window.operatorSettings = {
     atlasUrl: "./operator/dyn_illust_char_1014_nearl2.atlas",
     defaultMix: 0,
     success: function (widget) {
-        settings.opacityLogo(30);
+        settings.opacityLogo(100);
         widget.animationState.addListener({
             end: (e) => {
                 if (e.animation.name == "Interact") {

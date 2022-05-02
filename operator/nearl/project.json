@@ -72,7 +72,7 @@
 				"order" : 104,
 				"text" : "ui_logo_opacity",
 				"type" : "slider",
-				"value" : 30
+				"value" : 100
 			},
 			"logoratio" : 
 			{
@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Nearl the Radiant Knight - 明日方舟：耀骑士临光",
 	"type" : "web",
-	"version" : 1
+	"version" : 1,
+	"workshopid" : "2642836787",
+	"workshopurl" : "steam://url/CommunityFilePage/2642836787"
 }

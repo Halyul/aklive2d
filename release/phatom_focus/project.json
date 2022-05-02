@@ -72,7 +72,7 @@
 				"order" : 104,
 				"text" : "ui_logo_opacity",
 				"type" : "slider",
-				"value" : 30
+				"value" : 100
 			},
 			"logoratio" : 
 			{
@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Focus / Phatom - 明日方舟：焦点·傀影",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2786960745",
+	"workshopurl" : "steam://url/CommunityFilePage/2786960745"
 }

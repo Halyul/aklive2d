@@ -21,7 +21,6 @@ window.operatorSettings = {
     atlasUrl: "./operator/${format:filename}.atlas",
     defaultMix: 0,
     success: function (widget) {
-        settings.disableInvertFilter();
         settings.opacityLogo(${format:opacity});
         widget.animationState.addListener({
             end: (e) => {

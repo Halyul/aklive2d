@@ -21,7 +21,6 @@ window.operatorSettings = {
     atlasUrl: "./operator/dyn_illust_char_2023_ling.atlas",
     defaultMix: 0,
     success: function (widget) {
-        settings.disableInvertFilter();
         settings.opacityLogo(30);
         widget.animationState.addListener({
             end: (e) => {

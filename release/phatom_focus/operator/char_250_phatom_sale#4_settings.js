@@ -22,7 +22,7 @@ window.operatorSettings = {
     defaultMix: 0,
     success: function (widget) {
         settings.disableInvertFilter();
-        settings.opacityLogo(30);
+        settings.opacityLogo(100);
         widget.animationState.addListener({
             end: (e) => {
                 if (e.animation.name == "Interact") {

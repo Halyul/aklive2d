@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 var showControls;
-if (params.has("showControls")) {
+if (params.has("controls")) {
     showControls = true;
 } else {
     showControls = false;

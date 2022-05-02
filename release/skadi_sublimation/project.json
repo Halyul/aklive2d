@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Sublimation / Skadi the Corrupting Heart - 明日方舟：升华·浊心斯卡蒂",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2802570125",
+	"workshopurl" : "steam://url/CommunityFilePage/2802570125"
 }

@@ -10,13 +10,16 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 | Unfettered Freedom / Nian | [Link](https://arknights.halyul.dev/nian_unfettered_freedom/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730943815) |
 | Focus / Phatom | [Link](https://arknights.halyul.dev/phatom_focus/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2786960745) |
 | W | [Link](https://arknights.halyul.dev/w/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642838078) |
+| Fugue / W | [Link](https://arknights.halyul.dev/w_fugue/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802584758) |
 | Rosmontis | [Link](https://arknights.halyul.dev/rosmontis/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642834981) |
 | Dusk | [Link](https://arknights.halyul.dev/dusk/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730942651) |
 | Everything is a Miracle / Dusk | [Link](https://arknights.halyul.dev/dusk_everything_is_a_miracle/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730943249) |
 | Skadi the Corrupting Heart | [Link](https://arknights.halyul.dev/skadi/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2492307783) |
+| Sublimation / Skadi the Corrupting Heart | [Link](https://arknights.halyul.dev/skadi_sublimation/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802570125) |
 | Ch'en the Holungday | [Link](https://arknights.halyul.dev/chen/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2564643862) |
 | Nearl the Radiant Knight | [Link](https://arknights.halyul.dev/neral/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642836787) |
 | Ling | [Link](https://arknights.halyul.dev/ling/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730944363) |
+| Specter the Unchained | [Link](https://arknights.halyul.dev/specter/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802596772) |
 
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
 - For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.

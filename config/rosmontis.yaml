@@ -11,7 +11,7 @@ _operator_settings.js:
 index.html:
   fallback_name: char_391_rosmon_2
   id: char_391_rosmon
-  operator_logo: logo_rhodes_override
+  operator_logo: logo_elite
   title: 'Arknights: Rosmontis - 明日方舟：迷迭香'
   version: ${func:get_version()}
 project.json:

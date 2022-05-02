@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "Arknights: Fugue / W - 明日方舟：恍惚·W Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/w——fugue\nGithub: https://github.com/Halyul/aklive2d",
+	"description" : "Arknights: Fugue / W - 明日方舟：恍惚·W Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/w_fugue\nGithub: https://github.com/Halyul/aklive2d",
 	"file" : "index.html",
 	"general" : 
 	{

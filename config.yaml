@@ -18,6 +18,8 @@ operators:
   w: !include config/w.yaml
   w_fugue: !include config/w_fugue.yaml
   specter: !include config/specter.yaml
+  gavial: !include config/gavial.yaml
+  surtr_colorful_wonderland: !include config/surtr_colorful_wonderland.yaml
 server:
   operator_folder: ./operator/
   release_folder: ./release/

@@ -22,6 +22,7 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 | Specter the Unchained | [Link](https://arknights.halyul.dev/specter/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802596772) |
 | Gavial the Invincible | [Link](https://arknights.halyul.dev/gavial/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2847605961) |
 | Colorful Wonderland / Surtr | [Link](https://arknights.halyul.dev/surtr_colorful_wonderland/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2847602015) |
+| Trust Your Eyes / Lee | [Link](https://arknights.halyul.dev/lee_trust_your_eyes/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2879452075) |
 
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
 - For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.

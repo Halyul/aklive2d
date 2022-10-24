@@ -20,6 +20,7 @@ operators:
   specter: !include config/specter.yaml
   gavial: !include config/gavial.yaml
   surtr_colorful_wonderland: !include config/surtr_colorful_wonderland.yaml
+  lee_trust_your_eyes: !include config/lee_trust_your_eyes.yaml
 server:
   operator_folder: ./operator/
   release_folder: ./release/

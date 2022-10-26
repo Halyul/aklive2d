@@ -21,7 +21,6 @@ window.operatorSettings = {
     atlasUrl: "./operator/dyn_illust_char_322_lmlee_witch#3.atlas",
     defaultMix: 0,
     success: function (widget) {
-        settings.disableInvertFilter();
         settings.opacityLogo(30);
         widget.animationState.addListener({
             end: (e) => {

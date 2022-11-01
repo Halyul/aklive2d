@@ -23,6 +23,10 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 | Gavial the Invincible | [Link](https://arknights.halyul.dev/gavial/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2847605961) |
 | Colorful Wonderland / Surtr | [Link](https://arknights.halyul.dev/surtr_colorful_wonderland/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2847602015) |
 | Trust Your Eyes / Lee | [Link](https://arknights.halyul.dev/lee_trust_your_eyes/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2879452075) |
+| Texas the Omertosa | [Link](https://arknights.halyul.dev/texas_the_omertosa/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2879452075) |
+| Relight / Neral | [Link](https://arknights.halyul.dev/nearl_relight/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2879452075) |
+| Become Anew / Rosmontis | [Link](https://arknights.halyul.dev/rosmontis_become_anew/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2879452075) |
+| Dream in a Moment / Passager | [Link](https://arknights.halyul.dev/passager_dream_in_a_moment/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2879452075) |
 
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
 - For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.

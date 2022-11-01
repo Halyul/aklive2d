@@ -21,6 +21,10 @@ operators:
   gavial: !include config/gavial.yaml
   surtr_colorful_wonderland: !include config/surtr_colorful_wonderland.yaml
   lee_trust_your_eyes: !include config/lee_trust_your_eyes.yaml
+  texas_the_omertosa: !include config/texas_the_omertosa.yaml
+  nearl_relight: !include config/nearl_relight.yaml
+  rosmontis_become_anew: !include config/rosmontis_become_anew.yaml
+  passager_dream_in_a_moment: !include config/passager_dream_in_a_moment.yaml
 server:
   operator_folder: ./operator/
   release_folder: ./release/

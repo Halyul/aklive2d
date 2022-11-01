@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "Arknights: Become Anew / Rosmontis Live 2D\n明日方舟：复现荣光·迷迭香 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/rosmontis_become_anew\nGithub: https://github.com/Halyul/aklive2d",
+	"description" : "Arknights: Become Anew / Rosmontis Live 2D\n明日方舟：拥抱新生·迷迭香 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/rosmontis_become_anew\nGithub: https://github.com/Halyul/aklive2d",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -163,7 +163,9 @@
 	},
 	"preview" : "preview.jpg",
 	"tags" : [ "Game" ],
-	"title" : "Arknights: Become Anew / Rosmontis - 明日方舟：复现荣光·迷迭香",
+	"title" : "Arknights: Become Anew / Rosmontis - 明日方舟：拥抱新生·迷迭香",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2883012349",
+	"workshopurl" : "steam://url/CommunityFilePage/2883012349"
 }

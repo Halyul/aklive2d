@@ -162,8 +162,12 @@
 		}
 	},
 	"preview" : "preview.jpg",
+	"snapshotformat" : -1,
+	"snapshotoverlay" : "",
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Dream in a Moment / Passager - 明日方舟：今昔须臾之梦 · 异客",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2883021565",
+	"workshopurl" : "steam://url/CommunityFilePage/2883021565"
 }

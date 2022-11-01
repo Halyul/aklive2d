@@ -162,8 +162,12 @@
 		}
 	},
 	"preview" : "preview.jpg",
+	"snapshotformat" : -1,
+	"snapshotoverlay" : "",
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Relight / Neral - 明日方舟：复现荣光·耀骑士临光",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2883016965",
+	"workshopurl" : "steam://url/CommunityFilePage/2883016965"
 }

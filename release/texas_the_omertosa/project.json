@@ -162,8 +162,12 @@
 		}
 	},
 	"preview" : "preview.jpg",
+	"snapshotformat" : -1,
+	"snapshotoverlay" : "",
 	"tags" : [ "Game" ],
 	"title" : "Arknights: Texas the Omertosa - 明日方舟：缄默德克萨斯",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2883008286",
+	"workshopurl" : "steam://url/CommunityFilePage/2883008286"
 }

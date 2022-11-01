@@ -165,5 +165,7 @@
 	"tags" : [ "Game" ],
 	"title" : "${format:title}",
 	"type" : "web",
-	"version" : 1
+	"version" : 2,
+	"workshopid" : "2883012349",
+	"workshopurl" : "steam://url/CommunityFilePage/2883012349"
 }

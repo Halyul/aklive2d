@@ -66,7 +66,7 @@ class Builder:
             source=self.config["operator"]["source_folder"].format(name=operator_name),
             target=self.config["operator"]["target_folder"].format(name=operator_name),
             common_name=self.config["operators"][operator_name]["_operator_settings.js"]["filename"],
-            fallback_name=self.config["operators"][operator_name]["index.html"]["fallback_name"].replace("%23", "#"),
+            fallback_name=self.config["operators"][operator_name]["index.html"]["fallback_name"].replace("%23", "#") if self.config["operators"][operator_name]["index.html"]["fallback_name"] is not None else None,
             id_name=self.config["operators"][operator_name]["index.html"]["id"].replace("%23", "#")
         )
 
@@ -195,8 +195,8 @@ class Builder:
         source_path = file_paths["source"]
         target_path = file_paths["target"]
         fallback_name = file_paths["fallback_name"]
-
-        AlphaComposite(source_path + fallback_name, target_path + "../{}".format(fallback_name))
+        if fallback_name is not None:
+            AlphaComposite(source_path + fallback_name, target_path + "../{}".format(fallback_name))
 
     def __json_to_base64(self, path, dict=None, key=None):
         with open(pathlib.Path.cwd().joinpath(path), "r") as f:

@@ -33,12 +33,10 @@ class Config:
                     operator_logo=str,
                     title=str,
                     version=str,
-                    fallback_name=str,
                 ),
                 "_operator_settings.js": dict(
                     fallbackImage_height=int,
                     fallbackImage_width=int,
-                    filename=str,
                     fps=int,
                     viewport_left=int,
                     viewport_right=int,

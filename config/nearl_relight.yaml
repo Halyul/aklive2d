@@ -12,10 +12,10 @@ index.html:
   fallback_name: char_1014_nearl2_epoque%2317
   id: char_1014_nearl2%2317
   operator_logo: logo_kazimierz
-  title: 'Arknights: Relight / Neral - 明日方舟：复现荣光·耀骑士临光'
+  title: 'Arknights: Relight / Nearl - 明日方舟：复现荣光·耀骑士临光'
   version: ${func:get_version()}
 project.json:
-  description: 'Arknights: Relight / Neral Live 2D\n明日方舟：复现荣光·耀骑士临光 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/nearl_relight\nGithub: https://github.com/Halyul/aklive2d'
+  description: 'Arknights: Relight / Nearl Live 2D\n明日方舟：复现荣光·耀骑士临光 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/nearl_relight\nGithub: https://github.com/Halyul/aklive2d'
   title: ${var:index.html->title}
   ui_logo_opacity: ${var:_operator_settings.js->opacity}
   ui_logo_ratio: 61.8

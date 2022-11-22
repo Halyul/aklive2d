@@ -17,14 +17,14 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 | Skadi the Corrupting Heart | [Link](https://arknights.halyul.dev/skadi/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2492307783) |
 | Sublimation / Skadi the Corrupting Heart | [Link](https://arknights.halyul.dev/skadi_sublimation/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802570125) |
 | Ch'en the Holungday | [Link](https://arknights.halyul.dev/chen/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2564643862) |
-| Nearl the Radiant Knight | [Link](https://arknights.halyul.dev/neral/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642836787) |
+| Nearl the Radiant Knight | [Link](https://arknights.halyul.dev/nearl/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642836787) |
 | Ling | [Link](https://arknights.halyul.dev/ling/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730944363) |
 | Specter the Unchained | [Link](https://arknights.halyul.dev/specter/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802596772) |
 | Gavial the Invincible | [Link](https://arknights.halyul.dev/gavial/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2847605961) |
 | Colorful Wonderland / Surtr | [Link](https://arknights.halyul.dev/surtr_colorful_wonderland/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2847602015) |
 | Trust Your Eyes / Lee | [Link](https://arknights.halyul.dev/lee_trust_your_eyes/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2879452075) |
 | Texas the Omertosa | [Link](https://arknights.halyul.dev/texas_the_omertosa/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883008286) |
-| Relight / Neral | [Link](https://arknights.halyul.dev/nearl_relight/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883016965) |
+| Relight / Nearl | [Link](https://arknights.halyul.dev/nearl_relight/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883016965) |
 | Become Anew / Rosmontis | [Link](https://arknights.halyul.dev/rosmontis_become_anew/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883012349) |
 | Dream in a Moment / Passager | [Link](https://arknights.halyul.dev/passager_dream_in_a_moment/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883021565) |
 

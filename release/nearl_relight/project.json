@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "Arknights: Relight / Neral Live 2D\n明日方舟：复现荣光·耀骑士临光 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/nearl_relight\nGithub: https://github.com/Halyul/aklive2d",
+	"description" : "Arknights: Relight / Nearl Live 2D\n明日方舟：复现荣光·耀骑士临光 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/nearl_relight\nGithub: https://github.com/Halyul/aklive2d",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -165,7 +165,7 @@
 	"snapshotformat" : -1,
 	"snapshotoverlay" : "",
 	"tags" : [ "Game" ],
-	"title" : "Arknights: Relight / Neral - 明日方舟：复现荣光·耀骑士临光",
+	"title" : "Arknights: Relight / Nearl - 明日方舟：复现荣光·耀骑士临光",
 	"type" : "web",
 	"version" : 2,
 	"workshopid" : "2883016965",

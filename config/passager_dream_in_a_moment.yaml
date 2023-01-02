@@ -16,6 +16,6 @@ index.html:
   title: 'Arknights: Dream in a Moment / Passager - 明日方舟：今昔须臾之梦 · 异客'
   version: ${func:get_version()}
 project.json: !include config/_project.json.yaml
-link: ling
+link: passager_dream_in_a_moment
 type: skin
 date: 2022/11

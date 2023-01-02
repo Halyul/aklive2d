@@ -18,3 +18,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: w
 type: operator
+date: 2020/05

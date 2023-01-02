@@ -18,3 +18,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: skadi
 type: operator
+date: 2021/05

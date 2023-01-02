@@ -18,3 +18,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: rosmontis_become_anew
 type: skin
+date: 2022/11

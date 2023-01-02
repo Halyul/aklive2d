@@ -18,3 +18,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: specter
 type: operator
+date: 2022/05

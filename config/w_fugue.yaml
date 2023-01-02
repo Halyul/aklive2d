@@ -18,3 +18,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: w_fugue
 type: skin
+date: 2020/11

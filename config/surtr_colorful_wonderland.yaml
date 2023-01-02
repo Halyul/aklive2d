@@ -13,8 +13,9 @@ index.html:
   fallback_name: char_350_surtr_summer%239
   id: char_350_surtr_summer%239
   operator_logo: logo_rhodes_override
-  title: 'Arknights: Colorful Wonderland / Surtr - 明日方舟：缤纷奇境·史尔特尔'
+  title: 'Arknights: Colorful Wonderland CW03 / Surtr - 明日方舟：缤纷奇境 CW03·史尔特尔'
   version: ${func:get_version()}
 project.json: !include config/_project.json.yaml
 link: surtr_colorful_wonderland
 type: skin
+date: 2022/08

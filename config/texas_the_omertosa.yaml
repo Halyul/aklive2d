@@ -18,3 +18,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: texas_the_omertosa
 type: operator
+date: 2022/11

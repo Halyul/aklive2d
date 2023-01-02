@@ -18,3 +18,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: gavial
 type: operator
+date: 2022/08

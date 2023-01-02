@@ -1,4 +1,4 @@
-import threading
+from multiprocessing import Process, Manager
 import shutil
 from lib.alpha_composite import AlphaComposite
 from lib.atlas_reader import AtlasReader
@@ -29,19 +29,17 @@ class Builder:
             dict(
                 target=self.__build_assets,
                 args=(operator_name,),
-                daemon=True,
             ),
             dict(
                 target=self.__build_settings, 
                 args=(operator_name,),
-                daemon=True,
             )
         ]
         threads = list()
         self.content_processor = ContentProcessor(self.config, operator_name)
 
         for item in thread_map:
-            thread = threading.Thread(**item)
+            thread = Process(**item)
             threads.append(thread)
             thread.start()
             
@@ -75,7 +73,8 @@ class Builder:
             print("Building operator data for {}...".format(operator_name))
 
             prefix = "window.operatorAssets = "
-            data = dict()
+            manager = Manager()
+            data = manager.dict()
 
             thread_map = [
                 dict(
@@ -84,7 +83,6 @@ class Builder:
                         file_paths,
                         data
                     ),
-                    daemon=True,
                 ),
                 dict(
                     target=self.__skeleton_binary_thread,
@@ -92,7 +90,6 @@ class Builder:
                         file_paths,
                         data
                     ),
-                    daemon=True,
                 ),
                 dict(
                     target=self.__fallback_thread,
@@ -100,12 +97,11 @@ class Builder:
                         file_paths,
                         data
                     ),
-                    daemon=True,
                 ),
             ]
             threads = list()
             for item in thread_map:
-                thread = threading.Thread(**item)
+                thread = Process(**item)
                 threads.append(thread)
                 thread.start()
                 
@@ -134,22 +130,20 @@ class Builder:
         alpha_composite_threads = list()
         ar = AtlasReader(source_path + common_name, target_path + common_name)
         images = ar.get_images()
-        atlas_to_base64_thread = threading.Thread(
+        atlas_to_base64_thread = Process(
             target=self.__atlas_to_base64, 
             args=(
                 target_path + common_name + ".atlas",
                 data,
                 self.config["server"]["operator_folder"] + common_name + ".atlas",
             ),
-            daemon=True,
         )
         atlas_to_base64_thread.start()
 
         for item in images:
-            alpha_composite_thread = threading.Thread(
+            alpha_composite_thread = Process(
                 target=AlphaComposite, 
                 args=(source_path + item, target_path + item),
-                daemon=True,
             )
             alpha_composite_threads.append(alpha_composite_thread)
             alpha_composite_thread.start()
@@ -157,14 +151,13 @@ class Builder:
             thread.join()
             
         for item in images:
-            png_to_base64_thread = threading.Thread(
+            png_to_base64_thread = Process(
                 target=self.__png_to_base64, 
                 args=(
                     target_path + item,
                     data,
                     self.config["server"]["operator_folder"] + item,
                 ),
-                daemon=True,
             )
 
             png_to_base64_threads.append(png_to_base64_thread)

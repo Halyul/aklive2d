@@ -8,19 +8,13 @@ _operator_settings.js:
   viewport_left: 0
   viewport_right: 0
   viewport_top: 0
+  invert_filter: true
 index.html:
   fallback_name: char_391_rosmon_epoque%2317
   id: char_391_rosmon%2317
   operator_logo: logo_elite
   title: 'Arknights: Become Anew / Rosmontis - 明日方舟：拥抱新生·迷迭香'
   version: ${func:get_version()}
-project.json:
-  description: 'Arknights: Become Anew / Rosmontis Live 2D\n明日方舟：拥抱新生·迷迭香 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/rosmontis_become_anew\nGithub: https://github.com/Halyul/aklive2d'
-  title: ${var:index.html->title}
-  ui_logo_opacity: ${var:_operator_settings.js->opacity}
-  ui_logo_ratio: 61.8
-  ui_operator_logo: 'true'
-  ui_position_padding_bottom: ${var:_operator_settings.js->viewport_bottom}
-  ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
-  ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
-  ui_position_padding_top: ${var:_operator_settings.js->viewport_top}
+project.json: !include config/_project.json.yaml
+link: rosmontis_become_anew
+type: skin

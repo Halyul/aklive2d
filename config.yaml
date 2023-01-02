@@ -28,4 +28,4 @@ operators:
 server:
   operator_folder: ./operator/
   release_folder: ./release/
-  template_folder: ./template/
+  template_folder: ./template/operator

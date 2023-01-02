@@ -1,5 +1,7 @@
 from multiprocessing import Process, Manager
 import shutil
+import json
+import operator
 from lib.alpha_composite import AlphaComposite
 from lib.atlas_reader import AtlasReader
 from lib.base64_util import *
@@ -267,4 +269,17 @@ class Builder:
                     file_path
                 )
         
+        # generate a directory.json for index page
+        save_path = pathlib.Path.cwd().joinpath(target_path, "directory.json")
+        directory_json = []
+        for key, value in self.config["operators"].items():
+            directory_json.append(dict(
+                name=key,
+                link=value["link"],
+                type=value["type"],
+                date=value["date"]
+            ))
+        directory_json.sort(key=operator.itemgetter("date", "name"), reverse=True)
+        with open(save_path, 'w', encoding='utf8') as fp:
+            json.dump(directory_json, fp)
         return

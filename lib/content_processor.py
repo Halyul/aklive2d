@@ -1,5 +1,6 @@
 import pathlib
 import shutil
+import re
 
 class ContentProcessor:
     
@@ -32,7 +33,7 @@ class ContentProcessor:
 
     def __process_value(self):
         for item_key, item_value in self.settings.items():
-            for key, value in item_value.items():
+            for key, value in item_value.items() if type(item_value) == dict else {}:
                 matcher = Matcher(value, "${", "}", self.settings)
                 if matcher.match():
                     replace_value = matcher.process()
@@ -45,10 +46,21 @@ class ContentProcessor:
         self.file_to_process.append(settings_filename)
 
 class Evalable:
-    def get_version():
+    def __init__(self, settings):
+        self.settings = settings
+
+    def get_version(self):
         with open(pathlib.Path.cwd().joinpath("Version"), "r") as f:
             version = f.read()
         return version
+    
+    def split(self, var_name, separator):
+        for var in var_name.split("->"):
+            try:
+                self.settings = self.settings[var]
+            except Exception as e:
+                raise e
+        return self.settings.split(separator)
 
 class Matcher:
     def __init__(self, content, start, end, settings):
@@ -56,28 +68,31 @@ class Matcher:
         self.end = end
         self.content = str(content)
         self.settings = settings
+        self.re_exp = re.compile("\{}.+?{}".format(start, end))
 
     def match(self):
-        return self.content.startswith(self.start) and self.content.endswith(self.end)
+        return re.search(self.re_exp, self.content) is not None
     
     def process(self):
-        type = self.content.replace(self.start, "").replace(self.end, "").split(":")[0]
-        name = self.content.replace(self.start, "").replace(self.end, "").split(":")[1]
-        if type == "func":
-            try:
-                replace_value = eval("Evalable." + name)
-            except Exception as e:
-                raise e
-        elif type == "var":
-            replace_value = self.settings
-            for var in name.split("->"):
+        for match in re.findall(self.re_exp, self.content):
+            type = match.replace(self.start, "").replace(self.end, "").split(":")[0]
+            name = match.replace(self.start, "").replace(self.end, "").split(":")[1]
+            if type == "func":
                 try:
-                    replace_value = replace_value[var]
+                    self.content = self.content.replace(match, eval("Evalable(self.settings)." + name))
                 except Exception as e:
                     raise e
-        else:
-            raise Exception("Unsupported type: {}".format(type))
-        return replace_value
+            elif type == "var":
+                replace_value = self.settings
+                for var in name.split("->"):
+                    try:
+                        replace_value = replace_value[var]
+                    except Exception as e:
+                        raise e
+                self.content = self.content.replace(match, str(replace_value))
+            else:
+                raise Exception("Unsupported type: {}".format(type))
+        return self.content
 
     def format(self, filename):
         for key, value in self.settings[filename].items():

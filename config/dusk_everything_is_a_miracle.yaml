@@ -17,3 +17,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: dusk_everything_is_a_miracle
 type: skin
+date: 2022/01

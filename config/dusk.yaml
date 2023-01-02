@@ -18,3 +18,4 @@ index.html:
 project.json: !include config/_project.json.yaml
 link: dusk
 type: operator
+date: 2021/02

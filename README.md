@@ -27,6 +27,7 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 | Relight / Nearl | [Link](https://arknights.halyul.dev/nearl_relight/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883016965) |
 | Become Anew / Rosmontis | [Link](https://arknights.halyul.dev/rosmontis_become_anew/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883012349) |
 | Dream in a Moment / Passager | [Link](https://arknights.halyul.dev/passager_dream_in_a_moment/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883021565) |
+| Summer Feast / Mizuki | [Link](https://arknights.halyul.dev/mizuki_summer_feast/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2895953271) |
 
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
 - For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.

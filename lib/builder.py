@@ -270,7 +270,8 @@ class Builder:
                 )
         
         # generate a directory.json for index page
-        save_path = pathlib.Path.cwd().joinpath(target_path, "directory.json")
+        save_path = pathlib.Path.cwd().joinpath(
+            self.config["index"]["src_folder"], "directory.json")
         directory_json = []
         for key, value in self.config["operators"].items():
             directory_json.append(dict(

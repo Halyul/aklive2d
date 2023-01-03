@@ -13,7 +13,7 @@ export default defineConfig({
   },
   build: {
     outDir: path.resolve(config.basedir, config.server.release_folder),
-    assetsDir: '_index/assets',
+    assetsDir: '_index',
     emptyOutDir: false,
     rollupOptions: {
       output: {

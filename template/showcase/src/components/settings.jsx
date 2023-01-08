@@ -61,9 +61,31 @@ export default function Settings({
     spinePlayer.setFps(value)
   }
 
+  useEffect(() => {
+    const handleListener = (e) => {
+      setFPS(e.detail)
+    }
+    subscribe("settings:fps", handleListener)
+    return () => unsubscribe("settings:fps", handleListener)
+  }, [spinePlayer])
+
   const setLogoDisplay = (flag) => {
     setShowLogo(flag)
     logoEl.hidden = flag;
+  }
+
+  useEffect(() => {
+    const handleListener = (e) => {
+      setLogoDisplay(e.detail)
+    }
+    subscribe("settings:logo", handleListener)
+    return () => unsubscribe("settings:logo", handleListener)
+  }, [logoEl])
+
+  const setLogo = (src, invert_filter) => {
+    logoEl.src = src
+    resize()
+    setLogoInvertFilter(invert_filter)
   }
 
   const setLogoImage = (e) => {
@@ -71,30 +93,55 @@ export default function Settings({
       e,
       (readerEvent) => {
         const content = readerEvent.target.result;
-        logoEl.src = content
-        resize()
-        setLogoInvertFilter(false)
+        setLogo(content, false)
       },
       () => setLogoClearDisabled(false)
     )
   }
 
+  useEffect(() => {
+    const handleListener = (e) => {
+      setLogo(e.detail)
+    }
+    subscribe("settings:image:set", handleListener)
+    return () => unsubscribe("settings:image:set", handleListener)
+  }, [logoEl])
+
   const resetLogoImage = () => {
-    logoEl.src = defaultLogoImage
-    resize()
-    setLogoInvertFilter(defaultInvertFilter)
+    setLogo(defaultLogoImage, defaultInvertFilter)
     setLogoClearDisabled(true)
   }
+
+  useEffect(() => {
+    subscribe("settings:image:reset", resetLogoImage)
+    return () => unsubscribe("settings:image:reset", resetLogoImage)
+  }, [logoEl])
 
   const setLogoRatio = (value) => {
     setRatio(value)
     resize(value)
   }
 
+  useEffect(() => {
+    const handleListener = (e) => {
+      setLogoRatio(e.detail)
+    }
+    subscribe("settings:ratio", handleListener)
+    return () => unsubscribe("settings:ratio", handleListener)
+  }, [logoEl])
+
   const setLogoOpacity = (value) => {
     setOpacity(value)
     logoEl.style.opacity = value / 100
   }
+
+  useEffect(() => {
+    const handleListener = (e) => {
+      setLogoOpacity(e.detail)
+    }
+    subscribe("settings:opacity", handleListener)
+    return () => unsubscribe("settings:opacity", handleListener)
+  }, [logoEl])
 
   const setLogoInvertFilter = (flag) => {
     if (!flag) {
@@ -104,21 +151,38 @@ export default function Settings({
     }
   }
 
+  const setBackgoundImage = (v) => {
+    document.body.style.backgroundImage = v
+  }
+
   const setBackground = (e) => {
     readFile(
       e,
       (readerEvent) => {
         const content = readerEvent.target.result;
-        document.body.style.backgroundImage = `url("${content}")`
+        setBackgoundImage(`url("${content}")`)
       },
       () => setBackgroundClearDisabled(false)
     )
   }
 
+  useEffect(() => {
+    const handleListener = (e) => {
+      setBackgoundImage(e.detail)
+    }
+    subscribe("settings:background:set", handleListener)
+    return () => unsubscribe("settings:background:set", handleListener)
+  }, [])
+
   const resetBackground = () => {
-    document.body.style.backgroundImage = defaultBackgroundImage
+    setBackgoundImage(defaultBackgroundImage)
     setBackgroundClearDisabled(true)
   }
+
+  useEffect(() => {
+    subscribe("settings:background:reset", resetLogoImage)
+    return () => unsubscribe("settings:background:reset", resetLogoImage)
+  }, [])
 
   const positionPadding = (key, value) => {
     switch (key) {
@@ -153,6 +217,14 @@ export default function Settings({
     }
   }
 
+  useEffect(() => {
+    const handleListener = (e) => {
+      positionPadding(e.detail.key, e.detail.value)
+    }
+    subscribe("settings:position:set", handleListener)
+    return () => unsubscribe("settings:position:set", handleListener)
+  }, [spinePlayer])
+
   const positionReset = () => {
     setPadLeft(defaultPadLeft)
     setPadRight(defaultPadRight)
@@ -160,6 +232,11 @@ export default function Settings({
     setPadBottom(defaultPadBottom)
     spinePlayer.updateViewport(defaultViewport)
   }
+
+  useEffect(() => {
+    subscribe("settings:position:reset", positionReset)
+    return () => unsubscribe("settings:position:reset", positionReset)
+  }, [spinePlayer])
 
   useEffect(() => {
     if (logoEl) {

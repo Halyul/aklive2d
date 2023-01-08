@@ -4,64 +4,65 @@ window.wallpaperPropertyListener = {
     applyGeneralProperties: function (properties) {
         if (properties.fps) {
             // use custom event
-            publish('fps', properties.fps.value)
+            publish('settings:fps', properties.fps.value)
         }
     },
     applyUserProperties: function (properties) {
         if (properties.logo) {
-            publish('logo', properties.logo.value)
+            publish('settings:logo', !properties.logo.value)
         }
         if (properties.logoratio) {
             if (properties.logoratio.value) {
-                publish('logoratio', properties.logoratio.value)
+                publish('settings:ratio', properties.logoratio.value)
             }
         }
         if (properties.logoopacity) {
             if (properties.logoopacity.value) {
-                publish('logoopacity', properties.logoopacity.value)
+                publish('settings:opacity', properties.logoopacity.value)
             }
         }
         if (properties.logoimage) {
             if (properties.logoimage.value) {
-                publish('logoimage', properties.logoimage.value)
-                // var logoImage = 'file:///' + properties.logoimage.value;
-                // settings.setLogo(logoImage, true);
+                publish('settings:image:set', 'file:///' + properties.logoimage.value)
             } else {
-                publish('logoimage', null)
-                // settings.resetLogo();
+                publish('settings:image:reset')
             }
         }
         if (properties.background) {
             if (properties.background.value) {
-                publish('background', properties.background.value)
-                // var background = 'file:///' + properties.background.value;
-                // settings.setBackground(background);
+                publish('settings:background:set', 'file:///' + properties.background.value)
             } else {
-                publish('background', null)
-                // settings.resetBackground();
+                publish('settings:background:reset')
             }
         }
         if (properties.position) {
             if (!properties.position.value) {
-                publish('position', null)
-                // settings.positionReset();
+                publish('settings:position:reset')
             }
         }
         if (properties.paddingleft) {
-            publish('paddingleft', properties.paddingleft.value)
-            // settings.positionPadding("padLeft", properties.paddingleft.value)
+            publish('settings:position:set', {
+                key: "left",
+                value: properties.paddingleft.value
+            })
         }
         if (properties.paddingright) {
-            publish('paddingright', properties.paddingright.value)
-            // settings.positionPadding("padRight", properties.paddingright.value)
+            publish('settings:position:set', {
+                key: "right",
+                value: properties.paddingright.value
+            })
         }
         if (properties.paddingtop) {
-            publish('paddingtop', properties.paddingtop.value)
-            // settings.positionPadding("padTop", properties.paddingtop.value)
+            publish('settings:position:set', {
+                key: "top",
+                value: properties.paddingtop.value
+            })
         }
         if (properties.paddingbottom) {
-            publish('paddingbottom', properties.paddingbottom.value)
-            // settings.positionPadding("padBottom", properties.paddingbottom.value)
+            publish('settings:position:set', {
+                key: "bottom",
+                value: properties.paddingbottom.value
+            })
         }
     },
 };

@@ -29,6 +29,6 @@ operators:
 server:
   operator_folder: ./operator/
   release_folder: ./release/
-  template_folder: ./template/operator
+  template_folder: ./template/operator/
 index:
-  src_folder: ./template/index/src
+  src_folder: ./template/index/src/assets

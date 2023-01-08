@@ -1,0 +1,20 @@
+html {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body, #app {
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+  -ms-touch-action: none;
+}

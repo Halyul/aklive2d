@@ -1,67 +1,53 @@
-import { publish } from '@/libs/events'
-
 window.wallpaperPropertyListener = {
     applyGeneralProperties: function (properties) {
         if (properties.fps) {
-            publish('settings:fps', properties.fps.value)
+            window.settings.setFPS(properties.fps)
         }
     },
     applyUserProperties: function (properties) {
         if (properties.logo) {
-            publish('settings:logo', !properties.logo.value)
+            window.settings.setLogoDisplay(!properties.logo.value)
         }
         if (properties.logoratio) {
             if (properties.logoratio.value) {
-                publish('settings:ratio', properties.logoratio.value)
+                window.settings.setLogoRatio(properties.logoratio.value)
             }
         }
         if (properties.logoopacity) {
             if (properties.logoopacity.value) {
-                publish('settings:opacity', properties.logoopacity.value)
+                window.settings.setLogoOpacity(properties.logoopacity.value)
             }
         }
         if (properties.logoimage) {
             if (properties.logoimage.value) {
-                publish('settings:image:set', 'file:///' + properties.logoimage.value)
+                window.settings.setLogo('file:///' + properties.logoimage.value)
             } else {
-                publish('settings:image:reset')
+                window.settings.resetLogoImage()
             }
         }
         if (properties.background) {
             if (properties.background.value) {
-                publish('settings:background:set', 'file:///' + properties.background.value)
+                window.settings.setBackgoundImage(`url('file:///${properties.background.value}`)
             } else {
-                publish('settings:background:reset')
+                window.settings.resetBackground()
             }
         }
         if (properties.position) {
             if (!properties.position.value) {
-                publish('settings:position:reset')
+                window.settings.positionReset()
             }
         }
         if (properties.paddingleft) {
-            publish('settings:position:set', {
-                key: "left",
-                value: properties.paddingleft.value
-            })
+            window.settings.positionPadding("left", properties.paddingleft.value)
         }
         if (properties.paddingright) {
-            publish('settings:position:set', {
-                key: "right",
-                value: properties.paddingright.value
-            })
+            window.settings.positionPadding("right", properties.paddingright.value)
         }
         if (properties.paddingtop) {
-            publish('settings:position:set', {
-                key: "top",
-                value: properties.paddingtop.value
-            })
+            window.settings.positionPadding("top", properties.paddingtop.value)
         }
         if (properties.paddingbottom) {
-            publish('settings:position:set', {
-                key: "bottom",
-                value: properties.paddingbottom.value
-            })
+            window.settings.positionPadding("bottom", properties.paddingbottom.value)
         }
     },
 };

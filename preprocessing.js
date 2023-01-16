@@ -7,6 +7,7 @@ import AssetsProcessor from './lib/assets_processor.js'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import init from './lib/initializer.js'
+import directory from './lib/directory.js'
 
 let mode = null
 const OPERATOR_NAME = process.env.O;
@@ -35,9 +36,17 @@ const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'extra
 const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, '_share')
 if (mode === 'NODE') {
 
-    if (process.argv[2] === '-i') {
-        init(OPERATOR_NAME, __dirname, EXTRACTED_FOLDER)
-        process.exit(0)
+    const op = process.argv[2]
+
+    switch (op) {
+        case '-i':
+            init(OPERATOR_NAME, __dirname, EXTRACTED_FOLDER)
+            process.exit(0)
+        case '-d':
+            directory(config, __dirname)
+            process.exit(0)
+        default:
+            break
     }
 
     rmdir(OPERATOR_RELEASE_FOLDER)

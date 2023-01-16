@@ -24,4 +24,5 @@ operators:
   rosmontis_become_anew: !include config/rosmontis_become_anew.yaml
   passager_dream_in_a_moment: !include config/passager_dream_in_a_moment.yaml
   mizuki_summer_feast: !include config/mizuki_summer_feast.yaml
-  
+  chongyue: !include config/chongyue.yaml
+  ling_it_does_wash_the_strings: !include config/ling_it_does_wash_the_strings.yaml

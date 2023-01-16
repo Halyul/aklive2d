@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_1026_gvial2
-  fps: 60
-  opacity: 30
-  viewport_bottom: 0
-  viewport_left: 0
-  viewport_right: 0
-  viewport_top: 0
-  invert_filter: false
-index.html:
-  fallback_name: char_1026_gvial2_2
-  id: char_1026_gvial2_2
-  operator_logo: logo_rhodes_override
-  title: 'Arknights: Gavial the Invincible - 明日方舟：百练嘉维尔'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: gavial
 type: operator
 date: 2022/08
+title: 'Arknights: Gavial the Invincible - 明日方舟：百练嘉维尔'
+filename: dyn_illust_char_1026_gvial2
+logo: logo_rhodes_override
+fallback_name: char_1026_gvial2_2
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: false

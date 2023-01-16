@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_250_phatom_sale#4
-  fps: 60
-  opacity: 100
-  viewport_bottom: 1
-  viewport_left: 0
-  viewport_right: 0
-  viewport_top: 5
-  invert_filter: false
-index.html:
-  fallback_name: char_250_phatom_sale%234
-  id: char_250_phatom_sale%234
-  operator_logo: logo_victoria
-  title: 'Arknights: Focus / Phatom - 明日方舟：焦点·傀影'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: phatom_focus
 type: skin
 date: 2022/04
+title: 'Arknights: Focus / Phatom - 明日方舟：焦点·傀影'
+filename: dyn_illust_char_250_phatom_sale#4
+logo: logo_victoria
+fallback_name: char_250_phatom_sale#4
+viewport_left: 0
+viewport_right: 0
+viewport_top: 5
+viewport_bottom: 1
+invert_filter: true

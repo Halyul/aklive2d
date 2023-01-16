@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_2014_nian
-  fps: 60
-  opacity: 30
-  viewport_bottom: 5
-  viewport_left: 2
-  viewport_right: 2
-  viewport_top: 3
-  invert_filter: true
-index.html:
-  fallback_name: char_2014_nian_2
-  id: char_2014_nian
-  operator_logo: logo_sui
-  title: 'Arknights: Nian - 明日方舟：年'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: nian
 type: operator
 date: 2020/01
+title: 'Arknights: Nian - 明日方舟：年'
+filename: dyn_illust_char_2014_nian
+logo: logo_sui
+fallback_name: char_2014_nian_2
+viewport_left: 2
+viewport_right: 2
+viewport_top: 3
+viewport_bottom: 5
+invert_filter: true

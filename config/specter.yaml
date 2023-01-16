@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_1023_ghost2
-  fps: 60
-  opacity: 100
-  viewport_bottom: 0
-  viewport_left: 0
-  viewport_right: 0
-  viewport_top: 0
-  invert_filter: false
-index.html:
-  fallback_name: char_1023_ghost2_2
-  id: char_1023_ghost2
-  operator_logo: logo_abyssal
-  title: 'Arknights: Specter the Unchained - 明日方舟：归溟幽灵鲨'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: specter
 type: operator
 date: 2022/05
+title: 'Arknights: Specter the Unchained - 明日方舟：归溟幽灵鲨'
+filename: dyn_illust_char_1023_ghost2
+logo: logo_abyssal
+fallback_name: char_1023_ghost2_2
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true

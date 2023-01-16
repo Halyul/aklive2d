@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_391_rosmon
-  fps: 60
-  opacity: 100
-  viewport_bottom: -1
-  viewport_left: 0
-  viewport_right: -14
-  viewport_top: -38
-  invert_filter: false
-index.html:
-  fallback_name: char_391_rosmon_2
-  id: char_391_rosmon
-  operator_logo: logo_elite
-  title: 'Arknights: Rosmontis - 明日方舟：迷迭香'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: rosmontis
 type: operator
 date: 2020/11
+title: 'Arknights: Rosmontis - 明日方舟：迷迭香'
+filename: dyn_illust_char_391_rosmon
+logo: logo_elite
+fallback_name: char_391_rosmon_2
+viewport_left: 0
+viewport_right: -14
+viewport_top: -38
+viewport_bottom: -1
+invert_filter: true

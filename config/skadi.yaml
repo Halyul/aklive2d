@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_1012_skadi2
-  fps: 60
-  opacity: 30
-  viewport_bottom: -12
-  viewport_left: -5
-  viewport_right: -10
-  viewport_top: 0
-  invert_filter: true
-index.html:
-  fallback_name: char_1012_skadi2_2
-  id: char_1012_skadi2
-  operator_logo: logo_egir
-  title: 'Arknights: Skadi the Corrupting Heart - 明日方舟：浊心斯卡蒂'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: skadi
 type: operator
 date: 2021/05
+title: 'Arknights: Skadi the Corrupting Heart - 明日方舟：浊心斯卡蒂'
+filename: dyn_illust_char_1012_skadi2
+logo: logo_egir
+fallback_name: char_1012_skadi2_2
+viewport_left: -5
+viewport_right: -10
+viewport_top: 0
+viewport_bottom: -12
+invert_filter: true

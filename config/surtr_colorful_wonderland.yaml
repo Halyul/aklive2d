@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_350_surtr_summer#9
-  fps: 60
-  opacity: 30
-  viewport_bottom: 0
-  viewport_left: 0
-  viewport_right: 6
-  viewport_top: 1
-  invert_filter: false
-index.html:
-  fallback_name: char_350_surtr_summer%239
-  id: char_350_surtr_summer%239
-  operator_logo: logo_rhodes_override
-  title: 'Arknights: Colorful Wonderland CW03 / Surtr - 明日方舟：缤纷奇境 CW03·史尔特尔'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: surtr_colorful_wonderland
 type: skin
 date: 2022/08
+title: 'Arknights: Colorful Wonderland CW03 / Surtr - 明日方舟：缤纷奇境 CW03·史尔特尔'
+filename: dyn_illust_char_350_surtr_summer#9
+logo: logo_rhodes_override
+fallback_name: char_350_surtr_summer#9
+viewport_left: 0
+viewport_right: 6
+viewport_top: 1
+viewport_bottom: 0
+invert_filter: false

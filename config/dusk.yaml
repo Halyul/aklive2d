@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_2015_dusk
-  fps: 60
-  opacity: 30
-  viewport_bottom: 0
-  viewport_left: 0
-  viewport_right: 0
-  viewport_top: 0
-  invert_filter: true
-index.html:
-  fallback_name: char_2015_dusk_2
-  id: char_2015_dusk
-  operator_logo: logo_sui
-  title: 'Arknights: Dusk - 明日方舟：夕'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: dusk
 type: operator
 date: 2021/02
+title: 'Arknights: Dusk - 明日方舟：夕'
+filename: dyn_illust_char_2015_dusk
+logo: logo_sui
+fallback_name: char_2015_dusk_2
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true

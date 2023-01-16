@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_472_pasngr_epoque#17
-  fps: 60
-  opacity: 30
-  viewport_bottom: 0
-  viewport_left: 0
-  viewport_right: 0
-  viewport_top: 0
-  invert_filter: true
-index.html:
-  fallback_name: char_472_pasngr_epoque%2317
-  id: char_472_pasngr%2317
-  operator_logo: logo_sargon
-  title: 'Arknights: Dream in a Moment / Passager - 明日方舟：今昔须臾之梦 · 异客'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: passager_dream_in_a_moment
 type: skin
 date: 2022/11
+title: 'Arknights: Dream in a Moment / Passager - 明日方舟：今昔须臾之梦 · 异客'
+filename: dyn_illust_char_472_pasngr_epoque#17
+logo: logo_sargon
+fallback_name: char_472_pasngr_epoque#17
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true

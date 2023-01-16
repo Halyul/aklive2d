@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_1014_nearl2
-  fps: 60
-  opacity: 100
-  viewport_bottom: 0
-  viewport_left: 2
-  viewport_right: 3
-  viewport_top: 10
-  invert_filter: true
-index.html:
-  fallback_name: char_1014_nearl2_2
-  id: char_1014_nearl2
-  operator_logo: logo_kazimierz
-  title: 'Arknights: Nearl the Radiant Knight - 明日方舟：耀骑士临光'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: nearl
 type: operator
 date: 2021/11
+title: 'Arknights: Nearl the Radiant Knight - 明日方舟：耀骑士临光'
+filename: dyn_illust_char_1014_nearl2
+logo: logo_kazimierz
+fallback_name: char_1014_nearl2_2
+viewport_left: 2
+viewport_right: 3
+viewport_top: 10
+viewport_bottom: 0
+invert_filter: true

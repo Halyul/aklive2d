@@ -1,8 +1,6 @@
-operator:
-  preview: preview.jpg
-  project_json: project.json
-  source_folder: ./operator/{name}/extracted/
-  target_folder: ./operator/{name}/processed/
+folder: 
+  operator: ./operator/
+  release: ./release/
 operators:
   chen: !include config/chen.yaml
   dusk: !include config/dusk.yaml
@@ -26,9 +24,4 @@ operators:
   rosmontis_become_anew: !include config/rosmontis_become_anew.yaml
   passager_dream_in_a_moment: !include config/passager_dream_in_a_moment.yaml
   mizuki_summer_feast: !include config/mizuki_summer_feast.yaml
-server:
-  operator_folder: ./operator/
-  release_folder: ./release/
-  template_folder: ./template/operator/
-index:
-  src_folder: ./template/index/src/assets
+  

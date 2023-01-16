@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_113_cqbw
-  fps: 60
-  opacity: 30
-  viewport_bottom: 1
-  viewport_left: 3
-  viewport_right: -3
-  viewport_top: 0
-  invert_filter: true
-index.html:
-  fallback_name: char_113_cqbw_2
-  id: char_113_cqbw
-  operator_logo: logo_babel
-  title: 'Arknights: W - 明日方舟：W'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: w
 type: operator
 date: 2020/05
+title: 'Arknights: W - 明日方舟: W'
+filename: dyn_illust_char_113_cqbw
+logo: logo_babel
+fallback_name: char_113_cqbw_2
+viewport_left: 3
+viewport_right: -3
+viewport_top: 0
+viewport_bottom: 1
+invert_filter: true

@@ -2,6 +2,113 @@
 
 A project that builds showcase webpage for Arknights Live2D-equipped operators. Showcase webpage can be used as a wallpaper for Wallpaper Engine on Windows or [Plash](https://github.com/sindresorhus/Plash) on macOS (not tested).
 
+## Softwares
+- For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
+- For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.
+- For Linux users: You power user should be able to find your solutions!
+
+## Usage
+### Command Line Tool
+
+``` bash
+$ O={operator_name} node preprocessing.js
+To generate operator assets for showcase page
+```
+``` bash
+$ O={operator_name} node preprocessing.js -i
+To initialize folder and config file for an operator
+```
+``` bash
+$ O={operator_name} pnpm run dev
+Live showcase page server for development
+```
+``` bash
+$ O={operator_name} pnpm run build
+Build showcase webpage for an operator
+```
+``` bash
+$ node build_all.js
+Build showcase webpages for all operators
+```
+### Webpage & JavaScript
+
+Add query string `settings` to bring up the settings panel to adjust your settings. Then use appropriate JavaScript code to load your settings
+
+``` javascript
+settings.setFPS(integer) // set FPS
+settings.displayLogo(boolean) // display logo or not
+settings.resizeLogo(float) // the ratio of the logo
+settings.opacityLogo(float) // the opacity of the logo
+settings.setLogo(url) // change the logo, url: image url, removeInvert: boolean
+settings.setBackground(url) // change the background, url: image url
+settings.positionPadding("left", integer) // left padding
+settings.positionPadding("right", integer) // right padding
+settings.positionPadding("top", integer) // top padding
+settings.positionPadding("bottom", integer) // bottom padding
+
+settings.open() // open settings panel
+settings.close() // close settings panel
+settings.reset() // reset settings
+```
+
+## Config
+### General Config
+``` yaml
+folder: 
+  operator: ./operator/ # folder for operator assets
+  release: ./release/ # folder for released showcase page
+operators:
+  chen: !include config/chen.yaml # include the config for the operator under folder `config/chen.yaml`
+  dusk: !include config/dusk.yaml
+  dusk_everything_is_a_miracle: !include config/dusk_everything_is_a_miracle.yaml
+  ling: !include config/ling.yaml
+  nearl: !include config/nearl.yaml
+  nian: !include config/nian.yaml
+  nian_unfettered_freedom: !include config/nian_unfettered_freedom.yaml
+  phatom_focus: !include config/phatom_focus.yaml
+  rosmontis: !include config/rosmontis.yaml
+  skadi: !include config/skadi.yaml
+  skadi_sublimation: !include config/skadi_sublimation.yaml
+  w: !include config/w.yaml
+  w_fugue: !include config/w_fugue.yaml
+  specter: !include config/specter.yaml
+  gavial: !include config/gavial.yaml
+  surtr_colorful_wonderland: !include config/surtr_colorful_wonderland.yaml
+  lee_trust_your_eyes: !include config/lee_trust_your_eyes.yaml
+  texas_the_omertosa: !include config/texas_the_omertosa.yaml
+  nearl_relight: !include config/nearl_relight.yaml
+  rosmontis_become_anew: !include config/rosmontis_become_anew.yaml
+  passager_dream_in_a_moment: !include config/passager_dream_in_a_moment.yaml
+  mizuki_summer_feast: !include config/mizuki_summer_feast.yaml
+```
+### Operator Config
+```yaml
+link: chen # the link to access showcase page for this operator
+type: operator # operator live2d or skin live2d
+date: 2021/08 # release date
+title: 'Arknights: Ch''en/Chen the Holungday - 明日方舟：假日威龙陈' # page title
+filename: dyn_illust_char_1013_chen2 # live2d assets name
+logo: logo_rhodes_override # operator logo
+fallback_name: char_1013_chen2_2 # fallback image name
+viewport_left: 0 # live2d view port settings
+viewport_right: 0
+viewport_top: 1
+viewport_bottom: 1
+invert_filter: false # operator logo invert filter
+```
+## LICENSE
+
+The `LICENSE` file applies to all files unless listed specifically.
+
+`LICENSE_SPINE` file applies to following files including adapted code for this repo:
+
+- `src/libs/spine-player.css`
+- `src/libs/spine-player.js`
+
+`Copyright © 2017 - 2023 Arknights/Hypergryph Co., Ltd` applies to following files:
+
+- all files under `operator` folder and its sub-folders
+
 ## Supported Operators
 
 | Operator | Live Preview | Steam Workshop |
@@ -28,142 +135,3 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 | Become Anew / Rosmontis | [Link](https://arknights.halyul.dev/rosmontis_become_anew/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883012349) |
 | Dream in a Moment / Passager | [Link](https://arknights.halyul.dev/passager_dream_in_a_moment/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883021565) |
 | Summer Feast / Mizuki | [Link](https://arknights.halyul.dev/mizuki_summer_feast/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2895953271) |
-
-- For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
-- For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.
-- For Linux users: You power user should be able to find your solutions!
-
-## Usage
-### Command Line Tool
-
-``` bash
-$ python3 aklive2d.py -h  
-usage: aklive2d [-h] {server,s,build,b,init,i} ...
-
-Arknights Live 2D Wallpaper Builder
-
-optional arguments:
-  -h, --help            show this help message and exit
-
-Available commands:
-  {server,s,build,b,init,i}
-                        <Required> Select the command to run
-    server (s)          Development Server
-    build (b)           Build releases
-    init (i)            Initialize a new operator
-```
-``` bash
-$ python3 aklive2d.py s -h
-usage: aklive2d server [-h] [-p PORT] -o OPERATOR_NAME [-r]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -p PORT, --port PORT  Development server port (default: 8080)
-  -o OPERATOR_NAME, --operator OPERATOR_NAME
-                        <Required> Operator to develop (default: None)
-  -r, --rebuild         Rebuild assets (default: False)
-```
-``` bash
-$ python3 aklive2d.py b -h
-usage: aklive2d build [-h] [-o OPERATOR_NAMES [OPERATOR_NAMES ...]] [-r]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -o OPERATOR_NAMES [OPERATOR_NAMES ...], --operators OPERATOR_NAMES [OPERATOR_NAMES ...]
-                        Operators to build (default: ['all'])
-  -r, --rebuild         Rebuild assets (default: False)
-```
-``` bash
-$ python3 aklive2d.py i -h
-usage: aklive2d init [-h] [-c OPERATOR_NAME]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -c OPERATOR_NAME, --copy OPERATOR_NAME
-                        YAML pre-defined Operator assets to copy (default: None)
-```
-### Webpage & JavaScript
-
-Add query string `settings` to bring up the settings panel to adjust your settings. Then use appropriate JavaScript code to load your settings
-
-``` javascript
-settings.setFPS(integer) // set FPS
-settings.displayLogo(boolean) // display logo or not
-settings.resizeLogo(float) // the ratio of the logo
-settings.opacityLogo(float) // the opacity of the logo
-settings.setLogo(url, removeInvert) // change the logo, url: image url, removeInvert: boolean
-settings.setBackground(url) // change the background, url: image url
-settings.positionPadding("padLeft", integer) // left padding
-settings.positionPadding("padRight", integer) // right padding
-settings.positionPadding("padTop", integer) // top padding
-settings.positionPadding("padBottom", integer) // bottom padding
-
-settings.open() // open settings panel
-settings.close() // close settings panel
-settings.reset() // reset settings
-```
-
-## Config
-``` yaml
-# share properties for all operators
-operator:
-  preview: preview.jpg # Steam workshop preview image file
-  project_json: project.json # Steam workshop project file
-  source_folder: ./operator/{name}/extracted/ # The folder that stores extracted game files
-  target_folder: ./operator/{name}/processed/ # The folder that stores processed game files
-# Development server settings
-# List all the supported operators under <operators> block
-operators:
-  chen: # <operator name>/<folder name under "operator" folder>, will be used to replace <{name}> above
-    _operator_settings.js: # refer to char_1013_chen2_2_settings.js under operator folder
-      fallbackImage_height: 2048 # fallback image height
-      fallbackImage_width: 2048 # fallback image width
-      filename: dyn_illust_char_1013_chen2 # common file name
-      fps: 60 # default fps target in the webpage
-      opacity: 100 # optional property, can be used in the file
-      viewport_bottom: 1 # bottom padding of the model
-      viewport_left: 0 # left padding of the model
-      viewport_right: 0 # right padding of the model
-      viewport_top: 1 # top padding of the model
-    index.html: # refer to index.html under template folder
-      fallback_name: char_1013_chen2_2 # fallback image name
-      id: char_1013_chen2 # id of the operator
-      operator_logo: logo_rhodes_override # operator logo
-      title: Ch'en the Holungday # webpage title
-      version: __get_version # eval __get_version() function
-    project.json: # refer to project.json under operator folder
-      description: 'Arknights: Ch''en/Chen the Holungday Live 2D\n明日方舟：假日威龙陈 Live
-        2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease
-        set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在
-        Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/chen\nGithub:
-        https://github.com/Halyul/aklive2d' # Steam Workshop description
-      title: 'Arknights: Ch''en/Chen the Holungday - 明日方舟：假日威龙陈' # Steam Workshop title
-      ui_logo_opacity: 100 # logo opacity setting in WE
-      ui_logo_ratio: 61.8 # logo ratio setting in WE
-      ui_operator_logo: 'true' # enable/disable logo in WE
-      ui_position_padding_bottom: 1 # bottom padding of the model in WE
-      ui_position_padding_left: 0 # left padding of the model in WE
-      ui_position_padding_right: 0 # right padding of the model in WE
-      ui_position_padding_top: 1 # top padding of the model in WE
-      workshopid: 2564643862 # Steam Workshop id
-server:
-  operator_folder: ./operator/ # The path that the showcase webpage accesses game files
-  release_folder: ./release/ # The folder that stores the showcase webpage
-  template_folder: ./template/ # The folder that stores the showcase template
-```
-## LICENSE
-
-The `LICENSE` file applies to all files unless listed specifically.
-
-`LICENSE_SPINE` file applies to following files including adapted code for this repo:
-
-- `template/assets/spine-player.css`
-- `template/assets/spine-player.js`
-- `release/*/assets/spine-player.css`
-- `release/*/assets/spine-player.js`
-
-`Copyright © 2017 - 2021 Arknights/Hypergryph Co., Ltd` applies to following files:
-
-- all files under `operator` folder and its sub-folders
-- all files under `release/*/operator/*` folder
-- `release/*/operator/operator_assets.js`

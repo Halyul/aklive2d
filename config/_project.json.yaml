@@ -1,9 +1,0 @@
-title: ${var:index.html->title}
-description: '${func:split("project.json->title" ," - ")[0]} Live 2D\n${func:split("project.json->title" ," - ")[1]} Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/${var:link}\nGithub: https://github.com/Halyul/aklive2d'
-ui_logo_opacity: ${var:_operator_settings.js->opacity}
-ui_logo_ratio: 61.8
-ui_operator_logo: 'true'
-ui_position_padding_bottom: ${var:_operator_settings.js->viewport_bottom}
-ui_position_padding_left: ${var:_operator_settings.js->viewport_left}
-ui_position_padding_right: ${var:_operator_settings.js->viewport_right}
-ui_position_padding_top: ${var:_operator_settings.js->viewport_top}

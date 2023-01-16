@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_1028_texas2
-  fps: 60
-  opacity: 30
-  viewport_bottom: 0
-  viewport_left: 0
-  viewport_right: 0
-  viewport_top: 0
-  invert_filter: true
-index.html:
-  fallback_name: char_1028_texas2_2
-  id: char_1028_texas2
-  operator_logo: logo_penguin
-  title: 'Arknights: Texas the Omertosa - 明日方舟：缄默德克萨斯'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: texas_the_omertosa
 type: operator
 date: 2022/11
+title: 'Arknights: Texas the Omertosa - 明日方舟：缄默德克萨斯'
+filename: dyn_illust_char_1028_texas2
+logo: logo_penguin
+fallback_name: char_1028_texas2_2
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true

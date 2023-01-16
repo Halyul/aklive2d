@@ -1,21 +1,12 @@
-_operator_settings.js:
-  fallbackImage_height: 2048
-  fallbackImage_width: 2048
-  filename: dyn_illust_char_322_lmlee_witch#3
-  fps: 60
-  opacity: 30
-  viewport_bottom: 0
-  viewport_left: 0
-  viewport_right: 0
-  viewport_top: 0
-  invert_filter: true
-index.html:
-  fallback_name: char_322_lmlee_witch%233
-  id: char_322_lmlee_witch%233
-  operator_logo: logo_lee
-  title: 'Arknights: Trust Your Eyes / Lee - 明日方舟：手到牌来·老鲤'
-  version: ${func:get_version()}
-project.json: !include config/_project.json.yaml
 link: lee_trust_your_eyes
 type: skin
 date: 2022/10
+title: 'Arknights: Trust Your Eyes / Lee - 明日方舟：手到牌来·老鲤'
+filename: dyn_illust_char_322_lmlee_witch#3
+logo: logo_lee
+fallback_name: char_322_lmlee_witch#3
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true

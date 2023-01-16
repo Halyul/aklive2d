@@ -15,8 +15,16 @@ $ O={operator_name} node preprocessing.js
 To generate operator assets for showcase page
 ```
 ``` bash
+$ node preprocessing.js -a
+To generate all operator assets for showcase page
+```
+``` bash
 $ O={operator_name} node preprocessing.js -i
 To initialize folder and config file for an operator
+```
+``` bash
+$ node preprocessing.js -d
+To generate directory.json
 ```
 ``` bash
 $ O={operator_name} pnpm run dev
@@ -25,10 +33,6 @@ Live showcase page server for development
 ``` bash
 $ O={operator_name} pnpm run build
 Build showcase webpage for an operator
-```
-``` bash
-$ node build_all.js
-Build showcase webpages for all operators
 ```
 ### Webpage & JavaScript
 

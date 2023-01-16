@@ -8,26 +8,35 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import init from './lib/initializer.js'
 import directory from './lib/directory.js'
+import exec from './lib/exec.js'
+
+let __dirname
+__dirname = __dirname || path.dirname(fileURLToPath(import.meta.url))
+const config = getConfig(__dirname)
 
 let mode = null
 const OPERATOR_NAME = process.env.O;
+const op = process.argv[2]
+
 if (process.argv[1].endsWith('vite.js')) {
     mode = "VITE"
 } else {
     mode = "NODE"
 }
-assert(OPERATOR_NAME !== undefined, 'Please set the environment variable O to the operator name.')
 
-if (mode === null) {
-    console.log('Please set the environment variable O to the operator name.')
-    console.log('Or use the -o flag to specify the operator name.')
-    process.exit(1)
+switch (op) {
+    case '-a':
+        exec(config)
+        process.exit(0)
+    case '-d':
+        directory(config, __dirname)
+        process.exit(0)
+    default:
+        break
 }
 
-let __dirname
-__dirname = __dirname || path.dirname(fileURLToPath(import.meta.url))
+assert(OPERATOR_NAME !== undefined, 'Please set the environment variable O to the operator name.')
 
-const config = getConfig(__dirname)
 const OPERATOR_SOURCE_FOLDER = path.join(__dirname, config.folder.operator)
 const OPERATOR_RELEASE_FOLDER = path.join(__dirname, config.folder.release, OPERATOR_NAME)
 const SHOWCASE_PUBLIC_FOLDER = path.join(__dirname, "public")
@@ -36,14 +45,9 @@ const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'extra
 const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, '_share')
 if (mode === 'NODE') {
 
-    const op = process.argv[2]
-
     switch (op) {
         case '-i':
             init(OPERATOR_NAME, __dirname, EXTRACTED_FOLDER)
-            process.exit(0)
-        case '-d':
-            directory(config, __dirname)
             process.exit(0)
         default:
             break

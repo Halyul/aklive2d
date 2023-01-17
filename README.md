@@ -11,19 +11,19 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 ### Command Line Tool
 
 ``` bash
-$ O={operator_name} node preprocessing.js
+$ O={operator_name} node runner.js
 To generate operator assets for showcase page
 ```
 ``` bash
-$ node preprocessing.js -a
+$ node runner.js -a
 To generate all operator assets for showcase page
 ```
 ``` bash
-$ O={operator_name} node preprocessing.js -i
+$ O={operator_name} node runner.js -i
 To initialize folder and config file for an operator
 ```
 ``` bash
-$ node preprocessing.js -d
+$ node runner.js -d
 To generate directory.json
 ```
 ``` bash

@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import path from 'path'
-import data from './preprocessing'
+import data from './runner'
 
 // https://vitejs.dev/config/
 export default defineConfig({

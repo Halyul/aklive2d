@@ -1,22 +1,22 @@
 import assert from 'assert'
-import getConfig from './lib/config.js'
-import ProjectJson from './lib/project_json.js'
-import EnvGenerator from './lib/env_generator.js'
-import { write, rmdir, copy } from './lib/file.js'
-import AssetsProcessor from './lib/assets_processor.js'
+import getConfig from './libs/config.js'
+import ProjectJson from './libs/project_json.js'
+import EnvGenerator from './libs/env_generator.js'
+import { write, rmdir, copy } from './libs/file.js'
+import AssetsProcessor from './libs/assets_processor.js'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import init from './lib/initializer.js'
-import directory from './lib/directory.js'
-import exec from './lib/exec.js'
+import init from './libs/initializer.js'
+import directory from './libs/directory.js'
+import { buildAll } from './libs/exec.js'
 
 let __dirname
 __dirname = __dirname || path.dirname(fileURLToPath(import.meta.url))
 const config = getConfig(__dirname)
 
 let mode = null
-const OPERATOR_NAME = process.env.O;
 const op = process.argv[2]
+const OPERATOR_NAME = process.env.O || process.argv[3];
 
 if (process.argv[1].endsWith('vite.js')) {
     mode = "VITE"
@@ -26,7 +26,7 @@ if (process.argv[1].endsWith('vite.js')) {
 
 switch (op) {
     case '-a':
-        exec(config)
+        buildAll(config)
         process.exit(0)
     case '-d':
         directory(config, __dirname)

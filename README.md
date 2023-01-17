@@ -139,3 +139,5 @@ The `LICENSE` file applies to all files unless listed specifically.
 | Become Anew / Rosmontis | [Link](https://arknights.halyul.dev/rosmontis_become_anew/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883012349) |
 | Dream in a Moment / Passager | [Link](https://arknights.halyul.dev/passager_dream_in_a_moment/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883021565) |
 | Summer Feast / Mizuki | [Link](https://arknights.halyul.dev/mizuki_summer_feast/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2895953271) |
+| Chongyue | [Link](https://arknights.halyul.dev/chongyue/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2919486659) |
+| It Does Wash the Strings / Ling | [Link](https://arknights.halyul.dev/ling_it_does_wash_the_strings/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2919482772) |

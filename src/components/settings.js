@@ -33,11 +33,6 @@ export default class Settings {
   #padRight = this.#defaultPadRight
   #padTop = this.#defaultPadTop
   #padBottom = this.#defaultPadBottom
-  #hideLogo = this.#defaulthideLogo
-  #hidePositionSettings = true
-  #backgroundClearDisabled = true
-  #logoClearDisabled = true
-  #isPlaying = true
 
   constructor(el, logoEl) {
     this.#el = el
@@ -70,7 +65,6 @@ export default class Settings {
   }
 
   setLogoDisplay(flag) {
-    this.#hideLogo = flag
     this.#logoEl.hidden = flag;
   }
 
@@ -153,28 +147,36 @@ export default class Settings {
       case "left":
         this.#padLeft = value
         this.spinePlayer.updateViewport({
-          ...this.#defaultViewport,
           padLeft: `${value}%`,
+          padRight: `${this.#padRight}%`,
+          padTop: `${this.#padTop}%`,
+          padBottom: `${this.#padBottom}%`,
         })
         break;
       case "right":
         this.#padRight = value
         this.spinePlayer.updateViewport({
-          ...this.#defaultViewport,
+          padLeft: `${this.#padLeft}%`,
           padRight: `${value}%`,
+          padTop: `${this.#padTop}%`,
+          padBottom: `${this.#padBottom}%`,
         })
         break;
       case "top":
         this.#padTop = value
         this.spinePlayer.updateViewport({
-          ...this.#defaultViewport,
+          padLeft: `${this.#padLeft}%`,
+          padRight: `${this.#padRight}%`,
           padTop: `${value}%`,
+          padBottom: `${this.#padBottom}%`,
         })
         break;
       case "bottom":
         this.#padBottom = value
         this.spinePlayer.updateViewport({
-          ...this.#defaultViewport,
+          padLeft: `${this.#padLeft}%`,
+          padRight: `${this.#padRight}%`,
+          padTop: `${this.#padTop}%`,
           padBottom: `${value}%`,
         })
         break;

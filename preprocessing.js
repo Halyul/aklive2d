@@ -43,6 +43,7 @@ const SHOWCASE_PUBLIC_FOLDER = path.join(__dirname, "public")
 const SHOWCASE_PUBLIC_ASSSETS_FOLDER = path.join(SHOWCASE_PUBLIC_FOLDER, "assets")
 const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'extracted')
 const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, '_share')
+rmdir(SHOWCASE_PUBLIC_FOLDER)
 if (mode === 'NODE') {
 
     switch (op) {
@@ -54,7 +55,6 @@ if (mode === 'NODE') {
     }
 
     rmdir(OPERATOR_RELEASE_FOLDER)
-    rmdir(SHOWCASE_PUBLIC_FOLDER)
 
     const projectJson = new ProjectJson(config, OPERATOR_NAME, __dirname, OPERATOR_SHARE_FOLDER)
     projectJson.load().then((content) => {

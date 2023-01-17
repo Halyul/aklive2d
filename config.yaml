@@ -1,6 +1,7 @@
 folder: 
   operator: ./operator/
   release: ./release/
+  directory: _assets
 operators:
   chen: !include config/chen.yaml
   dusk: !include config/dusk.yaml

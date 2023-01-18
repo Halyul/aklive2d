@@ -7,11 +7,11 @@ export default class EnvGenerator {
     this.#config = config.operators[operatorName]
   }
 
-  async generate(dimensions) {
-    return await this.#promise(dimensions)
+  async generate() {
+    return await this.#promise()
   }
 
-  #promise(dimensions) {
+  #promise() {
     return new Promise((resolve, reject) => {
       resolve([
         `VITE_TITLE="${this.#config.title}"`,
@@ -23,8 +23,8 @@ export default class EnvGenerator {
         `VITE_VIEWPORT_TOP=${this.#config.viewport_top}`,
         `VITE_VIEWPORT_BOTTOM=${this.#config.viewport_bottom}`,
         `VITE_INVERT_FILTER=${this.#config.invert_filter}`,
-        `VITE_IMAGE_WIDTH=${dimensions[0]}`,
-        `VITE_IMAGE_HEIGHT=${dimensions[1]}`,
+        `VITE_IMAGE_WIDTH=2048`,
+        `VITE_IMAGE_HEIGHT=2048`,
       ].join('\n'))
     })
   }

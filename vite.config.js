@@ -1,6 +1,11 @@
 import { defineConfig } from 'vite'
 import path from 'path'
-import data from './runner'
+import getConfig from './libs/config.js'
+
+const data = {
+  config: getConfig(__dirname),
+  OPERATOR_NAME: process.argv[3],
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({

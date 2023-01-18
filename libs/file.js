@@ -15,6 +15,10 @@ export async function read(filePath, encoding = 'utf8') {
   return await fsP.readFile(filePath, encoding, { flag: 'r' })
 }
 
+export async function readSync(filePath, encoding = 'utf8') {
+  return fs.readFileSync(filePath, encoding, { flag: 'r' })
+}
+
 export function exists(filePath) {
   return fs.existsSync(filePath)
 }
@@ -44,4 +48,8 @@ export async function copy(sourcePath, targetPath) {
   }
   mkdir(path.dirname(targetPath))
   return await fsP.copyFile(sourcePath, targetPath)
+}
+
+function append(content, filePath) {
+  
 }

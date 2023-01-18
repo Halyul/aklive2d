@@ -11,28 +11,28 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 ### Command Line Tool
 
 ``` bash
-$ O={operator_name} node runner.js
+$ node runner.js generate {operator_name}
 To generate operator assets for showcase page
 ```
 ``` bash
-$ node runner.js -a
-To generate all operator assets for showcase page
-```
-``` bash
-$ O={operator_name} node runner.js -i
-To initialize folder and config file for an operator
-```
-``` bash
-$ node runner.js -d
-To generate directory.json
-```
-``` bash
-$ O={operator_name} pnpm run dev
+$ node runner.js dev {operator_name}
 Live showcase page server for development
 ```
 ``` bash
-$ O={operator_name} pnpm run build
+$ node runner.js build {operator_name}
 Build showcase webpage for an operator
+```
+``` bash
+$ node runner.js build-all
+To generate all operator assets for showcase page
+```
+``` bash
+$ node runner.js init {operator_name}
+To initialize folder and config file for an operator
+```
+``` bash
+$ node runner.js directory
+To generate directory.json
 ```
 ### Webpage & JavaScript
 

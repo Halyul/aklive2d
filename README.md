@@ -31,6 +31,10 @@ $ node runner.js init {operator_name}
 To initialize folder and config file for an operator
 ```
 ``` bash
+$ node runner.js readme {operator_name}
+To add operator info to README.md
+```
+``` bash
 $ node runner.js directory
 To generate directory.json
 ```

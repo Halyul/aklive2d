@@ -35,7 +35,6 @@ export default class AssetsProcessor {
         const fallbackFilename = `${this.#config.operators[this.#operatorName].fallback_name}.png`
         const fallbackBuffer = await this.#alphaCompositer.process(fallbackFilename, extractedDir)
         await write(fallbackBuffer, path.join(this.#operatorSourceFolder, this.#operatorName, fallbackFilename))
-        await copy(path.join(this.#operatorSourceFolder, this.#operatorName, fallbackFilename), path.join(publicAssetsDir, fallbackFilename))
         return {
             dimensions,
             assetsJson

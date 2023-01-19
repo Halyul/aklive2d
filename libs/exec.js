@@ -19,10 +19,8 @@ export function runDev(rootDir) {
     })()
 }
 
-export function runBuild(rootDir) {
-    ; (async () => {
-        await build({
-            root: rootDir,
-        })
-    })()
+export async function runBuild(rootDir) {
+    await build({
+        root: rootDir,
+    })
 }

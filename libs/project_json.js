@@ -38,6 +38,7 @@ export default class ProjectJson {
     if (matcher.match() !== null) {
       this.#json.description = matcher.process()
     }
+    // TODO: move the template generation to here
     this.#json = {
       ...this.#json,
       description: this.#json.description,

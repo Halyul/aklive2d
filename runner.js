@@ -65,9 +65,7 @@ async function main() {
 
     rmdir(OPERATOR_RELEASE_FOLDER)
 
-    const backgrounds = ['operator_bg.png', ...background.files].map((f) => {
-        return `${config.folder.background}/${f}`
-    })
+    const backgrounds = ['operator_bg.png', ...background.files]
 
     const projectJson = new ProjectJson(config, OPERATOR_NAME, __dirname, OPERATOR_SHARE_FOLDER, {
         backgrounds

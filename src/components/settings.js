@@ -126,7 +126,7 @@ export default class Settings {
   }
 
   setDefaultBackground(e) {
-    const backgroundURL = `url("${import.meta.env.BASE_URL}assets/${e}")`
+    const backgroundURL = `url("${import.meta.env.BASE_URL}assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${e}")`
     if (document.getElementById("custom_background_clear").disabled && !document.body.style.backgroundImage.startsWith("url(\"file:")) {
       this.setBackgoundImage(backgroundURL)
     }

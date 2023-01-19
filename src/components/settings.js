@@ -60,7 +60,6 @@ export default class Settings {
 
   setFPS(value) {
     this.#fps = value
-    console.log(typeof value)
     this.spinePlayer.setFps(value)
   }
 
@@ -126,6 +125,14 @@ export default class Settings {
     document.body.style.backgroundImage = v
   }
 
+  setDefaultBackground(e) {
+    const backgroundURL = `url("${import.meta.env.BASE_URL}assets/${e}")`
+    if (document.getElementById("custom_background_clear").disabled && !document.body.style.backgroundImage.startsWith("url(\"file:")) {
+      this.setBackgoundImage(backgroundURL)
+    }
+    this.#defaultBackgroundImage = backgroundURL
+  }
+
   setBackground(e) {
     this.#readFile(
       e,
@@ -133,13 +140,14 @@ export default class Settings {
         const content = readerEvent.target.result;
         this.setBackgoundImage(`url("${content}")`)
       },
-      () => document.getElementById("background_image_clear").disabled = false
+      () => document.getElementById("custom_background_clear").disabled = false
     )
   }
 
   resetBackground() {
     this.setBackgoundImage(this.#defaultBackgroundImage)
-    document.getElementById("background_image_clear").disabled = true
+    document.getElementById("custom_background").value = ""
+    document.getElementById("custom_background_clear").disabled = true
   }
 
   positionPadding(key, value) {
@@ -254,9 +262,19 @@ export default class Settings {
             </div>
         </div>
         <div>
-          <label for="background_image">Background Image (Store Locally)</label>
-          <input type="file" id="background_image"/>
-          <button type="button" disabled id="background_image_clear" disabled>Clear</button>
+          <div>
+            <label for="default_background_select">Choose a default background:</label>
+            <select name="default_backgrounds" id="default_background_select">
+                ${JSON.parse(import.meta.env.VITE_BACKGROUND_FILES).map((b) => {
+                  return `<option value="${b}">${b}</option>`
+                })}
+            </select>
+          </div>
+          <div>
+            <label for="custom_background"> Custom Background (Store Locally)</label>
+            <input type="file" id="custom_background"/>
+            <button type="button" disabled id="custom_background_clear" disabled>Clear</button>
+          </div>
         </div>
         <div>
           <label for="position">Position</label>
@@ -346,8 +364,10 @@ export default class Settings {
       _this.setLogoOpacity(e.currentTarget.value);
     })
 
-    document.getElementById("background_image").addEventListener("change", e => _this.setBackground(e))
-    document.getElementById("background_image_clear").addEventListener("click", e => _this.resetBackground())
+    document.getElementById('default_background_select').addEventListener("change", e => _this.setDefaultBackground(e.currentTarget.value))
+
+    document.getElementById("custom_background").addEventListener("change", e => _this.setBackground(e))
+    document.getElementById("custom_background_clear").addEventListener("click", e => _this.resetBackground())
 
     document.getElementById("position").addEventListener("click", e => {
       _this.#showRelated(e.currentTarget, "position_realted");

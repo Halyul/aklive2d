@@ -1,10 +1,10 @@
-import path from 'path'
-
 export default class EnvGenerator {
   #config
+  #assets
 
-  constructor(config, operatorName) {
+  constructor(config, operatorName, assets) {
     this.#config = config.operators[operatorName]
+    this.#assets = assets
   }
 
   async generate() {
@@ -25,6 +25,7 @@ export default class EnvGenerator {
         `VITE_INVERT_FILTER=${this.#config.invert_filter}`,
         `VITE_IMAGE_WIDTH=2048`,
         `VITE_IMAGE_HEIGHT=2048`,
+        `VITE_BACKGROUND_FILES=${JSON.stringify(this.#assets.backgrounds)}`,
       ].join('\n'))
     })
   }

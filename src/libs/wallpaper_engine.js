@@ -25,6 +25,11 @@ window.wallpaperPropertyListener = {
                 window.settings.resetLogoImage()
             }
         }
+        if (properties.defaultbackground) {
+            if (properties.defaultbackground.value) {
+                window.settings.setDefaultBackground(properties.defaultbackground.value)
+            }
+        }
         if (properties.background) {
             if (properties.background.value) {
                 window.settings.setBackgoundImage(`url('file:///${properties.background.value}`)

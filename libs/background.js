@@ -51,6 +51,10 @@ export default class Background {
       .toFile(path.join(this.#backgroundFolder, `${filenamePrefix}${fileExt}`));
   }
 
+  get files() {
+    return this.#files.map(f => f.replace('_left', ''))
+  }
+
   getFilesToCopy(publicAssetsDir) {
     return this.#files.map((f) => {
       return {

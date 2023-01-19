@@ -65,7 +65,13 @@ async function main() {
 
     rmdir(OPERATOR_RELEASE_FOLDER)
 
-    const projectJson = new ProjectJson(config, OPERATOR_NAME, __dirname, OPERATOR_SHARE_FOLDER)
+    const backgrounds = ['operator_bg.png', ...background.files].map((f) => {
+        return `${config.folder.background}/${f}`
+    })
+
+    const projectJson = new ProjectJson(config, OPERATOR_NAME, __dirname, OPERATOR_SHARE_FOLDER, {
+        backgrounds
+    })
     projectJson.load().then((content) => {
         write(JSON.stringify(content, null, 2), path.join(OPERATOR_RELEASE_FOLDER, 'project.json'))
     })
@@ -75,7 +81,9 @@ async function main() {
         write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `${config.operators[OPERATOR_NAME].filename}.json`))
     })
 
-    const envGenerator = new EnvGenerator(config, OPERATOR_NAME, __dirname)
+    const envGenerator = new EnvGenerator(config, OPERATOR_NAME, {
+        backgrounds
+    })
     envGenerator.generate().then((content) => {
         write(content, path.join(__dirname, '.env'))
     })
@@ -89,8 +97,8 @@ async function main() {
         },
         {
             filename: 'operator_bg.png',
-            source: path.join(OPERATOR_SOURCE_FOLDER, config.folder.background),
-            target: path.join(SHOWCASE_PUBLIC_FOLDER)
+            source: path.join(OPERATOR_SHARE_FOLDER, config.folder.background),
+            target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, config.folder.background)
         },
         {
             filename: `${config.operators[OPERATOR_NAME].logo}.png`,

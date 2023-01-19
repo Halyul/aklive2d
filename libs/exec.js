@@ -4,7 +4,7 @@ import { createServer, build } from 'vite'
 export function buildAll(config) {
     for (const [key, _] of Object.entries(config.operators)) {
         if (key.startsWith('_')) break;
-        console.log(execSync(`node runner.js --build ${key}`).toString());
+        console.log(execSync(`node runner.js build ${key}`).toString());
     }
 }
 

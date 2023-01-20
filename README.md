@@ -121,6 +121,21 @@ The `LICENSE` file applies to all files unless listed specifically.
 
 - all files under `operator` folder and its sub-folders
 
+## Instructions on Extracting In-Game Assets
+I'm still struggling to find a command-line tool to extract in-game assets. But [AssetRipper](https://github.com/AssetRipper/AssetRipper) seems to have a command-line interface, I'm too lazy to have a deeper inverstigation.
+
+| Assets Name | Location | Type |
+|-------------|----------|------|
+| Logos       | spritepack/ui_camp_logo_h2_0.ab | Sprite |
+| Logos for collaboration | spritepack/ui_camp_logo_h2_linkage_0.ab | Sprite |
+| Dynaimc Character | arts/dynchars/ | Texture2D & TextAsset |
+| Static Image | Operator: chararts/ ; Skin: skinpack/ | Texture2D |
+| Background | arts/ui/homebackground/wrapper/ | Sprite |
+| Voice Clips | audio/sound_beta_2/voice{_*}/ | AudioClip |
+| Voice Lines* | gamedata/excel/charword_table.ab | TextAsset |
+
+*: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)
+
 ## Supported Operators
 
 | Operator | Live Preview | Steam Workshop |

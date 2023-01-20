@@ -1,0 +1,120 @@
+description: "${func:split('title' ,' - ')[0]} Live 2D\n${func:split('title' ,' - ')[1]} Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/${var:link}\nGithub: https://github.com/Halyul/aklive2d"
+localization:
+  en-us:
+    ui_custom_background: Custom Background
+    ui_default_background: Default Background
+    ui_logo_image: Logo Image
+    ui_logo_notice: Notice
+    ui_logo_opacity: Logo Opacity
+    ui_logo_ratio: Logo Ratio
+    ui_operator_logo: Operator Logo
+    ui_position: "USE WITH CAUTION: Position"
+    ui_position_padding_bottom: Padding Bottom
+    ui_position_padding_left: Padding Left
+    ui_position_padding_right: Padding Right
+    ui_position_padding_top: Padding Top
+  zh-chs:
+    ui_custom_background: 背景图片
+    ui_default_background: 默认背景
+    ui_logo_image: 图标图片
+    ui_logo_notice: 通知
+    ui_logo_opacity: 图标透明度
+    ui_logo_ratio: 图标比例
+    ui_operator_logo: 干员图标
+    ui_position: "注意使用: 位置"
+    ui_position_padding_bottom: 底部距离
+    ui_position_padding_left: 左部距离
+    ui_position_padding_right: 右部距离
+    ui_position_padding_top: 上部距离
+properties:
+  - key: notice
+    value: 
+     text: ui_logo_notice
+     type: textinput
+     value: Set FPS target in Settings
+  - key: logo
+    value: 
+     text: ui_operator_logo
+     type: bool
+     value: true
+  - key: logoimage
+    value: 
+     text: ui_logo_image
+     type: file
+     value: ""
+     condition: logo.value == true
+  - key: logoratio
+    value: 
+     text: ui_logo_ratio
+     type: "slider"
+     value: 61.8
+     condition: logo.value == true
+     fraction: true
+     max: 100
+     min: 0
+     precision: 2
+     step: 0.1
+  - key: logoopacity
+    value: 
+     text: ui_logo_opacity
+     type: slider
+     value: 30
+     condition: logo.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: defaultbackground
+    value: 
+     text: ui_default_background
+     type: combo
+     value: this.#assets.backgrounds[0]
+     fraction: false
+     max: 100
+     min: 0
+     options:
+  - key: background
+    value: 
+     text: ui_custom_background
+     type: file
+     value: ""
+  - key: position
+    value: 
+     text: ui_position
+     type: bool
+     value: false
+  - key: paddingleft
+    value: 
+     text: ui_position_padding_left
+     type: slider
+     value: 
+     condition: position.value == true
+     fraction: false
+     max: 100
+     min: -100
+  - key: paddingright
+    value: 
+     text: ui_position_padding_right
+     type: slider
+     value: 
+     condition: position.value == true
+     fraction: false
+     max: 100
+     min: -100
+  - key: paddingtop
+    value: 
+     text: ui_position_padding_top
+     type: slider
+     value: 
+     condition: position.value == true
+     fraction: false
+     max: 100
+     min: -100
+  - key: paddingbottom
+    value: 
+     text: ui_position_padding_bottom
+     type: slider
+     value: 
+     condition: position.value == true
+     fraction: false
+     max: 100
+     min: -100

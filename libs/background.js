@@ -3,16 +3,12 @@ import fs from 'fs';
 import sharp from "sharp";
 
 export default class Background {
-  #config
-  #rootDir
   #backgroundFolder
   #extractFolder
   #files
 
-  constructor(config, rootDir) {
-    this.#config = config;
-    this.#rootDir = rootDir;
-    this.#backgroundFolder = path.join(rootDir, config.folder.operator, '_share', config.folder.background);
+  constructor() {
+    this.#backgroundFolder = path.join(__dirname, __config.folder.operator, '_share', __config.folder.background);
     this.#extractFolder = path.join(this.#backgroundFolder, 'extracted');
   }
 
@@ -60,7 +56,7 @@ export default class Background {
       return {
         filename: f.replace('_left', ''),
         source: path.join(this.#backgroundFolder),
-        target: path.join(publicAssetsDir, this.#config.folder.background)
+        target: path.join(publicAssetsDir, __config.folder.background)
       };
     })
   }

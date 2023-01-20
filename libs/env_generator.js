@@ -1,11 +1,9 @@
 export default class EnvGenerator {
-  #config
   #assets
   #operatorConfig
 
-  constructor(config, operatorName, assets) {
-    this.#config = config
-    this.#operatorConfig = config.operators[operatorName]
+  constructor(assets) {
+    this.#operatorConfig = __config.operators[__operator_name]
     this.#assets = assets
   }
 
@@ -23,7 +21,7 @@ export default class EnvGenerator {
       `VITE_IMAGE_WIDTH=2048`,
       `VITE_IMAGE_HEIGHT=2048`,
       `VITE_BACKGROUND_FILES=${JSON.stringify(this.#assets.backgrounds)}`,
-      `VITE_BACKGROUND_FOLDER=${this.#config.folder.background}`,
+      `VITE_BACKGROUND_FOLDER=${__config.folder.background}`,
     ].join('\n')
   }
 

@@ -1,9 +1,9 @@
 import path from 'path'
 import { read } from './yaml.js'
 
-export default function (dirname) {
+export default function () {
     return {
-        basedir: dirname,
-        ...read(path.join(dirname, 'config.yaml'))
+        basedir: __dirname,
+        ...read(path.join(__dirname, 'config.yaml'))
     }
 }

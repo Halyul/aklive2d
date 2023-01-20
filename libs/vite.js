@@ -2,15 +2,6 @@ import path from 'path'
 import { createServer, build } from 'vite'
 
 export default class Vite {
-  #config
-  #rootDir
-  #operatorName
-
-  constructor(config, operatorName, rootDir) {
-    this.#config = config
-    this.#operatorName = operatorName
-    this.#rootDir = rootDir
-  }
 
   dev() {
     ; (async () => {
@@ -28,17 +19,17 @@ export default class Vite {
   get #viteConfig() {
     return {
       base: "",
-      publicDir: path.resolve(this.#rootDir, this.#config.folder.release, this.#operatorName),
-      root: path.resolve(this.#rootDir),
+      publicDir: path.resolve(__dirname, __config.folder.release, __operator_name),
+      root: path.resolve(__dirname),
       resolve: {
         alias: {
-          '@': path.resolve(this.#rootDir, './src'),
-          '!': path.resolve(this.#rootDir, this.#config.folder.operator, this.#operatorName),
-          '#': path.resolve(this.#config.basedir, this.#config.folder.operator, this.#operatorName, `${this.#config.operators[this.#operatorName].filename}.json`),
+          '@': path.resolve(__dirname, './src'),
+          '!': path.resolve(__dirname, __config.folder.operator, __operator_name),
+          '#': path.resolve(__config.basedir, __config.folder.operator, __operator_name, `${__config.operators[__operator_name].filename}.json`),
         },
       },
       build: {
-        outDir: path.resolve(this.#rootDir, this.#config.folder.release, this.#operatorName),
+        outDir: path.resolve(__dirname, __config.folder.release, __operator_name),
         emptyOutDir: false,
         chunkSizeWarningLimit: 10000,
       },

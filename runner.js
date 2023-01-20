@@ -13,17 +13,17 @@ import { appendReadme } from './libs/append.js'
 import Background from './libs/background.js'
 
 async function main() {
-  const __dirname = path.dirname(fileURLToPath(import.meta.url))
-  const config = getConfig(__dirname)
+  global.__dirname = path.dirname(fileURLToPath(import.meta.url))
+  global.__config = getConfig()
 
   const op = process.argv[2]
   let OPERATOR_NAMES = process.argv.slice(3);
 
-  const background = new Background(config, __dirname)
+  const background = new Background()
   await background.process()
   const backgrounds = ['operator_bg.png', ...background.files]
 
-  directory(config, __dirname)
+  directory()
 
   /**
    * Skip all, no need for OPERATOR_NAME
@@ -34,7 +34,7 @@ async function main() {
     case 'directory':
       process.exit(0)
     case 'build-all':
-      for (const [key, _] of Object.entries(config.operators)) {
+      for (const [key, _] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
     default:
@@ -44,8 +44,9 @@ async function main() {
   assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
-    const OPERATOR_SOURCE_FOLDER = path.join(__dirname, config.folder.operator)
-    const OPERATOR_RELEASE_FOLDER = path.join(__dirname, config.folder.release, OPERATOR_NAME)
+    global.__operator_name = OPERATOR_NAME
+    const OPERATOR_SOURCE_FOLDER = path.join(__dirname, __config.folder.operator)
+    const OPERATOR_RELEASE_FOLDER = path.join(__dirname, __config.folder.release, OPERATOR_NAME)
     const SHOWCASE_PUBLIC_ASSSETS_FOLDER = path.join(OPERATOR_RELEASE_FOLDER, "assets")
     const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'extracted')
     const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, '_share')
@@ -57,10 +58,10 @@ async function main() {
      */
     switch (op) {
       case 'init':
-        init(OPERATOR_NAME, __dirname, EXTRACTED_FOLDER)
+        init(EXTRACTED_FOLDER)
         process.exit(0)
       case 'readme':
-        appendReadme(config, OPERATOR_NAME, __dirname)
+        appendReadme()
         process.exit(0)
       default:
         break
@@ -68,16 +69,16 @@ async function main() {
 
     rmdir(OPERATOR_RELEASE_FOLDER)
 
-    const projectJson = new ProjectJson(config, OPERATOR_NAME, __dirname, OPERATOR_SHARE_FOLDER, {
+    const projectJson = new ProjectJson(OPERATOR_SHARE_FOLDER, {
       backgrounds
     })
     projectJson.load().then((content) => {
       write(JSON.stringify(content, null, 2), path.join(OPERATOR_RELEASE_FOLDER, 'project.json'))
     })
 
-    const assetsProcessor = new AssetsProcessor(config, OPERATOR_NAME, __dirname)
-    assetsProcessor.process(SHOWCASE_PUBLIC_ASSSETS_FOLDER, EXTRACTED_FOLDER).then((content) => {
-      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `${config.operators[OPERATOR_NAME].filename}.json`))
+    const assetsProcessor = new AssetsProcessor()
+    assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
+      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `${__config.operators[OPERATOR_NAME].filename}.json`))
     })
 
     const filesToCopy = [
@@ -89,16 +90,16 @@ async function main() {
       },
       {
         filename: 'operator_bg.png',
-        source: path.join(OPERATOR_SHARE_FOLDER, config.folder.background),
-        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, config.folder.background)
+        source: path.join(OPERATOR_SHARE_FOLDER, __config.folder.background),
+        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, __config.folder.background)
       },
       {
-        filename: `${config.operators[OPERATOR_NAME].logo}.png`,
+        filename: `${__config.operators[OPERATOR_NAME].logo}.png`,
         source: path.join(OPERATOR_SHARE_FOLDER, 'logo'),
         target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
       },
       {
-        filename: `${config.operators[OPERATOR_NAME].fallback_name}.png`,
+        filename: `${__config.operators[OPERATOR_NAME].fallback_name}.png`,
         source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
         target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
       },
@@ -108,14 +109,14 @@ async function main() {
     })
 
     const envPath = path.join(__dirname, '.env')
-    writeSync((new EnvGenerator(config, OPERATOR_NAME, {
+    writeSync((new EnvGenerator({
       backgrounds
     })).generate(), envPath)
     /**
       * dev: run dev server
       * build: build assets
       */
-    const vite = new Vite(config, OPERATOR_NAME, __dirname)
+    const vite = new Vite(__config, OPERATOR_NAME, __dirname)
     switch (op) {
       case 'dev':
         vite.dev()

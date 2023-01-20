@@ -44,15 +44,19 @@ Add query string `settings` to bring up the settings panel to adjust your settin
 
 ``` javascript
 settings.setFPS(integer) // set FPS
-settings.displayLogo(boolean) // display logo or not
-settings.resizeLogo(float) // the ratio of the logo
-settings.opacityLogo(float) // the opacity of the logo
+settings.setLogoDisplay(boolean) // display logo or not
+settings.setLogoRatio(float) // the ratio of the logo
+settings.setLogoOpacity(float) // the opacity of the logo
 settings.setLogo(url) // change the logo, url: image url, removeInvert: boolean
-settings.setBackground(url) // change the background, url: image url
+settings.resetLogoImage() // reset to the default logo
+settings.setDefaultBackground(url) // change the default background, url: image filename from `background` folder
+settings.setBackgoundImage(url) // change the background, url: image url
+settings.resetBackground() // reset to the default background
 settings.positionPadding("left", integer) // left padding
 settings.positionPadding("right", integer) // right padding
 settings.positionPadding("top", integer) // top padding
 settings.positionPadding("bottom", integer) // bottom padding
+settings.positionReset() // reset the position
 
 settings.open() // open settings panel
 settings.close() // close settings panel

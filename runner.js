@@ -1,14 +1,14 @@
 import assert from 'assert'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { fork } from 'child_process';
 import getConfig from './libs/config.js'
 import ProjectJson from './libs/project_json.js'
 import EnvGenerator from './libs/env_generator.js'
-import { write, rmdir, copy, writeSync, rm } from './libs/file.js'
+import { write, rmdir, copy, writeSync } from './libs/file.js'
 import AssetsProcessor from './libs/assets_processor.js'
 import init from './libs/initializer.js'
 import directory from './libs/directory.js'
-import Vite from './libs/vite.js'
 import { appendReadme } from './libs/append.js'
 import Background from './libs/background.js'
 
@@ -44,7 +44,6 @@ async function main() {
   assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
-    global.__operator_name = OPERATOR_NAME
     const OPERATOR_SOURCE_FOLDER = path.join(__dirname, __config.folder.operator)
     const OPERATOR_RELEASE_FOLDER = path.join(__dirname, __config.folder.release, OPERATOR_NAME)
     const SHOWCASE_PUBLIC_ASSSETS_FOLDER = path.join(OPERATOR_RELEASE_FOLDER, "assets")
@@ -58,10 +57,10 @@ async function main() {
      */
     switch (op) {
       case 'init':
-        init(EXTRACTED_FOLDER)
+        init(OPERATOR_NAME, EXTRACTED_FOLDER)
         process.exit(0)
       case 'readme':
-        appendReadme()
+        appendReadme(OPERATOR_NAME)
         process.exit(0)
       default:
         break
@@ -69,14 +68,14 @@ async function main() {
 
     rmdir(OPERATOR_RELEASE_FOLDER)
 
-    const projectJson = new ProjectJson(OPERATOR_SHARE_FOLDER, {
+    const projectJson = new ProjectJson(OPERATOR_NAME, OPERATOR_SHARE_FOLDER, {
       backgrounds
     })
     projectJson.load().then((content) => {
       write(JSON.stringify(content, null, 2), path.join(OPERATOR_RELEASE_FOLDER, 'project.json'))
     })
 
-    const assetsProcessor = new AssetsProcessor()
+    const assetsProcessor = new AssetsProcessor(OPERATOR_NAME)
     assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
       write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `${__config.operators[OPERATOR_NAME].filename}.json`))
     })
@@ -108,27 +107,11 @@ async function main() {
       copy(path.join(file.source, file.filename), path.join(file.target, file.filename))
     })
 
-    const envPath = path.join(__dirname, '.env')
-    writeSync((new EnvGenerator({
+    const envPath = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, '.env')
+    writeSync((new EnvGenerator(OPERATOR_NAME, {
       backgrounds
     })).generate(), envPath)
-    /**
-      * dev: run dev server
-      * build: build assets
-      */
-    const vite = new Vite(__config, OPERATOR_NAME, __dirname)
-    switch (op) {
-      case 'dev':
-        vite.dev()
-        break
-      case 'build':
-      case 'build-all':
-        await vite.build()
-        rm(envPath)
-        break
-      default:
-        break
-    }
+    fork(path.join(__dirname, 'vite.js'), [op, OPERATOR_NAME])
   }
 }
 

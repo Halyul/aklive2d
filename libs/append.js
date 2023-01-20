@@ -1,18 +1,18 @@
 import path from 'path'
 import { appendSync, readSync } from './file.js'
 
-export function appendReadme() {
-    const operatorConfig = __config.operators[__operator_name]
-    const projectJson = JSON.parse(readSync(path.join(__dirname, __config.folder.operator, __operator_name, 'project.json')))
+export function appendReadme(operatorName) {
+    const operatorConfig = __config.operators[operatorName]
+    const projectJson = JSON.parse(readSync(path.join(__dirname, __config.folder.operator, operatorName, 'project.json')))
     appendSync(
         `\n| ${operatorConfig.title.split(' - ')[0].split('Arknights: ')[1]} | [Link](https://arknights.halyul.dev/${operatorConfig.link}/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=${projectJson.workshopid}) |`,
         path.join(__dirname, 'README.md')
     )
 }
 
-export function appendMainConfig() {
+export function appendMainConfig(operatorName) {
     appendSync(
-        `\n  ${__operator_name}: !include config/${__operator_name}.yaml`,
+        `\n  ${operatorName}: !include config/${operatorName}.yaml`,
         path.join(__dirname, 'config.yaml')
     )
 }

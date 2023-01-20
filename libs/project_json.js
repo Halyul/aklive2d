@@ -5,15 +5,14 @@ import { read as readYAML } from './yaml.js'
 
 export default class ProjectJson {
   #json
-  #config
   #operatorName
   #operatorSourceFolder
   #operatorShareFolder
   #assets
-  #rootDir
   #template
 
-  constructor(operatorShareFolder, assets) {
+  constructor(operatorName, operatorShareFolder, assets) {
+    this.#operatorName = operatorName
     this.#operatorSourceFolder = path.join(__dirname, __config.folder.operator)
     this.#operatorShareFolder = operatorShareFolder
     this.#assets = assets
@@ -29,7 +28,7 @@ export default class ProjectJson {
 
   #getPath() {
     // if exists, do not use the template
-    const defaultPath = path.join(this.#operatorSourceFolder, __operator_name, 'project.json')
+    const defaultPath = path.join(this.#operatorSourceFolder, this.#operatorName, 'project.json')
     if (exists(defaultPath)) {
       return defaultPath
     } else {
@@ -41,7 +40,7 @@ export default class ProjectJson {
     this.#json = {
       ...this.#json,
       description: this.#template.description,
-      title: __config.operators[__operator_name].title,
+      title: __config.operators[this.#operatorName].title,
       general: {
         ...this.#json.general,
         localization: this.#template.localization,
@@ -54,7 +53,7 @@ export default class ProjectJson {
   }
 
   #processYAML(template) {
-    const matcher = new Matcher(template.description, '${', '}', __config.operators[__operator_name])
+    const matcher = new Matcher(template.description, '${', '}', __config.operators[this.#operatorName])
     if (matcher.match() !== null) {
       template.description = matcher.process()
     }
@@ -74,25 +73,25 @@ export default class ProjectJson {
       {
         key: "paddingleft",
         value: {
-          value: __config.operators[__operator_name].viewport_left
+          value: __config.operators[this.#operatorName].viewport_left
         },
       },
       {
         key: "paddingright",
         value: {
-          value: __config.operators[__operator_name].viewport_right
+          value: __config.operators[this.#operatorName].viewport_right
         },
       },
       {
         key: "paddingtop",
         value: {
-          value: __config.operators[__operator_name].viewport_top
+          value: __config.operators[this.#operatorName].viewport_top
         },
       },
       {
         key: "paddingbottom",
         value: {
-          value: __config.operators[__operator_name].viewport_bottom
+          value: __config.operators[this.#operatorName].viewport_bottom
         },
       },
     ]

@@ -2,8 +2,8 @@ export default class EnvGenerator {
   #assets
   #operatorConfig
 
-  constructor(assets) {
-    this.#operatorConfig = __config.operators[__operator_name]
+  constructor(operatorName, assets) {
+    this.#operatorConfig = __config.operators[operatorName]
     this.#assets = assets
   }
 

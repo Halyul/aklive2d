@@ -8,7 +8,7 @@ export default class Matcher {
   constructor(start, end, config, assets) {
     this.#start = start
     this.#end = end
-    this.#reExp = new RegExp(`\\${start}.+?${end}`, 'g')
+    this.#reExp = new RegExp(`${start}.+?${end}`, 'g')
     this.#config = config
     this.#assets = assets
   }
@@ -17,33 +17,21 @@ export default class Matcher {
     const matches = this.content.match(this.#reExp)
     if (matches !== null) {
       matches.forEach((match) => {
-        const matchTypeName = match.replace(this.#start, '').replace(this.#end, '')
-        const type = matchTypeName.split(':')[0]
-        const name = matchTypeName.split(':')[1]
-        switch (type) {
-          case 'var':
-            let replaceValue = this.#config
-            name.split('->').forEach((item) => {
-              try {
-                replaceValue = replaceValue[item]
-              } catch (e) {
-                throw new Error(`Cannot find variable ${name}.`)
-              }
-              this.content = this.content.replace(match, replaceValue)
-            })
-            break
-          case 'replaceFunc':
-            try {
-              this.content = this.content.replace(match, (new Function('Evalable', 'config', 'assets', `return new Evalable(config, assets).${name}`))(Evalable, this.#config, this.#assets))
-            } catch (e) {
-              throw new Error(e)
-            }
-            break
-          case 'directFunc':
-            this.content = (new Function('Evalable', 'config', 'assets', `return new Evalable(config, assets).${name}`))(Evalable, this.#config, this.#assets)
-            break
-          default:
-            throw new Error(`Cannot find type ${type}.`)
+        const name = match.replace(this.#start, '').replace(this.#end, '')
+        const result = (new Function(
+          'Evalable',
+          'config',
+          'assets',
+          `return new Evalable(config, assets).${name}`)
+        )(Evalable, this.#config, this.#assets)
+        if (matches.length > 1) {
+          try {
+            this.content = this.content.replace(match, result)
+          } catch (e) {
+            throw new Error(e)
+          }
+        } else if (matches.length === 1) {
+          this.content = result
         }
       })
     }
@@ -64,7 +52,7 @@ class Evalable {
     return this.#step(location, varName).split(separator)
   }
 
-  getVar(location, varName) {
+  var(location, varName) {
     return this.#step(location, varName)
   }
 

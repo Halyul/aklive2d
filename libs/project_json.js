@@ -21,7 +21,7 @@ export default class ProjectJson {
   async load() {
     // load json from file
     this.#json = JSON.parse(await readFile(this.#getPath()))
-    const matcher = new Matcher('${', '}', __config.operators[this.#operatorName], {
+    const matcher = new Matcher('~{', '}', __config.operators[this.#operatorName], {
       ...this.#assets,
       backgroundOptions: this.#assets.backgrounds.map((b) => {
         return {

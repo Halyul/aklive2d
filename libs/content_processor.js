@@ -1,24 +1,20 @@
 export default class Matcher {
   #start
   #end
-  #content
   #reExp
   #config
+  #assets
 
-  constructor(content, start, end, config) {
+  constructor(start, end, config, assets) {
     this.#start = start
     this.#end = end
-    this.#content = content
     this.#reExp = new RegExp(`\\${start}.+?${end}`, 'g')
     this.#config = config
+    this.#assets = assets
   }
 
-  match() {
-    return this.#content.match(this.#reExp)
-  }
-
-  process() {
-    const matches = this.match()
+  get result() {
+    const matches = this.content.match(this.#reExp)
     if (matches !== null) {
       matches.forEach((match) => {
         const matchTypeName = match.replace(this.#start, '').replace(this.#end, '')
@@ -33,40 +29,55 @@ export default class Matcher {
               } catch (e) {
                 throw new Error(`Cannot find variable ${name}.`)
               }
-              this.#content = this.#content.replace(match, replaceValue)
+              this.content = this.content.replace(match, replaceValue)
             })
             break
-          case 'func':
+          case 'replaceFunc':
             try {
-              this.#content = this.#content.replace(match, (new Function('Evalable', 'config', `return new Evalable(config).${name}`))(Evalable, this.#config))
+              this.content = this.content.replace(match, (new Function('Evalable', 'config', 'assets', `return new Evalable(config, assets).${name}`))(Evalable, this.#config, this.#assets))
             } catch (e) {
               throw new Error(e)
             }
+            break
+          case 'directFunc':
+            this.content = (new Function('Evalable', 'config', 'assets', `return new Evalable(config, assets).${name}`))(Evalable, this.#config, this.#assets)
             break
           default:
             throw new Error(`Cannot find type ${type}.`)
         }
       })
     }
-    return this.#content
+    return this.content
   }
 }
 
 class Evalable {
   #config
+  #assets
 
-  constructor(config) {
+  constructor(config, assets) {
     this.#config = config
+    this.#assets = assets
   }
 
-  split(varName, separator) {
+  split(location, varName, separator) {
+    return this.#step(location, varName).split(separator)
+  }
+
+  getVar(location, varName) {
+    return this.#step(location, varName)
+  }
+
+  #step(location, varName) {
+    let content = this.#config
     varName.split("->").forEach((item) => {
       try {
-        this.#config = this.#config[item]
+        if (location === 'assets') content = this.#assets
+        content = content[item]
       } catch (e) {
-        throw new Error(`Cannot split ${varName} with separator ${separator}.`)
+        throw new Error(`Cannot step ${varName}.`)
       }
     })
-    return this.#config.split(separator)
+    return content
   }
 }

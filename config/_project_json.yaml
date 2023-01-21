@@ -1,4 +1,4 @@
-description: "${func:split('title' ,' - ')[0]} Live 2D\n${func:split('title' ,' - ')[1]} Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/${var:link}\nGithub: https://github.com/Halyul/aklive2d"
+description: !match "${replaceFunc:split('config', 'title' ,' - ')[0]} Live 2D\n${replaceFunc:split('config', 'title' ,' - ')[1]} Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/${var:link}\nGithub: https://github.com/Halyul/aklive2d"
 localization:
   en-us:
     ui_custom_background: Custom Background
@@ -67,11 +67,11 @@ properties:
     value: 
      text: ui_default_background
      type: combo
-     value: this.#assets.backgrounds[0]
+     value: !match ${directFunc:getVar('assets', "backgrounds")[0]}
      fraction: false
      max: 100
      min: 0
-     options:
+     options: !match ${directFunc:getVar('assets', "backgroundOptions")}
   - key: background
     value: 
      text: ui_custom_background
@@ -86,7 +86,7 @@ properties:
     value: 
      text: ui_position_padding_left
      type: slider
-     value: 
+     value: !match ${directFunc:getVar('config', "viewport_left")}
      condition: position.value == true
      fraction: false
      max: 100
@@ -95,7 +95,7 @@ properties:
     value: 
      text: ui_position_padding_right
      type: slider
-     value: 
+     value: !match ${directFunc:getVar('config', "viewport_right")}
      condition: position.value == true
      fraction: false
      max: 100
@@ -104,7 +104,7 @@ properties:
     value: 
      text: ui_position_padding_top
      type: slider
-     value: 
+     value: !match ${directFunc:getVar('config', "viewport_top")}
      condition: position.value == true
      fraction: false
      max: 100
@@ -113,7 +113,7 @@ properties:
     value: 
      text: ui_position_padding_bottom
      type: slider
-     value: 
+     value: !match ${directFunc:getVar('config', "viewport_bottom")}
      condition: position.value == true
      fraction: false
      max: 100

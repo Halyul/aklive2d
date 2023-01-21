@@ -16,12 +16,29 @@ export default class ProjectJson {
     this.#operatorSourceFolder = path.join(__dirname, __config.folder.operator)
     this.#operatorShareFolder = operatorShareFolder
     this.#assets = assets
-    this.#template = this.#processYAML(readYAML(path.join(__dirname, 'config', '_project_json.yaml')))
   }
     
   async load() {
     // load json from file
     this.#json = JSON.parse(await readFile(this.#getPath()))
+    const matcher = new Matcher('${', '}', __config.operators[this.#operatorName], {
+      ...this.#assets,
+      backgroundOptions: this.#assets.backgrounds.map((b) => {
+        return {
+          "label": b,
+          "value": b
+        }
+      })
+    })
+    const match = {
+      identify: value => value.startsWith('!match'),
+      tag: '!match',
+      resolve(str) {
+        matcher.content = str
+        return matcher.result
+      }
+    }
+    this.#template = readYAML(path.join(__dirname, 'config', '_project_json.yaml'), [match])
     this.#process()
     return this.#json
   }
@@ -50,59 +67,6 @@ export default class ProjectJson {
         }
       },
     }
-  }
-
-  #processYAML(template) {
-    const matcher = new Matcher(template.description, '${', '}', __config.operators[this.#operatorName])
-    if (matcher.match() !== null) {
-      template.description = matcher.process()
-    }
-    const replacePropertyPairs = [
-      {
-        key: "defaultbackground",
-        value: {
-          value: this.#assets.backgrounds[0],
-          options: this.#assets.backgrounds.map((b) => {
-            return {
-              "label": b,
-              "value": b
-            }
-          })
-        }
-      },
-      {
-        key: "paddingleft",
-        value: {
-          value: __config.operators[this.#operatorName].viewport_left
-        },
-      },
-      {
-        key: "paddingright",
-        value: {
-          value: __config.operators[this.#operatorName].viewport_right
-        },
-      },
-      {
-        key: "paddingtop",
-        value: {
-          value: __config.operators[this.#operatorName].viewport_top
-        },
-      },
-      {
-        key: "paddingbottom",
-        value: {
-          value: __config.operators[this.#operatorName].viewport_bottom
-        },
-      },
-    ]
-    replacePropertyPairs.forEach((pair) => {
-      const property = template.properties.find((p) => p.key === pair.key)
-      property.value = {
-        ...property.value,
-        ...pair.value
-      }
-    })
-    return template
   }
 
   get #properties() {

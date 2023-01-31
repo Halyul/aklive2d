@@ -24,15 +24,7 @@ export default class Matcher {
           'assets',
           `return new Evalable(config, assets).${name}`)
         )(Evalable, this.#config, this.#assets)
-        if (matches.length > 1) {
-          try {
-            this.content = this.content.replace(match, result)
-          } catch (e) {
-            throw new Error(e)
-          }
-        } else if (matches.length === 1) {
-          this.content = result
-        }
+        this.content = matches.length > 1 ? this.content.replace(match, result) : result
       })
     }
     return this.content

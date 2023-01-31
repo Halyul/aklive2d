@@ -55,6 +55,7 @@ export default function spinePlayer(el) {
         entry.mixDuration = 0.3;
         widget.animationState.addAnimation(0, "Idle", true, 0);
       }
+      window.settings.loadViewport()
     },
   })
 }

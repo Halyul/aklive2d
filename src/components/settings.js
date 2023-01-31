@@ -150,45 +150,37 @@ export default class Settings {
     document.getElementById("custom_background_clear").disabled = true
   }
 
+  loadViewport() {
+    this.spinePlayer.updateViewport({
+      padLeft: `${this.#padLeft}%`,
+      padRight: `${this.#padRight}%`,
+      padTop: `${this.#padTop}%`,
+      padBottom: `${this.#padBottom}%`,
+    })
+  }
+
   positionPadding(key, value) {
     switch (key) {
       case "left":
         this.#padLeft = value
-        this.spinePlayer.updateViewport({
-          padLeft: `${value}%`,
-          padRight: `${this.#padRight}%`,
-          padTop: `${this.#padTop}%`,
-          padBottom: `${this.#padBottom}%`,
-        })
         break;
       case "right":
         this.#padRight = value
-        this.spinePlayer.updateViewport({
-          padLeft: `${this.#padLeft}%`,
-          padRight: `${value}%`,
-          padTop: `${this.#padTop}%`,
-          padBottom: `${this.#padBottom}%`,
-        })
         break;
       case "top":
         this.#padTop = value
-        this.spinePlayer.updateViewport({
-          padLeft: `${this.#padLeft}%`,
-          padRight: `${this.#padRight}%`,
-          padTop: `${value}%`,
-          padBottom: `${this.#padBottom}%`,
-        })
         break;
       case "bottom":
         this.#padBottom = value
-        this.spinePlayer.updateViewport({
-          padLeft: `${this.#padLeft}%`,
-          padRight: `${this.#padRight}%`,
-          padTop: `${this.#padTop}%`,
-          padBottom: `${value}%`,
-        })
+        break;
+      default:
+        this.#padLeft = value.left
+        this.#padRight = value.right
+        this.#padTop = value.top
+        this.#padBottom = value.bottom
         break;
     }
+    this.loadViewport()
   }
 
   positionReset() {

@@ -40,6 +40,13 @@ window.wallpaperPropertyListener = {
         if (properties.position) {
             if (!properties.position.value) {
                 window.settings.positionReset()
+            } else {
+                window.settings.positionPadding(null, {
+                    left: properties.paddingleft.value,
+                    right: properties.paddingright.value,
+                    top: properties.paddingtop.value,
+                    bottom: properties.paddingbottom.value,
+                })
             }
         }
         if (properties.paddingleft) {

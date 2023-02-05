@@ -14,6 +14,6 @@ export default function () {
   writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
   filesToCopy.forEach((key) => {
     const filename = `${__config.operators[key].filename}.json`;
-    copy(path.join(sourceFolder, key, filename), path.join(targetFolder, filename))
+    copy(path.join(sourceFolder, key, 'assets.json'), path.join(targetFolder, filename))
   })
 }

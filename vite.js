@@ -47,7 +47,6 @@ export default class Vite {
         alias: {
           '@': path.resolve(__dirname, './src'),
           '!': path.resolve(__dirname, this.#config.folder.operator, this.#operatorName),
-          '#': path.resolve(__dirname, this.#config.folder.operator, this.#operatorName, `${this.#config.operators[this.#operatorName].filename}.json`),
         },
       },
       build: {

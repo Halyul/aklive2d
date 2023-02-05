@@ -39,6 +39,7 @@ async function main() {
       for (const [key, _] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
+      break
     case 'charword':
       await charwordTable.process()
       process.exit(0)
@@ -82,7 +83,7 @@ async function main() {
 
     const assetsProcessor = new AssetsProcessor(OPERATOR_NAME)
     assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
-      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `${__config.operators[OPERATOR_NAME].filename}.json`))
+      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
     })
 
     writeSync(JSON.stringify(charwordTable.lookup(OPERATOR_NAME)), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))

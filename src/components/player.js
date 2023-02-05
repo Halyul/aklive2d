@@ -1,6 +1,6 @@
 import '@/libs/spine-player.css'
 import spine from '@/libs/spine-player'
-import assets from '#'
+import assets from '!/assets.json'
 import '@/components/player.css'
 
 const showControls = (new URLSearchParams(window.location.search)).has("controls")

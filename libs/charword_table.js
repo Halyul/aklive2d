@@ -2,9 +2,8 @@ import fetch from "node-fetch"
 import path from "path"
 import { exists, writeSync, readdirSync, rm, readSync } from "./file.js"
 
-// TODO: zh_TW uses an older version of charword_table.json
-// const REGIONS = ["zh_CN", "en_US", "ja_JP", "ko_KR", "zh_TW"]
-const REGIONS = ["zh_CN", "en_US", "ja_JP", "ko_KR"]
+// zh_TW uses an older version of charword_table.json
+const REGIONS = ["zh_CN", "en_US", "ja_JP", "ko_KR", "zh_TW"]
 const DEFAULT_REGION = REGIONS[0]
 const NICKNAME = {
   "zh_CN": "博士",
@@ -21,15 +20,13 @@ export default class CharwordTable {
       default_region: DEFAULT_REGION,
       regions: REGIONS,
     },
-    operators: [],
+    operators: {},
   }
   #charwordTablePath = path.join(__dirname, __config.folder.operator, __config.folder.share)
 
   constructor() {
-    // TODO: use object instead of array
-    this.#charwordTable.operators = this.#operatorIDs.map(id => {
-      return {
-        mainId: id,
+    this.#operatorIDs.forEach(id => {
+      this.#charwordTable.operators[id] = {
         alternativeId: id.replace(/^(char_)([\d]+)(_[\w]+)(|(_.+))$/g, '$1$2$3'),
         voice: REGIONS.reduce((acc, cur) => ({ ...acc, [cur]: [] }), {}), // use array to store voice lines
         info: REGIONS.reduce((acc, cur) => ({ ...acc, [cur]: {} }), {}), // use object to store voice actor info
@@ -38,24 +35,26 @@ export default class CharwordTable {
   }
 
   async process() {
-    for (const region of REGIONS) {
-      await this.load(region)
-    }
+    await Promise.all(REGIONS.map(async (region) => {await this.#load(region)}))
+    writeSync(JSON.stringify(this.#charwordTable), path.join(this.#charwordTablePath, 'charword_table.json'))
   }
 
-  async load(region) {
+  async #load(region) {
+    if (region === 'zh_TW') {
+      return await this.#zhTWLoad()
+    }
     const data = await this.#download(region)
 
     // put voice actor info into charword_table
-    this.#charwordTable.operators.forEach(element => {
-      let operatorId = element.mainId
+    for (const [id, element] of Object.entries(this.#charwordTable.operators)) {
+      let operatorId = id
       if (typeof data.voiceLangDict[operatorId] === 'undefined') {
         operatorId = element.alternativeId
       }
       // not available in other region
       if (typeof data.voiceLangDict[operatorId] === 'undefined') {
-        console.log(`Voice actor info of ${element.mainId} is not available in ${region}.`)
-        return
+        console.log(`Voice actor info of ${operatorId} is not available in ${region}.`)
+        continue
       }
       Object.values(data.voiceLangDict[operatorId].dict).forEach(item => {
         if (typeof element.info[region][item.wordkey] === 'undefined') {
@@ -63,33 +62,32 @@ export default class CharwordTable {
         }
         element.info[region][item.wordkey].push({
           lang: item.voiceLangType,
-          cvName: item.cvName,
+          cvName: item.cvName
         })
       })
-    });
+    }
 
     // put voice lines into charword_table
     Object.values(data.charWords).forEach(item => {
-      const operatorInfo = this.#charwordTable.operators.filter(element => element.info[region][item.wordKey])
+      const operatorInfo = Object.values(this.#charwordTable.operators).filter(element => element.info[region][item.wordKey])
       if (operatorInfo.length > 0) {
         operatorInfo[0].voice[region].push({
           ref: false,
           id: item.voiceId,
           title: item.voiceTitle,
           text: item.voiceText.replace(/{@nickname}/g, NICKNAME[region]),
-          wordKey: item.wordKey,
+          wordKey: item.wordKey
         })
         if (operatorInfo.length > 1) {
           operatorInfo[1].voice[region].push({
             ref: true,
             id: item.voiceId,
-            wordKey: item.wordKey,
+            wordKey: item.wordKey
           })
         }
       }
     })
 
-    writeSync(JSON.stringify(this.#charwordTable), path.join(this.#charwordTablePath, 'charword_table.json'))
   }
 
   async #download(region) {
@@ -117,5 +115,110 @@ export default class CharwordTable {
       }
     }
     return data
+  }
+
+  async #zhTWLoad() {
+    const region = 'zh_TW'
+    const downloaded = await this.#zhTWDownload()
+    const data = downloaded.data
+    const handbook = downloaded.handbook
+
+    // put voice actor info into charword_table
+    for (const [id, element] of Object.entries(this.#charwordTable.operators)) {
+      let operatorId = id
+      if (typeof handbook.handbookDict[operatorId] === 'undefined') {
+        operatorId = element.alternativeId
+      }
+      // not available in other region
+      if (typeof handbook.handbookDict[operatorId] === 'undefined') {
+        console.log(`Voice actor info of ${operatorId} is not available in ${region}.`)
+        continue
+      }
+      const charId = handbook.handbookDict[operatorId].charID
+      if (typeof element.info[region][charId] === 'undefined') {
+        element.info[region][charId] = []
+      }
+      element.info[region][charId].push({
+        lang: "JP",
+        cvName: handbook.handbookDict[operatorId].infoName
+      })
+    }
+
+    // // put voice lines into charword_table
+    Object.values(data).forEach(item => {
+      const operatorInfo = Object.values(this.#charwordTable.operators).filter(element => element.info[region][item.wordKey])
+      if (operatorInfo.length > 0) {
+        operatorInfo[0].voice[region].push({
+          ref: false,
+          id: item.voiceId,
+          title: item.voiceTitle,
+          text: item.voiceText.replace(/{@nickname}/g, NICKNAME[region]),
+          wordKey: item.wordKey
+        })
+        if (operatorInfo.length > 1) {
+          operatorInfo[1].voice[region].push({
+            ref: true,
+            id: item.voiceId,
+            wordKey: item.wordKey
+          })
+        }
+      }
+    })
+
+  }
+
+  async #zhTWDownload() {
+    const output = {}
+    const region = 'zh_TW'
+    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`)
+    const handbookHistoryResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/handbook_info_table.json`)
+    const historyData = await historyResponse.json()
+    const handbookHistoryData = await handbookHistoryResponse.json()
+    const lastCommit = historyData[0]
+    const handboookLastCommit = handbookHistoryData[0]
+    const lastCommitDate = new Date(lastCommit.commit.committer.date)
+    const handbookLastCommitDate = new Date(handboookLastCommit.commit.committer.date)
+    const filepath = path.join(this.#charwordTablePath, `charword_table_${region}_${lastCommitDate.getTime()}.json`)
+    const handbookFilepath = path.join(this.#charwordTablePath, `handbook_info_table_${region}_${handbookLastCommitDate.getTime()}.json`)
+    console.log(`Last commit date: ${lastCommitDate.getTime()}`)
+    console.log(`Handbook last commit date: ${handbookLastCommitDate.getTime()}`)
+
+    if (exists(filepath)) {
+      console.log(`charword_table_${region}.json is the latest version.`)
+      output.data = JSON.parse(readSync(filepath))
+    } else {
+      const response = await fetch(`https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/${region}/gamedata/excel/charword_table.json`)
+      const data = await response.json()
+      writeSync(JSON.stringify(data), filepath)
+      console.log(`charword_table_${region}.json is updated.`)
+
+      // remove old file
+      const files = readdirSync(path.join(__dirname, __config.folder.operator, __config.folder.share))
+      for (const file of files) {
+        if (file.startsWith(`charword_table_${region}`) && file !== path.basename(filepath)) {
+          rm(path.join(__dirname, __config.folder.operator, __config.folder.share, file))
+        }
+      }
+      output.data = data
+    }
+    if (exists(handbookFilepath)) {
+      console.log(`handbook_info_table_${region}.json is the latest version.`)
+      output.handbook = JSON.parse(readSync(handbookFilepath))
+    } else {
+      const response = await fetch(`https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/${region}/gamedata/excel/handbook_info_table.json`)
+      const data = await response.json()
+      writeSync(JSON.stringify(data), handbookFilepath)
+      console.log(`handbook_info_table_${region}.json is updated.`)
+
+      // remove old file
+      const files = readdirSync(path.join(__dirname, __config.folder.operator, __config.folder.share))
+      for (const file of files) {
+        if (file.startsWith(`handbook_info_table_${region}`) && file !== path.basename(handbookFilepath)) {
+          rm(path.join(__dirname, __config.folder.operator, __config.folder.share, file))
+        }
+      }
+      output.handbook = data
+    }
+    return output
   }
 }

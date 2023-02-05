@@ -41,7 +41,7 @@ async function main() {
     case 'test':
       const charwordTable = new CharwordTable()
       await charwordTable.process()
-      process.exit(0)
+      return
     default:
       break
   }

@@ -38,6 +38,10 @@ To add operator info to README.md
 $ node runner.js directory
 To generate directory.json
 ```
+``` bash
+$ node runner.js charword
+To generate the latest charword_table.json
+```
 ### Webpage & JavaScript
 
 Add query string `settings` to bring up the settings panel to adjust your settings. Then use appropriate JavaScript code to load your settings

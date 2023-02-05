@@ -14,17 +14,34 @@ const NICKNAME = {
 }
 
 export default class CharwordTable {
-  #operatorIDs = Object.values(__config.operators).map(operator => { return operator.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4') })
-  #charwordTable = {
+  #operatorIDs = Object.values(__config.operators).map(operator => { return this.#getOperatorId(operator) })
+  #charwordTablePath = path.join(__dirname, __config.folder.operator, __config.folder.share)
+  #charwordTableFile = path.join(this.#charwordTablePath, 'charword_table.json')
+  #charwordTable = JSON.parse(readSync(this.#charwordTableFile)) || {
     config: {
       default_region: DEFAULT_REGION,
       regions: REGIONS,
     },
     operators: {},
   }
-  #charwordTablePath = path.join(__dirname, __config.folder.operator, __config.folder.share)
 
-  constructor() {
+  async process() {
+    await Promise.all(REGIONS.map(async (region) => {await this.#load(region)}))
+    writeSync(JSON.stringify(this.#charwordTable), this.#charwordTableFile)
+  }
+
+  lookup(operatorName) {
+    return {
+      config: this.#charwordTable.config,
+      operator: this.#charwordTable.operators[this.#getOperatorId(__config.operators[operatorName])],
+    }
+  }
+
+  #getOperatorId(operatorConfig) {
+    return operatorConfig.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4')
+  }
+
+  async #load(region) {
     this.#operatorIDs.forEach(id => {
       this.#charwordTable.operators[id] = {
         alternativeId: id.replace(/^(char_)([\d]+)(_[\w]+)(|(_.+))$/g, '$1$2$3'),
@@ -32,17 +49,11 @@ export default class CharwordTable {
         info: REGIONS.reduce((acc, cur) => ({ ...acc, [cur]: {} }), {}), // use object to store voice actor info
       }
     })
-  }
 
-  async process() {
-    await Promise.all(REGIONS.map(async (region) => {await this.#load(region)}))
-    writeSync(JSON.stringify(this.#charwordTable), path.join(this.#charwordTablePath, 'charword_table.json'))
-  }
-
-  async #load(region) {
     if (region === 'zh_TW') {
       return await this.#zhTWLoad()
     }
+
     const data = await this.#download(region)
 
     // put voice actor info into charword_table

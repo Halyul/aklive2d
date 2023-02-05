@@ -16,7 +16,10 @@ export async function read(filePath, encoding = 'utf8') {
 }
 
 export function readSync(filePath, encoding = 'utf8') {
-  return fs.readFileSync(filePath, encoding, { flag: 'r' })
+  if (exists(filePath)) {
+    return fs.readFileSync(filePath, encoding, { flag: 'r' })
+  }
+  return null
 }
 
 export function exists(filePath) {

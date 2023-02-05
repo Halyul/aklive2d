@@ -23,6 +23,7 @@ async function main() {
   const background = new Background()
   await background.process()
   const backgrounds = ['operator_bg.png', ...background.files]
+  const charwordTable = new CharwordTable()
 
   directory()
 
@@ -38,10 +39,9 @@ async function main() {
       for (const [key, _] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
-    case 'test':
-      const charwordTable = new CharwordTable()
+    case 'charword':
       await charwordTable.process()
-      return
+      process.exit(0)
     default:
       break
   }
@@ -84,6 +84,8 @@ async function main() {
     assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
       write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `${__config.operators[OPERATOR_NAME].filename}.json`))
     })
+
+    writeSync(JSON.stringify(charwordTable.lookup(OPERATOR_NAME)), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
 
     const filesToCopy = [
       ...background.getFilesToCopy(SHOWCASE_PUBLIC_ASSSETS_FOLDER),

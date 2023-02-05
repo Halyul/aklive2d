@@ -11,6 +11,7 @@ import init from './libs/initializer.js'
 import directory from './libs/directory.js'
 import { appendReadme } from './libs/append.js'
 import Background from './libs/background.js'
+import CharwordTable from './libs/charword_table.js';
 
 async function main() {
   global.__dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -37,6 +38,10 @@ async function main() {
       for (const [key, _] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
+    case 'test':
+      const charwordTable = new CharwordTable()
+      await charwordTable.process()
+      process.exit(0)
     default:
       break
   }
@@ -48,7 +53,7 @@ async function main() {
     const OPERATOR_RELEASE_FOLDER = path.join(__dirname, __config.folder.release, OPERATOR_NAME)
     const SHOWCASE_PUBLIC_ASSSETS_FOLDER = path.join(OPERATOR_RELEASE_FOLDER, "assets")
     const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'extracted')
-    const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, '_share')
+    const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, __config.folder.share)
 
     /**
      * Skip assets generation part

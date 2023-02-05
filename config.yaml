@@ -3,6 +3,7 @@ folder:
   release: ./release/
   background: background
   directory: _assets
+  share: _share
 operators:
   chen: !include config/chen.yaml
   dusk: !include config/dusk.yaml

@@ -53,3 +53,7 @@ export async function copy(sourcePath, targetPath) {
 export function appendSync(content, filePath) {
   return fs.appendFileSync(filePath, content, 'utf8');
 }
+
+export function readdirSync(dir) {
+  return fs.readdirSync(dir)
+}

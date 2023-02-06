@@ -1,6 +1,9 @@
 import fetch from "node-fetch"
 import path from "path"
+import dotenv from "dotenv"
 import { exists, writeSync, readdirSync, rm, readSync } from "./file.js"
+
+dotenv.config()
 
 // zh_TW uses an older version of charword_table.json
 const REGIONS = ["zh_CN", "en_US", "ja_JP", "ko_KR", "zh_TW"]
@@ -26,15 +29,25 @@ export default class CharwordTable {
   }
 
   async process() {
-    await Promise.all(REGIONS.map(async (region) => {await this.#load(region)}))
+    const regionObject = REGIONS.reduce((acc, cur) => ({ ...acc, [cur]: {} }), {})
+    this.#operatorIDs.forEach(id => {
+      this.#charwordTable.operators[id] = {
+        alternativeId: id.replace(/^(char_)([\d]+)(_[\w]+)(|(_.+))$/g, '$1$2$3'),
+        voice: JSON.parse(JSON.stringify(regionObject)), // deep copy
+        info: JSON.parse(JSON.stringify(regionObject)), // deep copy
+      }
+    })
+    await this.#load(DEFAULT_REGION)
+    await Promise.all(REGIONS.slice(1).map(async (region) => {await this.#load(region)}))
     writeSync(JSON.stringify(this.#charwordTable), this.#charwordTableFile)
   }
 
   lookup(operatorName) {
-    const operatorBlock = this.#charwordTable.operators[this.#getOperatorId(__config.operators[operatorName])]
+    const operatorId = this.#getOperatorId(__config.operators[operatorName])
+    const operatorBlock = this.#charwordTable.operators[operatorId]
     return {
       config: this.#charwordTable.config,
-      operator: operatorBlock.voice[DEFAULT_REGION][0].ref ? this.#charwordTable.operators[operatorBlock.alternativeId] : operatorBlock,
+      operator: operatorBlock.ref ? this.#charwordTable.operators[operatorBlock.alternativeId] : operatorBlock,
     }
   }
 
@@ -43,14 +56,6 @@ export default class CharwordTable {
   }
 
   async #load(region) {
-    this.#operatorIDs.forEach(id => {
-      this.#charwordTable.operators[id] = {
-        alternativeId: id.replace(/^(char_)([\d]+)(_[\w]+)(|(_.+))$/g, '$1$2$3'),
-        voice: REGIONS.reduce((acc, cur) => ({ ...acc, [cur]: [] }), {}), // use array to store voice lines
-        info: REGIONS.reduce((acc, cur) => ({ ...acc, [cur]: {} }), {}), // use object to store voice actor info
-      }
-    })
-
     if (region === 'zh_TW') {
       return await this.#zhTWLoad()
     }
@@ -60,22 +65,39 @@ export default class CharwordTable {
     // put voice actor info into charword_table
     for (const [id, element] of Object.entries(this.#charwordTable.operators)) {
       let operatorId = id
+      let useAlternativeId = false
       if (typeof data.voiceLangDict[operatorId] === 'undefined') {
         operatorId = element.alternativeId
+        useAlternativeId = true
+      }
+      if (region === DEFAULT_REGION) {
+        element.infile = this.#operatorIDs.includes(operatorId);
+        element.ref = useAlternativeId && element.infile;
       }
       // not available in other region
       if (typeof data.voiceLangDict[operatorId] === 'undefined') {
-        console.log(`Voice actor info of ${operatorId} is not available in ${region}.`)
+        console.log(`Voice actor info of ${id} is not available in ${region}.`)
+        continue
+      }
+
+      if (element.infile && useAlternativeId) {
+        // if using alternative id and infile is true, means data can be 
+        // refered inside the file
+        // if infile is false, useAlternativeId is always true
+        // if useAlternativeId is false, infile is always true
+        // | case                | infile | useAlternativeId | Note            |
+        // | ------------------- | ------ | ---------------- | --------------- |
+        // | lee_trust_your_eyes | false  | true             | skin only       |
+        // | nearl_relight       | true   | true    | skin, operator, no voice |
+        // | nearl               | true   | false            | operator only   |
+        // | w_fugue             | true   | false      | skin, operator, voice |
         continue
       }
       Object.values(data.voiceLangDict[operatorId].dict).forEach(item => {
         if (typeof element.info[region][item.wordkey] === 'undefined') {
-          element.info[region][item.wordkey] = []
+          element.info[region][item.wordkey] = {}
         }
-        element.info[region][item.wordkey].push({
-          lang: item.voiceLangType,
-          cvName: item.cvName
-        })
+        element.info[region][item.wordkey][item.voiceLangType] = [...(typeof item.cvName === 'string' ? [item.cvName] : item.cvName)]
       })
     }
 
@@ -83,27 +105,23 @@ export default class CharwordTable {
     Object.values(data.charWords).forEach(item => {
       const operatorInfo = Object.values(this.#charwordTable.operators).filter(element => element.info[region][item.wordKey])
       if (operatorInfo.length > 0) {
-        operatorInfo[0].voice[region].push({
-          ref: false,
-          id: item.voiceId,
+        if (typeof operatorInfo[0].voice[region][item.wordKey] === 'undefined') {
+          operatorInfo[0].voice[region][item.wordKey] = {}
+        }
+        operatorInfo[0].voice[region][item.wordKey][item.voiceId] = {
           title: item.voiceTitle,
           text: item.voiceText.replace(/{@nickname}/g, NICKNAME[region]),
-          wordKey: item.wordKey
-        })
-        if (operatorInfo.length > 1) {
-          operatorInfo[1].voice[region].push({
-            ref: true,
-            id: item.voiceId,
-            wordKey: item.wordKey
-          })
         }
       }
     })
-
   }
 
   async #download(region) {
-    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`)
+    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`, {
+      headers: {
+        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+      }
+    })
     const historyData = await historyResponse.json()
     const lastCommit = historyData[0]
     const lastCommitDate = new Date(lastCommit.commit.committer.date)
@@ -138,41 +156,36 @@ export default class CharwordTable {
     // put voice actor info into charword_table
     for (const [id, element] of Object.entries(this.#charwordTable.operators)) {
       let operatorId = id
+      let useAlternativeId = false
       if (typeof handbook.handbookDict[operatorId] === 'undefined') {
         operatorId = element.alternativeId
+        useAlternativeId = true
       }
       // not available in other region
       if (typeof handbook.handbookDict[operatorId] === 'undefined') {
-        console.log(`Voice actor info of ${operatorId} is not available in ${region}.`)
+        console.log(`Voice actor info of ${id} is not available in ${region}.`)
+        continue
+      }
+      if (element.infile && useAlternativeId) {
         continue
       }
       const charId = handbook.handbookDict[operatorId].charID
       if (typeof element.info[region][charId] === 'undefined') {
-        element.info[region][charId] = []
+        element.info[region][charId] = {}
       }
-      element.info[region][charId].push({
-        lang: "JP",
-        cvName: handbook.handbookDict[operatorId].infoName
-      })
+      element.info[region][charId].JP = [...[handbook.handbookDict[operatorId].infoName]]
     }
 
-    // // put voice lines into charword_table
+    // put voice lines into charword_table
     Object.values(data).forEach(item => {
       const operatorInfo = Object.values(this.#charwordTable.operators).filter(element => element.info[region][item.wordKey])
       if (operatorInfo.length > 0) {
-        operatorInfo[0].voice[region].push({
-          ref: false,
-          id: item.voiceId,
+        if (typeof operatorInfo[0].voice[region][item.wordKey] === 'undefined') {
+          operatorInfo[0].voice[region][item.wordKey] = {}
+        }
+        operatorInfo[0].voice[region][item.wordKey][item.voiceId] = {
           title: item.voiceTitle,
           text: item.voiceText.replace(/{@nickname}/g, NICKNAME[region]),
-          wordKey: item.wordKey
-        })
-        if (operatorInfo.length > 1) {
-          operatorInfo[1].voice[region].push({
-            ref: true,
-            id: item.voiceId,
-            wordKey: item.wordKey
-          })
         }
       }
     })
@@ -182,8 +195,16 @@ export default class CharwordTable {
   async #zhTWDownload() {
     const output = {}
     const region = 'zh_TW'
-    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`)
-    const handbookHistoryResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/handbook_info_table.json`)
+    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`, {
+      headers: {
+        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+      }
+    })
+    const handbookHistoryResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/handbook_info_table.json`, {
+      headers: {
+        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+      }
+    })
     const historyData = await historyResponse.json()
     const handbookHistoryData = await handbookHistoryResponse.json()
     const lastCommit = historyData[0]

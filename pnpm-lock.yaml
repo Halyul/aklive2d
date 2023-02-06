@@ -1,12 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
+  dotenv: ^16.0.3
   node-fetch: ^3.3.0
   sharp: ^0.31.3
   vite: ^4.0.0
   yaml: ^2.2.1
 
 dependencies:
+  dotenv: 16.0.3
   node-fetch: 3.3.0
   sharp: 0.31.3
   yaml: 2.2.1
@@ -283,6 +285,11 @@ packages:
   /detect-libc/2.0.1:
     resolution: {integrity: sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==}
     engines: {node: '>=8'}
+    dev: false
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /end-of-stream/1.4.4:

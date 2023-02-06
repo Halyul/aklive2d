@@ -1,3 +1,6 @@
+import path from 'path'
+import { readSync } from "./file.js"
+
 export default class Matcher {
   #start
   #end
@@ -46,6 +49,10 @@ class Evalable {
 
   var(location, varName) {
     return this.#step(location, varName)
+  }
+
+  version(prefix, suffix) {
+    return `${prefix}${readSync(path.join(__dirname, 'Version'))}${suffix}`
   }
 
   #step(location, varName) {

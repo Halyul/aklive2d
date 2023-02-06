@@ -62,7 +62,6 @@ export default class ProjectJson {
         ...this.#json.general,
         localization: this.#template.localization,
         properties: {
-          ...this.#json.general.properties,
           ...this.#properties
         }
       },

@@ -25,6 +25,12 @@ window.wallpaperPropertyListener = {
                 window.settings.resetLogoImage()
             }
         }
+        if (properties.logox) {
+            window.settings.logoPadding("x", properties.logox.value)
+        }
+        if (properties.logoy) {
+            window.settings.logoPadding("y", properties.logoy.value)
+        }
         if (properties.defaultbackground) {
             if (properties.defaultbackground.value) {
                 window.settings.setDefaultBackground(properties.defaultbackground.value)

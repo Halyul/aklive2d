@@ -16,6 +16,8 @@ export default class Settings {
   #defaultPadRight = getPercentage(`${import.meta.env.VITE_VIEWPORT_RIGHT}%`)
   #defaultPadTop = getPercentage(`${import.meta.env.VITE_VIEWPORT_TOP}%`)
   #defaultPadBottom = getPercentage(`${import.meta.env.VITE_VIEWPORT_BOTTOM}%`)
+  #defaultLogoX = 0
+  #defaultLogoY = 0
   #defaultViewport = {
     debugRender: false,
     padLeft: `${this.#defaultPadLeft}%`,
@@ -33,6 +35,8 @@ export default class Settings {
   #padRight = this.#defaultPadRight
   #padTop = this.#defaultPadTop
   #padBottom = this.#defaultPadBottom
+  #logoX = this.#defaultLogoX
+  #logoY = this.#defaultLogoY
 
   constructor(el, logoEl) {
     this.#el = el
@@ -70,6 +74,7 @@ export default class Settings {
   #resize(_this, value) {
     _this = _this || this
     _this.#logoEl.width = window.innerWidth / 2 * (value || _this.#ratio) / 100
+    _this.elementPosition(this.#logoEl, this.#logoX, this.#logoY)
   }
 
   #setLogoInvertFilter(flag) {
@@ -199,6 +204,44 @@ export default class Settings {
     document.getElementById("position_padding_bottom_input").value = this.#defaultPadBottom
   }
 
+  elementPosition(el, x, y) {
+    const elWidth = getComputedStyle(el).width
+    const elHeight = getComputedStyle(el).height
+    const windowWidth = window.innerWidth
+    const windowHeight = window.innerHeight
+    const xRange = windowWidth - parseInt(elWidth)
+    const yRange = windowHeight - parseInt(elHeight)
+    const xpx = x * xRange / 100
+    const ypx = y * yRange / 100
+    el.style.transform = `translate(${xpx}px, ${ypx}px)`
+  }
+
+  logoPadding(key, value) {
+    switch (key) {
+      case "x":
+        this.#logoX = value
+        break;
+      case "y":
+        this.#logoY = value
+        break;
+      default:
+        this.#logoX = value.x
+        this.#logoY = value.y
+        break;
+    }
+    this.elementPosition(this.#logoEl, this.#logoX, this.#logoY)
+  }
+
+  logoReset() {
+    this.#logoX = this.#defaultLogoX
+    this.#logoY = this.#defaultLogoY
+    this.elementPosition(this.#logoEl, this.#logoX, this.#logoY)
+    document.getElementById("logo_padding_x_slider").value = this.#defaultLogoX
+    document.getElementById("logo_padding_x_input").value = this.#defaultLogoX
+    document.getElementById("logo_padding_y_slider").value = this.#defaultLogoY
+    document.getElementById("logo_padding_y_input").value = this.#defaultLogoY
+  }
+
   open() {
     this.#el.hidden = false;
   }
@@ -216,6 +259,7 @@ export default class Settings {
     document.getElementById("logo_opacity_slider").value = this.#defaultOpacity
     document.getElementById("logo_opacity_input").value = this.#defaultOpacity
     this.resetLogoImage()
+    this.logoReset()
     this.resetBackground()
     this.setLogoDisplay(this.#defaulthideLogo)
     this.setFPS(this.#defaultFps)
@@ -251,7 +295,17 @@ export default class Settings {
               <input type="range" min="0" max="100" data-css-class="logo" step="1" id="logo_opacity_slider" value="${this.#opacity}" />
               <input type="number" id="logo_opacity_input" name="logo_opacity" value="${this.#opacity}" />
             </div>
+            <div>
+              <label for="logo_padding_x">Logo X Position</label>
+                <input type="range" min="0" max="100" id="logo_padding_x_slider" value="${this.#logoX}" />
+                <input type="number" id="logo_padding_x_input" name="logo_padding_x" value="${this.#logoX}" />
             </div>
+            <div>
+              <label for="logo_padding_y">Logo Y Position</label>
+              <input type="range" min="0" max="100" id="logo_padding_y_slider" value="${this.#logoY}" />
+              <input type="number" id="logo_padding_y_input" name="logo_padding_y" value="${this.#logoY}" />
+            </div>
+          </div>
         </div>
         <div>
           <div>
@@ -292,7 +346,7 @@ export default class Settings {
               <input type="range" min="-100" max="100" id="position_padding_bottom_slider" value="${this.#padBottom}" />
               <input type="number" id="position_padding_bottom_input" name="position_padding_bottom" value="${this.#padBottom}" />
             </div>
-            </div>
+          </div>
         </div>
         <div>
           <button type="button" id="settings_play" disabled>Play</button>
@@ -354,6 +408,24 @@ export default class Settings {
     document.getElementById("logo_opacity_input").addEventListener("change", e => {
       _this.#sync(e.currentTarget, "logo_opacity_slider");
       _this.setLogoOpacity(e.currentTarget.value);
+    })
+
+    document.getElementById("logo_padding_x_slider").addEventListener("input", e => {
+      _this.#sync(e.currentTarget, "logo_padding_x_input");
+      _this.logoPadding("x", e.currentTarget.value);
+    })
+    document.getElementById("logo_padding_x_input").addEventListener("change", e => {
+      _this.#sync(e.currentTarget, "logo_padding_x_slider");
+      _this.logoPadding("x", e.currentTarget.value);
+    })
+
+    document.getElementById("logo_padding_y_slider").addEventListener("input", e => {
+      _this.#sync(e.currentTarget, "logo_padding_y_input");
+      _this.logoPadding("y", e.currentTarget.value);
+    })
+    document.getElementById("logo_padding_y_input").addEventListener("change", e => {
+      _this.#sync(e.currentTarget, "logo_padding_y_slider");
+      _this.logoPadding("y", e.currentTarget.value);
     })
 
     document.getElementById('default_background_select').addEventListener("change", e => _this.setDefaultBackground(e.currentTarget.value))

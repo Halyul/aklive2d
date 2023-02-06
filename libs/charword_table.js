@@ -31,9 +31,10 @@ export default class CharwordTable {
   }
 
   lookup(operatorName) {
+    const operatorBlock = this.#charwordTable.operators[this.#getOperatorId(__config.operators[operatorName])]
     return {
       config: this.#charwordTable.config,
-      operator: this.#charwordTable.operators[this.#getOperatorId(__config.operators[operatorName])],
+      operator: operatorBlock.voice[DEFAULT_REGION][0].ref ? this.#charwordTable.operators[operatorBlock.alternativeId] : operatorBlock,
     }
   }
 

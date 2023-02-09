@@ -5,7 +5,7 @@ export function appendReadme(operatorName) {
     const operatorConfig = __config.operators[operatorName]
     const projectJson = JSON.parse(readSync(path.join(__dirname, __config.folder.operator, operatorName, 'project.json')))
     appendSync(
-        `\n| ${operatorConfig.title.split(' - ')[0].split('Arknights: ')[1]} | [Link](https://arknights.halyul.dev/${operatorConfig.link}/) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=${projectJson.workshopid}) |`,
+        `\n| ${operatorConfig.title.split(' - ')[0].split('Arknights: ')[1]} | [Link](https://arknights.halyul.dev/${operatorConfig.link}/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=${projectJson.workshopid}) |`,
         path.join(__dirname, 'README.md')
     )
 }

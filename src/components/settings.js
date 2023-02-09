@@ -278,7 +278,7 @@ export default class Settings {
         </div>
         <div>
           <label for="operator_logo">Operator Logo</label>
-          <input type="checkbox" id="operator_logo" name="operator_logo" checked data-checked="true"/>
+          <input type="checkbox" id="operator_logo" name="operator_logo" checked/>
           <div id="operator_logo_realted">
             <div>
               <label for="logo_image">Logo Image (Store Locally)</label>
@@ -311,9 +311,7 @@ export default class Settings {
           <div>
             <label for="default_background_select">Choose a default background:</label>
             <select name="default_backgrounds" id="default_background_select">
-                ${JSON.parse(import.meta.env.VITE_BACKGROUND_FILES).map((b) => {
-                  return `<option value="${b}">${b}</option>`
-                })}
+                ${this.#updateOptions(null, JSON.parse(import.meta.env.VITE_BACKGROUND_FILES))}
             </select>
           </div>
           <div>
@@ -321,6 +319,42 @@ export default class Settings {
             <input type="file" id="custom_background"/>
             <button type="button" disabled id="custom_background_clear" disabled>Clear</button>
           </div>
+        </div>
+        <div>
+          <label for="voice">Voice</label>
+          <input type="checkbox" id="voice" name="voice" checked/>
+          <div id="voice_realted">
+            <div>
+              <label for="voice_lang_select">Choose the language of voice:</label>
+              <select name="voice_lang" id="voice_lang_select">
+                ${this.#updateOptions("voice_lang_select", window.voice.languages)}
+              </select>
+            </div>
+            <div>
+              <label for="voice_idle_duration">Idle Duration (min)</label>
+              <input type="number" id="voice_idle_duration_input" min="0" name="voice_idle_duration" value="${window.voice.idleDuration}" />
+            </div>
+            <div>
+              <label for="voice_next_duration">Next Duration (min)</label>
+              <input type="number" id="voice_next_duration_input" name="voice_next_duration" value="${window.voice.nextDuration}" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="subtitle">Subtitle</label>
+          <input type="checkbox" id="subtitle" name="subtitle" checked/>
+          <div id="subtitle_realted">
+            <div>
+              <label for="subtitle_lang_select">Choose the language of subtitle:</label>
+              <select name="subtitle_lang" id="subtitle_lang_select">
+                ${this.#updateOptions("subtitle_lang_select", window.voice.subtitleLanguages)}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="voice_actor">Voice Actor</label>
+          <input type="checkbox" id="voice_actor" name="voice_actor" checked/>
         </div>
         <div>
           <label for="position">Position</label>
@@ -372,123 +406,182 @@ export default class Settings {
     }
   };
 
+  #updateOptions(id, array) {
+    const e = document.getElementById(id);
+    const value = array.map(item => `<option value="${item}">${item}</option>`)
+    if (e) {
+      e.innerHTML = value.join("");
+    }
+    return value
+  }
+
   #addEventListeners() {
     const _this = this;
+    const listeners = [
+      {
+        id: "fps_slider", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "fps_input");
+          _this.setFPS(e.currentTarget.value);
+        }
+      }, {
+        id: "fps_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "fps_input");
+        }
+      }, {
+        id: "fps_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "fps_slider");
+          _this.setFPS(e.currentTarget.value);
+        }
+      }, {
+        id: "operator_logo", event: "click", handler: e => {
+          _this.#showRelated(e.currentTarget, "operator_logo_realted");
+          _this.setLogoDisplay(!e.currentTarget.checked)
+        }
+      }, {
+        id: "logo_image", event: "change", handler: e => _this.setLogoImage(e)
+      }, {
+        id: "logo_image_clear", event: "click", handler: e => _this.resetLogoImage()
+      }, {
+        id: "logo_ratio_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "logo_ratio_input");
+          _this.setLogoRatio(e.currentTarget.value);
+        }
+      }, {
+        id: "logo_ratio_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "logo_ratio_slider");
+          _this.setLogoRatio(e.currentTarget.value);
+        }
+      }, {
+        id: "logo_opacity_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "logo_opacity_input");
+          _this.setLogoOpacity(e.currentTarget.value);
+        }
+      }, {
+        id: "logo_opacity_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "logo_opacity_slider");
+          _this.setLogoOpacity(e.currentTarget.value);
+        }
+      }, {
+        id: "logo_padding_x_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "logo_padding_x_input");
+          _this.logoPadding("x", e.currentTarget.value);
+        }
+      }, {
+        id: "logo_padding_x_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "logo_padding_x_slider");
+          _this.logoPadding("x", e.currentTarget.value);
+        }
+      }, {
+        id: "logo_padding_y_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "logo_padding_y_input");
+          _this.logoPadding("y", e.currentTarget.value);
+        }
+      }, {
+        id: "logo_padding_y_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "logo_padding_y_slider");
+          _this.logoPadding("y", e.currentTarget.value);
+        }
+      }, {
+        id: "default_background_select", event: "change", handler: e => _this.setDefaultBackground(e.currentTarget.value)
+      }, {
+        id: "custom_background", event: "change", handler: e => _this.setBackground(e)
+      }, {
+        id: "custom_background_clear", event: "click", handler: e => _this.resetBackground()
+      }, {
+        id: "voice", event: "click", handler: e => {
+          _this.#showRelated(e.currentTarget, "voice_realted");
+          window.voice.useVoice = e.currentTarget.checked;
+        }
+      }, {
+        id: "voice_lang_select", event: "change", handler: e => {
+          window.voice.language = e.currentTarget.value
+          _this.#updateOptions("subtitle_lang_select", window.voice.subtitleLanguages)
+        }
+      }, {
+        id: "voice_idle_duration_input", event: "change", handler: e => {
+          window.voice.idleDuration = parseInt(e.currentTarget.value)
+        }
+      }, {
+        id: "voice_next_duration_input", event: "change", handler: e => {
+          window.voice.nextDuration = parseInt(e.currentTarget.value)
+        }
+      }, {
+        id: "subtitle", event: "click", handler: e => {
+          _this.#showRelated(e.currentTarget, "subtitle_realted");
+          window.voice.useSubtitle = e.currentTarget.checked;
+        }
+      }, {
+        id: "subtitle_lang_select", event: "change", handler: e => window.voice.subtitleLanguage = e.currentTarget.value
+      }, {
+        id: "voice_actor", event: "click", handler: e => {
+          window.voice.useVoiceActor = e.currentTarget.checked;
+        }
+      }, {
+        id: "position", event: "click", handler: e => {
+          _this.#showRelated(e.currentTarget, "position_realted");
+          if (!e.currentTarget.checked) _this.positionReset();
+        }
+      }, {
+        id: "position_padding_left_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "position_padding_left_input");
+          _this.positionPadding("left", e.currentTarget.value);
+        }
+      }, {
+        id: "position_padding_left_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "position_padding_left_slider");
+          _this.positionPadding("left", e.currentTarget.value);
+        }
+      }, {
+        id: "position_padding_right_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "position_padding_right_input");
+          _this.positionPadding("right", e.currentTarget.value);
+        }
+      }, {
+        id: "position_padding_right_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "position_padding_right_slider");
+          _this.positionPadding("right", e.currentTarget.value);
+        }
+      }, {
+        id: "position_padding_top_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "position_padding_top_input");
+          _this.positionPadding("top", e.currentTarget.value);
+        }
+      }, {
+        id: "position_padding_top_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "position_padding_top_slider");
+          _this.positionPadding("top", e.currentTarget.value);
+        }
+      }, {
+        id: "position_padding_bottom_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "position_padding_bottom_input");
+          _this.positionPadding("bottom", e.currentTarget.value);
+        }
+      }, {
+        id: "position_padding_bottom_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "position_padding_bottom_slider");
+          _this.positionPadding("bottom", e.currentTarget.value);
+        }
+      }, {
+        id: "settings_play", event: "click", handler: e => {
+          this.spinePlayer.play();
+          e.currentTarget.disabled = true;
+          document.getElementById("settings_pause").disabled = false;
+        }
+      }, {
+        id: "settings_pause", event: "click", handler: e => {
+          this.spinePlayer.pause();
+          e.currentTarget.disabled = true;
+          document.getElementById("settings_play").disabled = false;
+        }
+      }, {
+        id: "settings_reset", event: "click", handler: e => _this.reset()
+      }, {
+        id: "settings_close", event: "click", handler: e => _this.close()
+      },
+    ]
 
-    document.getElementById("fps_slider").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "fps_input");
-      _this.setFPS(e.currentTarget.value);
-    })
-    document.getElementById("fps_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "fps_slider");
-      _this.setFPS(e.currentTarget.value);
-    })
-
-    document.getElementById("operator_logo").addEventListener("click", e => {
-      _this.#showRelated(e.currentTarget, "operator_logo_realted");
-      _this.setLogoDisplay(!e.currentTarget.checked)
-    })
-
-    document.getElementById("logo_image").addEventListener("change", e => _this.setLogoImage(e))
-    document.getElementById("logo_image_clear").addEventListener("click", e => this.resetLogoImage())
-
-    document.getElementById("logo_ratio_slider").addEventListener("input", e => {
-      _this.#sync(e.currentTarget, "logo_ratio_input");
-      _this.setLogoRatio(e.currentTarget.value);
-    })
-    document.getElementById("logo_ratio_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "logo_ratio_slider");
-      _this.setLogoRatio(e.currentTarget.value);
-    })
-
-    document.getElementById("logo_opacity_slider").addEventListener("input", e => {
-      _this.#sync(e.currentTarget, "logo_opacity_input");
-      _this.setLogoOpacity(e.currentTarget.value);
-    })
-    document.getElementById("logo_opacity_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "logo_opacity_slider");
-      _this.setLogoOpacity(e.currentTarget.value);
-    })
-
-    document.getElementById("logo_padding_x_slider").addEventListener("input", e => {
-      _this.#sync(e.currentTarget, "logo_padding_x_input");
-      _this.logoPadding("x", e.currentTarget.value);
-    })
-    document.getElementById("logo_padding_x_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "logo_padding_x_slider");
-      _this.logoPadding("x", e.currentTarget.value);
-    })
-
-    document.getElementById("logo_padding_y_slider").addEventListener("input", e => {
-      _this.#sync(e.currentTarget, "logo_padding_y_input");
-      _this.logoPadding("y", e.currentTarget.value);
-    })
-    document.getElementById("logo_padding_y_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "logo_padding_y_slider");
-      _this.logoPadding("y", e.currentTarget.value);
-    })
-
-    document.getElementById('default_background_select').addEventListener("change", e => _this.setDefaultBackground(e.currentTarget.value))
-
-    document.getElementById("custom_background").addEventListener("change", e => _this.setBackground(e))
-    document.getElementById("custom_background_clear").addEventListener("click", e => _this.resetBackground())
-
-    document.getElementById("position").addEventListener("click", e => {
-      _this.#showRelated(e.currentTarget, "position_realted");
-      if (!e.currentTarget.checked) _this.positionReset();
-    })
-
-    document.getElementById("position_padding_left_slider").addEventListener("input", e => {
-      _this.#sync(e.currentTarget, "position_padding_left_input");
-      _this.positionPadding("left", e.currentTarget.value);
-    })
-    document.getElementById("position_padding_left_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "position_padding_left_slider");
-      _this.positionPadding("left", e.currentTarget.value);
-    })
-
-    document.getElementById("position_padding_right_slider").addEventListener("input", e => {
-      _this.#sync(e.currentTarget, "position_padding_right_input");
-      _this.positionPadding("right", e.currentTarget.value);
-    })
-    document.getElementById("position_padding_right_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "position_padding_right_slider");
-      _this.positionPadding("right", e.currentTarget.value);
-    })
-
-    document.getElementById("position_padding_top_slider").addEventListener("input", e => {
-      _this.#sync(e.currentTarget, "position_padding_top_input");
-      _this.positionPadding("top", e.currentTarget.value);
-    })
-    document.getElementById("position_padding_top_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "position_padding_top_slider");
-      _this.positionPadding("top", e.currentTarget.value);
-    })
-
-    document.getElementById("position_padding_bottom_slider").addEventListener("input", e => {
-      _this.#sync(e.currentTarget, "position_padding_bottom_input");
-      _this.positionPadding("bottom", e.currentTarget.value);
-    })
-    document.getElementById("position_padding_bottom_input").addEventListener("change", e => {
-      _this.#sync(e.currentTarget, "position_padding_bottom_slider");
-      _this.positionPadding("bottom", e.currentTarget.value);
-    })
-
-    document.getElementById("settings_play").addEventListener("click", e => {
-      this.spinePlayer.play();
-      e.currentTarget.disabled = true;
-      document.getElementById("settings_pause").disabled = false;
-    })
-    document.getElementById("settings_pause").addEventListener("click", e => {
-      this.spinePlayer.pause();
-      e.currentTarget.disabled = true;
-      document.getElementById("settings_play").disabled = false;
-    })
-    document.getElementById("settings_reset").addEventListener("click", e => {
-      _this.reset();
-    })
-    document.getElementById("settings_close").addEventListener("click", e => {
-      _this.close();
+    listeners.forEach(listener => {
+      document.getElementById(listener.id).addEventListener(listener.event, e => listener.handler(e))
     })
   }
 }

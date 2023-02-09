@@ -2,6 +2,7 @@ import '@/index.css'
 import '@/libs/wallpaper_engine'
 import check_web_gl from '@/libs/check_web_gl'
 import Settings from '@/components/settings'
+import Voice from '@/components/voice'
 
 document.querySelector('#app').innerHTML = `
   <img src="./assets/${import.meta.env.VITE_LOGO_FILENAME}.png" class="logo invert-filter" id="logo" alt="operator logo" />
@@ -11,10 +12,12 @@ document.querySelector('#app').innerHTML = `
       style="background-image: url(./assets/${import.meta.env.VITE_FALLBACK_FILENAME}.png)"
       hidden
     ></div> 
-    <div id="player" hidden></div> 
+    <div id="player" hidden></div>
+    <div id="voice" hidden></div> 
   </div>
 `
-
+window.voice = new Voice(document.querySelector('#voice'))
+window.voice.init()
 window.settings = new Settings(document.querySelector('#settings'), document.querySelector('#logo'))
 document.title = import.meta.env.VITE_TITLE
 console.log("All resources are extracted from Arknights. Github: https://github.com/Halyul/aklive2d")

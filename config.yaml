@@ -2,9 +2,21 @@ folder:
   operator: ./operator/
   release: ./release/
   background: background
-  voice: voice
   directory: _assets
   share: _share
+  voice:
+    main: voice
+    sub:
+      - name: jp
+        lang: JP
+      - name: cn
+        lang: CN_MANDARIN
+      - name: en
+        lang: EN
+      - name: kr
+        lang: KR
+      - name: custom
+        lang: CUSTOM
 operators:
   chen: !include config/chen.yaml
   dusk: !include config/dusk.yaml

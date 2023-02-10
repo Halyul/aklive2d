@@ -7,16 +7,16 @@ import Voice from '@/components/voice'
 document.querySelector('#app').innerHTML = `
   <img src="./assets/${import.meta.env.VITE_LOGO_FILENAME}.png" class="logo invert-filter" id="logo" alt="operator logo" />
   <div id="settings"></div>
+  <div id="voice" hidden></div> 
   <div id="widget-wrapper">
     <div id="fallback"
       style="background-image: url(./assets/${import.meta.env.VITE_FALLBACK_FILENAME}.png)"
       hidden
     ></div> 
     <div id="player" hidden></div>
-    <div id="voice" hidden></div> 
   </div>
 `
-window.voice = new Voice(document.querySelector('#voice'))
+window.voice = new Voice(document.querySelector('#voice'), document.querySelector('#widget-wrapper'))
 window.voice.init()
 window.settings = new Settings(document.querySelector('#settings'), document.querySelector('#logo'))
 document.title = import.meta.env.VITE_TITLE

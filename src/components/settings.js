@@ -38,6 +38,8 @@ export default class Settings {
   #logoX = this.#defaultLogoX
   #logoY = this.#defaultLogoY
   #isInsightsInited = false
+  #doNotTrack = false
+  #lastFunctionInsights = null
 
   constructor(el, logoEl) {
     this.#el = el
@@ -65,22 +67,31 @@ export default class Settings {
 
   success() {
     this.loadViewport()
-    this.insights(false)
+    this.insights(false, false)
   }
 
-  insights(flag) {
-    if (this.#isInsightsInited) return
-    window.umami.trackView(`/${import.meta.env.VITE_LINK}${flag ? "?steam" : ""}`);
+  insights(isWallpaperEngine, doNotTrack) {
     this.#isInsightsInited = true
+    if (this.#isInsightsInited || doNotTrack || import.meta.env.MODE === 'development') return
+    this.#doNotTrack = doNotTrack
+    window.umami?.trackView(`/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam" : ""}`);
+  }
+
+  functionInsights(functionName) {
+    if (!this.#isInsightsInited || this.#doNotTrack || import.meta.env.MODE === 'development' || functionName === this.#lastFunctionInsights) return
+    this.#lastFunctionInsights = functionName
+    window.umami?.trackEvent(`${functionName}`);
   }
 
   setFPS(value) {
     this.#fps = value
     this.spinePlayer.setFps(value)
+    this.functionInsights("setFPS")
   }
 
   setLogoDisplay(flag) {
     this.#logoEl.hidden = flag;
+    this.functionInsights("setLogoDisplay")
   }
 
   #resize(_this, value) {
@@ -101,6 +112,7 @@ export default class Settings {
     this.#logoEl.src = src
     this.#resize()
     this.#setLogoInvertFilter(invert_filter)
+    this.functionInsights("setLogo")
   }
 
   #readFile(e, onload, callback) {
@@ -131,23 +143,27 @@ export default class Settings {
   setLogoRatio(value) {
     this.#ratio = value
     this.#resize(this, value)
+    this.functionInsights("setLogoRatio")
   }
 
   setLogoOpacity(value) {
     this.#logoEl.style.opacity = value / 100
     this.#opacity = value
+    this.functionInsights("setLogoOpacity")
   }
 
-  setBackgoundImage(v) {
+  setBackgoundImage(v, skipInsights = false) {
     document.body.style.backgroundImage = v
+    if (!skipInsights) this.functionInsights("setBackgoundImage");
   }
 
   setDefaultBackground(e) {
     const backgroundURL = `url("${import.meta.env.BASE_URL}assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${e}")`
     if (document.getElementById("custom_background_clear").disabled && !document.body.style.backgroundImage.startsWith("url(\"file:")) {
-      this.setBackgoundImage(backgroundURL)
+      this.setBackgoundImage(backgroundURL, true)
     }
     this.#defaultBackgroundImage = backgroundURL
+    this.functionInsights("setDefaultBackground")
   }
 
   setBackground(e) {
@@ -198,6 +214,7 @@ export default class Settings {
         break;
     }
     this.loadViewport()
+    this.functionInsights("positionPadding")
   }
 
   positionReset() {
@@ -242,6 +259,7 @@ export default class Settings {
         break;
     }
     this.elementPosition(this.#logoEl, this.#logoX, this.#logoY)
+    this.functionInsights("logoPadding")
   }
 
   logoReset() {

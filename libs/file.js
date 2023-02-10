@@ -53,6 +53,15 @@ export async function copy(sourcePath, targetPath) {
   return await fsP.copyFile(sourcePath, targetPath)
 }
 
+export async function copyDir(sourcePath, targetPath) {
+  if (!exists(sourcePath)) {
+    console.warn(`Source file ${sourcePath} does not exist.`)
+    return
+  }
+  mkdir(targetPath)
+  return await fsP.cp(sourcePath, targetPath, { recursive: true })
+}
+
 export function appendSync(content, filePath) {
   return fs.appendFileSync(filePath, content, 'utf8');
 }

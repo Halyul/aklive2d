@@ -23,6 +23,7 @@ export default class EnvGenerator {
       `VITE_IMAGE_HEIGHT=2048`,
       `VITE_BACKGROUND_FILES=${JSON.stringify(this.#assets.backgrounds)}`,
       `VITE_BACKGROUND_FOLDER=${__config.folder.background}`,
+      `VITE_VOICE_FOLDERS=${JSON.stringify(__config.folder.voice)}`,
     ].join('\n')
   }
 

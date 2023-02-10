@@ -5,7 +5,9 @@ import { mkdir, writeSync } from './file.js'
 import { appendMainConfig } from './append.js'
 
 export default function init(operatorName, extractedDir) {
-    mkdir(extractedDir)
+    extractedDir.forEach((dir) => {
+        mkdir(dir)
+    })
     const date = new Date()
     const template = readYAML(path.join(__dirname, 'config', '_template.yaml'))
     template.link = operatorName

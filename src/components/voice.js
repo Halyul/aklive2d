@@ -3,11 +3,15 @@ import '@/components/voice.css'
 
 export default class Voice {
     #el
+    #widgetEl
+    #audioEl = new Audio()
+    #audioElId = 'voice-audio'
     #defaultVoiceLang = "JP"
     #defaultRegion = charword_table.config.default_region
     #defaultIdleDuration = 10 * 60 * 1000
     #defaultNextDuration = 3 * 60 * 1000
     #voiceLang = this.#defaultVoiceLang
+    #voiceLanguages = Object.keys(this.#getCVInfo(this.#defaultRegion))
     #subtitleLang = this.#defaultRegion
     #useSubtitle = false
     #useVoice = false
@@ -19,19 +23,22 @@ export default class Voice {
     #nextListener = -1
     #nextDuration = this.#defaultNextDuration
     #lastClickToNext = false
+    #voiceFolderObject = this.#getVoiceFolderObject()
     
-    constructor(el) {
+    constructor(el, widgetEl) {
         this.#el = el
+        this.#widgetEl = widgetEl
     }
 
     init() {
-        this.#playTitleVoice()
+        this.#insertHTML()
+        this.#audioEl = document.getElementById(this.#audioElId)
     }
 
     success() {
         this.#playEntryVoice()
         this.#initNextVoiceTimer()
-        document.addEventListener('click', e => {
+        this.#widgetEl.addEventListener('click', e => {
             this.#lastClickToNext = true
             this.#nextVoice()
         })
@@ -86,7 +93,7 @@ export default class Voice {
      * @param {string} lang
      */
     set language(lang) {
-        if (this.#getVoiceLanguages().includes(lang)) {
+        if (this.#voiceLanguages.includes(lang)) {
             this.#voiceLang = lang
         } else {
             this.#voiceLang = this.#defaultVoiceLang
@@ -102,7 +109,7 @@ export default class Voice {
     }
 
     get languages() {
-        return this.#getVoiceLanguages()
+        return this.#voiceLanguages
     }
 
     /**
@@ -135,10 +142,6 @@ export default class Voice {
         return this.#nextDuration / 60 / 1000
     }
 
-    #playTitleVoice() {
-        this.#playSpecialVoice("标题")
-    }
-
     #initIdleVoiceTimer() {
         this.#idleListener = setInterval(() => {
             this.#playSpecialVoice("闲置")
@@ -169,21 +172,36 @@ export default class Voice {
 
     #playVoice(id) {
         this.#currentVoiceId = id
-        const audio = new Audio()
-        // audio.src = `https://cdn.jsdelivr.net/gh/Arondight/Adachi-BOT@master/src/assets/voice/${id}.mp3`
-        audio.play()
-        audio.addEventListener('ended', () => {
-            this.#lastVoiceId = this.#currentVoiceId
-            this.#currentVoiceId = null
-            this.#setCurrentSubtitle(null)
-            this.#lastClickToNext = false
-        })
-        this.#setCurrentSubtitle(id)
+        this.#audioEl.src = `./assets/${this.#getVoiceFoler()
+}/${id}.wav`
+        let startPlayPromise = this.#audioEl.play()
+        if (startPlayPromise !== undefined) {
+            startPlayPromise
+                .then(() => {
+                    const audioEndedFunc = () => {
+                        this.#lastVoiceId = this.#currentVoiceId
+                        this.#currentVoiceId = null
+                        this.#setCurrentSubtitle(null)
+                        this.#lastClickToNext = false
+                        this.#audioEl.removeEventListener('ended', audioEndedFunc)
+                    }
+                    this.#audioEl.addEventListener('ended', audioEndedFunc)
+                    this.#setCurrentSubtitle(id)
+                })
+                .catch(() => {
+                    return
+                })
+        }
     }
 
     #playSpecialVoice(matcher) {
         const voiceId = this.#getSpecialVoiceId(matcher)
         this.#playVoice(voiceId)
+    }
+
+    #getVoiceFoler() {
+        const folderObject = this.#voiceFolderObject
+        return `${folderObject.main}/${folderObject.sub.find(e => e.lang === this.#voiceLang).name}`
     }
 
     #getSpecialVoiceId(matcher) {
@@ -200,8 +218,17 @@ export default class Voice {
         return charword_table.operator.voice[this.#subtitleLang][this.#getWordKeyByVoiceLang()[this.#voiceLang]][id]
     }
 
-    #getVoiceLanguages() {
-        return Object.keys(this.#getCVInfo(this.#defaultRegion))
+    #getVoiceFolderObject() {
+        const folderObject = JSON.parse(import.meta.env.VITE_VOICE_FOLDERS)
+        const languagesCopy = this.#voiceLanguages.slice()
+        const customVoiceName = languagesCopy.filter(i => !folderObject.sub.map(e => e.lang).includes(i))[0]
+        folderObject.sub = folderObject.sub.map(e => {
+            return {
+                name: e.name,
+                lang: e.lang === "CUSTOM" ? customVoiceName : e.lang
+            }
+        })
+        return folderObject
     }
 
     /**
@@ -251,4 +278,12 @@ export default class Voice {
         return Object.keys(this.#getCVInfoByVoiceLang()[this.#voiceLang])
     }
 
+    #insertHTML() {
+        this.#el.innerHTML = `
+            <audio id="${this.#audioElId}" autoplay>
+                <source type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        `
+    }
 }

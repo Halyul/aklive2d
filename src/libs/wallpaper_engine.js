@@ -5,6 +5,7 @@ window.wallpaperPropertyListener = {
         }
     },
     applyUserProperties: function (properties) {
+        window.settings.insights(true)
         if (properties.logo) {
             window.settings.setLogoDisplay(!properties.logo.value)
         }

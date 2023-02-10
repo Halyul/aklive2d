@@ -37,6 +37,7 @@ export default class Settings {
   #padBottom = this.#defaultPadBottom
   #logoX = this.#defaultLogoX
   #logoY = this.#defaultLogoY
+  #isInsightsInited = false
 
   constructor(el, logoEl) {
     this.#el = el
@@ -60,6 +61,17 @@ export default class Settings {
     this.setLogoOpacity(this.#defaultOpacity)
 
     this.#insertHTML()
+  }
+
+  success() {
+    this.loadViewport()
+    this.insights(false)
+  }
+
+  insights(flag) {
+    if (this.#isInsightsInited) return
+    window.umami.trackView(`/${import.meta.env.VITE_LINK}${flag ? "?steam" : ""}`);
+    this.#isInsightsInited = true
   }
 
   setFPS(value) {

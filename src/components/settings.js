@@ -41,7 +41,9 @@ export default class Settings {
   #doNotTrack = false
   #lastFunctionInsights = null
 
+
   constructor(el, logoEl) {
+    this.isWallpaperEngine = false
     this.#el = el
     this.#logoEl = logoEl
     this.spinePlayer = null
@@ -71,6 +73,7 @@ export default class Settings {
   }
 
   insights(isWallpaperEngine, doNotTrack) {
+    this.isWallpaperEngine = isWallpaperEngine
     if (this.#isInsightsInited || import.meta.env.MODE === 'development') return
     this.#isInsightsInited = true
     this.#doNotTrack = doNotTrack
@@ -78,8 +81,8 @@ export default class Settings {
     window.umami?.trackView(`/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam" : ""}`);
   }
 
-  functionInsights(functionName) {
-    if (!this.#isInsightsInited || this.#doNotTrack || import.meta.env.MODE === 'development' || functionName === this.#lastFunctionInsights) return
+  functionInsights(functionName, toSkip = false) {
+    if (!this.#isInsightsInited || this.#doNotTrack || import.meta.env.MODE === 'development' || functionName === this.#lastFunctionInsights || toSkip) return
     this.#lastFunctionInsights = functionName
     window.umami?.trackEvent(`${functionName}`);
   }
@@ -87,12 +90,12 @@ export default class Settings {
   setFPS(value) {
     this.#fps = value
     this.spinePlayer.setFps(value)
-    this.functionInsights("setFPS")
+    this.functionInsights("setFPS", this.isWallpaperEngine)
   }
 
   setLogoDisplay(flag) {
     this.#logoEl.hidden = flag;
-    this.functionInsights("setLogoDisplay")
+    this.functionInsights("setLogoDisplay", this.isWallpaperEngine)
   }
 
   #resize(_this, value) {
@@ -113,7 +116,7 @@ export default class Settings {
     this.#logoEl.src = src
     this.#resize()
     this.#setLogoInvertFilter(invert_filter)
-    this.functionInsights("setLogo")
+    this.functionInsights("setLogo", this.isWallpaperEngine)
   }
 
   #readFile(e, onload, callback) {
@@ -144,18 +147,18 @@ export default class Settings {
   setLogoRatio(value) {
     this.#ratio = value
     this.#resize(this, value)
-    this.functionInsights("setLogoRatio")
+    this.functionInsights("setLogoRatio", this.isWallpaperEngine)
   }
 
   setLogoOpacity(value) {
     this.#logoEl.style.opacity = value / 100
     this.#opacity = value
-    this.functionInsights("setLogoOpacity")
+    this.functionInsights("setLogoOpacity", this.isWallpaperEngine)
   }
 
   setBackgoundImage(v, skipInsights = false) {
     document.body.style.backgroundImage = v
-    if (!skipInsights) this.functionInsights("setBackgoundImage");
+    if (!skipInsights) this.functionInsights("setBackgoundImage", this.isWallpaperEngine);
   }
 
   setDefaultBackground(e) {
@@ -164,7 +167,7 @@ export default class Settings {
       this.setBackgoundImage(backgroundURL, true)
     }
     this.#defaultBackgroundImage = backgroundURL
-    this.functionInsights("setDefaultBackground")
+    this.functionInsights("setDefaultBackground", this.isWallpaperEngine)
   }
 
   setBackground(e) {
@@ -215,7 +218,7 @@ export default class Settings {
         break;
     }
     this.loadViewport()
-    this.functionInsights("positionPadding")
+    this.functionInsights("positionPadding", this.isWallpaperEngine)
   }
 
   positionReset() {
@@ -261,7 +264,7 @@ export default class Settings {
         break;
     }
     this.elementPosition(this.#logoEl, this.#logoX, this.#logoY)
-    this.functionInsights("logoPadding")
+    this.functionInsights("logoPadding", this.isWallpaperEngine)
   }
 
   logoReset() {

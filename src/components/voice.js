@@ -61,7 +61,7 @@ export default class Voice {
   set useSubtitle(show) {
     this.#useSubtitle = show
     this.#el.hidden = !show
-    window.settings.functionInsights("useSubtitle")
+    window.settings.functionInsights("useSubtitle", window.settings.isWallpaperEngine)
   }
 
   get useSubtitle() {
@@ -72,7 +72,7 @@ export default class Voice {
    * @param {boolean} show
    */
   set useVoice(show) {
-    window.settings.functionInsights("useVoice")
+    window.settings.functionInsights("useVoice", window.settings.isWallpaperEngine)
     this.#useVoice = show
     this.#el.hidden = !show
     this.#playEntryVoice()
@@ -91,7 +91,7 @@ export default class Voice {
   set useVoiceActor(show) {
     this.#useVoiceActor = show
     document.getElementById('voice_actor_box').hidden = !show
-    window.settings.functionInsights("useVoiceActor")
+    window.settings.functionInsights("useVoiceActor", window.settings.isWallpaperEngine)
   }
 
   get useVoiceActor() {
@@ -107,7 +107,7 @@ export default class Voice {
     } else {
       this.#subtitleLang = this.#defaultRegion
     }
-    window.settings.functionInsights("subtitleLanguage")
+    window.settings.functionInsights("subtitleLanguage", window.settings.isWallpaperEngine)
   }
 
   get subtitleLanguage() {
@@ -144,7 +144,7 @@ export default class Voice {
 
   #updateSubtitlePosition() {
     window.settings.elementPosition(this.#el, this.#subtitleX, this.#subtitleY)
-    window.settings.functionInsights("subtitlePosition")
+    window.settings.functionInsights("subtitlePosition", window.settings.isWallpaperEngine)
   }
 
   /**
@@ -156,7 +156,7 @@ export default class Voice {
     } else {
       this.#voiceLang = this.#defaultVoiceLang
     }
-    window.settings.functionInsights("language")
+    window.settings.functionInsights("language", window.settings.isWallpaperEngine)
     const availableSubtitleLang = this.#getSubtitleLanguages()
     if (!availableSubtitleLang.includes(this.#subtitleLang)) {
       this.#subtitleLang = availableSubtitleLang[0]
@@ -180,7 +180,7 @@ export default class Voice {
       this.#idleDuration = duration * 60 * 1000
       this.#initIdleVoiceTimer()
     }
-    window.settings.functionInsights("idleDuration")
+    window.settings.functionInsights("idleDuration", window.settings.isWallpaperEngine)
   }
 
   get idleDuration() {
@@ -196,7 +196,7 @@ export default class Voice {
       this.#nextDuration = duration * 60 * 1000
       this.#initNextVoiceTimer()
     }
-    window.settings.functionInsights("nextDuration")
+    window.settings.functionInsights("nextDuration", window.settings.isWallpaperEngine)
   }
 
   get nextDuration() {

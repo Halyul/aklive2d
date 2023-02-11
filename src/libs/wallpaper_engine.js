@@ -44,6 +44,33 @@ window.wallpaperPropertyListener = {
                 window.settings.resetBackground()
             }
         }
+        if (properties.voicetitle) {
+            window.voice.useVoice = properties.voicetitle.value
+        }
+        if (properties.voicelanguage) {
+            window.voice.language = properties.voicelanguage.value
+        }
+        if (properties.voiceidle) {
+            window.voice.idleDuration = parseInt(properties.voiceidle.value)
+        }
+        if (properties.voicenext) {
+            window.voice.nextDuration = parseInt(properties.voicenext.value)
+        }
+        if (properties.voicesubtitle) {
+            window.voice.useSubtitle = properties.voicesubtitle.value
+        }
+        if (properties.voicesubtitlelanguage) {
+            window.voice.subtitleLanguage = properties.voicesubtitlelanguage.value
+        }
+        if (properties.voicesubtitlex) {
+            window.voice.subtitleX = properties.voicesubtitlex.value
+        }
+        if (properties.voicesubtitley) {
+            window.voice.subtitleY = properties.voicesubtitley.value
+        }
+        if (properties.voiceactor) {
+            window.voice.useVoiceActor = properties.voiceactor.value
+        }
         if (properties.position) {
             if (!properties.position.value) {
                 window.settings.positionReset()

@@ -75,8 +75,35 @@ async function main() {
 
     rmdir(OPERATOR_RELEASE_FOLDER)
 
+    const charwordTableLookup = charwordTable.lookup(OPERATOR_NAME)
+    const voiceLangs = (() => { 
+      const infoArray = Object.values(charwordTableLookup.operator.info[charwordTableLookup.config.default_region])
+      // combine the infoArray
+      let output = {}
+      for (const info of infoArray) {
+        output = {
+          ...output,
+          ...info
+        }
+      }
+      return Object.keys(output)
+    })()
+    const subtitleLangs = (() => {
+      const output = []
+      for (const [key, value] of Object.entries(charwordTableLookup.operator.info)) {
+        if (Object.keys(value).length !== 0) {
+          output.push(key)
+        }
+      }
+      return output
+    })()
+
+    writeSync(JSON.stringify(charwordTableLookup), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
+
     const projectJson = new ProjectJson(OPERATOR_NAME, OPERATOR_SHARE_FOLDER, {
-      backgrounds
+      backgrounds,
+      voiceLangs,
+      subtitleLangs
     })
     projectJson.load().then((content) => {
       write(JSON.stringify(content, null, 2), path.join(OPERATOR_RELEASE_FOLDER, 'project.json'))
@@ -86,8 +113,6 @@ async function main() {
     assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
       write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
     })
-
-    writeSync(JSON.stringify(charwordTable.lookup(OPERATOR_NAME)), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
 
     const filesToCopy = [
       ...background.getFilesToCopy(SHOWCASE_PUBLIC_ASSSETS_FOLDER),

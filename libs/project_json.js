@@ -23,12 +23,18 @@ export default class ProjectJson {
     this.#json = JSON.parse(await readFile(this.#getPath()))
     const matcher = new Matcher('~{', '}', __config.operators[this.#operatorName], {
       ...this.#assets,
-      backgroundOptions: this.#assets.backgrounds.map((b) => {
-        return {
-          "label": b,
-          "value": b
+      ...(() => {
+        const output = {}
+        for (const [key, value] of Object.entries(this.#assets)) {
+          output[`${key}Options`] = value.map((b) => {
+            return {
+              "label": b,
+              "value": b
+            }
+          })
         }
-      })
+        return output
+      })()
     })
     const match = {
       identify: value => value.startsWith('!match'),

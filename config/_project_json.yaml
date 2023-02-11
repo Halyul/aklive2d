@@ -23,6 +23,8 @@ localization:
     ui_position_padding_top: Padding Top
     ui_voice_title: <hr><h4>🔈Voice</h4><hr>
     ui_voice_lang: Voice Language
+    ui_voice_idle: Idle Timeout
+    ui_voice_next: Voice Interval
     ui_subtitle_title: <hr><h4>📑 Subtitle</h4><hr>
     ui_subtitle_lang: Subtitle Language
     ui_voice_actor_title: <hr><h4>🗣️ Voice Actor</h4><hr>
@@ -49,6 +51,8 @@ localization:
     ui_position_padding_top: 上部距离
     ui_voice_title: <hr><h4>🔈语音</h4><hr>
     ui_voice_lang: 语音语言
+    ui_voice_idle: 待机间隔
+    ui_voice_next: 下一条语音间隔
     ui_subtitle_title: <hr><h4>📑 字幕</h4><hr>
     ui_subtitle_lang: 字幕语言
     ui_voice_actor_title: <hr><h4>🗣️ 声优</h4><hr>
@@ -128,15 +132,77 @@ properties:
      text: ui_default_background
      type: combo
      value: !match ~{var('assets', "backgrounds")[0]}
-     fraction: false
-     max: 100
-     min: 0
-     options: !match ~{var('assets', "backgroundOptions")}
+     options: !match ~{var('assets', "backgroundsOptions")}
   - key: background
     value: 
      text: ui_custom_background
      type: file
      value: ""
+  - key: voicetitle
+    value: 
+     text: ui_voice_title
+     type: bool
+     value: false
+  - key: voicelanguage
+    value: 
+     text: ui_voice_lang
+     type: combo
+     condition: voicetitle.value == true
+     value: !match ~{var('assets', "voiceLangs")[0]}
+     options: !match ~{var('assets', "voiceLangsOptions")}
+  - key: voiceidle
+    value: 
+     text: ui_voice_idle
+     type: textinput
+     value: 10
+     condition: voicetitle.value == true
+     fraction: false
+     min: 0
+  - key: voicenext
+    value: 
+     text: ui_voice_next
+     type: textinput
+     value: 3
+     condition: voicetitle.value == true
+     fraction: false
+     min: 0
+  - key: voicesubtitle
+    value: 
+     text: ui_subtitle_title
+     condition: voicetitle.value == true
+     type: bool
+     value: false
+  - key: voicesubtitlelanguage
+    value: 
+     text: ui_subtitle_lang
+     type: combo
+     condition: voicesubtitle.value == true
+     value: !match ~{var('assets', "subtitleLangs")[0]}
+     options: !match ~{var('assets', "subtitleLangsOptions")}
+  - key: voicesubtitlex
+    value: 
+     text: ui_translate_x
+     type: slider
+     value: 0
+     condition: voicesubtitle.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: voicesubtitley
+    value: 
+     text: ui_translate_y
+     type: slider
+     value: 100
+     condition: voicesubtitle.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: voiceactor
+    value: 
+     text: ui_voice_actor_title
+     condition: voicesubtitle.value == true
+     type: bool
+     value: false
   - key: position
     value: 
      text: ui_position_title

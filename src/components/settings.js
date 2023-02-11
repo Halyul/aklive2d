@@ -234,8 +234,9 @@ export default class Settings {
   }
 
   elementPosition(el, x, y) {
-    const elWidth = getComputedStyle(el).width
-    const elHeight = getComputedStyle(el).height
+    const computedStyle = getComputedStyle(el)
+    const elWidth = computedStyle.width
+    const elHeight = computedStyle.height
     const windowWidth = window.innerWidth
     const windowHeight = window.innerHeight
     const xRange = windowWidth - parseInt(elWidth)
@@ -352,8 +353,8 @@ export default class Settings {
         </div>
         <div>
           <label for="voice">Voice</label>
-          <input type="checkbox" id="voice" name="voice" checked/>
-          <div id="voice_realted">
+          <input type="checkbox" id="voice" name="voice"/>
+          <div id="voice_realted" hidden>
             <div>
               <label for="voice_lang_select">Choose the language of voice:</label>
               <select name="voice_lang" id="voice_lang_select">
@@ -368,9 +369,7 @@ export default class Settings {
               <label for="voice_next_duration">Next Duration (min)</label>
               <input type="number" id="voice_next_duration_input" name="voice_next_duration" value="${window.voice.nextDuration}" />
             </div>
-          </div>
-        </div>
-        <div>
+            <div>
           <label for="subtitle">Subtitle</label>
           <input type="checkbox" id="subtitle" name="subtitle" checked/>
           <div id="subtitle_realted">
@@ -380,11 +379,23 @@ export default class Settings {
                 ${this.#updateOptions("subtitle_lang_select", window.voice.subtitleLanguages)}
               </select>
             </div>
+            <div>
+              <label for="subtitle_padding_x">Subtitle X Position</label>
+                <input type="range" min="0" max="100" id="subtitle_padding_x_slider" value="${window.voice.subtitleX}" />
+                <input type="number" id="subtitle_padding_x_input" name="subtitle_padding_x" value="${window.voice.subtitleX}" />
+            </div>
+            <div>
+              <label for="subtitle_padding_y">Subtitle Y Position</label>
+              <input type="range" min="0" max="100" id="subtitle_padding_y_slider" value="${window.voice.subtitleY}" />
+              <input type="number" id="subtitle_padding_y_input" name="subtitle_padding_y" value="${window.voice.subtitleY}" />
+            </div>
           </div>
         </div>
         <div>
           <label for="voice_actor">Voice Actor</label>
-          <input type="checkbox" id="voice_actor" name="voice_actor" checked/>
+          <input type="checkbox" id="voice_actor" name="voice_actor"/>
+        </div>
+          </div>
         </div>
         <div>
           <label for="position">Position</label>
@@ -443,6 +454,13 @@ export default class Settings {
       e.innerHTML = value.join("");
     }
     return value
+  }
+
+  #getCurrentOptions(id, value) {
+    const e = document.getElementById(id);
+    const options = [...e]
+    const toSelecteIndex = options.findIndex(i => options.find(o => o.value === value) === i)
+    e.selectedIndex = toSelecteIndex;
   }
 
   #addEventListeners() {
@@ -526,6 +544,7 @@ export default class Settings {
         id: "voice_lang_select", event: "change", handler: e => {
           window.voice.language = e.currentTarget.value
           _this.#updateOptions("subtitle_lang_select", window.voice.subtitleLanguages)
+          _this.#getCurrentOptions("subtitle_lang_select", window.voice.subtitleLanguage)
         }
       }, {
         id: "voice_idle_duration_input", event: "change", handler: e => {
@@ -542,6 +561,26 @@ export default class Settings {
         }
       }, {
         id: "subtitle_lang_select", event: "change", handler: e => window.voice.subtitleLanguage = e.currentTarget.value
+      }, {
+        id: "subtitle_padding_x_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "subtitle_padding_x_input");
+          window.voice.subtitleX = e.currentTarget.value
+        }
+      }, {
+        id: "subtitle_padding_x_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "subtitle_padding_x_slider");
+          window.voice.subtitleX = e.currentTarget.value
+        }
+      }, {
+        id: "subtitle_padding_y_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "subtitle_padding_y_input");
+          window.voice.subtitleY = e.currentTarget.value
+        }
+      }, {
+        id: "subtitle_padding_y_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "subtitle_padding_y_slider");
+          window.voice.subtitleY = e.currentTarget.value
+        }
       }, {
         id: "voice_actor", event: "click", handler: e => {
           window.voice.useVoiceActor = e.currentTarget.checked;

@@ -71,8 +71,9 @@ export default class Settings {
   }
 
   insights(isWallpaperEngine, doNotTrack) {
+    if (this.#isInsightsInited || import.meta.env.MODE === 'development') return
     this.#isInsightsInited = true
-    if (this.#isInsightsInited || doNotTrack || import.meta.env.MODE === 'development') return
+    if (doNotTrack || this.#doNotTrack) return
     this.#doNotTrack = doNotTrack
     window.umami?.trackView(`/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam" : ""}`);
   }

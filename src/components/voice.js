@@ -6,12 +6,12 @@ export default class Voice {
   #widgetEl
   #audioEl = new Audio()
   #audioElId = 'voice-audio'
-  #defaultVoiceLang = "CN_MANDARIN"
   #defaultRegion = charword_table.config.default_region
   #defaultIdleDuration = 10 * 60 * 1000
   #defaultNextDuration = 3 * 60 * 1000
-  #voiceLang = this.#defaultVoiceLang
   #voiceLanguages = Object.keys(this.#getCVInfo(this.#defaultRegion))
+  #defaultVoiceLang = this.#voiceLanguages[0]
+  #voiceLang = this.#defaultVoiceLang
   #subtitleLang = this.#defaultRegion
   #useSubtitle = true
   #useVoice = false

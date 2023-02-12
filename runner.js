@@ -5,7 +5,7 @@ import { fork } from 'child_process';
 import getConfig from './libs/config.js'
 import ProjectJson from './libs/project_json.js'
 import EnvGenerator from './libs/env_generator.js'
-import { write, rmdir, copy, writeSync, copyDir } from './libs/file.js'
+import { write, rmdir, copy, writeSync, copyDir, readSync } from './libs/file.js'
 import AssetsProcessor from './libs/assets_processor.js'
 import init from './libs/initializer.js'
 import directory from './libs/directory.js'
@@ -15,7 +15,10 @@ import CharwordTable from './libs/charword_table.js';
 
 async function main() {
   global.__dirname = path.dirname(fileURLToPath(import.meta.url))
-  global.__config = getConfig()
+  global.__config = {
+    ...getConfig(),
+    version: readSync(path.join(__dirname, 'Version'))
+  }
 
   const op = process.argv[2]
   let OPERATOR_NAMES = process.argv.slice(3);

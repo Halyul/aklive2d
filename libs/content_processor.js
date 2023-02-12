@@ -52,7 +52,7 @@ class Evalable {
   }
 
   version(prefix, suffix) {
-    return `${prefix}${readSync(path.join(__dirname, 'Version'))}${suffix}`
+    return `${prefix}${__config.version}${suffix}`
   }
 
   #step(location, varName) {

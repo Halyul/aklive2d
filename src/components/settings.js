@@ -78,7 +78,7 @@ export default class Settings {
     this.#isInsightsInited = true
     this.#doNotTrack = doNotTrack
     if (this.#doNotTrack) return
-    window.umami?.trackView(`/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam" : ""}`);
+    window.umami?.trackView(`/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam&" : "?"}version=${import.meta.env.VITE_VERSION}`);
   }
 
   functionInsights(functionName, toSkip = false) {

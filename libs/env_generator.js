@@ -10,6 +10,7 @@ export default class EnvGenerator {
   generate() {
     return [
       `VITE_LINK="${this.#operatorConfig.link}"`,
+      `VITE_VERSION=${__config.version}`,
       `VITE_TITLE="${this.#operatorConfig.title}"`,
       `VITE_FILENAME=${this.#operatorConfig.filename.replace('#', '%23')}`,
       `VITE_LOGO_FILENAME=${this.#operatorConfig.logo}`,

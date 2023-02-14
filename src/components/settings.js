@@ -70,6 +70,7 @@ export default class Settings {
   success() {
     this.loadViewport()
     this.insights(false, false)
+    this.#updateOptions("animation_selection", this.spinePlayer.skeleton.data.animations.map(e => e.name))
   }
 
   insights(isWallpaperEngine, doNotTrack) {
@@ -428,6 +429,10 @@ export default class Settings {
           </div>
         </div>
         <div>
+            <label for="animation_select">Animation:</label>
+            <select name="animation_select" id="animation_selection"></select>
+          </div>
+        <div>
           <button type="button" id="settings_play" disabled>Play</button>
           <button type="button" id="settings_pause">Pause</button>
           <button type="button" id="settings_reset">Reset</button>
@@ -650,6 +655,11 @@ export default class Settings {
         id: "settings_reset", event: "click", handler: e => _this.reset()
       }, {
         id: "settings_close", event: "click", handler: e => _this.close()
+      }, {
+        id: "animation_selection", event: "change", handler: e => {
+          this.spinePlayer.animationState.setAnimation(0, e.currentTarget.value, false, 0)
+          this.spinePlayer.animationState.addAnimation(0, "Idle", true, 0);
+        }
       },
     ]
 

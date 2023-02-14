@@ -42,3 +42,4 @@ operators:
   mizuki_summer_feast: !include config/mizuki_summer_feast.yaml
   chongyue: !include config/chongyue.yaml
   ling_it_does_wash_the_strings: !include config/ling_it_does_wash_the_strings.yaml
+  pozemka_snowy_plains_in_words: !include config/pozemka_snowy_plains_in_words.yaml

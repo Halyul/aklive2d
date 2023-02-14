@@ -168,3 +168,4 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 | Summer Feast / Mizuki | [Link](https://arknights.halyul.dev/mizuki_summer_feast/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2895953271) |
 | Chongyue | [Link](https://arknights.halyul.dev/chongyue/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2919486659) |
 | It Does Wash the Strings / Ling | [Link](https://arknights.halyul.dev/ling_it_does_wash_the_strings/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2919482772) |
+| Snowy Plains in Words / Позёмка | [Link](https://arknights.halyul.dev/pozemka_snowy_plains_in_words/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2933544301) |

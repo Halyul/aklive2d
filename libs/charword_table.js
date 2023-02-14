@@ -117,11 +117,7 @@ export default class CharwordTable {
   }
 
   async #download(region) {
-    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`, {
-      headers: {
-        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-      }
-    })
+    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`)
     const historyData = await historyResponse.json()
     const lastCommit = historyData[0]
     const lastCommitDate = new Date(lastCommit.commit.committer.date)
@@ -195,16 +191,8 @@ export default class CharwordTable {
   async #zhTWDownload() {
     const output = {}
     const region = 'zh_TW'
-    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`, {
-      headers: {
-        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-      }
-    })
-    const handbookHistoryResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/handbook_info_table.json`, {
-      headers: {
-        'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-      }
-    })
+    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`)
+    const handbookHistoryResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/handbook_info_table.json`)
     const historyData = await historyResponse.json()
     const handbookHistoryData = await handbookHistoryResponse.json()
     const lastCommit = historyData[0]

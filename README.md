@@ -11,35 +11,35 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 ### Command Line Tool
 
 ``` bash
-$ node runner.js generate {operator_name}
+$ npm run generate {operator_name}
 To generate operator assets for showcase page
 ```
 ``` bash
-$ node runner.js dev {operator_name}
+$ npm run dev {operator_name}
 Live showcase page server for development
 ```
 ``` bash
-$ node runner.js build {operator_name}
+$ npm run build {operator_name}
 Build showcase webpage for an operator
 ```
 ``` bash
-$ node runner.js build-all
+$ npm run build-all
 To generate all operator assets for showcase page
 ```
 ``` bash
-$ node runner.js init {operator_name}
+$ npm run init {operator_name}
 To initialize folder and config file for an operator
 ```
 ``` bash
-$ node runner.js readme {operator_name}
+$ npm run readme {operator_name}
 To add operator info to README.md
 ```
 ``` bash
-$ node runner.js directory
+$ npm run directory
 To generate directory.json
 ```
 ``` bash
-$ node runner.js charword
+$ npm run charword
 To generate the latest charword_table.json
 ```
 ### Webpage & JavaScript

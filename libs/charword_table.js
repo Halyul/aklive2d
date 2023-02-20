@@ -18,7 +18,7 @@ const NICKNAME = {
 
 export default class CharwordTable {
   #operatorIDs = Object.values(__config.operators).map(operator => { return this.#getOperatorId(operator) })
-  #charwordTablePath = path.join(__dirname, __config.folder.operator, __config.folder.share)
+  #charwordTablePath = path.join(__projetRoot, __config.folder.operator, __config.folder.share)
   #charwordTableFile = path.join(this.#charwordTablePath, 'charword_table.json')
   #charwordTable = JSON.parse(readSync(this.#charwordTableFile)) || {
     config: {
@@ -134,10 +134,10 @@ export default class CharwordTable {
     console.log(`charword_table_${region}.json is updated.`)
 
     // remove old file
-    const files = readdirSync(path.join(__dirname, __config.folder.operator, __config.folder.share))
+    const files = readdirSync(path.join(__projetRoot, __config.folder.operator, __config.folder.share))
     for (const file of files) {
       if (file.startsWith(`charword_table_${region}`) && file !== path.basename(filepath)) {
-        rm(path.join(__dirname, __config.folder.operator, __config.folder.share, file))
+        rm(path.join(__projetRoot, __config.folder.operator, __config.folder.share, file))
       }
     }
     return data
@@ -214,10 +214,10 @@ export default class CharwordTable {
       console.log(`charword_table_${region}.json is updated.`)
 
       // remove old file
-      const files = readdirSync(path.join(__dirname, __config.folder.operator, __config.folder.share))
+      const files = readdirSync(path.join(__projetRoot, __config.folder.operator, __config.folder.share))
       for (const file of files) {
         if (file.startsWith(`charword_table_${region}`) && file !== path.basename(filepath)) {
-          rm(path.join(__dirname, __config.folder.operator, __config.folder.share, file))
+          rm(path.join(__projetRoot, __config.folder.operator, __config.folder.share, file))
         }
       }
       output.data = data
@@ -232,10 +232,10 @@ export default class CharwordTable {
       console.log(`handbook_info_table_${region}.json is updated.`)
 
       // remove old file
-      const files = readdirSync(path.join(__dirname, __config.folder.operator, __config.folder.share))
+      const files = readdirSync(path.join(__projetRoot, __config.folder.operator, __config.folder.share))
       for (const file of files) {
         if (file.startsWith(`handbook_info_table_${region}`) && file !== path.basename(handbookFilepath)) {
-          rm(path.join(__dirname, __config.folder.operator, __config.folder.share, file))
+          rm(path.join(__projetRoot, __config.folder.operator, __config.folder.share, file))
         }
       }
       output.handbook = data

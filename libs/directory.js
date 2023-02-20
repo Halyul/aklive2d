@@ -2,8 +2,8 @@ import path from 'path'
 import { writeSync, copy, rmdir } from './file.js'
 
 export default function () {
-  const targetFolder = path.join(__dirname, __config.folder.release, __config.folder.directory);
-  const sourceFolder = path.join(__dirname, __config.folder.operator);
+  const targetFolder = path.join(__projetRoot, __config.folder.release, __config.folder.directory);
+  const sourceFolder = path.join(__projetRoot, __config.folder.operator);
   rmdir(targetFolder);
   const filesToCopy = [];
   const directoryJson = []

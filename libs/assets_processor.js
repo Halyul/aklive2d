@@ -8,7 +8,7 @@ export default class AssetsProcessor {
     #operatorName
     
     constructor(operatorName) {
-        this.#operatorSourceFolder = path.join(__dirname, __config.folder.operator)
+        this.#operatorSourceFolder = path.join(__projetRoot, __config.folder.operator)
         this.#alphaCompositer = new AlphaComposite()
         this.#operatorName = operatorName
     }

@@ -13,7 +13,7 @@ export default class ProjectJson {
 
   constructor(operatorName, operatorShareFolder, assets) {
     this.#operatorName = operatorName
-    this.#operatorSourceFolder = path.join(__dirname, __config.folder.operator)
+    this.#operatorSourceFolder = path.join(__projetRoot, __config.folder.operator)
     this.#operatorShareFolder = operatorShareFolder
     this.#assets = assets
   }
@@ -44,7 +44,7 @@ export default class ProjectJson {
         return matcher.result
       }
     }
-    this.#template = readYAML(path.join(__dirname, 'config', '_project_json.yaml'), [match])
+    this.#template = readYAML(path.join(__projetRoot, 'config', '_project_json.yaml'), [match])
     this.#process()
     return this.#json
   }

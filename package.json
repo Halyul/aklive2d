@@ -4,16 +4,28 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "generate": "node aklive2d generate",
+    "dev": "node aklive2d dev",
+    "build": "node aklive2d build",
+    "build-all": "node aklive2d build-all",
+    "init": "node aklive2d init",
+    "readme": "node aklive2d readme",
+    "directory": "node aklive2d directory",
+    "charword": "node aklive2d charword"
   },
   "devDependencies": {
-    "vite": "^4.0.0"
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.2.0",
+    "vite": "^4.1.3"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
     "node-fetch": "^3.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-refresh": "^0.14.0",
+    "react-router-dom": "^6.8.1",
     "sharp": "^0.31.3",
     "yaml": "^2.2.1"
   }

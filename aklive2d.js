@@ -14,10 +14,10 @@ import Background from './libs/background.js'
 import CharwordTable from './libs/charword_table.js';
 
 async function main() {
-  global.__dirname = path.dirname(fileURLToPath(import.meta.url))
+  global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
   global.__config = {
     ...getConfig(),
-    version: readSync(path.join(__dirname, 'Version'))
+    version: readSync(path.join(__projetRoot, 'Version'))
   }
 
   const op = process.argv[2]
@@ -37,7 +37,9 @@ async function main() {
    */
   switch (op) {
     case 'directory':
-      process.exit(0)
+      assert(OPERATOR_NAMES.length !== 0, 'Please set a mode for Directory.')
+      fork(path.join(__projetRoot, 'vite.js'), [op, OPERATOR_NAMES])
+      return
     case 'build-all':
       for (const [key, _] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
@@ -53,8 +55,8 @@ async function main() {
   assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
-    const OPERATOR_SOURCE_FOLDER = path.join(__dirname, __config.folder.operator)
-    const OPERATOR_RELEASE_FOLDER = path.join(__dirname, __config.folder.release, OPERATOR_NAME)
+    const OPERATOR_SOURCE_FOLDER = path.join(__projetRoot, __config.folder.operator)
+    const OPERATOR_RELEASE_FOLDER = path.join(__projetRoot, __config.folder.release, OPERATOR_NAME)
     const SHOWCASE_PUBLIC_ASSSETS_FOLDER = path.join(OPERATOR_RELEASE_FOLDER, "assets")
     const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'extracted')
     const VOICE_FOLDERS = __config.folder.voice.sub.map((sub) => path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, __config.folder.voice.main, sub.name))
@@ -158,7 +160,7 @@ async function main() {
     writeSync((new EnvGenerator(OPERATOR_NAME, {
       backgrounds
     })).generate(), envPath)
-    fork(path.join(__dirname, 'vite.js'), [op, OPERATOR_NAME])
+    fork(path.join(__projetRoot, 'vite.js'), [op, OPERATOR_NAME])
   }
 }
 

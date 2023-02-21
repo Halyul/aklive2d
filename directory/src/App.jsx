@@ -1,31 +1,60 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client'
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route
+} from "react-router-dom";
+import Root from "@/routes/root";
+import ErrorPage from "@/routes/error-page";
+import Index from "@/routes/index";
+import Operator from "@/routes/operator";
+import '@/App.css';
+import 'reset-css';
 
-function App() {
-  const [count, setCount] = useState(0)
+document.title = import.meta.env.VITE_APP_TITLE;
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+const routes = [
+  {
+    path: "",
+    index: true,
+    name: "Home",
+    element: <Index />
+  }, {
+    path: "operator/:key",
+    index: false,
+    name: "Operator",
+    element: <Operator />
+  }
+]
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route
+      path="/"
+      element={
+        <Root
+          title={import.meta.env.VITE_APP_TITLE}
+        />
+      }
+      errorElement={<ErrorPage />}
+    >
+      {routes.map((route) => {
+        return (
+          <Route key={route.name}
+            index={route.index}
+            path={route.path}
+            element={route.element}
+          />
+        )
+      })}
+    </Route>
   )
-}
+);
 
-export default App
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+)

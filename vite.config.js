@@ -19,7 +19,6 @@ class ViteRunner {
     },
     build: {
       emptyOutDir: false,
-      chunkSizeWarningLimit: 10000,
     },
   }
 
@@ -113,6 +112,7 @@ class ViteRunner {
       },
       build: {
         ...this.#baseViteConfig.build,
+        chunkSizeWarningLimit: 10000,
         outDir: path.resolve(__projetRoot, this.#globalConfig.folder.release, operatorName),
       },
     }
@@ -134,7 +134,6 @@ class ViteRunner {
       resolve: {
         alias: {
           '@': path.resolve(directoryDir, './src'),
-          '!': path.resolve(__projetRoot, this.#globalConfig.folder.release, this.#globalConfig.folder.directory),
         },
       },
       build: {

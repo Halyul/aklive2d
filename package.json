@@ -33,6 +33,7 @@
     "react-dom": "^18.2.0",
     "react-refresh": "^0.14.0",
     "react-router-dom": "^6.8.1",
+    "reset-css": "^5.0.1",
     "sharp": "^0.31.3",
     "yaml": "^2.2.1"
   }

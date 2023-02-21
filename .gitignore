@@ -38,4 +38,3 @@ dist-ssr
 *.sln
 *.sw?
 temp
-.env

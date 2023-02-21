@@ -8,6 +8,7 @@
     "dev": "node aklive2d dev",
     "build": "node aklive2d build",
     "build-all": "node aklive2d build-all",
+    "preview": "node aklive2d preview",
     "init": "node aklive2d init",
     "readme": "node aklive2d readme",
     "directory": "node aklive2d directory",

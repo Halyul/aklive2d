@@ -1,16 +1,27 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import assert from 'assert'
 import react from '@vitejs/plugin-react-swc'
 import getConfig from './libs/config.js'
+import { rmdir } from './libs/file.js'
 
 global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
 
 class ViteRunner {
   #globalConfig = getConfig()
   #mode
-  #baseViteConfig = {}
+  #baseViteConfig = {
+    configFile: false,
+    base: "",
+    server: {
+      host: '0.0.0.0',
+    },
+    build: {
+      emptyOutDir: false,
+      chunkSizeWarningLimit: 10000,
+    },
+  }
 
   config() {
     let result;
@@ -19,10 +30,16 @@ class ViteRunner {
     switch (this.#mode) {
       case 'directory':
         result = this.directory()
+        const op = temp[2] || process.argv[3]
+        if (op !== 'preview') {
+          rmdir(path.resolve(__projetRoot, this.#globalConfig.folder.release, "_directory"))
+          rmdir(path.resolve(__projetRoot, this.#globalConfig.folder.release, "index.html"))
+        }
         break
       case 'dev':
       case 'build':
       case 'build-all':
+      case 'preview':
         result = this.operator()
         break
       default:
@@ -40,6 +57,9 @@ class ViteRunner {
       case 'build':
       case 'build-all':
         this.#build(viteConfig)
+        break
+      case 'preview':
+        this.#preview(viteConfig)
         break
       default:
         return
@@ -66,18 +86,25 @@ class ViteRunner {
     })()
   }
 
+  #preview(viteConfig) {
+    ; (async () => {
+      const { preview } = await import('vite')
+      const previewServer = await preview({
+        ...viteConfig,
+      })
+
+      previewServer.printUrls()
+    })()
+  }
+
   operator() {
     const operatorName = process.env.O || process.argv[3]
     assert(operatorName, 'Please set the operator name by using environment variable O.')
     return {
-      configFile: false,
-      base: "",
+      ...this.#baseViteConfig,
       envDir: path.join(__projetRoot, this.#globalConfig.folder.operator, operatorName),
       publicDir: path.resolve(__projetRoot, this.#globalConfig.folder.release, operatorName),
       root: path.resolve(__projetRoot),
-      server: {
-        host: '0.0.0.0',
-      },
       resolve: {
         alias: {
           '@': path.resolve(__projetRoot, './src'),
@@ -85,9 +112,8 @@ class ViteRunner {
         },
       },
       build: {
+        ...this.#baseViteConfig.build,
         outDir: path.resolve(__projetRoot, this.#globalConfig.folder.release, operatorName),
-        emptyOutDir: false,
-        chunkSizeWarningLimit: 10000,
       },
     }
   }
@@ -112,9 +138,9 @@ class ViteRunner {
         },
       },
       build: {
+        ...this.#baseViteConfig.build,
         outDir: path.resolve(__projetRoot, this.#globalConfig.folder.release),
-        emptyOutDir: false,
-        chunkSizeWarningLimit: 10000,
+        assetsDir: '_directory',
         rollupOptions: {
           output: {
             manualChunks: {

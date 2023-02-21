@@ -23,17 +23,12 @@ async function main() {
   const op = process.argv[2]
   let OPERATOR_NAMES = process.argv.slice(3);
 
-  const background = new Background()
-  await background.process()
-  const backgrounds = ['operator_bg.png', ...background.files]
   const charwordTable = new CharwordTable()
-
-  directory()
 
   /**
    * Skip all, no need for OPERATOR_NAME
    * build-all: build all assets
-   * directory: build directory.json
+   * directory: build directory
    */
   switch (op) {
     case 'directory':
@@ -45,6 +40,10 @@ async function main() {
         OPERATOR_NAMES.push(key)
       }
       break
+    case 'preview':
+      assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
+      fork(path.join(__projetRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
+      return
     case 'charword':
       await charwordTable.process()
       process.exit(0)
@@ -53,6 +52,12 @@ async function main() {
   }
 
   assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
+
+  const background = new Background()
+  await background.process()
+  const backgrounds = ['operator_bg.png', ...background.files]
+
+  directory()
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
     const OPERATOR_SOURCE_FOLDER = path.join(__projetRoot, __config.folder.operator)

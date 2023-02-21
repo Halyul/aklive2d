@@ -11,7 +11,13 @@
     "init": "node aklive2d init",
     "readme": "node aklive2d readme",
     "directory": "node aklive2d directory",
-    "charword": "node aklive2d charword"
+    "charword": "node aklive2d charword",
+    "vite:dev": "vite",
+    "vite:build": "vite build",
+    "vite:preview": "vite preview",
+    "vite:directory:dev": "vite dev",
+    "vite:directory:build": "vite build",
+    "vite:directory:preview": "vite preview"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

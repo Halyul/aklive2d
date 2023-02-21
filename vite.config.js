@@ -1,48 +1,54 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { createServer, build, loadEnv } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
+import assert from 'assert'
+import react from '@vitejs/plugin-react-swc'
 import getConfig from './libs/config.js'
-import { rm } from './libs/file.js'
 
 global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
-const MODE = process.argv[2]
 
-export default class Vite {
+class ViteRunner {
   #globalConfig = getConfig()
+  #mode
+  #baseViteConfig = {}
 
-  async start() {
+  config() {
     let result;
-    switch (MODE) {
+    const temp = process.env.npm_lifecycle_event.split(':')
+    this.#mode = temp[0] === "vite" ? temp[1] : process.argv[2]
+    switch (this.#mode) {
+      case 'directory':
+        result = this.directory()
+        break
       case 'dev':
       case 'build':
       case 'build-all':
         result = this.operator()
         break
-      case 'directory':
-        result = await this.directory()
+      default:
+        return
+    }
+    return result
+  }
+
+  async start() {
+    const viteConfig = this.config();
+    switch (this.#mode) {
+      case 'dev':
+        this.#dev(viteConfig)
+        break
+      case 'build':
+      case 'build-all':
+        this.#build(viteConfig)
         break
       default:
         return
     }
-    const mode = result.mode
-    const envPath = result.envPath
-    const viteConfig = result.viteConfig
-    switch (mode) {
-      case 'dev':
-        this.#dev(envPath, viteConfig)
-        break
-      case 'build':
-      case 'build-all':
-        this.#build(envPath, viteConfig)
-        break
-      default:
-        break
-    }
   }
 
-  #dev(envPath, viteConfig) {
+  #dev(viteConfig) {
     ; (async () => {
-      this.#loadEnvFromEnvFile('development', envPath)
+      const { createServer } = await import('vite')
       const server = await createServer(viteConfig)
       await server.listen()
 
@@ -50,9 +56,9 @@ export default class Vite {
     })()
   }
 
-  #build(envPath, viteConfig) {
+  #build(viteConfig) {
     ; (async () => {
-      this.#loadEnvFromEnvFile('production', envPath)
+      const { build } = await import('vite')
       await build({
         ...viteConfig,
         logLevel: 'silent',
@@ -61,9 +67,12 @@ export default class Vite {
   }
 
   operator() {
-    const operatorName = process.argv[3]
-    const viteConfig = {
+    const operatorName = process.env.O || process.argv[3]
+    assert(operatorName, 'Please set the operator name by using environment variable O.')
+    return {
+      configFile: false,
       base: "",
+      envDir: path.join(__projetRoot, this.#globalConfig.folder.operator, operatorName),
       publicDir: path.resolve(__projetRoot, this.#globalConfig.folder.release, operatorName),
       root: path.resolve(__projetRoot),
       server: {
@@ -81,20 +90,15 @@ export default class Vite {
         chunkSizeWarningLimit: 10000,
       },
     }
-    const envPath = path.join(__projetRoot, this.#globalConfig.folder.operator, operatorName)
-    return {
-      mode: MODE,
-      envPath,
-      viteConfig
-    }
   }
 
-  async directory() {
-    const { default: react } = await import('@vitejs/plugin-react-swc')
+  directory() {
     const directoryDir = path.resolve(__projetRoot, 'directory')
-    const mode = process.argv[3]
-    const viteConfig = {
+    this.#mode = process.argv[3]
+    return {
+      configFile: false,
       base: "",
+      envDir: directoryDir,
       plugins: [react()],
       publicDir: path.resolve(__projetRoot, this.#globalConfig.folder.release),
       root: directoryDir,
@@ -119,24 +123,16 @@ export default class Vite {
         }
       },
     }
-    const envPath = directoryDir
-    return {
-      mode,
-      envPath,
-      viteConfig
-    }
-  }
-
-  #loadEnvFromEnvFile(mode, envPath) {
-    process.env = { ...loadEnv(mode, envPath) }
-    rm(path.join(envPath, '.env'))
   }
 
 }
 
 async function main() {
-  const vite = new Vite()
-  await vite.start()
+  if (process.env.npm_lifecycle_event.includes('vite')) return
+  const runner = new ViteRunner()
+  await runner.start()
 }
 
 main()
+
+export default defineConfig((new ViteRunner()).config())

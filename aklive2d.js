@@ -38,7 +38,7 @@ async function main() {
   switch (op) {
     case 'directory':
       assert(OPERATOR_NAMES.length !== 0, 'Please set a mode for Directory.')
-      fork(path.join(__projetRoot, 'vite.js'), [op, OPERATOR_NAMES])
+      fork(path.join(__projetRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
       return
     case 'build-all':
       for (const [key, _] of Object.entries(__config.operators)) {
@@ -160,7 +160,7 @@ async function main() {
     writeSync((new EnvGenerator(OPERATOR_NAME, {
       backgrounds
     })).generate(), envPath)
-    fork(path.join(__projetRoot, 'vite.js'), [op, OPERATOR_NAME])
+    fork(path.join(__projetRoot, 'vite.config.js'), [op, OPERATOR_NAME])
   }
 }
 

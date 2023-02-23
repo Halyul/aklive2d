@@ -8,26 +8,11 @@ import {
 } from "react-router-dom";
 import Root from "@/routes/root";
 import ErrorPage from "@/routes/error-page";
-import Index from "@/routes/index";
-import Operator from "@/routes/operator";
+import routes from "@/routes";
 import '@/App.css';
 import 'reset-css';
 
 document.title = import.meta.env.VITE_APP_TITLE;
-
-const routes = [
-  {
-    path: "",
-    index: true,
-    name: "Home",
-    element: <Index />
-  }, {
-    path: "operator/:key",
-    index: false,
-    name: "Operator",
-    element: <Operator />
-  }
-]
 
 const router = createBrowserRouter(
   createRoutesFromElements(

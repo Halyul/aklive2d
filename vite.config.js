@@ -22,13 +22,13 @@ class ViteRunner {
     },
   }
 
-  config() {
+  get config() {
     let result;
     const temp = process.env.npm_lifecycle_event.split(':')
     this.#mode = temp[0] === "vite" ? temp[1] : process.argv[2]
     switch (this.#mode) {
       case 'directory':
-        result = this.directory()
+        result = this.#directoryConfig
         const op = temp[2] || process.argv[3]
         if (op !== 'preview') {
           rmdir(path.resolve(__projetRoot, this.#globalConfig.folder.release, "_directory"))
@@ -39,7 +39,7 @@ class ViteRunner {
       case 'build':
       case 'build-all':
       case 'preview':
-        result = this.operator()
+        result = this.#operatorConfig
         break
       default:
         return
@@ -47,8 +47,8 @@ class ViteRunner {
     return result
   }
 
-  async start() {
-    const viteConfig = this.config();
+  start() {
+    const viteConfig = this.config;
     switch (this.#mode) {
       case 'dev':
         this.#dev(viteConfig)
@@ -96,7 +96,7 @@ class ViteRunner {
     })()
   }
 
-  operator() {
+  get #operatorConfig() {
     const operatorName = process.env.O || process.argv[3]
     assert(operatorName, 'Please set the operator name by using environment variable O.')
     return {
@@ -104,6 +104,9 @@ class ViteRunner {
       envDir: path.join(__projetRoot, this.#globalConfig.folder.operator, operatorName),
       publicDir: path.resolve(__projetRoot, this.#globalConfig.folder.release, operatorName),
       root: path.resolve(__projetRoot),
+      server: {
+        ...this.#baseViteConfig.server,
+      },
       resolve: {
         alias: {
           '@': path.resolve(__projetRoot, './src'),
@@ -118,18 +121,17 @@ class ViteRunner {
     }
   }
 
-  directory() {
+  get #directoryConfig() {
     const directoryDir = path.resolve(__projetRoot, 'directory')
     this.#mode = process.argv[3]
     return {
-      configFile: false,
-      base: "",
+      ...this.#baseViteConfig,
       envDir: directoryDir,
       plugins: [react()],
       publicDir: path.resolve(__projetRoot, this.#globalConfig.folder.release),
       root: directoryDir,
       server: {
-        host: '0.0.0.0',
+        ...this.#baseViteConfig.server,
       },
       resolve: {
         alias: {
@@ -155,9 +157,9 @@ class ViteRunner {
 async function main() {
   if (process.env.npm_lifecycle_event.includes('vite')) return
   const runner = new ViteRunner()
-  await runner.start()
+  runner.start()
 }
 
 main()
 
-export default defineConfig((new ViteRunner()).config())
+export default defineConfig((new ViteRunner()).config)

@@ -1,24 +1,16 @@
-import {
-  useState,
-  useEffect
-} from 'react'
-import './index.css'
+import Home from "@/routes/path/home";
+import Operator from "@/routes/path/operator";
 
-export default function Index(props) {
-  useEffect(() => {
-    fetch("/_assets/directory.json").then(res => res.json()).then(data => {
-      console.log(data)
-    })
-  }, [])
-
-  return (
-    <section>
-      <section>
-        1233
-      </section>
-      <section>
-        22s
-      </section>
-    </section>
-  )
-}
+export default [
+    {
+        path: "",
+        index: true,
+        name: "Home",
+        element: <Home />
+    }, {
+        path: "operator/:key",
+        index: false,
+        name: "Operator",
+        element: <Operator />
+    }
+]

@@ -3,14 +3,14 @@ import {
   useEffect,
   useContext
 } from 'react'
-import './operator.css'
+import './news.css'
 import { TitleContext } from '@/context/useTitleContext';
 
-export default function Operator(props) {
+export default function News(props) {
   const { title, setTitle } = useContext(TitleContext)
 
   useEffect(() => {
-    setTitle('Chen')
+    setTitle('news')
   }, [])
 
   return (

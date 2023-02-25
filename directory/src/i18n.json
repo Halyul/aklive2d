@@ -1,0 +1,39 @@
+{
+    "available": [
+        "zh-CN", "en-US"
+    ],
+    "key": {
+        "dynamic_compile": {
+            "zh-CN": "干员动态集录",
+            "en-US": "Dynamic Compile"
+        },
+        "home": {
+            "zh-CN": "首页",
+            "en-US": "Home"
+        }, 
+        "news": {
+            "zh-CN": "新闻",
+            "en-US": "News"
+        },
+        "offical_page": {
+            "zh-CN": "官方页面",
+            "en-US": "Offical Page"
+        }, 
+        "privacy_policy": {
+            "zh-CN": "隐私政策",
+            "en-US": "Privacy Policy"
+        },
+        "contact_us": {
+            "zh-CN": "联系我们",
+            "en-US": "Contact Us"
+        },
+        "zh-CN": {
+            "zh-CN": "简体中文",
+            "en-US": "Chinese (Simplified)"
+        },
+        "en-US": {
+            "zh-CN": "英语",
+            "en-US": "English"
+        }
+    }
+}

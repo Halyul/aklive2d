@@ -1,0 +1,68 @@
+.popup-text {
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0;
+  z-index: -1;
+  border: unset;
+  transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.popup .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  width: 480px;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: var(--root-background-color);
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+}
+
+.popup.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.popup .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.popup .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
+  background-color: var(--root-background-color);
+  transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+}
+
+.popup .overlay.active {
+  opacity: 0.5;
+  visibility: visible;
+}

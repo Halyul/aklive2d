@@ -1,3 +1,149 @@
 .main {
     flex-grow: 1;
 }
+
+.header {
+    width: auto;
+    position: sticky;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.header .dropdown {
+    margin-left: auto;
+}
+
+.navButton {
+    padding: 0.5rem;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.navButton .bar {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: var(--text-color);
+    transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+}
+
+.navButton .bar:nth-child(1) {
+    transform: translate(0, -200%);
+}
+
+.navButton .bar:nth-child(3) {
+    transform: translate(0, 200%);
+}
+
+.navButton.active .bar:nth-child(1) {
+    transform: translate(0, 100%) rotateZ(45deg) scaleX(0.5) translate(-50%);
+}
+
+.navButton.active .bar:nth-child(2) {
+    transform: rotateZ(-45deg);
+}
+
+.navButton.active .bar:nth-child(3) {
+    transform: translate(0, -100%) rotateZ(45deg) scaleX(0.5) translate(50%);
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    left: -15rem;
+    width: 15rem;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    transition: left cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.drawer .links {
+    padding: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--drawer-background-color);
+    height: 100%;
+    width: 15rem;
+}
+
+.drawer .overlay {
+    height: 100%;
+    flex-grow: 1;
+    z-index: 2;
+}
+
+.drawer.active {
+    pointer-events: all;
+    left: 0;
+    width: 100vw;
+}
+
+.drawer a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+    text-transform: uppercase;
+}
+
+.drawer a:hover {
+    color: var(--link-highlight-color);
+}
+
+.main {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 100rem;
+}
+
+.footer .section {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.footer .links {
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.footer .links .separator {
+    height: 1rem;
+    border-left: 2px solid var(--border-color);
+}
+
+.footer .copyright {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 12px;
+}

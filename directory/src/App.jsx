@@ -11,8 +11,8 @@ import ErrorPage from "@/routes/error-page";
 import routes from "@/routes";
 import '@/App.css';
 import 'reset-css';
-
-document.title = import.meta.env.VITE_APP_TITLE;
+import { TitleProvider } from '@/context/useTitleContext';
+import { LanguageProvider } from '@/context/useLanguageContext';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +40,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <LanguageProvider>
+      <TitleProvider>
+        <RouterProvider router={router} />
+      </TitleProvider>
+    </LanguageProvider>
   </React.StrictMode>
 )

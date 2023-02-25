@@ -1,17 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans+SC&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Noto+Sans+SC&display=swap');
 
 :root {
+  --text-color: rgba(255, 255, 255, 0.87);
+  --border-color: #707070;
+  --link-highlight-color: #33b5e5;
+  --drawer-background-color: rgba(0, 0, 0, 0.5);
+  --root-background-color: #131313;
+
   font-family: "Josefin Sans", "Noto Sans SC", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #131313;
+  color: var(--text-color);
+  background-color: var(--root-background-color);
   min-height: 100vh;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+
 }
 
 #root {
@@ -20,6 +27,11 @@
   flex-wrap: nowrap;
   align-content: flex-start;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   min-height: 100vh;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
 }

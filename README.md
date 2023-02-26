@@ -148,7 +148,7 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 | Unfettered Freedom / Nian | [Link](https://arknights.halyul.dev/nian_unfettered_freedom/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730943815) |
 | Focus / Phatom | [Link](https://arknights.halyul.dev/phatom_focus/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2786960745) |
 | W | [Link](https://arknights.halyul.dev/w/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642838078) |
-| Fugue / W | [Link](https://arknights.halyul.dev/w_fugue/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802584758) |
+| Wonder / W | [Link](https://arknights.halyul.dev/w_wonder/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802584758) |
 | Rosmontis | [Link](https://arknights.halyul.dev/rosmontis/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642834981) |
 | Dusk | [Link](https://arknights.halyul.dev/dusk/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730942651) |
 | Everything is a Miracle / Dusk | [Link](https://arknights.halyul.dev/dusk_everything_is_a_miracle/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730943249) |

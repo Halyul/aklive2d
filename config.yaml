@@ -34,7 +34,7 @@ operators:
   skadi: !include config/skadi.yaml
   skadi_sublimation: !include config/skadi_sublimation.yaml
   w: !include config/w.yaml
-  w_fugue: !include config/w_fugue.yaml
+  w_wonder: !include config/w_wonder.yaml
   specter: !include config/specter.yaml
   gavial: !include config/gavial.yaml
   surtr_colorful_wonderland: !include config/surtr_colorful_wonderland.yaml

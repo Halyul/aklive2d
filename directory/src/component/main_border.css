@@ -1,0 +1,23 @@
+.main-border {
+    position: relative;
+    bottom: 1px;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.main-border::before, .main-border::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -2px;
+    background-color: var(--text-color);
+}
+
+.main-border::before {
+    right: 100%;
+}
+
+.main-border::after {
+    left: 100%;
+}

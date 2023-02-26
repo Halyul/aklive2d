@@ -4,13 +4,15 @@ import {
   useContext
 } from 'react'
 import './operator.css'
-import { TitleContext } from '@/context/useTitleContext';
+import { HeaderContext } from '@/context/useHeaderContext';
+import useUmami from '@parcellab/react-use-umami'
 
 export default function Operator(props) {
-  const { title, setTitle } = useContext(TitleContext)
+  const _trackEvt = useUmami('/operator/:key')
+  const { setTitle } = useContext(HeaderContext)
 
   useEffect(() => {
-    setTitle('Chen')
+    setTitle('chen')
   }, [])
 
   return (

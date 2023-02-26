@@ -7,28 +7,47 @@ import {
   Outlet,
   Link,
   NavLink,
-  useNavigation,
-  useLocation,
   useNavigate,
 } from "react-router-dom";
 import './root.css'
 import routes from '@/routes'
-import { TitleContext } from '@/context/useTitleContext';
+import { HeaderContext } from '@/context/useHeaderContext';
 import { LanguageContext } from '@/context/useLanguageContext';
 import Dropdown from '@/component/dropdown';
 import Popup from '@/component/popup';
 import ReturnButton from '@/component/return_button';
+import MainBorder from '@/component/main_border';
 
 export default function Root(props) {
-  const { title, setTitle } = useContext(TitleContext)
+  const navigate = useNavigate()
   const [drawerHidden, setDrawerHidden] = useState(true)
   const {
     language, setLanguage,
-    drawerTextDefaultLang,
-    drawerAlternateLang,
+    textDefaultLang,
+    alternateLang,
     i18n
   } = useContext(LanguageContext)
+  const { title, tabs, currentTab, setCurrentTab } = useContext(HeaderContext)
   const [drawerDestinations, setDrawerDestinations] = useState(null)
+  const currentYear = new Date().getFullYear()
+  const [headerTabs, setHeaderTabs] = useState(null)
+
+  const renderHeaderTabs = (tabs) => {
+    setHeaderTabs(tabs?.map((item) => {
+      return (
+        <section
+          key={item.key}
+          className={`main-tab-item ${currentTab === item.key ? 'active' : ''}`}
+          onClick={(e) => {
+            setCurrentTab(item.key)
+            item.onClick && item.onClick(e, item.key)
+          }}
+        >
+          {item.text[language]}
+        </section>
+      )
+    }))
+  }
 
   const toggleDrawer = () => {
     setDrawerHidden(!drawerHidden)
@@ -38,25 +57,34 @@ export default function Root(props) {
     return routes.filter((item) => item.inDrawer).map((item) => {
       if (typeof item.element.type === 'string') {
         return (
-          <a key={item.name}
-            href={item.path}
-            target="_blank">
+          <Link reloadDocument
+            key={item.name}
+            to={item.path}
+            target="_blank"
+            className="link"
+            onClick={() => toggleDrawer()}
+          >
             <section>
-              {i18n.key[item.name][drawerTextDefaultLang]}
+              {i18n.key[item.name][textDefaultLang]}
             </section>
             <section>
-              {i18n.key[item.name][drawerAlternateLang]}
+              {i18n.key[item.name][alternateLang]}
             </section>
-          </a>
+          </Link>
         )
       } else {
         return (
-          <NavLink to={item.path} key={item.name}>
+          <NavLink
+            to={item.path}
+            key={item.name}
+            className="link"
+            onClick={() => toggleDrawer()}
+          >
             <section>
-              {i18n.key[item.name][drawerTextDefaultLang]}
+              {i18n.key[item.name][textDefaultLang]}
             </section>
             <section>
-              {i18n.key[item.name][drawerAlternateLang]}
+              {i18n.key[item.name][alternateLang]}
             </section>
           </NavLink>
         )
@@ -66,7 +94,11 @@ export default function Root(props) {
 
   useEffect(() => {
     setDrawerDestinations(renderDrawerDestinations())
-  }, [drawerAlternateLang])
+  }, [alternateLang])
+
+  useEffect(() => {
+    renderHeaderTabs(tabs)
+  }, [tabs, currentTab, language])
 
   return (
     <>
@@ -104,21 +136,33 @@ export default function Root(props) {
         />
       </nav>
       <main className='main'>
-        <section>
-          <section>{title}</section>
-          <section>
-            {/* <NavLink to="/home">All</NavLink>
-                    <NavLink to="/about">Operator</NavLink>
-                    <NavLink to="/contact">Skill</NavLink> */}
+        <section className='main-header'>
+          <section className='main-title'>{title}</section>
+          <section className='main-tab'>
+            {headerTabs}
           </section>
+          <ReturnButton 
+            className='return-button'
+            onClick={() => {
+              navigate("/")
+            }}
+          />
         </section>
+        <MainBorder />
         <Outlet />
       </main>
       <footer className='footer'>
         <section className='links section'>
-          <a href="https://privacy.halyul.dev" target="_blank" className='item'>{i18n.key.privacy_policy[language]}</a>
+          <Popup
+            className='item'
+            title={i18n.key.disclaimer[language]}
+          >
+            {i18n.key.disclaimer_content[language]}
+          </Popup>
           <span className='separator' />
-          <a href="https://github.com/Halyul/aklive2d" target="_blank" className='item'>Github</a>
+          <Link reloadDocument to="https://privacy.halyul.dev" target="_blank" className='item'>{i18n.key.privacy_policy[language]}</Link>
+          <span className='separator' />
+          <Link reloadDocument to="https://github.com/Halyul/aklive2d" target="_blank" className='item'>Github</Link>
           <span className='separator'/>
           <Popup 
             className='item'
@@ -128,9 +172,9 @@ export default function Root(props) {
           </Popup>
         </section>
         <section className='copyright section'>
-          <span>Spine Runtimes © 2013 - 2019, Esoteric Software LLC</span>
-          <span>Assets © 2017 - 2023 上海鹰角网络科技有限公司</span>
-          <span>Source Code © 2021 - 2023 Halyul</span>
+          <span>Spine Runtimes © 2013 - 2019 Esoteric Software LLC</span>
+          <span>Assets © 2017 - {currentYear} Arknights/Hypergryph Co., Ltd</span>
+          <span>Source Code © 2021 - {currentYear} Halyul</span>
         </section>
       </footer>
     </>

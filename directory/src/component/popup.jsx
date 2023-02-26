@@ -18,7 +18,7 @@ export default function Popup(props) {
         <section className='wrapper'>
           <section className='title'>
             <span>{props.title}</span>
-            <ReturnButton onClick={toggle} />
+            <ReturnButton onClick={toggle} className="return-button"/>
           </section>
           <section className='content'>
             {props.children}

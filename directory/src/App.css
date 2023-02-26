@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Noto+Sans+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/bender');
+@import url('https://fonts.cdnfonts.com/css/geometos');
 
 :root {
   --text-color: rgba(255, 255, 255, 0.87);
+  --date-color: rgba(255, 255, 255, 0.2);
   --border-color: #707070;
   --link-highlight-color: #33b5e5;
-  --drawer-background-color: rgba(0, 0, 0, 0.5);
+  --drawer-background-color: rgba(0, 0, 0, 0.88);
   --root-background-color: #131313;
+  --home-item-hover-background-color: rgba(67, 67, 67, 0.3);
+  --home-item-background-linear-gradient-color: rgba(255, 255, 255, 0.1);
+  --home-item-outline-color: rgba(214, 214, 214, 0.3);
+  --button-color: #666;
 
-  font-family: "Josefin Sans", "Noto Sans SC", sans-serif;
+  font-family: "Geometos", "Noto Sans SC", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;

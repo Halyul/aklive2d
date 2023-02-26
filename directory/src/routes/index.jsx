@@ -1,6 +1,6 @@
 import Home from "@/routes/path/home";
 import Operator from "@/routes/path/operator";
-import News from "@/routes/path/news";
+import Changelogs from "@/routes/path/changelogs";
 
 export default [
     {
@@ -16,10 +16,10 @@ export default [
         element: <Operator />,
         inDrawer: false
     }, {
-        path: "news",
+        path: "changelogs",
         index: false,
-        name: "news",
-        element: <News />,
+        name: "changelogs",
+        element: <Changelogs />,
         inDrawer: true
     }, {
         path: "https://ak.hypergryph.com/archive/dynamicCompile/",

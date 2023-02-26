@@ -11,14 +11,22 @@
             "zh-CN": "首页",
             "en-US": "Home"
         }, 
-        "news": {
-            "zh-CN": "新闻",
-            "en-US": "News"
+        "changelogs": {
+            "zh-CN": "更新日志",
+            "en-US": "Changelogs"
         },
         "offical_page": {
             "zh-CN": "官方页面",
             "en-US": "Offical Page"
         }, 
+        "disclaimer": {
+            "zh-CN": "免责声明",
+            "en-US": "Disclaimer"
+        },
+        "disclaimer_content": {
+            "zh-CN": "本网站由 Halyul 设立并为明日方舟社区服务，Halyul 声明本网站完全独立运营，与 上海鹰角网络科技有限公司, Esoteric Software LLC 或其任何关联实体并无任何联系。",
+            "en-US": "This website is set up and operated by Halyul for the benefit of the Arknights Community. Halyul hereby states that this website is dedicated, but not related to Hypergryph Co., Ltd, Esoteric Software LLC or any of its affiliated entity."
+        },
         "privacy_policy": {
             "zh-CN": "隐私政策",
             "en-US": "Privacy Policy"
@@ -26,6 +34,18 @@
         "contact_us": {
             "zh-CN": "联系我们",
             "en-US": "Contact Us"
+        },
+        "all": {
+            "zh-CN": "综合",
+            "en-US": "All"
+        },
+        "elite2": {
+            "zh-CN": "干员晋升",
+            "en-US": "Elite 2"
+        },
+        "skin": {
+            "zh-CN": "干员时装",
+            "en-US": "Skin"
         },
         "zh-CN": {
             "zh-CN": "简体中文",

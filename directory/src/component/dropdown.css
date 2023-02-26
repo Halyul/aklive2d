@@ -37,7 +37,7 @@
 .dropdown .menu {
   opacity: 0;
   position: absolute;
-  background-color: var(--background-color);
+  background-color: var(--root-background-color);
   color: var(--text-color);
   width: max-content;
   z-index: -1;

@@ -1,149 +1,204 @@
 .main {
-    flex-grow: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+  width: 70%;
+  max-width: 100rem;
 }
 
 .header {
-    width: auto;
-    position: sticky;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-    z-index: 1;
-    height: 3rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+  width: auto;
+  position: sticky;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 2;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
 .header .dropdown {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .navButton {
-    padding: 0.5rem;
-    font-size: 2rem;
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    z-index: 2;
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  z-index: 2;
 }
 
 .navButton .bar {
-    width: 2rem;
-    height: 0.2rem;
-    background-color: var(--text-color);
-    transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: var(--text-color);
+  transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
 .navButton .bar:nth-child(1) {
-    transform: translate(0, -200%);
+  transform: translate(0, -200%);
 }
 
 .navButton .bar:nth-child(3) {
-    transform: translate(0, 200%);
+  transform: translate(0, 200%);
 }
 
 .navButton.active .bar:nth-child(1) {
-    transform: translate(0, 100%) rotateZ(45deg) scaleX(0.5) translate(-50%);
+  transform: translate(0, 100%) rotateZ(45deg) scaleX(0.5) translate(-50%);
 }
 
 .navButton.active .bar:nth-child(2) {
-    transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
 }
 
 .navButton.active .bar:nth-child(3) {
-    transform: translate(0, -100%) rotateZ(45deg) scaleX(0.5) translate(50%);
+  transform: translate(0, -100%) rotateZ(45deg) scaleX(0.5) translate(50%);
 }
 
 .drawer {
-    position: fixed;
-    top: 0;
-    left: -15rem;
-    width: 15rem;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    transition: left cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: -15rem;
+  width: 15rem;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  transition: left cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .drawer .links {
-    padding: 8rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    background-color: var(--drawer-background-color);
-    height: 100%;
-    width: 15rem;
+  padding: 8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--drawer-background-color);
+  height: 100%;
+  width: 15rem;
 }
 
 .drawer .overlay {
-    height: 100%;
-    flex-grow: 1;
-    z-index: 2;
+  height: 100%;
+  flex-grow: 1;
+  z-index: 2;
 }
 
 .drawer.active {
-    pointer-events: all;
-    left: 0;
-    width: 100vw;
+  pointer-events: all;
+  left: 0;
+  width: 100vw;
 }
 
-.drawer a {
+.drawer .link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--text-color);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+  text-transform: uppercase;
+}
+
+.drawer .link:hover {
+  color: var(--link-highlight-color);
+}
+
+.drawer .link.active {
+  color: var(--link-highlight-color);
+}
+
+.main .main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.main .main-header .main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.main .main-header .main-tab {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.2rem;
-    color: var(--text-color);
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+}
+
+.main .main-header .main-tab .main-tab-item {
+    font-size: 1em;
+    line-height: 3rem;
+    font-weight: 700;
+    padding: 0 1rem;
     text-transform: uppercase;
+    transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+    cursor: pointer; 
+    border-bottom: 0.3rem solid transparent;
 }
 
-.drawer a:hover {
+.main .main-header .main-tab .main-tab-item.active {
     color: var(--link-highlight-color);
+    border-bottom-color: var(--link-highlight-color);
 }
 
-.main {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 100rem;
+.main .main-header .return-button {
+    position: absolute;
+    right: -4rem;
+    bottom: -1.5rem;
+    color: #666;
+    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+}
+
+.main .main-header .return-button:hover {
+    color: var(--text-color);
 }
 
 .footer .section {
-    border-top: 1px solid var(--border-color);
-    padding: 1rem 0;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-family: "Noto Sans SC", sans-serif;
 }
 
 .footer .links {
-    flex-direction: row;
-    gap: 1rem;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .footer .links .separator {
-    height: 1rem;
-    border-left: 2px solid var(--border-color);
+  height: 1rem;
+  border-left: 2px solid var(--border-color);
 }
 
 .footer .copyright {
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 12px;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 12px;
 }

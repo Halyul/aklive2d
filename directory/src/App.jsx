@@ -11,8 +11,9 @@ import ErrorPage from "@/routes/error-page";
 import routes from "@/routes";
 import '@/App.css';
 import 'reset-css';
-import { TitleProvider } from '@/context/useTitleContext';
 import { LanguageProvider } from '@/context/useLanguageContext';
+import { ConfigProvider } from '@/context/useConfigContext';
+import { HeaderProvider } from '@/context/useHeaderContext';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,10 +41,12 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <LanguageProvider>
-      <TitleProvider>
-        <RouterProvider router={router} />
-      </TitleProvider>
-    </LanguageProvider>
+    <ConfigProvider>
+      <LanguageProvider>
+        <HeaderProvider>
+          <RouterProvider router={router} />
+        </HeaderProvider>
+      </LanguageProvider>
+    </ConfigProvider>
   </React.StrictMode>
 )

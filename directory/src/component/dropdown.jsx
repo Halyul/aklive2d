@@ -28,7 +28,10 @@ export default function Dropdown(props) {
                 <li
                   key={item.name}
                   className={`item${item.name === props.text ? ' active' : ''}`}
-                  onClick={() => props.onClick(item)}
+                  onClick={() => {
+                    props.onClick(item)
+                    toggleDropdown()
+                  }}
                 >
                   {item.name}
                 </li>

@@ -10,7 +10,7 @@ function process(config) {
         // add title
         operator.title = `${config.share.title["en-US"]}${operator.codename["en-US"]} - ${config.share.title["zh-CN"]}${operator.codename["zh-CN"]}`
         // add type
-        operator.type = operator.codename["zh-CN"].includes('·') ? 'operator' : 'skin'
+        operator.type = operator.codename["zh-CN"].includes('·') ? 'skin' : 'operator'
 
         // add link
         operator.link = operatorName

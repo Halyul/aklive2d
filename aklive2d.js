@@ -119,9 +119,12 @@ async function main() {
       write(JSON.stringify(content, null, 2), path.join(OPERATOR_RELEASE_FOLDER, 'project.json'))
     })
 
-    const assetsProcessor = new AssetsProcessor(OPERATOR_NAME)
+    const assetsProcessor = new AssetsProcessor(OPERATOR_NAME, OPERATOR_SHARE_FOLDER)
     assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
-      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
+      write(JSON.stringify(content.landscape.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
+      if (__config.operators[OPERATOR_NAME].portrait) {
+        write(JSON.stringify(content.portrait.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets_portrait.json`))
+      }
     })
 
     const filesToCopy = [
@@ -146,6 +149,11 @@ async function main() {
         source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
         target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
       },
+      {
+        filename: `${__config.operators[OPERATOR_NAME].fallback_name}_portrait.png`,
+        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
+        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
+      }
     ]
     filesToCopy.forEach((file) => {
       copy(path.join(file.source, file.filename), path.join(file.target, file.filename))

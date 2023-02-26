@@ -140,6 +140,7 @@
   font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
+  line-height: 1.1em;
 }
 
 .main .main-header .main-tab {
@@ -150,7 +151,7 @@
 
 .main .main-header .main-tab .main-tab-item {
     font-size: 1em;
-    line-height: 3rem;
+    line-height: 3em;
     font-weight: 700;
     padding: 0 1rem;
     text-transform: uppercase;
@@ -164,15 +165,21 @@
     border-bottom-color: var(--link-highlight-color);
 }
 
-.main .main-header .return-button {
+.main .return-button {
     position: absolute;
     right: -4rem;
-    bottom: -1.5rem;
+    bottom: -24px;
     color: #666;
     transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
-.main .main-header .return-button:hover {
+@media (max-width: 768px) {
+    .main .main-header .return-button {
+        right: -3.4rem;
+    }
+}
+
+.main .return-button:hover {
     color: var(--text-color);
 }
 

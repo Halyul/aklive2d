@@ -4,6 +4,7 @@
 
 :root {
   --text-color: rgba(255, 255, 255, 0.87);
+  --secondary-text-color: #686a72;
   --date-color: rgba(255, 255, 255, 0.2);
   --border-color: #707070;
   --link-highlight-color: #33b5e5;
@@ -16,16 +17,12 @@
 
   font-family: "Geometos", "Noto Sans SC", sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.1em;
   font-weight: 400;
 
   color: var(--text-color);
   background-color: var(--root-background-color);
   min-height: 100vh;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-
 }
 
 #root {

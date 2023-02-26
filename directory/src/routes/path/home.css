@@ -24,8 +24,16 @@
     background-image: repeating-linear-gradient(90deg, var(--home-item-background-linear-gradient-color) 0, var(--home-item-background-linear-gradient-color) 1px, transparent 1px, transparent 5px);
 }
 
+.home .item-group .item .item-background-filler {
+    border-right: 1px solid var(--home-item-background-linear-gradient-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -1px;
+    bottom: 0;
+}
+
 .home .item-group .item .item-outline {
-    content: "";
     display: block;
     position: absolute;
     opacity: 0;
@@ -94,11 +102,15 @@
     font-weight: bold;
 }
 
-.home .item-group .item .item-info .item-title-container .item-title,
-.home .item-group .item .item-info .item-text-wrapper {
+.home .item-group .item .item-info .item-title-container .item-title {
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.home .item-group .item .item-info .item-title-container .item-title {
+    line-height: 1.1em;
+    height: 1.25rem;
 }
 
 .home .item-group .item .item-info .item-title-container .item-type {
@@ -107,7 +119,6 @@
 }
 
 .home .item-group .item .item-info .item-text {
-    color: var(--text-color);
     font-size: 0.75rem;
     font-family: "Geometos";
     margin-top: 1rem; 
@@ -123,4 +134,10 @@
     visibility: hidden;
     transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
     background-image: linear-gradient(70deg, transparent 40%, currentColor 150%);
+}
+
+.home .item-group .item .item-info .item-text-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--secondary-text-color);
 }

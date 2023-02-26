@@ -141,14 +141,15 @@ export default function Root(props) {
           <section className='main-tab'>
             {headerTabs}
           </section>
-          <ReturnButton 
+        </section>
+        <MainBorder>
+          <ReturnButton
             className='return-button'
             onClick={() => {
               navigate("/")
             }}
           />
-        </section>
-        <MainBorder />
+        </MainBorder>
         <Outlet />
       </main>
       <footer className='footer'>

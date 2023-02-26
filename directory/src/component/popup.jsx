@@ -4,6 +4,7 @@ import {
 } from 'react'
 import './popup.css'
 import ReturnButton from '@/component/return_button';
+import MainBorder from '@/component/main_border';
 
 export default function Popup(props) {
   const [hidden, setHidden] = useState(true)
@@ -20,6 +21,7 @@ export default function Popup(props) {
             <span>{props.title}</span>
             <ReturnButton onClick={toggle} className="return-button"/>
           </section>
+          <MainBorder/>
           <section className='content'>
             {props.children}
           </section>

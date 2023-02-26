@@ -162,9 +162,57 @@ async function main() {
     })
 
     const envPath = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, '.env')
-    writeSync((new EnvGenerator(OPERATOR_NAME, {
-      backgrounds
-    })).generate(), envPath)
+    writeSync((new EnvGenerator()).generate([
+      {
+        key: "link",
+        value: __config.operators[OPERATOR_NAME].link
+      }, {
+        key: "version",
+        value: __config.version
+      }, {
+        key: "title",
+        value: __config.operators[OPERATOR_NAME].title
+      }, {
+        key: "filename",
+        value: __config.operators[OPERATOR_NAME].filename.replace('#', '%23')
+      }, {
+        key: "logo_filename",
+        value: __config.operators[OPERATOR_NAME].logo
+      }, {
+        key: "fallback_filename",
+        value: __config.operators[OPERATOR_NAME].fallback_name.replace('#', '%23')
+      }, {
+        key: "viewport_left",
+        value: __config.operators[OPERATOR_NAME].viewport_left
+      }, {
+        key: "viewport_right",
+        value: __config.operators[OPERATOR_NAME].viewport_right
+      }, {
+        key: "viewport_top",
+        value: __config.operators[OPERATOR_NAME].viewport_top
+      }, {
+        key: "viewport_bottom",
+        value: __config.operators[OPERATOR_NAME].viewport_bottom
+      }, {
+        key: "invert_filter",
+        value: __config.operators[OPERATOR_NAME].invert_filter
+      }, {
+        key: "image_width",
+        value: 2048
+      }, {
+        key: "image_height",
+        value: 2048
+      }, {
+        key: "background_files",
+        value: JSON.stringify(backgrounds)
+      }, {
+        key: "background_folder",
+        value: __config.folder.background
+      }, {
+        key: "voice_folders",
+        value: JSON.stringify(__config.folder.voice)
+      }
+    ]), envPath)
     fork(path.join(__projetRoot, 'vite.config.js'), [op, OPERATOR_NAME])
   }
 }

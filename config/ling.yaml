@@ -1,7 +1,4 @@
-link: ling
-type: operator
 date: 2022/01
-title: 'Arknights: Ling - 明日方舟：令'
 filename: dyn_illust_char_2023_ling
 logo: logo_sui
 fallback_name: char_2023_ling_2
@@ -10,3 +7,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
+color: rgb(15, 206, 216)
+codename: 
+  zh-CN: 令
+  en-US: Ling

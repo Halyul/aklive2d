@@ -1,7 +1,4 @@
-link: dusk_everything_is_a_miracle
-type: skin
 date: 2022/01
-title: 'Arknights: Everything is a Miracle / Dusk - 明日方舟：染尘烟·夕'
 filename: dyn_illust_char_2015_dusk_nian#7
 logo: logo_sui
 fallback_name: char_2015_dusk_nian#7
@@ -10,3 +7,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
+color: rgb(78, 201, 187)
+codename: 
+  zh-CN: 染尘烟 · 夕
+  en-US: Everything is a Miracle / Dusk

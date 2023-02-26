@@ -1,7 +1,4 @@
-link: nian
-type: operator
 date: 2020/01
-title: 'Arknights: Nian - 明日方舟：年'
 filename: dyn_illust_char_2014_nian
 logo: logo_sui
 fallback_name: char_2014_nian_2
@@ -10,3 +7,7 @@ viewport_right: 2
 viewport_top: 3
 viewport_bottom: 5
 invert_filter: true
+color: rgb(255, 48, 0)
+codename: 
+  zh-CN: 年
+  en-US: Nian

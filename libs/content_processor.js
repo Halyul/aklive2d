@@ -1,6 +1,3 @@
-import path from 'path'
-import { readSync } from "./file.js"
-
 export default class Matcher {
   #start
   #end
@@ -57,9 +54,9 @@ class Evalable {
 
   #step(location, varName) {
     let content = this.#config
+    if (location === 'assets') content = this.#assets
     varName.split("->").forEach((item) => {
       try {
-        if (location === 'assets') content = this.#assets
         content = content[item]
       } catch (e) {
         throw new Error(`Cannot step ${varName}.`)

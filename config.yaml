@@ -17,6 +17,10 @@ folder:
         lang: KR
       - name: custom
         lang: CUSTOM
+share:
+  title:
+    zh-CN: "明日方舟："
+    en-US: "Arknights: "
 operators:
   chen: !include config/chen.yaml
   dusk: !include config/dusk.yaml

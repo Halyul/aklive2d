@@ -1,7 +1,3 @@
-link: pozemka_snowy_plains_in_words
-date: 2023/02
-type: skin
-title: 'Arknights: Snowy Plains in Words / Позёмка - 明日方舟：字句中的雪原 · 鸿雪'
 filename: dyn_illust_char_4055_bgsnow_wild#7
 logo: logo_rhodes_override
 fallback_name: char_4055_bgsnow_wild#7
@@ -10,3 +6,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: false
+color: rgb(145, 220, 253)
+codename: 
+  zh-CN: 字句中的雪原 · 鸿雪
+  en-US: Snowy Plains in Words / Позёмка

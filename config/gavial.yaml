@@ -1,7 +1,4 @@
-link: gavial
-type: operator
 date: 2022/08
-title: 'Arknights: Gavial the Invincible - 明日方舟：百练嘉维尔'
 filename: dyn_illust_char_1026_gvial2
 logo: logo_rhodes_override
 fallback_name: char_1026_gvial2_2
@@ -10,3 +7,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: false
+color: rgb(29, 185, 53)
+codename: 
+  zh-CN: 百练嘉维尔
+  en-US: Gavial the Invincible

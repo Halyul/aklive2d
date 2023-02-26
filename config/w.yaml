@@ -1,7 +1,4 @@
-link: w
-type: operator
 date: 2020/05
-title: 'Arknights: W - 明日方舟: W'
 filename: dyn_illust_char_113_cqbw
 logo: logo_babel
 fallback_name: char_113_cqbw_2
@@ -10,3 +7,7 @@ viewport_right: -3
 viewport_top: 0
 viewport_bottom: 1
 invert_filter: true
+color: rgb(228, 54, 56)
+codename: 
+  zh-CN: W
+  en-US: W

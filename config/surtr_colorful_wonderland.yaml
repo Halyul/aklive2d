@@ -1,7 +1,4 @@
-link: surtr_colorful_wonderland
-type: skin
 date: 2022/08
-title: 'Arknights: Colorful Wonderland CW03 / Surtr - 明日方舟：缤纷奇境 CW03·史尔特尔'
 filename: dyn_illust_char_350_surtr_summer#9
 logo: logo_rhodes_override
 fallback_name: char_350_surtr_summer#9
@@ -10,3 +7,7 @@ viewport_right: 6
 viewport_top: 1
 viewport_bottom: 0
 invert_filter: false
+color: rgb(177, 226, 249)
+codename: 
+  zh-CN: 缤纷奇境 CW03 · 史尔特尔
+  en-US: Colorful Wonderland CW03 / Surtr

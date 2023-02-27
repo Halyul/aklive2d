@@ -5,20 +5,18 @@ import { fork } from 'child_process';
 import getConfig from './libs/config.js'
 import ProjectJson from './libs/project_json.js'
 import EnvGenerator from './libs/env_generator.js'
-import { write, rmdir, copy, writeSync, copyDir, readSync } from './libs/file.js'
+import { write, rmdir, copy, writeSync, copyDir } from './libs/file.js'
 import AssetsProcessor from './libs/assets_processor.js'
 import init from './libs/initializer.js'
 import directory from './libs/directory.js'
 import { appendReadme } from './libs/append.js'
+import { increase } from './libs/version.js';
 import Background from './libs/background.js'
 import CharwordTable from './libs/charword_table.js';
 
 async function main() {
   global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
-  global.__config = {
-    ...getConfig(),
-    version: readSync(path.join(__projetRoot, 'Version'))
-  }
+  global.__config = getConfig()
 
   const op = process.argv[2]
   let OPERATOR_NAMES = process.argv.slice(3);
@@ -39,6 +37,7 @@ async function main() {
       for (const [key, _] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
+      increase(__projetRoot)
       break
     case 'preview':
       assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
@@ -176,7 +175,7 @@ async function main() {
         value: __config.operators[OPERATOR_NAME].link
       }, {
         key: "version",
-        value: __config.version
+        value: __config.version.showcase
       }, {
         key: "title",
         value: __config.operators[OPERATOR_NAME].title

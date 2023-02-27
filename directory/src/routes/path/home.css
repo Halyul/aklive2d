@@ -14,6 +14,7 @@
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
     flex: auto;
+    user-select: none;
 }
 
 .home .item-group .item {
@@ -41,7 +42,7 @@
     transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
-.home .item-group .item .item-outline{
+.home .item-group .item .item-outline {
     width: 100%;
     height: 100%;
     left: -6px;
@@ -86,11 +87,17 @@
     background-color: var(--home-item-hover-background-color);
 }
 
+.home .item-group .item .item-img .live2d {
+    width: 100%;
+    height: 360px;
+}
+
 .home .item-group .item .item-info {
     white-space: nowrap;
     position: relative;
     padding: 0.8rem 0.4rem;
-    line-height: 1;
+    line-height: 1.2em;
+    height: 36px;
 }
 
 .home .item-group .item .item-info .item-title-container {
@@ -109,11 +116,15 @@
 }
 
 .home .item-group .item .item-info .item-title-container .item-title {
-    line-height: 1.1em;
-    height: 1.25rem;
+    line-height: 1.3em;
+    height: auto;
 }
 
 .home .item-group .item .item-info .item-title-container .item-type {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    text-align: center;
     width: 1.5rem;
     fill: var(--text-color)
 }

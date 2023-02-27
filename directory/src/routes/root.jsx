@@ -27,10 +27,15 @@ export default function Root(props) {
     alternateLang,
     i18n
   } = useContext(LanguageContext)
-  const { title, tabs, currentTab, setCurrentTab } = useContext(HeaderContext)
+  const {
+    title,
+    tabs,
+    currentTab, setCurrentTab
+  } = useContext(HeaderContext)
   const [drawerDestinations, setDrawerDestinations] = useState(null)
   const currentYear = new Date().getFullYear()
   const [headerTabs, setHeaderTabs] = useState(null)
+  const [appbarExtraArea, setAppbarExtraArea] = useState(null)
 
   const renderHeaderTabs = (tabs) => {
     setHeaderTabs(tabs?.map((item) => {
@@ -111,6 +116,8 @@ export default function Root(props) {
           <section className='bar'></section>
           <section className='bar'></section>
         </section>
+        <section className='spacer' />
+        {appbarExtraArea}
         <Dropdown 
           text={i18n.key[language][language]}
           menu={i18n.available.map((item) => {
@@ -150,7 +157,7 @@ export default function Root(props) {
             }}
           />
         </MainBorder>
-        <Outlet />
+        <Outlet context={{setAppbarExtraArea}}/>
       </main>
       <footer className='footer'>
         <section className='links section'>
@@ -176,6 +183,7 @@ export default function Root(props) {
           <span>Spine Runtimes © 2013 - 2019 Esoteric Software LLC</span>
           <span>Assets © 2017 - {currentYear} Arknights/Hypergryph Co., Ltd</span>
           <span>Source Code © 2021 - {currentYear} Halyul</span>
+          <span>Version: {import.meta.env.VITE_APP_VERSION}</span>
         </section>
       </footer>
     </>

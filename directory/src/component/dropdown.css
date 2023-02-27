@@ -4,13 +4,13 @@
   user-select: none;
   z-index: 2;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .dropdown .text {
   display: flex;
   flex-direction: row;
   align-items: center;
-  cursor: pointer;
 }
 
 .dropdown .content {
@@ -18,6 +18,9 @@
 }
 
 .dropdown .icon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: -0.1rem;
   width: 0.5em;
   height: 0.5em;
   display: inline-block;
@@ -27,10 +30,10 @@
   border-right: 0.15em solid var(--text-color);
   border-top: 0.15em solid var(--text-color);
   transform: translate(0, -0.15em) rotate(-45deg);
-  transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
-.dropdown .icon.active {
+.dropdown.active .icon,
+.dropdown:hover .icon {
   animation: icon-flash 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
 }
 
@@ -55,7 +58,7 @@
   visibility: hidden;
 }
 
-.dropdown .menu.active {
+.dropdown.active .menu {
   visibility: visible;
   opacity: 1;
   z-index: 2;
@@ -76,7 +79,9 @@
   transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
-.dropdown .menu .item:hover, .dropdown .menu .item:focus, .dropdown .menu .item.active {
+.dropdown .menu .item:hover, 
+.dropdown .menu .item:focus, 
+.dropdown .menu .item.active {
   color: var(--link-highlight-color);
 }
 

@@ -25,6 +25,10 @@
   justify-content: flex-start;
 }
 
+.header .spacer {
+  flex-grow: 1;
+}
+
 .header .dropdown {
   margin-left: auto;
 }
@@ -140,7 +144,7 @@
   font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 1.1em;
+  line-height: 1.2em;
 }
 
 .main .main-header .main-tab {
@@ -174,7 +178,7 @@
 }
 
 @media (max-width: 768px) {
-    .main .main-header .return-button {
+    .main .return-button {
         right: -3.4rem;
     }
 }

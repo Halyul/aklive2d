@@ -4,7 +4,9 @@ import { defineConfig } from 'vite'
 import assert from 'assert'
 import react from '@vitejs/plugin-react-swc'
 import getConfig from './libs/config.js'
-import { rmdir } from './libs/file.js'
+import { rmdir, writeSync } from './libs/file.js'
+import { increase } from './libs/version.js'
+import EnvGenerator from './libs/env_generator.js'
 
 global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
 
@@ -28,7 +30,10 @@ class ViteRunner {
     this.#mode = temp[0] === "vite" ? temp[1] : process.argv[2]
     switch (this.#mode) {
       case 'directory':
-        result = this.#directoryConfig
+        result = {
+          data: this.#directoryConfig,
+          versionDir: path.join(__projetRoot, "directory"),
+        }
         const op = temp[2] || process.argv[3]
         if (op !== 'preview') {
           rmdir(path.resolve(__projetRoot, this.#globalConfig.folder.release, "_directory"))
@@ -39,7 +44,10 @@ class ViteRunner {
       case 'build':
       case 'build-all':
       case 'preview':
-        result = this.#operatorConfig
+        result = {
+          data: this.#operatorConfig,
+          versionDir: path.join(__projetRoot),
+        }
         break
       default:
         return
@@ -48,12 +56,14 @@ class ViteRunner {
   }
 
   start() {
-    const viteConfig = this.config;
+    const configObj = this.config
+    const viteConfig = configObj.data;
     switch (this.#mode) {
       case 'dev':
         this.#dev(viteConfig)
         break
       case 'build':
+        increase(configObj.versionDir)
       case 'build-all':
         this.#build(viteConfig)
         break
@@ -122,7 +132,22 @@ class ViteRunner {
   }
 
   get #directoryConfig() {
+    if (process.env.npm_lifecycle_event === 'vite:directory:build') {
+      increase(path.join(__projetRoot, "directory"))
+    }
     const directoryDir = path.resolve(__projetRoot, 'directory')
+    writeSync((new EnvGenerator()).generate([
+      {
+        key: "app_title",
+        value: this.#globalConfig.directory.title
+      }, {
+        key: "version",
+        value: this.#globalConfig.version.directory
+      }, {
+        key: "app_voice_url",
+        value: this.#globalConfig.directory.voice
+      }
+    ]), path.join(directoryDir, '.env'))
     this.#mode = process.argv[3]
     return {
       ...this.#baseViteConfig,
@@ -136,6 +161,7 @@ class ViteRunner {
       resolve: {
         alias: {
           '@': path.resolve(directoryDir, './src'),
+          '!': path.resolve(__projetRoot, './src'),
         },
       },
       build: {
@@ -151,7 +177,6 @@ class ViteRunner {
       },
     }
   }
-
 }
 
 async function main() {
@@ -162,4 +187,4 @@ async function main() {
 
 main()
 
-export default defineConfig((new ViteRunner()).config)
+export default defineConfig((new ViteRunner()).config.data)

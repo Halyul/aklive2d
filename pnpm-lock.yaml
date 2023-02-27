@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@parcellab/react-use-umami': ^2.0.1
+  '@react-hook/cache': ^1.1.1
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@vitejs/plugin-react-swc': ^3.2.0
@@ -18,6 +19,7 @@ specifiers:
 
 dependencies:
   '@parcellab/react-use-umami': 2.0.1_react@18.2.0
+  '@react-hook/cache': 1.1.1_react@18.2.0
   dotenv: 16.0.3
   node-fetch: 3.3.0
   react: 18.2.0
@@ -238,6 +240,23 @@ packages:
     resolution: {integrity: sha512-C/EdfRm7OyFVmMhrrSITZ79VXLreNZEJnAdpmJ9NaTcy+Wijjf0+wHF8JA5ex+J5/Owv7gVBIj6i/+Kv04nlKA==}
     peerDependencies:
       react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /@react-hook/cache/1.1.1_react@18.2.0:
+    resolution: {integrity: sha512-FY0Bwvxsv9Gu6pUbVdNylh4jyWPtQRegQM9G6yVx3l2cYjbxzaJwEXticLfsRcciCbnk7iyZfJn6mZ4N4+q9qA==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@react-hook/latest': 1.0.3_react@18.2.0
+      react: 18.2.0
+    dev: false
+
+  /@react-hook/latest/1.0.3_react@18.2.0:
+    resolution: {integrity: sha512-dy6duzl+JnAZcDbNTfmaP3xHiKtbXYOaz3G51MGVljh548Y8MWzTr+PHLOfvpypEVW9zwvl+VyKjbWKEVbV1Rg==}
+    peerDependencies:
+      react: '>=16.8'
     dependencies:
       react: 18.2.0
     dev: false

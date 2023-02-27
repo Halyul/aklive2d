@@ -1,6 +1,5 @@
 import {
-  useState,
-  useEffect
+  useState
 } from 'react'
 import './dropdown.css'
 
@@ -13,15 +12,15 @@ export default function Dropdown(props) {
 
   return (
     <>
-      <section className='dropdown'>
+      <section className={`dropdown ${hidden ? '' : 'active'}`} >
         <section
           className='text'
           onClick={() => toggleDropdown()}
         >
           <span className='content'>{props.text}</span>
-          <span className={`icon ${hidden ? '' : 'active'}`}></span>
+          <span className='icon'></span>
         </section>
-        <ul className={`menu ${hidden ? '' : 'active'}`}>
+        <ul className='menu'>
           {
             props.menu.map((item) => {
               return (

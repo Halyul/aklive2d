@@ -31,7 +31,7 @@ export function HeaderProvider(props) {
     <HeaderContext.Provider value={{
       title, setTitle,
       tabs, setTabs,
-      currentTab, setCurrentTab,
+      currentTab, setCurrentTab
     }}>
       {props.children}
     </HeaderContext.Provider>

@@ -21,6 +21,9 @@ share:
   title:
     zh-CN: "明日方舟："
     en-US: "Arknights: "
+directory:
+  title: AKLive2D
+  voice: jp/CN_037.ogg
 operators:
   chen: !include config/chen.yaml
   dusk: !include config/dusk.yaml

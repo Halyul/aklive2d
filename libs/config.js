@@ -1,5 +1,6 @@
 import path from 'path'
 import { read } from './yaml.js'
+import { read as readVersion } from './version.js'
 
 export default function () {
     return process(read(path.join(__projetRoot, 'config.yaml')))
@@ -14,6 +15,12 @@ function process(config) {
 
         // add link
         operator.link = operatorName
+    }
+
+    // version
+    config.version = {
+        showcase: readVersion(path.join(__projetRoot)),
+        directory: readVersion(path.join(__projetRoot, 'directory')),
     }
 
     return config

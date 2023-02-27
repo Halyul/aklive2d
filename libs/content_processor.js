@@ -49,7 +49,7 @@ class Evalable {
   }
 
   version(prefix, suffix) {
-    return `${prefix}${__config.version}${suffix}`
+    return `${prefix}${__config.version.showcase}${suffix}`
   }
 
   #step(location, varName) {

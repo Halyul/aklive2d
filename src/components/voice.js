@@ -364,7 +364,7 @@ export default class Voice {
   #insertHTML() {
     this.#el.innerHTML = `
       <audio id="${this.#audioElId}" autoplay>
-        <source type="audio/wav">
+        <source type="audio/ogg" />
       </audio>
       <div class="voice-wrapper" id="voice_wrapper">
         <div class="voice-title" id="voice_title"></div>

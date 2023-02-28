@@ -161,7 +161,6 @@ class ViteRunner {
       resolve: {
         alias: {
           '@': path.resolve(directoryDir, './src'),
-          '!': path.resolve(__projetRoot, './src'),
         },
       },
       build: {

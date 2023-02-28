@@ -36,10 +36,7 @@ export default class AssetsProcessor {
         const croppedBuffer = await this.#alphaCompositer.crop(portraitBuffer, rect)
         await write(croppedBuffer, path.join(this.#operatorSourceFolder, this.#operatorName, `${fallback_name}_portrait.png`))
 
-        return {
-            landscape: await this.#generateAssets(__config.operators[this.#operatorName].filename, extractedDir),
-            portrait: __config.operators[this.#operatorName].portrait ? await this.#generateAssets(__config.operators[this.#operatorName].portrait, extractedDir) : null
-        }
+        return await this.#generateAssets(__config.operators[this.#operatorName].filename, extractedDir)
     }
 
     async #generateAssets(filename, extractedDir) {

@@ -87,11 +87,6 @@
     background-color: var(--home-item-hover-background-color);
 }
 
-.home .item-group .item .item-img .live2d {
-    width: 100%;
-    height: 360px;
-}
-
 .home .item-group .item .item-info {
     white-space: nowrap;
     position: relative;

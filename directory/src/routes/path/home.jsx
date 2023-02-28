@@ -2,11 +2,10 @@ import {
   useState,
   useEffect,
   useContext,
-  useRef
+  useCallback
 } from 'react'
 import {
   Link,
-  useOutletContext,
 } from "react-router-dom";
 import './home.css'
 import { ConfigContext } from '@/context/useConfigContext';
@@ -16,16 +15,17 @@ import CharIcon from '@/component/char_icon';
 import MainBorder from '@/component/main_border';
 import useUmami from '@parcellab/react-use-umami';
 import Switch from '@/component/switch';
-import spine from '!/libs/spine-player';
-import '!/libs/spine-player.css';
+import db from '@/db';
+
+const audioEl = new Audio()
 
 export default function Home() {
   const _trackEvt = useUmami('/')
-  const { setAppbarExtraArea } = useOutletContext()
   const {
     setTitle,
     setTabs,
-    currentTab, setCurrentTab
+    currentTab, setCurrentTab,
+    setAppbarExtraArea
   } = useContext(HeaderContext)
   const { config } = useContext(ConfigContext)
   const {
@@ -36,11 +36,6 @@ export default function Home() {
   } = useContext(LanguageContext)
   const [content, setContent] = useState([])
   const [voiceOn, setVoiceOn] = useState(false)
-  const [live2dOn, setLive2dOn] = useState(false)
-  const [audioUrl, setAudioUrl] = useState('')
-  const audioEl = new Audio(audioUrl)
-  const live2dRefObject = useRef({})
-  const live2dSpineObject = useRef({})
 
   useEffect(() => {
     setTitle('dynamic_compile')
@@ -65,7 +60,6 @@ export default function Home() {
 
   const toggleVoice = () => {
     setVoiceOn(!voiceOn)
-    setAudioUrl('')
   }
 
   useEffect(() => {
@@ -77,82 +71,46 @@ export default function Home() {
           on={voiceOn}
           handleOnClick={() => toggleVoice()}
         />
-      // ), (
-      //   <Switch
-      //     key="live2d"
-      //     text={i18n.key.live2d[language]}
-      //     on={live2dOn}
-      //     handleOnClick={() => setLive2dOn(!live2dOn)}
-      //   />
       )
     ])
-  }, [voiceOn, live2dOn])
+  }, [voiceOn, language])
 
   const isShown = (type) => currentTab === 'all' || currentTab === type
 
-  const playVoice = (link) => {
-    if (!voiceOn) return
-    audioEl.src = `/${link}/assets/voice/${import.meta.env.VITE_APP_VOICE_URL}`
+  const playVoice = useCallback((blob) => {
+    const audioUrl = URL.createObjectURL(blob)
+    audioEl.src = audioUrl
     let startPlayPromise = audioEl.play()
     if (startPlayPromise !== undefined) {
       startPlayPromise
         .then(() => {
-          return
+          const audioEndedFunc = () => {
+            audioEl.removeEventListener('ended', audioEndedFunc)
+            URL.revokeObjectURL(audioUrl)
+          }
+          audioEl.addEventListener('ended', audioEndedFunc)
         })
         .catch(() => {
           return
         })
     }
-  }
+  }, [])
 
-  const getLive2d = (link) => {
-    const reactEl = <section className="live2d" ref={ref => {
-      live2dRefObject.current[link] = ref
-    }}></section>
-    return reactEl
-  }
-
-  useEffect(() => {
-    if (live2dOn) {
-      Object.keys(live2dRefObject.current).forEach((link) => {
-        const ref = live2dRefObject.current[link]
-        if (ref) {
-          if (live2dSpineObject.current[link]) {
-            return
-          }
-          fetch(`/_assets/dyn_portrait_char_2014_nian_nian%234.json`)
-            .then((res) => res.json())
-            .then((data) => {
-          live2dSpineObject.current[link] = new spine.SpinePlayer(ref, {
-            skelUrl: `./assets/dyn_portrait_char_2014_nian_nian%234.skel`,
-            atlasUrl: `./assets/dyn_portrait_char_2014_nian_nian%234.atlas`,
-            rawDataURIs: data,
-            animation: "Idle",
-            premultipliedAlpha: true,
-            alpha: true,
-            backgroundColor: "#00000000",
-            viewport: {
-              debugRender: false,
-              padLeft: `0%`,
-              padRight: `0%`,
-              padTop: `0%`,
-              padBottom: `0%`,
-              x: 0,
-              y: 0,
-            },
-            showControls: false,
-            touch: false,
-            fps: 60,
-            defaultMix: 0,
-            success: function (widget) {
-
-            },
+  const loadVoice = (link) => {
+    if (!voiceOn) return
+    db.voice.get({ key: link }).then((v) => {
+      if (v === undefined) {
+        fetch(`/${link}/assets/voice/${import.meta.env.VITE_APP_VOICE_URL}`)
+          .then(res => res.blob())
+          .then(blob => {
+            db.voice.put({ key: link, blob: blob })
+            playVoice(blob)
           })
-        })
-        }
-      })
-    }
-  }, [live2dOn])
+      } else {
+        playVoice(v.blob)
+      }
+    })
+  }
 
   return (
     <section className="home">
@@ -170,16 +128,15 @@ export default function Home() {
                       className="item"
                       key={item.link}
                       hidden={!isShown(item.type)}
-                      onMouseEnter={(e) => playVoice(item.link)}
+                      onMouseEnter={() => loadVoice(item.link)}
                     >
                       <section className="item-background-filler" />
                       <section className="item-outline" />
                       <section className="item-img">
-                        {live2dOn && item.portrait !== null ? (
-                          getLive2d(item.link)
-                        ) : (
-                            <img src={`/${item.link}/assets/${item.fallback_name.replace("#", "%23")}_portrait.png`} alt={item.codename[language]} />
-                        )}
+                        <ImageElement
+                          item={item}
+                          language={language}
+                        />
                       </section>
                       <section className="item-info">
                         <section className="item-title-container">
@@ -211,4 +168,25 @@ export default function Home() {
       }
     </section>
   )
+}
+
+function ImageElement({ item, language }) {
+  const [blobUrl, setBlobUrl] = useState(null)
+
+  useEffect(() => {
+    db.image.get({ key: item.link }).then((v) => {
+      if (v === undefined) {
+        fetch(`/${item.link}/assets/${item.fallback_name.replace("#", "%23")}_portrait.png`)
+          .then(res => res.blob())
+          .then(blob => {
+            db.image.put({ key: item.link, blob: blob })
+            setBlobUrl(URL.createObjectURL(blob))
+          })
+      } else {
+        setBlobUrl(URL.createObjectURL(v.blob))
+      }
+    })
+  }, [item.link])
+
+  return blobUrl ? <img src={blobUrl} alt={item.codename[language]} /> : null
 }

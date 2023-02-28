@@ -28,8 +28,5 @@ export default function () {
   writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
   filesToCopy.forEach((key) => {
     copy(path.join(sourceFolder, key, 'assets.json'), path.join(targetFolder, `${__config.operators[key].filename}.json`))
-    if (__config.operators[key].portrait) {
-      copy(path.join(sourceFolder, key, 'assets_portrait.json'), path.join(targetFolder, `${__config.operators[key].portrait}.json`))
-    }
   })
 }

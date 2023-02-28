@@ -16,7 +16,8 @@ export function HeaderProvider(props) {
     i18n
   } = useContext(LanguageContext)
   const [tabs, setTabs] = useState(null)
-  const [currentTab, setCurrentTab] = useState(null)
+  const [currentTab, setCurrentTab] = useState([])
+  const [appbarExtraArea, setAppbarExtraArea] = useState([])
 
   useEffect(() => {
     let newTitle = key
@@ -31,7 +32,8 @@ export function HeaderProvider(props) {
     <HeaderContext.Provider value={{
       title, setTitle,
       tabs, setTabs,
-      currentTab, setCurrentTab
+      currentTab, setCurrentTab,
+      appbarExtraArea, setAppbarExtraArea
     }}>
       {props.children}
     </HeaderContext.Provider>

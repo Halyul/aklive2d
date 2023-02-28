@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "@parcellab/react-use-umami": "^2.0.1",
-    "@react-hook/cache": "^1.1.1",
+    "dexie": "^3.2.3",
+    "dexie-react-hooks": "^1.1.1",
     "dotenv": "^16.0.3",
     "node-fetch": "^3.3.0",
     "react": "^18.2.0",

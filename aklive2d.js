@@ -120,10 +120,7 @@ async function main() {
 
     const assetsProcessor = new AssetsProcessor(OPERATOR_NAME, OPERATOR_SHARE_FOLDER)
     assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
-      write(JSON.stringify(content.landscape.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
-      if (__config.operators[OPERATOR_NAME].portrait) {
-        write(JSON.stringify(content.portrait.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets_portrait.json`))
-      }
+      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
     })
 
     const filesToCopy = [

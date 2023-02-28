@@ -87,15 +87,15 @@ export default function Home() {
   const loadVoice = (link) => {
     if (!voiceOn) return
     db.voice.get({ key: link }).then((v) => {
-      if (v === undefined) {
+      if (v) {
+        playVoice(v.blob)
+      } else {
         fetch(`/${link}/assets/voice/${import.meta.env.VITE_APP_VOICE_URL}`)
           .then(res => res.blob())
           .then(blob => {
             db.voice.put({ key: link, blob: blob })
             playVoice(blob)
           })
-      } else {
-        playVoice(v.blob)
       }
     })
   }
@@ -162,15 +162,15 @@ function ImageElement({ item, language }) {
 
   useEffect(() => {
     db.image.get({ key: item.link }).then((v) => {
-      if (v === undefined) {
+      if (v) {
+        setBlobUrl(URL.createObjectURL(v.blob))
+      } else {
         fetch(`/${item.link}/assets/${item.fallback_name.replace("#", "%23")}_portrait.png`)
           .then(res => res.blob())
           .then(blob => {
             db.image.put({ key: item.link, blob: blob })
             setBlobUrl(URL.createObjectURL(blob))
           })
-      } else {
-        setBlobUrl(URL.createObjectURL(v.blob))
       }
     })
   }, [item.link])

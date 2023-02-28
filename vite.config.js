@@ -7,6 +7,7 @@ import getConfig from './libs/config.js'
 import { rmdir, writeSync } from './libs/file.js'
 import { increase } from './libs/version.js'
 import EnvGenerator from './libs/env_generator.js'
+import directory from './libs/directory.js'
 
 global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
 
@@ -134,21 +135,17 @@ class ViteRunner {
   get #directoryConfig() {
     if (process.env.npm_lifecycle_event === 'vite:directory:build') {
       this.#globalConfig.version.directory = increase(path.join(__projetRoot, "directory"))
+      global.__config = this.#globalConfig
+      directory()
     }
     const directoryDir = path.resolve(__projetRoot, 'directory')
     writeSync((new EnvGenerator()).generate([
       {
         key: "app_title",
         value: this.#globalConfig.directory.title
-      }, {
-        key: "version",
-        value: this.#globalConfig.version.directory
-      }, {
+      },  {
         key: "app_voice_url",
         value: this.#globalConfig.directory.voice
-      }, {
-        key: "showcase_version",
-        value: this.#globalConfig.version.showcase
       }
     ]), path.join(directoryDir, '.env'))
     this.#mode = process.argv[3]

@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import './root.css'
 import routes from '@/routes'
+import { ConfigContext } from '@/context/useConfigContext';
 import { HeaderContext } from '@/context/useHeaderContext';
 import { LanguageContext } from '@/context/useLanguageContext';
 import Dropdown from '@/component/dropdown';
@@ -34,6 +35,7 @@ export default function Root(props) {
     currentTab, setCurrentTab,
     appbarExtraArea
   } = useContext(HeaderContext)
+  const { version } = useContext(ConfigContext)
   const [drawerDestinations, setDrawerDestinations] = useState(null)
   const currentYear = new Date().getFullYear()
   const [headerTabs, setHeaderTabs] = useState(null)
@@ -197,15 +199,11 @@ export default function Root(props) {
           <span>Spine Runtimes © 2013 - 2019 Esoteric Software LLC</span>
           <span>Assets © 2017 - {currentYear} Arknights/Hypergryph Co., Ltd</span>
           <span>Source Code © 2021 - {currentYear} Halyul</span>
-          <span>Version: {import.meta.env.VITE_VERSION}</span>
+          <span>Directory @ {version.directory}</span>
+          <span>Showcase @ {version.showcase}</span>
         </section>
       </footer>
-      <ScrollRestoration 
-        getKey={(location, matches) => {
-          // default behavior
-          return location.pathname;
-        }}
-      />
+      <ScrollRestoration />
     </>
   )
 }

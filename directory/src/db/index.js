@@ -7,4 +7,10 @@ db.version(2).stores({
     config: '++key, value',
 });
 
+export function invalidateCache() {
+    db.image.clear();
+    db.voice.clear();
+    db.config.clear();
+}
+
 export default db;

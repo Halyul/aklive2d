@@ -63,7 +63,7 @@ class ViteRunner {
         this.#dev(viteConfig)
         break
       case 'build':
-        increase(configObj.versionDir)
+        this.#globalConfig.version.showcase = increase(configObj.versionDir)
       case 'build-all':
         this.#build(viteConfig)
         break
@@ -133,7 +133,7 @@ class ViteRunner {
 
   get #directoryConfig() {
     if (process.env.npm_lifecycle_event === 'vite:directory:build') {
-      increase(path.join(__projetRoot, "directory"))
+      this.#globalConfig.version.directory = increase(path.join(__projetRoot, "directory"))
     }
     const directoryDir = path.resolve(__projetRoot, 'directory')
     writeSync((new EnvGenerator()).generate([
@@ -146,6 +146,9 @@ class ViteRunner {
       }, {
         key: "app_voice_url",
         value: this.#globalConfig.directory.voice
+      }, {
+        key: "showcase_version",
+        value: this.#globalConfig.version.showcase
       }
     ]), path.join(directoryDir, '.env'))
     this.#mode = process.argv[3]

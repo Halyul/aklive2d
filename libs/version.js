@@ -9,5 +9,7 @@ export function increase(dir) {
     // release version will be lagged by 0.0.1
     const version = read(dir)
     const [major, minor, patch] = version.split('.')
-    writeSync(`${major}.${minor}.${+patch + 1}`, path.join(dir, 'Version'))
+    const newVersion = `${major}.${minor}.${+patch + 1}`
+    writeSync(newVersion, path.join(dir, 'Version'))
+    return newVersion
 }

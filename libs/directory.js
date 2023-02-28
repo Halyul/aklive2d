@@ -25,7 +25,9 @@ export default function () {
         }, {}))
       .sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date)),
   }
+  const versionJson = __config.version
   writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
+  writeSync(JSON.stringify(versionJson, null), path.join(targetFolder, "version.json"))
   filesToCopy.forEach((key) => {
     copy(path.join(sourceFolder, key, 'assets.json'), path.join(targetFolder, `${__config.operators[key].filename}.json`))
   })

@@ -32,6 +32,7 @@ const router = createBrowserRouter(
             index={route.index}
             path={route.path}
             element={route.element}
+            loader={route.loader}
           />
         )
       })}

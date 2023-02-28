@@ -37,7 +37,7 @@ async function main() {
       for (const [key, _] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
-      increase(__projetRoot)
+      __config.version.showcase = increase(__projetRoot)
       break
     case 'preview':
       assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')

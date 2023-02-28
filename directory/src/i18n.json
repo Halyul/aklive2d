@@ -39,12 +39,12 @@
         "zh-CN": "综合",
         "en-US": "All"
       },
-      "elite2": {
-        "zh-CN": "干员晋升",
+      "operator": {
+        "zh-CN": "精英2",
         "en-US": "Elite 2"
       },
       "skin": {
-        "zh-CN": "干员时装",
+        "zh-CN": "时装",
         "en-US": "Skin"
       },
       "voice": {

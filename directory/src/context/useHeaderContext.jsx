@@ -15,15 +15,12 @@ export function HeaderProvider(props) {
     language,
     i18n
   } = useContext(LanguageContext)
-  const [tabs, setTabs] = useState(null)
+  const [tabs, setTabs] = useState([])
   const [currentTab, setCurrentTab] = useState([])
   const [appbarExtraArea, setAppbarExtraArea] = useState([])
 
   useEffect(() => {
-    let newTitle = key
-    if (i18n.key[newTitle]) {
-      newTitle = i18n.key[newTitle][language]
-    }
+    const newTitle = i18n(key)
     document.title = `${newTitle} - ${import.meta.env.VITE_APP_TITLE}`;
     setRealTitle(newTitle)
   }, [key, language])

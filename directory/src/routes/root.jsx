@@ -8,6 +8,7 @@ import {
   Link,
   NavLink,
   useNavigate,
+  ScrollRestoration
 } from "react-router-dom";
 import './root.css'
 import routes from '@/routes'
@@ -25,7 +26,7 @@ export default function Root(props) {
     language, setLanguage,
     textDefaultLang,
     alternateLang,
-    i18n
+    i18n, i18nValues
   } = useContext(LanguageContext)
   const {
     title,
@@ -41,21 +42,21 @@ export default function Root(props) {
     setHeaderTabs(tabs?.map((item) => {
       return (
         <section
-          key={item.key}
-          className={`main-tab-item ${currentTab === item.key ? 'active' : ''}`}
+          key={item}
+          className={`main-tab-item ${currentTab === item ? 'active' : ''}`}
           onClick={(e) => {
-            setCurrentTab(item.key)
-            item.onClick && item.onClick(e, item.key)
+            setCurrentTab(item)
+            item.onClick && item.onClick(e, item)
           }}
         >
-          {item.text[language]}
+          {i18n(item)}
         </section>
       )
     }))
   }
 
-  const toggleDrawer = () => {
-    setDrawerHidden(!drawerHidden)
+  const toggleDrawer = (value) => {
+    setDrawerHidden(value || !drawerHidden)
   }
 
   const renderDrawerDestinations = () => {
@@ -67,13 +68,13 @@ export default function Root(props) {
             to={item.path}
             target="_blank"
             className="link"
-            onClick={() => toggleDrawer()}
+            onClick={() => toggleDrawer(false)}
           >
             <section>
-              {i18n.key[item.name][textDefaultLang]}
+              {i18n(item.name, textDefaultLang)}
             </section>
             <section>
-              {i18n.key[item.name][alternateLang]}
+              {i18n(item.name, alternateLang)}
             </section>
           </Link>
         )
@@ -83,13 +84,13 @@ export default function Root(props) {
             to={item.path}
             key={item.name}
             className="link"
-            onClick={() => toggleDrawer()}
+            onClick={() => toggleDrawer(false)}
           >
             <section>
-              {i18n.key[item.name][textDefaultLang]}
+              {i18n(item.name, textDefaultLang)}
             </section>
             <section>
-              {i18n.key[item.name][alternateLang]}
+              {i18n(item.name, alternateLang)}
             </section>
           </NavLink>
         )
@@ -105,6 +106,14 @@ export default function Root(props) {
     renderHeaderTabs(tabs)
   }, [tabs, currentTab, language])
 
+  useEffect(() => {
+    if (tabs.length > 0) {
+      setCurrentTab(tabs[0])
+    } else {
+      setCurrentTab(null)
+    }
+  }, [tabs])
+
   return (
     <>
       <header className='header'>
@@ -119,10 +128,10 @@ export default function Root(props) {
         <section className='spacer' />
         {appbarExtraArea}
         <Dropdown 
-          text={i18n.key[language][language]}
-          menu={i18n.available.map((item) => {
+          text={i18n(language)}
+          menu={i18nValues.available.map((item) => {
             return {
-              name: i18n.key[item][language],
+              name: i18n(item),
               value: item
             }
           })}
@@ -161,23 +170,28 @@ export default function Root(props) {
       </main>
       <footer className='footer'>
         <section className='links section'>
-          <Popup
-            className='item'
-            title={i18n.key.disclaimer[language]}
-          >
-            {i18n.key.disclaimer_content[language]}
-          </Popup>
-          <span className='separator' />
-          <Link reloadDocument to="https://privacy.halyul.dev" target="_blank" className='item'>{i18n.key.privacy_policy[language]}</Link>
-          <span className='separator' />
-          <Link reloadDocument to="https://github.com/Halyul/aklive2d" target="_blank" className='item'>Github</Link>
-          <span className='separator'/>
-          <Popup 
-            className='item'
-            title={i18n.key.contact_us[language]}
-          >
-            ak#halyul.dev
-          </Popup>
+          <section className="item">
+            <Popup
+              className='link'
+              title={i18n('disclaimer')}
+            >
+              {i18n('disclaimer_content')}
+            </Popup>
+          </section>
+          <section className="item">
+            <Link reloadDocument to="https://privacy.halyul.dev" target="_blank" className='link'>{i18n('privacy_policy')}</Link>
+          </section>
+          <section className="item">
+            <Link reloadDocument to="https://github.com/Halyul/aklive2d" target="_blank" className='link'>GitHub</Link>
+          </section>
+          <section className="item">
+            <Popup 
+              className='link'
+              title={i18n('contact_us')}
+            >
+              ak#halyul.dev
+            </Popup>
+          </section>
         </section>
         <section className='copyright section'>
           <span>Spine Runtimes © 2013 - 2019 Esoteric Software LLC</span>
@@ -186,6 +200,12 @@ export default function Root(props) {
           <span>Version: {import.meta.env.VITE_VERSION}</span>
         </section>
       </footer>
+      <ScrollRestoration 
+        getKey={(location, matches) => {
+          // default behavior
+          return location.pathname;
+        }}
+      />
     </>
   )
 }

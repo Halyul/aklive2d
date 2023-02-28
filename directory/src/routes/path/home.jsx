@@ -5,7 +5,7 @@ import {
   useCallback
 } from 'react'
 import {
-  Link,
+  NavLink,
 } from "react-router-dom";
 import './home.css'
 import { ConfigContext } from '@/context/useConfigContext';
@@ -24,7 +24,7 @@ export default function Home() {
   const {
     setTitle,
     setTabs,
-    currentTab, setCurrentTab,
+    currentTab,
     setAppbarExtraArea
   } = useContext(HeaderContext)
   const { config } = useContext(ConfigContext)
@@ -39,19 +39,7 @@ export default function Home() {
 
   useEffect(() => {
     setTitle('dynamic_compile')
-    setTabs([
-      {
-        key: 'all',
-        text: i18n.key.all
-      }, {
-        key: 'operator',
-        text: i18n.key.elite2
-      }, {
-        key: 'skin',
-        text: i18n.key.skin
-      }
-    ])
-    setCurrentTab('all')
+    setTabs(['all', 'operator', 'skin'])
   }, [])
 
   useEffect(() => {
@@ -67,7 +55,7 @@ export default function Home() {
       (
         <Switch
           key="voice"
-          text={i18n.key.voice[language]}
+          text={i18n('voice')}
           on={voiceOn}
           handleOnClick={() => toggleVoice()}
         />
@@ -122,9 +110,8 @@ export default function Home() {
               <section className="item-group">
                 {v.map(item => {
                   return (
-                    <Link
-                      reloadDocument
-                      to={`/${item.link}`}
+                    <NavLink
+                      to={`/operator/${item.link}`}
                       className="item"
                       key={item.link}
                       hidden={!isShown(item.type)}
@@ -156,7 +143,7 @@ export default function Home() {
                           color: item.color
                         }} />
                       </section>
-                    </Link>
+                    </NavLink>
                   )
                 })}
                 <section className='item-group-date'>{v[0].date}</section>

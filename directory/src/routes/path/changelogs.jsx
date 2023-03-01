@@ -1,32 +1,65 @@
 import {
   useState,
   useEffect,
-  useContext
 } from 'react'
 import './changelogs.css'
-import { HeaderContext } from '@/context/useHeaderContext';
-import { LanguageContext } from '@/context/useLanguageContext';
+import { useHeader } from '@/state/header';
 import useUmami from '@parcellab/react-use-umami'
+import MainBorder from '@/component/main_border';
 
 export default function Changelogs(props) {
   const _trackEvt = useUmami('/changelogs')
   const {
     setTitle,
     setTabs,
-    currentTab, setCurrentTab
-  } = useContext(HeaderContext)
-  const { language, i18n } = useContext(LanguageContext)
+    currentTab,
+    setHeaderIcon,
+  } = useHeader()
+  const [changelogs, setChangelogs] = useState([])
 
   useEffect(() => {
     setTitle('changelogs')
-    setTabs([])
+    setHeaderIcon(null)
+    fetch('/_assets/changelogs.json').then(res => res.json()).then(data => {
+      setChangelogs(data)
+    })
   }, [])
 
+  useEffect(() => {
+    setTabs(changelogs.map((item) => {
+      return {
+        key: item[0].key
+      }
+    }))
+  }, [changelogs])
+
   return (
-    <section>
-      <section>
-        Under Construction :(
-      </section>
+    <section className="changelogs">
+      {
+        changelogs.map((v) => {
+          return (
+            v.map((item) => {
+              return (
+                <section className="item-group-wrapper" key={item.date} hidden={currentTab !== item.key}>
+                  <section className="item-group">
+                    <section className="item-info">
+                      {item.content.map((entry, index) => {
+                        return (
+                          <section className="item-info-content" key={index}>
+                            {entry}
+                          </section>
+                        )
+                      })}
+                    </section>
+                    <section className='item-group-date'>{item.date}</section>
+                  </section>
+                  <MainBorder />
+                </section>
+              )
+            })
+          )
+        })
+      }
     </section>
   )
 }

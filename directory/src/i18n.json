@@ -51,6 +51,14 @@
         "zh-CN": "语音",
         "en-US": "Voice"
       },
+      "showcase": {
+        "zh-CN": "壁纸",
+        "en-US": "Wallpaper"
+      }, 
+      "directory": {
+        "zh-CN": "目录页",
+        "en-US": "Directory Page"
+      },
       "zh-CN": {
         "zh-CN": "简体中文",
         "en-US": "Chinese (Simplified)"

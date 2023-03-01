@@ -8,6 +8,7 @@ import { rmdir, writeSync } from './libs/file.js'
 import { increase } from './libs/version.js'
 import EnvGenerator from './libs/env_generator.js'
 import directory from './libs/directory.js'
+import { PerfseePlugin } from '@perfsee/rollup'
 
 global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
 
@@ -152,7 +153,13 @@ class ViteRunner {
     return {
       ...this.#baseViteConfig,
       envDir: directoryDir,
-      plugins: [react()],
+      plugins: [
+        react(),
+        // PerfseePlugin({
+        //   project: 'aklive2d',
+        //   artifactName: 'directory',
+        // }),
+      ],
       publicDir: path.resolve(__projetRoot, this.#globalConfig.folder.release),
       root: directoryDir,
       server: {

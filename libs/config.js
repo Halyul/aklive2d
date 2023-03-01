@@ -1,6 +1,7 @@
 import path from 'path'
 import { read } from './yaml.js'
 import { read as readVersion } from './version.js'
+import { getOperatorId } from './charword_table.js'
 
 export default function () {
     return process(read(path.join(__projetRoot, 'config.yaml')))
@@ -15,6 +16,9 @@ function process(config) {
 
         // add link
         operator.link = operatorName
+
+        // id
+        operator.id = getOperatorId(operator).replace(/^(char_)(\d+)(_.+)$/g, '$2')
     }
 
     // version

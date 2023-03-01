@@ -1,11 +1,11 @@
-.home .item-group {
+.item-group {
     padding: 1rem;
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
 }
 
-.home .item-group-date {
+.item-group-date {
     margin: 1.5rem;
     font-family: "Bender";
     font-weight: bold;
@@ -17,7 +17,7 @@
     user-select: none;
 }
 
-.home .item-group .item {
+.item-group .item {
     position: relative;
     cursor: pointer;
     width: 180px;
@@ -25,7 +25,7 @@
     background-image: repeating-linear-gradient(90deg, var(--home-item-background-linear-gradient-color) 0, var(--home-item-background-linear-gradient-color) 1px, transparent 1px, transparent 5px);
 }
 
-.home .item-group .item .item-background-filler {
+.item-group .item .item-background-filler {
     border-right: 1px solid var(--home-item-background-linear-gradient-color);
     position: absolute;
     top: 0;
@@ -34,7 +34,7 @@
     bottom: 0;
 }
 
-.home .item-group .item .item-outline {
+.item-group .item .item-outline {
     display: block;
     position: absolute;
     opacity: 0;
@@ -42,7 +42,7 @@
     transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
-.home .item-group .item .item-outline {
+.item-group .item .item-outline {
     width: 100%;
     height: 100%;
     left: -6px;
@@ -51,8 +51,8 @@
     padding: 6px;
 }
 
-.home .item-group .item .item-outline::before,
-.home .item-group .item .item-outline::after {
+.item-group .item .item-outline::before,
+.item-group .item .item-outline::after {
     content: "";
     display: block;
     position: absolute;
@@ -63,31 +63,31 @@
     border-right: var(--text-color) solid 3px;
 }
 
-.home .item-group .item .item-outline::before {
+.item-group .item .item-outline::before {
     top: -3px;
 }
 
-.home .item-group .item .item-outline::after {
+.item-group .item .item-outline::after {
     bottom: -3px;
 }
 
-.home .item-group .item:hover .item-outline,
-.home .item-group .item:hover .item-info .item-info-background {
+.item-group .item:hover .item-outline,
+.item-group .item:hover .item-info .item-info-background {
     opacity: 1;
     visibility: visible;
 }
 
-.home .item-group .item .item-img {
+.item-group .item .item-img {
     height: 360px;
     width: 100%;
     transition: background-color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
-.home .item-group .item:hover .item-img {
+.item-group .item:hover .item-img {
     background-color: var(--home-item-hover-background-color);
 }
 
-.home .item-group .item .item-info {
+.item-group .item .item-info {
     white-space: nowrap;
     position: relative;
     padding: 0.8rem 0.4rem;
@@ -95,7 +95,7 @@
     height: 36px;
 }
 
-.home .item-group .item .item-info .item-title-container {
+.item-group .item .item-info .item-title-container {
     color: white;
     display: flex;
     justify-content: space-between;
@@ -104,18 +104,18 @@
     font-weight: bold;
 }
 
-.home .item-group .item .item-info .item-title-container .item-title {
+.item-group .item .item-info .item-title-container .item-title {
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.home .item-group .item .item-info .item-title-container .item-title {
+.item-group .item .item-info .item-title-container .item-title {
     line-height: 1.3em;
     height: auto;
 }
 
-.home .item-group .item .item-info .item-title-container .item-type {
+.item-group .item .item-info .item-title-container .item-type {
     display: flex;
     flex-direction: row;
     align-items: baseline;
@@ -124,13 +124,13 @@
     fill: var(--text-color)
 }
 
-.home .item-group .item .item-info .item-text {
+.item-group .item .item-info .item-text {
     font-size: 0.75rem;
     font-family: "Geometos";
     margin-top: 1rem; 
 }
 
-.home .item-group .item .item-info .item-info-background {
+.item-group .item .item-info .item-info-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -142,7 +142,7 @@
     background-image: linear-gradient(70deg, transparent 40%, currentColor 150%);
 }
 
-.home .item-group .item .item-info .item-text-wrapper {
+.item-group .item .item-info .item-text-wrapper {
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--secondary-text-color);

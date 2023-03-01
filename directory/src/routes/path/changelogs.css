@@ -1,0 +1,17 @@
+.changelogs .item-group {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.changelogs .item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-left: 1rem;
+}
+
+.changelogs .item-info-content {
+    font-size: 1.5rem;
+    display: list-item;
+}

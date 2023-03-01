@@ -1,65 +1,67 @@
 import {
   useState,
   useEffect,
-  useContext
+  useContext,
+  useMemo,
+  useCallback
 } from 'react'
 import {
   Outlet,
   Link,
   NavLink,
   useNavigate,
-  ScrollRestoration
 } from "react-router-dom";
 import './root.css'
 import routes from '@/routes'
-import { ConfigContext } from '@/context/useConfigContext';
-import { HeaderContext } from '@/context/useHeaderContext';
-import { LanguageContext } from '@/context/useLanguageContext';
+import { useConfig } from '@/state/config';
+import { useHeader } from '@/state/header';
+import {
+  useI18n,
+  useLanguage,
+} from '@/state/language'
 import Dropdown from '@/component/dropdown';
 import Popup from '@/component/popup';
 import ReturnButton from '@/component/return_button';
 import MainBorder from '@/component/main_border';
+import CharIcon from '@/component/char_icon';
 
 export default function Root(props) {
-  const navigate = useNavigate()
   const [drawerHidden, setDrawerHidden] = useState(true)
-  const {
-    language, setLanguage,
-    textDefaultLang,
-    alternateLang,
-    i18n, i18nValues
-  } = useContext(LanguageContext)
+  const { textDefaultLang, language, alternateLang } = useLanguage()
   const {
     title,
     tabs,
     currentTab, setCurrentTab,
-    appbarExtraArea
-  } = useContext(HeaderContext)
-  const { version } = useContext(ConfigContext)
+    appbarExtraArea,
+    headerIcon
+  } = useHeader()
+  const { version } = useConfig()
   const [drawerDestinations, setDrawerDestinations] = useState(null)
-  const currentYear = new Date().getFullYear()
+  const currentYear = useMemo(() => new Date().getFullYear(), [])
   const [headerTabs, setHeaderTabs] = useState(null)
+  const { i18n } = useI18n()
 
   const renderHeaderTabs = (tabs) => {
     setHeaderTabs(tabs?.map((item) => {
       return (
         <section
-          key={item}
-          className={`main-tab-item ${currentTab === item ? 'active' : ''}`}
+          key={item.key}
+          className={`main-tab-item ${currentTab === item.key ? 'active' : ''}`}
           onClick={(e) => {
-            setCurrentTab(item)
-            item.onClick && item.onClick(e, item)
+            setCurrentTab(item.key)
+            item.onClick && item.onClick(e, currentTab)
           }}
+          style={item.style}
         >
-          {i18n(item)}
+          <span className='text'>{i18n(item.key)}</span>
         </section>
       )
     }))
   }
 
-  const toggleDrawer = (value) => {
+  const toggleDrawer = useCallback((value) => {
     setDrawerHidden(value || !drawerHidden)
-  }
+  }, [drawerHidden])
 
   const renderDrawerDestinations = () => {
     return routes.filter((item) => item.inDrawer).map((item) => {
@@ -110,7 +112,7 @@ export default function Root(props) {
 
   useEffect(() => {
     if (tabs.length > 0) {
-      setCurrentTab(tabs[0])
+      setCurrentTab(tabs[0].key)
     } else {
       setCurrentTab(null)
     }
@@ -129,18 +131,7 @@ export default function Root(props) {
         </section>
         <section className='spacer' />
         {appbarExtraArea}
-        <Dropdown 
-          text={i18n(language)}
-          menu={i18nValues.available.map((item) => {
-            return {
-              name: i18n(item),
-              value: item
-            }
-          })}
-          onClick={(item) => {
-            setLanguage(item.value)
-          }}
-        />
+        <LanguageDropdown />
       </header>
       <nav className={`drawer ${drawerHidden ? '' : 'active'}`}>
         <section
@@ -155,19 +146,24 @@ export default function Root(props) {
       </nav>
       <main className='main'>
         <section className='main-header'>
-          <section className='main-title'>{title}</section>
+          <section className='main-title'>
+              {headerIcon && (
+              <section className='main-icon'>
+                <CharIcon
+                  type={headerIcon}
+                  viewBox={
+                    headerIcon === 'operator' ? '0 0 88.969 71.469' : '0 0 94.563 67.437'
+                  }
+                />
+              </section>
+              )}
+              {title}
+          </section>
           <section className='main-tab'>
             {headerTabs}
           </section>
         </section>
-        <MainBorder>
-          <ReturnButton
-            className='return-button'
-            onClick={() => {
-              navigate("/")
-            }}
-          />
-        </MainBorder>
+        <HeaderReturnButton />
         <Outlet />
       </main>
       <footer className='footer'>
@@ -187,7 +183,7 @@ export default function Root(props) {
             <Link reloadDocument to="https://github.com/Halyul/aklive2d" target="_blank" className='link'>GitHub</Link>
           </section>
           <section className="item">
-            <Popup 
+            <Popup
               className='link'
               title={i18n('contact_us')}
             >
@@ -203,7 +199,49 @@ export default function Root(props) {
           <span>Showcase @ {version.showcase}</span>
         </section>
       </footer>
-      <ScrollRestoration />
     </>
+  )
+}
+
+function LanguageDropdown() {
+  const { language, setLanguage } = useLanguage()
+  const { i18n, i18nValues } = useI18n()
+
+  return (
+    <Dropdown
+      text={i18n(language)}
+      menu={i18nValues.available.map((item) => {
+        return {
+          name: i18n(item),
+          value: item
+        }
+      })}
+      onClick={(item) => {
+        setLanguage(item.value)
+      }}
+    />
+  )
+}
+
+function HeaderReturnButton() {
+  const navigate = useNavigate()
+
+  const onClick = useCallback(() => {
+    navigate("/")
+  }, [])
+
+  const children = useMemo(() => {
+    return (
+      <ReturnButton
+        className='return-button'
+        onClick={onClick}
+      />
+    )
+  }, [])
+
+  return (
+    <MainBorder>
+      {children}
+    </MainBorder>
   )
 }

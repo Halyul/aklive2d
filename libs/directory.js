@@ -1,5 +1,6 @@
 import path from 'path'
 import { writeSync, copy, rmdir } from './file.js'
+import { read } from './yaml.js';
 
 /**
  * TODO: 
@@ -26,8 +27,24 @@ export default function () {
       .sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date)),
   }
   const versionJson = __config.version
+
+  const changelogs = read(path.join(__projetRoot, 'changelogs.yaml'))
+  const changelogsArray = Object.keys(changelogs).reduce((acc, cur) => {
+    const array = []
+    Object.keys(changelogs[cur]).map((item) => {
+      array.push({
+        key: cur,
+        date: item,
+        content: [...changelogs[cur][item]]
+      })
+    })
+    acc.push(array)
+    return acc
+  }, [])
+
   writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
   writeSync(JSON.stringify(versionJson, null), path.join(targetFolder, "version.json"))
+  writeSync(JSON.stringify(changelogsArray, null), path.join(targetFolder, "changelogs.json"))
   filesToCopy.forEach((key) => {
     copy(path.join(sourceFolder, key, 'assets.json'), path.join(targetFolder, `${__config.operators[key].filename}.json`))
   })

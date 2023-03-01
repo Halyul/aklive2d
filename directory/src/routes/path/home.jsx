@@ -1,23 +1,28 @@
 import {
   useState,
   useEffect,
-  useContext,
   useCallback
 } from 'react'
 import {
   NavLink,
 } from "react-router-dom";
 import './home.css'
-import { ConfigContext } from '@/context/useConfigContext';
-import { LanguageContext } from '@/context/useLanguageContext';
-import { HeaderContext } from '@/context/useHeaderContext';
+import { useConfig } from '@/state/config';
+import {
+  useLanguage,
+  useI18n
+} from '@/state/language'
+import { useHeader } from '@/state/header';
+import { useAtom } from 'jotai'
+import { atomWithStorage } from 'jotai/utils';
 import CharIcon from '@/component/char_icon';
 import MainBorder from '@/component/main_border';
 import useUmami from '@parcellab/react-use-umami';
 import Switch from '@/component/switch';
-import db from '@/db';
 
 const audioEl = new Audio()
+let isPlaying = false
+const voiceOnAtom = atomWithStorage('voiceOn', false)
 
 export default function Home() {
   const _trackEvt = useUmami('/')
@@ -25,30 +30,34 @@ export default function Home() {
     setTitle,
     setTabs,
     currentTab,
-    setAppbarExtraArea
-  } = useContext(HeaderContext)
-  const { config } = useContext(ConfigContext)
-  const {
-    language,
-    textDefaultLang,
-    alternateLang,
-    i18n
-  } = useContext(LanguageContext)
+    setAppbarExtraArea,
+    setHeaderIcon
+  } = useHeader()
+  const { config } = useConfig()
+  const { textDefaultLang, language, alternateLang } = useLanguage()
   const [content, setContent] = useState([])
-  const [voiceOn, setVoiceOn] = useState(false)
+  const [voiceOn, setVoiceOn] = useAtom(voiceOnAtom)
+  const { i18n } = useI18n()
 
   useEffect(() => {
     setTitle('dynamic_compile')
-    setTabs(['all', 'operator', 'skin'])
+    setTabs([{
+      key: 'all'
+    }, {
+      key: 'operator'
+    }, {
+      key: 'skin'
+    }])
+    setHeaderIcon(null)
   }, [])
 
   useEffect(() => {
     setContent(config?.operators || [])
   }, [config])
 
-  const toggleVoice = () => {
+  const toggleVoice = useCallback(() => {
     setVoiceOn(!voiceOn)
-  }
+  }, [voiceOn])
 
   useEffect(() => {
     setAppbarExtraArea([
@@ -63,42 +72,29 @@ export default function Home() {
     ])
   }, [voiceOn, language])
 
-  const isShown = (type) => currentTab === 'all' || currentTab === type
+  const isShown = useCallback((type) => currentTab === 'all' || currentTab === type, [currentTab])
 
-  const playVoice = useCallback((blob) => {
-    const audioUrl = URL.createObjectURL(blob)
+  const playVoice = useCallback((link) => {
+    const audioUrl = `/${link}/assets/voice/${import.meta.env.VITE_APP_VOICE_URL}`
+    if (!voiceOn || (audioEl.src === (window.location.href.replace(/\/$/g, '') + audioUrl) && isPlaying)) return
     audioEl.src = audioUrl
     let startPlayPromise = audioEl.play()
     if (startPlayPromise !== undefined) {
       startPlayPromise
         .then(() => {
+          isPlaying = true
           const audioEndedFunc = () => {
             audioEl.removeEventListener('ended', audioEndedFunc)
-            URL.revokeObjectURL(audioUrl)
+            isPlaying = false
           }
           audioEl.addEventListener('ended', audioEndedFunc)
         })
-        .catch(() => {
+        .catch((e) => {
+          console.log(e)
           return
         })
     }
-  }, [])
-
-  const loadVoice = (link) => {
-    if (!voiceOn) return
-    db.voice.get({ key: link }).then((v) => {
-      if (v) {
-        playVoice(v.blob)
-      } else {
-        fetch(`/${link}/assets/voice/${import.meta.env.VITE_APP_VOICE_URL}`)
-          .then(res => res.blob())
-          .then(blob => {
-            db.voice.put({ key: link, blob: blob })
-            playVoice(blob)
-          })
-      }
-    })
-  }
+  }, [voiceOn])
 
   return (
     <section className="home">
@@ -115,7 +111,7 @@ export default function Home() {
                       className="item"
                       key={item.link}
                       hidden={!isShown(item.type)}
-                      onMouseEnter={() => loadVoice(item.link)}
+                      onMouseEnter={() => playVoice(item.link)}
                     >
                       <section className="item-background-filler" />
                       <section className="item-outline" />
@@ -158,22 +154,5 @@ export default function Home() {
 }
 
 function ImageElement({ item, language }) {
-  const [blobUrl, setBlobUrl] = useState(null)
-
-  useEffect(() => {
-    db.image.get({ key: item.link }).then((v) => {
-      if (v) {
-        setBlobUrl(URL.createObjectURL(v.blob))
-      } else {
-        fetch(`/${item.link}/assets/${item.fallback_name.replace("#", "%23")}_portrait.png`)
-          .then(res => res.blob())
-          .then(blob => {
-            db.image.put({ key: item.link, blob: blob })
-            setBlobUrl(URL.createObjectURL(blob))
-          })
-      }
-    })
-  }, [item.link])
-
-  return blobUrl ? <img src={blobUrl} alt={item.codename[language]} /> : null
+  return <img src={`/${item.link}/assets/${item.fallback_name.replace("#", "%23")}_portrait.png`} alt={item.codename[language]} />
 }

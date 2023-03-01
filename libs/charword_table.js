@@ -16,8 +16,12 @@ const NICKNAME = {
   "zh_TW": "博士",
 }
 
+export function getOperatorId(operatorConfig) {
+  return operatorConfig.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4')
+}
+
 export default class CharwordTable {
-  #operatorIDs = Object.values(__config.operators).map(operator => { return this.#getOperatorId(operator) })
+  #operatorIDs = Object.values(__config.operators).map(operator => { return getOperatorId(operator) })
   #charwordTablePath = path.join(__projetRoot, __config.folder.operator, __config.folder.share)
   #charwordTableFile = path.join(this.#charwordTablePath, 'charword_table.json')
   #charwordTable = JSON.parse(readSync(this.#charwordTableFile)) || {
@@ -43,16 +47,12 @@ export default class CharwordTable {
   }
 
   lookup(operatorName) {
-    const operatorId = this.#getOperatorId(__config.operators[operatorName])
+    const operatorId = getOperatorId(__config.operators[operatorName])
     const operatorBlock = this.#charwordTable.operators[operatorId]
     return {
       config: this.#charwordTable.config,
       operator: operatorBlock.ref ? this.#charwordTable.operators[operatorBlock.alternativeId] : operatorBlock,
     }
-  }
-
-  #getOperatorId(operatorConfig) {
-    return operatorConfig.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4')
   }
 
   async #load(region) {

@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
+import { useCallback } from 'react';
 import { atom, useAtom } from 'jotai';
 
-const fetcher = (...args) => fetch(...args).then(res => res.json())
 const configAtom = atom([]);
 const operatorsAtom = atom([]);
 const versionAtom = atom({});
@@ -11,19 +10,22 @@ export function useConfig() {
   const [version, setVersion] = useAtom(versionAtom);
   const [operators, setOperators] = useAtom(operatorsAtom);
 
-  useEffect(() => {
-    fetcher('/_assets/directory.json').then(data => {
-      setConfig(data);
-      let operatorsList = []
-      data.operators.forEach((item) => {
-        operatorsList = [...operatorsList, ...item]
-      })
-      setOperators(operatorsList)
+  const fetchConfig = useCallback(async () => {
+    const res = await fetch('/_assets/directory.json')
+    const data = await res.json()
+    setConfig(data);
+    let operatorsList = []
+    data.operators.forEach((item) => {
+      operatorsList = [...operatorsList, ...item]
     })
-    fetcher('/_assets/version.json').then(data => {
-      setVersion(data);
-    })
-  }, []);
+    setOperators(operatorsList)
+  }, [])
 
-  return { config, version, operators };
+  const fetchVersion = useCallback(async () => {
+    const res = await fetch('/_assets/version.json')
+    const data = await res.json()
+    setVersion(data);
+  }, [])
+
+  return { config, version, operators, fetchConfig, fetchVersion };
 }

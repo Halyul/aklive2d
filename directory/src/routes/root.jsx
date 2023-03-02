@@ -18,6 +18,7 @@ import {
   useI18n,
   useLanguage,
 } from '@/state/language'
+import { useBackgrounds } from '@/state/background';
 import Dropdown from '@/component/dropdown';
 import Popup from '@/component/popup';
 import ReturnButton from '@/component/return_button';
@@ -34,11 +35,12 @@ export default function Root(props) {
     appbarExtraArea,
     headerIcon
   } = useHeader()
-  const { version } = useConfig()
+  const { version, fetchConfig, fetchVersion } = useConfig()
   const [drawerDestinations, setDrawerDestinations] = useState(null)
   const currentYear = useMemo(() => new Date().getFullYear(), [])
   const [headerTabs, setHeaderTabs] = useState(null)
   const { i18n } = useI18n()
+  const { fetchBackgrounds } = useBackgrounds()
 
   const renderHeaderTabs = (tabs) => {
     setHeaderTabs(tabs?.map((item) => {
@@ -119,6 +121,12 @@ export default function Root(props) {
       setCurrentTab(null)
     }
   }, [tabs])
+
+  useEffect(() => {
+    fetchConfig()
+    fetchVersion()
+    fetchBackgrounds()
+  }, [])
 
   return (
     <>
@@ -208,6 +216,8 @@ export default function Root(props) {
 function LanguageDropdown() {
   const { language, setLanguage } = useLanguage()
   const { i18n, i18nValues } = useI18n()
+
+
 
   return (
     <Dropdown

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback } from 'react';
 import { atom, useAtom } from 'jotai';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
@@ -9,12 +9,17 @@ export function useBackgrounds() {
   const [backgrounds, setBackgrounds] = useAtom(backgroundsAtom);
   const [currentBackground, setCurrentBackground] = useAtom(currentBackgroundAtom)
 
-  useEffect(() => {
-    fetcher('/_assets/backgrounds.json').then(data => {
-      setBackgrounds(data)
-      setCurrentBackground(data[0])
-    })
-  }, []);
+  const fetchBackgrounds = useCallback(async () => {
+    const res = await fetch('/_assets/backgrounds.json')
+    const data = await res.json()
+    setBackgrounds(data)
+    setCurrentBackground(data[0])
+  }, [])
 
-  return { backgrounds, currentBackground, setCurrentBackground };
+  return {
+    backgrounds,
+    currentBackground,
+    setCurrentBackground,
+    fetchBackgrounds
+  };
 }

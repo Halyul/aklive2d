@@ -14,6 +14,7 @@ import './root.css'
 import routes from '@/routes'
 import { useConfig } from '@/state/config';
 import { useHeader } from '@/state/header';
+import { useAppbar } from '@/state/appbar';
 import {
   useI18n,
   useLanguage,
@@ -32,36 +33,29 @@ export default function Root(props) {
     title,
     tabs,
     currentTab, setCurrentTab,
-    appbarExtraArea,
     headerIcon
   } = useHeader()
+  const {
+    extraArea,
+  } = useAppbar()
   const { version, fetchConfig, fetchVersion } = useConfig()
   const [drawerDestinations, setDrawerDestinations] = useState(null)
   const currentYear = useMemo(() => new Date().getFullYear(), [])
-  const [headerTabs, setHeaderTabs] = useState(null)
   const { i18n } = useI18n()
   const { fetchBackgrounds } = useBackgrounds()
 
-  const renderHeaderTabs = (tabs) => {
-    setHeaderTabs(tabs?.map((item) => {
-      return (
-        <section
-          key={item.key}
-          className={`main-tab-item ${currentTab === item.key ? 'active' : ''}`}
-          onClick={(e) => {
-            setCurrentTab(item.key)
-            item.onClick && item.onClick(e, currentTab)
-          }}
-          style={item.style}
-        >
-          <section className='main-tab-text-wrapper'>
-            <span className='text'>{i18n(item.key)}</span>
-          </section>
-
-        </section>
-      )
-    }))
-  }
+  const headerTabs = useMemo(() => {
+    return (
+      tabs?.map((item) => {
+        return (
+          <HeaderTabsElement
+            key={item.key}
+            item={item}
+          />
+        )
+      })
+    )
+  }, [tabs])
 
   const toggleDrawer = useCallback((value) => {
     setDrawerHidden(value || !drawerHidden)
@@ -111,10 +105,6 @@ export default function Root(props) {
   }, [alternateLang])
 
   useEffect(() => {
-    renderHeaderTabs(tabs)
-  }, [tabs, currentTab, language])
-
-  useEffect(() => {
     if (tabs.length > 0) {
       setCurrentTab(tabs[0].key)
     } else {
@@ -140,7 +130,7 @@ export default function Root(props) {
           <section className='bar'></section>
         </section>
         <section className='spacer' />
-        {appbarExtraArea}
+        {extraArea}
         <LanguageDropdown />
       </header>
       <nav className={`drawer ${drawerHidden ? '' : 'active'}`}>
@@ -217,8 +207,6 @@ function LanguageDropdown() {
   const { language, setLanguage } = useLanguage()
   const { i18n, i18nValues } = useI18n()
 
-
-
   return (
     <Dropdown
       text={i18n(language)}
@@ -232,6 +220,29 @@ function LanguageDropdown() {
         setLanguage(item.value)
       }}
     />
+  )
+}
+
+function HeaderTabsElement({ item }) {
+  const {
+    currentTab, setCurrentTab,
+  } = useHeader()
+  const { i18n } = useI18n()
+
+  return (
+    <section
+      className={`main-tab-item ${currentTab === item.key ? 'active' : ''}`}
+      onClick={(e) => {
+        setCurrentTab(item.key)
+        item.onClick && item.onClick(e, currentTab)
+      }}
+      style={item.style}
+    >
+      <section className='main-tab-text-wrapper'>
+        <span className='text'>{i18n(item.key)}</span>
+      </section>
+
+    </section>
   )
 }
 

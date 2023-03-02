@@ -1,7 +1,8 @@
 import {
   useState,
   useEffect,
-  useCallback
+  useCallback,
+  useMemo
 } from 'react'
 import {
   NavLink,
@@ -13,8 +14,9 @@ import {
   useI18n
 } from '@/state/language'
 import { useHeader } from '@/state/header';
+import { useAppbar } from '@/state/appbar';
 import { useAtom } from 'jotai'
-import { atomWithStorage } from 'jotai/utils';
+import { atom } from 'jotai';
 import CharIcon from '@/component/char_icon';
 import MainBorder from '@/component/main_border';
 import useUmami from '@parcellab/react-use-umami';
@@ -22,7 +24,38 @@ import Switch from '@/component/switch';
 
 const audioEl = new Audio()
 let isPlaying = false
-const voiceOnAtom = atomWithStorage('voiceOn', false)
+let voiceOnState = false
+const voiceOnStateAtom = atom(voiceOnState)
+const voiceOnAtom = atom(
+  (get) => get(voiceOnStateAtom),
+  (get, set, newState) => {
+    voiceOnState = newState
+    set(voiceOnStateAtom, voiceOnState)
+    // you can set as many atoms as you want at the same time
+  }
+)
+
+const playVoice = (link) => {
+  const audioUrl = `/${link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`
+  if (!voiceOnState || (audioEl.src === (window.location.href.replace(/\/$/g, '') + audioUrl) && isPlaying)) return
+  audioEl.src = audioUrl
+  let startPlayPromise = audioEl.play()
+  if (startPlayPromise !== undefined) {
+    startPlayPromise
+      .then(() => {
+        isPlaying = true
+        const audioEndedFunc = () => {
+          audioEl.removeEventListener('ended', audioEndedFunc)
+          isPlaying = false
+        }
+        audioEl.addEventListener('ended', audioEndedFunc)
+      })
+      .catch((e) => {
+        console.log(e)
+        return
+      })
+  }
+}
 
 export default function Home() {
   const _trackEvt = useUmami('/')
@@ -30,14 +63,10 @@ export default function Home() {
     setTitle,
     setTabs,
     currentTab,
-    setAppbarExtraArea,
     setHeaderIcon
   } = useHeader()
   const { config } = useConfig()
-  const { textDefaultLang, language, alternateLang } = useLanguage()
   const [content, setContent] = useState([])
-  const [voiceOn, setVoiceOn] = useAtom(voiceOnAtom)
-  const { i18n } = useI18n()
 
   useEffect(() => {
     setTitle('dynamic_compile')
@@ -55,46 +84,7 @@ export default function Home() {
     setContent(config?.operators || [])
   }, [config])
 
-  const toggleVoice = useCallback(() => {
-    setVoiceOn(!voiceOn)
-  }, [voiceOn])
-
-  useEffect(() => {
-    setAppbarExtraArea([
-      (
-        <Switch
-          key="voice"
-          text={i18n('voice')}
-          on={voiceOn}
-          handleOnClick={() => toggleVoice()}
-        />
-      )
-    ])
-  }, [voiceOn, language])
-
   const isShown = useCallback((type) => currentTab === 'all' || currentTab === type, [currentTab])
-
-  const playVoice = useCallback((link) => {
-    const audioUrl = `/${link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`
-    if (!voiceOn || (audioEl.src === (window.location.href.replace(/\/$/g, '') + audioUrl) && isPlaying)) return
-    audioEl.src = audioUrl
-    let startPlayPromise = audioEl.play()
-    if (startPlayPromise !== undefined) {
-      startPlayPromise
-        .then(() => {
-          isPlaying = true
-          const audioEndedFunc = () => {
-            audioEl.removeEventListener('ended', audioEndedFunc)
-            isPlaying = false
-          }
-          audioEl.addEventListener('ended', audioEndedFunc)
-        })
-        .catch((e) => {
-          console.log(e)
-          return
-        })
-    }
-  }, [voiceOn])
 
   return (
     <section className="home">
@@ -106,40 +96,12 @@ export default function Home() {
               <section className="item-group">
                 {v.map(item => {
                   return (
-                    <NavLink
-                      to={`/${item.link}`}
-                      className="item"
+                    <OperatorElement
                       key={item.link}
+                      item={item}
+                      handleOnMouseEnter={playVoice}
                       hidden={!isShown(item.type)}
-                      onMouseEnter={() => playVoice(item.link)}
-                    >
-                      <section className="item-background-filler" />
-                      <section className="item-outline" />
-                      <section className="item-img">
-                        <ImageElement
-                          item={item}
-                          language={language}
-                        />
-                      </section>
-                      <section className="item-info">
-                        <section className="item-title-container">
-                          <section className="item-title">{item.codename[language]}</section>
-                          <section className="item-type">
-                            <CharIcon
-                              type={item.type}
-                              viewBox={
-                                item.type === 'operator' ? '0 0 88.969 71.469' : '0 0 94.563 67.437'
-                              } />
-                          </section>
-                        </section>
-                        <section className="item-text-wrapper">
-                          <span className='item-text'>{item.codename[language.startsWith("en") ? alternateLang : textDefaultLang]}</span>
-                        </section>
-                        <section className="item-info-background" style={{
-                          color: item.color
-                        }} />
-                      </section>
-                    </NavLink>
+                    />
                   )
                 })}
                 <section className='item-group-date'>{v[0].date}</section>
@@ -149,10 +111,87 @@ export default function Home() {
           )
         })
       }
+      <VoiceSwitchElement />
     </section>
   )
 }
 
-function ImageElement({ item, language }) {
+function OperatorElement({ item, hidden }) {
+  const { textDefaultLang, language, alternateLang } = useLanguage()
+
+  return useMemo(() => {
+    return (
+      <NavLink
+        to={`/${item.link}`}
+        className="item"
+        hidden={hidden}
+      >
+        <section
+          onMouseEnter={() => playVoice(item.link)}
+        >
+          <section className="item-background-filler" />
+          <section className="item-outline" />
+          <section className="item-img">
+            <ImageElement
+              item={item}
+            />
+          </section>
+          <section className="item-info">
+            <section className="item-title-container">
+              <section className="item-title">{item.codename[language]}</section>
+              <section className="item-type">
+                <CharIcon
+                  type={item.type}
+                  viewBox={
+                    item.type === 'operator' ? '0 0 88.969 71.469' : '0 0 94.563 67.437'
+                  } />
+              </section>
+            </section>
+            <section className="item-text-wrapper">
+              <span className='item-text'>{item.codename[language.startsWith("en") ? alternateLang : textDefaultLang]}</span>
+            </section>
+            <section className="item-info-background" style={{
+              color: item.color
+            }} />
+          </section>
+        </section>
+      </NavLink>
+    )
+  }, [language, alternateLang, hidden])
+}
+
+function VoiceSwitchElement() {
+  const [voiceOn, setVoiceOn] = useAtom(voiceOnAtom)
+  const {
+    setExtraArea,
+  } = useAppbar()
+  const { i18n } = useI18n()
+
+  const toggleVoice = useCallback(() => {
+    setVoiceOn(!voiceOn)
+  }, [voiceOn])
+
+  const appbarSwitch = useMemo(() => {
+    return [
+      (
+        <Switch
+          key="voice"
+          text={i18n('voice')}
+          on={voiceOn}
+          handleOnClick={() => toggleVoice()}
+        />
+      )
+    ]
+  }, [voiceOn])
+
+  useEffect(() => {
+    setExtraArea(appbarSwitch)
+  }, [voiceOn])
+
+  return null
+}
+
+function ImageElement({ item }) {
+  const { language } = useLanguage()
   return <img src={`/${item.link}/assets/${item.fallback_name.replace("#", "%23")}_portrait.png`} alt={item.codename[language]} />
 }

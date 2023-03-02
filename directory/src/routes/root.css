@@ -162,9 +162,12 @@
 
 .main .main-header .main-tab {
     flex: auto;
-    text-align: right;
-    white-space: nowrap;
+    white-space: pre;
     user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    overflow: hidden;
 }
 
 .main .main-header .main-tab .main-tab-item {
@@ -178,11 +181,24 @@
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+.main .main-header .main-tab .main-tab-item .main-tab-text-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main .main-header .main-tab .main-tab-item.active .main-tab-text-wrapper,
+.main .main-header .main-tab .main-tab-item:hover .main-tab-text-wrapper,
 .main .main-header .main-tab .main-tab-item.active .text,
 .main .main-header .main-tab .main-tab-item:hover .text {
-    color: currentColor;
+    color: currentColor
+}
+
+.main .main-header .main-tab .main-tab-item.active {
+    border-bottom-color: currentColor;
 }
 
 .main .main-header .main-tab .main-tab-item.active,
@@ -190,13 +206,9 @@
     color: var(--link-highlight-color);
 }
 
-.main .main-header .main-tab .main-tab-item.active {
-    border-bottom-color: currentColor;
-}
-
-.main .main-header .main-tab .main-tab-item .text {
+.main .main-header .main-tab .main-tab-item .main-tab-text-wrapper {
     color: var(--text-color);
-    transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
 .main .main-icon {
@@ -211,7 +223,7 @@
     position: absolute;
     right: -4rem;
     bottom: -24px;
-    color: #666;
+    color: var(--button-color);
     transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 

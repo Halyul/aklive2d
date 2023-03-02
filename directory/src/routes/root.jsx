@@ -1,7 +1,6 @@
 import {
   useState,
   useEffect,
-  useContext,
   useMemo,
   useCallback
 } from 'react'
@@ -53,7 +52,10 @@ export default function Root(props) {
           }}
           style={item.style}
         >
-          <span className='text'>{i18n(item.key)}</span>
+          <section className='main-tab-text-wrapper'>
+            <span className='text'>{i18n(item.key)}</span>
+          </section>
+
         </section>
       )
     }))
@@ -147,7 +149,7 @@ export default function Root(props) {
       <main className='main'>
         <section className='main-header'>
           <section className='main-title'>
-              {headerIcon && (
+            {headerIcon && (
               <section className='main-icon'>
                 <CharIcon
                   type={headerIcon}
@@ -156,8 +158,8 @@ export default function Root(props) {
                   }
                 />
               </section>
-              )}
-              {title}
+            )}
+            {title}
           </section>
           <section className='main-tab'>
             {headerTabs}

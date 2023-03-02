@@ -96,7 +96,7 @@
 }
 
 .item-group .item .item-info .item-title-container {
-    color: white;
+    color: var(--text-color-full);
     display: flex;
     justify-content: space-between;
     align-items: center;

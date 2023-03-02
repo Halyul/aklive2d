@@ -1,5 +1,5 @@
 import path from 'path'
-import { writeSync, copy, rmdir } from './file.js'
+import { writeSync, copy, rmdir, readSync as readFile } from './file.js'
 import { read } from './yaml.js';
 
 /**
@@ -22,16 +22,48 @@ export default function ({ backgrounds, charwordTable }) {
           } else {
             acc[date] = [cur]
           }
-          cur.voiceLangs = []
-          const voiceInfo = Object.values(charwordTable.lookup(cur.link).operator.info.zh_CN)
-          voiceInfo.forEach((item) => {
-            cur.voiceLangs = [...cur.voiceLangs, ...Object.keys(item)]
-          })
+
+          cur.workshopId = null
+          try {
+            cur.workshopId = JSON.parse(readFile(path.join(__projetRoot, __config.folder.operator, cur.link, 'project.json'))).workshopid
+          } catch (e) {
+            console.log(`No workshop id for ${cur.link}!`, e)
+          }
+
           return acc
         }, {}))
       .sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date)),
   }
   const versionJson = __config.version
+
+  filesToCopy.forEach((operator) => {
+    const voiceJson = {}
+
+    voiceJson.voiceLangs = {}
+    voiceJson.subtitleLangs = {}
+    const charwordTableObj = charwordTable.lookup(operator)
+    const subtitleInfo = Object.keys(charwordTableObj.operator.info)
+    subtitleInfo.forEach((item) => {
+      if (Object.keys(charwordTableObj.operator.info[item]).length > 0) {
+        const key = item.replace("_", "-")
+        voiceJson.subtitleLangs[key] = {}
+        for (const [id, subtitles] of Object.entries(charwordTableObj.operator.voice[item])) {
+          const match = id.replace(/(.+?)([A-Z]\w+)/, '$2')
+          if (match === id) {
+            voiceJson.subtitleLangs[key].default = subtitles
+          } else {
+            voiceJson.subtitleLangs[key][match] = subtitles
+          }
+        }
+        voiceJson.voiceLangs[key] = {}
+        Object.values(charwordTableObj.operator.info[item]).forEach((item) => {
+          voiceJson.voiceLangs[key] = { ...voiceJson.voiceLangs[key], ...item }
+        })
+      }
+    })
+
+    writeSync(JSON.stringify(voiceJson, null), path.join(targetFolder, `voice_${operator}.json`))
+  })
 
   const changelogs = read(path.join(__projetRoot, 'changelogs.yaml'))
   const changelogsArray = Object.keys(changelogs).reduce((acc, cur) => {

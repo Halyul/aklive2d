@@ -92,7 +92,7 @@
 }
 
 .popup .return-button {
-    color: #666;
+    color: var(--button-color);
     transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 

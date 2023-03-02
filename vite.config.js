@@ -149,6 +149,13 @@ class ViteRunner {
       }, {
         key: "voice_folders",
         value: JSON.stringify(this.#globalConfig.folder.voice)
+      }, {
+        key: "directory_folder",
+        value: JSON.stringify(this.#globalConfig.folder.directory)
+      }
+      , {
+        key: "background_folder",
+        value: JSON.stringify(this.#globalConfig.folder.background)
       }
     ]), path.join(directoryDir, '.env'))
     this.#mode = process.argv[3]

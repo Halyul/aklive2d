@@ -11,7 +11,6 @@ export function useConfig() {
   const [version, setVersion] = useAtom(versionAtom);
   const [operators, setOperators] = useAtom(operatorsAtom);
 
-
   useEffect(() => {
     fetcher('/_assets/directory.json').then(data => {
       setConfig(data);

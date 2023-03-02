@@ -75,7 +75,7 @@ export default function Home() {
   const isShown = useCallback((type) => currentTab === 'all' || currentTab === type, [currentTab])
 
   const playVoice = useCallback((link) => {
-    const audioUrl = `/${link}/assets/voice/${import.meta.env.VITE_APP_VOICE_URL}`
+    const audioUrl = `/${link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`
     if (!voiceOn || (audioEl.src === (window.location.href.replace(/\/$/g, '') + audioUrl) && isPlaying)) return
     audioEl.src = audioUrl
     let startPlayPromise = audioEl.play()

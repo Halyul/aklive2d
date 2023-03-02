@@ -41,7 +41,6 @@
   opacity: 0;
   position: absolute;
   background-color: var(--root-background-color);
-  color: var(--text-color);
   width: max-content;
   z-index: -1;
   top: 2rem;
@@ -56,6 +55,7 @@
   padding: 0.5rem;
   border: 1px solid var(--border-color);
   visibility: hidden;
+  color: var(--link-highlight-color);
 }
 
 .dropdown.active .menu {
@@ -79,10 +79,14 @@
   transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
-.dropdown .menu .item:hover, 
-.dropdown .menu .item:focus, 
-.dropdown .menu .item.active {
-  color: var(--link-highlight-color);
+.dropdown .menu .item:hover .text, 
+.dropdown .menu .item:focus .text, 
+.dropdown .menu .item.active .text {
+  color: currentColor;
+}
+
+.dropdown .text {
+  color: var(--text-color);
 }
 
 .dropdown .overlay {

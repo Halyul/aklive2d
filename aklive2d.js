@@ -56,7 +56,7 @@ async function main() {
   await background.process()
   const backgrounds = ['operator_bg.png', ...background.files]
 
-  directory()
+  directory({backgrounds, charwordTable})
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
     const OPERATOR_SOURCE_FOLDER = path.join(__projetRoot, __config.folder.operator)

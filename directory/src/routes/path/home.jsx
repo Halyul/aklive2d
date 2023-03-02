@@ -107,7 +107,7 @@ export default function Home() {
                 {v.map(item => {
                   return (
                     <NavLink
-                      to={`/operator/${item.link}`}
+                      to={`/${item.link}`}
                       className="item"
                       key={item.link}
                       hidden={!isShown(item.type)}

@@ -137,16 +137,18 @@ class ViteRunner {
     if (process.env.npm_lifecycle_event === 'vite:directory:build') {
       this.#globalConfig.version.directory = increase(path.join(__projetRoot, "directory"))
       global.__config = this.#globalConfig
-      directory()
     }
     const directoryDir = path.resolve(__projetRoot, 'directory')
     writeSync((new EnvGenerator()).generate([
       {
         key: "app_title",
         value: this.#globalConfig.directory.title
-      },  {
+      }, {
         key: "app_voice_url",
         value: this.#globalConfig.directory.voice
+      }, {
+        key: "voice_folders",
+        value: JSON.stringify(this.#globalConfig.folder.voice)
       }
     ]), path.join(directoryDir, '.env'))
     this.#mode = process.argv[3]
@@ -168,6 +170,7 @@ class ViteRunner {
       resolve: {
         alias: {
           '@': path.resolve(directoryDir, './src'),
+          '!': path.resolve(__projetRoot, './src'),
         },
       },
       build: {

@@ -1,0 +1,144 @@
+.operator .spine-player-wrapper {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.operator .spine-settings {
+    margin-right: 1.5rem;
+}
+
+.operator .spine-settings .text {
+    color: var(--text-color);
+}
+
+.operator .spine-settings .settings-title-wrapper {
+    font-size: 1.25rem;
+    border-left: 3px solid currentColor;
+    padding-left: 0.75rem;
+    margin-bottom: 0.81rem;
+}
+
+.operator .spine-settings .settings-content-wrapper {
+    margin-bottom: 0.81rem;
+}
+
+.operator .spine-settings .settings-content-wrapper .content {
+    padding: 0.81rem 0;
+    cursor: pointer;
+}
+
+.operator .spine-settings .settings-content-wrapper .content .content-text {
+    pointer-events: none;
+    position: relative;
+    transform: translate3d(0, 0, 1px);
+    font-size: 1rem;
+    padding: 0.44rem 2.25rem 0.44rem 0.63rem;
+    background-color: rgba(67, 67, 67, 0.3);
+    background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 4px);
+    transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+}
+
+.operator .spine-settings .settings-content-wrapper .content:hover,
+.operator .spine-settings .settings-content-wrapper .content.active {
+    transform: translate3d(6px, 0, 1px);
+}
+
+.operator .spine-settings .settings-content-wrapper .content .content-text .outline {
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 6px;
+    border: rgba(214, 214, 214, 0.3) 1px dashed;
+}
+
+.operator .spine-settings .settings-content-wrapper .content .content-text::before,
+.operator .spine-settings .settings-content-wrapper .content .content-text .outline {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.operator .spine-settings .settings-content-wrapper .content .content-text .outline::before,
+.operator .spine-settings .settings-content-wrapper .content .content-text .outline::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -2px;
+    height: 2px;
+    width: 100%;
+    border-left: var(--text-color) solid 2px;
+    border-right: var(--text-color) solid 2px;
+}
+
+.operator .spine-settings .settings-content-wrapper .content .content-text .outline::before {
+    top: -2px;
+}
+
+.operator .spine-settings .settings-content-wrapper .content .content-text .outline::after {
+    bottom: -2px;
+}
+
+.operator .spine-settings .settings-content-wrapper .content .content-text::before {
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background-image: linear-gradient(90deg, transparent, currentColor);
+}
+
+.operator .spine-settings .settings-content-wrapper .content:hover .content-text::before,
+.operator .spine-settings .settings-content-wrapper .content.active .content-text::before,
+.operator .spine-settings .settings-content-wrapper .content:hover .content-text .outline,
+.operator .spine-settings .settings-content-wrapper .content.active .content-text .outline,
+.operator .spine-settings .settings-content-wrapper .content.active .content-text .tick-icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+.operator .spine-settings .settings-content-wrapper .content .content-text .tick-icon {
+    display: inline-block;
+    position: absolute;
+    z-index: 0;
+    right: 0.31rem;
+    top: 50%;
+    width: 0.5rem;
+    height: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    border-right: var(--text-color) solid 0.25rem;
+    border-bottom: var(--text-color) solid 0.25rem;
+    transform: translate(-50%, -70%) rotate(45deg);
+}
+
+.operator .backgrounds-dropdown {
+    padding: 0;
+}
+
+.operator .backgrounds-dropdown .content {
+   padding-right: 1.5rem;
+}
+
+.operator .backgrounds-dropdown .icon {
+   bottom: 0;
+   right: 0;
+}
+.operator .backgrounds-dropdown .menu {
+    left: 0;
+    right: unset;
+}
+
+.operator .spine-container {
+    max-height: 720px;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

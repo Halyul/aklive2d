@@ -7,7 +7,7 @@ import { read } from './yaml.js';
  * 1. add voice config -> look up charword table
  */
 
-export default function () {
+export default function ({ backgrounds, charwordTable }) {
   const targetFolder = path.join(__projetRoot, __config.folder.release, __config.folder.directory);
   const sourceFolder = path.join(__projetRoot, __config.folder.operator);
   rmdir(targetFolder);
@@ -22,6 +22,11 @@ export default function () {
           } else {
             acc[date] = [cur]
           }
+          cur.voiceLangs = []
+          const voiceInfo = Object.values(charwordTable.lookup(cur.link).operator.info.zh_CN)
+          voiceInfo.forEach((item) => {
+            cur.voiceLangs = [...cur.voiceLangs, ...Object.keys(item)]
+          })
           return acc
         }, {}))
       .sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date)),
@@ -45,6 +50,7 @@ export default function () {
   writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
   writeSync(JSON.stringify(versionJson, null), path.join(targetFolder, "version.json"))
   writeSync(JSON.stringify(changelogsArray, null), path.join(targetFolder, "changelogs.json"))
+  writeSync(JSON.stringify(backgrounds, null), path.join(targetFolder, "backgrounds.json"))
   filesToCopy.forEach((key) => {
     copy(path.join(sourceFolder, key, 'assets.json'), path.join(targetFolder, `${__config.operators[key].filename}.json`))
   })

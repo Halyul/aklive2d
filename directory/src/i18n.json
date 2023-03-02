@@ -54,10 +54,42 @@
       "showcase": {
         "zh-CN": "壁纸",
         "en-US": "Wallpaper"
-      }, 
+      },
       "directory": {
         "zh-CN": "目录页",
         "en-US": "Directory Page"
+      },
+      "animation": {
+        "zh-CN": "动画",
+        "en-US": "Animation"
+      },
+      "backgrounds": {
+        "zh-CN": "背景",
+        "en-US": "Backgrounds"
+      },
+      "CN_MANDARIN": {
+        "zh-CN": "普通话",
+        "en-US": "Mandarin"
+      },
+      "JP": {
+        "zh-CN": "日语",
+        "en-US": "Japanese"
+      },
+      "KR": {
+        "zh-CN": "韩语",
+        "en-US": "Korean"
+      },
+      "EN": {
+        "zh-CN": "英语",
+        "en-US": "English"
+      },
+      "ITA": {
+        "zh-CN": "意大利语",
+        "en-US": "Italian"
+      },
+      "CN_TOPOLECT": {
+        "zh-CN": "中文方言",
+        "en-US": "Chinese Topolect"
       },
       "zh-CN": {
         "zh-CN": "简体中文",

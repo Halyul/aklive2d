@@ -138,6 +138,7 @@
   align-items: flex-end;
   flex-wrap: wrap;
   position: relative;
+  padding-right: 2rem;
 }
 
 .main .main-header .main-title {

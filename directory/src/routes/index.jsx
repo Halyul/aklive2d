@@ -10,12 +10,6 @@ export default [
         element: <Home />,
         inDrawer: true
     }, {
-        path: "operator/:key",
-        index: false,
-        name: "operator",
-        element: <Operator />,
-        inDrawer: false
-    }, {
         path: "changelogs",
         index: false,
         name: "changelogs",
@@ -27,5 +21,11 @@ export default [
         name: "offical_page",
         element: <a/>,
         inDrawer: true
-    }
+    }, {
+        path: ":key",
+        index: false,
+        name: "operator",
+        element: <Operator />,
+        inDrawer: false
+    },
 ]

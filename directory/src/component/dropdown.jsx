@@ -12,7 +12,7 @@ export default function Dropdown(props) {
 
   return (
     <>
-      <section className={`dropdown ${hidden ? '' : 'active'}`} >
+      <section className={`dropdown ${props.className} ${hidden ? '' : 'active'}`} >
         <section
           className='text'
           onClick={() => toggleDropdown()}
@@ -20,19 +20,19 @@ export default function Dropdown(props) {
           <span className='content'>{props.text}</span>
           <span className='icon'></span>
         </section>
-        <ul className='menu'>
+        <ul className='menu' style={props.activeColor}>
           {
             props.menu.map((item) => {
               return (
                 <li
                   key={item.name}
-                  className={`item${item.name === props.text ? ' active' : ''}`}
+                  className={`item${item.name === props.text || (props.activeRule && props.activeRule(item)) ? ' active' : ''}`}
                   onClick={() => {
                     props.onClick(item)
                     toggleDropdown()
                   }}
                 >
-                  {item.name}
+                  <section className="text">{item.name}</section>
                 </li>
               )
             })

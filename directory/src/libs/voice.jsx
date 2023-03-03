@@ -51,11 +51,15 @@ export default function useAudio() {
   }, [])
 
   const getSrc = useCallback(() => audioEl.src, [])
+  const resetSrc = useCallback(() => {
+    audioEl.src = ''
+  }, [])
 
   return {
     play,
     stop,
     getSrc,
+    resetSrc,
     isPlaying,
     isPlayingRef,
   }

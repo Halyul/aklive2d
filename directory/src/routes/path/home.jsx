@@ -88,13 +88,20 @@ export default function Home() {
 
 function OperatorElement({ item, hidden }) {
   const { textDefaultLang, language, alternateLang } = useLanguage()
-  const { play } = useAudio()
+  const { play, stop, resetSrc } = useAudio()
   const [voiceOn] = useAtom(voiceOnAtom)
 
   const playVoice = useCallback(() => {
     if (!voiceOn) return
     play(`/${item.link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`)
-  }, [play, item.link, voiceOn])
+  }, [voiceOn, play, item.link])
+
+  useEffect(() => {
+    if (!voiceOn) {
+      stop()
+      resetSrc()
+    }
+  }, [voiceOn, stop, resetSrc])
 
   return useMemo(() => {
     return (

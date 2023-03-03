@@ -92,6 +92,10 @@ export default function Operator() {
   }, [setExtraArea, stop])
 
   useEffect(() => {
+    if (!voiceLang) stop()
+  }, [stop, voiceLang])
+
+  useEffect(() => {
     if (backgrounds) setCurrentBackground(backgrounds[0])
   }, [backgrounds])
 

@@ -19,13 +19,13 @@ export function useConfig() {
       operatorsList = [...operatorsList, ...item]
     })
     setOperators(operatorsList)
-  }, [])
+  }, [setConfig, setOperators])
 
   const fetchVersion = useCallback(async () => {
     const res = await fetch('/_assets/version.json')
     const data = await res.json()
     setVersion(data);
-  }, [])
+  }, [setVersion])
 
   return { config, version, operators, fetchConfig, fetchVersion };
 }

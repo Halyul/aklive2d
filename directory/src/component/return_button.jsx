@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import './return_button.css'
 
 export default function ReturnButton(props) {
@@ -31,3 +33,6 @@ export default function ReturnButton(props) {
     </>
   )
 }
+ReturnButton.propTypes = {
+  onClick: PropTypes.func,
+};

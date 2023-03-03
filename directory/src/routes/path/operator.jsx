@@ -1,8 +1,9 @@
-import {
+import React, {
   useState,
   useEffect,
   useRef,
-  useCallback
+  useCallback,
+  useMemo
 } from 'react'
 import {
   useParams,
@@ -33,7 +34,17 @@ const spinePlayerAtom = atom(null);
 const spineAnimationAtom = atom("Idle");
 const audioEl = new Audio()
 
-export default function Operator(props) {
+const getTabName = (item, language) => {
+  if (item.type === 'operator') {
+    return 'operator'
+  } else {
+    return item.codename[language].replace(/^(.+)( )(·|\/)()(.+)$/, '$1')
+  }
+}
+
+// TODO: fix subtitle show/hide, fix voice play/pause when change route
+
+export default function Operator() {
   const navigate = useNavigate()
   const { operators } = useConfig()
   const { language } = useLanguage()
@@ -46,13 +57,15 @@ export default function Operator(props) {
   } = useHeader()
   const [config, setConfig] = useAtom(configAtom)
   const [spineData, setSpineData] = useState(null)
+  // eslint-disable-next-line no-unused-vars
   const _trackEvt = useUmami(`/${key}`)
   const spineRef = useRef(null)
   const [spineAnimation, setSpineAnimation] = useAtom(spineAnimationAtom)
   const { i18n } = useI18n()
   const [spinePlayer, setSpinePlayer] = useAtom(spinePlayerAtom)
   const [voiceLang, setVoiceLang] = useState(null)
-  const { backgrounds, currentBackground, setCurrentBackground } = useBackgrounds()
+  const { backgrounds } = useBackgrounds()
+  const [currentBackground, setCurrentBackground] = useState(null)
   const [voiceConfig, setVoiceConfig] = useState(null)
   const [subtitleLang, setSubtitleLang] = useState(null)
   const [subtitle, setSubtitle] = useState(null)
@@ -63,7 +76,11 @@ export default function Operator(props) {
 
   useEffect(() => {
     setAppbarExtraArea([])
-  }, [])
+  }, [setAppbarExtraArea])
+
+  useEffect(() => {
+    if (backgrounds) setCurrentBackground(backgrounds[0])
+  }, [backgrounds])
 
   useEffect(() => {
     setSpineData(null)
@@ -81,18 +98,10 @@ export default function Operator(props) {
         setVoiceConfig(data)
       })
     }
-  }, [operators, key])
+  }, [operators, key, setHeaderIcon, setConfig])
 
-  const getTabName = (item) => {
-    if (item.type === 'operator') {
-      return 'operator'
-    } else {
-      return item.codename[language].replace(/^(.+)( )(·|\/)()(.+)$/, '$1')
-    }
-  }
-
-  const coverToTab = (item) => {
-    const key = getTabName(item)
+  const coverToTab = useCallback((item, language) => {
+    const key = getTabName(item, language)
     return {
       key: key,
       style: {
@@ -103,30 +112,31 @@ export default function Operator(props) {
         navigate(`/${item.link}`)
       }
     }
-  }
+  }, [navigate])
 
-  const getOtherEntries = () => {
+  const otherEntries = useMemo(() => {
+    if (!config || !language) return null
     return operators.filter((item) => item.id === config.id && item.link !== config.link).map((item) => {
-      return coverToTab(item)
+      return coverToTab(item, language)
     })
-  }
+  }, [config, language, operators, coverToTab])
 
   useEffect(() => {
     if (config) {
       setTabs(
         [
-          coverToTab(config),
-          ...getOtherEntries()
+          coverToTab(config, language),
+          ...otherEntries
         ]
       )
     }
-  }, [config, language, key])
+  }, [config, key, coverToTab, setTabs, otherEntries, language])
 
   useEffect(() => {
     if (config) {
       setTitle(config.codename[language])
     }
-  }, [config, language, key])
+  }, [config, language, key, setTitle])
 
   useEffect(() => {
     if (spineRef.current?.children.length === 0 && spineData && config) {
@@ -153,68 +163,68 @@ export default function Operator(props) {
         defaultMix: 0,
       }))
     }
-  }, [spineData]);
+  }, [spineData, setSpinePlayer, spineAnimation, config]);
 
-  useEffect(() => {
+  const subtitleObj = useMemo(() => {
     if (voiceConfig && voiceLang) {
       let subtitleObj = voiceConfig.subtitleLangs[subtitleLang || 'zh-CN']
       let subtitleKey = 'default'
       if (subtitleObj[voiceLang]) {
         subtitleKey = voiceLang
       }
-      subtitleObj = subtitleObj[subtitleKey]
-      const playVoice = () => {
-        const voiceId = () => {
-          const keys = Object.keys(subtitleObj)
-          const id = keys[Math.floor((Math.random() * keys.length))]
-          return id === lastVoiceId ? voiceId() : id
-        }
-        const id = voiceId()
-        setLastVoiceId(id)
-        setCurrentVoiceId(id)
-        audioEl.src = `/${config.link}/assets/${getVoiceFoler(voiceLang)}/${id}.ogg`
-        let startPlayPromise = audioEl.play()
-        if (startPlayPromise !== undefined) {
-          startPlayPromise
-            .then(() => {
-              setIsVoicePlaying(true)
-              const audioEndedFunc = () => {
-                setIsVoicePlaying(false)
-                audioEl.removeEventListener('ended', audioEndedFunc)
-                if (currentVoiceId !== id) return
-                setSubtitle(null)
-              }
-              if (subtitleLang) showSubtitle(id)
-              audioEl.addEventListener('ended', audioEndedFunc)
-            })
-            .catch(() => {
-              return
-            })
-        }
-      }
-      const showSubtitle = (id) => {
-        setSubtitle(subtitleObj[id])
-        setHideSubtitle(false)
-      }
-      spineRef.current?.addEventListener('click', playVoice)
-      return () => {
-        spineRef.current?.removeEventListener('click', playVoice)
-      }
+      return subtitleObj[subtitleKey]
     }
-  }, [voiceLang, spineRef, voiceConfig, subtitleLang, lastVoiceId])
+  }, [subtitleLang, voiceConfig, voiceLang])
 
+  const handleClickPlay = useCallback(() => {
+    if (!voiceLang) return
+    const voiceId = () => {
+      const keys = Object.keys(subtitleObj)
+      const id = keys[Math.floor((Math.random() * keys.length))]
+      return id === lastVoiceId ? voiceId() : id
+    }
+    const id = voiceId()
+    setLastVoiceId(currentVoiceId)
+    setCurrentVoiceId(id)
+    audioEl.src = `/${config.link}/assets/${getVoiceFoler(voiceLang)}/${id}.ogg`
+    let startPlayPromise = audioEl.play()
+    setIsVoicePlaying(true)
+    if (startPlayPromise !== undefined) {
+      startPlayPromise
+        .then(() => {
+          const audioEndedFunc = () => {
+            audioEl.removeEventListener('ended', audioEndedFunc)
+            if (currentVoiceId !== id) return
+            setIsVoicePlaying(false)
+          }
+          audioEl.addEventListener('ended', audioEndedFunc)
+        })
+        .catch(() => {
+          return
+        })
+    }
+  }, [voiceLang, lastVoiceId, config, currentVoiceId, subtitleObj])
 
   useEffect(() => {
-    if (!isVoicePlaying && !hideSubtitle) {
-      const hideSubtitle = () => {
-        setHideSubtitle(true)
+    if (subtitleLang) {
+      if (isVoicePlaying) {
+        setHideSubtitle(false)
+        setSubtitle(subtitleObj[currentVoiceId])
+      } else {
+        const autoHide = () => {
+          if (isVoicePlaying) return
+          setHideSubtitle(true)
+        }
+        setTimeout(autoHide, 5 * 1000)
+        return () => {
+          clearTimeout(autoHide)
+        }
+        // setHideSubtitle(true)
       }
-      setTimeout(hideSubtitle, 5 * 1000)
-      return () => {
-        clearTimeout(hideSubtitle)
-      }
+    } else {
+      setHideSubtitle(true)
     }
-  }, [isVoicePlaying, hideSubtitle])
+  }, [subtitleLang, currentVoiceId, isVoicePlaying, subtitleObj])
 
   const spineSettings = [
     {
@@ -377,7 +387,7 @@ export default function Operator(props) {
             </section>
           </section>
         </section>
-        <section className="spine-container" style={{
+        <section className="spine-container" style={currentBackground && {
           backgroundImage: `url(/${key}/assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${currentBackground})`
         }} >
           {
@@ -385,7 +395,7 @@ export default function Operator(props) {
               <img src={`/${config.link}/assets/${config.logo}.png`} alt={config?.codename[language]} className='operator-logo'/>
             )
           }
-          <section ref={spineRef} />
+          <section ref={spineRef} onClick={handleClickPlay} />
           {
             subtitle && (
               <section className={`voice-wrapper${hideSubtitle ? '' : ' active'}`}>

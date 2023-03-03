@@ -1,4 +1,4 @@
-import {
+import React, {
   useState,
   useEffect,
   useMemo
@@ -9,7 +9,8 @@ import { useAppbar } from '@/state/appbar';
 import useUmami from '@parcellab/react-use-umami'
 import MainBorder from '@/component/main_border';
 
-export default function Changelogs(props) {
+export default function Changelogs() {
+  // eslint-disable-next-line no-unused-vars
   const _trackEvt = useUmami('/changelogs')
   const {
     setTitle,
@@ -29,7 +30,7 @@ export default function Changelogs(props) {
     fetch('/_assets/changelogs.json').then(res => res.json()).then(data => {
       setChangelogs(data)
     })
-  }, [])
+  }, [setExtraArea, setHeaderIcon, setTitle])
 
   useEffect(() => {
     setTabs(changelogs.map((item) => {
@@ -37,7 +38,7 @@ export default function Changelogs(props) {
         key: item[0].key
       }
     }))
-  }, [changelogs])
+  }, [changelogs, setTabs])
 
   const content = useMemo(() => {
     return (

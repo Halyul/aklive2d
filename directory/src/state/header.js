@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { atom, useAtom } from 'jotai';
-import { useLanguage, useI18n } from "@/state/language"
+import { useI18n } from "@/state/language"
 
 const keyAtom = atom('');
 const titleAtom = atom('');
@@ -17,13 +17,12 @@ export function useHeader() {
   const [appbarExtraArea, setAppbarExtraArea] = useAtom(appbarExtraAreaAtom);
   const [headerIcon, setHeaderIcon] = useAtom(headerIconAtom);
   const { i18n } = useI18n()
-  const { language } = useLanguage()
 
   useEffect(() => {
     const newTitle = i18n(key)
     document.title = `${newTitle} - ${import.meta.env.VITE_APP_TITLE}`;
     setRealTitle(newTitle)
-  }, [key, language])
+  }, [i18n, key, setRealTitle])
 
   return {
     title, setTitle,

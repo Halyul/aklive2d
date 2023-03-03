@@ -1,17 +1,17 @@
-import {
+import React, {
   useState,
   useEffect,
   useCallback,
   useMemo
 } from 'react'
+import PropTypes from 'prop-types';
 import {
   NavLink,
 } from "react-router-dom";
 import './home.css'
 import { useConfig } from '@/state/config';
 import {
-  useLanguage,
-  useI18n
+  useLanguage
 } from '@/state/language'
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
@@ -58,6 +58,7 @@ const playVoice = (link) => {
 }
 
 export default function Home() {
+  // eslint-disable-next-line no-unused-vars
   const _trackEvt = useUmami('/')
   const {
     setTitle,
@@ -78,7 +79,7 @@ export default function Home() {
       key: 'skin'
     }])
     setHeaderIcon(null)
-  }, [])
+  }, [setHeaderIcon, setTabs, setTitle])
 
   useEffect(() => {
     setContent(config?.operators || [])
@@ -157,7 +158,7 @@ function OperatorElement({ item, hidden }) {
         </section>
       </NavLink>
     )
-  }, [language, alternateLang, hidden])
+  }, [item, hidden, language, alternateLang, textDefaultLang])
 }
 
 function VoiceSwitchElement() {
@@ -165,28 +166,19 @@ function VoiceSwitchElement() {
   const {
     setExtraArea,
   } = useAppbar()
-  const { i18n } = useI18n()
 
-  const toggleVoice = useCallback(() => {
-    setVoiceOn(!voiceOn)
-  }, [voiceOn])
-
-  const appbarSwitch = useMemo(() => {
-    return [
+  useEffect(() => {
+    setExtraArea([
       (
         <Switch
           key="voice"
-          text={i18n('voice')}
+          text='voice'
           on={voiceOn}
-          handleOnClick={() => toggleVoice()}
+          handleOnClick={() => setVoiceOn(!voiceOn)}
         />
       )
-    ]
-  }, [voiceOn])
-
-  useEffect(() => {
-    setExtraArea(appbarSwitch)
-  }, [voiceOn])
+    ])
+  }, [voiceOn, setExtraArea, setVoiceOn])
 
   return null
 }
@@ -194,4 +186,9 @@ function VoiceSwitchElement() {
 function ImageElement({ item }) {
   const { language } = useLanguage()
   return <img src={`/${item.link}/assets/${item.fallback_name.replace("#", "%23")}_portrait.png`} alt={item.codename[language]} />
+}
+ImageElement.propTypes = {
+  item: PropTypes.object.isRequired,
+  fallback_name: PropTypes.string,
+  codename: PropTypes.object,
 }

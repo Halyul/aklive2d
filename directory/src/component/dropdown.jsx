@@ -1,6 +1,7 @@
-import {
+import React, {
   useState
 } from 'react'
+import PropTypes from 'prop-types';
 import './dropdown.css'
 
 export default function Dropdown(props) {
@@ -47,3 +48,11 @@ export default function Dropdown(props) {
     </>
   )
 }
+Dropdown.propTypes = {
+  className: PropTypes.string,
+  text: PropTypes.string,
+  menu: PropTypes.array,
+  onClick: PropTypes.func,
+  activeColor: PropTypes.object,
+  activeRule: PropTypes.func,
+};

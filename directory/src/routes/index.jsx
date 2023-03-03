@@ -1,3 +1,4 @@
+import React from "react";
 import Home from "@/routes/path/home";
 import Operator from "@/routes/path/operator";
 import Changelogs from "@/routes/path/changelogs";

@@ -17,7 +17,9 @@ import {
   useLanguage,
 } from '@/state/language'
 import { useHeader } from '@/state/header';
+import { useAppbar } from '@/state/appbar';
 import { useBackgrounds } from '@/state/background';
+import useAudio from '@/libs/voice';
 import useUmami from '@parcellab/react-use-umami'
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
@@ -29,10 +31,10 @@ const getVoiceFoler = (lang) => {
   const voiceFolder = folderObject.sub.find(e => e.lang === lang) || folderObject.sub.find(e => e.name === 'custom')
   return `${folderObject.main}/${voiceFolder.name}`
 }
-const configAtom = atom(null);
 const spinePlayerAtom = atom(null);
 const spineAnimationAtom = atom("Idle");
-const audioEl = new Audio()
+const voiceLangAtom = atom(null);
+const subtitleLangAtom = atom(null);
 
 const getTabName = (item, language) => {
   if (item.type === 'operator') {
@@ -42,8 +44,6 @@ const getTabName = (item, language) => {
   }
 }
 
-// TODO: fix subtitle show/hide, fix voice play/pause when change route
-
 export default function Operator() {
   const navigate = useNavigate()
   const { operators } = useConfig()
@@ -52,10 +52,10 @@ export default function Operator() {
   const {
     setTitle,
     setTabs,
-    setAppbarExtraArea,
     setHeaderIcon
   } = useHeader()
-  const [config, setConfig] = useAtom(configAtom)
+  const { setExtraArea } = useAppbar()
+  const [config, setConfig] = useState(null)
   const [spineData, setSpineData] = useState(null)
   // eslint-disable-next-line no-unused-vars
   const _trackEvt = useUmami(`/${key}`)
@@ -63,20 +63,33 @@ export default function Operator() {
   const [spineAnimation, setSpineAnimation] = useAtom(spineAnimationAtom)
   const { i18n } = useI18n()
   const [spinePlayer, setSpinePlayer] = useAtom(spinePlayerAtom)
-  const [voiceLang, setVoiceLang] = useState(null)
+  const [voiceLang, _setVoiceLang] = useAtom(voiceLangAtom)
   const { backgrounds } = useBackgrounds()
   const [currentBackground, setCurrentBackground] = useState(null)
   const [voiceConfig, setVoiceConfig] = useState(null)
-  const [subtitleLang, setSubtitleLang] = useState(null)
-  const [subtitle, setSubtitle] = useState(null)
+  const [subtitleLang, setSubtitleLang] = useAtom(subtitleLangAtom)
   const [hideSubtitle, setHideSubtitle] = useState(true)
-  const [isVoicePlaying, setIsVoicePlaying] = useState(false)
-  const [lastVoiceId, setLastVoiceId] = useState(null)
+  const { play, stop, getSrc, isPlaying, isPlayingRef } = useAudio()
+  const [subtitleObj, _setSubtitleObj] = useState(null)
   const [currentVoiceId, setCurrentVoiceId] = useState(null)
+  const voiceLangRef = useRef(voiceLang)
+  const subtitleObjRef = useRef(subtitleObj)
+  const configRef = useRef(config)
+
+  const setVoiceLang = (value) => {
+    voiceLangRef.current = value
+    _setVoiceLang(value)
+  }
+
+  const setSubtitleObj = (value) => {
+    subtitleObjRef.current = value
+    _setSubtitleObj(value)
+  }
 
   useEffect(() => {
-    setAppbarExtraArea([])
-  }, [setAppbarExtraArea])
+    setExtraArea([])
+    stop()
+  }, [setExtraArea, stop])
 
   useEffect(() => {
     if (backgrounds) setCurrentBackground(backgrounds[0])
@@ -87,6 +100,7 @@ export default function Operator() {
     const config = operators.find((item) => item.link === key)
     if (config) {
       setConfig(config)
+      configRef.current = config
       fetch(`/${import.meta.env.VITE_DIRECTORY_FOLDER}/${config.filename.replace("#", "%23")}.json`).then(res => res.json()).then(data => {
         setSpineData(data)
       })
@@ -98,7 +112,7 @@ export default function Operator() {
         setVoiceConfig(data)
       })
     }
-  }, [operators, key, setHeaderIcon, setConfig])
+  }, [key, operators, setHeaderIcon])
 
   const coverToTab = useCallback((item, language) => {
     const key = getTabName(item, language)
@@ -161,70 +175,82 @@ export default function Operator() {
         touch: false,
         fps: 60,
         defaultMix: 0,
+        success: (player) => {
+          let lastVoiceId = null
+          let currentVoiceId = null
+          player.canvas.onclick = () => {
+            if (!voiceLangRef.current) return
+            const voiceId = () => {
+              const keys = Object.keys(subtitleObjRef.current)
+              const id = keys[Math.floor((Math.random() * keys.length))]
+              return id === lastVoiceId ? voiceId() : id
+            }
+            const id = voiceId()
+            currentVoiceId = id
+            setCurrentVoiceId(id)
+            play(
+              `/${configRef.current.link}/assets/${getVoiceFoler(voiceLangRef.current)}/${id}.ogg`,
+              () => {
+                lastVoiceId = currentVoiceId
+              }
+            )
+          }
+        }
       }))
     }
-  }, [spineData, setSpinePlayer, spineAnimation, config]);
+  }, [config, spineData, setSpinePlayer, spineAnimation, play]);
 
-  const subtitleObj = useMemo(() => {
+  useEffect(() => {
     if (voiceConfig && voiceLang) {
       let subtitleObj = voiceConfig.subtitleLangs[subtitleLang || 'zh-CN']
       let subtitleKey = 'default'
       if (subtitleObj[voiceLang]) {
         subtitleKey = voiceLang
       }
-      return subtitleObj[subtitleKey]
+      setSubtitleObj(subtitleObj[subtitleKey])
     }
   }, [subtitleLang, voiceConfig, voiceLang])
 
-  const handleClickPlay = useCallback(() => {
-    if (!voiceLang) return
-    const voiceId = () => {
-      const keys = Object.keys(subtitleObj)
-      const id = keys[Math.floor((Math.random() * keys.length))]
-      return id === lastVoiceId ? voiceId() : id
-    }
-    const id = voiceId()
-    setLastVoiceId(currentVoiceId)
-    setCurrentVoiceId(id)
-    audioEl.src = `/${config.link}/assets/${getVoiceFoler(voiceLang)}/${id}.ogg`
-    let startPlayPromise = audioEl.play()
-    setIsVoicePlaying(true)
-    if (startPlayPromise !== undefined) {
-      startPlayPromise
-        .then(() => {
-          const audioEndedFunc = () => {
-            audioEl.removeEventListener('ended', audioEndedFunc)
-            if (currentVoiceId !== id) return
-            setIsVoicePlaying(false)
-          }
-          audioEl.addEventListener('ended', audioEndedFunc)
-        })
-        .catch(() => {
-          return
-        })
-    }
-  }, [voiceLang, lastVoiceId, config, currentVoiceId, subtitleObj])
-
   useEffect(() => {
     if (subtitleLang) {
-      if (isVoicePlaying) {
+      if (isPlaying) {
         setHideSubtitle(false)
-        setSubtitle(subtitleObj[currentVoiceId])
       } else {
         const autoHide = () => {
-          if (isVoicePlaying) return
+          if (isPlayingRef.current) return
           setHideSubtitle(true)
         }
         setTimeout(autoHide, 5 * 1000)
         return () => {
           clearTimeout(autoHide)
         }
-        // setHideSubtitle(true)
       }
     } else {
       setHideSubtitle(true)
     }
-  }, [subtitleLang, currentVoiceId, isVoicePlaying, subtitleObj])
+  }, [subtitleLang, isPlaying, isPlayingRef])
+
+  useEffect(() => {
+    if (voiceLang && isPlaying) {
+      const audioUrl = `/assets/${getVoiceFoler(voiceLang)}/${currentVoiceId}.ogg`
+      if (getSrc() !== (window.location.href.replace(/\/$/g, '') + audioUrl)) {
+        play(`/${config.link}${audioUrl}`)
+      }
+    }
+  }, [voiceLang, isPlaying, currentVoiceId, config, getSrc, play])
+
+  useEffect(() => {
+    if (voiceLang && config) {
+      let id = ''
+      if (spineAnimation === 'Idle') id = 'CN_011'
+      if (spineAnimation === 'Interact') id = 'CN_034'
+      if (spineAnimation === 'Special') id = 'CN_042'
+      setCurrentVoiceId(id)
+      play(
+        `/${config.link}/assets/${getVoiceFoler(voiceLang)}/${id}.ogg`
+      )
+    }
+  }, [voiceLang, config, spineAnimation, play])
 
   const spineSettings = [
     {
@@ -392,20 +418,18 @@ export default function Operator() {
         }} >
           {
             config && (
-              <img src={`/${config.link}/assets/${config.logo}.png`} alt={config?.codename[language]} className='operator-logo'/>
+              <img src={`/${config.link}/assets/${config.logo}.png`} alt={config?.codename[language]} className='operator-logo' />
             )
           }
-          <section ref={spineRef} onClick={handleClickPlay} />
-          {
-            subtitle && (
-              <section className={`voice-wrapper${hideSubtitle ? '' : ' active'}`}>
-                <section className='voice-title'>{subtitle.title}</section>
-                <section className='voice-subtitle'>
-                  <span>{subtitle.text}</span>
-                  <span className='voice-triangle' />
-                </section>
+          <section ref={spineRef} />
+          {currentVoiceId && subtitleObj && (
+            <section className={`voice-wrapper${hideSubtitle ? '' : ' active'}`}>
+              <section className='voice-title'>{subtitleObj[currentVoiceId]?.title}</section>
+              <section className='voice-subtitle'>
+                <span>{subtitleObj[currentVoiceId]?.text}</span>
+                <span className='voice-triangle' />
               </section>
-            )
+            </section>)
           }
         </section>
       </section>

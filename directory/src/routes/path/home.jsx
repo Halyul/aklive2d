@@ -15,47 +15,15 @@ import {
 } from '@/state/language'
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
+import useAudio from '@/libs/voice';
 import { useAtom } from 'jotai'
-import { atom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
 import CharIcon from '@/component/char_icon';
 import MainBorder from '@/component/main_border';
 import useUmami from '@parcellab/react-use-umami';
 import Switch from '@/component/switch';
 
-const audioEl = new Audio()
-let isPlaying = false
-let voiceOnState = false
-const voiceOnStateAtom = atom(voiceOnState)
-const voiceOnAtom = atom(
-  (get) => get(voiceOnStateAtom),
-  (get, set, newState) => {
-    voiceOnState = newState
-    set(voiceOnStateAtom, voiceOnState)
-    // you can set as many atoms as you want at the same time
-  }
-)
-
-const playVoice = (link) => {
-  const audioUrl = `/${link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`
-  if (!voiceOnState || (audioEl.src === (window.location.href.replace(/\/$/g, '') + audioUrl) && isPlaying)) return
-  audioEl.src = audioUrl
-  let startPlayPromise = audioEl.play()
-  if (startPlayPromise !== undefined) {
-    startPlayPromise
-      .then(() => {
-        isPlaying = true
-        const audioEndedFunc = () => {
-          audioEl.removeEventListener('ended', audioEndedFunc)
-          isPlaying = false
-        }
-        audioEl.addEventListener('ended', audioEndedFunc)
-      })
-      .catch((e) => {
-        console.log(e)
-        return
-      })
-  }
-}
+const voiceOnAtom = atomWithStorage('voiceOn', false)
 
 export default function Home() {
   // eslint-disable-next-line no-unused-vars
@@ -68,6 +36,7 @@ export default function Home() {
   } = useHeader()
   const { config } = useConfig()
   const [content, setContent] = useState([])
+  const { stop } = useAudio()
 
   useEffect(() => {
     setTitle('dynamic_compile')
@@ -79,7 +48,8 @@ export default function Home() {
       key: 'skin'
     }])
     setHeaderIcon(null)
-  }, [setHeaderIcon, setTabs, setTitle])
+    stop()
+  }, [setHeaderIcon, setTabs, setTitle, stop])
 
   useEffect(() => {
     setContent(config?.operators || [])
@@ -100,7 +70,6 @@ export default function Home() {
                     <OperatorElement
                       key={item.link}
                       item={item}
-                      handleOnMouseEnter={playVoice}
                       hidden={!isShown(item.type)}
                     />
                   )
@@ -119,6 +88,13 @@ export default function Home() {
 
 function OperatorElement({ item, hidden }) {
   const { textDefaultLang, language, alternateLang } = useLanguage()
+  const { play } = useAudio()
+  const [voiceOn] = useAtom(voiceOnAtom)
+
+  const playVoice = useCallback(() => {
+    if (!voiceOn) return
+    play(`/${item.link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`)
+  }, [play, item.link, voiceOn])
 
   return useMemo(() => {
     return (
@@ -128,7 +104,7 @@ function OperatorElement({ item, hidden }) {
         hidden={hidden}
       >
         <section
-          onMouseEnter={() => playVoice(item.link)}
+          onMouseEnter={() => playVoice()}
         >
           <section className="item-background-filler" />
           <section className="item-outline" />
@@ -158,7 +134,7 @@ function OperatorElement({ item, hidden }) {
         </section>
       </NavLink>
     )
-  }, [item, hidden, language, alternateLang, textDefaultLang])
+  }, [item, hidden, language, alternateLang, textDefaultLang, playVoice])
 }
 
 function VoiceSwitchElement() {

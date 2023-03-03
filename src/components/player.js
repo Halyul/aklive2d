@@ -37,7 +37,7 @@ export default function spinePlayer(el) {
             isPlayingInteract = false;
           }
         },
-        complete: (e) => {
+        complete: () => {
           if (window.performance.now() - resetTime >= 8 * 1000 && Math.random() < 0.3) {
             resetTime = window.performance.now();
             let entry = widget.animationState.setAnimation(0, "Special", false, 0);

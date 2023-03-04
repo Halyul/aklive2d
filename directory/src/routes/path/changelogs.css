@@ -9,6 +9,7 @@
     align-items: flex-start;
     gap: 0.5rem;
     padding-left: 1rem;
+    word-break: break-word;
 }
 
 .changelogs .item-info-content {

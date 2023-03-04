@@ -1,4 +1,4 @@
-description: !match "~{split('config', 'title' ,' - ')[0]} Live 2D\n~{split('config', 'title' ,' - ')[1]} Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n\nLive preview on: https://arknights.halyul.dev/~{var('config', 'link')}?settings\nGithub: https://github.com/Halyul/aklive2d\nCheck out our privacy policy at https://privacy.halyul.dev"
+description: !match "~{split('config', 'title' ,' - ')[0]} Live 2D\n~{split('config', 'title' ,' - ')[1]} Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n\nLive preview on: https://arknights.halyul.dev/~{var('config', 'link')}\nGithub: https://github.com/Halyul/aklive2d\nCheck out our privacy policy at https://privacy.halyul.dev"
 localization:
   en-us:
     ui_notice_title: <hr><h4>📝 Notes</h4><hr>

@@ -24,6 +24,9 @@ share:
 directory:
   title: AKLive2D
   voice: jp/CN_037.ogg
+  error:
+    files: !include config/_directory.yaml
+    voice: CN_034.ogg
 operators:
   chen: !include config/chen.yaml
   dusk: !include config/dusk.yaml

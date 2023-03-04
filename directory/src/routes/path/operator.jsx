@@ -33,8 +33,6 @@ const getVoiceFoler = (lang) => {
 }
 const spinePlayerAtom = atom(null);
 const spineAnimationAtom = atom("Idle");
-const voiceLangAtom = atom(null);
-const subtitleLangAtom = atom(null);
 
 const getTabName = (item, language) => {
   if (item.type === 'operator') {
@@ -63,11 +61,11 @@ export default function Operator() {
   const [spineAnimation, setSpineAnimation] = useAtom(spineAnimationAtom)
   const { i18n } = useI18n()
   const [spinePlayer, setSpinePlayer] = useAtom(spinePlayerAtom)
-  const [voiceLang, _setVoiceLang] = useAtom(voiceLangAtom)
+  const [voiceLang, _setVoiceLang] = useState(null)
   const { backgrounds } = useBackgrounds()
   const [currentBackground, setCurrentBackground] = useState(null)
   const [voiceConfig, setVoiceConfig] = useState(null)
-  const [subtitleLang, setSubtitleLang] = useAtom(subtitleLangAtom)
+  const [subtitleLang, setSubtitleLang] = useState(null)
   const [hideSubtitle, setHideSubtitle] = useState(true)
   const { play, stop, getSrc, isPlaying, isPlayingRef } = useAudio()
   const [subtitleObj, _setSubtitleObj] = useState(null)
@@ -338,6 +336,10 @@ export default function Operator() {
       }) || []
     }
   ]
+
+  if (!JSON.parse(import.meta.env.VITE_AVAILABLE_OPERATORS).includes(key)) {
+    throw new Error('Operator not found')
+  }
 
   return (
     <section className="operator">

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import fetch from "node-fetch"
 import path from "path"
 import dotenv from "dotenv"

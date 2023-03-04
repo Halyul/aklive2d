@@ -1,16 +1,13 @@
+/* eslint-disable no-undef */
 import path from 'path'
-import { writeSync, copy, rmdir, readSync as readFile } from './file.js'
+import { writeSync, copy, readSync as readFile } from './file.js'
 import { read } from './yaml.js';
-
-/**
- * TODO: 
- * 1. add voice config -> look up charword table
- */
+import AssetsProcessor from './assets_processor.js'
 
 export default function ({ backgrounds, charwordTable }) {
+  const extractedFolder = path.join(__projetRoot, __config.folder.operator, '_directory')
   const targetFolder = path.join(__projetRoot, __config.folder.release, __config.folder.directory);
   const sourceFolder = path.join(__projetRoot, __config.folder.operator);
-  rmdir(targetFolder);
   const filesToCopy = Object.keys(__config.operators)
   const directoryJson = {
     operators: Object.values(
@@ -36,35 +33,6 @@ export default function ({ backgrounds, charwordTable }) {
   }
   const versionJson = __config.version
 
-  filesToCopy.forEach((operator) => {
-    const voiceJson = {}
-
-    voiceJson.voiceLangs = {}
-    voiceJson.subtitleLangs = {}
-    const charwordTableObj = charwordTable.lookup(operator)
-    const subtitleInfo = Object.keys(charwordTableObj.operator.info)
-    subtitleInfo.forEach((item) => {
-      if (Object.keys(charwordTableObj.operator.info[item]).length > 0) {
-        const key = item.replace("_", "-")
-        voiceJson.subtitleLangs[key] = {}
-        for (const [id, subtitles] of Object.entries(charwordTableObj.operator.voice[item])) {
-          const match = id.replace(/(.+?)([A-Z]\w+)/, '$2')
-          if (match === id) {
-            voiceJson.subtitleLangs[key].default = subtitles
-          } else {
-            voiceJson.subtitleLangs[key][match] = subtitles
-          }
-        }
-        voiceJson.voiceLangs[key] = {}
-        Object.values(charwordTableObj.operator.info[item]).forEach((item) => {
-          voiceJson.voiceLangs[key] = { ...voiceJson.voiceLangs[key], ...item }
-        })
-      }
-    })
-
-    writeSync(JSON.stringify(voiceJson, null), path.join(targetFolder, `voice_${operator}.json`))
-  })
-
   const changelogs = read(path.join(__projetRoot, 'changelogs.yaml'))
   const changelogsArray = Object.keys(changelogs).reduce((acc, cur) => {
     const array = []
@@ -79,11 +47,20 @@ export default function ({ backgrounds, charwordTable }) {
     return acc
   }, [])
 
+  __config.directory.error.files.forEach((key) => {
+    const assetsProcessor = new AssetsProcessor()
+    assetsProcessor.generateAssets(key.key, extractedFolder).then((content) => {
+      writeSync(JSON.stringify(content.assetsJson, null), path.join(targetFolder, `${key.key}.json`))
+    })
+  })
+
   writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
   writeSync(JSON.stringify(versionJson, null), path.join(targetFolder, "version.json"))
   writeSync(JSON.stringify(changelogsArray, null), path.join(targetFolder, "changelogs.json"))
   writeSync(JSON.stringify(backgrounds, null), path.join(targetFolder, "backgrounds.json"))
   filesToCopy.forEach((key) => {
     copy(path.join(sourceFolder, key, 'assets.json'), path.join(targetFolder, `${__config.operators[key].filename}.json`))
+    copy(path.join(sourceFolder, key, 'charword_table.json'), path.join(targetFolder, `voice_${key}.json`))
   })
+  copy(path.join(extractedFolder, __config.directory.error.voice), path.join(targetFolder, `error.ogg`))
 }

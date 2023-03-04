@@ -17,6 +17,7 @@ specifiers:
   react-dom: ^18.2.0
   react-refresh: ^0.14.0
   react-router-dom: ^6.8.1
+  react-simple-typewriter: ^5.0.1
   reset-css: ^5.0.1
   rollup: ^3.17.3
   sharp: ^0.31.3
@@ -32,6 +33,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-refresh: 0.14.0
   react-router-dom: 6.8.1_biqbaboplfbrettd7655fr4n2y
+  react-simple-typewriter: 5.0.1_biqbaboplfbrettd7655fr4n2y
   reset-css: 5.0.1
   sharp: 0.31.3
   yaml: 2.2.1
@@ -1994,6 +1996,17 @@ packages:
     dependencies:
       '@remix-run/router': 1.3.2
       react: 18.2.0
+    dev: false
+
+  /react-simple-typewriter/5.0.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-vA5HkABwJKL/DJ4RshSlY/igdr+FiVY4MLsSQYJX6FZG/f1/VwN4y1i3mPXRyfaswrvI8xii1kOVe1dYtO2Row==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react/18.2.0:

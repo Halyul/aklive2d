@@ -1,3 +1,5 @@
+/* eslint-disable no-fallthrough */
+/* eslint-disable no-undef */
 import assert from 'assert'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -56,8 +58,6 @@ async function main() {
   await background.process()
   const backgrounds = ['operator_bg.png', ...background.files]
 
-  directory({backgrounds, charwordTable})
-
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
     const OPERATOR_SOURCE_FOLDER = path.join(__projetRoot, __config.folder.operator)
     const OPERATOR_RELEASE_FOLDER = path.join(__projetRoot, __config.folder.release, OPERATOR_NAME)
@@ -85,29 +85,36 @@ async function main() {
     rmdir(OPERATOR_RELEASE_FOLDER)
 
     const charwordTableLookup = charwordTable.lookup(OPERATOR_NAME)
-    const voiceLangs = (() => { 
-      const infoArray = Object.values(charwordTableLookup.operator.info[charwordTableLookup.config.default_region])
-      // combine the infoArray
-      let output = {}
-      for (const info of infoArray) {
-        output = {
-          ...output,
-          ...info
+    const voiceJson = {}
+    voiceJson.config = {
+      default_region: charwordTableLookup.config.default_region.replace("_", "-"),
+      regions: charwordTableLookup.config.regions.map((item) => item.replace("_", "-")),
+    }
+    voiceJson.voiceLangs = {}
+    voiceJson.subtitleLangs = {}
+    const subtitleInfo = Object.keys(charwordTableLookup.operator.info)
+    subtitleInfo.forEach((item) => {
+      if (Object.keys(charwordTableLookup.operator.info[item]).length > 0) {
+        const key = item.replace("_", "-")
+        voiceJson.subtitleLangs[key] = {}
+        for (const [id, subtitles] of Object.entries(charwordTableLookup.operator.voice[item])) {
+          const match = id.replace(/(.+?)([A-Z]\w+)/, '$2')
+          if (match === id) {
+            voiceJson.subtitleLangs[key].default = subtitles
+          } else {
+            voiceJson.subtitleLangs[key][match] = subtitles
+          }
         }
+        voiceJson.voiceLangs[key] = {}
+        Object.values(charwordTableLookup.operator.info[item]).forEach((item) => {
+          voiceJson.voiceLangs[key] = { ...voiceJson.voiceLangs[key], ...item }
+        })
       }
-      return Object.keys(output)
-    })()
-    const subtitleLangs = (() => {
-      const output = []
-      for (const [key, value] of Object.entries(charwordTableLookup.operator.info)) {
-        if (Object.keys(value).length !== 0) {
-          output.push(key)
-        }
-      }
-      return output
-    })()
+    })
+    const voiceLangs = Object.keys(voiceJson.voiceLangs["zh-CN"])
+    const subtitleLangs = Object.keys(voiceJson.subtitleLangs)
 
-    writeSync(JSON.stringify(charwordTableLookup), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
+    writeSync(JSON.stringify(voiceJson), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
 
     const projectJson = new ProjectJson(OPERATOR_NAME, OPERATOR_SHARE_FOLDER, {
       backgrounds,
@@ -219,6 +226,8 @@ async function main() {
     ]), envPath)
     fork(path.join(__projetRoot, 'vite.config.js'), [op, OPERATOR_NAME])
   }
+
+  directory({ backgrounds, charwordTable })
 }
 
 main();

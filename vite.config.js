@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
@@ -156,12 +157,20 @@ class ViteRunner {
       , {
         key: "background_folder",
         value: JSON.stringify(this.#globalConfig.folder.background)
+      }, {
+        key: "available_operators",
+        value: JSON.stringify(Object.keys(this.#globalConfig.operators))
+      }, {
+        key: "error_files",
+        value: JSON.stringify(this.#globalConfig.directory.error).replace('#', '%23')
       }
     ]), path.join(directoryDir, '.env'))
     this.#mode = process.argv[3]
+    const publicDir = path.resolve(__projetRoot, this.#globalConfig.folder.release)
     return {
       ...this.#baseViteConfig,
       envDir: directoryDir,
+      base: "/",
       plugins: [
         react(),
         // PerfseePlugin({
@@ -178,6 +187,7 @@ class ViteRunner {
         alias: {
           '@': path.resolve(directoryDir, './src'),
           '!': path.resolve(__projetRoot, './src'),
+          '#': path.resolve(publicDir, this.#globalConfig.folder.directory),
         },
       },
       build: {
@@ -187,6 +197,7 @@ class ViteRunner {
         rollupOptions: {
           output: {
             manualChunks: {
+              'react': ['react', 'react-dom', 'react-router-dom'],
             },
           }
         }

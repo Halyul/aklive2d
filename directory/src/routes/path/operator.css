@@ -8,13 +8,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.operator .spine-container {
   width: 100%;
   position: relative;
   margin-bottom: 2rem;
+  user-select: none;
 }
+
 .operator .spine-container:before {
   content: "";
   display: block;
@@ -28,9 +27,9 @@
   right: 0;
 }
 
-.operator .spine-settings,
-.operator .steam-workshop-wrapper {
+.operator .spine-settings {
   margin-right: 1.5rem;
+  user-select: none;
 }
 
 .operator .text {

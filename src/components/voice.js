@@ -9,7 +9,7 @@ export default class Voice {
   #defaultRegion = charword_table.config.default_region
   #defaultIdleDuration = 10 * 60 * 1000
   #defaultNextDuration = 3 * 60 * 1000
-  #voiceLanguages = Object.keys(this.#getCVInfo(this.#defaultRegion))
+  #voiceLanguages = Object.keys(charword_table.voiceLangs["zh-CN"])
   #defaultVoiceLang = this.#voiceLanguages[0]
   #voiceLang = this.#defaultVoiceLang
   #subtitleLang = this.#defaultRegion
@@ -42,6 +42,12 @@ export default class Voice {
   }
 
   success() {
+    const audioEndedFunc = () => {
+      this.#isPlaying = false
+      this.#setCurrentSubtitle(null)
+      this.#lastClickToNext = false
+    }
+    this.#audioEl.addEventListener('ended', audioEndedFunc)
     this.#playEntryVoice()
     this.#initNextVoiceTimer()
     this.#widgetEl.addEventListener('click', e => {
@@ -242,7 +248,7 @@ export default class Voice {
     const subtitle = this.#getSubtitleById(id)
     const title = subtitle.title
     const content = subtitle.text
-    const cvInfo = this.#getCVInfoByVoiceLang()[this.#voiceLang][this.subtitleLanguage]
+    const cvInfo = charword_table.voiceLangs[this.subtitleLanguage][this.#voiceLang]
     document.getElementById('voice_title').innerText = title
     document.getElementById('voice_subtitle').innerText = content
     this.#el.style.opacity = 1
@@ -260,15 +266,6 @@ export default class Voice {
       startPlayPromise
         .then(() => {
           this.#isPlaying = true
-          const audioEndedFunc = () => {
-            this.#isPlaying = false
-            this.#audioEl.removeEventListener('ended', audioEndedFunc)
-            if (this.#currentVoiceId !== id) return
-            this.#setCurrentSubtitle(null)
-            this.#lastClickToNext = false
-          }
-          
-          this.#audioEl.addEventListener('ended', audioEndedFunc)
           this.#setCurrentSubtitle(id)
         })
         .catch(() => {
@@ -278,7 +275,8 @@ export default class Voice {
   }
 
   #playSpecialVoice(matcher) {
-    const voiceId = this.#getSpecialVoiceId(matcher)
+    const voices = this.#getVoices()
+    const voiceId = Object.keys(voices).find(e => voices[e].title === matcher)
     this.#playVoice(voiceId)
   }
 
@@ -287,18 +285,17 @@ export default class Voice {
     return `${folderObject.main}/${folderObject.sub.find(e => e.lang === this.#voiceLang).name}`
   }
 
-  #getSpecialVoiceId(matcher) {
-    const voices = this.#getVoices()
-    const voiceId = Object.keys(voices).find(e => voices[e].title === matcher)
-    return voiceId
-  }
-
   #getVoices() {
-    return charword_table.operator.voice[this.#defaultRegion][this.#getWordKeyByVoiceLang()[this.#defaultVoiceLang]]
+    return charword_table.subtitleLangs[this.#subtitleLang].default
   }
 
   #getSubtitleById(id) {
-    return charword_table.operator.voice[this.#subtitleLang][this.#getWordKeyByVoiceLang()[this.#voiceLang]][id]
+    const obj = charword_table.subtitleLangs[this.#subtitleLang]
+    let key = 'default'
+    if (obj[this.#voiceLang]) {
+      key = this.#voiceLang
+    }
+    return obj[key][id]
   }
 
   #getVoiceFolderObject() {
@@ -314,51 +311,8 @@ export default class Voice {
     return folderObject
   }
 
-  /**
-   * @returns the cvInfo in the region's language
-   */
-  #getCVInfo(region) {
-    const infoArray = Object.values(charword_table.operator.info[region])
-    // combine the infoArray
-    let output = {}
-    for (const info of infoArray) {
-      output = {
-        ...output,
-        ...info
-      }
-    }
-    return output
-  }
-
-  /**
-   * @returns the cvInfo corresponsing to the voice language
-   */
-  #getCVInfoByVoiceLang() {
-    const languages = {}
-    for (const lang of Object.keys(charword_table.operator.info)) {
-      const cvInfo = this.#getCVInfo(lang)
-      for (const [voiceLanguage, cvArray] of Object.entries(cvInfo)) {
-        if (languages[voiceLanguage] === undefined) {
-          languages[voiceLanguage] = {}
-        }
-        languages[voiceLanguage][lang] = cvArray
-      }
-    }
-    return languages
-  }
-
-  #getWordKeyByVoiceLang() {
-    const output = {}
-    for (const [wordKey, wordKeyDict] of Object.entries(charword_table.operator.info[this.#defaultRegion])) {
-      for (const lang of Object.keys(wordKeyDict)) {
-        output[lang] = wordKey
-      }
-    }
-    return output
-  }
-
   #getSubtitleLanguages() {
-    return Object.keys(this.#getCVInfoByVoiceLang()[this.#voiceLang])
+    return Object.keys(charword_table.subtitleLangs)
   }
 
   #insertHTML() {

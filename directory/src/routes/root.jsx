@@ -132,6 +132,7 @@ export default function Root() {
 function FooterElement() {
   const { i18n } = useI18n()
   const { version } = useConfig()
+  const navigate = useNavigate()
 
   return useMemo(() => {
     return (
@@ -160,7 +161,9 @@ function FooterElement() {
             </Popup>
           </section>
         </section>
-        <section className='copyright section'>
+        <section className='copyright section' onDoubleClick={() => {
+          navigate('/error')
+        }}>
           <span>Spine Runtimes © 2013 - 2019 Esoteric Software LLC</span>
           <span>Assets © 2017 - {currentYear} Arknights/Hypergryph Co., Ltd</span>
           <span>Source Code © 2021 - {currentYear} Halyul</span>
@@ -169,7 +172,7 @@ function FooterElement() {
         </section>
       </footer>
     )
-  }, [i18n, version.directory, version.showcase])
+  }, [i18n, navigate, version.directory, version.showcase])
 }
 
 function DrawerDestinations({ toggleDrawer }) {

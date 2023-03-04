@@ -5,7 +5,7 @@ import {
 } from "react"
 import { useCallback } from "react"
 const audioEl = new Audio()
-
+let lastSrc = ''
 export default function useAudio() {
   const [isPlaying, _setIsPlaying] = useState(false)
   const isPlayingRef = useRef(isPlaying)
@@ -29,17 +29,19 @@ export default function useAudio() {
       },
       callback = () => { }
     ) => {
-      if (!options.overwrite && audioEl.src === (window.location.href.replace(/\/$/g, '') + link)) return
+      if (!options.overwrite && link === lastSrc) return
       audioEl.src = link
       let startPlayPromise = audioEl.play()
       if (startPlayPromise !== undefined) {
         setIsPlaying(true)
         startPlayPromise
           .then(() => {
+            lastSrc = link
             callback()
             return
           })
-          .catch(() => {
+          .catch((e) => {
+            console.log(e)
             return
           })
       }

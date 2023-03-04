@@ -136,9 +136,15 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 | Static Image | Operator: chararts/ ; Skin: skinpack/ | Texture2D |
 | Background | arts/ui/homebackground/wrapper/ | Sprite |
 | Voice Clips | audio/sound_beta_2/voice{_*}/ | AudioClip |
-| Voice Lines* | gamedata/excel/charword_table.ab | TextAsset |
+| Voice Lines<sup>3</sup> | gamedata/excel/charword_table.ab | TextAsset |
+| Portrait Images<sup>1</sup> | arts/charportraits | Texture2D |
+| Home Music<sup>2</sup> | audio/sound_beta_2/music | Texture2D |
 
-*: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)
+<sup>1</sup>: `portrait_hub` is required to locate the image
+
+<sup>2</sup>: `gamedata/excel/display_meta_table.json`<sup>3</sup> is required to locate the music
+
+<sup>3</sup>: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)
 
 ## Supported Operators
 

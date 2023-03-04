@@ -112,6 +112,7 @@ class ViteRunner {
   get #operatorConfig() {
     const operatorName = process.env.O || process.argv[3]
     assert(operatorName, 'Please set the operator name by using environment variable O.')
+    const assetsDir = 'assets'
     return {
       ...this.#baseViteConfig,
       envDir: path.join(__projetRoot, this.#globalConfig.folder.operator, operatorName),
@@ -130,6 +131,13 @@ class ViteRunner {
         ...this.#baseViteConfig.build,
         chunkSizeWarningLimit: 10000,
         outDir: path.resolve(__projetRoot, this.#globalConfig.folder.release, operatorName),
+        rollupOptions: {
+          output: {
+            entryFileNames: `${assetsDir}/[name].js`,
+            chunkFileNames: `${assetsDir}/[name].js`,
+            assetFileNames: `${assetsDir}/[name].[ext]`,
+          }
+        }
       },
     }
   }
@@ -167,6 +175,7 @@ class ViteRunner {
     ]), path.join(directoryDir, '.env'))
     this.#mode = process.argv[3]
     const publicDir = path.resolve(__projetRoot, this.#globalConfig.folder.release)
+    const assetsDir = '_directory'
     return {
       ...this.#baseViteConfig,
       envDir: directoryDir,
@@ -193,9 +202,11 @@ class ViteRunner {
       build: {
         ...this.#baseViteConfig.build,
         outDir: path.resolve(__projetRoot, this.#globalConfig.folder.release),
-        assetsDir: '_directory',
         rollupOptions: {
           output: {
+            entryFileNames: `${assetsDir}/[name].js`,
+            chunkFileNames: `${assetsDir}/[name].js`,
+            assetFileNames: `${assetsDir}/[name].[ext]`,
             manualChunks: {
               'react': ['react', 'react-dom', 'react-router-dom'],
             },

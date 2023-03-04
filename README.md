@@ -138,7 +138,7 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 | Voice Clips | audio/sound_beta_2/voice{_*}/ | AudioClip |
 | Voice Lines<sup>3</sup> | gamedata/excel/charword_table.ab | TextAsset |
 | Portrait Images<sup>1</sup> | arts/charportraits | Texture2D |
-| Home Music<sup>2</sup> | audio/sound_beta_2/music | Texture2D |
+| Home Music<sup>2</sup> | audio/sound_beta_2/music | AudioClip |
 
 <sup>1</sup>: `portrait_hub` is required to locate the image
 

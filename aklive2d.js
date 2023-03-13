@@ -178,9 +178,6 @@ async function main() {
         key: "link",
         value: __config.operators[OPERATOR_NAME].link
       }, {
-        key: "version",
-        value: __config.version.showcase
-      }, {
         key: "title",
         value: __config.operators[OPERATOR_NAME].title
       }, {

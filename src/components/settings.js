@@ -41,7 +41,6 @@ export default class Settings {
   #doNotTrack = false
   #lastFunctionInsights = null
 
-
   constructor(el, logoEl) {
     this.isWallpaperEngine = false
     this.#el = el
@@ -79,7 +78,7 @@ export default class Settings {
     this.#isInsightsInited = true
     this.#doNotTrack = doNotTrack
     if (this.#doNotTrack) return
-    window.umami?.trackView(`/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam&" : "?"}version=${import.meta.env.VITE_VERSION}`);
+    window.umami?.trackView(`/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam" : ""}`);
   }
 
   functionInsights(functionName, toSkip = false) {

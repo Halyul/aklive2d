@@ -169,6 +169,7 @@
     flex-direction: row;
     justify-content: flex-end;
     overflow: hidden;
+    z-index: 2;
 }
 
 .main .main-header .main-tab .main-tab-item {

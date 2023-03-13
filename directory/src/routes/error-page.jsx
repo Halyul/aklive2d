@@ -19,6 +19,7 @@ import { useHeader } from '@/state/header';
 import useAudio from '@/libs/voice';
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
+import useUmami from '@parcellab/react-use-umami';
 
 const voiceOnAtom = atomWithStorage('voiceOn', false)
 const config = JSON.parse(import.meta.env.VITE_ERROR_FILES)
@@ -27,6 +28,7 @@ const filename = obj.key.replace("#", "%23")
 const padding = obj.paddings
 
 export default function ErrorPage() {
+  const _trackEvt = useUmami('/error')
   const error = useRouteError();
   const navigate = useNavigate();
   const {
@@ -72,10 +74,6 @@ export default function ErrorPage() {
   const playVoice = useCallback(() => {
     play(`/${import.meta.env.VITE_DIRECTORY_FOLDER}/error.ogg`, { overwrite: true })
   }, [play])
-
-  useEffect(() => {
-    if (voiceOn) playVoice()
-  }, [playVoice, voiceOn])
 
   useEffect(() => {
     if (spineRef.current?.children.length === 0 && spineData) {

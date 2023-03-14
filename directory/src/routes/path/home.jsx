@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import {
   NavLink,
 } from "react-router-dom";
-import './home.css'
+import classes from './home.module.scss'
 import { useConfig } from '@/state/config';
 import {
   useLanguage
@@ -58,13 +58,13 @@ export default function Home() {
   const isShown = useCallback((type) => currentTab === 'all' || currentTab === type, [currentTab])
 
   return (
-    <section className="home">
+    <section>
       {
         content.map((v) => {
           const length = v.filter((v) => isShown(v.type)).length
           return (
-            <section className="item-group-wrapper" key={v[0].date} hidden={length === 0}>
-              <section className="item-group">
+            <section key={v[0].date} hidden={length === 0}>
+              <section className={classes.group}>
                 {v.map(item => {
                   return (
                     <OperatorElement
@@ -74,7 +74,7 @@ export default function Home() {
                     />
                   )
                 })}
-                <section className='item-group-date'>{v[0].date}</section>
+                <section className={classes.date}>{v[0].date}</section>
               </section>
               <MainBorder />
             </section>
@@ -107,23 +107,23 @@ function OperatorElement({ item, hidden }) {
     return (
       <NavLink
         to={`/${item.link}`}
-        className="item"
+        className={classes.item}
         hidden={hidden}
       >
         <section
           onMouseEnter={() => playVoice()}
         >
-          <section className="item-background-filler" />
-          <section className="item-outline" />
-          <section className="item-img">
+          <section className={classes['background-filler']} />
+          <section className={classes.outline} />
+          <section className={classes.img}>
             <ImageElement
               item={item}
             />
           </section>
-          <section className="item-info">
-            <section className="item-title-container">
-              <section className="item-title">{item.codename[language]}</section>
-              <section className="item-type">
+          <section className={classes.info}>
+            <section className={classes.container}>
+              <section className={classes.title}>{item.codename[language]}</section>
+              <section className={classes.type}>
                 <CharIcon
                   type={item.type}
                   viewBox={
@@ -131,10 +131,10 @@ function OperatorElement({ item, hidden }) {
                   } />
               </section>
             </section>
-            <section className="item-text-wrapper">
-              <span className='item-text'>{item.codename[language.startsWith("en") ? alternateLang : textDefaultLang]}</span>
+            <section className={classes.wrapper}>
+              <span className={classes.text}>{item.codename[language.startsWith("en") ? alternateLang : textDefaultLang]}</span>
             </section>
-            <section className="item-info-background" style={{
+            <section className={classes.background} style={{
               color: item.color
             }} />
           </section>

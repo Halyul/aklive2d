@@ -3,7 +3,7 @@ import React, {
   useEffect,
   useMemo
 } from 'react'
-import './changelogs.css'
+import classes from './changelogs.module.scss'
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import useUmami from '@parcellab/react-use-umami'
@@ -46,18 +46,18 @@ export default function Changelogs() {
         return (
           v.map((item) => {
             return (
-              <section className="item-group-wrapper" key={item.date} hidden={currentTab !== item.key}>
-                <section className="item-group">
-                  <section className="item-info">
+              <section className={classes.wrapper} key={item.date} hidden={currentTab !== item.key}>
+                <section className={classes.group}>
+                  <section className={classes.info}>
                     {item.content.map((entry, index) => {
                       return (
-                        <section className="item-info-content" key={index}>
+                        <section className={classes.content} key={index}>
                           {entry}
                         </section>
                       )
                     })}
                   </section>
-                  <section className='item-group-date'>{item.date}</section>
+                  <section className={classes.date}>{item.date}</section>
                 </section>
                 <MainBorder />
               </section>
@@ -69,7 +69,7 @@ export default function Changelogs() {
   }, [changelogs, currentTab])
 
   return (
-    <section className="changelogs">
+    <section>
       {content}
     </section>
   )

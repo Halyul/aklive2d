@@ -1,0 +1,19 @@
+@use 'tab_base';
+
+.group {
+  flex-direction: column;
+  align-items: stretch;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-left: 1rem;
+    word-break: break-word;
+    .content {
+      font-size: 1.5rem;
+      display: list-item;
+    }
+  }
+}

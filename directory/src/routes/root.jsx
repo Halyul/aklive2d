@@ -10,6 +10,7 @@ import {
   Link,
   NavLink,
   useNavigate,
+  ScrollRestoration,
 } from "react-router-dom";
 import './root.css'
 import routes from '@/routes'
@@ -125,6 +126,7 @@ export default function Root() {
         </section>
         <HeaderReturnButton />
         <Outlet />
+        <ScrollRestoration />
       </main>
       <FooterElement />
     </>

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './main_border.css';
+import classes from './main_border.module.scss';
 
 export default function MainBorder(props) {
   return (
-    <section className="main-border">
+    <section className={classes.border}>
       {props.children}
     </section>
   )

@@ -2,7 +2,7 @@ import React, {
   useState
 } from 'react'
 import PropTypes from 'prop-types';
-import './dropdown.css'
+import classes from './dropdown.module.scss'
 
 export default function Dropdown(props) {
   const [hidden, setHidden] = useState(true)
@@ -13,34 +13,34 @@ export default function Dropdown(props) {
 
   return (
     <>
-      <section className={`dropdown ${props.className ? props.className : ''} ${hidden ? '' : 'active'}`} >
+      <section className={`${classes.dropdown} ${hidden ? '' : classes.active} ${props.className ? props.className : ''}`} >
         <section
-          className='text'
+          className={classes.text}
           onClick={() => toggleDropdown()}
         >
-          <span className='content'>{props.text}</span>
-          <span className='icon'></span>
+          <span className={classes.content}>{props.text}</span>
+          <span className={classes.icon}></span>
         </section>
-        <ul className='menu' style={props.activeColor}>
+        <ul className={classes.menu} style={props.activeColor}>
           {
             props.menu.map((item) => {
               return (
                 <li
                   key={item.name}
-                  className={`item${item.name === props.text || (props.activeRule && props.activeRule(item)) ? ' active' : ''}`}
+                  className={`${classes.item} ${item.name === props.text || (props.activeRule && props.activeRule(item)) ? classes.active : ''}`}
                   onClick={() => {
                     props.onClick(item)
                     toggleDropdown()
                   }}
                 >
-                  <section className="text">{item.name}</section>
+                  <section className={classes.text}>{item.name}</section>
                 </li>
               )
             })
           }
         </ul>
         <section
-          className='overlay'
+          className={classes.overlay}
           hidden={hidden}
           onClick={() => toggleDropdown()}
         />

@@ -8,15 +8,17 @@
   margin: 0 auto;
   width: 70%;
   max-width: 100rem;
+  padding-top: 5rem;
 }
 
 .header {
   width: auto;
-  position: sticky;
+  position: fixed;
+  left: 0;
   top: 0;
   right: 0;
   padding: 1rem;
-  z-index: 2;
+  z-index: 3;
   height: 3rem;
   display: flex;
   flex-direction: row;

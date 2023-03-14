@@ -1,7 +1,7 @@
 import React, {
   useState,
 } from 'react'
-import './popup.css'
+import classes from './popup.module.scss';
 import ReturnButton from '@/component/return_button';
 import MainBorder from '@/component/main_border';
 import PropTypes from 'prop-types';
@@ -14,22 +14,22 @@ export default function Popup(props) {
   }
 
   return (<>
-    <section className={`popup ${hidden ? '' : 'active'}`}>
-      <section className='wrapper'>
-        <section className='title'>
-          <section className="text">{props.title}</section>
-          <ReturnButton onClick={toggle} className="return-button" />
+    <section className={`${classes.popup} ${hidden ? '' : classes.active}`}>
+      <section className={classes.wrapper}>
+        <section className={classes.title}>
+          <section className={classes.text}>{props.title}</section>
+          <ReturnButton onClick={toggle} className={classes["return-button"]} />
         </section>
         <MainBorder />
-        <section className='content'>
+        <section className={classes.content}>
           {props.children}
         </section>
       </section>
-      <section className={`overlay ${hidden ? '' : 'active'}`}
+      <section className={`${classes.overlay} ${hidden ? '' : classes.active}`}
         onClick={() => toggle()} />
     </section>
     <span
-      className="popup-text"
+      className={classes['entry-text']}
       onClick={toggle}
     >
       {props.title}

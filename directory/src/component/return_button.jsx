@@ -1,33 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './return_button.css'
+import classes from './return_button.module.scss'
 
 export default function ReturnButton(props) {
 
   return (
     <>
-      <section className='return-button'
+      <section className={`${classes['return-button']} ${props.className ? props.className : ''}`}
         onClick={() => props.onClick()}
       >
-        <section className='bar-wrapper'>
-          <section className='bar-arrow-left'></section>
-          <section className='bar'></section>
-          <section className='bar-arrow-right'></section>
+        <section className={classes.wrapper}>
+          <section className={classes["arrow-left"]}></section>
+          <section className={classes.bar}></section>
+          <section className={classes["arrow-right"]}></section>
         </section>
-        <section className='bar-wrapper'>
-          <section className='bar-arrow-left'></section>
-          <section className='bar'></section>
-          <section className='bar-arrow-right'></section>
+        <section className={classes.wrapper}>
+          <section className={classes["arrow-left"]}></section>
+          <section className={classes.bar}></section>
+          <section className={classes["arrow-right"]}></section>
         </section>
-        <section className='bar-wrapper'>
-          <section className='bar-arrow-left'></section>
-          <section className='bar'></section>
-          <section className='bar-arrow-right'></section>
+        <section className={classes.wrapper}>
+          <section className={classes["arrow-left"]}></section>
+          <section className={classes.bar}></section>
+          <section className={classes["arrow-right"]}></section>
         </section>
-        <section className='bar-wrapper'>
-          <section className='bar-arrow-left'></section>
-          <section className='bar'></section>
-          <section className='bar-arrow-right'></section>
+        <section className={classes.wrapper}>
+          <section className={classes["arrow-left"]}></section>
+          <section className={classes.bar}></section>
+          <section className={classes["arrow-right"]}></section>
         </section>
       </section>
     </>
@@ -35,4 +35,5 @@ export default function ReturnButton(props) {
 }
 ReturnButton.propTypes = {
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };

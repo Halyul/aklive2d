@@ -10,7 +10,6 @@ import {
   useNavigate,
   Link
 } from "react-router-dom";
-import { atom, useAtom } from 'jotai';
 import './operator.css'
 import { useConfig } from '@/state/config';
 import {
@@ -31,8 +30,7 @@ const getVoiceFoler = (lang) => {
   const voiceFolder = folderObject.sub.find(e => e.lang === lang) || folderObject.sub.find(e => e.name === 'custom')
   return `${folderObject.main}/${voiceFolder.name}`
 }
-const spinePlayerAtom = atom(null);
-const spineAnimationAtom = atom("Idle");
+const defaultSpineAnimation = 'Idle'
 
 const getTabName = (item, language) => {
   if (item.type === 'operator') {
@@ -58,9 +56,9 @@ export default function Operator() {
   // eslint-disable-next-line no-unused-vars
   const _trackEvt = useUmami(`/${key}`)
   const spineRef = useRef(null)
-  const [spineAnimation, setSpineAnimation] = useAtom(spineAnimationAtom)
+  const [spineAnimation, setSpineAnimation] = useState(defaultSpineAnimation)
   const { i18n } = useI18n()
-  const [spinePlayer, setSpinePlayer] = useAtom(spinePlayerAtom)
+  const [spinePlayer, setSpinePlayer] = useState(null)
   const [voiceLang, _setVoiceLang] = useState(null)
   const { backgrounds } = useBackgrounds()
   const [currentBackground, setCurrentBackground] = useState(null)
@@ -104,6 +102,7 @@ export default function Operator() {
       setConfig(config)
       configRef.current = config
       fetch(`/${import.meta.env.VITE_DIRECTORY_FOLDER}/${config.filename.replace("#", "%23")}.json`).then(res => res.json()).then(data => {
+        setSpineAnimation(defaultSpineAnimation)
         setSpineData(data)
       })
       setHeaderIcon(config.type)
@@ -261,7 +260,7 @@ export default function Operator() {
         {
           name: 'idle',
           onClick: () => {
-            spinePlayer.setAnimation("Idle", true)
+            spinePlayer.animationState.setAnimation(0, "Idle", true, 0)
             setSpineAnimation('Idle')
           },
           activeRule: () => {
@@ -270,7 +269,7 @@ export default function Operator() {
         }, {
           name: 'interact',
           onClick: () => {
-            spinePlayer.setAnimation("Interact", true)
+            spinePlayer.animationState.setAnimation(0, "Interact", true, 0)
             setSpineAnimation('Interact')
           },
           activeRule: () => {
@@ -279,7 +278,7 @@ export default function Operator() {
         }, {
           name: 'special',
           onClick: () => {
-            spinePlayer.setAnimation("Special", true)
+            spinePlayer.animationState.setAnimation(0, "Special", true, 0)
             setSpineAnimation('Special')
           },
           activeRule: () => {

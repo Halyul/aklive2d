@@ -86,8 +86,10 @@ export default function Root() {
           <section className='bar'></section>
         </section>
         <section className='spacer' />
-        {extraArea}
-        <LanguageDropdown />
+        <section className='extra-area'>
+          {extraArea}
+          <LanguageDropdown />
+        </section>
       </header>
       <nav className={`drawer ${drawerHidden ? '' : 'active'}`}>
         <section

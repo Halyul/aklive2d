@@ -23,6 +23,7 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  pointer-events: none;
 }
 
 .header .spacer {
@@ -71,6 +72,17 @@
 
 .navButton.active .bar:nth-child(3) {
   transform: translate(0, -100%) rotateZ(45deg) scaleX(0.5) translate(50%);
+}
+
+.extra-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navButton,
+.extra-area {
+  pointer-events: auto;
 }
 
 .drawer {
@@ -162,55 +174,55 @@
 }
 
 .main .main-header .main-tab {
-    flex: auto;
-    white-space: pre;
-    user-select: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    overflow: hidden;
-    z-index: 2;
+  flex: auto;
+  white-space: pre;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  overflow: hidden;
+  z-index: 2;
 }
 
 .main .main-header .main-tab .main-tab-item {
-    font-size: 1.25rem;
-    line-height: 3em;
-    font-weight: 700;
-    padding: 0 1rem;
-    text-transform: uppercase;
-    cursor: pointer; 
-    border-bottom: 0.3rem solid transparent;
-    display: inline-block;
-    cursor: pointer;
-    text-decoration: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: 1.25rem;
+  line-height: 3em;
+  font-weight: 700;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 0.3rem solid transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main .main-header .main-tab .main-tab-item .main-tab-text-wrapper {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main .main-header .main-tab .main-tab-item.active .main-tab-text-wrapper,
 .main .main-header .main-tab .main-tab-item:hover .main-tab-text-wrapper,
 .main .main-header .main-tab .main-tab-item.active .text,
 .main .main-header .main-tab .main-tab-item:hover .text {
-    color: currentColor
+  color: currentColor;
 }
 
 .main .main-header .main-tab .main-tab-item.active {
-    border-bottom-color: currentColor;
+  border-bottom-color: currentColor;
 }
 
 .main .main-header .main-tab .main-tab-item.active,
 .main .main-header .main-tab .main-tab-item:hover {
-    color: var(--link-highlight-color);
+  color: var(--link-highlight-color);
 }
 
 .main .main-header .main-tab .main-tab-item .main-tab-text-wrapper {
-    color: var(--text-color);
-    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+  color: var(--text-color);
+  transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
 .main .main-icon {
@@ -222,21 +234,21 @@
 }
 
 .main .return-button {
-    position: absolute;
-    right: -4rem;
-    bottom: -24px;
-    color: var(--button-color);
-    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+  position: absolute;
+  right: -4rem;
+  bottom: -24px;
+  color: var(--button-color);
+  transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 }
 
 @media (max-width: 768px) {
-    .main .return-button {
-        right: -3.4rem;
-    }
+  .main .return-button {
+    right: -3.4rem;
+  }
 }
 
 .main .return-button:hover {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .footer {

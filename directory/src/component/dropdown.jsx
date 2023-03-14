@@ -13,7 +13,7 @@ export default function Dropdown(props) {
 
   return (
     <>
-      <section className={`dropdown ${props.className} ${hidden ? '' : 'active'}`} >
+      <section className={`dropdown ${props.className ? props.className : ''} ${hidden ? '' : 'active'}`} >
         <section
           className='text'
           onClick={() => toggleDropdown()}

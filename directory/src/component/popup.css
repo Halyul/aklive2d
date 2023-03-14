@@ -35,7 +35,7 @@
 
 .popup.active {
   opacity: 1;
-  z-index: 1;
+  z-index: 10;
 }
 
 .popup .title {
@@ -58,6 +58,7 @@
 .popup .content {
   line-height: 1.3em;
   padding: 1rem 1rem 0 1rem;
+  user-select: text;
 }
 
 @media (max-width: 768px) {

@@ -1,3 +1,14 @@
+%outline-share {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -3px;
+  height: 3px;
+  width: 100%;
+  border-left: var(--text-color) solid 3px;
+  border-right: var(--text-color) solid 3px;
+}
+
 .group {
   padding: 1rem;
   display: flex;
@@ -50,24 +61,13 @@
       border: var(--home-item-outline-color) 1px dashed;
       padding: 6px;
 
-      %share {
-        content: "";
-        display: block;
-        position: absolute;
-        left: -3px;
-        height: 3px;
-        width: 100%;
-        border-left: var(--text-color) solid 3px;
-        border-right: var(--text-color) solid 3px;
-      }
-
-      &::before {
-        @extend %share;
+      &:before {
+        @extend %outline-share;
         top: -3px;
       }
 
-      &::after {
-        @extend %share;
+      &:after {
+        @extend %outline-share;
         bottom: -3px;
       }
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from './return_button.module.scss'
+import classes from './scss/return_button.module.scss'
 
 export default function ReturnButton(props) {
 

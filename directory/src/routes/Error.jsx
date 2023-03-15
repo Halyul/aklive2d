@@ -9,7 +9,8 @@ import {
   useNavigate,
   useRouteError
 } from "react-router-dom";
-import './error-page.css'
+import header from '@/scss/root/header.module.scss'
+import classes from '@/scss/error/Error.module.scss'
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils';
 import Switch from '@/component/switch';
@@ -27,7 +28,8 @@ const obj = config.files[Math.floor((Math.random() * config.files.length))]
 const filename = obj.key.replace("#", "%23")
 const padding = obj.paddings
 
-export default function ErrorPage() {
+export default function Error() {
+  // eslint-disable-next-line no-unused-vars
   const _trackEvt = useUmami('/error')
   const error = useRouteError();
   const navigate = useNavigate();
@@ -52,8 +54,8 @@ export default function ErrorPage() {
   useEffect(() => {
     console.log(error)
     fetch(`/${import.meta.env.VITE_DIRECTORY_FOLDER}/${filename}.json`).then(res => res.json()).then(data => {
-        setSpineData(data)
-      })
+      setSpineData(data)
+    })
   }, [error])
 
   useEffect(() => {
@@ -130,10 +132,9 @@ export default function ErrorPage() {
   }, [playVoice, spineData]);
 
   return (
-    <section className='error-page'>
-      <header className='header'>
+    <section className={classes.error}>
+      <header className={`${header.header} ${classes.header}`}>
         <ReturnButton
-          className='return-button'
           onClick={() => navigate(-1, { replace: true })}
         />
         <Switch
@@ -143,11 +144,11 @@ export default function ErrorPage() {
           handleOnClick={() => setVoiceOn(!voiceOn)}
         />
       </header>
-      <main className='main'>
+      <main className={classes.main}>
         {
           content.map((item, index) => {
             return (
-              <section key={index} className='content'>
+              <section key={index} className={classes.content}>
                 <Typewriter
                   words={[item]}
                   cursor
@@ -159,7 +160,7 @@ export default function ErrorPage() {
           })
         }
         <section
-          className={`spine ${spineDone ? 'active' : ''}`}
+          className={`${classes.spine} ${spineDone ? classes.active : ''}`}
           ref={spineRef}
         />
       </main>

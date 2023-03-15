@@ -1,7 +1,7 @@
 import React from "react";
-import Home from "@/routes/path/home";
-import Operator from "@/routes/path/operator";
-import Changelogs from "@/routes/path/changelogs";
+import Home from "@/routes/path/Home";
+import Operator from "@/routes/path/Operator";
+import Changelogs from "@/routes/path/Changelogs";
 
 export default [
     {
@@ -9,24 +9,28 @@ export default [
         index: true,
         name: "home",
         element: <Home />,
-        inDrawer: true
+        inDrawer: true,
+        routeable: true
     }, {
         path: "changelogs",
         index: false,
         name: "changelogs",
         element: <Changelogs />,
-        inDrawer: true
+        inDrawer: true,
+        routeable: true
     }, {
         path: "https://ak.hypergryph.com/archive/dynamicCompile/",
         index: false,
         name: "offical_page",
         element: <a/>,
-        inDrawer: true
+        inDrawer: true,
+        routeable: false
     }, {
         path: ":key",
         index: false,
         name: "operator",
         element: <Operator />,
-        inDrawer: false
+        inDrawer: false,
+        routeable: true
     },
 ]

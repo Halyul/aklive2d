@@ -68,7 +68,7 @@
 
       &:hover,
       &:focus,
-      &:active {
+      &.active {
         .text {
           color: currentColor;
         }

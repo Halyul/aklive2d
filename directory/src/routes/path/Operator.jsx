@@ -10,7 +10,7 @@ import {
   useNavigate,
   Link
 } from "react-router-dom";
-import './operator.css'
+import classes from '@/scss/operator/Operator.module.scss'
 import { useConfig } from '@/state/config';
 import {
   useLanguage,
@@ -22,7 +22,7 @@ import useAudio from '@/libs/voice';
 import useUmami from '@parcellab/react-use-umami'
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
-import MainBorder from '@/component/main_border';
+import Border from '@/component/border';
 import { useI18n } from '@/state/language';
 
 const getVoiceFoler = (lang) => {
@@ -341,9 +341,9 @@ export default function Operator() {
   }
 
   return (
-    <section className="operator">
-      <section className="spine-player-wrapper">
-        <section className="spine-settings" style={{
+    <section className={classes.operator}>
+      <section className={classes.main}>
+        <section className={classes.settings} style={{
           color: config?.color
         }}>
           {
@@ -351,17 +351,17 @@ export default function Operator() {
               if (item.options.length === 0) return null
               return (
                 <section key={item.name}>
-                  <section className='settings-title-wrapper'>
-                    <section className='text'>{i18n(item.name)}</section>
+                  <section className={classes.title}>
+                    <section className={classes.text}>{i18n(item.name)}</section>
                   </section>
-                  <section className='settings-content-wrapper styled-selection'>
+                  <section className={classes['styled-selection']}>
                     {item.options.map((option) => {
                       return (
-                        <section className={`content ${option.activeRule && option.activeRule() ? 'active' : ''}`} onClick={(e) => option.onClick(e)} key={option.name}>
-                          <section className='content-text'>
-                            <section className="outline" />
-                            <section className='text'>{i18n(option.name)}</section>
-                            <section className='tick-icon' />
+                        <section className={`${classes.content} ${option.activeRule && option.activeRule() ? classes.active : ''}`} onClick={(e) => option.onClick(e)} key={option.name}>
+                          <section className={classes.option}>
+                            <section className={classes.outline} />
+                            <section className={classes.text}>{i18n(option.name)}</section>
+                            <section className={classes['tick-icon']} />
                           </section>
                         </section>
                       )
@@ -372,23 +372,22 @@ export default function Operator() {
             })
           }
           <section>
-            <section className='settings-title-wrapper'>
-              <section className='text'>{i18n('external_links')}</section>
+            <section className={classes.title}>
+              <section className={classes.text}>{i18n('external_links')}</section>
             </section>
-            <section className='settings-content-wrapper styled-selection'>
+            <section className={classes['styled-selection']}>
               <Link
                 reloadDocument
                 to={`./index.html?settings`}
                 target='_blank'
-                className='extra-links-item'
                 style={{
                   color: config?.color
                 }}
               >
-                <section className='content'>
-                  <section className='content-text'>
-                    <section className="outline" />
-                    <section className='text'>
+                <section className={classes.content}>
+                  <section className={classes.option}>
+                    <section className={classes.outline} />
+                    <section className={classes.text}>
                       {i18n('web_version')}
                     </section>
                   </section>
@@ -400,14 +399,13 @@ export default function Operator() {
                     reloadDocument
                     to={`https://steamcommunity.com/sharedfiles/filedetails/?id=${config.workshopId}`}
                     target='_blank'
-                    className='extra-links-item'
                     style={{
                       color: config?.color
                     }}>
-                    <section className='content'>
-                      <section className='content-text'>
-                        <section className="outline" />
-                        <section className='text'>
+                    <section className={classes.content}>
+                      <section className={classes.option}>
+                        <section className={classes.outline} />
+                        <section className={classes.text}>
                           {i18n('steam_workshop')}
                         </section>
                       </section>
@@ -418,27 +416,27 @@ export default function Operator() {
             </section>
           </section>
         </section>
-        <section className="spine-container" style={currentBackground && {
+        <section className={classes.container} style={currentBackground && {
           backgroundImage: `url(/${key}/assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${currentBackground})`
         }} >
           {
             config && (
-              <img src={`/${config.link}/assets/${config.logo}.png`} alt={config?.codename[language]} className='operator-logo' />
+              <img src={`/${config.link}/assets/${config.logo}.png`} alt={config?.codename[language]} className={classes.logo} />
             )
           }
-          <section ref={spineRef} />
+          <section ref={spineRef} className={classes.wrapper} />
           {currentVoiceId && subtitleObj && (
-            <section className={`voice-wrapper${hideSubtitle ? '' : ' active'}`}>
-              <section className='voice-title'>{subtitleObj[currentVoiceId]?.title}</section>
-              <section className='voice-subtitle'>
+            <section className={`${classes.voice} ${hideSubtitle ? '' : classes.active }`}>
+              <section className={classes.type}>{subtitleObj[currentVoiceId]?.title}</section>
+              <section className={classes.subtitle}>
                 <span>{subtitleObj[currentVoiceId]?.text}</span>
-                <span className='voice-triangle' />
+                <span className={classes.triangle} />
               </section>
             </section>)
           }
         </section>
       </section>
-      <MainBorder />
+      <Border />
     </section>
   )
 }

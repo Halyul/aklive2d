@@ -54,6 +54,32 @@ export default function ({ backgrounds, charwordTable }) {
     })
   })
 
+  writeSync((new EnvGenerator()).generate([
+    {
+      key: "app_title",
+      value: __config.directory.title
+    }, {
+      key: "app_voice_url",
+      value: __config.directory.voice
+    }, {
+      key: "voice_folders",
+      value: JSON.stringify(__config.folder.voice)
+    }, {
+      key: "directory_folder",
+      value: JSON.stringify(__config.folder.directory)
+    }
+    , {
+      key: "background_folder",
+      value: JSON.stringify(__config.folder.background)
+    }, {
+      key: "available_operators",
+      value: JSON.stringify(Object.keys(__config.operators))
+    }, {
+      key: "error_files",
+      value: JSON.stringify(__config.directory.error).replace('#', '%23')
+    }
+  ]), path.join(__projetRoot, 'directory', '.env'))
+
   writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
   writeSync(JSON.stringify(versionJson, null), path.join(targetFolder, "version.json"))
   writeSync(JSON.stringify(changelogsArray, null), path.join(targetFolder, "changelogs.json"))

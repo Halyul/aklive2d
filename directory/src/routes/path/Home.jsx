@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import {
   NavLink,
 } from "react-router-dom";
-import classes from './home.module.scss'
+import classes from '@/scss/home/Home.module.scss'
 import { useConfig } from '@/state/config';
 import {
   useLanguage
@@ -19,7 +19,7 @@ import useAudio from '@/libs/voice';
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils';
 import CharIcon from '@/component/char_icon';
-import MainBorder from '@/component/main_border';
+import Border from '@/component/border';
 import useUmami from '@parcellab/react-use-umami';
 import Switch from '@/component/switch';
 
@@ -76,7 +76,7 @@ export default function Home() {
                 })}
                 <section className={classes.date}>{v[0].date}</section>
               </section>
-              <MainBorder />
+              <Border />
             </section>
           )
         })

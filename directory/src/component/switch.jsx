@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import classes from './switch.module.scss';
+import classes from './scss/switch.module.scss';
 import {
   useI18n
 } from '@/state/language'

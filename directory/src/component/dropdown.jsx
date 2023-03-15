@@ -2,7 +2,7 @@ import React, {
   useState
 } from 'react'
 import PropTypes from 'prop-types';
-import classes from './dropdown.module.scss'
+import classes from './scss/dropdown.module.scss'
 
 export default function Dropdown(props) {
   const [hidden, setHidden] = useState(true)

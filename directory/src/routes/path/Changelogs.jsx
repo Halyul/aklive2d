@@ -3,11 +3,11 @@ import React, {
   useEffect,
   useMemo
 } from 'react'
-import classes from './changelogs.module.scss'
+import classes from '@/scss/changelogs/Changelogs.module.scss'
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import useUmami from '@parcellab/react-use-umami'
-import MainBorder from '@/component/main_border';
+import Border from '@/component/border';
 
 export default function Changelogs() {
   // eslint-disable-next-line no-unused-vars
@@ -59,7 +59,7 @@ export default function Changelogs() {
                   </section>
                   <section className={classes.date}>{item.date}</section>
                 </section>
-                <MainBorder />
+                <Border />
               </section>
             )
           })

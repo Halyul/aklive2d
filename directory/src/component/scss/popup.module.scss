@@ -41,6 +41,13 @@
     align-items: center;
     text-transform: uppercase;
     font-family: "Geometos", "Noto Sans SC", sans-serif;
+    .return-button {
+      color: var(--button-color);
+      transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+      &:hover {
+        color: var(--text-color);
+      }
+    }
   }
   .text {
     flex-grow: 1;
@@ -65,13 +72,6 @@
     &.active {
       opacity: 0.5;
       visibility: visible;
-    }
-    .return-button {
-      color: var(--button-color);
-      transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-      &:hover {
-        color: var(--text-color);
-      }
     }
   }
   &.active {

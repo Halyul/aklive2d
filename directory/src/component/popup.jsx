@@ -1,9 +1,9 @@
 import React, {
   useState,
 } from 'react'
-import classes from './popup.module.scss';
+import classes from './scss/popup.module.scss';
 import ReturnButton from '@/component/return_button';
-import MainBorder from '@/component/main_border';
+import Border from '@/component/border';
 import PropTypes from 'prop-types';
 
 export default function Popup(props) {
@@ -20,7 +20,7 @@ export default function Popup(props) {
           <section className={classes.text}>{props.title}</section>
           <ReturnButton onClick={toggle} className={classes["return-button"]} />
         </section>
-        <MainBorder />
+        <Border />
         <section className={classes.content}>
           {props.children}
         </section>

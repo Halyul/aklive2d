@@ -148,31 +148,6 @@ class ViteRunner {
       global.__config = this.#globalConfig
     }
     const directoryDir = path.resolve(__projetRoot, 'directory')
-    writeSync((new EnvGenerator()).generate([
-      {
-        key: "app_title",
-        value: this.#globalConfig.directory.title
-      }, {
-        key: "app_voice_url",
-        value: this.#globalConfig.directory.voice
-      }, {
-        key: "voice_folders",
-        value: JSON.stringify(this.#globalConfig.folder.voice)
-      }, {
-        key: "directory_folder",
-        value: JSON.stringify(this.#globalConfig.folder.directory)
-      }
-      , {
-        key: "background_folder",
-        value: JSON.stringify(this.#globalConfig.folder.background)
-      }, {
-        key: "available_operators",
-        value: JSON.stringify(Object.keys(this.#globalConfig.operators))
-      }, {
-        key: "error_files",
-        value: JSON.stringify(this.#globalConfig.directory.error).replace('#', '%23')
-      }
-    ]), path.join(directoryDir, '.env'))
     this.#mode = process.argv[3]
     const publicDir = path.resolve(__projetRoot, this.#globalConfig.folder.release)
     const assetsDir = '_directory'

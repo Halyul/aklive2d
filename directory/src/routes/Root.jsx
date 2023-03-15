@@ -10,9 +10,12 @@ import {
   Link,
   NavLink,
   useNavigate,
-  ScrollRestoration,
+  ScrollRestoration
 } from "react-router-dom";
-import './root.css'
+import classes from '@/scss/root/Root.module.scss'
+import header from '@/scss/root/header.module.scss'
+import footer from '@/scss/root/footer.module.scss'
+import drawer from '@/scss/root/drawer.module.scss'
 import routes from '@/routes'
 import { useConfig } from '@/state/config';
 import { useHeader } from '@/state/header';
@@ -25,7 +28,7 @@ import { useBackgrounds } from '@/state/background';
 import Dropdown from '@/component/dropdown';
 import Popup from '@/component/popup';
 import ReturnButton from '@/component/return_button';
-import MainBorder from '@/component/main_border';
+import Border from '@/component/border';
 import CharIcon from '@/component/char_icon';
 
 const currentYear = new Date().getFullYear()
@@ -77,39 +80,39 @@ export default function Root() {
 
   return (
     <>
-      <header className='header'>
+      <header className={header.header}>
         <section
-          className={`navButton ${drawerHidden ? '' : 'active'}`}
+          className={`${header.navButton} ${drawerHidden ? '' : header.active}`}
           onClick={() => toggleDrawer()}
         >
-          <section className='bar'></section>
-          <section className='bar'></section>
-          <section className='bar'></section>
+          <section className={header.bar} />
+          <section className={header.bar} />
+          <section className={header.bar} />
         </section>
-        <section className='spacer' />
-        <section className='extra-area'>
+        <section className={header.spacer} />
+        <section className={header['extra-area']}>
           {extraArea}
           <LanguageDropdown />
         </section>
       </header>
-      <nav className={`drawer ${drawerHidden ? '' : 'active'}`}>
+      <nav className={`${drawer.drawer} ${drawerHidden ? '' : drawer.active}`}>
         <section
-          className='links'
+          className={drawer.links}
         >
           <DrawerDestinations 
             toggleDrawer={toggleDrawer}
           />
         </section>
         <section
-          className={`overlay ${drawerHidden ? '' : 'active'}`}
+          className={`${drawer.overlay} ${drawerHidden ? '' : drawer.active}`}
           onClick={() => toggleDrawer()}
         />
       </nav>
-      <main className='main'>
-        <section className='main-header'>
-          <section className='main-title'>
+      <main className={classes.main}>
+        <section className={classes.header}>
+          <section className={classes.title}>
             {headerIcon && (
-              <section className='main-icon'>
+              <section className={classes.icon}>
                 <CharIcon
                   type={headerIcon}
                   viewBox={
@@ -120,7 +123,7 @@ export default function Root() {
             )}
             {title}
           </section>
-          <section className='main-tab'>
+          <section className={classes.tab}>
             {headerTabs}
           </section>
         </section>
@@ -140,32 +143,32 @@ function FooterElement() {
 
   return useMemo(() => {
     return (
-      <footer className='footer'>
-        <section className='links section'>
-          <section className="item">
+      <footer className={footer.footer}>
+        <section className={`${footer.links} ${footer.section}`}>
+          <section className={footer.item}>
             <Popup
-              className='link'
+              className={footer.link}
               title={i18n('disclaimer')}
             >
               {i18n('disclaimer_content')}
             </Popup>
           </section>
-          <section className="item">
-            <Link reloadDocument to="https://privacy.halyul.dev" target="_blank" className='link'>{i18n('privacy_policy')}</Link>
+          <section className={footer.item}>
+            <Link reloadDocument to="https://privacy.halyul.dev" target="_blank" className={footer.link}>{i18n('privacy_policy')}</Link>
           </section>
-          <section className="item">
-            <Link reloadDocument to="https://github.com/Halyul/aklive2d" target="_blank" className='link'>GitHub</Link>
+          <section className={footer.item}>
+            <Link reloadDocument to="https://github.com/Halyul/aklive2d" target="_blank" className={footer.link}>GitHub</Link>
           </section>
-          <section className="item">
+          <section className={footer.item}>
             <Popup
-              className='link'
+              className={footer.link}
               title={i18n('contact_us')}
             >
               ak#halyul.dev
             </Popup>
           </section>
         </section>
-        <section className='copyright section' onDoubleClick={() => {
+        <section className={`${footer.copyright} ${footer.section}`} onDoubleClick={() => {
           navigate('/error')
         }}>
           <span>Spine Runtimes © 2013 - 2019 Esoteric Software LLC</span>
@@ -191,7 +194,7 @@ function DrawerDestinations({ toggleDrawer }) {
             key={item.name}
             to={item.path}
             target="_blank"
-            className="link"
+            className={drawer.link}
             onClick={() => toggleDrawer(false)}
           >
             <section>
@@ -207,7 +210,9 @@ function DrawerDestinations({ toggleDrawer }) {
           <NavLink
             to={item.path}
             key={item.name}
-            className="link"
+            className={({ isActive, }) =>
+              `${drawer.link} ${isActive ? drawer.active : ''}`
+            }
             onClick={() => toggleDrawer(false)}
           >
             <section>
@@ -253,15 +258,15 @@ function HeaderTabsElement({ item }) {
 
   return (
     <section
-      className={`main-tab-item ${currentTab === item.key ? 'active' : ''}`}
+      className={`${classes.item} ${currentTab === item.key ? classes.active : ''}`}
       onClick={(e) => {
         setCurrentTab(item.key)
         item.onClick && item.onClick(e, currentTab)
       }}
       style={item.style}
     >
-      <section className='main-tab-text-wrapper'>
-        <span className='text'>{i18n(item.key)}</span>
+      <section className={classes['text-wrapper']}>
+        <span>{i18n(item.key)}</span>
       </section>
     </section>
   )
@@ -275,12 +280,12 @@ function HeaderReturnButton() {
 
   return useMemo(() => {
     return (
-      <MainBorder>
+      <Border>
         <ReturnButton
-          className='return-button'
+          className={classes['return-button']}
           onClick={() => navigate("/")}
         />
-      </MainBorder>
+      </Border>
     )
   }, [navigate])
 }

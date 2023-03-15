@@ -1,0 +1,54 @@
+@use '@/scss/_main_share.scss';
+
+.error {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  user-select: none;
+
+  .header {
+    padding: 1rem;
+    justify-content: space-between;
+    pointer-events: auto;
+  }
+
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 10rem;
+    font-size: 3rem;
+    gap: 2rem;
+  }
+
+  .spine {
+    max-width: 600px;
+    flex: 1;
+    visibility: hidden;
+    opacity: 0;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  @media (max-width: 768px) {
+    .main {
+      padding-top: 6rem;
+    }
+    .content {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .main {
+      padding-top: 4rem;
+    }
+    .content {
+      font-size: 1.5rem;
+    }
+  }
+}

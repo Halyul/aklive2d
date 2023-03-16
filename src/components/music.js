@@ -76,7 +76,7 @@ export default class Music {
   }
 
   success() {
-    this.changeMusic(window.settings.currentBackground)
+    if (this.#currentMusic === null) this.changeMusic(window.settings.currentBackground)
   }
 
   changeMusic(name) {

@@ -15,7 +15,7 @@ import {
 } from '@/state/language'
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
-import useAudio from '@/libs/voice';
+import VoiceElement from '@/component/voice';
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils';
 import CharIcon from '@/component/char_icon';
@@ -24,6 +24,7 @@ import useUmami from '@parcellab/react-use-umami';
 import Switch from '@/component/switch';
 
 const voiceOnAtom = atomWithStorage('voiceOn', false)
+let lastVoiceState = 'ended'
 
 export default function Home() {
   // eslint-disable-next-line no-unused-vars
@@ -36,7 +37,9 @@ export default function Home() {
   } = useHeader()
   const { config } = useConfig()
   const [content, setContent] = useState([])
-  const { stop } = useAudio()
+  const [voiceOn] = useAtom(voiceOnAtom)
+  const [voiceSrc, setVoiceSrc] = useState(null)
+  const [voiceReplay, setVoiceReplay] = useState(false)
 
   useEffect(() => {
     setTitle('dynamic_compile')
@@ -48,14 +51,32 @@ export default function Home() {
       key: 'skin'
     }])
     setHeaderIcon(null)
-    stop()
-  }, [setHeaderIcon, setTabs, setTitle, stop])
+  }, [setHeaderIcon, setTabs, setTitle])
 
   useEffect(() => {
     setContent(config?.operators || [])
   }, [config])
 
+  const handleAduioStateChange = useCallback((e, state) => {
+    lastVoiceState = state
+    if (state === 'ended') {
+      setVoiceReplay(false)
+    }
+  }, [])
+
   const isShown = useCallback((type) => currentTab === 'all' || currentTab === type, [currentTab])
+
+  const handleVoicePlay = useCallback((src) => {
+    if (!voiceOn) {
+      setVoiceSrc(null)
+    } else {
+      if (src === voiceSrc && lastVoiceState === 'ended') {
+        setVoiceReplay(true)
+      } else {
+        setVoiceSrc(src)
+      }
+    }
+  }, [voiceOn, voiceSrc])
 
   return (
     <section>
@@ -71,6 +92,7 @@ export default function Home() {
                       key={item.link}
                       item={item}
                       hidden={!isShown(item.type)}
+                      handleVoicePlay={handleVoicePlay}
                     />
                   )
                 })}
@@ -81,27 +103,17 @@ export default function Home() {
           )
         })
       }
-      <VoiceSwitchElement />
+      <VoiceSwitchElement
+        src={voiceSrc}
+        handleAduioStateChange={handleAduioStateChange}
+        replay={voiceReplay}
+      />
     </section>
   )
 }
 
-function OperatorElement({ item, hidden }) {
+function OperatorElement({ item, hidden, handleVoicePlay }) {
   const { textDefaultLang, language, alternateLang } = useLanguage()
-  const { play, stop, resetSrc } = useAudio()
-  const [voiceOn] = useAtom(voiceOnAtom)
-
-  const playVoice = useCallback(() => {
-    if (!voiceOn) return
-    play(`/${item.link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`)
-  }, [voiceOn, play, item.link])
-
-  useEffect(() => {
-    if (!voiceOn) {
-      stop()
-      resetSrc()
-    }
-  }, [voiceOn, stop, resetSrc])
 
   return useMemo(() => {
     return (
@@ -111,7 +123,7 @@ function OperatorElement({ item, hidden }) {
         hidden={hidden}
       >
         <section
-          onMouseEnter={() => playVoice()}
+          onMouseEnter={() => handleVoicePlay(`/${item.link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`)}
         >
           <section className={classes['background-filler']} />
           <section className={classes.outline} />
@@ -141,10 +153,10 @@ function OperatorElement({ item, hidden }) {
         </section>
       </NavLink>
     )
-  }, [item, hidden, language, alternateLang, textDefaultLang, playVoice])
+  }, [item, hidden, language, alternateLang, textDefaultLang, handleVoicePlay])
 }
 
-function VoiceSwitchElement() {
+function VoiceSwitchElement({ src, replay, handleAduioStateChange }) {
   const [voiceOn, setVoiceOn] = useAtom(voiceOnAtom)
   const {
     setExtraArea,
@@ -163,7 +175,19 @@ function VoiceSwitchElement() {
     ])
   }, [voiceOn, setExtraArea, setVoiceOn])
 
-  return null
+  return (
+    <VoiceElement 
+      src={src}
+      replay={replay}
+      handleAduioStateChange={handleAduioStateChange}
+    />
+  )
+}
+
+VoiceSwitchElement.propTypes = {
+  src: PropTypes.string,
+  replay: PropTypes.bool,
+  handleAduioStateChange: PropTypes.func,
 }
 
 function ImageElement({ item }) {

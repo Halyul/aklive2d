@@ -18,19 +18,23 @@ import {
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import { useBackgrounds } from '@/state/background';
-import useAudio from '@/libs/voice';
+import VoiceElement from '@/component/voice';
 import useUmami from '@parcellab/react-use-umami'
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
 import Border from '@/component/border';
 import { useI18n } from '@/state/language';
+import Switch from '@/component/switch';
+import { atom, useAtom } from 'jotai'
 
+const musicMapping = JSON.parse(import.meta.env.VITE_MUSIC_MAPPING)
 const getVoiceFoler = (lang) => {
   const folderObject = JSON.parse(import.meta.env.VITE_VOICE_FOLDERS)
   const voiceFolder = folderObject.sub.find(e => e.lang === lang) || folderObject.sub.find(e => e.name === 'custom')
   return `${folderObject.main}/${voiceFolder.name}`
 }
 const defaultSpineAnimation = 'Idle'
+const backgroundAtom = atom(null)
 
 const getTabName = (item, language) => {
   if (item.type === 'operator') {
@@ -61,16 +65,18 @@ export default function Operator() {
   const [spinePlayer, setSpinePlayer] = useState(null)
   const [voiceLang, _setVoiceLang] = useState(null)
   const { backgrounds } = useBackgrounds()
-  const [currentBackground, setCurrentBackground] = useState(null)
+  const [currentBackground, setCurrentBackground] = useAtom(backgroundAtom)
   const [voiceConfig, setVoiceConfig] = useState(null)
   const [subtitleLang, setSubtitleLang] = useState(null)
   const [hideSubtitle, setHideSubtitle] = useState(true)
-  const { play, stop, getSrc, isPlaying, isPlayingRef } = useAudio()
   const [subtitleObj, _setSubtitleObj] = useState(null)
   const [currentVoiceId, setCurrentVoiceId] = useState(null)
   const voiceLangRef = useRef(voiceLang)
   const subtitleObjRef = useRef(subtitleObj)
   const configRef = useRef(config)
+  const [voiceSrc, setVoiceSrc] = useState(null)
+  const [isVoicePlaying, _setIsVoicePlaying] = useState(false)
+  const isVoicePlayingRef = useRef(isVoicePlaying)
 
   const setVoiceLang = (value) => {
     voiceLangRef.current = value
@@ -82,18 +88,18 @@ export default function Operator() {
     _setSubtitleObj(value)
   }
 
+  const setIsVoicePlaying = (value) => {
+    isVoicePlayingRef.current = value
+    _setIsVoicePlaying(value)
+  }
+
   useEffect(() => {
     setExtraArea([])
-    stop()
-  }, [setExtraArea, stop])
+  }, [setExtraArea])
 
   useEffect(() => {
-    if (!voiceLang) stop()
-  }, [stop, voiceLang])
-
-  useEffect(() => {
-    if (backgrounds) setCurrentBackground(backgrounds[0])
-  }, [backgrounds])
+    if (backgrounds.length > 0) setCurrentBackground(backgrounds[0])
+  }, [backgrounds, setCurrentBackground])
 
   useEffect(() => {
     setSpineData(null)
@@ -175,7 +181,7 @@ export default function Operator() {
         showControls: false,
         touch: false,
         fps: 60,
-        defaultMix: 0,
+        defaultMix: 0.3,
         success: (player) => {
           let lastVoiceId = null
           let currentVoiceId = null
@@ -189,17 +195,13 @@ export default function Operator() {
             const id = voiceId()
             currentVoiceId = id
             setCurrentVoiceId(id)
-            play(
-              `/${configRef.current.link}/assets/${getVoiceFoler(voiceLangRef.current)}/${id}.ogg`,
-              () => {
-                lastVoiceId = currentVoiceId
-              }
-            )
+            setVoiceSrc(`/${configRef.current.link}/assets/${getVoiceFoler(voiceLangRef.current)}/${id}.ogg`)
+            lastVoiceId = currentVoiceId
           }
         }
       }))
     }
-  }, [config, spineData, setSpinePlayer, spineAnimation, play]);
+  }, [config, spineData, spineAnimation]);
 
   useEffect(() => {
     if (voiceConfig && voiceLang) {
@@ -212,13 +214,24 @@ export default function Operator() {
     }
   }, [subtitleLang, voiceConfig, voiceLang])
 
+  const handleAduioStateChange = useCallback((e, state) => {
+    switch (state) {
+      case 'play':
+        setIsVoicePlaying(true)
+        break
+      default:
+        setIsVoicePlaying(false)
+        break
+    }
+  }, [])
+
   useEffect(() => {
     if (subtitleLang) {
-      if (isPlaying) {
+      if (isVoicePlaying) {
         setHideSubtitle(false)
       } else {
         const autoHide = () => {
-          if (isPlayingRef.current) return
+          if (isVoicePlayingRef.current) return
           setHideSubtitle(true)
         }
         setTimeout(autoHide, 5 * 1000)
@@ -229,29 +242,35 @@ export default function Operator() {
     } else {
       setHideSubtitle(true)
     }
-  }, [subtitleLang, isPlaying, isPlayingRef])
+  }, [subtitleLang, isVoicePlaying])
 
   useEffect(() => {
-    if (voiceLang && isPlaying) {
+    if (voiceLang && isVoicePlaying) {
       const audioUrl = `/assets/${getVoiceFoler(voiceLang)}/${currentVoiceId}.ogg`
-      if (getSrc() !== (window.location.href.replace(/\/$/g, '') + audioUrl)) {
-        play(`/${config.link}${audioUrl}`)
+      if (voiceSrc !== (window.location.href.replace(/\/$/g, '') + audioUrl)) {
+        setVoiceSrc(`/${config.link}${audioUrl}`)
       }
     }
-  }, [voiceLang, isPlaying, currentVoiceId, config, getSrc, play])
+  }, [voiceLang, isVoicePlaying, currentVoiceId, config, voiceSrc])
+
+  const playAnimationVoice = useCallback((animation) => {
+    if (voiceLangRef.current) {
+      let id = null
+      if (animation === 'Idle') id = 'CN_011'
+      if (animation === 'Interact') id = 'CN_034'
+      if (animation === 'Special') id = 'CN_042'
+      if (id) {
+        setCurrentVoiceId(id)
+        setVoiceSrc(`/${key}/assets/${getVoiceFoler(voiceLangRef.current)}/${id}.ogg`)
+      }
+    }
+  }, [key])
 
   useEffect(() => {
-    if (voiceLang && config) {
-      let id = ''
-      if (spineAnimation === 'Idle') id = 'CN_011'
-      if (spineAnimation === 'Interact') id = 'CN_034'
-      if (spineAnimation === 'Special') id = 'CN_042'
-      setCurrentVoiceId(id)
-      play(
-        `/${config.link}/assets/${getVoiceFoler(voiceLang)}/${id}.ogg`
-      )
+    if (!voiceLang) {
+      setVoiceSrc(null)
     }
-  }, [voiceLang, config, spineAnimation, play])
+  }, [voiceLang])
 
   const spineSettings = [
     {
@@ -260,8 +279,10 @@ export default function Operator() {
         {
           name: 'idle',
           onClick: () => {
-            spinePlayer.animationState.setAnimation(0, "Idle", true, 0)
-            setSpineAnimation('Idle')
+            const animation = "Idle"
+            playAnimationVoice(animation)
+            spinePlayer.animationState.setAnimation(0, animation, true, 0)
+            setSpineAnimation(animation)
           },
           activeRule: () => {
             return spineAnimation === 'Idle'
@@ -269,8 +290,10 @@ export default function Operator() {
         }, {
           name: 'interact',
           onClick: () => {
-            spinePlayer.animationState.setAnimation(0, "Interact", true, 0)
-            setSpineAnimation('Interact')
+            const animation = "Interact"
+            playAnimationVoice(animation)
+            spinePlayer.animationState.setAnimation(0, animation, true, 0)
+            setSpineAnimation(animation)
           },
           activeRule: () => {
             return spineAnimation === 'Interact'
@@ -278,8 +301,10 @@ export default function Operator() {
         }, {
           name: 'special',
           onClick: () => {
-            spinePlayer.animationState.setAnimation(0, "Special", true, 0)
-            setSpineAnimation('Special')
+            const animation = "Special"
+            playAnimationVoice(animation)
+            spinePlayer.animationState.setAnimation(0, animation, true, 0)
+            setSpineAnimation(animation)
           },
           activeRule: () => {
             return spineAnimation === 'Special'
@@ -296,6 +321,9 @@ export default function Operator() {
               setVoiceLang(item)
             } else {
               setVoiceLang(null)
+            }
+            if (!isVoicePlayingRef.current) {
+              playAnimationVoice(spineAnimation)
             }
           },
           activeRule: () => {
@@ -320,6 +348,9 @@ export default function Operator() {
           }
         }
       }) || []
+    }, {
+      name: 'music',
+      el: <MusicElement />
     }, {
       name: 'backgrounds',
       options: backgrounds.map((item) => {
@@ -348,6 +379,13 @@ export default function Operator() {
         }}>
           {
             spineSettings.map((item) => {
+              if (item.el) {
+                return (
+                  <section key={item.name}>
+                    {item.el}
+                  </section>
+                )
+              }
               if (item.options.length === 0) return null
               return (
                 <section key={item.name}>
@@ -417,7 +455,7 @@ export default function Operator() {
           </section>
         </section>
         <section className={classes.container} style={currentBackground && {
-          backgroundImage: `url(/${key}/assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${currentBackground})`
+          backgroundImage: `url(/chen/assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${currentBackground})`
         }} >
           {
             config && (
@@ -426,7 +464,7 @@ export default function Operator() {
           }
           <section ref={spineRef} className={classes.wrapper} />
           {currentVoiceId && subtitleObj && (
-            <section className={`${classes.voice} ${hideSubtitle ? '' : classes.active }`}>
+            <section className={`${classes.voice} ${hideSubtitle ? '' : classes.active}`}>
               <section className={classes.type}>{subtitleObj[currentVoiceId]?.title}</section>
               <section className={classes.subtitle}>
                 <span>{subtitleObj[currentVoiceId]?.text}</span>
@@ -437,6 +475,80 @@ export default function Operator() {
         </section>
       </section>
       <Border />
+      <VoiceElement
+        src={voiceSrc}
+        handleAduioStateChange={handleAduioStateChange}
+      />
+    </section>
+  )
+}
+
+function MusicElement() {
+  const [enableMusic, setEnableMusic] = useState(false)
+  const { i18n } = useI18n()
+  const musicIntroRef = useRef(null)
+  const musicLoopRef = useRef(null)
+  const [background,] = useAtom(backgroundAtom)
+
+  useEffect(() => {
+    if (musicIntroRef.current && musicIntroRef.current) {
+      musicIntroRef.current.volume = 0.5
+      musicLoopRef.current.volume = 0.5
+    }
+  }, [musicIntroRef, musicLoopRef])
+
+  useEffect(() => {
+    if (!enableMusic || background) {
+      musicIntroRef.current.pause()
+      musicLoopRef.current.pause()
+    }
+  }, [enableMusic, background])
+
+  useEffect(() => {
+    if (background && enableMusic) {
+      const introOgg = musicMapping[background].intro
+      const intro = `./chen/assets/${import.meta.env.VITE_MUSIC_FOLDER}/${introOgg}`
+      const loop = `./chen/assets/${import.meta.env.VITE_MUSIC_FOLDER}/${musicMapping[background].loop}`
+      musicLoopRef.current.src = loop
+      if (introOgg) {
+        musicIntroRef.current.src = intro || loop
+      } else {
+        musicLoopRef.current.play()
+      }
+    }
+  }, [background, enableMusic])
+
+  const handleIntroTimeUpdate = useCallback(() => {
+    if (musicIntroRef.current.currentTime >= musicIntroRef.current.duration - 0.3) {
+      musicIntroRef.current.pause()
+      musicLoopRef.current.play()
+    }
+  }, [])
+
+  const handleLoopTimeUpdate = useCallback(() => {
+    if (musicLoopRef.current.currentTime >= musicLoopRef.current.duration - 0.3) {
+      musicLoopRef.current.currentTime = 0
+      musicLoopRef.current.play()
+    }
+  }, [])
+
+  return (
+    <section>
+      <section
+        className={classes.titleWithSwitch}
+        onClick={() => setEnableMusic(!enableMusic)}
+      >
+        <section className={classes.text}>{i18n('music')}</section>
+        <section className={classes.switch}>
+          <Switch on={enableMusic} />
+        </section>
+      </section>
+      <audio ref={musicIntroRef} preload="auto" autoPlay onTimeUpdate={() => handleIntroTimeUpdate()}>
+        <source type="audio/ogg" />
+      </audio>
+      <audio ref={musicLoopRef} preload="auto" onTimeUpdate={() => handleLoopTimeUpdate()}>
+        <source type="audio/ogg"/>
+      </audio>
     </section>
   )
 }

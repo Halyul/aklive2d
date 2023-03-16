@@ -16,7 +16,11 @@ export default function Switch(props) {
   return (
     <section
       className={`${classes.switch} ${on ? classes.active : ''}`}
-      onClick={() => props.handleOnClick()}
+      onClick={() => {
+        if (props.handleOnClick) {
+          props.handleOnClick(!on)
+        }
+      }}
     >
       <span className={classes.text}>{i18n(props.text)}</span>
       <section className={classes.wrapper}>

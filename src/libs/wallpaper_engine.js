@@ -93,10 +93,10 @@ window.wallpaperPropertyListener = {
         }
         if (properties.music_title) {
             window.music.useMusic = properties.music_title.value
+            window.music.changeMusic(properties.music_selection.value)
             window.settings.functionInsights("useMusic", Object.keys(properties) !== 1)
         }
         if (properties.music_selection) {
-            // TODO: not working
             window.music.changeMusic(properties.music_selection.value)
             window.settings.functionInsights("music_selection", Object.keys(properties) !== 1)
         }

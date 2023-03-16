@@ -1,4 +1,6 @@
 showcase:
+  2023/03/15:
+    - Added background music
   2023/03/03:
     - Performance optimization
   2023/02/26:
@@ -38,10 +40,12 @@ showcase:
   2021/05/26:
     - First commit
 directory:
+  2023/03/15:
+    - Added background music
   2023/03/03:
-    - Fixed Voice and VCs issues
+    - Fixed Voice and VLs issues
   2023/03/02: 
-    - Added Voice, VCs, Operator Logo
+    - Added Voice, VLs, Operator Logo
   2023/03/01:
     - Added Operator page
     - Added Changelogs page

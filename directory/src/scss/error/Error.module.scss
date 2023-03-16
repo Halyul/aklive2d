@@ -22,6 +22,7 @@
     padding-top: 10rem;
     font-size: 3rem;
     gap: 2rem;
+    padding-bottom: 0;
   }
 
   .spine {
@@ -38,6 +39,7 @@
   @media (max-width: 768px) {
     .main {
       padding-top: 6rem;
+      max-height: calc(100vh - 6rem);
     }
     .content {
       font-size: 2rem;
@@ -46,6 +48,7 @@
   @media (max-width: 480px) {
     .main {
       padding-top: 4rem;
+      max-height: calc(100vh - 4rem);
     }
     .content {
       font-size: 1.5rem;

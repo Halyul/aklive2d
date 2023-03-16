@@ -5,7 +5,7 @@ import { read } from './yaml.js';
 import AssetsProcessor from './assets_processor.js'
 import EnvGenerator from './env_generator.js'
 
-export default function ({ backgrounds }) {
+export default function ({ backgrounds, musicMapping }) {
   const extractedFolder = path.join(__projectRoot, __config.folder.operator, '_directory')
   const targetFolder = path.join(__projectRoot, __config.folder.release, __config.folder.directory);
   const sourceFolder = path.join(__projectRoot, __config.folder.operator);
@@ -78,6 +78,12 @@ export default function ({ backgrounds }) {
     }, {
       key: "error_files",
       value: JSON.stringify(__config.directory.error).replace('#', '%23')
+    }, {
+      key: "music_folder",
+      value: __config.folder.music
+    }, {
+      key: "music_mapping",
+      value: JSON.stringify(musicMapping)
     }
   ]), path.join(__projectRoot, 'directory', '.env'))
 

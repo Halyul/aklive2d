@@ -17,7 +17,7 @@ import Switch from '@/component/switch';
 import ReturnButton from "@/component/return_button";
 import { Typewriter } from 'react-simple-typewriter'
 import { useHeader } from '@/state/header';
-import useAudio from '@/libs/voice';
+import VoiceElement from '@/component/voice';
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
 import useUmami from '@parcellab/react-use-umami';
@@ -27,6 +27,7 @@ const config = JSON.parse(import.meta.env.VITE_ERROR_FILES)
 const obj = config.files[Math.floor((Math.random() * config.files.length))]
 const filename = obj.key.replace("#", "%23")
 const padding = obj.paddings
+let lastVoiceState = 'ended'
 
 export default function Error() {
   // eslint-disable-next-line no-unused-vars
@@ -40,9 +41,11 @@ export default function Error() {
   const [spineDone, _setSpineDone] = useState(false)
   const spineRef = useRef(null)
   const [spineData, setSpineData] = useState(null)
-  const { play, stop } = useAudio()
   const spineDoneRef = useRef(spineDone)
   const voiceOnRef = useRef(voiceOn)
+  const [voiceSrc, setVoiceSrc] = useState(null)
+  const [voiceReplay, setVoiceReplay] = useState(false)
+  const [spinePlayer, setSpinePlayer] = useState(null)
 
   const setSpineDone = (data) => {
     spineDoneRef.current = data
@@ -60,26 +63,40 @@ export default function Error() {
 
   useEffect(() => {
     setTitle(content[0])
-    stop()
-  }, [content, setTitle, stop])
+  }, [content, setTitle])
 
   useEffect(() => {
     if (!voiceOn) {
-      stop()
+      setVoiceSrc(null)
+    } else {
+      setVoiceSrc(`/${import.meta.env.VITE_DIRECTORY_FOLDER}/error.ogg`)
+      if (spinePlayer) {
+        spinePlayer.animationState.setAnimation(0, "Interact", false, 0);
+        spinePlayer.animationState.addAnimation(0, "Relax", true, 0);
+      }
     }
-  }, [voiceOn, stop])
+  }, [voiceOn])
 
   useEffect(() => {
     voiceOnRef.current = voiceOn
   }, [voiceOn])
 
   const playVoice = useCallback(() => {
-    play(`/${import.meta.env.VITE_DIRECTORY_FOLDER}/error.ogg`, { overwrite: true })
-  }, [play])
+    if (lastVoiceState === 'ended' && voiceSrc !== null) {
+      setVoiceReplay(true)
+    }
+  }, [voiceSrc])
+
+  const handleAduioStateChange = useCallback((e, state) => {
+    lastVoiceState = state
+    if (state === 'ended') {
+      setVoiceReplay(false)
+    }
+  }, [])
 
   useEffect(() => {
     if (spineRef.current?.children.length === 0 && spineData) {
-      new spine.SpinePlayer(spineRef.current, {
+      setSpinePlayer(new spine.SpinePlayer(spineRef.current, {
         skelUrl: `./assets/${filename}.skel`,
         atlasUrl: `./assets/${filename}.atlas`,
         rawDataURIs: spineData,
@@ -99,7 +116,7 @@ export default function Error() {
         showControls: false,
         touch: false,
         fps: 60,
-        defaultMix: 0,
+        defaultMix: 0.3,
         success: (player) => {
           let isPlayingInteract = false
           player.animationState.addListener({
@@ -127,7 +144,7 @@ export default function Error() {
             ani()
           }
         }
-      })
+      }))
     }
   }, [playVoice, spineData]);
 
@@ -162,6 +179,11 @@ export default function Error() {
         <section
           className={`${classes.spine} ${spineDone ? classes.active : ''}`}
           ref={spineRef}
+        />
+        <VoiceElement
+          src={voiceSrc}
+          replay={voiceReplay}
+          handleAduioStateChange={handleAduioStateChange}
         />
       </main>
     </section>

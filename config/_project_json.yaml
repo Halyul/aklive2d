@@ -2,7 +2,7 @@ description: !match "~{split('config', 'title' ,' - ')[0]} Live 2D\n~{split('con
 localization:
   en-us:
     ui_notice_title: <hr><h4>📝 Notes</h4><hr>
-    ui_notice_changelog: <span><b>Now supports Operator Voice!</b></span>
+    ui_notice_changelog: <span><b>Now supports Background Music!</b></span>
     ui_notice_set_fps: <span><b>Set FPS target in Settings</b></span>
     ui_notice_github: "Github: https://github.com/Halyul/aklive2d"
     ui_notice_other_operators: "Previews: https://arknights.halyul.dev/"

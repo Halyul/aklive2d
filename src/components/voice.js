@@ -50,11 +50,11 @@ export default class Voice {
     this.#audioEl.addEventListener('ended', audioEndedFunc)
     this.#playEntryVoice()
     this.#initNextVoiceTimer()
-    this.#widgetEl.addEventListener('click', e => {
+    this.#widgetEl.addEventListener('click', () => {
       this.#lastClickToNext = true
       this.#nextVoice()
     })
-    document.addEventListener('mousemove', e => {
+    document.addEventListener('mousemove', () => {
       if (this.#idleListener === -1) {
         this.#initIdleVoiceTimer()
       }

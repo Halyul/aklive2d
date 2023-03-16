@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import path from 'path';
 import fs from 'fs';
 import sharp from "sharp";
@@ -8,7 +9,7 @@ export default class Background {
   #files
 
   constructor() {
-    this.#backgroundFolder = path.join(__projetRoot, __config.folder.operator, __config.folder.share, __config.folder.background);
+    this.#backgroundFolder = path.join(__projectRoot, __config.folder.operator, __config.folder.share, __config.folder.background);
     this.#extractFolder = path.join(this.#backgroundFolder, 'extracted');
   }
 

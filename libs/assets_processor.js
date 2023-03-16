@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import path from 'path'
 import { read, write, readSync } from './file.js'
 import AlphaComposite from './alpha_composite.js'
@@ -9,7 +10,7 @@ export default class AssetsProcessor {
     #shareFolder
     
     constructor(operatorName, shareFolder) {
-        this.#operatorSourceFolder = path.join(__projetRoot, __config.folder.operator)
+        this.#operatorSourceFolder = path.join(__projectRoot, __config.folder.operator)
         this.#alphaCompositer = new AlphaComposite()
         this.#operatorName = operatorName
         this.#shareFolder = shareFolder

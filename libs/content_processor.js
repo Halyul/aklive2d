@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export default class Matcher {
   #start
   #end

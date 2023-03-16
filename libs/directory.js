@@ -3,11 +3,12 @@ import path from 'path'
 import { writeSync, copy, readSync as readFile } from './file.js'
 import { read } from './yaml.js';
 import AssetsProcessor from './assets_processor.js'
+import EnvGenerator from './env_generator.js'
 
-export default function ({ backgrounds, charwordTable }) {
-  const extractedFolder = path.join(__projetRoot, __config.folder.operator, '_directory')
-  const targetFolder = path.join(__projetRoot, __config.folder.release, __config.folder.directory);
-  const sourceFolder = path.join(__projetRoot, __config.folder.operator);
+export default function ({ backgrounds }) {
+  const extractedFolder = path.join(__projectRoot, __config.folder.operator, '_directory')
+  const targetFolder = path.join(__projectRoot, __config.folder.release, __config.folder.directory);
+  const sourceFolder = path.join(__projectRoot, __config.folder.operator);
   const filesToCopy = Object.keys(__config.operators)
   const directoryJson = {
     operators: Object.values(
@@ -22,7 +23,7 @@ export default function ({ backgrounds, charwordTable }) {
 
           cur.workshopId = null
           try {
-            cur.workshopId = JSON.parse(readFile(path.join(__projetRoot, __config.folder.operator, cur.link, 'project.json'))).workshopid
+            cur.workshopId = JSON.parse(readFile(path.join(__projectRoot, __config.folder.operator, cur.link, 'project.json'))).workshopid
           } catch (e) {
             console.log(`No workshop id for ${cur.link}!`, e)
           }
@@ -33,7 +34,7 @@ export default function ({ backgrounds, charwordTable }) {
   }
   const versionJson = __config.version
 
-  const changelogs = read(path.join(__projetRoot, 'changelogs.yaml'))
+  const changelogs = read(path.join(__projectRoot, 'changelogs.yaml'))
   const changelogsArray = Object.keys(changelogs).reduce((acc, cur) => {
     const array = []
     Object.keys(changelogs[cur]).map((item) => {
@@ -78,7 +79,7 @@ export default function ({ backgrounds, charwordTable }) {
       key: "error_files",
       value: JSON.stringify(__config.directory.error).replace('#', '%23')
     }
-  ]), path.join(__projetRoot, 'directory', '.env'))
+  ]), path.join(__projectRoot, 'directory', '.env'))
 
   writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
   writeSync(JSON.stringify(versionJson, null), path.join(targetFolder, "version.json"))

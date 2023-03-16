@@ -2,6 +2,7 @@ folder:
   operator: ./operator/
   release: ./release/
   background: background
+  music: music
   directory: _assets
   share: _share
   voice:

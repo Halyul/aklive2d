@@ -11,7 +11,7 @@ import EnvGenerator from './libs/env_generator.js'
 import directory from './libs/directory.js'
 import { PerfseePlugin } from '@perfsee/rollup'
 
-global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
+global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
 
 class ViteRunner {
   #globalConfig = getConfig()
@@ -35,12 +35,12 @@ class ViteRunner {
       case 'directory':
         result = {
           data: this.#directoryConfig,
-          versionDir: path.join(__projetRoot, "directory"),
+          versionDir: path.join(__projectRoot, "directory"),
         }
         const op = temp[2] || process.argv[3]
         if (op !== 'preview') {
-          rmdir(path.resolve(__projetRoot, this.#globalConfig.folder.release, "_directory"))
-          rmdir(path.resolve(__projetRoot, this.#globalConfig.folder.release, "index.html"))
+          rmdir(path.resolve(__projectRoot, this.#globalConfig.folder.release, "_directory"))
+          rmdir(path.resolve(__projectRoot, this.#globalConfig.folder.release, "index.html"))
         }
         break
       case 'dev':
@@ -49,7 +49,7 @@ class ViteRunner {
       case 'preview':
         result = {
           data: this.#operatorConfig,
-          versionDir: path.join(__projetRoot),
+          versionDir: path.join(__projectRoot),
         }
         break
       default:
@@ -115,22 +115,22 @@ class ViteRunner {
     const assetsDir = 'assets'
     return {
       ...this.#baseViteConfig,
-      envDir: path.join(__projetRoot, this.#globalConfig.folder.operator, operatorName),
-      publicDir: path.resolve(__projetRoot, this.#globalConfig.folder.release, operatorName),
-      root: path.resolve(__projetRoot),
+      envDir: path.join(__projectRoot, this.#globalConfig.folder.operator, operatorName),
+      publicDir: path.resolve(__projectRoot, this.#globalConfig.folder.release, operatorName),
+      root: path.resolve(__projectRoot),
       server: {
         ...this.#baseViteConfig.server,
       },
       resolve: {
         alias: {
-          '@': path.resolve(__projetRoot, './src'),
-          '!': path.resolve(__projetRoot, this.#globalConfig.folder.operator, operatorName),
+          '@': path.resolve(__projectRoot, './src'),
+          '!': path.resolve(__projectRoot, this.#globalConfig.folder.operator, operatorName),
         },
       },
       build: {
         ...this.#baseViteConfig.build,
         chunkSizeWarningLimit: 10000,
-        outDir: path.resolve(__projetRoot, this.#globalConfig.folder.release, operatorName),
+        outDir: path.resolve(__projectRoot, this.#globalConfig.folder.release, operatorName),
         rollupOptions: {
           output: {
             entryFileNames: `${assetsDir}/[name].js`,
@@ -144,12 +144,12 @@ class ViteRunner {
 
   get #directoryConfig() {
     if (process.env.npm_lifecycle_event === 'vite:directory:build') {
-      this.#globalConfig.version.directory = increase(path.join(__projetRoot, "directory"))
+      this.#globalConfig.version.directory = increase(path.join(__projectRoot, "directory"))
       global.__config = this.#globalConfig
     }
-    const directoryDir = path.resolve(__projetRoot, 'directory')
+    const directoryDir = path.resolve(__projectRoot, 'directory')
     this.#mode = process.argv[3]
-    const publicDir = path.resolve(__projetRoot, this.#globalConfig.folder.release)
+    const publicDir = path.resolve(__projectRoot, this.#globalConfig.folder.release)
     const assetsDir = '_directory'
     return {
       ...this.#baseViteConfig,
@@ -162,7 +162,7 @@ class ViteRunner {
         //   artifactName: 'directory',
         // }),
       ],
-      publicDir: path.resolve(__projetRoot, this.#globalConfig.folder.release),
+      publicDir: path.resolve(__projectRoot, this.#globalConfig.folder.release),
       root: directoryDir,
       server: {
         ...this.#baseViteConfig.server,
@@ -170,13 +170,13 @@ class ViteRunner {
       resolve: {
         alias: {
           '@': path.resolve(directoryDir, './src'),
-          '!': path.resolve(__projetRoot, './src'),
+          '!': path.resolve(__projectRoot, './src'),
           '#': path.resolve(publicDir, this.#globalConfig.folder.directory),
         },
       },
       build: {
         ...this.#baseViteConfig.build,
-        outDir: path.resolve(__projetRoot, this.#globalConfig.folder.release),
+        outDir: path.resolve(__projectRoot, this.#globalConfig.folder.release),
         rollupOptions: {
           output: {
             entryFileNames: `${assetsDir}/[name].js`,

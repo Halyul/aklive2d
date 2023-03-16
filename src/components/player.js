@@ -57,6 +57,7 @@ export default function spinePlayer(el) {
       }
       window.voice.success()
       window.settings.success()
+      window.music.success()
     },
   })
 }

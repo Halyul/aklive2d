@@ -119,7 +119,7 @@ export default class Settings {
     this.functionInsights("setLogo", this.isWallpaperEngine)
   }
 
-  #readFile(e, onload, callback) {
+  #readFile(e, onload, callback = () => { }) {
     const file = e.target.files[0]
     if (!file) return
     const reader = new FileReader()
@@ -161,12 +161,18 @@ export default class Settings {
     if (!skipInsights) this.functionInsights("setBackgoundImage", this.isWallpaperEngine);
   }
 
-  setDefaultBackground(e) {
-    const backgroundURL = `url("${import.meta.env.BASE_URL}assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${e}")`
-    if (document.getElementById("custom_background_clear").disabled && !document.body.style.backgroundImage.startsWith("url(\"file:")) {
-      this.setBackgoundImage(backgroundURL, true)
+  get currentBackground() {
+    if (!document.getElementById("custom_background_clear").disabled) {
+      return null
     }
-    this.#defaultBackgroundImage = backgroundURL
+    return this.#defaultBackgroundImage.replace(/^(url\(('|"))(.+)(\/)(.+.png)(('|")\))$/, '$5')
+  }
+
+  setDefaultBackground(e) {
+    this.#defaultBackgroundImage = `url("${import.meta.env.BASE_URL}assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${e}")`
+    if (document.getElementById("custom_background_clear").disabled && !document.body.style.backgroundImage.startsWith("url(\"file:")) {
+      this.setBackgoundImage(this.#defaultBackgroundImage, true)
+    }
     this.functionInsights("setDefaultBackground", this.isWallpaperEngine)
   }
 
@@ -182,9 +188,9 @@ export default class Settings {
   }
 
   resetBackground() {
-    this.setBackgoundImage(this.#defaultBackgroundImage)
     document.getElementById("custom_background").value = ""
     document.getElementById("custom_background_clear").disabled = true
+    this.setBackgoundImage(this.#defaultBackgroundImage)
   }
 
   loadViewport() {
@@ -374,31 +380,53 @@ export default class Settings {
               <input type="number" id="voice_next_duration_input" name="voice_next_duration" value="${window.voice.nextDuration}" />
             </div>
             <div>
-          <label for="subtitle">Subtitle</label>
-          <input type="checkbox" id="subtitle" name="subtitle" checked/>
-          <div id="subtitle_realted">
-            <div>
-              <label for="subtitle_lang_select">Choose the language of subtitle:</label>
-              <select name="subtitle_lang" id="subtitle_lang_select">
-                ${this.#updateOptions("subtitle_lang_select", window.voice.subtitleLanguages)}
-              </select>
+              <label for="subtitle">Subtitle</label>
+              <input type="checkbox" id="subtitle" name="subtitle" checked/>
+              <div id="subtitle_realted">
+                <div>
+                  <label for="subtitle_lang_select">Choose the language of subtitle:</label>
+                  <select name="subtitle_lang" id="subtitle_lang_select">
+                    ${this.#updateOptions("subtitle_lang_select", window.voice.subtitleLanguages)}
+                  </select>
+                </div>
+                <div>
+                  <label for="subtitle_padding_x">Subtitle X Position</label>
+                  <input type="range" min="0" max="100" id="subtitle_padding_x_slider" value="${window.voice.subtitleX}" />
+                  <input type="number" id="subtitle_padding_x_input" name="subtitle_padding_x" value="${window.voice.subtitleX}" />
+                </div>
+                <div>
+                  <label for="subtitle_padding_y">Subtitle Y Position</label>
+                  <input type="range" min="0" max="100" id="subtitle_padding_y_slider" value="${window.voice.subtitleY}" />
+                  <input type="number" id="subtitle_padding_y_input" name="subtitle_padding_y" value="${window.voice.subtitleY}" />
+                </div>
+              </div>
             </div>
             <div>
-              <label for="subtitle_padding_x">Subtitle X Position</label>
-                <input type="range" min="0" max="100" id="subtitle_padding_x_slider" value="${window.voice.subtitleX}" />
-                <input type="number" id="subtitle_padding_x_input" name="subtitle_padding_x" value="${window.voice.subtitleX}" />
-            </div>
-            <div>
-              <label for="subtitle_padding_y">Subtitle Y Position</label>
-              <input type="range" min="0" max="100" id="subtitle_padding_y_slider" value="${window.voice.subtitleY}" />
-              <input type="number" id="subtitle_padding_y_input" name="subtitle_padding_y" value="${window.voice.subtitleY}" />
+              <label for="voice_actor">Voice Actor</label>
+              <input type="checkbox" id="voice_actor" name="voice_actor"/>
             </div>
           </div>
         </div>
         <div>
-          <label for="voice_actor">Voice Actor</label>
-          <input type="checkbox" id="voice_actor" name="voice_actor"/>
-        </div>
+          <label for="music">Music</label>
+          <input type="checkbox" id="music" name="music" />
+          <div id="music_realted" hidden>
+            <div>
+              <label for="music_select">Choose theme music:</label>
+              <select name="music_select" id="music_select">
+                ${this.#updateOptions("music_select", window.music.music)}
+              </select>
+            </div>
+            <div>
+              <label for="music_volume">Music Volume</label>
+              <input type="range" min="0" max="100" step="1" id="music_volume_slider" value="${window.music.volume}" />
+              <input type="number" id="music_volume_input"  min="0" max="100" step="1" name="music_volume" value="${window.music.volume}" />
+            </div>
+            <div>
+              <label for="music_switch_offset">Music Swtich Offset</label>
+              <input type="range" min="0" max="1" step="0.01" id="music_switch_offset_slider" value="${window.music.timeOffset}" />
+              <input type="number" id="music_switch_offset_input"  min="0" max="1" step="0.01" name="music_switch_offset" value="${window.music.timeOffset}" />
+            </div>
           </div>
         </div>
         <div>
@@ -407,8 +435,8 @@ export default class Settings {
           <div id="position_realted" hidden>
             <div>
               <label for="position_padding_left">Padding Left</label>
-                <input type="range" min="-100" max="100" id="position_padding_left_slider" value="${this.#padLeft}" />
-                <input type="number" id="position_padding_left_input" name="position_padding_left" value="${this.#padLeft}" />
+              <input type="range" min="-100" max="100" id="position_padding_left_slider" value="${this.#padLeft}" />
+              <input type="number" id="position_padding_left_input" name="position_padding_left" value="${this.#padLeft}" />
             </div>
             <div>
               <label for="position_padding_right">Padding Right</label>
@@ -428,9 +456,9 @@ export default class Settings {
           </div>
         </div>
         <div>
-            <label for="animation_select">Animation:</label>
-            <select name="animation_select" id="animation_selection"></select>
-          </div>
+          <label for="animation_select">Animation:</label>
+          <select name="animation_select" id="animation_selection"></select>
+        </div>
         <div>
           <button type="button" id="settings_play" disabled>Play</button>
           <button type="button" id="settings_pause">Pause</button>
@@ -443,17 +471,19 @@ export default class Settings {
   }
 
   #sync(source, targetID) {
+    if (typeof source === "string") source = document.getElementById(source);
     document.getElementById(targetID).value = source.value;
   }
 
-  #showRelated(e, relatedSettingsID) {
+  #showRelated(e, relatedSettingsID, revert = false) {
     const eRelatedSettings = document.getElementById(relatedSettingsID)
-    if (e.checked) {
+    const checked = revert ? !e.checked : e.checked;
+    if (checked) {
       eRelatedSettings.hidden = false;
     } else {
       eRelatedSettings.hidden = true;
     }
-  };
+  }
 
   #updateOptions(id, array) {
     const e = document.getElementById(id);
@@ -496,7 +526,7 @@ export default class Settings {
       }, {
         id: "logo_image", event: "change", handler: e => _this.setLogoImage(e)
       }, {
-        id: "logo_image_clear", event: "click", handler: e => _this.resetLogoImage()
+        id: "logo_image_clear", event: "click", handler: () => _this.resetLogoImage()
       }, {
         id: "logo_ratio_slider", event: "input", handler: e => {
           _this.#sync(e.currentTarget, "logo_ratio_input");
@@ -542,7 +572,7 @@ export default class Settings {
       }, {
         id: "custom_background", event: "change", handler: e => _this.setBackground(e)
       }, {
-        id: "custom_background_clear", event: "click", handler: e => _this.resetBackground()
+        id: "custom_background_clear", event: "click", handler: () => _this.resetBackground()
       }, {
         id: "voice", event: "click", handler: e => {
           _this.#showRelated(e.currentTarget, "voice_realted");
@@ -592,6 +622,34 @@ export default class Settings {
       }, {
         id: "voice_actor", event: "click", handler: e => {
           window.voice.useVoiceActor = e.currentTarget.checked;
+        }
+      }, {
+        id: "music", event: "click", handler: e => {
+          _this.#showRelated(e.currentTarget, "music_realted");
+          window.music.useMusic = e.currentTarget.checked;
+          window.music.changeMusic(this.currentBackground)
+        }
+      }, {
+        id: "music_select", event: "change", handler: e => window.music.changeMusic(e.currentTarget.value)
+      }, {
+        id: "music_volume_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "music_volume_input");
+          window.music.volume = parseInt(e.currentTarget.value)
+        }
+      }, {
+        id: "music_volume_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "music_volume_slider");
+          window.music.volume = parseInt(e.currentTarget.value)
+        }
+      }, {
+        id: "music_switch_offset_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "music_switch_offset_input");
+          window.music.timeOffset = parseFloat(e.currentTarget.value)
+        }
+      }, {
+        id: "music_switch_offset_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "music_switch_offset_slider");
+          window.music.timeOffset = parseFloat(e.currentTarget.value)
         }
       }, {
         id: "position", event: "click", handler: e => {
@@ -651,9 +709,9 @@ export default class Settings {
           document.getElementById("settings_play").disabled = false;
         }
       }, {
-        id: "settings_reset", event: "click", handler: e => _this.reset()
+        id: "settings_reset", event: "click", handler: () => _this.reset()
       }, {
-        id: "settings_close", event: "click", handler: e => _this.close()
+        id: "settings_close", event: "click", handler: () => _this.close()
       }, {
         id: "animation_selection", event: "change", handler: e => {
           this.spinePlayer.animationState.setAnimation(0, e.currentTarget.value, false, 0)

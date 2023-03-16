@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import path from 'path'
 import Matcher from './content_processor.js'
 import { read as readFile, exists } from './file.js'
@@ -13,7 +14,7 @@ export default class ProjectJson {
 
   constructor(operatorName, operatorShareFolder, assets) {
     this.#operatorName = operatorName
-    this.#operatorSourceFolder = path.join(__projetRoot, __config.folder.operator)
+    this.#operatorSourceFolder = path.join(__projectRoot, __config.folder.operator)
     this.#operatorShareFolder = operatorShareFolder
     this.#assets = assets
   }
@@ -44,7 +45,7 @@ export default class ProjectJson {
         return matcher.result
       }
     }
-    this.#template = readYAML(path.join(__projetRoot, 'config', '_project_json.yaml'), [match])
+    this.#template = readYAML(path.join(__projectRoot, 'config', '_project_json.yaml'), [match])
     this.#process()
     return this.#json
   }

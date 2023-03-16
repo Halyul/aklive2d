@@ -89,8 +89,20 @@ window.wallpaperPropertyListener = {
         }
         if (properties.voiceactor) {
             window.voice.useVoiceActor = properties.voiceactor.value
-            console.log(properties)
             window.settings.functionInsights("useVoiceActor", Object.keys(properties) !== 1)
+        }
+        if (properties.music_title) {
+            window.music.useMusic = properties.music_title.value
+            window.settings.functionInsights("useMusic", Object.keys(properties) !== 1)
+        }
+        if (properties.music_selection) {
+            // TODO: not working
+            window.music.changeMusic(properties.music_selection.value)
+            window.settings.functionInsights("music_selection", Object.keys(properties) !== 1)
+        }
+        if (properties.music_volume) {
+            window.music.volume = properties.music_volume.value
+            window.settings.functionInsights("music_volume", Object.keys(properties) !== 1)
         }
         if (properties.position) {
             if (!properties.position.value) {

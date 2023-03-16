@@ -15,9 +15,10 @@ import { appendReadme } from './libs/append.js'
 import { increase } from './libs/version.js';
 import Background from './libs/background.js'
 import CharwordTable from './libs/charword_table.js';
+import Music from './libs/music.js';
 
 async function main() {
-  global.__projetRoot = path.dirname(fileURLToPath(import.meta.url))
+  global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
   global.__config = getConfig()
 
   const op = process.argv[2]
@@ -33,17 +34,17 @@ async function main() {
   switch (op) {
     case 'directory':
       assert(OPERATOR_NAMES.length !== 0, 'Please set a mode for Directory.')
-      fork(path.join(__projetRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
+      fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
       return
     case 'build-all':
-      for (const [key, _] of Object.entries(__config.operators)) {
+      for (const [key,] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
-      __config.version.showcase = increase(__projetRoot)
+      __config.version.showcase = increase(__projectRoot)
       break
     case 'preview':
       assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
-      fork(path.join(__projetRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
+      fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
       return
     case 'charword':
       await charwordTable.process()
@@ -57,10 +58,11 @@ async function main() {
   const background = new Background()
   await background.process()
   const backgrounds = ['operator_bg.png', ...background.files]
+  const { musicToCopy, musicMapping } = Music()
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
-    const OPERATOR_SOURCE_FOLDER = path.join(__projetRoot, __config.folder.operator)
-    const OPERATOR_RELEASE_FOLDER = path.join(__projetRoot, __config.folder.release, OPERATOR_NAME)
+    const OPERATOR_SOURCE_FOLDER = path.join(__projectRoot, __config.folder.operator)
+    const OPERATOR_RELEASE_FOLDER = path.join(__projectRoot, __config.folder.release, OPERATOR_NAME)
     const SHOWCASE_PUBLIC_ASSSETS_FOLDER = path.join(OPERATOR_RELEASE_FOLDER, "assets")
     const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'extracted')
     const VOICE_FOLDERS = __config.folder.voice.sub.map((sub) => path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, __config.folder.voice.main, sub.name))
@@ -116,62 +118,6 @@ async function main() {
 
     writeSync(JSON.stringify(voiceJson), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
 
-    const projectJson = new ProjectJson(OPERATOR_NAME, OPERATOR_SHARE_FOLDER, {
-      backgrounds,
-      voiceLangs,
-      subtitleLangs
-    })
-    projectJson.load().then((content) => {
-      write(JSON.stringify(content, null, 2), path.join(OPERATOR_RELEASE_FOLDER, 'project.json'))
-    })
-
-    const assetsProcessor = new AssetsProcessor(OPERATOR_NAME, OPERATOR_SHARE_FOLDER)
-    assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
-      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
-    })
-
-    const filesToCopy = [
-      ...background.getFilesToCopy(SHOWCASE_PUBLIC_ASSSETS_FOLDER),
-      {
-        filename: 'preview.jpg',
-        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
-        target: path.join(OPERATOR_RELEASE_FOLDER)
-      },
-      {
-        filename: 'operator_bg.png',
-        source: path.join(OPERATOR_SHARE_FOLDER, __config.folder.background),
-        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, __config.folder.background)
-      },
-      {
-        filename: `${__config.operators[OPERATOR_NAME].logo}.png`,
-        source: path.join(OPERATOR_SHARE_FOLDER, 'logo'),
-        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
-      },
-      {
-        filename: `${__config.operators[OPERATOR_NAME].fallback_name}.png`,
-        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
-        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
-      },
-      {
-        filename: `${__config.operators[OPERATOR_NAME].fallback_name}_portrait.png`,
-        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
-        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
-      }
-    ]
-    filesToCopy.forEach((file) => {
-      copy(path.join(file.source, file.filename), path.join(file.target, file.filename))
-    })
-
-    const foldersToCopy = [
-      {
-        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, __config.folder.voice.main),
-        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, __config.folder.voice.main)
-      }
-    ]
-    foldersToCopy.forEach((folder) => {
-      copyDir(folder.source, folder.target)
-    })
-
     const envPath = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, '.env')
     writeSync((new EnvGenerator()).generate([
       {
@@ -219,12 +165,82 @@ async function main() {
       }, {
         key: "voice_folders",
         value: JSON.stringify(__config.folder.voice)
+      }, {
+        key: "music_folder",
+        value: __config.folder.music
+      }, {
+        key: "music_mapping",
+        value: JSON.stringify(musicMapping)
       }
     ]), envPath)
-    fork(path.join(__projetRoot, 'vite.config.js'), [op, OPERATOR_NAME])
+
+    const projectJson = new ProjectJson(OPERATOR_NAME, OPERATOR_SHARE_FOLDER, {
+      backgrounds,
+      voiceLangs,
+      subtitleLangs,
+      music: Object.keys(musicMapping)
+    })
+    projectJson.load().then((content) => {
+      write(JSON.stringify(content, null, 2), path.join(OPERATOR_RELEASE_FOLDER, 'project.json'))
+    })
+
+    const assetsProcessor = new AssetsProcessor(OPERATOR_NAME, OPERATOR_SHARE_FOLDER)
+    assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
+      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
+    })
+
+    const filesToCopy = [
+      ...background.getFilesToCopy(SHOWCASE_PUBLIC_ASSSETS_FOLDER),
+      ...musicToCopy.map(entry => {
+        return {
+          ...entry,
+          target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, __config.folder.music)
+        }
+      }),
+      {
+        filename: 'preview.jpg',
+        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
+        target: path.join(OPERATOR_RELEASE_FOLDER)
+      },
+      {
+        filename: 'operator_bg.png',
+        source: path.join(OPERATOR_SHARE_FOLDER, __config.folder.background),
+        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, __config.folder.background)
+      },
+      {
+        filename: `${__config.operators[OPERATOR_NAME].logo}.png`,
+        source: path.join(OPERATOR_SHARE_FOLDER, 'logo'),
+        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
+      },
+      {
+        filename: `${__config.operators[OPERATOR_NAME].fallback_name}.png`,
+        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
+        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
+      },
+      {
+        filename: `${__config.operators[OPERATOR_NAME].fallback_name}_portrait.png`,
+        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
+        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER)
+      }
+    ]
+    filesToCopy.forEach((file) => {
+      copy(path.join(file.source, file.filename), path.join(file.target, file.filename))
+    })
+
+    const foldersToCopy = [
+      {
+        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, __config.folder.voice.main),
+        target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, __config.folder.voice.main)
+      }
+    ]
+    foldersToCopy.forEach((folder) => {
+      copyDir(folder.source, folder.target)
+    })
+
+    fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAME])
   }
 
-  directory({ backgrounds, charwordTable })
+  directory({ backgrounds, musicMapping })
 }
 
 main();

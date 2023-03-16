@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 import path from 'path'
 import { read } from './yaml.js'
 import { read as readVersion } from './version.js'
 import { getOperatorId } from './charword_table.js'
 
 export default function () {
-    return process(read(path.join(__projetRoot, 'config.yaml')))
+    return process(read(path.join(__projectRoot, 'config.yaml')))
 }
 
 function process(config) {
@@ -23,8 +24,8 @@ function process(config) {
 
     // version
     config.version = {
-        showcase: readVersion(path.join(__projetRoot)),
-        directory: readVersion(path.join(__projetRoot, 'directory')),
+        showcase: readVersion(path.join(__projectRoot)),
+        directory: readVersion(path.join(__projectRoot, 'directory')),
     }
 
     return config

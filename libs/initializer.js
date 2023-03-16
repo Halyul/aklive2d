@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import path from 'path'
 import { stringify } from 'yaml'
 import { read as readYAML } from './yaml.js'
@@ -9,9 +10,9 @@ export default function init(operatorName, extractedDir) {
         mkdir(dir)
     })
     const date = new Date()
-    const template = readYAML(path.join(__projetRoot, 'config', '_template.yaml'))
+    const template = readYAML(path.join(__projectRoot, 'config', '_template.yaml'))
     template.link = operatorName
     template.date = `${date.getFullYear()}/${(date.getMonth() + 1).toString().padStart(2, '0') }`
-    writeSync(stringify(template), path.join(__projetRoot, 'config', `${operatorName}.yaml`))
+    writeSync(stringify(template), path.join(__projectRoot, 'config', `${operatorName}.yaml`))
     appendMainConfig(operatorName)
 }

@@ -4,5 +4,4 @@ export default class EnvGenerator {
       return `VITE_${value.key.toUpperCase()}=${value.value}`
     }).join('\n')
   }
-
 }

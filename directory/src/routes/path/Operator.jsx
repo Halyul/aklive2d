@@ -535,7 +535,7 @@ function MusicElement() {
   return (
     <section>
       <section
-        className={classes.titleWithSwitch}
+        className={classes.title}
         onClick={() => setEnableMusic(!enableMusic)}
       >
         <section className={classes.text}>{i18n('music')}</section>

@@ -91,14 +91,13 @@ window.wallpaperPropertyListener = {
             window.voice.useVoiceActor = properties.voiceactor.value
             window.settings.functionInsights("useVoiceActor", Object.keys(properties) !== 1)
         }
-        if (properties.music_title) {
-            window.music.useMusic = properties.music_title.value
-            window.music.changeMusic(properties.music_selection.value)
-            window.settings.functionInsights("useMusic", Object.keys(properties) !== 1)
-        }
         if (properties.music_selection) {
             window.music.changeMusic(properties.music_selection.value)
             window.settings.functionInsights("music_selection", Object.keys(properties) !== 1)
+        }
+        if (properties.music_title) {
+            window.music.useMusic = properties.music_title.value
+            window.settings.functionInsights("useMusic", Object.keys(properties) !== 1)
         }
         if (properties.music_volume) {
             window.music.volume = properties.music_volume.value

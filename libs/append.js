@@ -1,0 +1,19 @@
+/* eslint-disable no-undef */
+import path from 'path'
+import { appendSync, readSync } from './file.js'
+
+export function appendReadme(operatorName) {
+    const operatorConfig = __config.operators[operatorName]
+    const projectJson = JSON.parse(readSync(path.join(__projectRoot, __config.folder.operator, operatorName, 'project.json')))
+    appendSync(
+        `\n| ${operatorConfig.codename["en-US"]} | [Link](https://arknights.halyul.dev/${operatorConfig.link}/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=${projectJson.workshopid}) |`,
+        path.join(__projectRoot, 'README.md')
+    )
+}
+
+export function appendMainConfig(operatorName) {
+    appendSync(
+        `\n  ${operatorName}: !include config/${operatorName}.yaml`,
+        path.join(__projectRoot, 'config.yaml')
+    )
+}

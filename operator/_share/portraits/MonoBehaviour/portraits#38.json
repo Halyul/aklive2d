@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#38",
+  "_sprites": [
+    {
+      "name": "char_172_svrash_snow#1",
+      "guid": "5f6230cde5e00214caa645466167954a",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_171_bldsk_witch#1",
+      "guid": "fd7c0eecdc1c50e45b28fc72826850fc",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_171_bldsk_summer#7",
+      "guid": "c805a2a775ed15949a70b1c0b85f99fe",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_173_slchan_wwf#1",
+      "guid": "eb6c5364281ed8549bf372c57f638d7a",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_173_slchan_wild#1",
+      "guid": "e0be6b3cdfbd8bc4185e53b9db3d14af",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_172_svrash_summer#4",
+      "guid": "7c09d787e36aadc49b979f7b0d387f3a",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_158_milu_snow#2",
+      "guid": "362a5d1f73fe0ae4a8f2ed2a50afb504",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_151_myrtle_epoque#12",
+      "guid": "3cae1858fc7cad84e98f0935b2804c44",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_150_snakek_wild#1",
+      "guid": "cb8fed758d925bb40b8cd5aa88b1f743",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_166_skfire_summer#1",
+      "guid": "ee10887b4f0d45d488855736ed36a515",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_164_nightm_epoque#5",
+      "guid": "4a27a723b87f41048936433d58ff2aa6",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_158_milu_wild#2",
+      "guid": "c124d60cc1fe173429a2c9097fde2a71",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 5554362280230735227
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -8757046203470991579
+    },
+    "size": 1024
+  },
+  "_index": 38,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_172_svrash_snow#1",
+        "guid": "5f6230cde5e00214caa645466167954a",
+        "md5": "fa1277881c65988a6228b2721309a58c"
+      },
+      {
+        "name": "char_171_bldsk_witch#1",
+        "guid": "fd7c0eecdc1c50e45b28fc72826850fc",
+        "md5": "abc0d70e12c0f4af30376d40f7ff510c"
+      },
+      {
+        "name": "char_171_bldsk_summer#7",
+        "guid": "c805a2a775ed15949a70b1c0b85f99fe",
+        "md5": "146f4719e0347e94ac6e35e8f12ddced"
+      },
+      {
+        "name": "char_173_slchan_wwf#1",
+        "guid": "eb6c5364281ed8549bf372c57f638d7a",
+        "md5": "8fd673975089ba5f52991b4c4884e8c0"
+      },
+      {
+        "name": "char_173_slchan_wild#1",
+        "guid": "e0be6b3cdfbd8bc4185e53b9db3d14af",
+        "md5": "90b4e338ff091ffb1373053444504821"
+      },
+      {
+        "name": "char_172_svrash_summer#4",
+        "guid": "7c09d787e36aadc49b979f7b0d387f3a",
+        "md5": "af4872035e3e5fb51207bcb8e498c62d"
+      },
+      {
+        "name": "char_158_milu_snow#2",
+        "guid": "362a5d1f73fe0ae4a8f2ed2a50afb504",
+        "md5": "2d888a2e0164206e13860b1145bb0b0c"
+      },
+      {
+        "name": "char_151_myrtle_epoque#12",
+        "guid": "3cae1858fc7cad84e98f0935b2804c44",
+        "md5": "9027b41c0f100b727cb0bec53e9584fe"
+      },
+      {
+        "name": "char_150_snakek_wild#1",
+        "guid": "cb8fed758d925bb40b8cd5aa88b1f743",
+        "md5": "bf230d51015b1b36e744c5c3523961b2"
+      },
+      {
+        "name": "char_166_skfire_summer#1",
+        "guid": "ee10887b4f0d45d488855736ed36a515",
+        "md5": "dd5b9e65ad0696268e6b3f59fdfd4bbe"
+      },
+      {
+        "name": "char_164_nightm_epoque#5",
+        "guid": "4a27a723b87f41048936433d58ff2aa6",
+        "md5": "3e92707c88d8dc63eb22f8afe3cc07d7"
+      },
+      {
+        "name": "char_158_milu_wild#2",
+        "guid": "c124d60cc1fe173429a2c9097fde2a71",
+        "md5": "5c08ed3c4c13d3fb8c9b357bb8c767b9"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#38",
+        "guid": "199dcd9a15da02e41a02420d83338209",
+        "md5": "7870544b8d5e8e5b79b8f1fc5e91db97"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#38a",
+        "guid": "c87234bc122f5884aaf310b66060dafe",
+        "md5": "8c7b9f9d06100255d71f34e98c926cf9"
+      }
+    ]
+  }
+}

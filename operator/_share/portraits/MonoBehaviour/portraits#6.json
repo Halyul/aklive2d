@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#6",
+  "_sprites": [
+    {
+      "name": "char_147_shining_1",
+      "guid": "8e6a3769aaa53ac4eae3e88fca9ecade",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_145_prove_2",
+      "guid": "c46aef04d8e88414c9a041e2ea763d5f",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_145_prove_1",
+      "guid": "3df2c6f1237bbd043ac372f37bb13105",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_148_nearl_2",
+      "guid": "622c1954444779b4890ed0c98e301c01",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_148_nearl_1",
+      "guid": "af80c4eb09dcf1f4da16f0cc3c6001e2",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_147_shining_2",
+      "guid": "41a6bcdb1e6b26f44805cc2e40a35233",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_143_ghost_1",
+      "guid": "b9386c0f4ae71a34ea33a38db19c26dd",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_141_nights_2",
+      "guid": "b070b9b7bd7e4194a8ef3c0db4ce7c31",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_141_nights_1",
+      "guid": "b0ca7a37585c32c438c27fbb2ccf59e6",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_144_red_2",
+      "guid": "ce2fa6220ada7234dae4315d721df5d0",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_144_red_1",
+      "guid": "df81321bf94993a4d9c0ffb239206193",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_143_ghost_2",
+      "guid": "291550194b1b83f4e80865193e5431fe",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 8390089331840534234
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 7701803736752247284
+    },
+    "size": 1024
+  },
+  "_index": 6,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_147_shining_1",
+        "guid": "8e6a3769aaa53ac4eae3e88fca9ecade",
+        "md5": "8fa7167dee08d071c72350f0d7c44cbd"
+      },
+      {
+        "name": "char_145_prove_2",
+        "guid": "c46aef04d8e88414c9a041e2ea763d5f",
+        "md5": "612e158fe00b25fe8c37b03aa0c4b5f1"
+      },
+      {
+        "name": "char_145_prove_1",
+        "guid": "3df2c6f1237bbd043ac372f37bb13105",
+        "md5": "017c37bb31d71ce63a2ec37cdf17ad1c"
+      },
+      {
+        "name": "char_148_nearl_2",
+        "guid": "622c1954444779b4890ed0c98e301c01",
+        "md5": "d9147e12abd90efab76878566f103d3c"
+      },
+      {
+        "name": "char_148_nearl_1",
+        "guid": "af80c4eb09dcf1f4da16f0cc3c6001e2",
+        "md5": "bc05b4316b4edca59bfc0e693f99492f"
+      },
+      {
+        "name": "char_147_shining_2",
+        "guid": "41a6bcdb1e6b26f44805cc2e40a35233",
+        "md5": "f0721b72ac3ad716048516112fd85c69"
+      },
+      {
+        "name": "char_143_ghost_1",
+        "guid": "b9386c0f4ae71a34ea33a38db19c26dd",
+        "md5": "b3b02869f5750da66eb445a665647526"
+      },
+      {
+        "name": "char_141_nights_2",
+        "guid": "b070b9b7bd7e4194a8ef3c0db4ce7c31",
+        "md5": "d2e0395745b37a8d5474e1cc5cf29f45"
+      },
+      {
+        "name": "char_141_nights_1",
+        "guid": "b0ca7a37585c32c438c27fbb2ccf59e6",
+        "md5": "070223980bb46c61dcded908db42fca9"
+      },
+      {
+        "name": "char_144_red_2",
+        "guid": "ce2fa6220ada7234dae4315d721df5d0",
+        "md5": "b96050bed530049c693bd976395e2bc2"
+      },
+      {
+        "name": "char_144_red_1",
+        "guid": "df81321bf94993a4d9c0ffb239206193",
+        "md5": "35ed6366d66739a689573d7f965f1e09"
+      },
+      {
+        "name": "char_143_ghost_2",
+        "guid": "291550194b1b83f4e80865193e5431fe",
+        "md5": "5f3f147ea5ad3bdef2ae3718d23d66ad"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#6",
+        "guid": "63620ef276d067049904d4975b37692c",
+        "md5": "944aee67d80f7d34f207b1e12932ef20"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#6a",
+        "guid": "e573c0b32e2d1964db0d9ac3013b2408",
+        "md5": "049019264ab106d98d5ece84051b7f2c"
+      }
+    ]
+  }
+}

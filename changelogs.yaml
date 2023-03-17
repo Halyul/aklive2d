@@ -1,0 +1,59 @@
+showcase:
+  2023/03/15:
+    - Added background music
+  2023/03/03:
+    - Performance optimization
+  2023/02/26:
+    - Rename w_fugue to w_wonder
+  2023/02/14:
+    - Added pozemka_snowy_plains_in_words
+  2023/02/11:
+    - Added Insights
+    - Added Operator Voice
+  2023/02/05:
+    - Added ability to move Operator Logo around
+    - Added VCs
+  2023/01/17:
+    - Added ling, chongyue
+  2023/01/16:
+    - Refactor the project to use nodeJS
+  2022/12/01:
+    - Added mizuki_summer_feast
+  2022/10/31:
+    - Added texas, relight/neral, become anew/rosmon, dream/passager
+  2022/10/24:
+    - Added lee_trust_your_eyes
+  2022/08/11:
+    - Added gavial, surtr#9
+  2022/05/01:
+    - Added w_fugue, specter, and skadi_sublimation
+  2022/03/29:
+    - Moved to Spine 3.8.99
+    - Added phatom
+  2022/01/23:
+    - Added dusk, ling, everything is a miracle/dusk, unfettered freedom/nian
+  2021/11/01:
+    - Added Nearl, W, and Rosmontis
+  2021/08/21:
+    - Updated skadi
+    - Added nian, chen
+  2021/05/26:
+    - First commit
+directory:
+  2023/03/15:
+    - Added background music
+  2023/03/03:
+    - Fixed Voice and VLs issues
+  2023/03/02: 
+    - Added Voice, VLs, Operator Logo
+  2023/03/01:
+    - Added Operator page
+    - Added Changelogs page
+  2023/02/28:
+    - Init Operator page
+  2023/02/26:
+    - Added Home page
+  2023/02/25:
+    - Added portrait images
+  2023/02/21:
+    - Init Directory

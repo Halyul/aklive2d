@@ -1,0 +1,21 @@
+{
+  "contentrating": "Everyone",
+  "description": "",
+  "file": "index.html",
+  "general": {
+    "localization": {},
+    "properties": {
+      "schemecolor": {
+        "order": 0,
+        "text": "ui_browse_properties_scheme_color",
+        "type": "color",
+        "value": "0 0 0"
+      }
+    }
+  },
+  "preview": "preview.jpg",
+  "tags": ["Game"],
+  "title": "",
+  "type": "web",
+  "version": 1
+}

@@ -1,0 +1,79 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#63",
+  "_sprites": [
+    {
+      "name": "char_496_wildmn_epoque#16",
+      "guid": "ff979fbcac26aa646a1369525523b6b6",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_475_akafyu_epoque#15",
+      "guid": "e9a12cab64881e14b8509c17f1f34791",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 5031300581820417834
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -858700379018991339
+    },
+    "size": 512
+  },
+  "_index": 63,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_496_wildmn_epoque#16",
+        "guid": "ff979fbcac26aa646a1369525523b6b6",
+        "md5": "95dbb73bd7a0b694d4cfb67c02184d89"
+      },
+      {
+        "name": "char_475_akafyu_epoque#15",
+        "guid": "e9a12cab64881e14b8509c17f1f34791",
+        "md5": "f3d1874da21537de632243f94ab6c711"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#63",
+        "guid": "cea698340e6bc3047815dddff55a948f",
+        "md5": "0b4641fe32c5ff9fa19267bfb19e46da"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#63a",
+        "guid": "16991da946f43354ca9f516a688d1b44",
+        "md5": "34825eb0044f60cf8fd422deab2f6a24"
+      }
+    ]
+  }
+}

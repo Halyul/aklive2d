@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#52",
+  "_sprites": [
+    {
+      "name": "char_4045_heidi_2",
+      "guid": "5e38557f01fab6945a90f218d6b9cf46",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4045_heidi_1",
+      "guid": "d9aa980bb4aa1cf4f946a0f8d80acb6c",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4042_lumen_1",
+      "guid": "190bba43a4f0333428850b720ab91b27",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_159_peacok_game#1",
+      "guid": "bab0fef269aaa0d439a94a2cde17aeed",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_112_siege_striker#2",
+      "guid": "3022a2d9338f4bf4e8fc37c5a83e7406",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1012_skadi2_boc#4",
+      "guid": "92d853c27c3afa44f9e04ef634954c06",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4040_rockr_1",
+      "guid": "9fb4b111f2f428b45a1126f049bb7f6d",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4039_horn_2",
+      "guid": "1e2105fd9685cc948b4073b8c95949a1",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4039_horn_1",
+      "guid": "cfd03f4434647154dbad500f8a153831",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4041_chnut_2",
+      "guid": "44b914047800fe94598c0aa5c817314a",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4041_chnut_1",
+      "guid": "174df096d0a7bfe47a6d8d85311608c9",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_4040_rockr_2",
+      "guid": "61a955d94320fa740923b239d36c5fe9",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -4038660574759529777
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -2190880364807607223
+    },
+    "size": 1024
+  },
+  "_index": 52,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_4045_heidi_2",
+        "guid": "5e38557f01fab6945a90f218d6b9cf46",
+        "md5": "191db245f9891a6e6dd32e3244eb8dc5"
+      },
+      {
+        "name": "char_4045_heidi_1",
+        "guid": "d9aa980bb4aa1cf4f946a0f8d80acb6c",
+        "md5": "34ff2c4e6095379b648ecec0cb402fbc"
+      },
+      {
+        "name": "char_4042_lumen_1",
+        "guid": "190bba43a4f0333428850b720ab91b27",
+        "md5": "c503459a7fb230eef642b5af39ee0898"
+      },
+      {
+        "name": "char_159_peacok_game#1",
+        "guid": "bab0fef269aaa0d439a94a2cde17aeed",
+        "md5": "852d9efa60e457d68495de447c978617"
+      },
+      {
+        "name": "char_112_siege_striker#2",
+        "guid": "3022a2d9338f4bf4e8fc37c5a83e7406",
+        "md5": "d2ddd7065da36e4c09867b5d84e217f9"
+      },
+      {
+        "name": "char_1012_skadi2_boc#4",
+        "guid": "92d853c27c3afa44f9e04ef634954c06",
+        "md5": "ff0521e3b6bb54a9e98147babb2a26d7"
+      },
+      {
+        "name": "char_4040_rockr_1",
+        "guid": "9fb4b111f2f428b45a1126f049bb7f6d",
+        "md5": "27491dfd7018cf2a7ed998565a56c5c8"
+      },
+      {
+        "name": "char_4039_horn_2",
+        "guid": "1e2105fd9685cc948b4073b8c95949a1",
+        "md5": "17ee61f69e0ac457946cbd70fd433ba9"
+      },
+      {
+        "name": "char_4039_horn_1",
+        "guid": "cfd03f4434647154dbad500f8a153831",
+        "md5": "bb9cb51db4f31169007089908d6f3d5a"
+      },
+      {
+        "name": "char_4041_chnut_2",
+        "guid": "44b914047800fe94598c0aa5c817314a",
+        "md5": "ef407f541c17de96be28613787fc7de3"
+      },
+      {
+        "name": "char_4041_chnut_1",
+        "guid": "174df096d0a7bfe47a6d8d85311608c9",
+        "md5": "188c2880902fc1c6d8e1f48edf9b8539"
+      },
+      {
+        "name": "char_4040_rockr_2",
+        "guid": "61a955d94320fa740923b239d36c5fe9",
+        "md5": "a883956174e6249f01cbdb19c039a2fb"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#52",
+        "guid": "1f151aef24bacf04fa78e59f50fbc6c4",
+        "md5": "d8fa04e1ffc80e276e04b0ca28a2f0d0"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#52a",
+        "guid": "8720c313eead39343aa697b1919a32ba",
+        "md5": "7530be058ca47b4413951d17b8dd55e5"
+      }
+    ]
+  }
+}

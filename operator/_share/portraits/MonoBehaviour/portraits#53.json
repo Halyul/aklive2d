@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#53",
+  "_sprites": [
+    {
+      "name": "char_4046_ebnhlz_1",
+      "guid": "47c365dd606f3e4448e6922fc59b0638",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_486_takila_ambiencesynesthesia#2",
+      "guid": "1960610c370f9cb4e8a7b318a26638a3",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_422_aurora_boc#4",
+      "guid": "349496b1fb0ab7b4eb47be6cad57c38f",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4047_pianst_2",
+      "guid": "f5cb45e0c0b59d543a491fe7536126b9",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4047_pianst_1",
+      "guid": "a81a25d7afc50274aa9cc4468995c99b",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4046_ebnhlz_2",
+      "guid": "c167e4f8883385145a1e97d11fb775b5",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_206_gnosis_boc#4",
+      "guid": "e8bd418e66fc5de428ca4e649765a855",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1024_hbisc2_2",
+      "guid": "f5877f956fda728418406195436a8d91",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1024_hbisc2_1",
+      "guid": "9313093f5b792734d82fd0c5ace812d9",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_311_mudrok_ambiencesynesthesia#2",
+      "guid": "5705f7f8a6efd274d926f0a3aa584bf6",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_285_medic2_boc#4",
+      "guid": "b62b2a22bfec8124f987b52ef4cd2594",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_261_sddrag_ambiencesynesthesia#2",
+      "guid": "2287403805019594282bd3ed15281415",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 1887066464031729575
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 7015994130380393645
+    },
+    "size": 1024
+  },
+  "_index": 53,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_4046_ebnhlz_1",
+        "guid": "47c365dd606f3e4448e6922fc59b0638",
+        "md5": "06e03160aeb157f370de84aac7929e44"
+      },
+      {
+        "name": "char_486_takila_ambiencesynesthesia#2",
+        "guid": "1960610c370f9cb4e8a7b318a26638a3",
+        "md5": "99c15833b1d9e9567991400edf50c4c7"
+      },
+      {
+        "name": "char_422_aurora_boc#4",
+        "guid": "349496b1fb0ab7b4eb47be6cad57c38f",
+        "md5": "7ff070d3d5a3145a6d3529a7801a7bf1"
+      },
+      {
+        "name": "char_4047_pianst_2",
+        "guid": "f5cb45e0c0b59d543a491fe7536126b9",
+        "md5": "f806b893f3923fa505e1bbf9d0b6411f"
+      },
+      {
+        "name": "char_4047_pianst_1",
+        "guid": "a81a25d7afc50274aa9cc4468995c99b",
+        "md5": "22c9076c5ca2a5c9ca6e8c9e345f96f3"
+      },
+      {
+        "name": "char_4046_ebnhlz_2",
+        "guid": "c167e4f8883385145a1e97d11fb775b5",
+        "md5": "9db271ca8004d6a4da0d007ce3f019f7"
+      },
+      {
+        "name": "char_206_gnosis_boc#4",
+        "guid": "e8bd418e66fc5de428ca4e649765a855",
+        "md5": "2e3d5983d0a8fcd3dd38d576e4cb2c0f"
+      },
+      {
+        "name": "char_1024_hbisc2_2",
+        "guid": "f5877f956fda728418406195436a8d91",
+        "md5": "25402168af776b5e9e49d46745582832"
+      },
+      {
+        "name": "char_1024_hbisc2_1",
+        "guid": "9313093f5b792734d82fd0c5ace812d9",
+        "md5": "95dc79298ad04584629f31ce054e6ac1"
+      },
+      {
+        "name": "char_311_mudrok_ambiencesynesthesia#2",
+        "guid": "5705f7f8a6efd274d926f0a3aa584bf6",
+        "md5": "68b6ee3ec990972fb724c7183eec2401"
+      },
+      {
+        "name": "char_285_medic2_boc#4",
+        "guid": "b62b2a22bfec8124f987b52ef4cd2594",
+        "md5": "568522256f466b55a99a2471b3d8ae0c"
+      },
+      {
+        "name": "char_261_sddrag_ambiencesynesthesia#2",
+        "guid": "2287403805019594282bd3ed15281415",
+        "md5": "eddf18edb68520323ab7ec3b5f5ee488"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#53",
+        "guid": "15e3527a4d9ba35489e33d5fa76a7df1",
+        "md5": "c1e02f2c61f2bd1ac9663027caa87cf1"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#53a",
+        "guid": "ebdc2b49dc2d72a4d9e7d76376db7ca8",
+        "md5": "cc2c38fa5f83df0647627722515f1286"
+      }
+    ]
+  }
+}

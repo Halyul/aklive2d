@@ -1,0 +1,3113 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2901845067482496567
+  },
+  "m_Name": "portrait_hub",
+  "_sprites": [
+    {
+      "name": "char_002_amiya_1+",
+      "atlas": 0
+    },
+    {
+      "name": "char_002_amiya_1",
+      "atlas": 0
+    },
+    {
+      "name": "char_002_amiya_2",
+      "atlas": 0
+    },
+    {
+      "name": "char_003_kalts_1",
+      "atlas": 0
+    },
+    {
+      "name": "char_003_kalts_2",
+      "atlas": 0
+    },
+    {
+      "name": "char_009_12fce_1",
+      "atlas": 0
+    },
+    {
+      "name": "char_010_chen_1",
+      "atlas": 0
+    },
+    {
+      "name": "char_010_chen_2",
+      "atlas": 0
+    },
+    {
+      "name": "char_017_huang_1",
+      "atlas": 0
+    },
+    {
+      "name": "char_017_huang_2",
+      "atlas": 0
+    },
+    {
+      "name": "char_1001_amiya2_2",
+      "atlas": 0
+    },
+    {
+      "name": "char_1011_lava2_1",
+      "atlas": 0
+    },
+    {
+      "name": "char_101_sora_2",
+      "atlas": 1
+    },
+    {
+      "name": "char_101_sora_1",
+      "atlas": 1
+    },
+    {
+      "name": "char_1014_nearl2_2",
+      "atlas": 1
+    },
+    {
+      "name": "char_103_angel_1",
+      "atlas": 1
+    },
+    {
+      "name": "char_102_texas_2",
+      "atlas": 1
+    },
+    {
+      "name": "char_102_texas_1",
+      "atlas": 1
+    },
+    {
+      "name": "char_1012_skadi2_2",
+      "atlas": 1
+    },
+    {
+      "name": "char_1012_skadi2_1",
+      "atlas": 1
+    },
+    {
+      "name": "char_1011_lava2_2",
+      "atlas": 1
+    },
+    {
+      "name": "char_1014_nearl2_1",
+      "atlas": 1
+    },
+    {
+      "name": "char_1013_chen2_2",
+      "atlas": 1
+    },
+    {
+      "name": "char_1013_chen2_1",
+      "atlas": 1
+    },
+    {
+      "name": "char_109_fmout_2",
+      "atlas": 2
+    },
+    {
+      "name": "char_109_fmout_1",
+      "atlas": 2
+    },
+    {
+      "name": "char_108_silent_2",
+      "atlas": 2
+    },
+    {
+      "name": "char_112_siege_1",
+      "atlas": 2
+    },
+    {
+      "name": "char_110_deepcl_2",
+      "atlas": 2
+    },
+    {
+      "name": "char_110_deepcl_1",
+      "atlas": 2
+    },
+    {
+      "name": "char_106_franka_2",
+      "atlas": 2
+    },
+    {
+      "name": "char_106_franka_1",
+      "atlas": 2
+    },
+    {
+      "name": "char_103_angel_2",
+      "atlas": 2
+    },
+    {
+      "name": "char_108_silent_1",
+      "atlas": 2
+    },
+    {
+      "name": "char_107_liskam_2",
+      "atlas": 2
+    },
+    {
+      "name": "char_107_liskam_1",
+      "atlas": 2
+    },
+    {
+      "name": "char_118_yuki_2",
+      "atlas": 3
+    },
+    {
+      "name": "char_118_yuki_1",
+      "atlas": 3
+    },
+    {
+      "name": "char_117_myrrh_2",
+      "atlas": 3
+    },
+    {
+      "name": "char_122_beagle_1",
+      "atlas": 3
+    },
+    {
+      "name": "char_121_lava_1",
+      "atlas": 3
+    },
+    {
+      "name": "char_120_hibisc_1",
+      "atlas": 3
+    },
+    {
+      "name": "char_113_cqbw_2",
+      "atlas": 3
+    },
+    {
+      "name": "char_113_cqbw_1",
+      "atlas": 3
+    },
+    {
+      "name": "char_112_siege_2",
+      "atlas": 3
+    },
+    {
+      "name": "char_117_myrrh_1",
+      "atlas": 3
+    },
+    {
+      "name": "char_115_headbr_2",
+      "atlas": 3
+    },
+    {
+      "name": "char_115_headbr_1",
+      "atlas": 3
+    },
+    {
+      "name": "char_129_bluep_1",
+      "atlas": 4
+    },
+    {
+      "name": "char_128_plosis_2",
+      "atlas": 4
+    },
+    {
+      "name": "char_128_plosis_1",
+      "atlas": 4
+    },
+    {
+      "name": "char_130_doberm_2",
+      "atlas": 4
+    },
+    {
+      "name": "char_130_doberm_1",
+      "atlas": 4
+    },
+    {
+      "name": "char_129_bluep_2",
+      "atlas": 4
+    },
+    {
+      "name": "char_126_shotst_1",
+      "atlas": 4
+    },
+    {
+      "name": "char_124_kroos_1",
+      "atlas": 4
+    },
+    {
+      "name": "char_123_fang_1",
+      "atlas": 4
+    },
+    {
+      "name": "char_127_estell_2",
+      "atlas": 4
+    },
+    {
+      "name": "char_127_estell_1",
+      "atlas": 4
+    },
+    {
+      "name": "char_126_shotst_2",
+      "atlas": 4
+    },
+    {
+      "name": "char_137_brownb_1",
+      "atlas": 5
+    },
+    {
+      "name": "char_136_hsguma_2",
+      "atlas": 5
+    },
+    {
+      "name": "char_136_hsguma_1",
+      "atlas": 5
+    },
+    {
+      "name": "char_140_whitew_2",
+      "atlas": 5
+    },
+    {
+      "name": "char_140_whitew_1",
+      "atlas": 5
+    },
+    {
+      "name": "char_137_brownb_2",
+      "atlas": 5
+    },
+    {
+      "name": "char_133_mm_1",
+      "atlas": 5
+    },
+    {
+      "name": "char_131_flameb_2",
+      "atlas": 5
+    },
+    {
+      "name": "char_131_flameb_1",
+      "atlas": 5
+    },
+    {
+      "name": "char_134_ifrit_2",
+      "atlas": 5
+    },
+    {
+      "name": "char_134_ifrit_1",
+      "atlas": 5
+    },
+    {
+      "name": "char_133_mm_2",
+      "atlas": 5
+    },
+    {
+      "name": "char_147_shining_1",
+      "atlas": 6
+    },
+    {
+      "name": "char_145_prove_2",
+      "atlas": 6
+    },
+    {
+      "name": "char_145_prove_1",
+      "atlas": 6
+    },
+    {
+      "name": "char_148_nearl_2",
+      "atlas": 6
+    },
+    {
+      "name": "char_148_nearl_1",
+      "atlas": 6
+    },
+    {
+      "name": "char_147_shining_2",
+      "atlas": 6
+    },
+    {
+      "name": "char_143_ghost_1",
+      "atlas": 6
+    },
+    {
+      "name": "char_141_nights_2",
+      "atlas": 6
+    },
+    {
+      "name": "char_141_nights_1",
+      "atlas": 6
+    },
+    {
+      "name": "char_144_red_2",
+      "atlas": 6
+    },
+    {
+      "name": "char_144_red_1",
+      "atlas": 6
+    },
+    {
+      "name": "char_143_ghost_2",
+      "atlas": 6
+    },
+    {
+      "name": "char_158_milu_1",
+      "atlas": 7
+    },
+    {
+      "name": "char_155_tiger_2",
+      "atlas": 7
+    },
+    {
+      "name": "char_155_tiger_1",
+      "atlas": 7
+    },
+    {
+      "name": "char_159_peacok_2",
+      "atlas": 7
+    },
+    {
+      "name": "char_159_peacok_1",
+      "atlas": 7
+    },
+    {
+      "name": "char_158_milu_2",
+      "atlas": 7
+    },
+    {
+      "name": "char_150_snakek_1",
+      "atlas": 7
+    },
+    {
+      "name": "char_149_scave_2",
+      "atlas": 7
+    },
+    {
+      "name": "char_149_scave_1",
+      "atlas": 7
+    },
+    {
+      "name": "char_151_myrtle_2",
+      "atlas": 7
+    },
+    {
+      "name": "char_151_myrtle_1",
+      "atlas": 7
+    },
+    {
+      "name": "char_150_snakek_2",
+      "atlas": 7
+    },
+    {
+      "name": "char_172_svrash_1",
+      "atlas": 8
+    },
+    {
+      "name": "char_171_bldsk_2",
+      "atlas": 8
+    },
+    {
+      "name": "char_171_bldsk_1",
+      "atlas": 8
+    },
+    {
+      "name": "char_173_slchan_2",
+      "atlas": 8
+    },
+    {
+      "name": "char_173_slchan_1",
+      "atlas": 8
+    },
+    {
+      "name": "char_172_svrash_2",
+      "atlas": 8
+    },
+    {
+      "name": "char_164_nightm_1",
+      "atlas": 8
+    },
+    {
+      "name": "char_163_hpsts_2",
+      "atlas": 8
+    },
+    {
+      "name": "char_163_hpsts_1",
+      "atlas": 8
+    },
+    {
+      "name": "char_166_skfire_2",
+      "atlas": 8
+    },
+    {
+      "name": "char_166_skfire_1",
+      "atlas": 8
+    },
+    {
+      "name": "char_164_nightm_2",
+      "atlas": 8
+    },
+    {
+      "name": "char_183_skgoat_1",
+      "atlas": 9
+    },
+    {
+      "name": "char_181_flower_2",
+      "atlas": 9
+    },
+    {
+      "name": "char_181_flower_1",
+      "atlas": 9
+    },
+    {
+      "name": "char_185_frncat_2",
+      "atlas": 9
+    },
+    {
+      "name": "char_185_frncat_1",
+      "atlas": 9
+    },
+    {
+      "name": "char_183_skgoat_2",
+      "atlas": 9
+    },
+    {
+      "name": "char_179_cgbird_1",
+      "atlas": 9
+    },
+    {
+      "name": "char_174_slbell_2",
+      "atlas": 9
+    },
+    {
+      "name": "char_174_slbell_1",
+      "atlas": 9
+    },
+    {
+      "name": "char_180_amgoat_2",
+      "atlas": 9
+    },
+    {
+      "name": "char_180_amgoat_1",
+      "atlas": 9
+    },
+    {
+      "name": "char_179_cgbird_2",
+      "atlas": 9
+    },
+    {
+      "name": "char_193_frostl_2",
+      "atlas": 10
+    },
+    {
+      "name": "char_193_frostl_1",
+      "atlas": 10
+    },
+    {
+      "name": "char_192_falco_1",
+      "atlas": 10
+    },
+    {
+      "name": "char_196_sunbr_1",
+      "atlas": 10
+    },
+    {
+      "name": "char_195_glassb_2",
+      "atlas": 10
+    },
+    {
+      "name": "char_195_glassb_1",
+      "atlas": 10
+    },
+    {
+      "name": "char_188_helage_1",
+      "atlas": 10
+    },
+    {
+      "name": "char_187_ccheal_2",
+      "atlas": 10
+    },
+    {
+      "name": "char_187_ccheal_1",
+      "atlas": 10
+    },
+    {
+      "name": "char_190_clour_2",
+      "atlas": 10
+    },
+    {
+      "name": "char_190_clour_1",
+      "atlas": 10
+    },
+    {
+      "name": "char_188_helage_2",
+      "atlas": 10
+    },
+    {
+      "name": "char_2013_cerber_2",
+      "atlas": 11
+    },
+    {
+      "name": "char_2013_cerber_1",
+      "atlas": 11
+    },
+    {
+      "name": "char_199_yak_2",
+      "atlas": 11
+    },
+    {
+      "name": "char_2015_dusk_1",
+      "atlas": 11
+    },
+    {
+      "name": "char_2014_nian_2",
+      "atlas": 11
+    },
+    {
+      "name": "char_2014_nian_1",
+      "atlas": 11
+    },
+    {
+      "name": "char_197_poca_2",
+      "atlas": 11
+    },
+    {
+      "name": "char_197_poca_1",
+      "atlas": 11
+    },
+    {
+      "name": "char_196_sunbr_2",
+      "atlas": 11
+    },
+    {
+      "name": "char_199_yak_1",
+      "atlas": 11
+    },
+    {
+      "name": "char_198_blackd_2",
+      "atlas": 11
+    },
+    {
+      "name": "char_198_blackd_1",
+      "atlas": 11
+    },
+    {
+      "name": "char_209_ardign_1",
+      "atlas": 12
+    },
+    {
+      "name": "char_208_melan_1",
+      "atlas": 12
+    },
+    {
+      "name": "char_204_platnm_2",
+      "atlas": 12
+    },
+    {
+      "name": "char_212_ansel_1",
+      "atlas": 12
+    },
+    {
+      "name": "char_211_adnach_1",
+      "atlas": 12
+    },
+    {
+      "name": "char_210_stward_1",
+      "atlas": 12
+    },
+    {
+      "name": "char_201_moeshd_2",
+      "atlas": 12
+    },
+    {
+      "name": "char_201_moeshd_1",
+      "atlas": 12
+    },
+    {
+      "name": "char_2015_dusk_2",
+      "atlas": 12
+    },
+    {
+      "name": "char_204_platnm_1",
+      "atlas": 12
+    },
+    {
+      "name": "char_202_demkni_2",
+      "atlas": 12
+    },
+    {
+      "name": "char_202_demkni_1",
+      "atlas": 12
+    },
+    {
+      "name": "char_219_meteo_1",
+      "atlas": 13
+    },
+    {
+      "name": "char_218_cuttle_2",
+      "atlas": 13
+    },
+    {
+      "name": "char_218_cuttle_1",
+      "atlas": 13
+    },
+    {
+      "name": "char_220_grani_2",
+      "atlas": 13
+    },
+    {
+      "name": "char_220_grani_1",
+      "atlas": 13
+    },
+    {
+      "name": "char_219_meteo_2",
+      "atlas": 13
+    },
+    {
+      "name": "char_214_kafka_1",
+      "atlas": 13
+    },
+    {
+      "name": "char_213_mostma_2",
+      "atlas": 13
+    },
+    {
+      "name": "char_213_mostma_1",
+      "atlas": 13
+    },
+    {
+      "name": "char_215_mantic_2",
+      "atlas": 13
+    },
+    {
+      "name": "char_215_mantic_1",
+      "atlas": 13
+    },
+    {
+      "name": "char_214_kafka_2",
+      "atlas": 13
+    },
+    {
+      "name": "char_235_jesica_1",
+      "atlas": 14
+    },
+    {
+      "name": "char_230_savage_2",
+      "atlas": 14
+    },
+    {
+      "name": "char_230_savage_1",
+      "atlas": 14
+    },
+    {
+      "name": "char_236_rope_2",
+      "atlas": 14
+    },
+    {
+      "name": "char_236_rope_1",
+      "atlas": 14
+    },
+    {
+      "name": "char_235_jesica_2",
+      "atlas": 14
+    },
+    {
+      "name": "char_225_haak_1",
+      "atlas": 14
+    },
+    {
+      "name": "char_222_bpipe_2",
+      "atlas": 14
+    },
+    {
+      "name": "char_222_bpipe_1",
+      "atlas": 14
+    },
+    {
+      "name": "char_226_hmau_2",
+      "atlas": 14
+    },
+    {
+      "name": "char_226_hmau_1",
+      "atlas": 14
+    },
+    {
+      "name": "char_225_haak_2",
+      "atlas": 14
+    },
+    {
+      "name": "char_243_waaifu_2",
+      "atlas": 15
+    },
+    {
+      "name": "char_243_waaifu_1",
+      "atlas": 15
+    },
+    {
+      "name": "char_242_otter_2",
+      "atlas": 15
+    },
+    {
+      "name": "char_250_phatom_1",
+      "atlas": 15
+    },
+    {
+      "name": "char_248_mgllan_2",
+      "atlas": 15
+    },
+    {
+      "name": "char_248_mgllan_1",
+      "atlas": 15
+    },
+    {
+      "name": "char_240_wyvern_1",
+      "atlas": 15
+    },
+    {
+      "name": "char_237_gravel_2",
+      "atlas": 15
+    },
+    {
+      "name": "char_237_gravel_1",
+      "atlas": 15
+    },
+    {
+      "name": "char_242_otter_1",
+      "atlas": 15
+    },
+    {
+      "name": "char_241_panda_2",
+      "atlas": 15
+    },
+    {
+      "name": "char_241_panda_1",
+      "atlas": 15
+    },
+    {
+      "name": "char_258_podego_2",
+      "atlas": 16
+    },
+    {
+      "name": "char_258_podego_1",
+      "atlas": 16
+    },
+    {
+      "name": "char_254_vodfox_2",
+      "atlas": 16
+    },
+    {
+      "name": "char_261_sddrag_1",
+      "atlas": 16
+    },
+    {
+      "name": "char_260_durnar_2",
+      "atlas": 16
+    },
+    {
+      "name": "char_260_durnar_1",
+      "atlas": 16
+    },
+    {
+      "name": "char_252_bibeak_2",
+      "atlas": 16
+    },
+    {
+      "name": "char_252_bibeak_1",
+      "atlas": 16
+    },
+    {
+      "name": "char_250_phatom_2",
+      "atlas": 16
+    },
+    {
+      "name": "char_254_vodfox_1",
+      "atlas": 16
+    },
+    {
+      "name": "char_253_greyy_2",
+      "atlas": 16
+    },
+    {
+      "name": "char_253_greyy_1",
+      "atlas": 16
+    },
+    {
+      "name": "char_271_spikes_2",
+      "atlas": 17
+    },
+    {
+      "name": "char_271_spikes_1",
+      "atlas": 17
+    },
+    {
+      "name": "char_265_sophia_2",
+      "atlas": 17
+    },
+    {
+      "name": "char_274_astesi_1",
+      "atlas": 17
+    },
+    {
+      "name": "char_272_strong_2",
+      "atlas": 17
+    },
+    {
+      "name": "char_272_strong_1",
+      "atlas": 17
+    },
+    {
+      "name": "char_263_skadi_2",
+      "atlas": 17
+    },
+    {
+      "name": "char_263_skadi_1",
+      "atlas": 17
+    },
+    {
+      "name": "char_261_sddrag_2",
+      "atlas": 17
+    },
+    {
+      "name": "char_265_sophia_1",
+      "atlas": 17
+    },
+    {
+      "name": "char_264_f12yin_2",
+      "atlas": 17
+    },
+    {
+      "name": "char_264_f12yin_1",
+      "atlas": 17
+    },
+    {
+      "name": "char_281_popka_1",
+      "atlas": 18
+    },
+    {
+      "name": "char_279_excu_2",
+      "atlas": 18
+    },
+    {
+      "name": "char_279_excu_1",
+      "atlas": 18
+    },
+    {
+      "name": "char_284_spot_1",
+      "atlas": 18
+    },
+    {
+      "name": "char_283_midn_1",
+      "atlas": 18
+    },
+    {
+      "name": "char_282_catap_1",
+      "atlas": 18
+    },
+    {
+      "name": "char_275_breeze_2",
+      "atlas": 18
+    },
+    {
+      "name": "char_275_breeze_1",
+      "atlas": 18
+    },
+    {
+      "name": "char_274_astesi_2",
+      "atlas": 18
+    },
+    {
+      "name": "char_278_orchid_1",
+      "atlas": 18
+    },
+    {
+      "name": "char_277_sqrrel_2",
+      "atlas": 18
+    },
+    {
+      "name": "char_277_sqrrel_1",
+      "atlas": 18
+    },
+    {
+      "name": "char_293_thorns_1",
+      "atlas": 19
+    },
+    {
+      "name": "char_291_aglina_2",
+      "atlas": 19
+    },
+    {
+      "name": "char_291_aglina_1",
+      "atlas": 19
+    },
+    {
+      "name": "char_294_ayer_2",
+      "atlas": 19
+    },
+    {
+      "name": "char_294_ayer_1",
+      "atlas": 19
+    },
+    {
+      "name": "char_293_thorns_2",
+      "atlas": 19
+    },
+    {
+      "name": "char_289_gyuki_1",
+      "atlas": 19
+    },
+    {
+      "name": "char_286_cast3_1",
+      "atlas": 19
+    },
+    {
+      "name": "char_285_medic2_1",
+      "atlas": 19
+    },
+    {
+      "name": "char_290_vigna_2",
+      "atlas": 19
+    },
+    {
+      "name": "char_290_vigna_1",
+      "atlas": 19
+    },
+    {
+      "name": "char_289_gyuki_2",
+      "atlas": 19
+    },
+    {
+      "name": "char_306_leizi_1",
+      "atlas": 20
+    },
+    {
+      "name": "char_304_zebra_2",
+      "atlas": 20
+    },
+    {
+      "name": "char_304_zebra_1",
+      "atlas": 20
+    },
+    {
+      "name": "char_308_swire_2",
+      "atlas": 20
+    },
+    {
+      "name": "char_308_swire_1",
+      "atlas": 20
+    },
+    {
+      "name": "char_306_leizi_2",
+      "atlas": 20
+    },
+    {
+      "name": "char_301_cutter_1",
+      "atlas": 20
+    },
+    {
+      "name": "char_298_susuro_2",
+      "atlas": 20
+    },
+    {
+      "name": "char_298_susuro_1",
+      "atlas": 20
+    },
+    {
+      "name": "char_302_glaze_2",
+      "atlas": 20
+    },
+    {
+      "name": "char_302_glaze_1",
+      "atlas": 20
+    },
+    {
+      "name": "char_301_cutter_2",
+      "atlas": 20
+    },
+    {
+      "name": "char_332_archet_1",
+      "atlas": 21
+    },
+    {
+      "name": "char_328_cammou_2",
+      "atlas": 21
+    },
+    {
+      "name": "char_328_cammou_1",
+      "atlas": 21
+    },
+    {
+      "name": "char_333_sidero_2",
+      "atlas": 21
+    },
+    {
+      "name": "char_333_sidero_1",
+      "atlas": 21
+    },
+    {
+      "name": "char_332_archet_2",
+      "atlas": 21
+    },
+    {
+      "name": "char_325_bison_1",
+      "atlas": 21
+    },
+    {
+      "name": "char_311_mudrok_2",
+      "atlas": 21
+    },
+    {
+      "name": "char_311_mudrok_1",
+      "atlas": 21
+    },
+    {
+      "name": "char_326_glacus_2",
+      "atlas": 21
+    },
+    {
+      "name": "char_326_glacus_1",
+      "atlas": 21
+    },
+    {
+      "name": "char_325_bison_2",
+      "atlas": 21
+    },
+    {
+      "name": "char_343_tknogi_1",
+      "atlas": 22
+    },
+    {
+      "name": "char_340_shwaz_2",
+      "atlas": 22
+    },
+    {
+      "name": "char_340_shwaz_1",
+      "atlas": 22
+    },
+    {
+      "name": "char_344_beewax_2",
+      "atlas": 22
+    },
+    {
+      "name": "char_344_beewax_1",
+      "atlas": 22
+    },
+    {
+      "name": "char_343_tknogi_2",
+      "atlas": 22
+    },
+    {
+      "name": "char_337_utage_1",
+      "atlas": 22
+    },
+    {
+      "name": "char_336_folivo_2",
+      "atlas": 22
+    },
+    {
+      "name": "char_336_folivo_1",
+      "atlas": 22
+    },
+    {
+      "name": "char_338_iris_2",
+      "atlas": 22
+    },
+    {
+      "name": "char_338_iris_1",
+      "atlas": 22
+    },
+    {
+      "name": "char_337_utage_2",
+      "atlas": 22
+    },
+    {
+      "name": "char_349_chiave_1",
+      "atlas": 23
+    },
+    {
+      "name": "char_348_ceylon_2",
+      "atlas": 23
+    },
+    {
+      "name": "char_348_ceylon_1",
+      "atlas": 23
+    },
+    {
+      "name": "char_350_surtr_2",
+      "atlas": 23
+    },
+    {
+      "name": "char_350_surtr_1",
+      "atlas": 23
+    },
+    {
+      "name": "char_349_chiave_2",
+      "atlas": 23
+    },
+    {
+      "name": "char_346_aosta_1",
+      "atlas": 23
+    },
+    {
+      "name": "char_345_folnic_2",
+      "atlas": 23
+    },
+    {
+      "name": "char_345_folnic_1",
+      "atlas": 23
+    },
+    {
+      "name": "char_347_jaksel_2",
+      "atlas": 23
+    },
+    {
+      "name": "char_347_jaksel_1",
+      "atlas": 23
+    },
+    {
+      "name": "char_346_aosta_2",
+      "atlas": 23
+    },
+    {
+      "name": "char_363_toddi_1",
+      "atlas": 24
+    },
+    {
+      "name": "char_362_saga_2",
+      "atlas": 24
+    },
+    {
+      "name": "char_362_saga_1",
+      "atlas": 24
+    },
+    {
+      "name": "char_365_aprl_2",
+      "atlas": 24
+    },
+    {
+      "name": "char_365_aprl_1",
+      "atlas": 24
+    },
+    {
+      "name": "char_363_toddi_2",
+      "atlas": 24
+    },
+    {
+      "name": "char_356_broca_1",
+      "atlas": 24
+    },
+    {
+      "name": "char_355_ethan_2",
+      "atlas": 24
+    },
+    {
+      "name": "char_355_ethan_1",
+      "atlas": 24
+    },
+    {
+      "name": "char_358_lisa_2",
+      "atlas": 24
+    },
+    {
+      "name": "char_358_lisa_1",
+      "atlas": 24
+    },
+    {
+      "name": "char_356_broca_2",
+      "atlas": 24
+    },
+    {
+      "name": "char_376_therex_1",
+      "atlas": 25
+    },
+    {
+      "name": "char_373_lionhd_2",
+      "atlas": 25
+    },
+    {
+      "name": "char_373_lionhd_1",
+      "atlas": 25
+    },
+    {
+      "name": "char_379_sesa_1",
+      "atlas": 25
+    },
+    {
+      "name": "char_378_asbest_2",
+      "atlas": 25
+    },
+    {
+      "name": "char_378_asbest_1",
+      "atlas": 25
+    },
+    {
+      "name": "char_367_swllow_1",
+      "atlas": 25
+    },
+    {
+      "name": "char_366_acdrop_2",
+      "atlas": 25
+    },
+    {
+      "name": "char_366_acdrop_1",
+      "atlas": 25
+    },
+    {
+      "name": "char_369_bena_2",
+      "atlas": 25
+    },
+    {
+      "name": "char_369_bena_1",
+      "atlas": 25
+    },
+    {
+      "name": "char_367_swllow_2",
+      "atlas": 25
+    },
+    {
+      "name": "char_388_mint_2",
+      "atlas": 26
+    },
+    {
+      "name": "char_388_mint_1",
+      "atlas": 26
+    },
+    {
+      "name": "char_385_finlpp_2",
+      "atlas": 26
+    },
+    {
+      "name": "char_4000_jnight_1",
+      "atlas": 26
+    },
+    {
+      "name": "char_391_rosmon_2",
+      "atlas": 26
+    },
+    {
+      "name": "char_391_rosmon_1",
+      "atlas": 26
+    },
+    {
+      "name": "char_381_bubble_2",
+      "atlas": 26
+    },
+    {
+      "name": "char_381_bubble_1",
+      "atlas": 26
+    },
+    {
+      "name": "char_379_sesa_2",
+      "atlas": 26
+    },
+    {
+      "name": "char_385_finlpp_1",
+      "atlas": 26
+    },
+    {
+      "name": "char_383_snsant_2",
+      "atlas": 26
+    },
+    {
+      "name": "char_383_snsant_1",
+      "atlas": 26
+    },
+    {
+      "name": "char_405_absin_1",
+      "atlas": 27
+    },
+    {
+      "name": "char_402_tuye_2",
+      "atlas": 27
+    },
+    {
+      "name": "char_402_tuye_1",
+      "atlas": 27
+    },
+    {
+      "name": "char_411_tomimi_2",
+      "atlas": 27
+    },
+    {
+      "name": "char_411_tomimi_1",
+      "atlas": 27
+    },
+    {
+      "name": "char_405_absin_2",
+      "atlas": 27
+    },
+    {
+      "name": "char_400_weedy_1",
+      "atlas": 27
+    },
+    {
+      "name": "char_4004_pudd_2",
+      "atlas": 27
+    },
+    {
+      "name": "char_4004_pudd_1",
+      "atlas": 27
+    },
+    {
+      "name": "char_401_elysm_2",
+      "atlas": 27
+    },
+    {
+      "name": "char_401_elysm_1",
+      "atlas": 27
+    },
+    {
+      "name": "char_400_weedy_2",
+      "atlas": 27
+    },
+    {
+      "name": "char_423_blemsh_1",
+      "atlas": 28
+    },
+    {
+      "name": "char_421_crow_2",
+      "atlas": 28
+    },
+    {
+      "name": "char_421_crow_1",
+      "atlas": 28
+    },
+    {
+      "name": "char_426_billro_2",
+      "atlas": 28
+    },
+    {
+      "name": "char_426_billro_1",
+      "atlas": 28
+    },
+    {
+      "name": "char_423_blemsh_2",
+      "atlas": 28
+    },
+    {
+      "name": "char_416_zumama_1",
+      "atlas": 28
+    },
+    {
+      "name": "char_415_flint_2",
+      "atlas": 28
+    },
+    {
+      "name": "char_415_flint_1",
+      "atlas": 28
+    },
+    {
+      "name": "char_420_flamtl_2",
+      "atlas": 28
+    },
+    {
+      "name": "char_420_flamtl_1",
+      "atlas": 28
+    },
+    {
+      "name": "char_416_zumama_2",
+      "atlas": 28
+    },
+    {
+      "name": "char_440_pinecn_1",
+      "atlas": 29
+    },
+    {
+      "name": "char_437_mizuki_2",
+      "atlas": 29
+    },
+    {
+      "name": "char_437_mizuki_1",
+      "atlas": 29
+    },
+    {
+      "name": "char_449_glider_2",
+      "atlas": 29
+    },
+    {
+      "name": "char_449_glider_1",
+      "atlas": 29
+    },
+    {
+      "name": "char_440_pinecn_2",
+      "atlas": 29
+    },
+    {
+      "name": "char_431_ashlok_1",
+      "atlas": 29
+    },
+    {
+      "name": "char_430_fartth_2",
+      "atlas": 29
+    },
+    {
+      "name": "char_430_fartth_1",
+      "atlas": 29
+    },
+    {
+      "name": "char_436_whispr_2",
+      "atlas": 29
+    },
+    {
+      "name": "char_436_whispr_1",
+      "atlas": 29
+    },
+    {
+      "name": "char_431_ashlok_2",
+      "atlas": 29
+    },
+    {
+      "name": "char_472_pasngr_1",
+      "atlas": 30
+    },
+    {
+      "name": "char_469_indigo_2",
+      "atlas": 30
+    },
+    {
+      "name": "char_469_indigo_1",
+      "atlas": 30
+    },
+    {
+      "name": "char_473_mberry_2",
+      "atlas": 30
+    },
+    {
+      "name": "char_473_mberry_1",
+      "atlas": 30
+    },
+    {
+      "name": "char_472_pasngr_2",
+      "atlas": 30
+    },
+    {
+      "name": "char_452_bstalk_1",
+      "atlas": 30
+    },
+    {
+      "name": "char_451_robin_2",
+      "atlas": 30
+    },
+    {
+      "name": "char_451_robin_1",
+      "atlas": 30
+    },
+    {
+      "name": "char_455_nothin_2",
+      "atlas": 30
+    },
+    {
+      "name": "char_455_nothin_1",
+      "atlas": 30
+    },
+    {
+      "name": "char_452_bstalk_2",
+      "atlas": 30
+    },
+    {
+      "name": "char_484_robrta_1",
+      "atlas": 31
+    },
+    {
+      "name": "char_479_sleach_2",
+      "atlas": 31
+    },
+    {
+      "name": "char_479_sleach_1",
+      "atlas": 31
+    },
+    {
+      "name": "char_485_pallas_2",
+      "atlas": 31
+    },
+    {
+      "name": "char_485_pallas_1",
+      "atlas": 31
+    },
+    {
+      "name": "char_484_robrta_2",
+      "atlas": 31
+    },
+    {
+      "name": "char_475_akafyu_1",
+      "atlas": 31
+    },
+    {
+      "name": "char_474_glady_2",
+      "atlas": 31
+    },
+    {
+      "name": "char_474_glady_1",
+      "atlas": 31
+    },
+    {
+      "name": "char_478_kirara_2",
+      "atlas": 31
+    },
+    {
+      "name": "char_478_kirara_1",
+      "atlas": 31
+    },
+    {
+      "name": "char_475_akafyu_2",
+      "atlas": 31
+    },
+    {
+      "name": "char_502_nblade_1",
+      "atlas": 32
+    },
+    {
+      "name": "char_501_durin_1",
+      "atlas": 32
+    },
+    {
+      "name": "char_500_noirc_1",
+      "atlas": 32
+    },
+    {
+      "name": "char_456_ash_2",
+      "atlas": 32
+    },
+    {
+      "name": "char_456_ash_1",
+      "atlas": 32
+    },
+    {
+      "name": "char_503_rang_1",
+      "atlas": 32
+    },
+    {
+      "name": "char_489_serum_1",
+      "atlas": 32
+    },
+    {
+      "name": "char_486_takila_2",
+      "atlas": 32
+    },
+    {
+      "name": "char_486_takila_1",
+      "atlas": 32
+    },
+    {
+      "name": "char_496_wildmn_2",
+      "atlas": 32
+    },
+    {
+      "name": "char_496_wildmn_1",
+      "atlas": 32
+    },
+    {
+      "name": "char_489_serum_2",
+      "atlas": 32
+    },
+    {
+      "name": "char_504_rguard_1",
+      "atlas": 33
+    },
+    {
+      "name": "char_459_tachak_rainbow6#1",
+      "atlas": 33
+    },
+    {
+      "name": "char_459_tachak_2",
+      "atlas": 33
+    },
+    {
+      "name": "char_507_rsnipe_1",
+      "atlas": 33
+    },
+    {
+      "name": "char_506_rmedic_1",
+      "atlas": 33
+    },
+    {
+      "name": "char_505_rcast_1",
+      "atlas": 33
+    },
+    {
+      "name": "char_457_blitz_2",
+      "atlas": 33
+    },
+    {
+      "name": "char_457_blitz_1",
+      "atlas": 33
+    },
+    {
+      "name": "char_456_ash_rainbow6#1",
+      "atlas": 33
+    },
+    {
+      "name": "char_459_tachak_1",
+      "atlas": 33
+    },
+    {
+      "name": "char_458_rfrost_2",
+      "atlas": 33
+    },
+    {
+      "name": "char_458_rfrost_1",
+      "atlas": 33
+    },
+    {
+      "name": "char_509_acast_1",
+      "atlas": 34
+    },
+    {
+      "name": "char_508_aguard_2",
+      "atlas": 34
+    },
+    {
+      "name": "char_508_aguard_1",
+      "atlas": 34
+    },
+    {
+      "name": "char_510_amedic_2",
+      "atlas": 34
+    },
+    {
+      "name": "char_510_amedic_1",
+      "atlas": 34
+    },
+    {
+      "name": "char_509_acast_2",
+      "atlas": 34
+    },
+    {
+      "name": "char_002_amiya_epoque#4",
+      "atlas": 34
+    },
+    {
+      "name": "char_511_asnipe_2",
+      "atlas": 34
+    },
+    {
+      "name": "char_511_asnipe_1",
+      "atlas": 34
+    },
+    {
+      "name": "char_010_chen_nian#2",
+      "atlas": 34
+    },
+    {
+      "name": "char_002_amiya_winter#1",
+      "atlas": 34
+    },
+    {
+      "name": "char_002_amiya_test#1",
+      "atlas": 34
+    },
+    {
+      "name": "char_322_lmlee_1",
+      "atlas": 35
+    },
+    {
+      "name": "char_2023_ling_2",
+      "atlas": 35
+    },
+    {
+      "name": "char_2023_ling_1",
+      "atlas": 35
+    },
+    {
+      "name": "char_377_gdglow_2",
+      "atlas": 35
+    },
+    {
+      "name": "char_377_gdglow_1",
+      "atlas": 35
+    },
+    {
+      "name": "char_322_lmlee_2",
+      "atlas": 35
+    },
+    {
+      "name": "char_378_asbest_whirlwind#3",
+      "atlas": 35
+    },
+    {
+      "name": "char_1021_kroos2_2",
+      "atlas": 35
+    },
+    {
+      "name": "char_1021_kroos2_1",
+      "atlas": 35
+    },
+    {
+      "name": "char_347_jaksel_whirlwind#2",
+      "atlas": 35
+    },
+    {
+      "name": "char_469_indigo_nian#7",
+      "atlas": 35
+    },
+    {
+      "name": "char_455_nothin_nian#7",
+      "atlas": 35
+    },
+    {
+      "name": "char_124_kroos_witch#1",
+      "atlas": 36
+    },
+    {
+      "name": "char_123_fang_winter#1",
+      "atlas": 36
+    },
+    {
+      "name": "char_122_beagle_boc#1",
+      "atlas": 36
+    },
+    {
+      "name": "char_129_bluep_marthe#3",
+      "atlas": 36
+    },
+    {
+      "name": "char_128_plosis_epoque#3",
+      "atlas": 36
+    },
+    {
+      "name": "char_126_shotst_epoque#10",
+      "atlas": 36
+    },
+    {
+      "name": "char_115_headbr_marthe#2",
+      "atlas": 36
+    },
+    {
+      "name": "char_115_headbr_it#1",
+      "atlas": 36
+    },
+    {
+      "name": "char_113_cqbw_epoque#7",
+      "atlas": 36
+    },
+    {
+      "name": "char_120_hibisc_nian#1",
+      "atlas": 36
+    },
+    {
+      "name": "char_118_yuki_boc#2",
+      "atlas": 36
+    },
+    {
+      "name": "char_117_myrrh_wild#1",
+      "atlas": 36
+    },
+    {
+      "name": "char_145_prove_summer#3",
+      "atlas": 37
+    },
+    {
+      "name": "char_144_red_summer#6",
+      "atlas": 37
+    },
+    {
+      "name": "char_143_ghost_winter#1",
+      "atlas": 37
+    },
+    {
+      "name": "char_148_nearl_summer#2",
+      "atlas": 37
+    },
+    {
+      "name": "char_147_shining_summer#1",
+      "atlas": 37
+    },
+    {
+      "name": "char_145_prove_wild#5",
+      "atlas": 37
+    },
+    {
+      "name": "char_134_ifrit_summer#1",
+      "atlas": 37
+    },
+    {
+      "name": "char_134_ifrit_kfc#1",
+      "atlas": 37
+    },
+    {
+      "name": "char_130_doberm_epoque#7",
+      "atlas": 37
+    },
+    {
+      "name": "char_140_whitew_boc#1",
+      "atlas": 37
+    },
+    {
+      "name": "char_137_brownb_kitchen#1",
+      "atlas": 37
+    },
+    {
+      "name": "char_136_hsguma_nian#3",
+      "atlas": 37
+    },
+    {
+      "name": "char_172_svrash_snow#1",
+      "atlas": 38
+    },
+    {
+      "name": "char_171_bldsk_witch#1",
+      "atlas": 38
+    },
+    {
+      "name": "char_171_bldsk_summer#7",
+      "atlas": 38
+    },
+    {
+      "name": "char_173_slchan_wwf#1",
+      "atlas": 38
+    },
+    {
+      "name": "char_173_slchan_wild#1",
+      "atlas": 38
+    },
+    {
+      "name": "char_172_svrash_summer#4",
+      "atlas": 38
+    },
+    {
+      "name": "char_158_milu_snow#2",
+      "atlas": 38
+    },
+    {
+      "name": "char_151_myrtle_epoque#12",
+      "atlas": 38
+    },
+    {
+      "name": "char_150_snakek_wild#1",
+      "atlas": 38
+    },
+    {
+      "name": "char_166_skfire_summer#1",
+      "atlas": 38
+    },
+    {
+      "name": "char_164_nightm_epoque#5",
+      "atlas": 38
+    },
+    {
+      "name": "char_158_milu_wild#2",
+      "atlas": 38
+    },
+    {
+      "name": "char_017_huang_as#1",
+      "atlas": 39
+    },
+    {
+      "name": "char_492_quercu_2",
+      "atlas": 39
+    },
+    {
+      "name": "char_492_quercu_1",
+      "atlas": 39
+    },
+    {
+      "name": "char_102_texas_winter#1",
+      "atlas": 39
+    },
+    {
+      "name": "char_102_texas_epoque#7",
+      "atlas": 39
+    },
+    {
+      "name": "char_101_sora_summer#1",
+      "atlas": 39
+    },
+    {
+      "name": "char_436_whispr_nian#4",
+      "atlas": 39
+    },
+    {
+      "name": "char_426_billro_snow#3",
+      "atlas": 39
+    },
+    {
+      "name": "char_423_blemsh_witch#2",
+      "atlas": 39
+    },
+    {
+      "name": "char_476_blkngt_2",
+      "atlas": 39
+    },
+    {
+      "name": "char_476_blkngt_1",
+      "atlas": 39
+    },
+    {
+      "name": "char_416_zumama_boc#3",
+      "atlas": 39
+    },
+    {
+      "name": "char_208_melan_epoque#1",
+      "atlas": 40
+    },
+    {
+      "name": "char_204_platnm_summer#3",
+      "atlas": 40
+    },
+    {
+      "name": "char_202_demkni_test#1",
+      "atlas": 40
+    },
+    {
+      "name": "char_213_mostma_epoque#5",
+      "atlas": 40
+    },
+    {
+      "name": "char_212_ansel_summer#1",
+      "atlas": 40
+    },
+    {
+      "name": "char_209_ardign_snow#1",
+      "atlas": 40
+    },
+    {
+      "name": "char_2014_nian_nian#4",
+      "atlas": 40
+    },
+    {
+      "name": "char_2013_cerber_summer#4",
+      "atlas": 40
+    },
+    {
+      "name": "char_199_yak_summer#1",
+      "atlas": 40
+    },
+    {
+      "name": "char_202_demkni_boc#1",
+      "atlas": 40
+    },
+    {
+      "name": "char_201_moeshd_summer#4",
+      "atlas": 40
+    },
+    {
+      "name": "char_201_moeshd_kfc#1",
+      "atlas": 40
+    },
+    {
+      "name": "char_235_jesica_sweep#1",
+      "atlas": 41
+    },
+    {
+      "name": "char_235_jesica_nian#2",
+      "atlas": 41
+    },
+    {
+      "name": "char_226_hmau_nian#4",
+      "atlas": 41
+    },
+    {
+      "name": "char_236_rope_witch#1",
+      "atlas": 41
+    },
+    {
+      "name": "char_236_rope_summer#2",
+      "atlas": 41
+    },
+    {
+      "name": "char_235_jesica_wild#2",
+      "atlas": 41
+    },
+    {
+      "name": "char_219_meteo_sweep#1",
+      "atlas": 41
+    },
+    {
+      "name": "char_218_cuttle_epoque#12",
+      "atlas": 41
+    },
+    {
+      "name": "char_215_mantic_epoque#4",
+      "atlas": 41
+    },
+    {
+      "name": "char_225_haak_nian#4",
+      "atlas": 41
+    },
+    {
+      "name": "char_222_bpipe_race#1",
+      "atlas": 41
+    },
+    {
+      "name": "char_220_grani_epoque#6",
+      "atlas": 41
+    },
+    {
+      "name": "char_258_podego_epoque#9",
+      "atlas": 42
+    },
+    {
+      "name": "char_254_vodfox_witch#2",
+      "atlas": 42
+    },
+    {
+      "name": "char_253_greyy_epoque#8",
+      "atlas": 42
+    },
+    {
+      "name": "char_265_sophia_epoque#11",
+      "atlas": 42
+    },
+    {
+      "name": "char_264_f12yin_boc#3",
+      "atlas": 42
+    },
+    {
+      "name": "char_263_skadi_summer#3",
+      "atlas": 42
+    },
+    {
+      "name": "char_242_otter_ghost#1",
+      "atlas": 42
+    },
+    {
+      "name": "char_241_panda_marthe#1",
+      "atlas": 42
+    },
+    {
+      "name": "char_237_gravel_winter#2",
+      "atlas": 42
+    },
+    {
+      "name": "char_252_bibeak_winter#2",
+      "atlas": 42
+    },
+    {
+      "name": "char_250_phatom_ghost#1",
+      "atlas": 42
+    },
+    {
+      "name": "char_248_mgllan_kitchen#1",
+      "atlas": 42
+    },
+    {
+      "name": "char_284_spot_boc#3",
+      "atlas": 43
+    },
+    {
+      "name": "char_283_midn_boc#1",
+      "atlas": 43
+    },
+    {
+      "name": "char_290_vigna_summer#1",
+      "atlas": 43
+    },
+    {
+      "name": "char_290_vigna_as#1",
+      "atlas": 43
+    },
+    {
+      "name": "char_286_cast3_summer#1",
+      "atlas": 43
+    },
+    {
+      "name": "char_274_astesi_epoque#5",
+      "atlas": 43
+    },
+    {
+      "name": "char_272_strong_summer#6",
+      "atlas": 43
+    },
+    {
+      "name": "char_271_spikes_winter#2",
+      "atlas": 43
+    },
+    {
+      "name": "char_279_excu_boc#1",
+      "atlas": 43
+    },
+    {
+      "name": "char_277_sqrrel_ghost#1",
+      "atlas": 43
+    },
+    {
+      "name": "char_274_astesi_shining#1",
+      "atlas": 43
+    },
+    {
+      "name": "char_291_aglina_boc#1",
+      "atlas": 44
+    },
+    {
+      "name": "char_291_aglina_summer#5",
+      "atlas": 44
+    },
+    {
+      "name": "char_293_thorns_it#1",
+      "atlas": 44
+    },
+    {
+      "name": "char_294_ayer_boc#3",
+      "atlas": 44
+    },
+    {
+      "name": "char_298_susuro_summer#6",
+      "atlas": 44
+    },
+    {
+      "name": "char_308_swire_nian#2",
+      "atlas": 44
+    },
+    {
+      "name": "char_311_mudrok_summer#6",
+      "atlas": 44
+    },
+    {
+      "name": "char_326_glacus_ghost#1",
+      "atlas": 44
+    },
+    {
+      "name": "char_328_cammou_witch#2",
+      "atlas": 44
+    },
+    {
+      "name": "char_332_archet_shining#1",
+      "atlas": 44
+    },
+    {
+      "name": "char_333_sidero_summer#6",
+      "atlas": 44
+    },
+    {
+      "name": "char_337_utage_summer#4",
+      "atlas": 44
+    },
+    {
+      "name": "char_340_shwaz_snow#1",
+      "atlas": 45
+    },
+    {
+      "name": "char_340_shwaz_striker#1",
+      "atlas": 45
+    },
+    {
+      "name": "char_343_tknogi_epoque#9",
+      "atlas": 45
+    },
+    {
+      "name": "char_344_beewax_epoque#9",
+      "atlas": 45
+    },
+    {
+      "name": "char_345_folnic_wild#4",
+      "atlas": 45
+    },
+    {
+      "name": "char_350_surtr_it#1",
+      "atlas": 45
+    },
+    {
+      "name": "char_355_ethan_epoque#7",
+      "atlas": 45
+    },
+    {
+      "name": "char_358_lisa_wild#3",
+      "atlas": 45
+    },
+    {
+      "name": "char_365_aprl_wild#3",
+      "atlas": 45
+    },
+    {
+      "name": "char_367_swllow_boc#1",
+      "atlas": 45
+    },
+    {
+      "name": "char_373_lionhd_wild#3",
+      "atlas": 45
+    },
+    {
+      "name": "char_383_snsant_witch#2",
+      "atlas": 45
+    },
+    {
+      "name": "char_422_aurora_1",
+      "atlas": 46
+    },
+    {
+      "name": "char_4025_aprot2_2",
+      "atlas": 46
+    },
+    {
+      "name": "char_4025_aprot2_1",
+      "atlas": 46
+    },
+    {
+      "name": "char_512_aprot_2",
+      "atlas": 46
+    },
+    {
+      "name": "char_512_aprot_1",
+      "atlas": 46
+    },
+    {
+      "name": "char_422_aurora_2",
+      "atlas": 46
+    },
+    {
+      "name": "char_4013_kjera_1",
+      "atlas": 46
+    },
+    {
+      "name": "char_206_gnosis_2",
+      "atlas": 46
+    },
+    {
+      "name": "char_206_gnosis_1",
+      "atlas": 46
+    },
+    {
+      "name": "char_4019_ncdeer_2",
+      "atlas": 46
+    },
+    {
+      "name": "char_4019_ncdeer_1",
+      "atlas": 46
+    },
+    {
+      "name": "char_4013_kjera_2",
+      "atlas": 46
+    },
+    {
+      "name": "char_400_weedy_snow#2",
+      "atlas": 47
+    },
+    {
+      "name": "char_373_lionhd_snow#3",
+      "atlas": 47
+    },
+    {
+      "name": "char_225_haak_nian#5",
+      "atlas": 47
+    },
+    {
+      "name": "char_415_flint_boc#3",
+      "atlas": 47
+    },
+    {
+      "name": "char_411_tomimi_summer#5",
+      "atlas": 47
+    },
+    {
+      "name": "char_401_elysm_snow#2",
+      "atlas": 47
+    },
+    {
+      "name": "char_485_pallas_epoque#12",
+      "atlas": 47
+    },
+    {
+      "name": "char_452_bstalk_snow#4",
+      "atlas": 47
+    },
+    {
+      "name": "char_451_robin_epoque#13",
+      "atlas": 47
+    },
+    {
+      "name": "char_214_kafka_snow#3",
+      "atlas": 47
+    },
+    {
+      "name": "char_1011_lava2_nian#6",
+      "atlas": 47
+    },
+    {
+      "name": "char_440_pinecn_shining#1",
+      "atlas": 47
+    },
+    {
+      "name": "char_174_slbell_snow#1",
+      "atlas": 48
+    },
+    {
+      "name": "char_112_siege_wild#2",
+      "atlas": 48
+    },
+    {
+      "name": "char_109_fmout_epoque#2",
+      "atlas": 48
+    },
+    {
+      "name": "char_181_flower_daily#1",
+      "atlas": 48
+    },
+    {
+      "name": "char_180_amgoat_summer#5",
+      "atlas": 48
+    },
+    {
+      "name": "char_179_cgbird_witch#1",
+      "atlas": 48
+    },
+    {
+      "name": "char_107_liskam_nian#2",
+      "atlas": 48
+    },
+    {
+      "name": "char_103_angel_wild#1",
+      "atlas": 48
+    },
+    {
+      "name": "char_103_angel_kfc#1",
+      "atlas": 48
+    },
+    {
+      "name": "char_108_silent_winter#2",
+      "atlas": 48
+    },
+    {
+      "name": "char_108_silent_sweep#1",
+      "atlas": 48
+    },
+    {
+      "name": "char_107_liskam_striker#1",
+      "atlas": 48
+    },
+    {
+      "name": "char_2013_cerber_whirlwind#2",
+      "atlas": 49
+    },
+    {
+      "name": "char_198_blackd_winter#1",
+      "atlas": 49
+    },
+    {
+      "name": "char_198_blackd_as#1",
+      "atlas": 49
+    },
+    {
+      "name": "char_243_waaifu_whirlwind#2",
+      "atlas": 49
+    },
+    {
+      "name": "char_241_panda_nian#7",
+      "atlas": 49
+    },
+    {
+      "name": "char_2015_dusk_nian#7",
+      "atlas": 49
+    },
+    {
+      "name": "char_188_helage_boc#2",
+      "atlas": 49
+    },
+    {
+      "name": "char_187_ccheal_epoque#2",
+      "atlas": 49
+    },
+    {
+      "name": "char_181_flower_epoque#9",
+      "atlas": 49
+    },
+    {
+      "name": "char_197_poca_epoque#12",
+      "atlas": 49
+    },
+    {
+      "name": "char_196_sunbr_summer#1",
+      "atlas": 49
+    },
+    {
+      "name": "char_195_glassb_kitchen#1",
+      "atlas": 49
+    },
+    {
+      "name": "char_4016_kazema_1",
+      "atlas": 50
+    },
+    {
+      "name": "char_300_phenxi_2",
+      "atlas": 50
+    },
+    {
+      "name": "char_300_phenxi_1",
+      "atlas": 50
+    },
+    {
+      "name": "char_193_frostl_boc#4",
+      "atlas": 50
+    },
+    {
+      "name": "char_155_tiger_striker#2",
+      "atlas": 50
+    },
+    {
+      "name": "char_149_scave_striker#2",
+      "atlas": 50
+    },
+    {
+      "name": "char_473_mberry_epoque#14",
+      "atlas": 50
+    },
+    {
+      "name": "char_304_zebra_wild#6",
+      "atlas": 50
+    },
+    {
+      "name": "char_250_phatom_sale#4",
+      "atlas": 50
+    },
+    {
+      "name": "char_474_glady_boc#5",
+      "atlas": 50
+    },
+    {
+      "name": "char_402_tuye_epoque#14",
+      "atlas": 50
+    },
+    {
+      "name": "char_479_sleach_epoque#14",
+      "atlas": 50
+    },
+    {
+      "name": "char_4009_irene_2",
+      "atlas": 51
+    },
+    {
+      "name": "char_4009_irene_1",
+      "atlas": 51
+    },
+    {
+      "name": "char_4043_erato_2",
+      "atlas": 51
+    },
+    {
+      "name": "char_4036_forcer_2",
+      "atlas": 51
+    },
+    {
+      "name": "char_4036_forcer_1",
+      "atlas": 51
+    },
+    {
+      "name": "char_4016_kazema_2",
+      "atlas": 51
+    },
+    {
+      "name": "char_4042_lumen_2",
+      "atlas": 51
+    },
+    {
+      "name": "char_1023_ghost2_2",
+      "atlas": 51
+    },
+    {
+      "name": "char_1023_ghost2_1",
+      "atlas": 51
+    },
+    {
+      "name": "char_433_windft_2",
+      "atlas": 51
+    },
+    {
+      "name": "char_433_windft_1",
+      "atlas": 51
+    },
+    {
+      "name": "char_4043_erato_1",
+      "atlas": 51
+    },
+    {
+      "name": "char_4045_heidi_2",
+      "atlas": 52
+    },
+    {
+      "name": "char_4045_heidi_1",
+      "atlas": 52
+    },
+    {
+      "name": "char_4042_lumen_1",
+      "atlas": 52
+    },
+    {
+      "name": "char_159_peacok_game#1",
+      "atlas": 52
+    },
+    {
+      "name": "char_112_siege_striker#2",
+      "atlas": 52
+    },
+    {
+      "name": "char_1012_skadi2_boc#4",
+      "atlas": 52
+    },
+    {
+      "name": "char_4040_rockr_1",
+      "atlas": 52
+    },
+    {
+      "name": "char_4039_horn_2",
+      "atlas": 52
+    },
+    {
+      "name": "char_4039_horn_1",
+      "atlas": 52
+    },
+    {
+      "name": "char_4041_chnut_2",
+      "atlas": 52
+    },
+    {
+      "name": "char_4041_chnut_1",
+      "atlas": 52
+    },
+    {
+      "name": "char_4040_rockr_2",
+      "atlas": 52
+    },
+    {
+      "name": "char_4046_ebnhlz_1",
+      "atlas": 53
+    },
+    {
+      "name": "char_486_takila_ambiencesynesthesia#2",
+      "atlas": 53
+    },
+    {
+      "name": "char_422_aurora_boc#4",
+      "atlas": 53
+    },
+    {
+      "name": "char_4047_pianst_2",
+      "atlas": 53
+    },
+    {
+      "name": "char_4047_pianst_1",
+      "atlas": 53
+    },
+    {
+      "name": "char_4046_ebnhlz_2",
+      "atlas": 53
+    },
+    {
+      "name": "char_206_gnosis_boc#4",
+      "atlas": 53
+    },
+    {
+      "name": "char_1024_hbisc2_2",
+      "atlas": 53
+    },
+    {
+      "name": "char_1024_hbisc2_1",
+      "atlas": 53
+    },
+    {
+      "name": "char_311_mudrok_ambiencesynesthesia#2",
+      "atlas": 53
+    },
+    {
+      "name": "char_285_medic2_boc#4",
+      "atlas": 53
+    },
+    {
+      "name": "char_261_sddrag_ambiencesynesthesia#2",
+      "atlas": 53
+    },
+    {
+      "name": "char_211_adnach_sale#5",
+      "atlas": 54
+    },
+    {
+      "name": "char_131_flameb_summer#8",
+      "atlas": 54
+    },
+    {
+      "name": "char_4048_doroth_2",
+      "atlas": 54
+    },
+    {
+      "name": "char_426_billro_summer#8",
+      "atlas": 54
+    },
+    {
+      "name": "char_420_flamtl_game#2",
+      "atlas": 54
+    },
+    {
+      "name": "char_346_aosta_game#2",
+      "atlas": 54
+    },
+    {
+      "name": "char_135_halo_1",
+      "atlas": 54
+    },
+    {
+      "name": "char_1027_greyy2_2",
+      "atlas": 54
+    },
+    {
+      "name": "char_1027_greyy2_1",
+      "atlas": 54
+    },
+    {
+      "name": "char_4048_doroth_1",
+      "atlas": 54
+    },
+    {
+      "name": "char_478_kirara_game#2",
+      "atlas": 54
+    },
+    {
+      "name": "char_135_halo_2",
+      "atlas": 54
+    },
+    {
+      "name": "char_497_ctable_1",
+      "atlas": 55
+    },
+    {
+      "name": "char_4055_bgsnow_2",
+      "atlas": 55
+    },
+    {
+      "name": "char_4055_bgsnow_1",
+      "atlas": 55
+    },
+    {
+      "name": "char_356_broca_marthe#4",
+      "atlas": 55
+    },
+    {
+      "name": "char_350_surtr_summer#9",
+      "atlas": 55
+    },
+    {
+      "name": "char_497_ctable_2",
+      "atlas": 55
+    },
+    {
+      "name": "char_484_robrta_summer#10",
+      "atlas": 55
+    },
+    {
+      "name": "char_1026_gvial2_2",
+      "atlas": 55
+    },
+    {
+      "name": "char_1026_gvial2_1",
+      "atlas": 55
+    },
+    {
+      "name": "char_4054_malist_2",
+      "atlas": 55
+    },
+    {
+      "name": "char_4054_malist_1",
+      "atlas": 55
+    },
+    {
+      "name": "char_476_blkngt_summer#8",
+      "atlas": 55
+    },
+    {
+      "name": "char_264_f12yin_epoque#15",
+      "atlas": 56
+    },
+    {
+      "name": "char_4067_lolxh_2",
+      "atlas": 56
+    },
+    {
+      "name": "char_4067_lolxh_1",
+      "atlas": 56
+    },
+    {
+      "name": "char_401_elysm_summer#9",
+      "atlas": 56
+    },
+    {
+      "name": "char_358_lisa_lxh#1",
+      "atlas": 56
+    },
+    {
+      "name": "char_337_utage_epoque#15",
+      "atlas": 56
+    },
+    {
+      "name": "char_4064_mlynar_1",
+      "atlas": 56
+    },
+    {
+      "name": "char_4032_provs_2",
+      "atlas": 56
+    },
+    {
+      "name": "char_4032_provs_1",
+      "atlas": 56
+    },
+    {
+      "name": "char_4066_highmo_2",
+      "atlas": 56
+    },
+    {
+      "name": "char_4066_highmo_1",
+      "atlas": 56
+    },
+    {
+      "name": "char_4064_mlynar_2",
+      "atlas": 56
+    },
+    {
+      "name": "char_513_apionr_1",
+      "atlas": 57
+    },
+    {
+      "name": "char_4072_ironmn_2",
+      "atlas": 57
+    },
+    {
+      "name": "char_4072_ironmn_1",
+      "atlas": 57
+    },
+    {
+      "name": "char_210_stward_sale#6",
+      "atlas": 57
+    },
+    {
+      "name": "char_514_rdfend_1",
+      "atlas": 57
+    },
+    {
+      "name": "char_513_apionr_2",
+      "atlas": 57
+    },
+    {
+      "name": "char_4062_totter_1",
+      "atlas": 57
+    },
+    {
+      "name": "char_157_dagda_2",
+      "atlas": 57
+    },
+    {
+      "name": "char_157_dagda_1",
+      "atlas": 57
+    },
+    {
+      "name": "char_4071_peper_2",
+      "atlas": 57
+    },
+    {
+      "name": "char_4071_peper_1",
+      "atlas": 57
+    },
+    {
+      "name": "char_4062_totter_2",
+      "atlas": 57
+    },
+    {
+      "name": "char_492_quercu_epoque#17",
+      "atlas": 58
+    },
+    {
+      "name": "char_472_pasngr_epoque#17",
+      "atlas": 58
+    },
+    {
+      "name": "char_449_glider_epoque#17",
+      "atlas": 58
+    },
+    {
+      "name": "char_437_mizuki_sale#7",
+      "atlas": 58
+    },
+    {
+      "name": "char_4063_quartz_1",
+      "atlas": 58
+    },
+    {
+      "name": "char_4016_kazema_witch#3",
+      "atlas": 58
+    },
+    {
+      "name": "char_4014_lunacu_2",
+      "atlas": 58
+    },
+    {
+      "name": "char_4014_lunacu_1",
+      "atlas": 58
+    },
+    {
+      "name": "char_338_iris_witch#3",
+      "atlas": 58
+    },
+    {
+      "name": "char_322_lmlee_witch#3",
+      "atlas": 58
+    },
+    {
+      "name": "char_1028_texas2_2",
+      "atlas": 58
+    },
+    {
+      "name": "char_1028_texas2_1",
+      "atlas": 58
+    },
+    {
+      "name": "char_476_blkngt_nian#8",
+      "atlas": 59
+    },
+    {
+      "name": "char_466_qanik_2",
+      "atlas": 59
+    },
+    {
+      "name": "char_466_qanik_1",
+      "atlas": 59
+    },
+    {
+      "name": "char_427_vigil_2",
+      "atlas": 59
+    },
+    {
+      "name": "char_427_vigil_1",
+      "atlas": 59
+    },
+    {
+      "name": "char_4065_judge_2",
+      "atlas": 59
+    },
+    {
+      "name": "char_4065_judge_1",
+      "atlas": 59
+    },
+    {
+      "name": "char_4063_quartz_2",
+      "atlas": 59
+    },
+    {
+      "name": "char_4043_erato_snow#5",
+      "atlas": 59
+    },
+    {
+      "name": "char_4004_pudd_snow#5",
+      "atlas": 59
+    },
+    {
+      "name": "char_377_gdglow_snow#5",
+      "atlas": 59
+    },
+    {
+      "name": "char_1014_nearl2_epoque#17",
+      "atlas": 59
+    },
+    {
+      "name": "char_4017_puzzle_2",
+      "atlas": 60
+    },
+    {
+      "name": "char_4017_puzzle_1",
+      "atlas": 60
+    },
+    {
+      "name": "char_4013_kjera_epoque#18",
+      "atlas": 60
+    },
+    {
+      "name": "char_391_rosmon_epoque#17",
+      "atlas": 60
+    },
+    {
+      "name": "char_366_acdrop_whirlwind#4",
+      "atlas": 60
+    },
+    {
+      "name": "char_297_hamoni_2",
+      "atlas": 60
+    },
+    {
+      "name": "char_297_hamoni_1",
+      "atlas": 60
+    },
+    {
+      "name": "char_1027_greyy2_snow#5",
+      "atlas": 60
+    },
+    {
+      "name": "char_1021_kroos2_nian#8",
+      "atlas": 60
+    },
+    {
+      "name": "char_1020_reed2_2",
+      "atlas": 60
+    },
+    {
+      "name": "char_1020_reed2_1",
+      "atlas": 60
+    },
+    {
+      "name": "char_101_sora_epoque#17",
+      "atlas": 60
+    },
+    {
+      "name": "char_497_ctable_nian#9",
+      "atlas": 61
+    },
+    {
+      "name": "char_493_firwhl_2",
+      "atlas": 61
+    },
+    {
+      "name": "char_493_firwhl_1",
+      "atlas": 61
+    },
+    {
+      "name": "char_473_mberry_nian#9",
+      "atlas": 61
+    },
+    {
+      "name": "char_421_crow_summer#9",
+      "atlas": 61
+    },
+    {
+      "name": "char_4083_chimes_2",
+      "atlas": 61
+    },
+    {
+      "name": "char_4082_qiubai_1",
+      "atlas": 61
+    },
+    {
+      "name": "char_4080_lin_2",
+      "atlas": 61
+    },
+    {
+      "name": "char_4080_lin_1",
+      "atlas": 61
+    },
+    {
+      "name": "char_4078_bdhkgt_2",
+      "atlas": 61
+    },
+    {
+      "name": "char_4078_bdhkgt_1",
+      "atlas": 61
+    },
+    {
+      "name": "char_2024_chyue_2",
+      "atlas": 61
+    },
+    {
+      "name": "char_485_pallas_epoque#19",
+      "atlas": 62
+    },
+    {
+      "name": "char_4083_chimes_1",
+      "atlas": 62
+    },
+    {
+      "name": "char_4082_qiubai_2",
+      "atlas": 62
+    },
+    {
+      "name": "char_4055_bgsnow_wild#7",
+      "atlas": 62
+    },
+    {
+      "name": "char_4040_rockr_lxh#1",
+      "atlas": 62
+    },
+    {
+      "name": "char_4032_provs_wild#7",
+      "atlas": 62
+    },
+    {
+      "name": "char_215_mantic_epoque#19",
+      "atlas": 62
+    },
+    {
+      "name": "char_2024_chyue_1",
+      "atlas": 62
+    },
+    {
+      "name": "char_2023_ling_nian#9",
+      "atlas": 62
+    },
+    {
+      "name": "char_185_frncat_wild#7",
+      "atlas": 62
+    },
+    {
+      "name": "char_110_deepcl_winter#3",
+      "atlas": 62
+    },
+    {
+      "name": "char_496_wildmn_epoque#16",
+      "atlas": 63
+    },
+    {
+      "name": "char_475_akafyu_epoque#15",
+      "atlas": 63
+    }
+  ],
+  "_atlases": [
+    "Arts/CharPortraits/portraits#0",
+    "Arts/CharPortraits/portraits#1",
+    "Arts/CharPortraits/portraits#2",
+    "Arts/CharPortraits/portraits#3",
+    "Arts/CharPortraits/portraits#4",
+    "Arts/CharPortraits/portraits#5",
+    "Arts/CharPortraits/portraits#6",
+    "Arts/CharPortraits/portraits#7",
+    "Arts/CharPortraits/portraits#8",
+    "Arts/CharPortraits/portraits#9",
+    "Arts/CharPortraits/portraits#10",
+    "Arts/CharPortraits/portraits#11",
+    "Arts/CharPortraits/portraits#12",
+    "Arts/CharPortraits/portraits#13",
+    "Arts/CharPortraits/portraits#14",
+    "Arts/CharPortraits/portraits#15",
+    "Arts/CharPortraits/portraits#16",
+    "Arts/CharPortraits/portraits#17",
+    "Arts/CharPortraits/portraits#18",
+    "Arts/CharPortraits/portraits#19",
+    "Arts/CharPortraits/portraits#20",
+    "Arts/CharPortraits/portraits#21",
+    "Arts/CharPortraits/portraits#22",
+    "Arts/CharPortraits/portraits#23",
+    "Arts/CharPortraits/portraits#24",
+    "Arts/CharPortraits/portraits#25",
+    "Arts/CharPortraits/portraits#26",
+    "Arts/CharPortraits/portraits#27",
+    "Arts/CharPortraits/portraits#28",
+    "Arts/CharPortraits/portraits#29",
+    "Arts/CharPortraits/portraits#30",
+    "Arts/CharPortraits/portraits#31",
+    "Arts/CharPortraits/portraits#32",
+    "Arts/CharPortraits/portraits#33",
+    "Arts/CharPortraits/portraits#34",
+    "Arts/CharPortraits/portraits#35",
+    "Arts/CharPortraits/portraits#36",
+    "Arts/CharPortraits/portraits#37",
+    "Arts/CharPortraits/portraits#38",
+    "Arts/CharPortraits/portraits#39",
+    "Arts/CharPortraits/portraits#40",
+    "Arts/CharPortraits/portraits#41",
+    "Arts/CharPortraits/portraits#42",
+    "Arts/CharPortraits/portraits#43",
+    "Arts/CharPortraits/portraits#44",
+    "Arts/CharPortraits/portraits#45",
+    "Arts/CharPortraits/portraits#46",
+    "Arts/CharPortraits/portraits#47",
+    "Arts/CharPortraits/portraits#48",
+    "Arts/CharPortraits/portraits#49",
+    "Arts/CharPortraits/portraits#50",
+    "Arts/CharPortraits/portraits#51",
+    "Arts/CharPortraits/portraits#52",
+    "Arts/CharPortraits/portraits#53",
+    "Arts/CharPortraits/portraits#54",
+    "Arts/CharPortraits/portraits#55",
+    "Arts/CharPortraits/portraits#56",
+    "Arts/CharPortraits/portraits#57",
+    "Arts/CharPortraits/portraits#58",
+    "Arts/CharPortraits/portraits#59",
+    "Arts/CharPortraits/portraits#60",
+    "Arts/CharPortraits/portraits#61",
+    "Arts/CharPortraits/portraits#62",
+    "Arts/CharPortraits/portraits#63"
+  ],
+  "_inputSpriteDir": "Assets/Torappu/Arts/CharPortraits",
+  "_outputAtlasDir": "Assets/Torappu/Arts/CharPortraits/[X]Atlas",
+  "_rootAtlasName": "portraits",
+  "_spriteSize": {
+    "width": 180,
+    "height": 360
+  },
+  "_cntPerAtlas": 12,
+  "_maxAtlasSize": 2
+}

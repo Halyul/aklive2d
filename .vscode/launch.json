@@ -1,0 +1,54 @@
+{
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/google-chrome-stable"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: charword",
+      "request": "launch",
+      "command": "pnpm run charword",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: build chen",
+      "request": "launch",
+      "command": "pnpm run build chen",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: build-all",
+      "request": "launch",
+      "command": "pnpm run build-all",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: test",
+      "request": "launch",
+      "command": "pnpm run test",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: dev",
+      "request": "launch",
+      "command": "pnpm run dev chen",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: Directory dev",
+      "request": "launch",
+      "command": "pnpm run vite:directory:dev",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

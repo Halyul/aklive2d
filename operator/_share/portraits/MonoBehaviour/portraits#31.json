@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#31",
+  "_sprites": [
+    {
+      "name": "char_484_robrta_1",
+      "guid": "4af135fb97c1a0443b82b09c863450be",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_479_sleach_2",
+      "guid": "d16664e5b07e22341aa5a8fcc548e36a",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_479_sleach_1",
+      "guid": "9e0cd7099ad89504bbf18ed2b61f8ddb",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_485_pallas_2",
+      "guid": "249e21fa211ed5b4487b8b3d13a8f356",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_485_pallas_1",
+      "guid": "3a2c6b7bf45ae9a49b28b51e9b7203b5",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_484_robrta_2",
+      "guid": "493f5005e6fd4994d9e6966db483b736",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_475_akafyu_1",
+      "guid": "633b271186e787d4db906fd7f7f15d59",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_474_glady_2",
+      "guid": "a13e9684e817d23418db8168e8a21a61",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_474_glady_1",
+      "guid": "eb9af3aa267465445be2d5cf40ece769",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_478_kirara_2",
+      "guid": "02f323fd2c02f83428cb2a944b58c141",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_478_kirara_1",
+      "guid": "3ea38abf06905bc438db302f62338afb",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_475_akafyu_2",
+      "guid": "e2e0efffb92ff764ba11ff3076452423",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 5123623208023548347
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 7275469044263692913
+    },
+    "size": 1024
+  },
+  "_index": 31,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_484_robrta_1",
+        "guid": "4af135fb97c1a0443b82b09c863450be",
+        "md5": "9b00000f70c0d1123c4250aca3699f5e"
+      },
+      {
+        "name": "char_479_sleach_2",
+        "guid": "d16664e5b07e22341aa5a8fcc548e36a",
+        "md5": "7ff38eb4cbb63cad161cb9e6bc9a3b68"
+      },
+      {
+        "name": "char_479_sleach_1",
+        "guid": "9e0cd7099ad89504bbf18ed2b61f8ddb",
+        "md5": "17696178d58148d33efa14a1190af98f"
+      },
+      {
+        "name": "char_485_pallas_2",
+        "guid": "249e21fa211ed5b4487b8b3d13a8f356",
+        "md5": "41a4e1d1e2edd3c92d265c5c7f5d8127"
+      },
+      {
+        "name": "char_485_pallas_1",
+        "guid": "3a2c6b7bf45ae9a49b28b51e9b7203b5",
+        "md5": "197e3d00edd9586045db0a1740cc79e8"
+      },
+      {
+        "name": "char_484_robrta_2",
+        "guid": "493f5005e6fd4994d9e6966db483b736",
+        "md5": "15a7aca9e0fecdccd54e618f507ecf53"
+      },
+      {
+        "name": "char_475_akafyu_1",
+        "guid": "633b271186e787d4db906fd7f7f15d59",
+        "md5": "d56bad31055e838c379413d5ec1dbb28"
+      },
+      {
+        "name": "char_474_glady_2",
+        "guid": "a13e9684e817d23418db8168e8a21a61",
+        "md5": "abf398fd11fb338dabb727f97c1c609a"
+      },
+      {
+        "name": "char_474_glady_1",
+        "guid": "eb9af3aa267465445be2d5cf40ece769",
+        "md5": "b195a62cc800f9a79d391c074b2f38bf"
+      },
+      {
+        "name": "char_478_kirara_2",
+        "guid": "02f323fd2c02f83428cb2a944b58c141",
+        "md5": "f1ff1b736370f5951423a7cca084085b"
+      },
+      {
+        "name": "char_478_kirara_1",
+        "guid": "3ea38abf06905bc438db302f62338afb",
+        "md5": "2f8d7340b9c7fac1ace4e54afddc2590"
+      },
+      {
+        "name": "char_475_akafyu_2",
+        "guid": "e2e0efffb92ff764ba11ff3076452423",
+        "md5": "bfc15e620147c80b6c9433ba6e3fe222"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#31",
+        "guid": "369c4fbf20dc40d4f98d129bd066e63a",
+        "md5": "5087ec337c17d214b890e1ca748ce007"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#31a",
+        "guid": "d9b00ee0a6d019440a18e94bd187dcc1",
+        "md5": "66336b90ccd793971adc98dc33bb6651"
+      }
+    ]
+  }
+}

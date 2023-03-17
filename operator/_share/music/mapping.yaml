@@ -1,0 +1,33 @@
+operator_bg.png:
+  intro: m_sys_void_intro.ogg
+  loop: m_sys_void_loop.ogg
+bg_anniversary_1.png:
+  intro: m_dia_nightoflongmen_intro.ogg
+  loop: m_dia_nightoflongmen_loop.ogg
+bg_iberia_1.png:
+  intro: m_sys_act18d3d0_intro.ogg
+  loop: m_sys_act18d3d0_loop.ogg
+bg_kazimierz_1.png:
+  intro: m_dia_street_intro.ogg
+  loop: m_dia_street_loop.ogg
+bg_main_victoria_1.png:
+  intro: m_avg_ghosthunter_intro.ogg
+  loop: m_avg_ghosthunter_loop.ogg
+bg_rhodes_day.png:
+  intro: m_sys_void_intro.ogg
+  loop: m_sys_void_loop.ogg
+bg_rhodes_night.png:
+  intro: m_sys_tech_intro.ogg
+  loop: m_sys_tech_loop.ogg
+bg_rogue_1.png:
+  intro: null
+  loop: m_avg_rglk1secretevent_loop.ogg
+bg_siesta_1.png:
+  intro: m_sys_ddd_intro.ogg
+  loop: m_sys_ddd_loop.ogg
+bg_ursus_1.png:
+  intro: m_avg_loneliness_intro.ogg
+  loop: m_avg_loneliness_loop.ogg
+bg_yan_1.png:
+  intro: null
+  loop: m_sys_bitw_loop.ogg

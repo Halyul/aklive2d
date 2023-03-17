@@ -1,0 +1,35 @@
+.footer {
+  user-select: none;
+  .section {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: "Noto Sans SC", sans-serif;
+  }
+  .links {
+    flex-direction: row;
+    height: 2rem;
+
+    .item {
+      padding: 0 1rem;
+      border-left: 2px solid var(--border-color);
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      &:first-of-type {
+        border-left: none;
+      }
+    }
+  }
+  .copyright {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 12px;
+  }
+}

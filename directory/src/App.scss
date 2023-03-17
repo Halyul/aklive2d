@@ -1,0 +1,39 @@
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';
+@import 'https://fonts.cdnfonts.com/css/bender';
+@import 'https://fonts.cdnfonts.com/css/geometos';
+
+:root {
+  --text-color: rgba(255, 255, 255, 87%);
+  --text-color-full: #fff;
+  --secondary-text-color: #686a72;
+  --date-color: rgba(255, 255, 255, 20%);
+  --border-color: #707070;
+  --link-highlight-color: #33b5e5;
+  --drawer-background-color: rgba(0, 0, 0, 88%);
+  --root-background-color: #131313;
+  --home-item-hover-background-color: rgba(67, 67, 67, 30%);
+  --home-item-background-linear-gradient-color: rgba(255, 255, 255, 10%);
+  --home-item-outline-color: rgba(214, 214, 214, 30%);
+  --button-color: #666;
+
+  font-family: Geometos, "Noto Sans SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--root-background-color);
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}

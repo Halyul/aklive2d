@@ -1,0 +1,171 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Arknights: Colorful Wonderland / Surtr Live 2D\n明日方舟：缤纷奇境·史尔特尔 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n请在 Wallpaper Engine > 设置 > 性能 > FPS 下设置FPS\n\nLive preview on: https://arknights.halyul.dev/surtr_colorful_wonderland\nGithub: https://github.com/Halyul/aklive2d",
+	"file" : "index.html",
+	"general" : 
+	{
+		"localization" : 
+		{
+			"en-us" : 
+			{
+				"ui_background_image" : "Background Image",
+				"ui_logo_image" : "Logo Image",
+				"ui_logo_notice" : "Notice",
+				"ui_logo_opacity" : "Logo Opacity",
+				"ui_logo_ratio" : "Logo Ratio",
+				"ui_operator_logo" : "Operator Logo",
+				"ui_position" : "USE WITH CAUTION: Position",
+				"ui_position_padding_bottom" : "Padding Bottom",
+				"ui_position_padding_left" : "Padding Left",
+				"ui_position_padding_right" : "Padding Right",
+				"ui_position_padding_top" : "Padding Top"
+			},
+			"zh-chs" : 
+			{
+				"ui_background_image" : "背景图片",
+				"ui_logo_image" : "图标图片",
+				"ui_logo_notice" : "通知",
+				"ui_logo_opacity" : "图标透明度",
+				"ui_logo_ratio" : "图标比例",
+				"ui_operator_logo" : "干员图标",
+				"ui_position" : "注意使用: 位置",
+				"ui_position_padding_bottom" : "底部距离",
+				"ui_position_padding_left" : "左部距离",
+				"ui_position_padding_right" : "右部距离",
+				"ui_position_padding_top" : "上部距离"
+			}
+		},
+		"properties" : 
+		{
+			"background" : 
+			{
+				"index" : 5,
+				"order" : 105,
+				"text" : "ui_background_image",
+				"type" : "file",
+				"value" : ""
+			},
+			"logo" : 
+			{
+				"index" : 1,
+				"order" : 101,
+				"text" : "ui_operator_logo",
+				"type" : "bool",
+				"value" : true
+			},
+			"logoimage" : 
+			{
+				"condition" : "logo.value == true",
+				"index" : 2,
+				"order" : 102,
+				"text" : "ui_logo_image",
+				"type" : "file",
+				"value" : ""
+			},
+			"logoopacity" : 
+			{
+				"condition" : "logo.value == true",
+				"fraction" : false,
+				"index" : 4,
+				"max" : 100,
+				"min" : 0,
+				"order" : 104,
+				"text" : "ui_logo_opacity",
+				"type" : "slider",
+				"value" : 30
+			},
+			"logoratio" : 
+			{
+				"condition" : "logo.value == true",
+				"fraction" : true,
+				"index" : 3,
+				"max" : 100,
+				"min" : 0,
+				"order" : 103,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "ui_logo_ratio",
+				"type" : "slider",
+				"value" : 61.8
+			},
+			"notice" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "ui_logo_notice",
+				"type" : "textinput",
+				"value" : "Set FPS target in Settings"
+			},
+			"paddingbottom" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 10,
+				"max" : 100,
+				"min" : -100,
+				"order" : 110,
+				"text" : "ui_position_padding_bottom",
+				"type" : "slider",
+				"value" : 0
+			},
+			"paddingleft" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 7,
+				"max" : 100,
+				"min" : -100,
+				"order" : 107,
+				"text" : "ui_position_padding_left",
+				"type" : "slider",
+				"value" : 0
+			},
+			"paddingright" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 8,
+				"max" : 100,
+				"min" : -100,
+				"order" : 108,
+				"text" : "ui_position_padding_right",
+				"type" : "slider",
+				"value" : 6
+			},
+			"paddingtop" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 9,
+				"max" : 100,
+				"min" : -100,
+				"order" : 109,
+				"text" : "ui_position_padding_top",
+				"type" : "slider",
+				"value" : 1
+			},
+			"position" : 
+			{
+				"index" : 6,
+				"order" : 106,
+				"text" : "ui_position",
+				"type" : "bool",
+				"value" : false
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "Game" ],
+	"title" : "Arknights: Colorful Wonderland / Surtr - 明日方舟：缤纷奇境·史尔特尔",
+	"type" : "web",
+	"version" : 2,
+	"workshopid" : "2847602015",
+	"workshopurl" : "steam://url/CommunityFilePage/2847602015"
+}

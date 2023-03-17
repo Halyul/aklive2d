@@ -1,0 +1,320 @@
+description: !match "~{split('config', 'title' ,' - ')[0]} Live 2D\n~{split('config', 'title' ,' - ')[1]} Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n\nLive preview on: https://arknights.halyul.dev/~{var('config', 'link')}\nGithub: https://github.com/Halyul/aklive2d\nCheck out our privacy policy at https://privacy.halyul.dev"
+localization:
+  en-us:
+    ui_notice_title: <hr><h4>📝 Notes</h4><hr>
+    ui_notice_changelog: <span><b>Now supports Background Music!</b></span>
+    ui_notice_set_fps: <span><b>Set FPS target in Settings</b></span>
+    ui_notice_github: "Github: https://github.com/Halyul/aklive2d"
+    ui_notice_other_operators: "Previews: https://arknights.halyul.dev/"
+    ui_notice_version: !match "~{version('<span>Version: ', '</span>')}"
+    ui_background_title: <hr><h4>🖼️ Background</h4><hr>
+    ui_custom_background: Custom Background
+    ui_default_background: Default Background
+    ui_logo_title: <hr><h4>😐 Logo</h4><hr>
+    ui_logo_image: Logo Image
+    ui_logo_opacity: Logo Opacity
+    ui_logo_ratio: Logo Ratio
+    ui_operator_logo: Operator Logo
+    ui_translate_x: X Axis Position
+    ui_translate_y: Y Axis Position
+    ui_position_title: <hr><h4>⚠️ Posistion</h4><hr>
+    ui_position_padding_bottom: Padding Bottom
+    ui_position_padding_left: Padding Left
+    ui_position_padding_right: Padding Right
+    ui_position_padding_top: Padding Top
+    ui_voice_title: <hr><h4>🔈Voice</h4><hr>
+    ui_voice_lang: Voice Language
+    ui_voice_idle: Idle Timeout
+    ui_voice_next: Voice Interval
+    ui_subtitle_title: <hr><h4>📑 Subtitle</h4><hr>
+    ui_subtitle_lang: Subtitle Language
+    ui_voice_actor_title: <hr><h4>🗣️ Voice Actor</h4><hr>
+    ui_privacy_title: <hr><h4>📜 Privacy</h4><hr>
+    ui_privacy_text: <span><b>Check out our privacy policy at https://privacy.halyul.dev</b></span>
+    ui_privacy_do_not_track: Send usage data
+    ui_music_title: <hr><h4>📝 Music</h4><hr>
+    ui_music_notice: <span><b>Please adjust the 'Offset' value if you notice audio cutoff</b></span>
+    ui_music_notice1: <span><b>'bg_rhodes_day.png' and 'operator_bg.png' use the same music, it is not a bug.</b></span>
+    ui_music_selection: Music
+    ui_music_volume: Volume
+    ui_music_offset: Offset
+  zh-chs:
+    ui_notice_title: <hr><h4>📝 通知</h4><hr>
+    ui_notice_changelog: <span><b>现在支持背景音乐! </b></span>
+    ui_notice_set_fps: <span><b>在设置中设定FPS目标</b></span>
+    ui_notice_github: "Github: https://github.com/Halyul/aklive2d"
+    ui_notice_other_operators: "预览: https://arknights.halyul.dev/"
+    ui_notice_version: !match "~{version('<span>版本: ', '</span>')}"
+    ui_background_title: <hr><h4>🖼️ 背景</h4><hr>
+    ui_custom_background: 背景图片
+    ui_default_background: 默认背景
+    ui_logo_title: <hr><h4>😐 图标</h4><hr>
+    ui_logo_image: 图标图片
+    ui_logo_opacity: 图标透明度
+    ui_logo_ratio: 图标比例
+    ui_operator_logo: 干员图标
+    ui_translate_x: X 轴位置
+    ui_translate_y: Y 轴位置
+    ui_position_title: <hr><h4>⚠️ 位置</h4><hr>
+    ui_position_padding_bottom: 底部距离
+    ui_position_padding_left: 左部距离
+    ui_position_padding_right: 右部距离
+    ui_position_padding_top: 上部距离
+    ui_voice_title: <hr><h4>🔈语音</h4><hr>
+    ui_voice_lang: 语音语言
+    ui_voice_idle: 待机间隔
+    ui_voice_next: 下一条语音间隔
+    ui_subtitle_title: <hr><h4>📑 字幕</h4><hr>
+    ui_subtitle_lang: 字幕语言
+    ui_voice_actor_title: <hr><h4>🗣️ 声优</h4><hr>
+    ui_privacy_title: <hr><h4>📜 隐私</h4><hr>
+    ui_privacy_text: <span><b>在 https://privacy.halyul.dev 查看我们的隐私政策</b></span>
+    ui_privacy_do_not_track: 发送使用数据
+    ui_music_title: <hr><h4>🎵 音乐</h4><hr>
+    ui_music_notice: <span><b>如若发现音频截止，请调节 '弥补' 数值</b></span>
+    ui_music_notice1: <span><b>'bg_rhodes_day.png' 和 'operator_bg.png' 使用同样的音乐，并非Bug</b></span>
+    ui_music_selection: 音乐
+    ui_music_volume: 音量
+    ui_music_offset: 弥补
+properties:
+  - key: notice_title
+    value: 
+     text: ui_notice_title
+  - key: notice_changelog
+    value: 
+     text: ui_notice_changelog
+  - key: notice_set_fps
+    value: 
+     text: ui_notice_set_fps
+  - key: notice_github
+    value: 
+     text: ui_notice_github
+  - key: notice_other_operators
+    value: 
+     text: ui_notice_other_operators
+  - key: notice_version
+    value: 
+     text: ui_notice_version
+  - key: logo_title
+    value:
+      text: ui_logo_title
+  - key: logo
+    value: 
+     text: ui_operator_logo
+     type: bool
+     value: true
+  - key: logoimage
+    value: 
+     text: ui_logo_image
+     type: file
+     value: ""
+     condition: logo.value == true
+  - key: logoratio
+    value: 
+     text: ui_logo_ratio
+     type: "slider"
+     value: 61.8
+     condition: logo.value == true
+     fraction: true
+     max: 100
+     min: 0
+     step: 0.1
+     precision: 1
+  - key: logoopacity
+    value: 
+     text: ui_logo_opacity
+     type: slider
+     value: 30
+     condition: logo.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: logox
+    value: 
+     text: ui_translate_x
+     type: slider
+     value: 0
+     condition: logo.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: logoy
+    value: 
+     text: ui_translate_y
+     type: slider
+     value: 0
+     condition: logo.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: background_title
+    value: 
+     text: ui_background_title
+  - key: defaultbackground
+    value: 
+     text: ui_default_background
+     type: combo
+     value: !match ~{var('assets', "backgrounds")[0]}
+     options: !match ~{var('assets', "backgroundsOptions")}
+  - key: background
+    value: 
+     text: ui_custom_background
+     type: file
+     value: ""
+  - key: voicetitle
+    value: 
+     text: ui_voice_title
+     type: bool
+     value: false
+  - key: voicelanguage
+    value: 
+     text: ui_voice_lang
+     type: combo
+     condition: voicetitle.value == true
+     value: !match ~{var('assets', "voiceLangs")[0]}
+     options: !match ~{var('assets', "voiceLangsOptions")}
+  - key: voiceidle
+    value: 
+     text: ui_voice_idle
+     type: textinput
+     value: 10
+     condition: voicetitle.value == true
+     fraction: false
+     min: 0
+  - key: voicenext
+    value: 
+     text: ui_voice_next
+     type: textinput
+     value: 3
+     condition: voicetitle.value == true
+     fraction: false
+     min: 0
+  - key: voicesubtitle
+    value: 
+     text: ui_subtitle_title
+     condition: voicetitle.value == true
+     type: bool
+     value: false
+  - key: voicesubtitlelanguage
+    value: 
+     text: ui_subtitle_lang
+     type: combo
+     condition: voicesubtitle.value == true
+     value: !match ~{var('assets', "subtitleLangs")[0]}
+     options: !match ~{var('assets', "subtitleLangsOptions")}
+  - key: voicesubtitlex
+    value: 
+     text: ui_translate_x
+     type: slider
+     value: 0
+     condition: voicesubtitle.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: voicesubtitley
+    value: 
+     text: ui_translate_y
+     type: slider
+     value: 100
+     condition: voicesubtitle.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: voiceactor
+    value: 
+     text: ui_voice_actor_title
+     condition: voicesubtitle.value == true
+     type: bool
+     value: false
+  - key: music_title
+    value: 
+     text: ui_music_title
+     type: bool
+     value: false
+  - key: music_notice
+    value: 
+     text: ui_music_notice
+     condition: music_title.value == true
+  - key: music_notice1
+    value: 
+     text: ui_music_notice1
+     condition: music_title.value == true
+  - key: music_selection
+    value: 
+     text: ui_music_selection
+     condition: music_title.value == true
+     type: combo
+     value: !match ~{var('assets', "music")[0]}
+     options: !match ~{var('assets', "musicOptions")}
+  - key: music_volume
+    value: 
+     text: ui_music_volume
+     type: slider
+     value: 50
+     condition: music_title.value == true
+     fraction: false
+     max: 100
+     min: 0
+  - key: music_offset
+    value: 
+     text: ui_music_offset
+     type: slider
+     value: 0.3
+     condition: music_title.value == true
+     fraction: true
+     precision: 2
+     step: 0.01
+     max: 1
+     min: 0
+  - key: position
+    value: 
+     text: ui_position_title
+     type: bool
+     value: false
+  - key: paddingleft
+    value: 
+     text: ui_position_padding_left
+     type: slider
+     value: !match ~{var('config', "viewport_left")}
+     condition: position.value == true
+     fraction: false
+     max: 100
+     min: -100
+  - key: paddingright
+    value: 
+     text: ui_position_padding_right
+     type: slider
+     value: !match ~{var('config', "viewport_right")}
+     condition: position.value == true
+     fraction: false
+     max: 100
+     min: -100
+  - key: paddingtop
+    value: 
+     text: ui_position_padding_top
+     type: slider
+     value: !match ~{var('config', "viewport_top")}
+     condition: position.value == true
+     fraction: false
+     max: 100
+     min: -100
+  - key: paddingbottom
+    value: 
+     text: ui_position_padding_bottom
+     type: slider
+     value: !match ~{var('config', "viewport_bottom")}
+     condition: position.value == true
+     fraction: false
+     max: 100
+     min: -100
+  - key: privacytitle
+    value: 
+     text: ui_privacy_title
+  - key: privacy_text
+    value: 
+     text: ui_privacy_text
+  - key: privacydonottrack
+    value: 
+     text: ui_privacy_do_not_track
+     type: bool
+     value: true

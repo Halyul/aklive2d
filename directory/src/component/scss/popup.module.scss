@@ -1,0 +1,94 @@
+.entry-text {
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: 0;
+  z-index: -1;
+  border: unset;
+  transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    max-width: 480px;
+    height: fit-content;
+    margin: 0 auto;
+    background-color: var(--root-background-color);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+  }
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "Geometos", "Noto Sans SC", sans-serif;
+    .return-button {
+      color: var(--button-color);
+      transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+  .text {
+    flex-grow: 1;
+    margin-right: 3rem;
+  }
+  .content {
+    line-height: 1.3em;
+    padding: 1rem 1rem 0 1rem;
+    user-select: text;
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    background-color: var(--root-background-color);
+    transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+
+    &.active {
+      opacity: 0.5;
+      visibility: visible;
+    }
+  }
+  &.active {
+    opacity: 1;
+    z-index: 10;
+  }
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+
+    .content {
+      font-size: 1rem;
+    }
+
+    .return-button {
+      transform: scale(0.8);
+    }
+  }
+}

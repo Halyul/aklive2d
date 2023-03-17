@@ -1,0 +1,56 @@
+folder: 
+  operator: ./operator/
+  release: ./release/
+  background: background
+  music: music
+  directory: _assets
+  share: _share
+  voice:
+    main: voice
+    sub:
+      - name: jp
+        lang: JP
+      - name: cn
+        lang: CN_MANDARIN
+      - name: en
+        lang: EN
+      - name: kr
+        lang: KR
+      - name: custom
+        lang: CUSTOM
+share:
+  title:
+    zh-CN: "明日方舟："
+    en-US: "Arknights: "
+directory:
+  title: AKLive2D
+  voice: jp/CN_037.ogg
+  error:
+    files: !include config/_directory.yaml
+    voice: CN_034.ogg
+operators:
+  chen: !include config/chen.yaml
+  dusk: !include config/dusk.yaml
+  dusk_everything_is_a_miracle: !include config/dusk_everything_is_a_miracle.yaml
+  ling: !include config/ling.yaml
+  nearl: !include config/nearl.yaml
+  nian: !include config/nian.yaml
+  nian_unfettered_freedom: !include config/nian_unfettered_freedom.yaml
+  phatom_focus: !include config/phatom_focus.yaml
+  rosmontis: !include config/rosmontis.yaml
+  skadi: !include config/skadi.yaml
+  skadi_sublimation: !include config/skadi_sublimation.yaml
+  w: !include config/w.yaml
+  w_wonder: !include config/w_wonder.yaml
+  specter: !include config/specter.yaml
+  gavial: !include config/gavial.yaml
+  surtr_colorful_wonderland: !include config/surtr_colorful_wonderland.yaml
+  lee_trust_your_eyes: !include config/lee_trust_your_eyes.yaml
+  texas_the_omertosa: !include config/texas_the_omertosa.yaml
+  nearl_relight: !include config/nearl_relight.yaml
+  rosmontis_become_anew: !include config/rosmontis_become_anew.yaml
+  passager_dream_in_a_moment: !include config/passager_dream_in_a_moment.yaml
+  mizuki_summer_feast: !include config/mizuki_summer_feast.yaml
+  chongyue: !include config/chongyue.yaml
+  ling_it_does_wash_the_strings: !include config/ling_it_does_wash_the_strings.yaml
+  pozemka_snowy_plains_in_words: !include config/pozemka_snowy_plains_in_words.yaml

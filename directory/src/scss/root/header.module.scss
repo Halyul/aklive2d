@@ -1,0 +1,74 @@
+.header {
+  width: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 3;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  pointer-events: none;
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .dropdown {
+    margin-left: auto;
+  }
+
+  .extra-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    pointer-events: auto;
+  }
+}
+
+.navButton {
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  z-index: 2;
+  pointer-events: auto;
+
+  .bar {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: var(--text-color);
+    transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+
+    &:nth-child(1) {
+      transform: translate(0, -200%);
+    }
+
+    &:nth-child(3) {
+      transform: translate(0, 200%);
+    }
+  }
+
+  &.active {
+    .bar {
+      &:nth-child(1) {
+        transform: translate(0, 100%) rotateZ(45deg) scaleX(0.5) translate(-50%);
+      }
+      &:nth-child(2) {
+        transform: rotateZ(-45deg);
+      }
+      &:nth-child(3) {
+        transform: translate(0, -100%) rotateZ(45deg) scaleX(0.5) translate(50%);
+      }
+    }
+  }
+}

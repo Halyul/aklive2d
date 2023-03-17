@@ -1,0 +1,95 @@
+@use '@/scss/_main_share.scss';
+
+.main {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    position: relative;
+    padding-right: 2rem;
+    .title {
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.2em;
+
+      .icon {
+        width: 3.88rem;
+        margin-right: 1.88rem;
+        fill: var(--text-color);
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 2rem;
+      }
+    }
+
+    .tab {
+      flex: auto;
+      white-space: pre;
+      user-select: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      overflow: hidden;
+      z-index: 1;
+      .item {
+        font-size: 1.25rem;
+        line-height: 3em;
+        font-weight: 700;
+        padding: 0 1rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-bottom: 0.3rem solid transparent;
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .text-wrapper {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: var(--text-color);
+          transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+        }
+
+        &.active,
+        &:hover {
+          color: var(--link-highlight-color);
+          .text-wrapper,
+          .text {
+            color: currentColor;
+          }
+        }
+        &.active {
+          border-bottom-color: currentColor;
+        }
+      }
+    }
+  }
+
+  .return-button {
+    position: absolute;
+    right: -4rem;
+    bottom: -24px;
+    color: var(--button-color);
+    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+
+    &:hover {
+      color: var(--text-color);
+    }
+
+    @media (max-width: 768px) {
+      right: -3.4rem;
+    }
+  }
+}

@@ -5,8 +5,7 @@
       "request": "launch",
       "type": "chrome",
       "url": "http://localhost:5173",
-      "webRoot": "${workspaceFolder}",
-      "runtimeExecutable": "/usr/bin/google-chrome-stable"
+      "webRoot": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",

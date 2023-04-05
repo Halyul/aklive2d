@@ -194,7 +194,7 @@ properties:
      text: ui_subtitle_title
      condition: voicetitle.value == true
      type: bool
-     value: false
+     value: true
   - key: voicesubtitlelanguage
     value: 
      text: ui_subtitle_lang

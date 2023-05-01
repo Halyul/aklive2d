@@ -11,7 +11,6 @@ export default function init(operatorName, extractedDir) {
     })
     const date = new Date()
     const template = readYAML(path.join(__projectRoot, 'config', '_template.yaml'))
-    template.link = operatorName
     template.date = `${date.getFullYear()}/${(date.getMonth() + 1).toString().padStart(2, '0') }`
     writeSync(stringify(template), path.join(__projectRoot, 'config', `${operatorName}.yaml`))
     appendMainConfig(operatorName)

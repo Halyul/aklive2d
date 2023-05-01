@@ -6,7 +6,6 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 
 Version: `4th Anniversary`
 
-- [ ] Operator: Silence the Paradiagmatic (unsure)
 - [ ] Operator: Muelsyse
 - [ ] Skin: Born as One / Specter the Unchained
 - [ ] Skin: Ten Thousand Mountains / Ch'en/Chen the Holungday

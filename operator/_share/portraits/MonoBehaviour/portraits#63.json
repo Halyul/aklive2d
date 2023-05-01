@@ -11,8 +11,8 @@
   "m_Name": "portraits#63",
   "_sprites": [
     {
-      "name": "char_496_wildmn_epoque#16",
-      "guid": "ff979fbcac26aa646a1369525523b6b6",
+      "name": "char_421_crow_summer#9",
+      "guid": "8ecc984981cf20b41b52142239fd11fc",
       "atlas": 0,
       "rect": {
         "x": 0,
@@ -23,8 +23,8 @@
       "rotate": 0
     },
     {
-      "name": "char_475_akafyu_epoque#15",
-      "guid": "e9a12cab64881e14b8509c17f1f34791",
+      "name": "char_4091_ulika_1",
+      "guid": "e00c42ca6fa0a924c93255b162e6cdb1",
       "atlas": 0,
       "rect": {
         "x": 182,
@@ -33,6 +33,126 @@
         "h": 360
       },
       "rotate": 0
+    },
+    {
+      "name": "char_4077_palico_mh#1",
+      "guid": "2acdb226a9a667f4a98ed079bf94cf8e",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4077_palico_1",
+      "guid": "c657ca503bab7e14ba5f1d3369967726",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_388_mint_epoque#22",
+      "guid": "675b01a124172dc48895528592de6be1",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_358_lisa_epoque#22",
+      "guid": "63caf1baae85907488a913867463c33b",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_336_folivo_epoque#22",
+      "guid": "293a32336adb2d547910e0362fe29f83",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_274_astesi_epoque#23",
+      "guid": "b4bc66e977a68434c83a24cd2727a7ca",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1030_noirc2_2",
+      "guid": "504e1d58b544d9c40924fc5637c34196",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1030_noirc2_1",
+      "guid": "a82d752b24e368d41a78f91f82a6c1a3",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1029_yato2_2",
+      "guid": "d74dabf047b946c46aebd44919a11f62",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_1029_yato2_1",
+      "guid": "f0c51c11ee0e9c342a2a88d88cf1041b",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -45,34 +165,84 @@
       "m_FileID": 0,
       "m_PathID": -858700379018991339
     },
-    "size": 512
+    "size": 1024
   },
   "_index": 63,
   "_sign": {
     "m_sprites": [
       {
-        "name": "char_496_wildmn_epoque#16",
-        "guid": "ff979fbcac26aa646a1369525523b6b6",
-        "md5": "95dbb73bd7a0b694d4cfb67c02184d89"
+        "name": "char_421_crow_summer#9",
+        "guid": "8ecc984981cf20b41b52142239fd11fc",
+        "md5": "4f46b4e46860aa4f864bfa5d38a44406"
       },
       {
-        "name": "char_475_akafyu_epoque#15",
-        "guid": "e9a12cab64881e14b8509c17f1f34791",
-        "md5": "f3d1874da21537de632243f94ab6c711"
+        "name": "char_4091_ulika_1",
+        "guid": "e00c42ca6fa0a924c93255b162e6cdb1",
+        "md5": "505f3ccdf42e1c79e2c1c3b2c327243d"
+      },
+      {
+        "name": "char_4077_palico_mh#1",
+        "guid": "2acdb226a9a667f4a98ed079bf94cf8e",
+        "md5": "7b6bb0afaf1473aa55f5c01d3aef8855"
+      },
+      {
+        "name": "char_4077_palico_1",
+        "guid": "c657ca503bab7e14ba5f1d3369967726",
+        "md5": "6e37103ab0ac9f236a55dbb5cd89db1f"
+      },
+      {
+        "name": "char_388_mint_epoque#22",
+        "guid": "675b01a124172dc48895528592de6be1",
+        "md5": "d8c6962fe4140906d53fa360ab2cb180"
+      },
+      {
+        "name": "char_358_lisa_epoque#22",
+        "guid": "63caf1baae85907488a913867463c33b",
+        "md5": "1f9612a6b24751a29e28d8b7ff45af1a"
+      },
+      {
+        "name": "char_336_folivo_epoque#22",
+        "guid": "293a32336adb2d547910e0362fe29f83",
+        "md5": "4551cb131615ca86ba205b8324a38aaa"
+      },
+      {
+        "name": "char_274_astesi_epoque#23",
+        "guid": "b4bc66e977a68434c83a24cd2727a7ca",
+        "md5": "2f2a1894fcb396211c60cde74bc00c3e"
+      },
+      {
+        "name": "char_1030_noirc2_2",
+        "guid": "504e1d58b544d9c40924fc5637c34196",
+        "md5": "12166b4d78c07fffbaec80bb5fcb6629"
+      },
+      {
+        "name": "char_1030_noirc2_1",
+        "guid": "a82d752b24e368d41a78f91f82a6c1a3",
+        "md5": "9c662dab8847d211a7e9b9adadc2a14c"
+      },
+      {
+        "name": "char_1029_yato2_2",
+        "guid": "d74dabf047b946c46aebd44919a11f62",
+        "md5": "aa943319cecfee908ae0fb27b24612e2"
+      },
+      {
+        "name": "char_1029_yato2_1",
+        "guid": "f0c51c11ee0e9c342a2a88d88cf1041b",
+        "md5": "e3498e9e1981930125cceda66c69ed69"
       }
     ],
     "m_atlases": [
       {
         "name": "portraits#63",
         "guid": "cea698340e6bc3047815dddff55a948f",
-        "md5": "0b4641fe32c5ff9fa19267bfb19e46da"
+        "md5": "75edadd90912b39e3783e14a69b5fbe0"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#63a",
         "guid": "16991da946f43354ca9f516a688d1b44",
-        "md5": "34825eb0044f60cf8fd422deab2f6a24"
+        "md5": "a9c96efa32578279d088a92633191bc9"
       }
     ]
   }

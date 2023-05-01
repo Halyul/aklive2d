@@ -71,12 +71,24 @@
       "rotate": 0
     },
     {
-      "name": "char_4032_provs_wild#7",
-      "guid": "d1219ba3f81f6e74480cc076cfdd3a15",
+      "name": "char_4036_forcer_epoque#20",
+      "guid": "9a97ad5d87d0a5d44a88f78938713305",
       "atlas": 0,
       "rect": {
         "x": 364,
         "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4032_provs_wild#7",
+      "guid": "d1219ba3f81f6e74480cc076cfdd3a15",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -88,7 +100,7 @@
       "atlas": 0,
       "rect": {
         "x": 546,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -99,8 +111,8 @@
       "guid": "d4a7cfaeddfba5c41bfd6f1380d56005",
       "atlas": 0,
       "rect": {
-        "x": 546,
-        "y": 362,
+        "x": 728,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -112,7 +124,7 @@
       "atlas": 0,
       "rect": {
         "x": 728,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -123,19 +135,19 @@
       "guid": "c9716e2089990a043a0e52f7b68802d2",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 362,
-        "w": 180,
-        "h": 360
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     },
     {
       "name": "char_110_deepcl_winter#3",
       "guid": "c4c47946c3e01fc49af9e13479d8e8f3",
       "atlas": 0,
       "rect": {
-        "x": 0,
+        "x": 364,
         "y": 724,
         "w": 360,
         "h": 180
@@ -184,6 +196,11 @@
         "md5": "dccc2ec6661466afe070667697fd1e23"
       },
       {
+        "name": "char_4036_forcer_epoque#20",
+        "guid": "9a97ad5d87d0a5d44a88f78938713305",
+        "md5": "85d22756c2aedf0f01183f33988d0074"
+      },
+      {
         "name": "char_4032_provs_wild#7",
         "guid": "d1219ba3f81f6e74480cc076cfdd3a15",
         "md5": "a177ba4a834fe9c10ceb083c07007ccc"
@@ -218,14 +235,14 @@
       {
         "name": "portraits#62",
         "guid": "9e48bd861f9c2cc45a47154b4f67fe8b",
-        "md5": "94247a98caf6568fb1114d248a25e660"
+        "md5": "89657fb88464db8bd6fbd7cad2bd5021"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#62a",
         "guid": "48daee468370dc344a0b1ec5c7433e26",
-        "md5": "a6013d9fc735ff851c29f98ea3507d5a"
+        "md5": "8e35a4f5711710ccd2746772340e4b80"
       }
     ]
   }

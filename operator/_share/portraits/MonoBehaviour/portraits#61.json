@@ -59,24 +59,12 @@
       "rotate": 0
     },
     {
-      "name": "char_421_crow_summer#9",
-      "guid": "8ecc984981cf20b41b52142239fd11fc",
-      "atlas": 0,
-      "rect": {
-        "x": 364,
-        "y": 0,
-        "w": 180,
-        "h": 360
-      },
-      "rotate": 0
-    },
-    {
       "name": "char_4083_chimes_2",
       "guid": "dce603b9082dbaf4eaa9ed835de929b7",
       "atlas": 0,
       "rect": {
         "x": 364,
-        "y": 362,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -87,8 +75,8 @@
       "guid": "4e2a80dee96e5ae4fb1ff676492f16a0",
       "atlas": 0,
       "rect": {
-        "x": 546,
-        "y": 0,
+        "x": 364,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -100,7 +88,7 @@
       "atlas": 0,
       "rect": {
         "x": 546,
-        "y": 362,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -111,8 +99,8 @@
       "guid": "839716870ff26ab4490dc06aa2b02942",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 0,
+        "x": 546,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -124,7 +112,7 @@
       "atlas": 0,
       "rect": {
         "x": 728,
-        "y": 362,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -135,6 +123,18 @@
       "guid": "167a5c92f0a0ee14db8692965ace57d6",
       "atlas": 0,
       "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_2024_chyue_2",
+      "guid": "3929791e6de816a40b87254240942e1f",
+      "atlas": 0,
+      "rect": {
         "x": 0,
         "y": 724,
         "w": 360,
@@ -143,8 +143,8 @@
       "rotate": 1
     },
     {
-      "name": "char_2024_chyue_2",
-      "guid": "3929791e6de816a40b87254240942e1f",
+      "name": "char_103_angel_sale#8",
+      "guid": "53782c6726fee7a489ccae6e6830b340",
       "atlas": 0,
       "rect": {
         "x": 364,
@@ -191,11 +191,6 @@
         "md5": "ac352fb523933a8d1b8cdd6b774f7e9b"
       },
       {
-        "name": "char_421_crow_summer#9",
-        "guid": "8ecc984981cf20b41b52142239fd11fc",
-        "md5": "4f46b4e46860aa4f864bfa5d38a44406"
-      },
-      {
         "name": "char_4083_chimes_2",
         "guid": "dce603b9082dbaf4eaa9ed835de929b7",
         "md5": "5622976ef025bee903bac522acb13c36"
@@ -229,20 +224,25 @@
         "name": "char_2024_chyue_2",
         "guid": "3929791e6de816a40b87254240942e1f",
         "md5": "8baece14b2d9bc4f2058378bce7c87f2"
+      },
+      {
+        "name": "char_103_angel_sale#8",
+        "guid": "53782c6726fee7a489ccae6e6830b340",
+        "md5": "8b6dff46a212dac2c4dc9146133dc034"
       }
     ],
     "m_atlases": [
       {
         "name": "portraits#61",
         "guid": "57c201e660c50f745b0280fd6557645f",
-        "md5": "4997fb6d266372c32a9aefe841ad7948"
+        "md5": "ee3e66b4514917072c215e488462eca4"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#61a",
         "guid": "b4e829152ee980244a757deab1cfbfc5",
-        "md5": "6ffe898f1a89d6427c88bf2523327ee4"
+        "md5": "93735ff7a813fc6f4c38fdce35299531"
       }
     ]
   }

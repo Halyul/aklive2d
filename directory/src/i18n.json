@@ -51,6 +51,10 @@
         "zh-CN": "语音",
         "en-US": "Voice"
       },
+      "music": {
+        "zh-CN": "音乐",
+        "en-US": "Music"
+      },
       "showcase": {
         "zh-CN": "壁纸",
         "en-US": "Wallpaper"

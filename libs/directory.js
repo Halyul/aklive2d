@@ -25,7 +25,7 @@ export default function ({ backgrounds, musicMapping }) {
           try {
             cur.workshopId = JSON.parse(readFile(path.join(__projectRoot, __config.folder.operator, cur.link, 'project.json'))).workshopid
           } catch (e) {
-            console.log(`No workshop id for ${cur.link}!`, e)
+            console.log(`No workshop id for ${cur.link}!`)
           }
 
           return acc

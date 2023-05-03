@@ -10,9 +10,15 @@ bg_iberia_1.png:
 bg_kazimierz_1.png:
   intro: m_dia_street_intro.ogg
   loop: m_dia_street_loop.ogg
+bg_laterano_1.png:
+  intro: m_sys_act16side_intro.ogg
+  loop: m_sys_act16side_loop.ogg
 bg_main_victoria_1.png:
   intro: m_avg_ghosthunter_intro.ogg
   loop: m_avg_ghosthunter_loop.ogg
+bg_rhine_1.png:
+  intro: m_sys_act19side_intro.ogg
+  loop: m_sys_act19side_loop.ogg
 bg_rhodes_day.png:
   intro: m_sys_void_intro.ogg
   loop: m_sys_void_loop.ogg
@@ -22,6 +28,9 @@ bg_rhodes_night.png:
 bg_rogue_1.png:
   intro: null
   loop: m_avg_rglk1secretevent_loop.ogg
+bg_rogue_2.png:
+  intro: null
+  loop: m_sys_rglk2DLC_loop.ogg
 bg_siesta_1.png:
   intro: m_sys_ddd_intro.ogg
   loop: m_sys_ddd_loop.ogg

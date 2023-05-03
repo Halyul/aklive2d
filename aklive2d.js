@@ -113,10 +113,16 @@ async function main() {
         })
       }
     })
-    const voiceLangs = Object.keys(voiceJson.voiceLangs["zh-CN"])
-    const subtitleLangs = Object.keys(voiceJson.subtitleLangs)
 
-    writeSync(JSON.stringify(voiceJson), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
+    let voiceLangs = [], subtitleLangs = [];
+    try {
+      voiceLangs = Object.keys(voiceJson.voiceLangs["zh-CN"])
+      subtitleLangs = Object.keys(voiceJson.subtitleLangs)
+
+      writeSync(JSON.stringify(voiceJson), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
+    } catch (e) {
+      console.log(`charword_table is not available`)
+    }
 
     const envPath = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, '.env')
     writeSync((new EnvGenerator()).generate([

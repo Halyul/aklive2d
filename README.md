@@ -11,10 +11,10 @@ Since [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData) failed
 Version: `4th Anniversary`
 
 - [ ] Operator: Muelsyse
-- [ ] Skin: Born as One / Specter the Unchained
-- [ ] Skin: Ten Thousand Mountains / Ch'en/Chen the Holungday
-- [ ] Skin: Remnant / Kal'tsit (probably with new voice)
-- [ ] Background and Music Update
+- [x] Skin: Born as One / Specter the Unchained
+- [x] Skin: Ten Thousand Mountains / Ch'en/Chen the Holungday
+- [ ] Skin: Remnant / Kal'tsit
+- [x] Background and Music Update
 - [ ] Voice: Chinese Topolect for Lee
 
 ## Softwares
@@ -157,7 +157,7 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 
 <sup>1</sup>: `portrait_hub` is required to locate the image
 
-<sup>2</sup>: `gamedata/excel/display_meta_table.json->homeBackgroundData`<sup>3</sup> is required to locate the music. A more detailed mapping can be found at [音乐鉴赏/游戏内音乐一览 - PRTS.wiki](https://prts.wiki/w/%E9%9F%B3%E4%B9%90%E9%89%B4%E8%B5%8F/%E6%B8%B8%E6%88%8F%E5%86%85%E9%9F%B3%E4%B9%90%E4%B8%80%E8%A7%88) and [首页场景一览 - PRTS.wiki](https://prts.wiki/w/%E9%A6%96%E9%A1%B5%E5%9C%BA%E6%99%AF%E4%B8%80%E8%A7%88)
+<sup>2</sup>: `gamedata/excel/display_meta_table.json->homeBackgroundData`<sup>3</sup> and `gamedata/excel/audio_data.json`<sup>3</sup> is required to locate the music.
 
 <sup>3</sup>: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)
 

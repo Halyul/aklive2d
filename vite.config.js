@@ -7,8 +7,6 @@ import react from '@vitejs/plugin-react-swc'
 import getConfig from './libs/config.js'
 import { rmdir, writeSync } from './libs/file.js'
 import { increase } from './libs/version.js'
-import EnvGenerator from './libs/env_generator.js'
-import directory from './libs/directory.js'
 import { PerfseePlugin } from '@perfsee/rollup'
 
 global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))

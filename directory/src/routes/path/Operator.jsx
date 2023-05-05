@@ -183,6 +183,10 @@ export default function Operator() {
         fps: 60,
         defaultMix: 0.3,
         success: (player) => {
+          if (player.skeleton.data.animations.map(e => e.name).includes("Start")) {
+            player.animationState.setAnimation(0, "Start", false, 0)
+            player.animationState.addAnimation(0, "Idle", true, 0);
+          }
           let lastVoiceId = null
           let currentVoiceId = null
           player.canvas.onclick = () => {

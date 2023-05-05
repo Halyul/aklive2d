@@ -1,4 +1,6 @@
 showcase:
+  2023/05/04:
+    - Added Start animation for supported operator
   2023/03/15:
     - Added background music
   2023/03/03:
@@ -40,13 +42,15 @@ showcase:
   2021/05/26:
     - First commit
 directory:
+  2023/05/04:
+    - Added Start animation for supported operator
   2023/05/01:
     - Added new background and music
     - Added Born as One / Specter the Unchained
     - Added Ten Thousand Mountains / Ch'en/Chen the Holungday
-    # - Added Remnant / Kal'tsit
-    # - Added Muelsyse
-    # - Added Chinese Topolect for Lee
+    - Added Remnant / Kal'tsit
+    - Added Muelsyse
+    - Added Chinese Topolect for Lee
   2023/03/15:
     - Added background music
   2023/03/03:

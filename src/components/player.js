@@ -13,7 +13,6 @@ export default function spinePlayer(el) {
     skelUrl: `./assets/${import.meta.env.VITE_FILENAME}.skel`,
     atlasUrl: `./assets/${import.meta.env.VITE_FILENAME}.atlas`,
     rawDataURIs: assets,
-    animation: "Idle",
     premultipliedAlpha: true,
     alpha: true,
     backgroundColor: "#00000000",
@@ -31,6 +30,10 @@ export default function spinePlayer(el) {
     fps: 60,
     defaultMix: 0,
     success: function (widget) {
+      if (widget.skeleton.data.animations.map(e => e.name).includes("Start")) {
+        widget.animationState.setAnimation(0, "Start", false, 0)
+        widget.animationState.addAnimation(0, "Idle", true, 0);
+      }
       widget.animationState.addListener({
         end: (e) => {
           if (e.animation.name == "Interact") {

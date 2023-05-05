@@ -4,9 +4,9 @@ logo: logo_rhine
 fallback_name: char_249_mlyss_2
 viewport_left: 0
 viewport_right: 0
-viewport_top: 0
-viewport_bottom: 0
-invert_filter: false
+viewport_top: 3
+viewport_bottom: 2
+invert_filter: true
 color: rgb(146, 212, 143)
 codename:
   zh-CN: 缪尔赛思

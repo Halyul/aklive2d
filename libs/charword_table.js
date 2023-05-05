@@ -7,7 +7,8 @@ import { exists, writeSync, readdirSync, rm, readSync } from "./file.js"
 dotenv.config()
 
 // zh_TW uses an older version of charword_table.json
-const REGIONS = ["zh_CN", "en_US", "ja_JP", "ko_KR", "zh_TW"]
+// zh_TW is removed
+const REGIONS = ["zh_CN", "en_US", "ja_JP", "ko_KR"]
 const DEFAULT_REGION = REGIONS[0]
 const NICKNAME = {
   "zh_CN": "博士",
@@ -59,6 +60,8 @@ export default class CharwordTable {
   async #load(region) {
     if (region === 'zh_TW') {
       return await this.#zhTWLoad()
+    } else if (region === DEFAULT_REGION) {
+      return await this.#zhCNLoad()
     }
 
     const data = await this.#download(region)
@@ -142,6 +145,58 @@ export default class CharwordTable {
       }
     }
     return data
+  }
+
+  async #zhCNLoad() {
+    const region = DEFAULT_REGION
+
+    const data = await this.#download(region)
+
+    // put voice actor info into charword_table
+    for (const [id, element] of Object.entries(this.#charwordTable.operators)) {
+      let operatorId = id
+      let useAlternativeId = false
+      if (typeof data.voiceLangDict.find(e => e.key === operatorId) === 'undefined') {
+        operatorId = element.alternativeId
+        useAlternativeId = true
+      }
+      element.infile = this.#operatorIDs.includes(operatorId);
+      element.ref = useAlternativeId && element.infile;
+
+      if (element.infile && useAlternativeId) {
+        // if using alternative id and infile is true, means data can be 
+        // refered inside the file
+        // if infile is false, useAlternativeId is always true
+        // if useAlternativeId is false, infile is always true
+        // | case                | infile | useAlternativeId | Note            |
+        // | ------------------- | ------ | ---------------- | --------------- |
+        // | lee_trust_your_eyes | false  | true             | skin only       |
+        // | nearl_relight       | true   | true    | skin, operator, no voice |
+        // | nearl               | true   | false            | operator only   |
+        // | w_fugue             | true   | false      | skin, operator, voice |
+        continue
+      }
+      Object.values(data.voiceLangDict.find(e => e.key === operatorId).value.voiceLangInfoDataDict).forEach(item => {
+        if (typeof element.info[region][item.value.wordkey] === 'undefined') {
+          element.info[region][item.value.wordkey] = {}
+        }
+        element.info[region][item.value.wordkey][item.value.voiceLangType] = [...(typeof item.value.cvName === 'string' ? [item.value.cvName] : item.value.cvName)]
+      })
+    }
+
+    // put voice lines into charword_table
+    data.charWords.forEach(item => {
+      const operatorInfo = Object.values(this.#charwordTable.operators).filter(element => element.info[region][item.value.wordKey])
+      if (operatorInfo.length > 0) {
+        if (typeof operatorInfo[0].voice[region][item.value.wordKey] === 'undefined') {
+          operatorInfo[0].voice[region][item.value.wordKey] = {}
+        }
+        operatorInfo[0].voice[region][item.value.wordKey][item.value.voiceId] = {
+          title: item.value.voiceTitle,
+          text: item.value.voiceText.replace(/{@nickname}/g, NICKNAME[region]),
+        }
+      }
+    })
   }
 
   async #zhTWLoad() {

@@ -2,10 +2,6 @@
 
 A project that builds showcase webpage for Arknights Live2D-equipped operators. Showcase webpage can be used as a wallpaper for Wallpaper Engine on Windows or [Plash](https://github.com/sindresorhus/Plash) on macOS (not tested).
 
-## Important Notice
-
-Since [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData) failed to update in-game data due to new content structure, I will suspend the update of new wallpapers until new data sources or new solutions are found for voice lines. Otherwise, new wallpaper will no longer contain voice lines as well as new background and music.
-
 ## Upcoming Updates
 
 Version: `4th Anniversary`

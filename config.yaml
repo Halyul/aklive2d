@@ -57,4 +57,4 @@ operators:
   chen_ten_thousand_mountains: !include config/chen_ten_thousand_mountains.yaml
   specter_born_as_one: !include config/specter_born_as_one.yaml
   muelsyse: !include config/muelsyse.yaml
-  # kaltsit_remnant: !include config/kaltsit_remnant.yaml
+  kaltsit_remnant: !include config/kaltsit_remnant.yaml

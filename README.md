@@ -6,12 +6,12 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 
 Version: `4th Anniversary`
 
-- [ ] Operator: Muelsyse
+- [x] Operator: Muelsyse
 - [x] Skin: Born as One / Specter the Unchained
 - [x] Skin: Ten Thousand Mountains / Ch'en/Chen the Holungday
-- [ ] Skin: Remnant / Kal'tsit
+- [x] Skin: Remnant / Kal'tsit
 - [x] Background and Music Update
-- [ ] Voice: Chinese Topolect for Lee
+- [x] Voice: Chinese Topolect for Lee
 
 ## Softwares
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.

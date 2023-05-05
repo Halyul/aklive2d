@@ -39,7 +39,7 @@
       "type": "node-terminal",
       "name": "Run Script: dev",
       "request": "launch",
-      "command": "pnpm run dev chen",
+      "command": "pnpm run dev kaltsit_remnant",
       "cwd": "${workspaceFolder}"
     },
     {

@@ -459,7 +459,13 @@ export default function Operator() {
         }} >
           {
             config && (
-              <img src={`/${config.link}/assets/${config.logo}.png`} alt={config?.codename[language]} className={classes.logo} />
+              <img
+                src={`/${config.link}/assets/${config.logo}.png`}
+                alt={config?.codename[language]}
+                className={classes.logo}
+                style={config.invert_filter ? {
+                  filter: "invert(1)"
+                } : {}} />
             )
           }
           <section ref={spineRef} className={classes.wrapper} />

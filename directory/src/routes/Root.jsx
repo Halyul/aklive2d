@@ -118,6 +118,9 @@ export default function Root() {
                   viewBox={
                     headerIcon === 'operator' ? '0 0 88.969 71.469' : '0 0 94.563 67.437'
                   }
+                  style={{
+                    height: "2.5rem"
+                  }}
                 />
               </section>
             )}

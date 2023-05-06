@@ -36,11 +36,26 @@ const getVoiceFoler = (lang) => {
 const defaultSpineAnimation = 'Idle'
 const backgroundAtom = atom(null)
 
+const getPartialName = (type, input) => {
+  let part;
+  switch (type) {
+    case "name":
+      part = 5
+      break;
+    case "skin":
+      part = 1
+      break;
+    default:
+      return input
+  }
+  return input.replace(/^(.+)( )(·|\/)( )(.+)$/, `$${part}`)
+}
+
 const getTabName = (item, language) => {
   if (item.type === 'operator') {
     return 'operator'
   } else {
-    return item.codename[language].replace(/^(.+)( )(·|\/)()(.+)$/, '$1')
+    return getPartialName("skin", item.codename[language])
   }
 }
 
@@ -155,7 +170,7 @@ export default function Operator() {
 
   useEffect(() => {
     if (config) {
-      setTitle(config.codename[language])
+      setTitle(getPartialName("name", config.codename[language]))
     }
   }, [config, language, key, setTitle])
 

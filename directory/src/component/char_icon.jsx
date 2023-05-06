@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function CharIcon(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox={props.viewBox}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox={props.viewBox} style={props.style}>
       {
         props.type === 'operator' ?
           <g><path d="M89 17.5 30.4 57 24.3 71.4 82.9 32.6Z"></path><path d="M0 17.5 58.6 57 64.7 71.4 6.1 32.7Z"> </path><path d="M89 0 30.4 39.5 24.3 53.9 82.9 15.1Z"> </path><path d="M0 0 58.6 39.5 64.7 53.9 6.1 15.2Z"> </path></g>

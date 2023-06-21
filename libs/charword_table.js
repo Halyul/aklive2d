@@ -58,11 +58,11 @@ export default class CharwordTable {
   }
 
   async #load(region) {
-    if (region === 'zh_TW') {
-      return await this.#zhTWLoad()
-    } else if (region === DEFAULT_REGION) {
-      return await this.#zhCNLoad()
-    }
+//    if (region === 'zh_TW') {
+//      return await this.#zhTWLoad()
+//    } else if (region === DEFAULT_REGION) {
+//      return await this.#zhCNLoad()
+//    }
 
     const data = await this.#download(region)
 

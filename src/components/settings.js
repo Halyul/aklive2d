@@ -381,8 +381,8 @@ export default class Settings {
             </div>
             <div>
               <label for="subtitle">Subtitle</label>
-              <input type="checkbox" id="subtitle" name="subtitle" checked/>
-              <div id="subtitle_realted">
+              <input type="checkbox" id="subtitle" name="subtitle"/>
+              <div id="subtitle_realted" hidden>
                 <div>
                   <label for="subtitle_lang_select">Choose the language of subtitle:</label>
                   <select name="subtitle_lang" id="subtitle_lang_select">
@@ -399,11 +399,11 @@ export default class Settings {
                   <input type="range" min="0" max="100" id="subtitle_padding_y_slider" value="${window.voice.subtitleY}" />
                   <input type="number" id="subtitle_padding_y_input" name="subtitle_padding_y" value="${window.voice.subtitleY}" />
                 </div>
+                <div>
+                  <label for="voice_actor">Voice Actor</label>
+                  <input type="checkbox" id="voice_actor" name="voice_actor"/>
+                </div>
               </div>
-            </div>
-            <div>
-              <label for="voice_actor">Voice Actor</label>
-              <input type="checkbox" id="voice_actor" name="voice_actor"/>
             </div>
           </div>
         </div>

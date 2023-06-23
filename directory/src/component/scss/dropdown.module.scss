@@ -3,7 +3,7 @@
   display: inline-block;
   user-select: none;
   z-index: 2;
-  padding: 0.5rem;
+  padding: 0.5em;
   cursor: pointer;
 
   .text {
@@ -14,13 +14,14 @@
   }
 
   .content {
-    padding-right: 0.5rem;
+    padding-right: 0.5em;
+    height: 1em;
   }
 
   .icon {
     position: absolute;
-    bottom: 0.5rem;
-    right: -0.1rem;
+    bottom: 0.5em;
+    right: -0.1em;
     width: 0.5em;
     height: 0.5em;
     display: inline-block;
@@ -37,33 +38,47 @@
     position: absolute;
     background-color: var(--root-background-color);
     width: max-content;
+    max-height: 61.8vh;
+    max-width: 61.8vw;
     z-index: -1;
-    top: 2rem;
+    top: 2em;
     right: 0;
     gap: 0.5rem;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
     flex-wrap: nowrap;
     transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-    overflow: hidden;
+    overflow: auto;
     padding: 0.5rem;
     border: 1px solid var(--border-color);
     visibility: hidden;
     color: var(--link-highlight-color);
     cursor: auto;
 
+    .group {
+      font-family: "Bender";
+      font-weight: bold;
+      font-size: 24px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .line {
+        height: 1px;
+        flex-grow: 1;
+        background-color: var(--text-color);
+        margin: 0.5rem;
+      }
+    }
+
     .item {
       cursor: pointer;
       padding: 0.5rem;
       font-size: 1rem;
-      width: max-content;
-      height: max-content;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      flex-wrap: nowrap;
       transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 
       &:hover,

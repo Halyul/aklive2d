@@ -10,7 +10,8 @@ import {
   Link,
   NavLink,
   useNavigate,
-  ScrollRestoration
+  ScrollRestoration,
+  useLocation,
 } from "react-router-dom";
 import classes from '@/scss/root/Root.module.scss'
 import header from '@/scss/root/header.module.scss'
@@ -130,7 +131,7 @@ export default function Root() {
             {headerTabs}
           </section>
         </section>
-        <HeaderReturnButton />
+        <HeaderButton />
         <Outlet />
         <ScrollRestoration />
       </main>
@@ -278,10 +279,58 @@ HeaderTabsElement.propTypes = {
   item: PropTypes.object.isRequired,
 }
 
-function HeaderReturnButton() {
+function HeaderButton() {
   const navigate = useNavigate()
+  let location = useLocation();
+  const { operators } = useConfig()
+  const { language } = useLanguage()
 
-  return useMemo(() => {
+  const fastNavigateDict = useMemo(() => {
+    const dict = {}
+    operators.forEach((item) => {
+      if (!(item.date in dict)) {
+        dict[item.date] = []
+      }
+      dict[item.date].push({
+        codename: item.codename,
+        link: item.link,
+      })
+    })
+    return dict
+  }, [operators])
+
+  const fastNavigateList = useMemo(() => {
+    const list = []
+    for (const [key, value] of Object.entries(fastNavigateDict)) {
+      list.push({
+        name: key,
+        value: null,
+        type: "group",
+      })
+      value.forEach((item) => {
+        list.push({
+          name: item.codename[language],
+          value: item.link,
+          type: "item",
+        })
+      })
+    }
+    return list
+  }, [fastNavigateDict, language])
+
+  if (location.pathname === routes.find((item) => item.index).path) {
+    return (
+      <Border>
+        <Dropdown
+          menu={fastNavigateList}
+          onClick={(item) => {
+            navigate(item.value)
+          }}
+          className={classes['operator-fast-navigate']}
+        />
+      </Border>
+    )
+  } else {
     return (
       <Border>
         <ReturnButton
@@ -290,5 +339,5 @@ function HeaderReturnButton() {
         />
       </Border>
     )
-  }, [navigate])
+  }
 }

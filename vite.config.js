@@ -5,8 +5,11 @@ import { defineConfig } from 'vite'
 import assert from 'assert'
 import react from '@vitejs/plugin-react-swc'
 import getConfig from './libs/config.js'
-import { rmdir, writeSync } from './libs/file.js'
+import { rmdir } from './libs/file.js'
 import { increase } from './libs/version.js'
+import Music from './libs/music.js';
+import Background from './libs/background.js'
+import directory from './libs/directory.js'
 import { PerfseePlugin } from '@perfsee/rollup'
 
 global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
@@ -51,14 +54,15 @@ class ViteRunner {
         }
         break
       default:
-        return
+        return null
     }
     return result
   }
 
-  start() {
+  async start() {
     const configObj = this.config
     const viteConfig = configObj.data;
+
     switch (this.#mode) {
       case 'dev':
         this.#dev(viteConfig)
@@ -191,9 +195,18 @@ class ViteRunner {
 }
 
 async function main() {
-  if (process.env.npm_lifecycle_event.includes('vite')) return
+  if (process.env.npm_lifecycle_event.includes('vite')) {
+    global.__config = getConfig()
+    const background = new Background()
+    await background.process()
+    const backgrounds = ['operator_bg.png', ...background.files]
+    const { musicMapping } = Music()
+
+    directory({ backgrounds, musicMapping })
+    return
+  }
   const runner = new ViteRunner()
-  runner.start()
+  await runner.start()
 }
 
 main()

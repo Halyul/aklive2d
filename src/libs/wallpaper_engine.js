@@ -131,5 +131,9 @@ window.wallpaperPropertyListener = {
             window.settings.positionPadding("bottom", properties.paddingbottom.value)
             window.settings.functionInsights("positionPaddingBottom", Object.keys(properties) !== 1)
         }
+        if (properties.useStartAnimation) {
+            window.settings.useStartAnimation = properties.useStartAnimation.value
+            window.settings.functionInsights("useStartAnimation", Object.keys(properties) !== 1)
+        }
     },
 };

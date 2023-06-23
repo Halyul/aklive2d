@@ -24,6 +24,17 @@ export default function Dropdown(props) {
         <ul className={classes.menu} style={props.activeColor}>
           {
             props.menu.map((item) => {
+              if (item.type === 'group') {
+                return (
+                  <section
+                    key={item.name}
+                    className={classes.group}
+                  >
+                    <section className={classes.line} />
+                    <section className={classes.text}>{item.name}</section>
+                  </section>
+                )
+              }
               return (
                 <li
                   key={item.name}

@@ -40,6 +40,7 @@ export default class Settings {
   #isInsightsInited = false
   #doNotTrack = false
   #lastFunctionInsights = null
+  #useStartAnimation = true
 
   constructor(el, logoEl) {
     this.isWallpaperEngine = false
@@ -283,6 +284,14 @@ export default class Settings {
     document.getElementById("logo_padding_y_input").value = this.#defaultLogoY
   }
 
+  set useStartAnimation(v) {
+    this.#useStartAnimation = v
+  }
+
+  get useStartAnimation() {
+    return this.#useStartAnimation
+  }
+
   open() {
     this.#el.hidden = false;
   }
@@ -458,6 +467,10 @@ export default class Settings {
         <div>
           <label for="animation_select">Animation:</label>
           <select name="animation_select" id="animation_selection"></select>
+        </div>
+        <div>
+          <label for="use_start_animation">Use Start Animation</label>
+          <input type="checkbox" id="use_start_animation" name="use_start_animation" checked/>
         </div>
         <div>
           <button type="button" id="settings_play" disabled>Play</button>
@@ -716,6 +729,10 @@ export default class Settings {
         id: "animation_selection", event: "change", handler: e => {
           this.spinePlayer.animationState.setAnimation(0, e.currentTarget.value, false, 0)
           this.spinePlayer.animationState.addAnimation(0, "Idle", true, 0);
+        }
+      }, {
+        id: "use_start_animation", event: "click", handler: e => {
+          this.#useStartAnimation = e.currentTarget.checked;
         }
       },
     ]

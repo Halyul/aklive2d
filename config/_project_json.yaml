@@ -38,6 +38,7 @@ localization:
     ui_music_selection: Music
     ui_music_volume: Volume
     ui_music_offset: Offset
+    ui_useStartAnimation_title: Use Start Animation
   zh-chs:
     ui_notice_title: <hr><h4>📝 通知</h4><hr>
     ui_notice_changelog: <span><b>已添加新背景和音乐! </b></span>
@@ -76,6 +77,7 @@ localization:
     ui_music_selection: 音乐
     ui_music_volume: 音量
     ui_music_offset: 弥补
+    ui_useStartAnimation_title: 使用开始动画
 properties:
   - key: notice_title
     value: 
@@ -266,6 +268,11 @@ properties:
      step: 0.01
      max: 1
      min: 0
+  - key: useStartAnimation
+    value: 
+     text: ui_useStartAnimation_title
+     type: bool
+     value: true
   - key: position
     value: 
      text: ui_position_title

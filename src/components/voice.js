@@ -13,7 +13,7 @@ export default class Voice {
   #defaultVoiceLang = this.#voiceLanguages[0]
   #voiceLang = this.#defaultVoiceLang
   #subtitleLang = this.#defaultRegion
-  #useSubtitle = true
+  #useSubtitle = false
   #useVoice = false
   #useVoiceActor = false
   #isPlaying = false
@@ -80,7 +80,6 @@ export default class Voice {
   set useVoice(show) {
     window.settings.functionInsights("useVoice", window.settings.isWallpaperEngine)
     this.#useVoice = show
-    this.#el.hidden = !show
     this.#playEntryVoice()
     if (!show && this.#isPlaying) {
       this.#audioEl.pause()

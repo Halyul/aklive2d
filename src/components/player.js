@@ -30,10 +30,10 @@ export default function spinePlayer(el) {
     fps: 60,
     defaultMix: 0,
     success: function (widget) {
-      if (widget.skeleton.data.animations.map(e => e.name).includes("Start")) {
+      if (widget.skeleton.data.animations.map(e => e.name).includes("Start") && window.settings.useStartAnimation) {
         widget.animationState.setAnimation(0, "Start", false, 0)
-        widget.animationState.addAnimation(0, "Idle", true, 0);
       }
+      widget.animationState.addAnimation(0, "Idle", true, 0);
       widget.animationState.addListener({
         end: (e) => {
           if (e.animation.name == "Interact") {

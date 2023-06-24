@@ -55,6 +55,13 @@
       "request": "launch",
       "command": "pnpm run charword",
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: music",
+      "request": "launch",
+      "command": "pnpm run music",
+      "cwd": "${workspaceFolder}"
     }
   ]
 }

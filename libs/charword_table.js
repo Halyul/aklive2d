@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
-import fetch from "node-fetch"
 import path from "path"
 import dotenv from "dotenv"
 import { exists, writeSync, readdirSync, rm, readSync } from "./file.js"
+import Downloader from "./downloader.js"
 
 dotenv.config()
 
@@ -121,30 +121,7 @@ export default class CharwordTable {
   }
 
   async #download(region) {
-    const historyResponse = await fetch(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`)
-    const historyData = await historyResponse.json()
-    const lastCommit = historyData[0]
-    const lastCommitDate = new Date(lastCommit.commit.committer.date)
-    const filepath = path.join(this.#charwordTablePath, `charword_table_${region}_${lastCommitDate.getTime()}.json`)
-    console.log(`Last commit date: ${lastCommitDate.getTime()}`)
-
-    if (exists(filepath)) {
-      console.log(`charword_table_${region}.json is the latest version.`)
-      return JSON.parse(readSync(filepath))
-    }
-    const response = await fetch(`https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/${region}/gamedata/excel/charword_table.json`)
-    const data = await response.json()
-    writeSync(JSON.stringify(data), filepath)
-    console.log(`charword_table_${region}.json is updated.`)
-
-    // remove old file
-    const files = readdirSync(path.join(__projectRoot, __config.folder.operator, __config.folder.share))
-    for (const file of files) {
-      if (file.startsWith(`charword_table_${region}`) && file !== path.basename(filepath)) {
-        rm(path.join(__projectRoot, __config.folder.operator, __config.folder.share, file))
-      }
-    }
-    return data
+    return await (new Downloader()).github(`https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=${region}/gamedata/excel/charword_table.json`, `https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/${region}/gamedata/excel/charword_table.json`, path.join(this.#charwordTablePath, `charword_table_${region}.json`))
   }
 
   async #zhCNLoad() {

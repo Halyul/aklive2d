@@ -150,6 +150,10 @@
       "fast_navigation": {
         "zh-CN": "🧭 快速导航",
         "en-US": "🧭 Fast Navigation"
+      },
+      "search_by_name": {
+        "zh-CN": "名字搜索",
+        "en-US": "Search by Name"
       }
     }
 }

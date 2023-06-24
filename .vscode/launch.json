@@ -48,6 +48,13 @@
       "request": "launch",
       "command": "pnpm run vite:directory:dev",
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: charword",
+      "request": "launch",
+      "command": "pnpm run charword",
+      "cwd": "${workspaceFolder}"
     }
   ]
 }

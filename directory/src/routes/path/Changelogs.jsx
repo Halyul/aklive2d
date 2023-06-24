@@ -17,6 +17,7 @@ export default function Changelogs() {
     setTabs,
     currentTab,
     setHeaderIcon,
+    setFastNavigation,
   } = useHeader()
   const {
     setExtraArea,
@@ -26,11 +27,12 @@ export default function Changelogs() {
   useEffect(() => {
     setTitle('changelogs')
     setExtraArea([])
+    setFastNavigation([])
     setHeaderIcon(null)
     fetch('/_assets/changelogs.json').then(res => res.json()).then(data => {
       setChangelogs(data)
     })
-  }, [setExtraArea, setHeaderIcon, setTitle])
+  }, [setExtraArea, setFastNavigation, setHeaderIcon, setTitle])
 
   useEffect(() => {
     setTabs(changelogs.map((item) => {

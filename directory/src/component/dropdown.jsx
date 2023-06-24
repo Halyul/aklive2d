@@ -56,6 +56,13 @@ export default function Dropdown(props) {
                         toggleDropdown()
                       }}
                     >
+                      {
+                        item.icon ? (
+                          <section className={classes.item_icon}>
+                            {item.icon}
+                          </section>
+                        ) : null
+                      }
                       <section className={classes.text}>{item.name}</section>
                     </li>
                   )

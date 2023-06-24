@@ -102,6 +102,11 @@ export default function Home() {
             name: item.codename[language],
             value: item.link,
             type: "item",
+            icon: <CharIcon
+              type={item.type}
+              viewBox={
+                item.type === 'operator' ? '0 0 88.969 71.469' : '0 0 94.563 67.437'
+              } />
           })
         })
       }
@@ -252,7 +257,7 @@ function VoiceSwitchElement({ src, replay, handleAduioStateChange }) {
   }, [voiceOn, setExtraArea, setVoiceOn])
 
   return (
-    <VoiceElement 
+    <VoiceElement
       src={src}
       replay={replay}
       handleAduioStateChange={handleAduioStateChange}

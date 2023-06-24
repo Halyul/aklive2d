@@ -24,29 +24,38 @@ export default function Dropdown(props) {
         <ul className={classes.menu} style={props.activeColor}>
           {
             props.menu.map((item) => {
-              if (item.type === 'group') {
-                return (
-                  <section
-                    key={item.name}
-                    className={classes.group}
-                  >
-                    <section className={classes.line} />
-                    <section className={classes.text}>{item.name}</section>
-                  </section>
-                )
+              switch (item.type) {
+                case 'date': {
+                  return (
+                    <section
+                      key={item.name}
+                      className={classes.date}
+                    >
+                      <section className={classes.line} />
+                      <section className={classes.text}>{item.name}</section>
+                    </section>
+                  )
+                }
+                case 'custom': {
+                  return (
+                    item.component
+                  )
+                }
+                default: {
+                  return (
+                    <li
+                      key={item.name}
+                      className={`${classes.item} ${item.name === props.text || (props.activeRule && props.activeRule(item)) ? classes.active : ''}`}
+                      onClick={() => {
+                        props.onClick(item)
+                        toggleDropdown()
+                      }}
+                    >
+                      <section className={classes.text}>{item.name}</section>
+                    </li>
+                  )
+                }
               }
-              return (
-                <li
-                  key={item.name}
-                  className={`${classes.item} ${item.name === props.text || (props.activeRule && props.activeRule(item)) ? classes.active : ''}`}
-                  onClick={() => {
-                    props.onClick(item)
-                    toggleDropdown()
-                  }}
-                >
-                  <section className={classes.text}>{item.name}</section>
-                </li>
-              )
             })
           }
         </ul>

@@ -284,49 +284,16 @@ HeaderTabsElement.propTypes = {
 
 function HeaderButton() {
   const navigate = useNavigate()
-  let location = useLocation();
-  const { operators } = useConfig()
-  const { language } = useLanguage()
   const { i18n } = useI18n()
+  const {
+    fastNavigation
+  } = useHeader()
 
-  const fastNavigateDict = useMemo(() => {
-    const dict = {}
-    operators.forEach((item) => {
-      if (!(item.date in dict)) {
-        dict[item.date] = []
-      }
-      dict[item.date].push({
-        codename: item.codename,
-        link: item.link,
-      })
-    })
-    return dict
-  }, [operators])
-
-  const fastNavigateList = useMemo(() => {
-    const list = []
-    for (const [key, value] of Object.entries(fastNavigateDict)) {
-      list.push({
-        name: key,
-        value: null,
-        type: "date",
-      })
-      value.forEach((item) => {
-        list.push({
-          name: item.codename[language],
-          value: item.link,
-          type: "item",
-        })
-      })
-    }
-    return list
-  }, [fastNavigateDict, language])
-
-  if (location.pathname === routes.find((item) => item.index).path) {
+  if (fastNavigation.length > 0) {
     return (
       <Border>
         <Dropdown
-          menu={fastNavigateList}
+          menu={fastNavigation}
           altText={i18n("fast_navigation")}
           onClick={(item) => {
             navigate(item.value)

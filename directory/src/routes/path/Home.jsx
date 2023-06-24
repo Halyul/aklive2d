@@ -33,13 +33,15 @@ export default function Home() {
     setTitle,
     setTabs,
     currentTab,
-    setHeaderIcon
+    setHeaderIcon,
+    setFastNavigation
   } = useHeader()
-  const { config } = useConfig()
+  const { config, operators } = useConfig()
   const [content, setContent] = useState([])
   const [voiceOn] = useAtom(voiceOnAtom)
   const [voiceSrc, setVoiceSrc] = useState(null)
   const [voiceReplay, setVoiceReplay] = useState(false)
+  const { language } = useLanguage()
 
   useEffect(() => {
     setTitle('dynamic_compile')
@@ -65,6 +67,43 @@ export default function Home() {
   }, [])
 
   const isShown = useCallback((type) => currentTab === 'all' || currentTab === type, [currentTab])
+
+  const fastNavigateDict = useMemo(() => {
+    const dict = {}
+    operators.forEach((item) => {
+      if (!(item.date in dict)) {
+        dict[item.date] = []
+      }
+      dict[item.date].push({
+        codename: item.codename,
+        link: item.link,
+        type: item.type
+      })
+    })
+    return dict
+  }, [operators])
+
+  useEffect(() => {
+    const list = []
+    for (const [key, value] of Object.entries(fastNavigateDict)) {
+      const newValue = value.filter((item) => isShown(item.type))
+      if (newValue.length > 0) {
+        list.push({
+          name: key,
+          value: null,
+          type: "date",
+        })
+        newValue.forEach((item) => {
+          list.push({
+            name: item.codename[language],
+            value: item.link,
+            type: "item",
+          })
+        })
+      }
+    }
+    setFastNavigation(list)
+  }, [currentTab, fastNavigateDict, isShown, language, setFastNavigation])
 
   const handleVoicePlay = useCallback((src) => {
     if (!voiceOn) {

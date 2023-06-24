@@ -8,6 +8,7 @@ const tabsAtom = atom([]);
 const currentTabAtom = atom(null);
 const appbarExtraAreaAtom = atom([]);
 const headerIconAtom = atom(null);
+const fastNaviationAtom = atom([]);
 
 export function useHeader() {
   const [key, setTitle] = useAtom(keyAtom);
@@ -16,6 +17,7 @@ export function useHeader() {
   const [currentTab, setCurrentTab] = useAtom(currentTabAtom);
   const [appbarExtraArea, setAppbarExtraArea] = useAtom(appbarExtraAreaAtom);
   const [headerIcon, setHeaderIcon] = useAtom(headerIconAtom);
+  const [fastNavigation, setFastNavigation] = useAtom(fastNaviationAtom);
   const { i18n } = useI18n()
 
   useEffect(() => {
@@ -29,6 +31,7 @@ export function useHeader() {
     tabs, setTabs,
     currentTab, setCurrentTab,
     appbarExtraArea, setAppbarExtraArea,
-    headerIcon, setHeaderIcon
+    headerIcon, setHeaderIcon,
+    fastNavigation, setFastNavigation,
   }
 }

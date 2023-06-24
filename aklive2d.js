@@ -25,6 +25,7 @@ async function main() {
   let OPERATOR_NAMES = process.argv.slice(3);
 
   const charwordTable = new CharwordTable()
+  const musicTable = new Music()
 
   /**
    * Skip all, no need for OPERATOR_NAME
@@ -49,6 +50,9 @@ async function main() {
     case 'charword':
       await charwordTable.process()
       process.exit(0)
+    case 'music':
+      await musicTable.process()
+      process.exit(0)
     default:
       break
   }
@@ -58,7 +62,7 @@ async function main() {
   const background = new Background()
   await background.process()
   const backgrounds = ['operator_bg.png', ...background.files]
-  const { musicToCopy, musicMapping } = Music()
+  const { musicToCopy, musicMapping } = musicTable.copy()
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
     const OPERATOR_SOURCE_FOLDER = path.join(__projectRoot, __config.folder.operator)

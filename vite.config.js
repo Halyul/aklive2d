@@ -200,7 +200,7 @@ async function main() {
     const background = new Background()
     await background.process()
     const backgrounds = ['operator_bg.png', ...background.files]
-    const { musicMapping } = Music()
+    const { musicMapping } = (new Music()).copy()
 
     directory({ backgrounds, musicMapping })
     return

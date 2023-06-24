@@ -110,18 +110,20 @@
       cursor: pointer;
       padding: 0.5rem;
       font-size: 1rem;
-      transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
       display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
-      flex-wrap: nowrap;
+
+      .text {
+        flex: 1;
+        transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+        margin-left: 1rem;
+      }
 
       .item_icon {
-        height: inherit;
         width: 1rem;
         fill: var(--text-color);
-        margin-right: 0.5rem;
+        transition: fill cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
       }
 
       &:hover,
@@ -129,6 +131,9 @@
       &.active {
         .text {
           color: currentColor;
+        }
+        .item_icon {
+          fill: currentColor;
         }
       }
     }

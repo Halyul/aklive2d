@@ -242,6 +242,7 @@ function LanguageDropdown() {
     return (
       <Dropdown
         text={i18n(language)}
+        altText={i18n("switch_language")}
         menu={i18nValues.available.map((item) => {
           return {
             name: i18n(item),
@@ -286,6 +287,7 @@ function HeaderButton() {
   let location = useLocation();
   const { operators } = useConfig()
   const { language } = useLanguage()
+  const { i18n } = useI18n()
 
   const fastNavigateDict = useMemo(() => {
     const dict = {}
@@ -325,6 +327,7 @@ function HeaderButton() {
       <Border>
         <Dropdown
           menu={fastNavigateList}
+          altText={i18n("fast_navigation")}
           onClick={(item) => {
             navigate(item.value)
           }}

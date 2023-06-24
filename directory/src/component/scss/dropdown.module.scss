@@ -11,6 +11,36 @@
     flex-direction: row;
     align-items: center;
     color: var(--text-color);
+
+    &:hover {
+      .popup {
+        visibility: unset;
+        opacity: 1;
+      }
+    }
+
+    .popup {
+      opacity: 0;
+      position: absolute;
+      background-color: var(--root-background-color);
+      width: max-content;
+      height: max-content;
+      max-height: 61.8vh;
+      max-width: 61.8vw;
+      z-index: -1;
+      top: 2em;
+      right: 0;
+      cursor: auto;
+      transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+      overflow: auto;
+      padding: 0.5rem;
+      border: 1px solid var(--border-color);
+      visibility: hidden;
+
+      .text {
+        font-size: 1rem;
+      }
+    }
   }
 
   .content {

@@ -1,5 +1,5 @@
 import React, {
-  useState
+  useState,
 } from 'react'
 import PropTypes from 'prop-types';
 import classes from './scss/dropdown.module.scss'
@@ -13,7 +13,7 @@ export default function Dropdown(props) {
 
   return (
     <>
-      <section className={`${classes.dropdown} ${hidden ? '' : classes.active} ${props.className ? props.className : ''}`} >
+      <section className={`${classes.dropdown} ${hidden ? '' : classes.active} ${props.className ? props.className : ''}`}>
         <section
           className={classes.text}
           onClick={() => toggleDropdown()}

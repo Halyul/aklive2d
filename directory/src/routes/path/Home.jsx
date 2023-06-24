@@ -81,7 +81,8 @@ export default function Home() {
       dict[item.date].push({
         codename: item.codename,
         link: item.link,
-        type: item.type
+        type: item.type,
+        color: item.color
       })
     })
     return dict
@@ -102,6 +103,7 @@ export default function Home() {
             name: item.codename[language],
             value: item.link,
             type: "item",
+            color: item.color,
             icon: <CharIcon
               type={item.type}
               viewBox={

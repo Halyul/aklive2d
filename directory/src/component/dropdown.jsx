@@ -55,6 +55,7 @@ export default function Dropdown(props) {
                         props.onClick(item)
                         toggleDropdown()
                       }}
+                      style={item.color ? { color: item.color } : {}}
                     >
                       {
                         item.icon ? (

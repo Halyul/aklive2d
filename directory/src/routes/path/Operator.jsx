@@ -67,7 +67,8 @@ export default function Operator() {
   const {
     setTitle,
     setTabs,
-    setHeaderIcon
+    setHeaderIcon,
+    setFastNavigation
   } = useHeader()
   const { setExtraArea } = useAppbar()
   const [config, setConfig] = useState(null)
@@ -110,7 +111,8 @@ export default function Operator() {
 
   useEffect(() => {
     setExtraArea([])
-  }, [setExtraArea])
+    setFastNavigation([])
+  }, [setExtraArea, setFastNavigation])
 
   useEffect(() => {
     if (backgrounds.length > 0) setCurrentBackground(backgrounds[0])

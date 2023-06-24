@@ -11,8 +11,8 @@ export default class Downloader {
         const lastCommit = historyData[0]
         const lastCommitDate = new Date(lastCommit.commit.committer.date)
         console.log(`Last commit date: ${lastCommitDate.getTime()}`)
-        const basename = path.basename(filepath)
         const ext = path.extname(filepath)
+        const basename = path.basename(filepath).replace(ext, '')
         filepath = path.join(filepath, "..", `${basename}_${lastCommitDate.getTime()}${ext}`)
 
         if (exists(filepath)) {

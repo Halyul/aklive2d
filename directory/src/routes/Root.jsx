@@ -31,6 +31,7 @@ import Popup from '@/component/popup';
 import ReturnButton from '@/component/return_button';
 import Border from '@/component/border';
 import CharIcon from '@/component/char_icon';
+import ToTopButton from '@/component/totop_button';
 
 const currentYear = new Date().getFullYear()
 
@@ -132,6 +133,7 @@ export default function Root() {
           </section>
         </section>
         <HeaderButton />
+        <ToTopButton />
         <Outlet />
         <ScrollRestoration />
       </main>
@@ -305,7 +307,7 @@ function HeaderButton() {
       list.push({
         name: key,
         value: null,
-        type: "group",
+        type: "date",
       })
       value.forEach((item) => {
         list.push({

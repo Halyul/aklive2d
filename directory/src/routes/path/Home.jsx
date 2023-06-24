@@ -22,6 +22,7 @@ import CharIcon from '@/component/char_icon';
 import Border from '@/component/border';
 import useUmami from '@parcellab/react-use-umami';
 import Switch from '@/component/switch';
+import SearchBox from '@/component/search_box';
 
 const voiceOnAtom = atomWithStorage('voiceOn', false)
 let lastVoiceState = 'ended'
@@ -42,6 +43,9 @@ export default function Home() {
   const [voiceSrc, setVoiceSrc] = useState(null)
   const [voiceReplay, setVoiceReplay] = useState(false)
   const { language } = useLanguage()
+  const [navigationList, setNavigationList] = useState([])
+  const [searchField, setSearchField] = useState('');
+  const [updatedList, setUpdatedList] = useState([])
 
   useEffect(() => {
     setTitle('dynamic_compile')
@@ -102,8 +106,41 @@ export default function Home() {
         })
       }
     }
-    setFastNavigation(list)
-  }, [currentTab, fastNavigateDict, isShown, language, setFastNavigation])
+    setNavigationList(list)
+    setUpdatedList(list)
+  }, [fastNavigateDict, isShown, language])
+
+  useEffect(() => {
+    const list = navigationList.filter((item) => { return (item.name.toLowerCase().indexOf(searchField.toLowerCase()) !== -1) || (item.type === 'date'); })
+    const newList = []
+    for (let i = 0; i < list.length - 1; i++) {
+      const firstType = list[i].type
+      const secondType = list[i + 1].type
+      if (firstType === 'date' && secondType === 'date') {
+        continue
+      }
+      newList.push(list[i])
+    }
+    if (list.length > 0 && list[list.length - 1].type !== 'date') {
+      newList.push(list[list.length - 1])
+    }
+    setUpdatedList(newList)
+  }, [navigationList, searchField])
+
+  useEffect(() => {
+    setFastNavigation([
+      {
+        type: "custom",
+        component: <SearchBox
+          key="search-box"
+          altText={"search_by_name"}
+          handleOnChange={(e) => { setSearchField(e) }}
+          searchField={searchField}
+        />
+      },
+      ...updatedList
+    ])
+  }, [searchField, setFastNavigation, updatedList])
 
   const handleVoicePlay = useCallback((src) => {
     if (!voiceOn) {

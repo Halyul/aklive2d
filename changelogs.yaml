@@ -1,4 +1,8 @@
 showcase:
+  2023/06/24:
+    - Updated charwords
+    - Subtitle will not show by default
+    - Added option to disable Start animation
   2023/05/04:
     - Added Start animation for supported operator
   2023/03/15:
@@ -42,6 +46,13 @@ showcase:
   2021/05/26:
     - First commit
 directory:
+  2023/06/24:
+    - Fixed _assets rebuilding issue
+    - Added fast navigation menu
+    - Added scroll to top button
+    - Added a custom scrollbar
+    - Added a popup for dropdown menus
+    - Added a search box in fast navigation
   2023/05/05:
     - Header title will only contain operator name, instead of full name (skin name + operator name)
   2023/05/04:

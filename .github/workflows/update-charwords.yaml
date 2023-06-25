@@ -1,15 +1,15 @@
-name: Build release and push to Github
+name: Update charwords
 
 on:
   push:
     branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 0'
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    # if: contains(github.event.head_commit.message, 'release')
 
     permissions:
       contents: write
@@ -27,11 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Build all
-        run: npm run build-all
-      - name: Deploy
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: gh-pages
-          FOLDER: release
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run charwords
+      - name: Commit changes if any
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(charwords): auto update"

@@ -29,7 +29,7 @@ jobs:
       - name: Commit version changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "build: auto update build versions"
+          commit_message: "chore(aklive2d): auto update build versions"
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:

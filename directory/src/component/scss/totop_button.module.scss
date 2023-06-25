@@ -13,10 +13,12 @@
   width: 3rem;
   height: 3rem;
   opacity: 0;
+  visibility: hidden;
   transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 
   &.show {
     opacity: 1;
+    visibility: unset;
   }
 
   .bar {

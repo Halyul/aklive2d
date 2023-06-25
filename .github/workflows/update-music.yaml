@@ -1,4 +1,4 @@
-name: Update charwords
+name: Update music
 
 on:
   schedule:
@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Build all
-        run: pnpm run charwords
+        run: pnpm run music mapping
       - name: Commit changes if any
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore(charwords): auto update"
+          commit_message: "chore(music): auto update mapping"

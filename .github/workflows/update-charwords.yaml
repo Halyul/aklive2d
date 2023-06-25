@@ -14,20 +14,16 @@ jobs:
     permissions:
       contents: write
 
-    strategy:
-      matrix:
-        node-version: [20.x]
-
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Use PNPM
+        uses: pnpm/action-setup@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          version: latest
       - name: Install dependencies
-        run: npm i
+        run: pnpm i
       - name: Build all
-        run: npm run charwords
+        run: pnpm run charwords
       - name: Commit changes if any
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

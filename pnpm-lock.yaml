@@ -41,7 +41,7 @@ dependencies:
 devDependencies:
   '@perfsee/rollup':
     specifier: ^1.8.2
-    version: 1.8.2(rollup@3.25.1)
+    version: 1.8.2(rollup@3.25.2)
   '@types/react':
     specifier: ^18.2.14
     version: 18.2.14
@@ -70,8 +70,8 @@ devDependencies:
     specifier: ^15.8.1
     version: 15.8.1
   rollup:
-    specifier: ^3.25.1
-    version: 3.25.1
+    specifier: ^3.25.2
+    version: 3.25.2
   sass:
     specifier: ^1.63.6
     version: 1.63.6
@@ -491,7 +491,7 @@ packages:
       - supports-color
     dev: true
 
-  /@perfsee/rollup@1.8.2(rollup@3.25.1):
+  /@perfsee/rollup@1.8.2(rollup@3.25.2):
     resolution: {integrity: sha512-dkvVGh5kyg1UVVzj9l1ogHeIsMMcnTPYYpiKneptbB2v5JzHoh5SugL+bA3QKnExC5A5txrCQuV4ztqX6CxGGQ==}
     peerDependencies:
       rollup: '>2'
@@ -500,7 +500,7 @@ packages:
       '@perfsee/plugin-utils': 1.8.2
       chalk: 4.1.2
       lodash: 4.17.21
-      rollup: 3.25.1
+      rollup: 3.25.2
       tslib: 2.5.3
     transitivePeerDependencies:
       - encoding
@@ -2807,8 +2807,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup@3.25.1:
-    resolution: {integrity: sha512-tywOR+rwIt5m2ZAWSe5AIJcTat8vGlnPFAv15ycCrw33t6iFsXZ6mzHVFh2psSjxQPmI+xgzMZZizUAukBI4aQ==}
+  /rollup@3.25.2:
+    resolution: {integrity: sha512-VLnkxZMDr3jpxgtmS8pQZ0UvhslmF4ADq/9w4erkctbgjCqLW9oa89fJuXEs4ZmgyoF7Dm8rMDKSS5b5u2hHUg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -3392,7 +3392,7 @@ packages:
     dependencies:
       esbuild: 0.17.19
       postcss: 8.4.24
-      rollup: 3.25.1
+      rollup: 3.25.2
       sass: 1.63.6
     optionalDependencies:
       fsevents: 2.3.2

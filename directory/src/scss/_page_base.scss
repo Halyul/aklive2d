@@ -103,8 +103,11 @@
           flex-direction: row;
           align-items: baseline;
           text-align: center;
-          width: 1.5rem;
-          fill: var(--text-color);
+
+          svg {
+            width: 1.5rem;
+            fill: var(--text-color);
+          }
         }
       }
 

@@ -17,4 +17,5 @@ export default function CharIcon(props) {
 CharIcon.propTypes = {
   viewBox: PropTypes.string,
   type: PropTypes.string,
+  style: PropTypes.object,
 };

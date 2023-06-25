@@ -1,8 +1,23 @@
-@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';
-@import 'https://fonts.cdnfonts.com/css/bender';
-@import 'https://fonts.cdnfonts.com/css/geometos';
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap";
+@import "https://fonts.cdnfonts.com/css/bender";
+@import "https://fonts.cdnfonts.com/css/geometos";
 
-:root {
+@mixin light-theme() {
+  --text-color: rgba(0, 0, 0, 87%);
+  --text-color-full: #000;
+  --secondary-text-color: #97958d;
+  --date-color: rgba(0, 0, 0, 20%);
+  --border-color: #8f8f8f;
+  --link-highlight-color: #33b5e5;
+  --drawer-background-color: rgba(255, 255, 255, 88%);
+  --root-background-color: #ececec;
+  --home-item-hover-background-color: rgba(188, 188, 188, 30%);
+  --home-item-background-linear-gradient-color: rgba(0, 0, 0, 10%);
+  --home-item-outline-color: rgba(41, 41, 41, 30%);
+  --button-color: #999;
+}
+
+@mixin dark-theme() {
   --text-color: rgba(255, 255, 255, 87%);
   --text-color-full: #fff;
   --secondary-text-color: #686a72;
@@ -15,7 +30,21 @@
   --home-item-background-linear-gradient-color: rgba(255, 255, 255, 10%);
   --home-item-outline-color: rgba(214, 214, 214, 30%);
   --button-color: #666;
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark-theme();
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include light-theme();
+  }
+}
+
+:root {
   font-family: Geometos, "Noto Sans SC", sans-serif;
   font-size: 16px;
   line-height: 1.2em;

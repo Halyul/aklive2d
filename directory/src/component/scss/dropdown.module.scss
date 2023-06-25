@@ -44,14 +44,14 @@
   }
 
   .content {
-    padding-right: 0.5em;
+    padding-right: 1.2em;
     height: 1em;
   }
 
   .icon {
     position: absolute;
     bottom: 0.5em;
-    right: -0.1em;
+    right: 0.6em;
     width: 0.5em;
     height: 0.5em;
     display: inline-block;
@@ -60,7 +60,7 @@
     border-bottom: 0.15em solid var(--text-color);
     border-right: 0.15em solid var(--text-color);
     border-top: 0.15em solid var(--text-color);
-    transform: translate(0, -0.15em) rotate(-45deg);
+    transform: translateY(-0.15em) rotate(-45deg);
   }
 
   .menu {

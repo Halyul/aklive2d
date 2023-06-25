@@ -80,11 +80,12 @@
     }
   }
 
-  .operator-fast-navigate {
+  .fast-navigate {
     position: absolute;
-    right: -3rem;
-    bottom: -2rem;
+    right: -2em;
+    bottom: -1em;
     font-size: 32px;
+    transform: translateY(2px);
   }
 
   .return-button {

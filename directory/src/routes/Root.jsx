@@ -295,7 +295,7 @@ function HeaderButton() {
           onClick={(item) => {
             navigate(item.value)
           }}
-          className={classes['operator-fast-navigate']}
+          className={classes['fast-navigate']}
         />
       </Border>
     )

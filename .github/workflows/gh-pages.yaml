@@ -28,6 +28,8 @@ jobs:
         run: npm i
       - name: Build all
         run: npm run build-all
+      - name: Build directory
+        run: npm run vite:directory:build
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:

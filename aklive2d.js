@@ -47,7 +47,7 @@ async function main() {
       assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
       fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
       return
-    case 'charword':
+    case 'charwords':
       await charwordTable.process()
       process.exit(0)
     case 'music':

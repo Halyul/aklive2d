@@ -477,6 +477,7 @@ export default class Settings {
           <button type="button" id="settings_pause">Pause</button>
           <button type="button" id="settings_reset">Reset</button>
           <button type="button" id="settings_close">Close</button>
+          <button type="button" id="settings_to_directory">Back to Directory</button>
         </div>
       </div>
     `
@@ -734,7 +735,11 @@ export default class Settings {
         id: "use_start_animation", event: "click", handler: e => {
           this.#useStartAnimation = e.currentTarget.checked;
         }
-      },
+      }, {
+        id: "settings_to_directory", event: "click", handler: () => {
+          window.location.href = '/';
+        }
+      }
     ]
 
     listeners.forEach(listener => {

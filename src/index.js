@@ -7,7 +7,7 @@ import Music from '@/components/music'
 
 document.querySelector('#app').innerHTML = `
   <img src="./assets/${import.meta.env.VITE_LOGO_FILENAME}.png" class="logo invert-filter" id="logo" alt="operator logo" />
-  <div id="settings"></div>
+  <div id="settings" hidden></div>
   <div id="voice_box" hidden></div>
   <div id="music_box" hidden></div> 
   <div id="widget-wrapper">

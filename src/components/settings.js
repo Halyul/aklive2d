@@ -27,7 +27,6 @@ export default class Settings {
     x: 0,
     y: 0,
   }
-  #hidden = !((new URLSearchParams(window.location.search)).has("settings") || import.meta.env.MODE === 'development')
   #fps = this.#defaultFps
   #ratio = this.#defaultRatio
   #opacity = this.#defaultOpacity
@@ -71,6 +70,16 @@ export default class Settings {
     this.loadViewport()
     this.insights(false, false)
     this.#updateOptions("animation_selection", this.spinePlayer.skeleton.data.animations.map(e => e.name))
+    if ((new URLSearchParams(window.location.search)).has("settings") || import.meta.env.MODE === 'development') {
+      this.open()
+    }
+    fetch('/project.json').then(response => response.json()).then(data => {
+      if (data.aklive2d) {
+        this.open()
+      }
+    }).catch(e => {
+      console.log(e)
+    })
   }
 
   insights(isWallpaperEngine, doNotTrack) {
@@ -320,7 +329,7 @@ export default class Settings {
 
   #insertHTML() {
     this.#el.innerHTML = `
-      <div ${this.#hidden && "hidden"}>
+      <div>
         <div>
           <label for="fps">FPS</label>
           <input type="range" min="1" max="60" value="${this.#fps}" step="1" id="fps_slider"/>

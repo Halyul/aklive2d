@@ -120,13 +120,10 @@
         margin-left: 1rem;
       }
 
-      .item_icon {
+      .item_icon svg {
         transition: fill cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-
-        svg {
-          width: 1rem;
-          fill: var(--text-color);
-        }
+        width: 1rem;
+        fill: var(--text-color);
       }
 
       &:hover,
@@ -135,7 +132,7 @@
         .text {
           color: currentColor;
         }
-        .item_icon {
+        .item_icon svg {
           fill: currentColor;
         }
       }

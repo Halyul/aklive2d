@@ -38,16 +38,17 @@ async function main() {
       fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
       return
     case 'build-all':
+      __config.version.showcase = increase(__projectRoot)
+    case 'charwords:build':
       for (const [key,] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
-      __config.version.showcase = increase(__projectRoot)
       break
     case 'preview':
       assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
       fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
       return
-    case 'charwords':
+    case 'charwords:update':
       await charwordTable.process()
       process.exit(0)
     case 'music':
@@ -126,6 +127,13 @@ async function main() {
       writeSync(JSON.stringify(voiceJson), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'charword_table.json'))
     } catch (e) {
       console.log(`charword_table is not available`)
+    }
+
+    switch (op) {
+      case 'charwords:build':
+        continue
+      default:
+        break
     }
 
     const envPath = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, '.env')

@@ -20,8 +20,8 @@ jobs:
           version: latest
       - name: Install dependencies
         run: pnpm i
-      - name: Build all
-        run: pnpm run music mapping
+      - name: Update music mapping
+        run: pnpm run music
       - name: Commit changes if any
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

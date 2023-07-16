@@ -16,9 +16,9 @@
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: build chen",
+      "name": "Run Script: build mizuki_summer_feast",
       "request": "launch",
-      "command": "pnpm run build chen",
+      "command": "pnpm run build mizuki_summer_feast",
       "cwd": "${workspaceFolder}"
     },
     {
@@ -51,9 +51,9 @@
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: charword",
+      "name": "Run Script: charwords:update",
       "request": "launch",
-      "command": "pnpm run charword",
+      "command": "pnpm run charwords:update",
       "cwd": "${workspaceFolder}"
     },
     {

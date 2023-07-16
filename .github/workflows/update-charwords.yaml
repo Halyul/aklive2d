@@ -20,8 +20,10 @@ jobs:
           version: latest
       - name: Install dependencies
         run: pnpm i
-      - name: Build all
-        run: pnpm run charwords
+      - name: Update charwords
+        run: pnpm run charwords:update
+      - name: Build operator charwords
+        run: pnpm run charwords:build
       - name: Commit changes if any
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

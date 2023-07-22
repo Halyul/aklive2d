@@ -4,19 +4,17 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 
 ## Upcoming Updates
 
-Version: `4th Anniversary`
+Version: `2023 Summer Fest`
 
-- [x] Operator: Muelsyse
-- [x] Skin: Born as One / Specter the Unchained
-- [x] Skin: Ten Thousand Mountains / Ch'en/Chen the Holungday
-- [x] Skin: Remnant / Kal'tsit
-- [x] Background and Music Update
-- [x] Voice: Chinese Topolect for Lee
+- [ ] ?
 
 ## Softwares
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
 - For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.
 - For Linux users: You power user should be able to find your solutions!
+
+## Supported Operators
+A list of supported operators can be found at [Directory](https://arknights.halyul.dev) page.
 
 ## Usage
 ### Command Line Tool
@@ -156,33 +154,3 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 <sup>2</sup>: `gamedata/excel/display_meta_table.json->homeBackgroundData`<sup>3</sup> and `gamedata/excel/audio_data.json`<sup>3</sup> is required to locate the music.
 
 <sup>3</sup>: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)
-
-## Supported Operators
-
-| Operator | Live Preview | Steam Workshop |
-|----------|--------------|----------------|
-| Nian | [Link](https://arknights.halyul.dev/nian/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2564642594) |
-| Unfettered Freedom / Nian | [Link](https://arknights.halyul.dev/nian_unfettered_freedom/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730943815) |
-| Focus / Phatom | [Link](https://arknights.halyul.dev/phatom_focus/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2786960745) |
-| W | [Link](https://arknights.halyul.dev/w/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642838078) |
-| Wonder / W | [Link](https://arknights.halyul.dev/w_wonder/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802584758) |
-| Rosmontis | [Link](https://arknights.halyul.dev/rosmontis/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642834981) |
-| Dusk | [Link](https://arknights.halyul.dev/dusk/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730942651) |
-| Everything is a Miracle / Dusk | [Link](https://arknights.halyul.dev/dusk_everything_is_a_miracle/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730943249) |
-| Skadi the Corrupting Heart | [Link](https://arknights.halyul.dev/skadi/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2492307783) |
-| Sublimation / Skadi the Corrupting Heart | [Link](https://arknights.halyul.dev/skadi_sublimation/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802570125) |
-| Ch'en the Holungday | [Link](https://arknights.halyul.dev/chen/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2564643862) |
-| Nearl the Radiant Knight | [Link](https://arknights.halyul.dev/nearl/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2642836787) |
-| Ling | [Link](https://arknights.halyul.dev/ling/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2730944363) |
-| Specter the Unchained | [Link](https://arknights.halyul.dev/specter/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2802596772) |
-| Gavial the Invincible | [Link](https://arknights.halyul.dev/gavial/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2847605961) |
-| Colorful Wonderland / Surtr | [Link](https://arknights.halyul.dev/surtr_colorful_wonderland/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2847602015) |
-| Trust Your Eyes / Lee | [Link](https://arknights.halyul.dev/lee_trust_your_eyes/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2879452075) |
-| Texas the Omertosa | [Link](https://arknights.halyul.dev/texas_the_omertosa/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883008286) |
-| Relight / Nearl | [Link](https://arknights.halyul.dev/nearl_relight/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883016965) |
-| Become Anew / Rosmontis | [Link](https://arknights.halyul.dev/rosmontis_become_anew/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883012349) |
-| Dream in a Moment / Passager | [Link](https://arknights.halyul.dev/passager_dream_in_a_moment/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2883021565) |
-| Summer Feast / Mizuki | [Link](https://arknights.halyul.dev/mizuki_summer_feast/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2895953271) |
-| Chongyue | [Link](https://arknights.halyul.dev/chongyue/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2919486659) |
-| It Does Wash the Strings / Ling | [Link](https://arknights.halyul.dev/ling_it_does_wash_the_strings/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2919482772) |
-| Snowy Plains in Words / Позёмка | [Link](https://arknights.halyul.dev/pozemka_snowy_plains_in_words/?settings) | [Link](https://steamcommunity.com/sharedfiles/filedetails/?id=2933544301) |

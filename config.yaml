@@ -58,5 +58,5 @@ operators:
   specter_born_as_one: !include config/specter_born_as_one.yaml
   muelsyse: !include config/muelsyse.yaml
   kaltsit_remnant: !include config/kaltsit_remnant.yaml
-  eyjafjalla_the_hvit_aska: !include config/eyjafjalla_the_hvit_aska.yaml
-  goldenglow_summer_flowers_fa394: !include config/goldenglow_summer_flowers_fa394.yaml
+  # eyjafjalla_the_hvit_aska: !include config/eyjafjalla_the_hvit_aska.yaml
+  # goldenglow_summer_flowers_fa394: !include config/goldenglow_summer_flowers_fa394.yaml

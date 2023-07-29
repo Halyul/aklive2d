@@ -7,7 +7,7 @@ import { fork } from 'child_process';
 import getConfig from './libs/config.js'
 import ProjectJson from './libs/project_json.js'
 import EnvGenerator from './libs/env_generator.js'
-import { write, rmdir, copy, writeSync, copyDir } from './libs/file.js'
+import { write, rmdir, copy, writeSync, copyDir, readdirSync, exists } from './libs/file.js'
 import AssetsProcessor from './libs/assets_processor.js'
 import init from './libs/initializer.js'
 import directory from './libs/directory.js'
@@ -20,6 +20,8 @@ import Music from './libs/music.js';
 async function main() {
   global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
   global.__config = getConfig()
+
+  global.__error = []
 
   const op = process.argv[2]
   let OPERATOR_NAMES = process.argv.slice(3);
@@ -64,6 +66,19 @@ async function main() {
   await background.process()
   const backgrounds = ['operator_bg.png', ...background.files]
   const { musicToCopy, musicMapping } = musicTable.copy()
+
+  for (const e of musicToCopy) {
+    const musicPath = path.join(e.source, e.filename)
+    if (!exists(musicPath)) {
+      __error.push(`Music file ${e.filename} is not found in music folder.`)
+    }
+  }
+
+  for (const e of Object.keys(musicMapping)) {
+    if (!backgrounds.includes(e)) {
+      __error.push(`Background file ${e} is not found in background folder.`)
+    }
+  }
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
     const OPERATOR_SOURCE_FOLDER = path.join(__projectRoot, __config.folder.operator)
@@ -134,6 +149,23 @@ async function main() {
         continue
       default:
         break
+    }
+
+    // check whether voice files has been added
+    const customVoiceName = voiceLangs.filter(i => !__config.folder.voice.sub.map(e => e.lang).includes(i))[0]
+    const voiceLangMapping = __config.folder.voice.sub.filter(e => {
+      return voiceLangs.includes(e.lang) || (e.lang === "CUSTOM" && typeof customVoiceName !== 'undefined')
+    }).map(e => {
+      return {
+        name: e.name,
+        lang: e.lang === "CUSTOM" ? customVoiceName : e.lang
+      }
+    })
+    for (const voiceSubFolderMapping of voiceLangMapping) {
+      const voiceSubFolder = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, __config.folder.voice.main, voiceSubFolderMapping.name)
+      if (readdirSync(voiceSubFolder).length === 0) {
+        __error.push(`Voice folder ${voiceSubFolderMapping.name} for ${OPERATOR_NAME} is empty.`)
+      }
     }
 
     const envPath = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, '.env')
@@ -254,11 +286,17 @@ async function main() {
     foldersToCopy.forEach((folder) => {
       copyDir(folder.source, folder.target)
     })
-
-    fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAME])
   }
 
   directory({ backgrounds, musicMapping })
+  if (__error.length > 0) {
+    const str = `${__error.length} error${__error.length > 1 ? 's were' : ' was'} found:\n${__error.join('\n')}`
+    throw new Error(str)
+  } else {
+    for (const OPERATOR_NAME of OPERATOR_NAMES) {
+      fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAME])
+    }
+  }
 }
 
 main();

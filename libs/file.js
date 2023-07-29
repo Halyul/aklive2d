@@ -67,5 +67,9 @@ export function appendSync(content, filePath) {
 }
 
 export function readdirSync(dir) {
+  if (!exists(dir)) {
+    console.warn(`Source ${dir} does not exist.`)
+    return []
+  }
   return fs.readdirSync(dir)
 }

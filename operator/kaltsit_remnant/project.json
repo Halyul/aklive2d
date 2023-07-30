@@ -1,6 +1,6 @@
 {
 	"contentrating" : "Everyone",
-	"description" : "Arknights: Remnant / Kal'tsit Live 2D\n明日方舟：残余 · 凯尔希 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n\nLive preview on: https://arknights.halyul.dev/kaltsit_remnant\nGithub: https://github.com/Halyul/aklive2d\nCheck out our privacy policy at https://hx.sg/pp",
+	"description" : "Arknights: Remnant / Kal'tsit Live 2D\n明日方舟：残余 · 凯尔希 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n\nLive preview on: https://arknights.halyul.dev/kaltsit_remnant\nGithub: https://github.com/Halyul/aklive2d\nCheck out our privacy policy at https://gura.ch/pp",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -34,7 +34,7 @@
 				"ui_position_padding_top" : "Padding Top",
 				"ui_position_title" : "<hr><h4>⚠️ Posistion</h4><hr>",
 				"ui_privacy_do_not_track" : "Send usage data",
-				"ui_privacy_text" : "<span><b>Check out our privacy policy at https://hx.sg/pp</b></span>",
+				"ui_privacy_text" : "<span><b>Check out our privacy policy at https://gura.ch/pp</b></span>",
 				"ui_privacy_title" : "<hr><h4>📜 Privacy</h4><hr>",
 				"ui_subtitle_lang" : "Subtitle Language",
 				"ui_subtitle_title" : "<hr><h4>📑 Subtitle</h4><hr>",
@@ -74,7 +74,7 @@
 				"ui_position_padding_top" : "上部距离",
 				"ui_position_title" : "<hr><h4>⚠️ 位置</h4><hr>",
 				"ui_privacy_do_not_track" : "发送使用数据",
-				"ui_privacy_text" : "<span><b>在 https://hx.sg/pp 查看我们的隐私政策</b></span>",
+				"ui_privacy_text" : "<span><b>在 https://gura.ch/pp 查看我们的隐私政策</b></span>",
 				"ui_privacy_title" : "<hr><h4>📜 隐私</h4><hr>",
 				"ui_subtitle_lang" : "字幕语言",
 				"ui_subtitle_title" : "<hr><h4>📑 字幕</h4><hr>",

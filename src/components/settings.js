@@ -88,13 +88,21 @@ export default class Settings {
     this.#isInsightsInited = true
     this.#doNotTrack = doNotTrack
     if (this.#doNotTrack) return
-    window.umami?.trackView(`/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam" : ""}`);
+    try {
+      window.umami?.track(props => ({ ...props, url: `/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam" : ""}` }));
+    } catch(e) {
+      console.warn && console.warn(e.message)
+    }
   }
 
   functionInsights(functionName, toSkip = false) {
     if (!this.#isInsightsInited || this.#doNotTrack || import.meta.env.MODE === 'development' || functionName === this.#lastFunctionInsights || toSkip) return
     this.#lastFunctionInsights = functionName
-    window.umami?.trackEvent(`${functionName}`);
+    try {
+      window.umami?.track(`${functionName}`);
+    } catch (e) {
+      console.warn && console.warn(e.message)
+    }
   }
 
   setFPS(value) {

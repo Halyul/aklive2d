@@ -19,7 +19,7 @@ export default [
         inDrawer: true,
         routeable: true
     }, {
-        path: "https://hx.sg/dynamicCompile",
+        path: "https://gura.ch/dynamicCompile",
         index: false,
         name: "offical_page",
         element: <a/>,

@@ -19,7 +19,7 @@ export default [
         inDrawer: true,
         routeable: true
     }, {
-        path: "https://ak.hypergryph.com/archive/dynamicCompile/",
+        path: "https://hx.sg/dynamicCompile",
         index: false,
         name: "offical_page",
         element: <a/>,

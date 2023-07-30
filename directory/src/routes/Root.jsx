@@ -157,7 +157,7 @@ function FooterElement() {
             </Popup>
           </section>
           <section className={footer.item}>
-            <Link reloadDocument to="https://privacy.halyul.dev" target="_blank" className={footer.link}>{i18n('privacy_policy')}</Link>
+            <Link reloadDocument to="https://hx.sg/pp" target="_blank" className={footer.link}>{i18n('privacy_policy')}</Link>
           </section>
           <section className={footer.item}>
             <Link reloadDocument to="https://github.com/Halyul/aklive2d" target="_blank" className={footer.link}>GitHub</Link>

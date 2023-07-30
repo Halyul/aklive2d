@@ -74,7 +74,7 @@ export default function Operator() {
   const [config, setConfig] = useState(null)
   const [spineData, setSpineData] = useState(null)
   // eslint-disable-next-line no-unused-vars
-  const _trackEvt = useUmami(`/${key}`)
+  const _trackEvt = useUmami(`/${key}`, `${key}`)
   const spineRef = useRef(null)
   const [spineAnimation, setSpineAnimation] = useState(defaultSpineAnimation)
   const { i18n } = useI18n()

@@ -31,7 +31,7 @@ let lastVoiceState = 'ended'
 
 export default function Error() {
   // eslint-disable-next-line no-unused-vars
-  const _trackEvt = useUmami('/error')
+  const _trackEvt = useUmami('/error', "Error")
   const error = useRouteError();
   const navigate = useNavigate();
   const {

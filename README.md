@@ -16,7 +16,7 @@ Version: `2023 Summer Fest`
 - For Linux users: You power user should be able to find your solutions!
 
 ## Supported Operators
-A list of supported operators can be found at [Directory](https://hx.sg/aklive2d) page.
+A list of supported operators can be found at [Directory](https://gura.ch/aklive2d) page.
 
 ## Usage
 ### Command Line Tool

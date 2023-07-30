@@ -15,18 +15,28 @@ export const registerUmamiScript = (url, websiteId, dataDomain) => {
   }
 }
 
-export default (url, referrer, websiteId, skipPageView) => {
+export default (url, title, referrer, websiteId, skipPageView) => {
   skipPageView = skipPageView || false
   React.useEffect(() => {
-    if (!skipPageView && window.umami) {
+    if (!skipPageView && window.umami && import.meta.env.MODE !== 'development') {
       try {
         const umami = window.umami
-        umami.track(props => ({ ...props, url: url, referrer: referrer, website: websiteId }))
+        const dict = {}
+        if (title) {
+          dict.title = title
+        }
+        if (referrer) {
+          dict.referrer = referrer
+        }
+        if (websiteId) {
+          dict.websiteId = websiteId
+        }
+        umami.track(props => ({ ...props, url: url, ...dict }))
       } catch (err) {
         console.warn && console.warn(err.message)
       }
     }
-  }, [url, referrer, websiteId, skipPageView])
+  }, [url, title, referrer, websiteId, skipPageView])
 
   const trackEvent = (eventValue) => {
     try {

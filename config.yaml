@@ -60,3 +60,4 @@ operators:
   kaltsit_remnant: !include config/kaltsit_remnant.yaml
   # eyjafjalla_the_hvit_aska: !include config/eyjafjalla_the_hvit_aska.yaml
   # goldenglow_summer_flowers_fa394: !include config/goldenglow_summer_flowers_fa394.yaml
+  # gavial_the_invincible_holiday_hd26: !include config/gavial_the_invincible_holiday_hd26.yaml

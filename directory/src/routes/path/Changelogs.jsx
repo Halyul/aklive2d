@@ -11,7 +11,7 @@ import Border from '@/component/border';
 
 export default function Changelogs() {
   // eslint-disable-next-line no-unused-vars
-  const _trackEvt = useUmami('/changelogs')
+  const _trackEvt = useUmami('/changelogs', "Changelogs")
   const {
     setTitle,
     setTabs,

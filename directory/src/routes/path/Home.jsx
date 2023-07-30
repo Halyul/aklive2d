@@ -29,7 +29,7 @@ let lastVoiceState = 'ended'
 
 export default function Home() {
   // eslint-disable-next-line no-unused-vars
-  const _trackEvt = useUmami('/')
+  const _trackEvt = useUmami('/', "Dynamic Compile")
   const {
     setTitle,
     setTabs,

@@ -20,7 +20,7 @@ import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils';
 import CharIcon from '@/component/char_icon';
 import Border from '@/component/border';
-import useUmami from '@parcellab/react-use-umami';
+import useUmami from '@/state/insights';
 import Switch from '@/component/switch';
 import SearchBox from '@/component/search_box';
 

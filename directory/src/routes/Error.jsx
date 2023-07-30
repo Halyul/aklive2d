@@ -20,7 +20,7 @@ import { useHeader } from '@/state/header';
 import VoiceElement from '@/component/voice';
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
-import useUmami from '@parcellab/react-use-umami';
+import useUmami from '@/state/insights';
 
 const voiceOnAtom = atomWithStorage('voiceOn', false)
 const config = JSON.parse(import.meta.env.VITE_ERROR_FILES)

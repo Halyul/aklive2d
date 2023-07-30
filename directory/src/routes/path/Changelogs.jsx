@@ -6,7 +6,7 @@ import React, {
 import classes from '@/scss/changelogs/Changelogs.module.scss'
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
-import useUmami from '@parcellab/react-use-umami'
+import useUmami from '@/state/insights'
 import Border from '@/component/border';
 
 export default function Changelogs() {

@@ -19,7 +19,7 @@ import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import { useBackgrounds } from '@/state/background';
 import VoiceElement from '@/component/voice';
-import useUmami from '@parcellab/react-use-umami'
+import useUmami from '@/state/insights'
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
 import Border from '@/component/border';

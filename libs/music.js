@@ -37,7 +37,7 @@ export default class Music {
       intro: "m_sys_void_intro",
       loop: "m_sys_void_loop",
     })
-    writeSync(JSON.stringify(list, null, 2), path.join(this.#sharedPath, `music_table.json`))
+    writeSync(JSON.stringify(list, null), path.join(this.#sharedPath, `music_table.json`))
   }
 
   async #download() {

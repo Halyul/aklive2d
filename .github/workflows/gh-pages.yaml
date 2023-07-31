@@ -38,5 +38,3 @@ jobs:
           FOLDER: release
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CLEAR_GLOBS_FILE: ".gh-pages-clear-rules"
-          COMMIT_NAME: Halyul
-          COMMIT_EMAIL: Halyul@users.noreply.github.com

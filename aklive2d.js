@@ -11,7 +11,6 @@ import { write, rmdir, copy, writeSync, copyDir, readdirSync, exists } from './l
 import AssetsProcessor from './libs/assets_processor.js'
 import init from './libs/initializer.js'
 import directory from './libs/directory.js'
-import { appendReadme } from './libs/append.js'
 import { increase } from './libs/version.js';
 import Background from './libs/background.js'
 import CharwordTable from './libs/charword_table.js';
@@ -96,9 +95,6 @@ async function main() {
     switch (op) {
       case 'init':
         init(OPERATOR_NAME, [EXTRACTED_FOLDER, ...VOICE_FOLDERS])
-        process.exit(0)
-      case 'readme':
-        appendReadme(OPERATOR_NAME)
         process.exit(0)
       default:
         break

@@ -23,7 +23,7 @@ window.voice.init()
 window.music = new Music(document.querySelector('#music_box'))
 window.settings = new Settings(document.querySelector('#settings'), document.querySelector('#logo'))
 document.title = import.meta.env.VITE_TITLE
-console.log("All resources are extracted from Arknights. Github: https://github.com/Halyul/aklive2d")
+console.log("All resources are extracted from Arknights. Github: https://gura.ch/aklive2d-gh")
 
 if (check_web_gl()) {
   import('@/components/player').then(({ default: spinePlayer }) => {

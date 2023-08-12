@@ -1,12 +1,12 @@
 date: 2023/07
-filename: 
-logo: 
-fallback_name: 
-viewport_left: 0
+filename: dyn_illust_char_1016_agoat2
+logo: logo_Leithanien
+fallback_name: char_1016_agoat2_2
+viewport_left: 1
 viewport_right: 0
-viewport_top: 0
-viewport_bottom: 0
-invert_filter: false
+viewport_top: 5
+viewport_bottom: 5
+invert_filter: true
 color: rgb(34, 187, 255)
 codename:
   zh-CN: 纯烬艾雅法拉

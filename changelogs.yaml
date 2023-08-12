@@ -1,4 +1,8 @@
 showcase:
+  2023/08/12:
+    - Updated voice for chongyue, passager_dream_in_a_moment, rosmontis_become_anew, skadi, and skadi_sublimation
+    - Added eyjafjalla_the_hvit_aska, gavial_the_invincible_holiday_hd26, and goldenglow_summer_flowers_fa394
+    - Added a logic to handle images that does not require alpha composite
   2023/06/24:
     - Updated charwords
     - Subtitle will not show by default

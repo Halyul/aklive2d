@@ -59,8 +59,8 @@
       "rotate": 0
     },
     {
-      "name": "char_278_orchid_boc#6",
-      "guid": "4acef2e83110f3946b590e6a5e59f13d",
+      "name": "char_4000_jnight_boc#7",
+      "guid": "74a985b7cb14005478e80e51aa921ca9",
       "atlas": 0,
       "rect": {
         "x": 364,
@@ -71,12 +71,24 @@
       "rotate": 0
     },
     {
-      "name": "char_249_mlyss_2",
-      "guid": "a887f0824df871c4e9c6432d4ad127e7",
+      "name": "char_278_orchid_boc#6",
+      "guid": "4acef2e83110f3946b590e6a5e59f13d",
       "atlas": 0,
       "rect": {
         "x": 364,
         "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_249_mlyss_2",
+      "guid": "a887f0824df871c4e9c6432d4ad127e7",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -88,7 +100,7 @@
       "atlas": 0,
       "rect": {
         "x": 546,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -99,8 +111,8 @@
       "guid": "209b4a0e1e033ef4290c9f9d808c7566",
       "atlas": 0,
       "rect": {
-        "x": 546,
-        "y": 362,
+        "x": 728,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -112,7 +124,7 @@
       "atlas": 0,
       "rect": {
         "x": 728,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -123,19 +135,19 @@
       "guid": "5db2f7894ffcbd344b01674a3a453b2c",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 362,
-        "w": 180,
-        "h": 360
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     },
     {
       "name": "char_1013_chen2_boc#6",
       "guid": "32f398f15ae8afe43ab3a46a733decfe",
       "atlas": 0,
       "rect": {
-        "x": 0,
+        "x": 364,
         "y": 724,
         "w": 360,
         "h": 180
@@ -179,6 +191,11 @@
         "md5": "83050399e89b5304a6e776f83d9b145b"
       },
       {
+        "name": "char_4000_jnight_boc#7",
+        "guid": "74a985b7cb14005478e80e51aa921ca9",
+        "md5": "6aa013ba5757824a9abe59f29a2ad62e"
+      },
+      {
         "name": "char_278_orchid_boc#6",
         "guid": "4acef2e83110f3946b590e6a5e59f13d",
         "md5": "697e44dea82d0da330a5eae61b583a9e"
@@ -218,14 +235,14 @@
       {
         "name": "portraits#65",
         "guid": "b1d7dc1562de7144aa52b0b6a990387e",
-        "md5": "4500efbb508e43256ec03e5251ef5983"
+        "md5": "8c497667aee78b8250042bf3d6d6e971"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#65a",
         "guid": "da384d16f4694914cb6b3599db0cb2a6",
-        "md5": "ced0b39758b7920adf71d540a46c69b7"
+        "md5": "77d07f712f1d51d68f267bd45028738a"
       }
     ]
   }

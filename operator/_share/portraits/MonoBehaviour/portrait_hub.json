@@ -3143,6 +3143,10 @@
       "atlas": 65
     },
     {
+      "name": "char_4000_jnight_boc#7",
+      "atlas": 65
+    },
+    {
       "name": "char_278_orchid_boc#6",
       "atlas": 65
     },
@@ -3179,11 +3183,23 @@
       "atlas": 66
     },
     {
+      "name": "char_4093_frston_1",
+      "atlas": 66
+    },
+    {
       "name": "char_4027_heyak_2",
       "atlas": 66
     },
     {
       "name": "char_4027_heyak_1",
+      "atlas": 66
+    },
+    {
+      "name": "char_4015_spuria_2",
+      "atlas": 66
+    },
+    {
+      "name": "char_4015_spuria_1",
       "atlas": 66
     },
     {
@@ -3195,8 +3211,144 @@
       "atlas": 66
     },
     {
+      "name": "char_1032_excu2_2",
+      "atlas": 66
+    },
+    {
+      "name": "char_1032_excu2_1",
+      "atlas": 66
+    },
+    {
       "name": "char_003_kalts_boc#6",
       "atlas": 66
+    },
+    {
+      "name": "char_498_inside_1",
+      "atlas": 67
+    },
+    {
+      "name": "char_479_sleach_summer#11",
+      "atlas": 67
+    },
+    {
+      "name": "char_4102_threye_2",
+      "atlas": 67
+    },
+    {
+      "name": "char_4102_threye_1",
+      "atlas": 67
+    },
+    {
+      "name": "char_4072_ironmn_summer#11",
+      "atlas": 67
+    },
+    {
+      "name": "char_344_beewax_summer#11",
+      "atlas": 67
+    },
+    {
+      "name": "char_341_sntlla_2",
+      "atlas": 67
+    },
+    {
+      "name": "char_341_sntlla_1",
+      "atlas": 67
+    },
+    {
+      "name": "char_302_glaze_summer#11",
+      "atlas": 67
+    },
+    {
+      "name": "char_2012_typhon_2",
+      "atlas": 67
+    },
+    {
+      "name": "char_2012_typhon_1",
+      "atlas": 67
+    },
+    {
+      "name": "char_135_halo_epoque#25",
+      "atlas": 67
+    },
+    {
+      "name": "char_498_inside_2",
+      "atlas": 68
+    },
+    {
+      "name": "char_488_buildr_2",
+      "atlas": 68
+    },
+    {
+      "name": "char_488_buildr_1",
+      "atlas": 68
+    },
+    {
+      "name": "char_4106_bryota_1",
+      "atlas": 68
+    },
+    {
+      "name": "char_151_myrtle_summer#12",
+      "atlas": 68
+    },
+    {
+      "name": "char_121_lava_sale#9",
+      "atlas": 68
+    },
+    {
+      "name": "char_1026_gvial2_summer#12",
+      "atlas": 68
+    },
+    {
+      "name": "char_1016_agoat2_2",
+      "atlas": 68
+    },
+    {
+      "name": "char_1016_agoat2_1",
+      "atlas": 68
+    },
+    {
+      "name": "char_1001_amiya2_casc#1",
+      "atlas": 68
+    },
+    {
+      "name": "char_430_fartth_whirlwind#5",
+      "atlas": 69
+    },
+    {
+      "name": "char_4106_bryota_2",
+      "atlas": 69
+    },
+    {
+      "name": "char_4071_peper_whirlwind#5",
+      "atlas": 69
+    },
+    {
+      "name": "char_4047_pianst_wild#8",
+      "atlas": 69
+    },
+    {
+      "name": "char_4041_chnut_summer#12",
+      "atlas": 69
+    },
+    {
+      "name": "char_4025_aprot2_whirlwind#5",
+      "atlas": 69
+    },
+    {
+      "name": "char_377_gdglow_summer#12",
+      "atlas": 69
+    },
+    {
+      "name": "char_362_saga_sale#9",
+      "atlas": 69
+    },
+    {
+      "name": "char_1033_swire2_2",
+      "atlas": 69
+    },
+    {
+      "name": "char_1033_swire2_1",
+      "atlas": 69
     }
   ],
   "_atlases": [
@@ -3266,7 +3418,10 @@
     "Arts/CharPortraits/portraits#63",
     "Arts/CharPortraits/portraits#64",
     "Arts/CharPortraits/portraits#65",
-    "Arts/CharPortraits/portraits#66"
+    "Arts/CharPortraits/portraits#66",
+    "Arts/CharPortraits/portraits#67",
+    "Arts/CharPortraits/portraits#68",
+    "Arts/CharPortraits/portraits#69"
   ],
   "_inputSpriteDir": "Assets/Torappu/Arts/CharPortraits",
   "_outputAtlasDir": "Assets/Torappu/Arts/CharPortraits/[X]Atlas",

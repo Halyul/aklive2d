@@ -35,11 +35,23 @@
       "rotate": 0
     },
     {
+      "name": "char_4093_frston_1",
+      "guid": "44240eb40336d054c9c56ecace90a2f0",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
       "name": "char_4027_heyak_2",
       "guid": "eaab49a6d39cb224cb4f1415f9ce6eb2",
       "atlas": 0,
       "rect": {
-        "x": 0,
+        "x": 182,
         "y": 362,
         "w": 180,
         "h": 360
@@ -51,8 +63,32 @@
       "guid": "13b75152e3877b6488ff7f53231c7bf6",
       "atlas": 0,
       "rect": {
-        "x": 182,
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4015_spuria_2",
+      "guid": "dd1335913fa81de4b832ba178121eba6",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
         "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4015_spuria_1",
+      "guid": "45f249ad6e21bd247b0dbc6fce98f6c3",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -63,8 +99,8 @@
       "guid": "ffc0c14b0bc0e554bae7871f2c71848b",
       "atlas": 0,
       "rect": {
-        "x": 364,
-        "y": 0,
+        "x": 546,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -75,7 +111,19 @@
       "guid": "a5c0ca8f3e78d8d4d847bfba807cf3bc",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1032_excu2_2",
+      "guid": "5cb8e0e023e398543bac59dee223afd0",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
         "y": 362,
         "w": 180,
         "h": 360
@@ -83,16 +131,28 @@
       "rotate": 0
     },
     {
+      "name": "char_1032_excu2_1",
+      "guid": "d59a9349b8757ef47a1236b60966ecc9",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
       "name": "char_003_kalts_boc#6",
       "guid": "432966f8a68abb244ac2d384a04571df",
       "atlas": 0,
       "rect": {
-        "x": 546,
-        "y": 0,
-        "w": 180,
-        "h": 360
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -121,6 +181,11 @@
         "md5": "f3d1874da21537de632243f94ab6c711"
       },
       {
+        "name": "char_4093_frston_1",
+        "guid": "44240eb40336d054c9c56ecace90a2f0",
+        "md5": "812e20a0d449fae45e9885971232f81b"
+      },
+      {
         "name": "char_4027_heyak_2",
         "guid": "eaab49a6d39cb224cb4f1415f9ce6eb2",
         "md5": "b924d6436c2d40f3df736fece45598a2"
@@ -129,6 +194,16 @@
         "name": "char_4027_heyak_1",
         "guid": "13b75152e3877b6488ff7f53231c7bf6",
         "md5": "827f105188bf7ed109cba2a013d2ba9c"
+      },
+      {
+        "name": "char_4015_spuria_2",
+        "guid": "dd1335913fa81de4b832ba178121eba6",
+        "md5": "e03524f21aafce02b250f996bed0e7dc"
+      },
+      {
+        "name": "char_4015_spuria_1",
+        "guid": "45f249ad6e21bd247b0dbc6fce98f6c3",
+        "md5": "b99a62e5ddb9e64ed19b5096b6f384ca"
       },
       {
         "name": "char_4006_melnte_2",
@@ -141,6 +216,16 @@
         "md5": "21ec4fd79283e81cfeabca45a788ccbf"
       },
       {
+        "name": "char_1032_excu2_2",
+        "guid": "5cb8e0e023e398543bac59dee223afd0",
+        "md5": "fa5d20d1f7e65924a61a791fb96195fc"
+      },
+      {
+        "name": "char_1032_excu2_1",
+        "guid": "d59a9349b8757ef47a1236b60966ecc9",
+        "md5": "6c485fd42f9091957f8b14e3ec305b62"
+      },
+      {
         "name": "char_003_kalts_boc#6",
         "guid": "432966f8a68abb244ac2d384a04571df",
         "md5": "d78f68d008f80df3d43403c77b93c6c8"
@@ -150,14 +235,14 @@
       {
         "name": "portraits#66",
         "guid": "c4e5b576dcaf59149b789f9acaa93d7c",
-        "md5": "3ab5f1d9029bcb671f0d6988bf6bd126"
+        "md5": "dd6fdec17d9a47e8510d9cc6331dd787"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#66a",
         "guid": "07679aab7a061034dbd4d537e87f21c3",
-        "md5": "c6d41eab72ae1bbe0d2630bfc50d6ca8"
+        "md5": "aa7648945d659d80ee185d292d448b64"
       }
     ]
   }

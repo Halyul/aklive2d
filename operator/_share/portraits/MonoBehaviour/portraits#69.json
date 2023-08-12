@@ -1,0 +1,215 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#69",
+  "_sprites": [
+    {
+      "name": "char_430_fartth_whirlwind#5",
+      "guid": "3b3774b63d90e4c4a802bc37f8a4430b",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4106_bryota_2",
+      "guid": "1f362946490b3b94685e17f1986d37fd",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4071_peper_whirlwind#5",
+      "guid": "67b59c3e6e7b426409ef2c0e8d7f81cc",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4047_pianst_wild#8",
+      "guid": "221d5ea6a7bb72647ad63a375f320a75",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4041_chnut_summer#12",
+      "guid": "0266138c4755851448e0c40c64777c96",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4025_aprot2_whirlwind#5",
+      "guid": "2ee32963e75ccd142b344bfd8ee5a194",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_377_gdglow_summer#12",
+      "guid": "9bbd98bc61423cc4cb3b576fa75973ce",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_362_saga_sale#9",
+      "guid": "838e04bb576182a4285fdab60f09f868",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1033_swire2_2",
+      "guid": "f0cdaec1dbc557f408f6b6a59077f7b0",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1033_swire2_1",
+      "guid": "7dc0b922aa5cc2e49a146c660f103d8e",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -1393840413895975402
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 1727406421816125918
+    },
+    "size": 1024
+  },
+  "_index": 69,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_430_fartth_whirlwind#5",
+        "guid": "3b3774b63d90e4c4a802bc37f8a4430b",
+        "md5": "a36ce1404df3317308d332a87597c415"
+      },
+      {
+        "name": "char_4106_bryota_2",
+        "guid": "1f362946490b3b94685e17f1986d37fd",
+        "md5": "ed244c2841e4b0140d517cde1b89c627"
+      },
+      {
+        "name": "char_4071_peper_whirlwind#5",
+        "guid": "67b59c3e6e7b426409ef2c0e8d7f81cc",
+        "md5": "150a217a551ca39b9cf18711a55aa5fd"
+      },
+      {
+        "name": "char_4047_pianst_wild#8",
+        "guid": "221d5ea6a7bb72647ad63a375f320a75",
+        "md5": "e0972dc9bb851b7030e03d578a75b409"
+      },
+      {
+        "name": "char_4041_chnut_summer#12",
+        "guid": "0266138c4755851448e0c40c64777c96",
+        "md5": "ab61f4ead3823796bf5511f94ffe3a8a"
+      },
+      {
+        "name": "char_4025_aprot2_whirlwind#5",
+        "guid": "2ee32963e75ccd142b344bfd8ee5a194",
+        "md5": "f7b6b5768cd88a785092bf24f244024c"
+      },
+      {
+        "name": "char_377_gdglow_summer#12",
+        "guid": "9bbd98bc61423cc4cb3b576fa75973ce",
+        "md5": "0c0014c08691090b762d0fb661397f90"
+      },
+      {
+        "name": "char_362_saga_sale#9",
+        "guid": "838e04bb576182a4285fdab60f09f868",
+        "md5": "fb9d43769e6b15f5b7d6a4ff1ae148d2"
+      },
+      {
+        "name": "char_1033_swire2_2",
+        "guid": "f0cdaec1dbc557f408f6b6a59077f7b0",
+        "md5": "156493dfa532fe328b7f2d069226561c"
+      },
+      {
+        "name": "char_1033_swire2_1",
+        "guid": "7dc0b922aa5cc2e49a146c660f103d8e",
+        "md5": "21a325150ad6bda53d5609e6307d7f2f"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#69",
+        "guid": "ac5b8052fa52bb6419c10a9acac87e62",
+        "md5": "9566818ec3f7b3f0c096be0b1309bc35"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#69a",
+        "guid": "e94b16acd95f3644cb1756a5f81f7eac",
+        "md5": "45f5a4519bfa8237d52a568e2e33373b"
+      }
+    ]
+  }
+}

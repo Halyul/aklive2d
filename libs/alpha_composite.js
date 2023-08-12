@@ -28,4 +28,8 @@ export default class AlphaComposite {
     return await sharp(newImage).rotate(rotate).toBuffer()
   }
 
+  async toBuffer(filename, extractedDir) {
+    return await sharp(path.join(extractedDir, filename)).toBuffer()
+  }
+
 } 

@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import path from 'path'
-import { read, write, readSync } from './file.js'
+import { read, write, readSync, exists, copy } from './file.js'
 import AlphaComposite from './alpha_composite.js'
 
 export default class AssetsProcessor {
@@ -19,8 +19,13 @@ export default class AssetsProcessor {
     async process(extractedDir) {
         const fallback_name = __config.operators[this.#operatorName].fallback_name
         const fallbackFilename = `${fallback_name}.png`
-        const fallbackBuffer = await this.#alphaCompositer.process(fallbackFilename, `${path.parse(fallbackFilename).name}[alpha].png`, extractedDir)
-        await write(fallbackBuffer, path.join(this.#operatorSourceFolder, this.#operatorName, fallbackFilename))
+        const alphaCompositeFilename = `${path.parse(fallbackFilename).name}[alpha].png`
+        if (exists(path.join(extractedDir, alphaCompositeFilename))) {
+            const fallbackBuffer = await this.#alphaCompositer.process(fallbackFilename, alphaCompositeFilename, extractedDir)
+            await write(fallbackBuffer, path.join(this.#operatorSourceFolder, this.#operatorName, fallbackFilename))
+        } else {
+            await copy(path.join(extractedDir, fallbackFilename), path.join(this.#operatorSourceFolder, this.#operatorName, fallbackFilename))
+        }
         
         // generate portrait
         const portraitDir = path.join(this.#shareFolder, "portraits")
@@ -51,7 +56,13 @@ export default class AssetsProcessor {
         const dimensions = atlas.match(new RegExp(/^size:(.*),(.*)/gm))[0].replace('size: ', '').split(',')
         const matches = atlas.match(new RegExp(/(.*).png/g))
         for (const item of matches) {
-            const buffer = await this.#alphaCompositer.process(item, `${path.parse(item).name}[alpha].png`, extractedDir)
+            let buffer;
+            const alphaCompositeFilename = `${path.parse(item).name}[alpha].png`
+            if (exists(path.join(extractedDir, alphaCompositeFilename))) {
+                buffer = await this.#alphaCompositer.process(item, alphaCompositeFilename, extractedDir)
+            } else {
+                buffer = await this.#alphaCompositer.toBuffer(item, extractedDir)
+            }
             assetsJson[`./assets/${item}`] = BASE64_PNG_PREFIX + buffer.toString('base64')
         }
         assetsJson[`./assets/${skelFilename.replace('#', '%23')}`] = BASE64_BINARY_PREFIX + skel.toString('base64')

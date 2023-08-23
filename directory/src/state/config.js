@@ -1,4 +1,4 @@
-import CONFIG from '#/directory.json';
+import CONFIG from '@/_directory.json';
 
 let operators = []
 CONFIG.operators.forEach((item) => {

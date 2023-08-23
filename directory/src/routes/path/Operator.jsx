@@ -25,7 +25,7 @@ import Border from '@/component/border';
 import { useI18n } from '@/state/language';
 import Switch from '@/component/switch';
 import { atom, useAtom } from 'jotai'
-import BACKGROUNDS from '#/backgrounds.json';
+import BACKGROUNDS from '@/_backgrounds.json';
 
 const musicMapping = JSON.parse(import.meta.env.VITE_MUSIC_MAPPING)
 const getVoiceFoler = (lang) => {

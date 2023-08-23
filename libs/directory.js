@@ -8,6 +8,7 @@ import EnvGenerator from './env_generator.js'
 export default function ({ backgrounds, musicMapping }) {
   const extractedFolder = path.join(__projectRoot, __config.folder.operator, '_directory')
   const targetFolder = path.join(__projectRoot, __config.folder.release, __config.folder.directory);
+  const directoryAssetFolder = path.join(__projectRoot, 'directory', 'src');
   const sourceFolder = path.join(__projectRoot, __config.folder.operator);
   const filesToCopy = Object.keys(__config.operators)
   const directoryJson = {
@@ -87,10 +88,10 @@ export default function ({ backgrounds, musicMapping }) {
     }
   ]), path.join(__projectRoot, 'directory', '.env'))
 
-  writeSync(JSON.stringify(directoryJson, null), path.join(targetFolder, "directory.json"))
-  writeSync(JSON.stringify(versionJson, null), path.join(targetFolder, "version.json"))
-  writeSync(JSON.stringify(changelogsArray, null), path.join(targetFolder, "changelogs.json"))
-  writeSync(JSON.stringify(backgrounds, null), path.join(targetFolder, "backgrounds.json"))
+  writeSync(JSON.stringify(directoryJson, null), path.join(directoryAssetFolder, "_directory.json"))
+  writeSync(JSON.stringify(versionJson, null), path.join(directoryAssetFolder, "_version.json"))
+  writeSync(JSON.stringify(changelogsArray, null), path.join(directoryAssetFolder, "_changelogs.json"))
+  writeSync(JSON.stringify(backgrounds, null), path.join(directoryAssetFolder, "_backgrounds.json"))
   filesToCopy.forEach((key) => {
     copy(path.join(sourceFolder, key, 'assets.json'), path.join(targetFolder, `${__config.operators[key].filename}.json`))
     copy(path.join(sourceFolder, key, 'charword_table.json'), path.join(targetFolder, `voice_${key}.json`))

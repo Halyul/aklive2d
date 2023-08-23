@@ -7,7 +7,7 @@ import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import useUmami from '@/state/insights'
 import Border from '@/component/border';
-import CHANGELOGS from '#/changelogs.json'
+import CHANGELOGS from '@/_changelogs.json'
 
 export default function Changelogs() {
   // eslint-disable-next-line no-unused-vars

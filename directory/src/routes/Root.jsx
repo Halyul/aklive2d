@@ -29,7 +29,7 @@ import ReturnButton from '@/component/return_button';
 import Border from '@/component/border';
 import CharIcon from '@/component/char_icon';
 import ToTopButton from '@/component/totop_button';
-import VERSION from '#/version.json'
+import VERSION from '@/_version'
 
 const currentYear = new Date().getFullYear()
 

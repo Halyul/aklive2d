@@ -17,7 +17,6 @@ import {
 } from '@/state/language'
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
-import { useBackgrounds } from '@/state/background';
 import VoiceElement from '@/component/voice';
 import useUmami from '@/state/insights'
 import spine from '!/libs/spine-player'
@@ -26,6 +25,7 @@ import Border from '@/component/border';
 import { useI18n } from '@/state/language';
 import Switch from '@/component/switch';
 import { atom, useAtom } from 'jotai'
+import BACKGROUNDS from '#/backgrounds.json';
 
 const musicMapping = JSON.parse(import.meta.env.VITE_MUSIC_MAPPING)
 const getVoiceFoler = (lang) => {
@@ -34,7 +34,7 @@ const getVoiceFoler = (lang) => {
   return `${folderObject.main}/${voiceFolder.name}`
 }
 const defaultSpineAnimation = 'Idle'
-const backgroundAtom = atom(null)
+const backgroundAtom = atom(BACKGROUNDS[0])
 
 const getPartialName = (type, input) => {
   let part;
@@ -80,7 +80,6 @@ export default function Operator() {
   const { i18n } = useI18n()
   const [spinePlayer, setSpinePlayer] = useState(null)
   const [voiceLang, _setVoiceLang] = useState(null)
-  const { backgrounds } = useBackgrounds()
   const [currentBackground, setCurrentBackground] = useAtom(backgroundAtom)
   const [voiceConfig, setVoiceConfig] = useState(null)
   const [subtitleLang, setSubtitleLang] = useState(null)
@@ -113,10 +112,6 @@ export default function Operator() {
     setExtraArea([])
     setFastNavigation([])
   }, [setExtraArea, setFastNavigation])
-
-  useEffect(() => {
-    if (backgrounds.length > 0) setCurrentBackground(backgrounds[0])
-  }, [backgrounds, setCurrentBackground])
 
   useEffect(() => {
     setSpineData(null)
@@ -374,7 +369,7 @@ export default function Operator() {
       el: <MusicElement />
     }, {
       name: 'backgrounds',
-      options: backgrounds.map((item) => {
+      options: BACKGROUNDS.map((item) => {
         return {
           name: item,
           onClick: () => {

@@ -29,7 +29,6 @@ import ReturnButton from '@/component/return_button';
 import Border from '@/component/border';
 import CharIcon from '@/component/char_icon';
 import ToTopButton from '@/component/totop_button';
-import VERSION from '@/_version'
 
 const currentYear = new Date().getFullYear()
 
@@ -166,8 +165,6 @@ function FooterElement() {
           <span>Spine Runtimes © 2013 - 2019 Esoteric Software LLC</span>
           <span>Assets © 2017 - {currentYear} Arknights/Hypergryph Co., Ltd</span>
           <span>Source Code © 2021 - {currentYear} Halyul</span>
-          <span>Directory @ {VERSION.directory}</span>
-          <span>Showcase @ {VERSION.showcase}</span>
         </section>
       </footer>
     )

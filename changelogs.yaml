@@ -1,4 +1,6 @@
 showcase:
+  2023/08/23:
+    - Added Google Fonts for voice line display
   2023/08/12:
     - Updated voice for chongyue, passager_dream_in_a_moment, rosmontis_become_anew, skadi, and skadi_sublimation
     - Added eyjafjalla_the_hvit_aska, gavial_the_invincible_holiday_hd26, and goldenglow_summer_flowers_fa394
@@ -50,6 +52,9 @@ showcase:
   2021/05/26:
     - First commit
 directory:
+  2023/08/23:
+    - Use fixed data instead of fetching
+    - Added Google Fonts for proper font display
   2023/06/24:
     - Fixed _assets rebuilding issue
     - Added fast navigation menu

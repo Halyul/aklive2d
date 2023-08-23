@@ -11,7 +11,6 @@ import { write, rmdir, copy, writeSync, copyDir, readdirSync, exists } from './l
 import AssetsProcessor from './libs/assets_processor.js'
 import init from './libs/initializer.js'
 import directory from './libs/directory.js'
-import { increase } from './libs/version.js';
 import Background from './libs/background.js'
 import CharwordTable from './libs/charword_table.js';
 import Music from './libs/music.js';
@@ -39,7 +38,6 @@ async function main() {
       fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
       return
     case 'build-all':
-      __config.version.showcase = increase(__projectRoot)
     case 'charwords:build':
       for (const [key,] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)

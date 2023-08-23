@@ -152,7 +152,7 @@ class ViteRunner {
     }
     const directoryDir = path.resolve(__projectRoot, 'directory')
     this.#mode = process.argv[3]
-    const publicDir = path.resolve(__projectRoot, this.#globalConfig.folder.release)
+    // const publicDir = path.resolve(__projectRoot, this.#globalConfig.folder.release)
     const assetsDir = '_directory'
     return {
       ...this.#baseViteConfig,

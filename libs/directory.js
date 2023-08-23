@@ -33,7 +33,6 @@ export default function ({ backgrounds, musicMapping }) {
         }, {}))
       .sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date)),
   }
-  const versionJson = __config.version
 
   const changelogs = read(path.join(__projectRoot, 'changelogs.yaml'))
   const changelogsArray = Object.keys(changelogs).reduce((acc, cur) => {
@@ -89,7 +88,6 @@ export default function ({ backgrounds, musicMapping }) {
   ]), path.join(__projectRoot, 'directory', '.env'))
 
   writeSync(JSON.stringify(directoryJson, null), path.join(directoryAssetFolder, "_directory.json"))
-  writeSync(JSON.stringify(versionJson, null), path.join(directoryAssetFolder, "_version.json"))
   writeSync(JSON.stringify(changelogsArray, null), path.join(directoryAssetFolder, "_changelogs.json"))
   writeSync(JSON.stringify(backgrounds, null), path.join(directoryAssetFolder, "_backgrounds.json"))
   filesToCopy.forEach((key) => {

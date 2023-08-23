@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import assert from 'assert'
 import react from '@vitejs/plugin-react-swc'
 import getConfig from './libs/config.js'
@@ -18,6 +18,7 @@ class ViteRunner {
   #globalConfig = getConfig()
   #mode
   #baseViteConfig = {
+    plugins: [splitVendorChunkPlugin()],
     configFile: false,
     base: "",
     server: {
@@ -173,7 +174,6 @@ class ViteRunner {
         alias: {
           '@': path.resolve(directoryDir, './src'),
           '!': path.resolve(__projectRoot, './src'),
-          '#': path.resolve(publicDir, this.#globalConfig.folder.directory),
         },
       },
       build: {
@@ -181,11 +181,15 @@ class ViteRunner {
         outDir: path.resolve(__projectRoot, this.#globalConfig.folder.release),
         rollupOptions: {
           output: {
-            entryFileNames: `${assetsDir}/[name].js`,
-            chunkFileNames: `${assetsDir}/[name].js`,
-            assetFileNames: `${assetsDir}/[name].[ext]`,
-            manualChunks: {
-              'react': ['react', 'react-dom', 'react-router-dom'],
+            entryFileNames: `${assetsDir}/[name]-[hash:8].js`,
+            chunkFileNames: `${assetsDir}/[name]-[hash:8].js`,
+            assetFileNames: `${assetsDir}/[name]-[hash:8].[ext]`,
+            manualChunks: (id) => {
+              if (id.includes("node_modules")) {
+                return "vendor"; // all other package goes here
+              } else if (id.includes("directory/src") && id.includes(".json")) {
+                return "assets";
+              }
             },
           }
         }

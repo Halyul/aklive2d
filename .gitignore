@@ -132,3 +132,4 @@ dist
 # custom
 release/*
 spine-runtimes/*
+_*.json

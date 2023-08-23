@@ -9,8 +9,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    if: "contains(github.event.head_commit.message, 'release')"
-
     permissions:
       contents: write
 
@@ -26,10 +24,6 @@ jobs:
         run: pnpm run build-all
       - name: Build directory
         run: pnpm run vite:directory:build
-      - name: Commit version changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "chore(aklive2d): auto update build versions"
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:

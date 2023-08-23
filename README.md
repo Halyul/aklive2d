@@ -6,9 +6,9 @@ A project that builds showcase webpage for Arknights Live2D-equipped operators. 
 
 Version: `2023 Summer Fest`
 
-- [ ] Eyjafjalla the Hvít Aska
-- [ ] Holiday / Gavial the Invincible
-- [ ] Summer Flowers / Goldenglow
+- [x] ~~Eyjafjalla the Hvít Aska~~
+- [x] ~~Holiday / Gavial the Invincible~~
+- [x] ~~Summer Flowers / Goldenglow~~
 
 ## Softwares
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.

@@ -289,8 +289,14 @@ async function main() {
     const str = `${__error.length} error${__error.length > 1 ? 's were' : ' was'} found:\n${__error.join('\n')}`
     throw new Error(str)
   } else {
-    for (const OPERATOR_NAME of OPERATOR_NAMES) {
-      fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAME])
+    switch (op) {
+      case 'charwords:build':
+        return
+      default:
+        for (const OPERATOR_NAME of OPERATOR_NAMES) {
+          fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAME])
+        }
+        return
     }
   }
 }

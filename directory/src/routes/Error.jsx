@@ -75,7 +75,7 @@ export default function Error() {
         spinePlayer.animationState.addAnimation(0, "Relax", true, 0);
       }
     }
-  }, [voiceOn])
+  }, [spinePlayer, voiceOn])
 
   useEffect(() => {
     voiceOnRef.current = voiceOn

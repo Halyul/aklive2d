@@ -49,10 +49,6 @@ class Evalable {
     return this.#step(location, varName)
   }
 
-  version(prefix, suffix) {
-    return `${prefix}${__config.version.showcase}${suffix}`
-  }
-
   #step(location, varName) {
     let content = this.#config
     if (location === 'assets') content = this.#assets

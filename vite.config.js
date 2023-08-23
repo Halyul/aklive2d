@@ -6,7 +6,6 @@ import assert from 'assert'
 import react from '@vitejs/plugin-react-swc'
 import getConfig from './libs/config.js'
 import { rmdir } from './libs/file.js'
-import { increase } from './libs/version.js'
 import Music from './libs/music.js';
 import Background from './libs/background.js'
 import directory from './libs/directory.js'
@@ -37,7 +36,6 @@ class ViteRunner {
       case 'directory':
         result = {
           data: this.#directoryConfig,
-          versionDir: path.join(__projectRoot, "directory"),
         }
         const op = temp[2] || process.argv[3]
         if (op !== 'preview') {
@@ -51,7 +49,6 @@ class ViteRunner {
       case 'preview':
         result = {
           data: this.#operatorConfig,
-          versionDir: path.join(__projectRoot),
         }
         break
       default:
@@ -69,7 +66,6 @@ class ViteRunner {
         this.#dev(viteConfig)
         break
       case 'build':
-        this.#globalConfig.version.showcase = increase(configObj.versionDir)
       case 'build-all':
         this.#build(viteConfig)
         break
@@ -147,7 +143,6 @@ class ViteRunner {
 
   get #directoryConfig() {
     if (process.env.npm_lifecycle_event === 'vite:directory:build') {
-      this.#globalConfig.version.directory = increase(path.join(__projectRoot, "directory"))
       global.__config = this.#globalConfig
     }
     const directoryDir = path.resolve(__projectRoot, 'directory')

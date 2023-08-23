@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap";
 @import "https://fonts.cdnfonts.com/css/bender";
 @import "https://fonts.cdnfonts.com/css/geometos";
 
@@ -45,7 +45,7 @@
 }
 
 :root {
-  font-family: Geometos, "Noto Sans SC", sans-serif;
+  font-family: Geometos, 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans', sans-serif;
   font-size: 16px;
   line-height: 1.2em;
   font-weight: 400;

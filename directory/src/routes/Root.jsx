@@ -11,27 +11,25 @@ import {
   NavLink,
   useNavigate,
   ScrollRestoration,
-  useLocation,
 } from "react-router-dom";
 import classes from '@/scss/root/Root.module.scss'
 import header from '@/scss/root/header.module.scss'
 import footer from '@/scss/root/footer.module.scss'
 import drawer from '@/scss/root/drawer.module.scss'
 import routes from '@/routes'
-import { useConfig } from '@/state/config';
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import {
   useI18n,
   useLanguage,
 } from '@/state/language'
-import { useBackgrounds } from '@/state/background';
 import Dropdown from '@/component/dropdown';
 import Popup from '@/component/popup';
 import ReturnButton from '@/component/return_button';
 import Border from '@/component/border';
 import CharIcon from '@/component/char_icon';
 import ToTopButton from '@/component/totop_button';
+import VERSION from '#/version.json'
 
 const currentYear = new Date().getFullYear()
 
@@ -46,8 +44,6 @@ export default function Root() {
   const {
     extraArea,
   } = useAppbar()
-  const { fetchConfig, fetchVersion } = useConfig()
-  const { fetchBackgrounds } = useBackgrounds()
 
   const headerTabs = useMemo(() => {
     return (
@@ -73,12 +69,6 @@ export default function Root() {
       setCurrentTab(null)
     }
   }, [setCurrentTab, tabs])
-
-  useEffect(() => {
-    fetchConfig()
-    fetchVersion()
-    fetchBackgrounds()
-  }, [fetchBackgrounds, fetchConfig, fetchVersion])
 
   return (
     <>
@@ -141,7 +131,6 @@ export default function Root() {
 
 function FooterElement() {
   const { i18n } = useI18n()
-  const { version } = useConfig()
   const navigate = useNavigate()
 
   return useMemo(() => {
@@ -177,12 +166,12 @@ function FooterElement() {
           <span>Spine Runtimes © 2013 - 2019 Esoteric Software LLC</span>
           <span>Assets © 2017 - {currentYear} Arknights/Hypergryph Co., Ltd</span>
           <span>Source Code © 2021 - {currentYear} Halyul</span>
-          <span>Directory @ {version.directory}</span>
-          <span>Showcase @ {version.showcase}</span>
+          <span>Directory @ {VERSION.directory}</span>
+          <span>Showcase @ {VERSION.showcase}</span>
         </section>
       </footer>
     )
-  }, [i18n, navigate, version.directory, version.showcase])
+  }, [i18n, navigate])
 }
 
 function DrawerDestinations({ toggleDrawer }) {

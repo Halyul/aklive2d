@@ -1,5 +1,4 @@
 import React, {
-  useState,
   useEffect,
   useMemo
 } from 'react'
@@ -8,6 +7,7 @@ import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import useUmami from '@/state/insights'
 import Border from '@/component/border';
+import CHANGELOGS from '#/changelogs.json'
 
 export default function Changelogs() {
   // eslint-disable-next-line no-unused-vars
@@ -22,29 +22,25 @@ export default function Changelogs() {
   const {
     setExtraArea,
   } = useAppbar()
-  const [changelogs, setChangelogs] = useState([])
 
   useEffect(() => {
     setTitle('changelogs')
     setExtraArea([])
     setFastNavigation([])
     setHeaderIcon(null)
-    fetch('/_assets/changelogs.json').then(res => res.json()).then(data => {
-      setChangelogs(data)
-    })
   }, [setExtraArea, setFastNavigation, setHeaderIcon, setTitle])
 
   useEffect(() => {
-    setTabs(changelogs.map((item) => {
+    setTabs(CHANGELOGS.map((item) => {
       return {
         key: item[0].key
       }
     }))
-  }, [changelogs, setTabs])
+  }, [setTabs])
 
   const content = useMemo(() => {
     return (
-      changelogs.map((v) => {
+      CHANGELOGS.map((v) => {
         return (
           v.map((item) => {
             return (
@@ -68,7 +64,7 @@ export default function Changelogs() {
         )
       })
     )
-  }, [changelogs, currentTab])
+  }, [currentTab])
 
   return (
     <section>

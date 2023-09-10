@@ -47,12 +47,24 @@
       "rotate": 0
     },
     {
-      "name": "char_4047_pianst_wild#8",
-      "guid": "221d5ea6a7bb72647ad63a375f320a75",
+      "name": "char_4054_malist_summer#14",
+      "guid": "e28db3f1650e06e46b92bc536c4cc1fd",
       "atlas": 0,
       "rect": {
         "x": 182,
         "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4047_pianst_wild#8",
+      "guid": "221d5ea6a7bb72647ad63a375f320a75",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -64,7 +76,7 @@
       "atlas": 0,
       "rect": {
         "x": 364,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -75,7 +87,19 @@
       "guid": "2ee32963e75ccd142b344bfd8ee5a194",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4014_lunacu_yun#1",
+      "guid": "33539d053dc2eaf438fb1df57b5b22f1",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
         "y": 362,
         "w": 180,
         "h": 360
@@ -87,7 +111,7 @@
       "guid": "9bbd98bc61423cc4cb3b576fa75973ce",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 0,
         "w": 180,
         "h": 360
@@ -99,7 +123,7 @@
       "guid": "838e04bb576182a4285fdab60f09f868",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 362,
         "w": 180,
         "h": 360
@@ -111,24 +135,24 @@
       "guid": "f0cdaec1dbc557f408f6b6a59077f7b0",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 0,
-        "w": 180,
-        "h": 360
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     },
     {
       "name": "char_1033_swire2_1",
       "guid": "7dc0b922aa5cc2e49a146c660f103d8e",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 362,
-        "w": 180,
-        "h": 360
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -162,6 +186,11 @@
         "md5": "150a217a551ca39b9cf18711a55aa5fd"
       },
       {
+        "name": "char_4054_malist_summer#14",
+        "guid": "e28db3f1650e06e46b92bc536c4cc1fd",
+        "md5": "49c81d8635312f2cec7ae492fc3fde59"
+      },
+      {
         "name": "char_4047_pianst_wild#8",
         "guid": "221d5ea6a7bb72647ad63a375f320a75",
         "md5": "e0972dc9bb851b7030e03d578a75b409"
@@ -175,6 +204,11 @@
         "name": "char_4025_aprot2_whirlwind#5",
         "guid": "2ee32963e75ccd142b344bfd8ee5a194",
         "md5": "f7b6b5768cd88a785092bf24f244024c"
+      },
+      {
+        "name": "char_4014_lunacu_yun#1",
+        "guid": "33539d053dc2eaf438fb1df57b5b22f1",
+        "md5": "d17c98f39e338946b39c9ebe382af6d0"
       },
       {
         "name": "char_377_gdglow_summer#12",
@@ -201,14 +235,14 @@
       {
         "name": "portraits#69",
         "guid": "ac5b8052fa52bb6419c10a9acac87e62",
-        "md5": "9566818ec3f7b3f0c096be0b1309bc35"
+        "md5": "f3b8c0a3693247f258918f6eeb43d05c"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#69a",
         "guid": "e94b16acd95f3644cb1756a5f81f7eac",
-        "md5": "45f5a4519bfa8237d52a568e2e33373b"
+        "md5": "3d4103a562791e62cd9c35b6949bfc12"
       }
     ]
   }

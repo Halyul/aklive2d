@@ -3287,6 +3287,14 @@
       "atlas": 68
     },
     {
+      "name": "char_348_ceylon_summer#13",
+      "atlas": 68
+    },
+    {
+      "name": "char_2012_typhon_wild#9",
+      "atlas": 68
+    },
+    {
       "name": "char_151_myrtle_summer#12",
       "atlas": 68
     },
@@ -3323,6 +3331,10 @@
       "atlas": 69
     },
     {
+      "name": "char_4054_malist_summer#14",
+      "atlas": 69
+    },
+    {
       "name": "char_4047_pianst_wild#8",
       "atlas": 69
     },
@@ -3332,6 +3344,10 @@
     },
     {
       "name": "char_4025_aprot2_whirlwind#5",
+      "atlas": 69
+    },
+    {
+      "name": "char_4014_lunacu_yun#1",
       "atlas": 69
     },
     {
@@ -3349,6 +3365,42 @@
     {
       "name": "char_1033_swire2_1",
       "atlas": 69
+    },
+    {
+      "name": "char_4105_almond_2",
+      "atlas": 70
+    },
+    {
+      "name": "char_4105_almond_1",
+      "atlas": 70
+    },
+    {
+      "name": "char_4104_coldst_2",
+      "atlas": 70
+    },
+    {
+      "name": "char_4104_coldst_1",
+      "atlas": 70
+    },
+    {
+      "name": "char_4082_qiubai_ncg#1",
+      "atlas": 70
+    },
+    {
+      "name": "char_2023_ling_ncg#1",
+      "atlas": 70
+    },
+    {
+      "name": "char_106_franka_ncg#1",
+      "atlas": 70
+    },
+    {
+      "name": "char_1034_jesca2_2",
+      "atlas": 70
+    },
+    {
+      "name": "char_1034_jesca2_1",
+      "atlas": 70
     }
   ],
   "_atlases": [
@@ -3421,7 +3473,8 @@
     "Arts/CharPortraits/portraits#66",
     "Arts/CharPortraits/portraits#67",
     "Arts/CharPortraits/portraits#68",
-    "Arts/CharPortraits/portraits#69"
+    "Arts/CharPortraits/portraits#69",
+    "Arts/CharPortraits/portraits#70"
   ],
   "_inputSpriteDir": "Assets/Torappu/Arts/CharPortraits",
   "_outputAtlasDir": "Assets/Torappu/Arts/CharPortraits/[X]Atlas",

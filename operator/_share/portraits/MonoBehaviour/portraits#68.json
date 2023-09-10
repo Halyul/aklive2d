@@ -59,11 +59,35 @@
       "rotate": 0
     },
     {
+      "name": "char_348_ceylon_summer#13",
+      "guid": "870303ccf09f2fe44bca2153e404b3c4",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_2012_typhon_wild#9",
+      "guid": "6f30c586a5548d148934e0f14a3f691e",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
       "name": "char_151_myrtle_summer#12",
       "guid": "7db57aa402eda8b49bea9d898f129d90",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 546,
         "y": 0,
         "w": 180,
         "h": 360
@@ -75,7 +99,7 @@
       "guid": "3dee7bbba85ae3840a8dcf6d1cba2d4e",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 546,
         "y": 362,
         "w": 180,
         "h": 360
@@ -87,7 +111,7 @@
       "guid": "27704decc6a6e0145a566069c98508ea",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 0,
         "w": 180,
         "h": 360
@@ -99,7 +123,7 @@
       "guid": "b281fe35dd2d35343a5d270695657aef",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 362,
         "w": 180,
         "h": 360
@@ -111,24 +135,24 @@
       "guid": "fefa9cff12d5fbc45ab42b2eb91c5137",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 0,
-        "w": 180,
-        "h": 360
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     },
     {
       "name": "char_1001_amiya2_casc#1",
       "guid": "72bc34a70cea8bb47bcda8e66423ecdb",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 362,
-        "w": 180,
-        "h": 360
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -167,6 +191,16 @@
         "md5": "9819e285e415d4c6a305974cf4e6cd38"
       },
       {
+        "name": "char_348_ceylon_summer#13",
+        "guid": "870303ccf09f2fe44bca2153e404b3c4",
+        "md5": "44d86c5bc79a49e17a22d5ba3307a3b2"
+      },
+      {
+        "name": "char_2012_typhon_wild#9",
+        "guid": "6f30c586a5548d148934e0f14a3f691e",
+        "md5": "47ce480cfbe67bf2a7b6a12b45277adf"
+      },
+      {
         "name": "char_151_myrtle_summer#12",
         "guid": "7db57aa402eda8b49bea9d898f129d90",
         "md5": "c2295d7ce7f5634d421f20ae432738d7"
@@ -201,14 +235,14 @@
       {
         "name": "portraits#68",
         "guid": "4fc357f7d8f6cd0468903e690056b052",
-        "md5": "61d0145b35bf940e376e411cb509b989"
+        "md5": "4cc2edf382de31ab05c154a98855b629"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#68a",
         "guid": "fd62d433ad6fd1d429cf7c8f02381e37",
-        "md5": "7780e3f06621f533f2c25ebc4789045a"
+        "md5": "f7fb0b084dece4ad363c64120fc8e7c0"
       }
     ]
   }

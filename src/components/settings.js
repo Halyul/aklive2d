@@ -73,13 +73,6 @@ export default class Settings {
     if ((new URLSearchParams(window.location.search)).has("settings") || import.meta.env.MODE === 'development') {
       this.open()
     }
-    fetch('/project.json').then(response => response.json()).then(data => {
-      if (data.aklive2d) {
-        this.open()
-      }
-    }).catch(e => {
-      console.log(e)
-    })
   }
 
   insights(isWallpaperEngine, doNotTrack) {

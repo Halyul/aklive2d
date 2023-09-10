@@ -432,7 +432,7 @@ export default function Operator() {
             <section className={classes['styled-selection']}>
               <Link
                 reloadDocument
-                to={`./index.html`}
+                to={`./index.html?settings`}
                 target='_blank'
                 style={{
                   color: config?.color

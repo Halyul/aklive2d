@@ -17,6 +17,7 @@ import header from '@/scss/root/header.module.scss'
 import footer from '@/scss/root/footer.module.scss'
 import drawer from '@/scss/root/drawer.module.scss'
 import routes from '@/routes'
+import { useConfig } from '@/state/config';
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import {
@@ -43,6 +44,7 @@ export default function Root() {
   const {
     extraArea,
   } = useAppbar()
+  const { fetchOfficalUpdate } = useConfig()
 
   const headerTabs = useMemo(() => {
     return (
@@ -68,6 +70,10 @@ export default function Root() {
       setCurrentTab(null)
     }
   }, [setCurrentTab, tabs])
+
+  useEffect(() => {
+    fetchOfficalUpdate()
+  }, [fetchOfficalUpdate])
 
   return (
     <>

@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import classes from '@/scss/home/Home.module.scss'
 import { useConfig } from '@/state/config';
+import { useI18n } from '@/state/language';
 import {
   useLanguage
 } from '@/state/language'
@@ -37,7 +38,8 @@ export default function Home() {
     setHeaderIcon,
     setFastNavigation
   } = useHeader()
-  const { config, operators } = useConfig()
+  const { config, operators, officalUpdate } = useConfig()
+  const { i18n } = useI18n()
   const [content, setContent] = useState([])
   const [voiceOn] = useAtom(voiceOnAtom)
   const [voiceSrc, setVoiceSrc] = useState(null)
@@ -163,6 +165,29 @@ export default function Home() {
 
   return (
     <section>
+      {
+        officalUpdate.length > operators.length && (
+          <section>
+            <section className={classes['offical-update']}>
+              <section className={classes.info}>
+                <section className={classes.content}>
+                  <section className={classes.text}>{officalUpdate.length - operators.length} {i18n("new_op_wait_to_update")}</section>
+                  {officalUpdate[officalUpdate.latest].map((entry, index) => {
+                      return (
+                        <section key={index} className={classes.list}>
+                          {`${i18n(entry.type)}: ${entry.codename[language]}`}
+                        </section>
+                      )
+                    })}
+                </section>
+                
+              </section>
+              <section className={classes.date}>{officalUpdate.latest}</section>
+            </section>
+            <Border />
+          </section>
+        )
+      }
       {
         content.map((v) => {
           const length = v.filter((v) => isShown(v.type)).length

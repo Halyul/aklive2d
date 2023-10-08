@@ -69,6 +69,13 @@
       "request": "launch",
       "command": "pnpm run music",
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: offical_update",
+      "request": "launch",
+      "command": "pnpm run offical_update",
+      "cwd": "${workspaceFolder}"
     }
   ]
 }

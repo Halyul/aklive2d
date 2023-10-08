@@ -18,7 +18,8 @@
     "vite:preview": "vite preview",
     "vite:directory:dev": "vite dev",
     "vite:directory:build": "vite build",
-    "vite:directory:preview": "vite preview"
+    "vite:directory:preview": "vite preview",
+    "offical_update": "node aklive2d offical_update"
   },
   "devDependencies": {
     "@perfsee/rollup": "^1.8.4",

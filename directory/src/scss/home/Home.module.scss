@@ -1,1 +1,26 @@
 @use '@/scss/_page_base.scss';
+
+.offical-update {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1rem;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    word-break: break-word;
+    margin-top: 1.25rem;
+    .content {
+      font-size: 1.5rem;
+      .text {
+        padding-bottom: 1rem;
+      }
+    }
+    .list {
+      display: list-item;
+      margin-left: 2.5rem;
+    }
+  }
+}

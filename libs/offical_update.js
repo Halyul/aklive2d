@@ -10,13 +10,19 @@ export default async function () {
     const dom = new jsdom.JSDOM(html_text);
     const rows = dom.window.document.body.querySelector(".dynList").querySelectorAll(".row")
 
-    const dict = {}
+    const dict = {
+        length: 0
+    }
 
     for (const row of rows) {
         const date = row.querySelector(".date").textContent.trim()
         const operators = []
 
         const charCards = row.querySelectorAll(".charCard")
+
+        if (dict.length === 0) {
+            dict.latest = date
+        }
 
         for (const charCard of charCards) {
             const color = charCard.style.color
@@ -40,6 +46,7 @@ export default async function () {
                 codename,
                 type
             })
+            dict.length++
         }
         dict[date] = operators
     }

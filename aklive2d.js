@@ -14,6 +14,7 @@ import directory from './libs/directory.js'
 import Background from './libs/background.js'
 import CharwordTable from './libs/charword_table.js';
 import Music from './libs/music.js';
+import officalUpdate from './libs/offical_update.js';
 
 async function main() {
   global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
@@ -52,6 +53,9 @@ async function main() {
       process.exit(0)
     case 'music':
       await musicTable.process()
+      process.exit(0)
+    case 'offical_update':
+      await officalUpdate()
       process.exit(0)
     default:
       break

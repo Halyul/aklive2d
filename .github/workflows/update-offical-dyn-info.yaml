@@ -1,0 +1,28 @@
+name: Update Offical Dyn Info
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - name: Install dependencies
+        run: pnpm i
+      - name: Update offical dyn info
+        run: pnpm run offical_update
+      - name: Commit changes if any
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(offical update): auto update"

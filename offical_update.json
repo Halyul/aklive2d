@@ -1,0 +1,304 @@
+{
+    "2023/08": [
+        {
+            "color": "rgb(183, 227, 243)",
+            "codename": {
+                "zh-CN": "崖高梦远 · 令",
+                "en-US": "TOWERING IS CLIFF OF NOSTALGIA"
+            },
+            "type": "skin"
+        }
+    ],
+    "2023/07": [
+        {
+            "color": "rgb(163, 220, 247)",
+            "codename": {
+                "zh-CN": "悠然假日 HD26 · 百炼嘉维尔",
+                "en-US": "GAVIAL THE INVINCIBLE HD26"
+            },
+            "type": "skin"
+        },
+        {
+            "color": "rgb(34, 187, 255)",
+            "codename": {
+                "zh-CN": "纯烬艾雅法拉",
+                "en-US": "EYJAFJALLA THE HVÍT ASKA"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgba(253, 188, 208, 0.97)",
+            "codename": {
+                "zh-CN": "夏卉 FA394 · 澄闪",
+                "en-US": "SUMMER FLOWERS FA394"
+            },
+            "type": "skin"
+        }
+    ],
+    "2023/04": [
+        {
+            "color": "rgb(118, 165, 185)",
+            "codename": {
+                "zh-CN": "残余 · 凯尔希",
+                "en-US": "REMNANT"
+            },
+            "type": "skin"
+        },
+        {
+            "color": "rgb(146, 212, 143)",
+            "codename": {
+                "zh-CN": "缪尔赛思",
+                "en-US": "MUELSYSE"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgb(140, 7, 7)",
+            "codename": {
+                "zh-CN": "生而为一 · 归溟幽灵鲨",
+                "en-US": "BORN AS ONE"
+            },
+            "type": "skin"
+        },
+        {
+            "color": "rgb(6, 34, 129)",
+            "codename": {
+                "zh-CN": "万重山 · 假日威龙陈",
+                "en-US": "TEN THOUSAND MOUNTAINS"
+            },
+            "type": "skin"
+        }
+    ],
+    "2023/02": [
+        {
+            "color": "rgb(145, 220, 253)",
+            "codename": {
+                "zh-CN": "字句中的雪原 · 鸿雪",
+                "en-US": "SNOWY PLAINS IN WORDS"
+            },
+            "type": "skin"
+        }
+    ],
+    "2023/01": [
+        {
+            "color": "rgb(255, 133, 34)",
+            "codename": {
+                "zh-CN": "重岳",
+                "en-US": "CHONGYUE"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgb(37, 148, 197)",
+            "codename": {
+                "zh-CN": "濯缨 · 令",
+                "en-US": "IT DOES WASH THE STRINGS"
+            },
+            "type": "skin"
+        }
+    ],
+    "2022/12": [
+        {
+            "color": "rgb(156, 210, 246)",
+            "codename": {
+                "zh-CN": "夏日餮宴 · 水月",
+                "en-US": "SUMMER FEAST"
+            },
+            "type": "skin"
+        }
+    ],
+    "2022/11": [
+        {
+            "color": "rgba(34, 37, 255, 0.9)",
+            "codename": {
+                "zh-CN": "缄默德克萨斯",
+                "en-US": "TEXAS THE OMERTOSA"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgb(231, 166, 144)",
+            "codename": {
+                "zh-CN": "今昔须臾之梦 · 异客",
+                "en-US": "DREAM IN A MOMENT"
+            },
+            "type": "skin"
+        },
+        {
+            "color": "rgb(141, 213, 228)",
+            "codename": {
+                "zh-CN": "复现荣光 · 耀骑士临光",
+                "en-US": "RELIGHT"
+            },
+            "type": "skin"
+        },
+        {
+            "color": "rgb(116, 177, 222)",
+            "codename": {
+                "zh-CN": "拥抱新生 · 迷迭香",
+                "en-US": "BECOME ANEW"
+            },
+            "type": "skin"
+        }
+    ],
+    "2022/10": [
+        {
+            "color": "rgb(206, 0, 0)",
+            "codename": {
+                "zh-CN": "手到牌来 · 老鲤",
+                "en-US": "TRUST YOUR EYES"
+            },
+            "type": "skin"
+        }
+    ],
+    "2022/08": [
+        {
+            "color": "rgb(29, 185, 53)",
+            "codename": {
+                "zh-CN": "百炼嘉维尔",
+                "en-US": "GAVIAL THE INVINCIBLE"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgb(177, 226, 249)",
+            "codename": {
+                "zh-CN": "缤纷奇境 CW03 · 史尔特尔",
+                "en-US": "COLORFUL WONDERLAND CW03"
+            },
+            "type": "skin"
+        }
+    ],
+    "2022/05": [
+        {
+            "color": "rgba(14, 124, 203, 0.86)",
+            "codename": {
+                "zh-CN": "归溟幽灵鲨",
+                "en-US": "SPECTER THE UNCHAINED"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgba(95, 116, 187, 0.74)",
+            "codename": {
+                "zh-CN": "升华 · 浊心斯卡蒂",
+                "en-US": "SUBLIMATION"
+            },
+            "type": "skin"
+        }
+    ],
+    "2022/04": [
+        {
+            "color": "rgb(158, 2, 2)",
+            "codename": {
+                "zh-CN": "焦点 · 傀影",
+                "en-US": "FOCUS"
+            },
+            "type": "skin"
+        }
+    ],
+    "2022/01": [
+        {
+            "color": "rgb(15, 206, 216)",
+            "codename": {
+                "zh-CN": "令",
+                "en-US": "LING"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgb(78, 201, 187)",
+            "codename": {
+                "zh-CN": "染尘烟 · 夕",
+                "en-US": "EVERYTHING IS A MIRACLE"
+            },
+            "type": "skin"
+        }
+    ],
+    "2021/11": [
+        {
+            "color": "rgba(253, 236, 189, 0.95)",
+            "codename": {
+                "zh-CN": "耀骑士临光",
+                "en-US": "NEARL THE RADIANT KNIGHT"
+            },
+            "type": "elite2"
+        }
+    ],
+    "2021/08": [
+        {
+            "color": "rgba(14, 126, 239, 0.85)",
+            "codename": {
+                "zh-CN": "假日威龙陈",
+                "en-US": "CH'EN THE HOLUNGDAY"
+            },
+            "type": "elite2"
+        }
+    ],
+    "2021/05": [
+        {
+            "color": "rgb(226, 96, 96)",
+            "codename": {
+                "zh-CN": "浊心斯卡蒂",
+                "en-US": "SKADI THE CORRUPTING HEART"
+            },
+            "type": "elite2"
+        }
+    ],
+    "2021/02": [
+        {
+            "color": "rgb(9, 212, 208)",
+            "codename": {
+                "zh-CN": "夕",
+                "en-US": "DUSK"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgb(187, 163, 106)",
+            "codename": {
+                "zh-CN": "乐逍遥 · 年",
+                "en-US": "UNFETTERED FREEDOM"
+            },
+            "type": "skin"
+        }
+    ],
+    "2020/11": [
+        {
+            "color": "rgb(23, 210, 236)",
+            "codename": {
+                "zh-CN": "迷迭香",
+                "en-US": "ROSMONTIS"
+            },
+            "type": "elite2"
+        },
+        {
+            "color": "rgba(0, 0, 0, 0.83)",
+            "codename": {
+                "zh-CN": "恍惚 · W",
+                "en-US": "WONDER"
+            },
+            "type": "skin"
+        }
+    ],
+    "2020/05": [
+        {
+            "color": "rgb(228, 54, 56)",
+            "codename": {
+                "zh-CN": "W",
+                "en-US": "W"
+            },
+            "type": "elite2"
+        }
+    ],
+    "2020/01": [
+        {
+            "color": "rgb(255, 48, 0)",
+            "codename": {
+                "zh-CN": "年",
+                "en-US": "NIAN"
+            },
+            "type": "elite2"
+        }
+    ]
+}

@@ -22,34 +22,35 @@
   },
   "devDependencies": {
     "@perfsee/rollup": "^1.8.4",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react-swc": "^3.3.2",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.47.0",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.11",
+    "@vitejs/plugin-react-swc": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.31",
     "prop-types": "^15.8.1",
-    "rollup": "^3.28.1",
-    "sass": "^1.66.1",
+    "rollup": "^3.29.4",
+    "sass": "^1.69.0",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^30.0.1",
     "stylelint-config-standard-scss": "^7.0.1",
-    "vite": "^4.4.9"
+    "vite": "^4.4.11"
   },
   "dependencies": {
     "@parcellab/react-use-umami": "^2.0.1",
     "dotenv": "^16.3.1",
-    "jotai": "^2.3.1",
+    "jotai": "^2.4.3",
+    "jsdom": "^22.1.0",
     "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-refresh": "^0.14.0",
-    "react-router-dom": "^6.15.0",
+    "react-router-dom": "^6.16.0",
     "react-simple-typewriter": "^5.0.1",
     "reset-css": "^5.0.2",
     "sharp": "^0.31.3",
-    "yaml": "^2.3.1"
+    "yaml": "^2.3.2"
   }
 }

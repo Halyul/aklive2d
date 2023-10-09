@@ -38,7 +38,7 @@ export default async function () {
                     type = "skin"
                     break;
                 case "#skin-type-icon-promotion2":
-                    type = "elite2"
+                    type = "operator"
                     break;
             }
             operators.push({

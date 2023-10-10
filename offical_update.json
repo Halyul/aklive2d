@@ -26,7 +26,7 @@
                 "zh-CN": "纯烬艾雅法拉",
                 "en-US": "EYJAFJALLA THE HVÍT ASKA"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgba(253, 188, 208, 0.97)",
@@ -52,7 +52,7 @@
                 "zh-CN": "缪尔赛思",
                 "en-US": "MUELSYSE"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgb(140, 7, 7)",
@@ -88,7 +88,7 @@
                 "zh-CN": "重岳",
                 "en-US": "CHONGYUE"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgb(37, 148, 197)",
@@ -116,7 +116,7 @@
                 "zh-CN": "缄默德克萨斯",
                 "en-US": "TEXAS THE OMERTOSA"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgb(231, 166, 144)",
@@ -160,7 +160,7 @@
                 "zh-CN": "百炼嘉维尔",
                 "en-US": "GAVIAL THE INVINCIBLE"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgb(177, 226, 249)",
@@ -178,7 +178,7 @@
                 "zh-CN": "归溟幽灵鲨",
                 "en-US": "SPECTER THE UNCHAINED"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgba(95, 116, 187, 0.74)",
@@ -206,7 +206,7 @@
                 "zh-CN": "令",
                 "en-US": "LING"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgb(78, 201, 187)",
@@ -224,7 +224,7 @@
                 "zh-CN": "耀骑士临光",
                 "en-US": "NEARL THE RADIANT KNIGHT"
             },
-            "type": "elite2"
+            "type": "operator"
         }
     ],
     "2021/08": [
@@ -234,7 +234,7 @@
                 "zh-CN": "假日威龙陈",
                 "en-US": "CH'EN THE HOLUNGDAY"
             },
-            "type": "elite2"
+            "type": "operator"
         }
     ],
     "2021/05": [
@@ -244,7 +244,7 @@
                 "zh-CN": "浊心斯卡蒂",
                 "en-US": "SKADI THE CORRUPTING HEART"
             },
-            "type": "elite2"
+            "type": "operator"
         }
     ],
     "2021/02": [
@@ -254,7 +254,7 @@
                 "zh-CN": "夕",
                 "en-US": "DUSK"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgb(187, 163, 106)",
@@ -272,7 +272,7 @@
                 "zh-CN": "迷迭香",
                 "en-US": "ROSMONTIS"
             },
-            "type": "elite2"
+            "type": "operator"
         },
         {
             "color": "rgba(0, 0, 0, 0.83)",
@@ -290,7 +290,7 @@
                 "zh-CN": "W",
                 "en-US": "W"
             },
-            "type": "elite2"
+            "type": "operator"
         }
     ],
     "2020/01": [
@@ -300,7 +300,7 @@
                 "zh-CN": "年",
                 "en-US": "NIAN"
             },
-            "type": "elite2"
+            "type": "operator"
         }
     ]
 }

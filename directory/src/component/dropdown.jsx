@@ -19,7 +19,7 @@ export default function Dropdown(props) {
           onClick={() => toggleDropdown()}
         >
           <span className={classes.content}>{props.text}</span>
-          <span className={classes.icon}></span>
+          <span className={classes.icon} style={props.iconStyle}></span>
           <section
             className={classes.popup}
           >
@@ -89,4 +89,5 @@ Dropdown.propTypes = {
   activeColor: PropTypes.object,
   activeRule: PropTypes.func,
   altText: PropTypes.string,
+  iconStyle: PropTypes.object,
 };

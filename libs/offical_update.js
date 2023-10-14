@@ -31,6 +31,7 @@ export default async function () {
                 "en-US": charCard.querySelector(".info").querySelector(".codename").textContent.trim()
             }
             const rawType = charCard.querySelector(".typeIcon").querySelector("svg").querySelector("use").getAttribute("xlink:href")
+            const link = "https://ak.hypergryph.com" + charCard.getAttribute("href")
 
             let type;
             switch (rawType) {
@@ -44,7 +45,8 @@ export default async function () {
             operators.push({
                 color,
                 codename,
-                type
+                type,
+                link
             })
             dict.length++
         }

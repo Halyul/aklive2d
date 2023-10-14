@@ -75,6 +75,14 @@ export default function Root() {
     fetchOfficalUpdate()
   }, [fetchOfficalUpdate])
 
+  useEffect(() => {
+    document.querySelector('.loader').classList.add('loaded')
+    setTimeout(() => {
+      document.querySelector('.loader').style.display = 'none'
+    }, 500)
+  }
+  , [])
+
   return (
     <>
       <header className={header.header}>

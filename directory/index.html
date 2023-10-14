@@ -37,25 +37,19 @@
       border-top: 0.3rem solid;
       transform: translateY(-0.3rem) rotate(-45deg);
       animation: icon-flash 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+      box-shadow: inset 0 0 16px 2px rgb(200 14 0), 0 0 18px 5px rgb(200 14 0);
+      border-color: rgba(54, 0, 0, 87%);
     }
 
     @media (prefers-color-scheme: dark) {
       .loader {
         background-color: #131313;
       }
-
-      .loader .icon {
-        border-color: rgba(255, 255, 255, 87%);
-      }
     }
 
     @media (prefers-color-scheme: light) {
       .loader {
         background-color: #ececec;
-      }
-
-      .loader .icon {
-        border-color: rgba(0, 0, 0, 87%);
       }
     }
 

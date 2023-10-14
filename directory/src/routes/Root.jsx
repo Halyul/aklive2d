@@ -296,6 +296,9 @@ function HeaderButton() {
             navigate(item.value)
           }}
           className={classes['fast-navigate']}
+          iconStyle={{
+            borderWidth: '0.1em',
+          }}
         />
       </Border>
     )

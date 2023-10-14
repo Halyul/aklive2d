@@ -167,7 +167,7 @@ export default function Home() {
   return (
     <section>
       {
-        officalUpdate.length === operators.length && (
+        officalUpdate.length > operators.length && (
           <section>
             <section className={classes['offical-update']}>
               <section className={classes.info}>

@@ -24,8 +24,8 @@ export default function ToTopButton(props) {
   const smoothScroll = useCallback(
     (target) => {
       const targetElement = document.querySelector(target);
-      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-      const startPosition = window.pageYOffset;
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
       const distance = targetPosition - startPosition;
       const duration = 1000;
       let start = null;

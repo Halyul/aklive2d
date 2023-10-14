@@ -444,6 +444,12 @@ export default function Operator() {
                     <section className={classes.text}>
                       {i18n('web_version')}
                     </section>
+                    <seection className={classes['arrow-icon']}>
+                      <section className={classes.bar}></section>
+                      <section className={classes.bar}></section>
+                      <section className={classes.bar}></section>
+                      <section className={classes.bar}></section>
+                    </seection>
                   </section>
                 </section>
               </Link>
@@ -462,6 +468,12 @@ export default function Operator() {
                         <section className={classes.text}>
                           {i18n('steam_workshop')}
                         </section>
+                        <seection className={classes['arrow-icon']}>
+                          <section className={classes.bar}></section>
+                          <section className={classes.bar}></section>
+                          <section className={classes.bar}></section>
+                          <section className={classes.bar}></section>
+                        </seection>
                       </section>
                     </section>
                   </Link>

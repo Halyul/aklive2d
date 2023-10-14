@@ -7,6 +7,7 @@ import React, {
 import PropTypes from 'prop-types';
 import {
   NavLink,
+  Link,
 } from "react-router-dom";
 import classes from '@/scss/home/Home.module.scss'
 import { useConfig } from '@/state/config';
@@ -166,28 +167,45 @@ export default function Home() {
   return (
     <section>
       {
-        officalUpdate.length === operators.length && (
+        officalUpdate.length > operators.length && (
           <section>
             <section className={classes['offical-update']}>
               <section className={classes.info}>
                 <section className={classes.content}>
                   <section className={classes.text}>{officalUpdate.length - operators.length} {i18n("new_op_wait_to_update")}</section>
-                  {officalUpdate[officalUpdate.latest].map((entry, index) => {
-                    return (
-                      <section className={classes.container} key={index}>
-                        <section className={classes.type}>
-                          <CharIcon
-                            type={entry.type}
-                            viewBox={
-                              entry.type === 'operator' ? '0 0 88.969 71.469' : '0 0 94.563 67.437'
-                            } />
-                        </section>
-                        <section className={classes.title}>
-                          {entry.codename[language]}
-                        </section>
-                      </section>
-                    )
-                  })}
+                  <section className={`${classes['styled-selection']}`}>
+                    {officalUpdate[officalUpdate.latest].map((entry, index) => {
+                      return (
+                        <Link
+                          reloadDocument
+                          to={entry.link}
+                          target='_blank'
+                          style={{
+                            color: entry.color
+                          }}
+                          key={index}
+                          >
+                          <section className={classes.content}>
+                            <section className={classes.option}>
+                              <section className={classes.outline} />
+                              <section className={`${classes.text} ${classes.container}`}>
+                                <section className={classes.type}>
+                                  <CharIcon
+                                    type={entry.type}
+                                    viewBox={
+                                      entry.type === 'operator' ? '0 0 88.969 71.469' : '0 0 94.563 67.437'
+                                    } />
+                                </section>
+                                <section className={classes.title}>
+                                  {entry.codename[language]}
+                                </section>
+                              </section>
+                            </section>
+                          </section>
+                        </Link>
+                      )
+                    })}
+                  </section>
                 </section>
 
               </section>

@@ -11,6 +11,31 @@
   user-select: none;
 }
 
+.container {
+  color: var(--text-color-full);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.25rem;
+  font-weight: bold;
+  .title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3em;
+    height: auto;
+  }
+  .type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    svg {
+      width: 1.5rem;
+      fill: var(--text-color);
+    }
+  }
+}
+
 .group {
   padding: 1rem;
   display: flex;
@@ -84,33 +109,6 @@
       padding: 0.8rem 0.4rem;
       line-height: 1.2em;
       height: 36px;
-
-      .container {
-        color: var(--text-color-full);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.25rem;
-        font-weight: bold;
-        .title {
-          flex: 1;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          line-height: 1.3em;
-          height: auto;
-        }
-        .type {
-          display: flex;
-          flex-direction: row;
-          align-items: baseline;
-          text-align: center;
-
-          svg {
-            width: 1.5rem;
-            fill: var(--text-color);
-          }
-        }
-      }
 
       .wrapper {
         overflow: hidden;

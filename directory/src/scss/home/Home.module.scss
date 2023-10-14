@@ -1,4 +1,4 @@
-@use '@/scss/_page_base.scss';
+@use "@/scss/_page_base.scss";
 
 .offical-update {
   flex-direction: column;
@@ -18,9 +18,11 @@
         padding-bottom: 1rem;
       }
     }
-    .list {
-      display: list-item;
+    .container {
       margin-left: 2.5rem;
+      .title {
+        margin-left: 0.5rem;
+      }
     }
   }
 }

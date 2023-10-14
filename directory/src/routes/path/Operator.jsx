@@ -414,7 +414,7 @@ export default function Operator() {
                         <section className={`${classes.content} ${option.activeRule && option.activeRule() ? classes.active : ''}`} onClick={(e) => option.onClick(e)} key={option.name}>
                           <section className={classes.option}>
                             <section className={classes.outline} />
-                            <section className={classes.text}>{i18n(option.name)}</section>
+                            <section className={`${classes.text} ${classes['no-overflow']}`}>{i18n(option.name)}</section>
                             <section className={classes['tick-icon']} />
                           </section>
                         </section>
@@ -441,7 +441,7 @@ export default function Operator() {
                 <section className={classes.content}>
                   <section className={classes.option}>
                     <section className={classes.outline} />
-                    <section className={classes.text}>
+                    <section className={`${classes.text} ${classes['no-overflow']}`}>
                       {i18n('web_version')}
                     </section>
                     <seection className={classes['arrow-icon']}>
@@ -465,7 +465,7 @@ export default function Operator() {
                     <section className={classes.content}>
                       <section className={classes.option}>
                         <section className={classes.outline} />
-                        <section className={classes.text}>
+                        <section className={`${classes.text} ${classes['no-overflow']}`}>
                           {i18n('steam_workshop')}
                         </section>
                         <seection className={classes['arrow-icon']}>

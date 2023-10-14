@@ -167,7 +167,7 @@ export default function Home() {
   return (
     <section>
       {
-        officalUpdate.length > operators.length && (
+        officalUpdate.length === operators.length && (
           <section>
             <section className={classes['offical-update']}>
               <section className={classes.info}>
@@ -199,6 +199,12 @@ export default function Home() {
                                 <section className={classes.title}>
                                   {entry.codename[language]}
                                 </section>
+                                <seection className={classes['arrow-icon']}>
+                                  <section className={classes.bar}></section>
+                                  <section className={classes.bar}></section>
+                                  <section className={classes.bar}></section>
+                                  <section className={classes.bar}></section>
+                                </seection>
                               </section>
                             </section>
                           </section>

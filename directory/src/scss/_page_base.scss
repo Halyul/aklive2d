@@ -153,112 +153,153 @@
 }
 
 .styled-selection {
-    margin-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
 
-    .content {
-      padding: 0.8rem 0;
-      cursor: pointer;
+  .content {
+    padding: 0.8rem 0;
+    cursor: pointer;
+    transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+
+    .option {
+      pointer-events: none;
+      position: relative;
+      transform: translate3d(0, 0, 1px);
+      font-size: 1rem;
+      padding: 0.44rem 2.25rem 0.44rem 0.63rem;
+      background-color: var(--home-item-hover-background-color);
+      background-image: repeating-linear-gradient(
+        90deg,
+        var(--home-item-background-linear-gradient-color) 0,
+        var(--home-item-background-linear-gradient-color) 1px,
+        transparent 1px,
+        transparent 4px
+      );
       transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 
-      .option {
-        pointer-events: none;
-        position: relative;
-        transform: translate3d(0, 0, 1px);
-        font-size: 1rem;
-        padding: 0.44rem 2.25rem 0.44rem 0.63rem;
-        background-color: var(--home-item-hover-background-color);
-        background-image: repeating-linear-gradient(
-          90deg,
-          var(--home-item-background-linear-gradient-color) 0,
-          var(--home-item-background-linear-gradient-color) 1px,
-          transparent 1px,
-          transparent 4px
-        );
-        transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-
-        .outline {
-          width: 100%;
-          height: 100%;
-          left: -6px;
-          top: -6px;
-          border: var(--home-item-outline-color) 1px dashed;
-          padding: 6px;
-
-          &:before,
-          &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: -2px;
-            height: 2px;
-            width: 100%;
-            border-left: var(--text-color) solid 2px;
-            border-right: var(--text-color) solid 2px;
-          }
-
-          &:before {
-            top: -2px;
-          }
-
-          &:after {
-            bottom: -2px;
-          }
-        }
+      .outline {
+        width: 100%;
+        height: 100%;
+        left: -6px;
+        top: -6px;
+        border: var(--home-item-outline-color) 1px dashed;
+        padding: 6px;
 
         &:before,
-        .outline {
+        &:after {
           content: "";
           display: block;
           position: absolute;
-          z-index: -1;
-          opacity: 0;
-          visibility: hidden;
-          transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s,
-            visibility cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+          left: -2px;
+          height: 2px;
+          width: 100%;
+          border-left: var(--text-color) solid 2px;
+          border-right: var(--text-color) solid 2px;
         }
 
         &:before {
-          right: 0;
-          top: 0;
-          width: 60%;
-          height: 100%;
-          background-image: linear-gradient(90deg, transparent, currentColor);
+          top: -2px;
         }
 
-        .tick-icon {
-          display: inline-block;
+        &:after {
+          bottom: -2px;
+        }
+      }
+
+      &:before,
+      .outline {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s,
+          visibility cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+      }
+
+      &:before {
+        right: 0;
+        top: 0;
+        width: 60%;
+        height: 100%;
+        background-image: linear-gradient(90deg, transparent, currentColor);
+      }
+
+      .tick-icon {
+        display: inline-block;
+        position: absolute;
+        z-index: 0;
+        right: 0.31rem;
+        top: 50%;
+        width: 0.5rem;
+        height: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s,
+          visibility cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+        border-right: var(--text-color) solid 0.25rem;
+        border-bottom: var(--text-color) solid 0.25rem;
+        transform: translate(-50%, -70%) rotate(45deg);
+      }
+
+      .arrow-icon {
+        display: inline-block;
+        position: absolute;
+        z-index: 0;
+        right: -0.1em;
+        top: 0.45em;
+        width: 2em;
+        height: 1em;
+        transform: rotate(90deg);
+        transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s,
+          visibility cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+        opacity: 0;
+        visibility: hidden;
+
+        .bar {
           position: absolute;
-          z-index: 0;
-          right: 0.31rem;
-          top: 50%;
-          width: 0.5rem;
-          height: 1rem;
-          opacity: 0;
-          visibility: hidden;
-          transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s,
-            visibility cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-          border-right: var(--text-color) solid 0.25rem;
-          border-bottom: var(--text-color) solid 0.25rem;
-          transform: translate(-50%, -70%) rotate(45deg);
+          width: 100%;
+          height: 0.25em;
+          background-color: var(--text-color-full);
+          will-change: auto;
         }
-      }
 
-      &:hover,
-      &.active {
-        transform: translate3d(6px, 0, 1px);
-
-        .option:before,
-        .option .outline {
-          opacity: 1;
-          visibility: visible;
+        .bar:nth-child(1) {
+          transform: rotateZ(45deg) scaleX(0.5) translateX(0.8em);
         }
-      }
 
-      &.active {
-        .option .tick-icon {
-          opacity: 1;
-          visibility: visible;
+        .bar:nth-child(2) {
+          transform: rotateZ(-45deg) scaleX(0.5) translateX(-0.8em);
+        }
+
+        .bar:nth-child(3),
+        .bar:nth-child(4) {
+          transform: translateY(1em) rotateZ(90deg) scaleX(0.5);
         }
       }
     }
+
+    &:hover,
+    &.active {
+      transform: translate3d(6px, 0, 1px);
+
+      .option:before,
+      .option .outline {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .arrow-icon {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.active {
+      .option .tick-icon {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
+}

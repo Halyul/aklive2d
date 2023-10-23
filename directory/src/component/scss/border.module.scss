@@ -18,5 +18,11 @@
   }
   &:after {
     left: 100%;
+    @media only screen and (max-width: 430px) {
+      & {
+        width: 0;
+        height: 0;
+      }
+    }
   }
 }

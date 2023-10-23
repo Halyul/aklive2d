@@ -4,7 +4,7 @@
   left: -15rem;
   width: 15rem;
   height: 100%;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   transition: left cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
   text-align: center;
@@ -44,7 +44,7 @@
   .overlay {
     height: 100%;
     flex-grow: 1;
-    z-index: 2;
+    z-index: 3;
   }
   &.active {
     pointer-events: all;

@@ -14,10 +14,6 @@
   justify-content: flex-start;
   pointer-events: none;
 
-  .spacer {
-    flex-grow: 1;
-  }
-
   .dropdown {
     margin-left: auto;
   }
@@ -71,4 +67,8 @@
       }
     }
   }
+}
+
+.spacer {
+  flex-grow: 1;
 }

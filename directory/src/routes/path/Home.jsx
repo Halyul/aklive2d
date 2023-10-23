@@ -227,6 +227,7 @@ export default function Home() {
           return (
             <section key={v[0].date} hidden={length === 0}>
               <section className={classes.group}>
+                <section className={classes['operator-group']}>
                 {v.map(item => {
                   return (
                     <OperatorElement
@@ -237,6 +238,7 @@ export default function Home() {
                     />
                   )
                 })}
+                </section>
                 <section className={classes.date}>{v[0].date}</section>
               </section>
               <Border />

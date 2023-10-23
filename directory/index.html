@@ -26,7 +26,7 @@
       transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;;
     }
 
-    .loader .icon {
+    .loader .icon, .loader .flasher {
       display: block;
       margin: 0 auto;
       width: 2rem;
@@ -36,9 +36,14 @@
       border-right: 0.3rem solid;
       border-top: 0.3rem solid;
       transform: translateY(-0.3rem) rotate(-45deg);
-      animation: icon-flash 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
       box-shadow: inset 0 0 16px 2px rgb(200 14 0), 0 0 18px 5px rgb(200 14 0);
       border-color: rgba(54, 0, 0, 87%);
+    }
+
+    .loader .flasher {
+      position: absolute;
+      box-shadow: unset;
+      animation: icon-flash 1.2s cubic-bezier(0.2, 0.6, 0.2, 1) infinite;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -54,8 +59,11 @@
     }
 
     @keyframes icon-flash {
-      50% {
-        opacity: 0.2;
+      100%{
+        opacity: 0;
+        width: 4rem;
+        height: 4rem;
+        border-color: rgb(0, 0, 0);
       }
     }
   </style>
@@ -65,6 +73,7 @@
   <div id="root"></div>
   <div class="loader">
     <span class="icon"></span>
+    <span class="flasher"></span>
   </div>
   <script type="module" src="/src/App.jsx"></script>
 </body>

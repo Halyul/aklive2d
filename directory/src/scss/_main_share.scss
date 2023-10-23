@@ -10,4 +10,11 @@
   max-width: 100rem;
   padding-top: 5rem;
   min-height: calc(100vh - 5rem - 3rem);
+
+  @media only screen and (max-width: 430px) {
+    & {
+      width: calc(100vw - 2rem);
+      margin-left: 2rem;
+    }
+  }
 }

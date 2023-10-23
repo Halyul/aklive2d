@@ -55,10 +55,8 @@
         font-weight: 700;
         padding: 0 1rem;
         text-transform: uppercase;
-        cursor: pointer;
         border-bottom: 0.3rem solid transparent;
         display: inline-block;
-        cursor: pointer;
         text-decoration: none;
 
         .text-wrapper {
@@ -76,6 +74,9 @@
         }
         &.active {
           border-bottom-color: currentColor;
+        }
+        @media only screen and (max-width: 430px) {
+          line-height: 2em;
         }
       }
     }

@@ -12,8 +12,10 @@
   .links {
     flex-direction: row;
     height: 2rem;
+    overflow-y: hidden;
 
     .item {
+      text-align: center;
       padding: 0 1rem;
       border-left: 2px solid var(--border-color);
       height: inherit;

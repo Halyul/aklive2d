@@ -28,7 +28,6 @@ export default function Changelogs() {
     setExtraArea([])
     setFastNavigation([])
     setHeaderIcon(null)
-    document.documentElement.style.setProperty('--cursor-color', 'var(--text-color)');
   }, [setExtraArea, setFastNavigation, setHeaderIcon, setTitle])
 
   useEffect(() => {

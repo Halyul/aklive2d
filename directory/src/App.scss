@@ -15,7 +15,6 @@
   --home-item-background-linear-gradient-color: rgba(0, 0, 0, 10%);
   --home-item-outline-color: rgba(41, 41, 41, 30%);
   --button-color: #999;
-  --cursor-color: var(--text-color);
 }
 
 @mixin dark-theme() {
@@ -31,7 +30,6 @@
   --home-item-background-linear-gradient-color: rgba(255, 255, 255, 10%);
   --home-item-outline-color: rgba(214, 214, 214, 30%);
   --button-color: #666;
-  --cursor-color: var(--text-color);
 }
 
 @media (prefers-color-scheme: dark) {

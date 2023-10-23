@@ -64,7 +64,6 @@ export default function Home() {
 
   useEffect(() => {
     setContent(config?.operators || [])
-    document.documentElement.style.setProperty('--cursor-color', 'var(--text-color)');
   }, [config])
 
   const handleAduioStateChange = useCallback((e, state) => {
@@ -259,15 +258,6 @@ export default function Home() {
 function OperatorElement({ item, hidden, handleVoicePlay }) {
   const { textDefaultLang, language, alternateLang } = useLanguage()
 
-  const onMouseEnter = useCallback(() => {
-    handleVoicePlay(`/${item.link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`)
-    document.documentElement.style.setProperty('--cursor-color', item.color);
-  }, [handleVoicePlay, item.color, item.link])
-
-  const onMouseLeave = useCallback(() => {
-    document.documentElement.style.setProperty('--cursor-color', 'var(--text-color)');
-  }, [])
-
   return useMemo(() => {
     return (
       <NavLink
@@ -276,8 +266,7 @@ function OperatorElement({ item, hidden, handleVoicePlay }) {
         hidden={hidden}
       >
         <section
-          onMouseEnter={() => onMouseEnter()}
-          onMouseLeave={() => onMouseLeave()}
+          onMouseEnter={() => handleVoicePlay(`/${item.link}/assets/${JSON.parse(import.meta.env.VITE_VOICE_FOLDERS).main}/${import.meta.env.VITE_APP_VOICE_URL}`)}
         >
           <section className={classes['background-filler']} />
           <section className={classes.outline} />
@@ -307,7 +296,7 @@ function OperatorElement({ item, hidden, handleVoicePlay }) {
         </section>
       </NavLink>
     )
-  }, [item, hidden, language, alternateLang, textDefaultLang, onMouseEnter, onMouseLeave])
+  }, [item, hidden, language, alternateLang, textDefaultLang, handleVoicePlay])
 }
 
 function VoiceSwitchElement({ src, replay, handleAduioStateChange }) {

@@ -20,7 +20,6 @@ import { useHeader } from '@/state/header';
 import VoiceElement from '@/component/voice';
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
-import AnimatedCursor from "react-animated-cursor"
 import useUmami from '@/state/insights';
 
 const voiceOnAtom = atomWithStorage('voiceOn', false)
@@ -187,25 +186,6 @@ export default function Error() {
           handleAduioStateChange={handleAduioStateChange}
         />
       </main>
-      <AnimatedCursor
-        innerSize={8}
-        outerSize={36}
-        innerScale={1}
-        outerScale={0.5}
-        outerAlpha={0.7}
-        hasBlendMode={true}
-        innerStyle={{
-          backgroundColor: 'var(--cursor-color)'
-        }}
-        outerStyle={{
-          backgroundColor: 'transparent',
-          border: '3px solid var(--cursor-color)'
-        }}
-        clickables={[
-          'a',
-          'section[data-type="clickable"]',
-        ]}
-      />
     </section>
   );
 }

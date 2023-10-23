@@ -52,7 +52,6 @@ export default function ToTopButton(props) {
     <>
       <section className={`${classes['totop-button']} ${clicked ? classes.clicked : ''} ${hidden ? '' : classes.show} ${props.className ? props.className : ''}`}
         onClick={() => { smoothScroll("#root") }}
-        data-type="clickable"
       >
         <section className={classes.bar}></section>
         <section className={classes.bar}></section>

@@ -21,6 +21,7 @@ export default function Switch(props) {
           props.handleOnClick(!on)
         }
       }}
+      data-type="clickable"
     >
       <span className={classes.text}>{i18n(props.text)}</span>
       <section className={classes.wrapper}>

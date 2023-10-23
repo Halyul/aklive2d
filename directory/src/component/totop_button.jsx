@@ -8,7 +8,6 @@ import classes from './scss/totop_button.module.scss'
 
 export default function ToTopButton(props) {
   const [hidden, setHidden] = useState(true)
-  const [clicked, setClicked] = useState(false)
 
   useEffect(() => {
     const handleButton = () => {
@@ -42,15 +41,11 @@ export default function ToTopButton(props) {
         t -= 2;
         return c / 2 * (t * t * t + 2) + b;
       }
-      setClicked(true)
-      setTimeout(() => {
-        setClicked(false)
-      }, duration)
     }, [])
 
   return (
     <>
-      <section className={`${classes['totop-button']} ${clicked ? classes.clicked : ''} ${hidden ? '' : classes.show} ${props.className ? props.className : ''}`}
+      <section className={`${classes['totop-button']} ${hidden ? '' : classes.show} ${props.className ? props.className : ''}`}
         onClick={() => { smoothScroll("#root") }}
       >
         <section className={classes.bar}></section>

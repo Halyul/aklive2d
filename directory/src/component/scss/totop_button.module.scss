@@ -40,47 +40,4 @@
   .bar:nth-child(3), .bar:nth-child(4) {
     transform: translateY(450%) rotateZ(90deg) scaleX(0.5);
   }
-
-  &.clicked {
-    .bar:nth-child(1) {
-      animation: transform-1 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
-    }
-
-    .bar:nth-child(2) {
-      animation: transform-2 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
-    }
-
-    .bar:nth-child(3) {
-      animation: transform-3 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
-    }
-
-    .bar:nth-child(4) {
-      animation: transform-4 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
-    }
-  }
-}
-
-@keyframes transform-1 {
-  50% {
-    transform: translateY(450%) rotateZ(-90deg) scaleX(0.5);
-  }
-}
-
-@keyframes transform-2 {
-  50% {
-    transform: translateY(450%) rotateZ(90deg) scaleX(0.5);
-  }
-}
-
-
-@keyframes transform-3 {
-  50% {
-    transform: rotateZ(225deg) scaleX(0.5) translateX(-45%);
-  }
-}
-
-@keyframes transform-4 {
-  50% {
-    transform: rotateZ(-45deg) scaleX(0.5) translateX(-45%);
-  }
 }

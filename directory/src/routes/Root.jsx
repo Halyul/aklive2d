@@ -2,7 +2,7 @@ import React, {
   useState,
   useEffect,
   useMemo,
-  useCallback
+  useCallback,
 } from 'react'
 import PropTypes from 'prop-types';
 import {
@@ -29,6 +29,7 @@ import Popup from '@/component/popup';
 import Border from '@/component/border';
 import CharIcon from '@/component/char_icon';
 import ToTopButton from '@/component/totop_button';
+import AnimatedCursor from "react-animated-cursor"
 
 const currentYear = new Date().getFullYear()
 
@@ -79,8 +80,7 @@ export default function Root() {
     setTimeout(() => {
       document.querySelector('.loader').style.display = 'none'
     }, 500)
-  }
-    , [])
+  }, [])
 
   return (
     <>
@@ -88,6 +88,7 @@ export default function Root() {
         <section
           className={`${header.navButton} ${drawerHidden ? '' : header.active}`}
           onClick={() => toggleDrawer()}
+          data-type="clickable"
         >
           <section className={header.bar} />
           <section className={header.bar} />
@@ -138,6 +139,25 @@ export default function Root() {
         <ScrollRestoration />
       </main>
       <FooterElement />
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={36}
+        innerScale={1}
+        outerScale={0.5}
+        outerAlpha={0.7}
+        hasBlendMode={true}
+        innerStyle={{
+          backgroundColor: 'var(--cursor-color)'
+        }}
+        outerStyle={{
+          backgroundColor: 'transparent',
+          border: '3px solid var(--cursor-color)'
+        }}
+        clickables={[
+          'a',
+          'section[data-type="clickable"]',
+        ]}
+      />
     </>
   )
 }
@@ -150,7 +170,7 @@ function FooterElement() {
     return (
       <footer className={footer.footer}>
         <section className={`${footer.links} ${footer.section}`}>
-          <section className={footer.item}>
+          <section className={footer.item} data-type="clickable">
             <Popup
               className={footer.link}
               title={i18n('disclaimer')}
@@ -164,7 +184,7 @@ function FooterElement() {
           <section className={footer.item}>
             <Link reloadDocument to="https://gura.ch/aklive2d-gh" target="_blank" className={footer.link}>GitHub</Link>
           </section>
-          <section className={footer.item}>
+          <section className={footer.item} data-type="clickable">
             <Popup
               className={footer.link}
               title={i18n('contact_us')}
@@ -268,6 +288,7 @@ function HeaderTabsElement({ item }) {
         item.onClick && item.onClick(e, currentTab)
       }}
       style={item.style}
+      data-type="clickable"
     >
       <section className={classes['text-wrapper']}>
         <span>{i18n(item.key)}</span>
@@ -306,7 +327,7 @@ function HeaderButton() {
     )
   } else {
     return (
-      <section className={header['back-arrow']}>
+      <section className={header['back-arrow']} data-type="clickable">
         <Link to="/" className={header.link}>
           <section className={header.arrow1} />
           <section className={header.arrow2} />

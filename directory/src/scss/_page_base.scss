@@ -66,9 +66,9 @@
 
   .item {
     position: relative;
-    cursor: pointer;
     width: 12rem;
     margin: 1.25rem;
+    flex-shrink: 0;
     background-image: repeating-linear-gradient(
       90deg,
       var(--home-item-background-linear-gradient-color) 0,
@@ -202,7 +202,6 @@
 
   .content {
     padding: 0.8rem 0;
-    cursor: pointer;
     transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 
     .option {

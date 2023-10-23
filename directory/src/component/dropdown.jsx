@@ -1,5 +1,6 @@
 import React, {
   useState,
+  useCallback
 } from 'react'
 import PropTypes from 'prop-types';
 import classes from './scss/dropdown.module.scss'
@@ -11,9 +12,17 @@ export default function Dropdown(props) {
     setHidden(!hidden)
   }
 
+  const onMouseEnter = useCallback((item) => {
+    document.documentElement.style.setProperty('--cursor-color', item.color);
+  }, [])
+
+  const onMouseLeave = useCallback(() => {
+    document.documentElement.style.setProperty('--cursor-color', 'var(--text-color)');
+  }, [])
+
   return (
     <>
-      <section className={`${classes.dropdown} ${hidden ? '' : classes.active} ${props.className ? props.className : ''} ${props.left ? classes.left : ''}`}>
+      <section className={`${classes.dropdown} ${hidden ? '' : classes.active} ${props.className ? props.className : ''} ${props.left ? classes.left : ''}`} data-type="clickable">
         <section
           className={classes.text}
           onClick={() => toggleDropdown()}
@@ -56,6 +65,9 @@ export default function Dropdown(props) {
                         toggleDropdown()
                       }}
                       style={item.color ? { color: item.color } : {}}
+                      data-type="clickable"
+                      onMouseEnter={() => onMouseEnter(item)}
+                      onMouseLeave={() => onMouseLeave()}
                     >
                       {
                         item.icon ? (

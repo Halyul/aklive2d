@@ -130,7 +130,6 @@ export default function Operator() {
       fetch(`/${import.meta.env.VITE_DIRECTORY_FOLDER}/voice_${config.link}.json`).then(res => res.json()).then(data => {
         setVoiceConfig(data)
       })
-      document.documentElement.style.setProperty('--cursor-color', config.color);
     }
   }, [key, operators, setHeaderIcon])
 
@@ -412,7 +411,7 @@ export default function Operator() {
                   <section className={classes['styled-selection']}>
                     {item.options.map((option) => {
                       return (
-                        <section className={`${classes.content} ${option.activeRule && option.activeRule() ? classes.active : ''}`} onClick={(e) => option.onClick(e)} key={option.name} data-type="clickable">
+                        <section className={`${classes.content} ${option.activeRule && option.activeRule() ? classes.active : ''}`} onClick={(e) => option.onClick(e)} key={option.name}>
                           <section className={classes.option}>
                             <section className={classes.outline} />
                             <section className={`${classes.text} ${classes['no-overflow']}`}>{i18n(option.name)}</section>

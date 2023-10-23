@@ -4,6 +4,7 @@
   user-select: none;
   z-index: 2;
   padding: 0.5em;
+  cursor: pointer;
 
   &.left {
     .popup, .menu {
@@ -38,6 +39,7 @@
       z-index: -1;
       top: 2.5em;
       right: 0;
+      cursor: auto;
       transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
       overflow: auto;
       padding: 0.5rem;
@@ -91,6 +93,7 @@
     border: 1px solid var(--border-color);
     visibility: hidden;
     color: var(--link-highlight-color);
+    cursor: auto;
 
     &.left {
       left: 0;
@@ -118,6 +121,7 @@
     }
 
     .item {
+      cursor: pointer;
       padding: 0.5rem;
       font-size: 1rem;
       display: flex;
@@ -158,6 +162,7 @@
     bottom: 0;
     width: 100vw;
     height: 100vh;
+    cursor: auto;
   }
 
   &.active,

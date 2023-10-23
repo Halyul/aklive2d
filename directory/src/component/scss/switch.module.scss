@@ -20,26 +20,26 @@
 
     .icon {
       position: absolute;
-      bottom: 8px;
+      bottom: 0.65em;
       right: 18px;
-      width: 8px;
-      height: 8px;
+      width: 0.5em;
+      height: 0.5em;
       display: inline-block;
       vertical-align: middle;
-      border-left: 2px solid currentColor;
-      border-bottom: 2px solid currentColor;
-      border-right: 2px solid currentColor;
-      border-top: 2px solid currentColor;
-      transform: translate(0, -2px) rotate(-45deg);
+      border-left: 0.15em solid currentColor;
+      border-bottom: 0.15em solid currentColor;
+      border-right: 0.15em solid currentColor;
+      border-top: 0.15em solid currentColor;
+      transform: translate(0, -0.15em) rotate(-45deg);
       transition: right cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s,
         background-color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
     }
     .line {
       position: absolute;
-      bottom: 15px;
+      bottom: 1.1em;
       right: 6px;
       width: 18px;
-      height: 2px;
+      height: 0.15em;
       display: inline-block;
       vertical-align: middle;
       background-color: currentColor;

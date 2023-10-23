@@ -13,8 +13,8 @@
 
   @media only screen and (max-width: 430px) {
     & {
-      width: calc(100vw - 2rem);
-      margin-left: 2rem;
+      width: 100vw;
+      margin-left: 0;
     }
   }
 }

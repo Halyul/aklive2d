@@ -2,6 +2,11 @@
   position: relative;
   bottom: 1px;
   border-bottom: 1px solid var(--text-color);
+  @media only screen and (max-width: 430px) {
+    & {
+      margin: 0 1rem;
+    }
+  }
 
   &:before,
   &:after {
@@ -18,11 +23,5 @@
   }
   &:after {
     left: 100%;
-    @media only screen and (max-width: 430px) {
-      & {
-        width: 0;
-        height: 0;
-      }
-    }
   }
 }

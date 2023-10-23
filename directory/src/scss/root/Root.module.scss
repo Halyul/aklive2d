@@ -1,4 +1,4 @@
-@use '@/scss/_main_share.scss';
+@use "@/scss/_main_share.scss";
 
 .main {
   .header {
@@ -8,7 +8,12 @@
     align-items: flex-end;
     flex-wrap: wrap;
     position: relative;
-    padding-right: 2rem;
+
+    @media only screen and (max-width: 430px) {
+      & {
+        margin: 0 1rem;
+      }
+    }
     .title {
       font-size: 3rem;
       font-weight: 700;
@@ -78,34 +83,6 @@
       & {
         padding-right: 0;
       }
-    }
-  }
-  .fast-navigate {
-    position: absolute;
-    right: -2em;
-    bottom: calc(-1em - 2px);
-    font-size: 32px;
-
-    @media only screen and (max-width: 430px) {
-      & {
-        display: none;
-      }
-    }
-  }
-
-  .return-button {
-    position: absolute;
-    right: -4rem;
-    bottom: -24px;
-    color: var(--button-color);
-    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-
-    &:hover {
-      color: var(--text-color);
-    }
-
-    @media (max-width: 768px) {
-      right: -3.4rem;
     }
   }
 }

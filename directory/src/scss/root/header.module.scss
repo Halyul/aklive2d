@@ -5,7 +5,7 @@
   top: 0;
   right: 0;
   padding: 1rem;
-  z-index: 3;
+  z-index: 4;
   height: 3rem;
   display: flex;
   flex-direction: row;
@@ -13,6 +13,11 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   pointer-events: none;
+
+  .fast-navigate {
+    pointer-events: auto;
+    margin-left: 0.6rem;
+  }
 
   .dropdown {
     margin-left: auto;
@@ -71,4 +76,26 @@
 
 .spacer {
   flex-grow: 1;
+}
+
+.back-arrow {
+  padding-left: 1rem;
+  height: 2rem;
+  width: 2rem;
+  pointer-events: auto;
+
+  .arrow1 {
+    height: 1rem;
+    width: 1rem;
+    border-left: 0.15rem solid;
+    border-bottom: 0.15rem solid;
+    transform: translateY(0.38rem) rotate(45deg);
+  }
+
+  .arrow2 {
+    width: 1.2rem;
+    height: 0.15rem;
+    background-color: currentColor;
+    transform: translate(0.5rem, -0.25rem);
+  }
 }

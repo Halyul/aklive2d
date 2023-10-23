@@ -11,19 +11,19 @@
     height: 0.8rem;
     display: inline-block;
     vertical-align: middle;
-    border-left: 0.15em solid var(--text-color-full);
-    border-bottom: 0.15em solid var(--text-color-full);
-    border-right: 0.15em solid var(--text-color-full);
-    border-top: 0.15em solid var(--text-color-full);
-    transform: translate(0rem, 0.2rem) rotate(-45deg);
+    border-left: 0.15rem solid var(--text-color-full);
+    border-bottom: 0.15rem solid var(--text-color-full);
+    border-right: 0.15rem solid var(--text-color-full);
+    border-top: 0.15rem solid var(--text-color-full);
+    transform: translate(0.2rem, 0.3rem) rotate(-45deg);
   }
 
   .icon_dot {
     position: absolute;
     background-color: var(--text-color-full);
-    width: 0.1em;
-    height: 0.4em;
-    transform: translate(1.2rem, 1.2rem) rotate(-45deg);
+    width: 0.15rem;
+    height: 0.6rem;
+    transform: translate(1.2rem, 1.1rem) rotate(-45deg);
   }
 
   .input {

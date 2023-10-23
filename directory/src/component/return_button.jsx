@@ -8,7 +8,6 @@ export default function ReturnButton(props) {
     <>
       <section className={`${classes['return-button']} ${props.className ? props.className : ''}`}
         onClick={() => props.onClick()}
-        data-type="clickable"
       >
         <section className={classes.wrapper}>
           <section className={classes["arrow-left"]}></section>

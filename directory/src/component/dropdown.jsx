@@ -13,7 +13,7 @@ export default function Dropdown(props) {
   }
 
   const onMouseEnter = useCallback((item) => {
-    document.documentElement.style.setProperty('--cursor-color', item.color);
+    document.documentElement.style.setProperty('--cursor-color', item.color ? item.color : 'var(--text-color)');
   }, [])
 
   const onMouseLeave = useCallback(() => {

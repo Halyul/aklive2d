@@ -17,6 +17,8 @@
     flex-direction: row;
     align-items: center;
     color: var(--text-color);
+    height: 2em;
+    min-width: 2em;
 
     &:hover {
       .popup {
@@ -34,7 +36,7 @@
       max-height: 61.8vh;
       max-width: 61.8vw;
       z-index: -1;
-      top: 2em;
+      top: 2.5em;
       right: 0;
       transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
       overflow: auto;
@@ -65,7 +67,7 @@
     border-bottom: 0.15em solid var(--text-color);
     border-right: 0.15em solid var(--text-color);
     border-top: 0.15em solid var(--text-color);
-    transform: translateY(-0.2em) rotate(-45deg);
+    transform: translateY(-0.7em) rotate(-45deg);
   }
 
   .menu {
@@ -77,9 +79,8 @@
     max-height: 61.8vh;
     max-width: 61.8vw;
     z-index: -1;
-    top: 2em;
+    top: 2.5em;
     right: 0;
-    gap: 0.5rem;
     display: flex;
     align-items: stretch;
     flex-direction: column;

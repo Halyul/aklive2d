@@ -319,7 +319,7 @@ function HeaderButton() {
         iconStyle={{
           borderWidth: '0.15em',
           width: '1em',
-          transform: 'translateY(0.1rem) translateX(0.1rem) rotate(-45deg)',
+          transform: 'translateY(-0.4rem) translateX(-0.7rem) rotate(-45deg)',
           height: '1em',
         }}
         left={true}

@@ -13,7 +13,7 @@ export default function Dropdown(props) {
 
   return (
     <>
-      <section className={`${classes.dropdown} ${hidden ? '' : classes.active} ${props.className ? props.className : ''}`}>
+      <section className={`${classes.dropdown} ${hidden ? '' : classes.active} ${props.className ? props.className : ''} ${props.left ? classes.left : ''}`}>
         <section
           className={classes.text}
           onClick={() => toggleDropdown()}
@@ -90,4 +90,5 @@ Dropdown.propTypes = {
   activeRule: PropTypes.func,
   altText: PropTypes.string,
   iconStyle: PropTypes.object,
+  left: PropTypes.bool,
 };

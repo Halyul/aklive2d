@@ -12,7 +12,7 @@ export default function ToTopButton(props) {
 
   useEffect(() => {
     const handleButton = () => {
-      const scrollBarPos = window.pageYOffset || 0;
+      const scrollBarPos = window.scrollY || 0;
       setHidden(!(scrollBarPos > 100))
     }
     window.addEventListener('scroll', handleButton)

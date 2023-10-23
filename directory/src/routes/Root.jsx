@@ -26,7 +26,6 @@ import {
 } from '@/state/language'
 import Dropdown from '@/component/dropdown';
 import Popup from '@/component/popup';
-import ReturnButton from '@/component/return_button';
 import Border from '@/component/border';
 import CharIcon from '@/component/char_icon';
 import ToTopButton from '@/component/totop_button';
@@ -81,7 +80,7 @@ export default function Root() {
       document.querySelector('.loader').style.display = 'none'
     }, 500)
   }
-  , [])
+    , [])
 
   return (
     <>
@@ -94,6 +93,7 @@ export default function Root() {
           <section className={header.bar} />
           <section className={header.bar} />
         </section>
+        <HeaderButton />
         <section className={header.spacer} />
         <section className={header['extra-area']}>
           {extraArea}
@@ -104,7 +104,7 @@ export default function Root() {
         <section
           className={drawer.links}
         >
-          <DrawerDestinations 
+          <DrawerDestinations
             toggleDrawer={toggleDrawer}
           />
         </section>
@@ -132,7 +132,7 @@ export default function Root() {
             {headerTabs}
           </section>
         </section>
-        <HeaderButton />
+        <Border />
         <ToTopButton />
         <Outlet />
         <ScrollRestoration />
@@ -288,28 +288,30 @@ function HeaderButton() {
 
   if (fastNavigation.length > 0) {
     return (
-      <Border>
-        <Dropdown
-          menu={fastNavigation}
-          altText={i18n("fast_navigation")}
-          onClick={(item) => {
-            navigate(item.value)
-          }}
-          className={classes['fast-navigate']}
-          iconStyle={{
-            borderWidth: '0.1em',
-          }}
-        />
-      </Border>
+      <Dropdown
+        menu={fastNavigation}
+        altText={i18n("fast_navigation")}
+        onClick={(item) => {
+          navigate(item.value)
+        }}
+        className={header['fast-navigate']}
+        iconStyle={{
+          borderWidth: '0.15em',
+          width: '1em',
+          transform: 'translateY(0.1rem) translateX(0.1rem) rotate(-45deg)',
+          height: '1em',
+        }}
+        left={true}
+      />
     )
   } else {
     return (
-      <Border>
-        <ReturnButton
-          className={classes['return-button']}
-          onClick={() => navigate("/")}
-        />
-      </Border>
-    )
+      <section className={header['back-arrow']}>
+        <Link to="/" className={header.link}>
+          <section className={header.arrow1} />
+          <section className={header.arrow2} />
+        </Link>
+      </section>
+    )  
   }
 }

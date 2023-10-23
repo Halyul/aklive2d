@@ -26,7 +26,7 @@ export default function Popup(props) {
         </section>
       </section>
       <section className={`${classes.overlay} ${hidden ? '' : classes.active}`}
-        onClick={() => toggle()} data-type="clickable"/>
+        onClick={() => toggle()} />
     </section>
     <span
       className={classes['entry-text']}

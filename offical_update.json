@@ -1,5 +1,5 @@
 {
-    "length": 34,
+    "length": 36,
     "latest": "2023/11",
     "2023/11": [
         {
@@ -10,6 +10,24 @@
             },
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310848.html"
+        },
+        {
+            "color": "rgb(51, 63, 115)",
+            "codename": {
+                "zh-CN": "远路 · 玛恩纳",
+                "en-US": "W DALI"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310850.html"
+        },
+        {
+            "color": "rgb(222, 2, 7)",
+            "codename": {
+                "zh-CN": "破翼者 · 缄默德克萨斯",
+                "en-US": "WINGBREAKER"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310899.html"
         }
     ],
     "2023/08": [

@@ -212,14 +212,12 @@
       position: relative;
       transform: translate3d(0, 0, 1px);
       font-size: 1rem;
-      padding: 0.44rem 2.25rem 0.44rem 0.63rem;
+      padding: 0.44rem 3.25rem 0.44rem 0.63rem;
       background-color: var(--home-item-hover-background-color);
       background-image: repeating-linear-gradient(
         90deg,
-        var(--home-item-background-linear-gradient-color) 0,
-        var(--home-item-background-linear-gradient-color) 1px,
-        transparent 1px,
-        transparent 4px
+        var(--home-item-background-linear-gradient-color) 0 1px,
+        transparent 1px 4px
       );
       transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
 

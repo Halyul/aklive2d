@@ -133,3 +133,4 @@ dist
 release/*
 spine-runtimes/*
 _*.json
+.DS_Store

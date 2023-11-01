@@ -143,6 +143,7 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 |-------------|----------|------|
 | Logos       | spritepack/ui_camp_logo_h2_0.ab | Sprite |
 | Logos for collaboration | spritepack/ui_camp_logo_h2_linkage_0.ab | Sprite |
+| Logo Mapping | gamedata/art/handbookpos_table.json<sup>3</sup> | TextAsset |
 | Dynaimc Character | arts/dynchars/ | Texture2D & TextAsset |
 | Static Image | Operator: chararts/ ; Skin: skinpack/ | Texture2D |
 | Background | arts/ui/homebackground/wrapper/ | Sprite |
@@ -155,4 +156,4 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 
 <sup>2</sup>: `gamedata/excel/display_meta_table.json->homeBackgroundData`<sup>3</sup> and `gamedata/excel/audio_data.json`<sup>3</sup> is required to locate the music.
 
-<sup>3</sup>: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)
+<sup>3</sup>: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData) for the Chinese version and [Kengxxiao/ArknightsGameData_YoStar](https://github.com/Kengxxiao/ArknightsGameData_YoStar) for other regions.

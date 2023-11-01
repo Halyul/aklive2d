@@ -1,4 +1,3 @@
-date: 2021/11
 filename: dyn_illust_char_1014_nearl2
 logo: logo_kazimierz
 fallback_name: char_1014_nearl2_2
@@ -7,7 +6,7 @@ viewport_right: 3
 viewport_top: 10
 viewport_bottom: 0
 invert_filter: true
-color: rgba(253, 236, 189, 0.95)
 codename: 
   zh-CN: 耀骑士临光
   en-US: Nearl the Radiant Knight
+offical_id: "20220304"

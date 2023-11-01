@@ -1,4 +1,3 @@
-date: 2023/04
 filename: dyn_illust_char_249_mlyss
 logo: logo_rhine
 fallback_name: char_249_mlyss_2
@@ -7,7 +6,7 @@ viewport_right: 0
 viewport_top: 3
 viewport_bottom: 2
 invert_filter: true
-color: rgb(146, 212, 143)
 codename:
   zh-CN: 缪尔赛思
   en-US: Muelsyse
+offical_id: "202304611"

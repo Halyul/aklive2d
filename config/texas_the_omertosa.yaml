@@ -1,4 +1,3 @@
-date: 2022/11
 filename: dyn_illust_char_1028_texas2
 logo: logo_penguin
 fallback_name: char_1028_texas2_2
@@ -7,7 +6,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-color: rgba(34, 37, 255, 0.9)
 codename: 
   zh-CN: 缄默德克萨斯
   en-US: Texas the Omertosa
+offical_id: "202210210"

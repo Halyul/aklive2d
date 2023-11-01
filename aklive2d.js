@@ -14,12 +14,12 @@ import directory from './libs/directory.js'
 import Background from './libs/background.js'
 import CharwordTable from './libs/charword_table.js';
 import Music from './libs/music.js';
-import officalUpdate from './libs/offical_update.js';
-import LogoInfo from './libs/logo_info.js';
+import OfficalInfo from './libs/offical_info.js';
 
 async function main() {
   global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
-  global.__config = getConfig()
+  const officalInfo = new OfficalInfo()
+  global.__config = getConfig(officalInfo)
 
   global.__error = []
 
@@ -28,7 +28,6 @@ async function main() {
 
   const charwordTable = new CharwordTable()
   const musicTable = new Music()
-  const logoTable = new LogoInfo()
 
   /**
    * Skip all, no need for OPERATOR_NAME
@@ -56,11 +55,8 @@ async function main() {
     case 'music':
       await musicTable.process()
       process.exit(0)
-    case 'logo':
-      await logoTable.process()
-      process.exit(0)
     case 'offical_update':
-      await officalUpdate()
+      await officalInfo.update()
       process.exit(0)
     default:
       break
@@ -101,7 +97,7 @@ async function main() {
      */
     switch (op) {
       case 'init':
-        init(OPERATOR_NAME, [EXTRACTED_FOLDER, ...VOICE_FOLDERS])
+        init(OPERATOR_NAME, [EXTRACTED_FOLDER, ...VOICE_FOLDERS], officalInfo)
         process.exit(0)
       default:
         break

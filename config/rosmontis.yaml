@@ -1,4 +1,3 @@
-date: 2020/11
 filename: dyn_illust_char_391_rosmon
 logo: logo_elite
 fallback_name: char_391_rosmon_2
@@ -7,7 +6,7 @@ viewport_right: -14
 viewport_top: -38
 viewport_bottom: -1
 invert_filter: true
-color: rgb(23, 210, 236)
 codename: 
   zh-CN: 迷迭香
   en-US: Rosmontis
+offical_id: "20220378"

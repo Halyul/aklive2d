@@ -1,4 +1,3 @@
-date: 2023/11
 filename: dyn_illust_char_4064_mlynar_epoque#28
 logo: logo_kazimierz
 fallback_name: char_4064_mlynar_epoque#28
@@ -7,7 +6,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-color: rgb(51, 63, 115)
 codename:
   zh-CN: 远路 · 玛恩纳
   en-US: W Dali / Młynar
+offical_id: "202310850"

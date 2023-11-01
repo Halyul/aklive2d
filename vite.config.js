@@ -9,12 +9,14 @@ import { rmdir } from './libs/file.js'
 import Music from './libs/music.js';
 import Background from './libs/background.js'
 import directory from './libs/directory.js'
+import OfficalInfo from './libs/offical_info.js';
 import { PerfseePlugin } from '@perfsee/rollup'
 
 global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
 
 class ViteRunner {
-  #globalConfig = getConfig()
+  #officalInfo = new OfficalInfo()
+  #globalConfig = getConfig(this.#officalInfo)
   #mode
   #baseViteConfig = {
     plugins: [splitVendorChunkPlugin()],
@@ -195,7 +197,8 @@ class ViteRunner {
 
 async function main() {
   if (process.env.npm_lifecycle_event.includes('vite')) {
-    global.__config = getConfig()
+    const officalInfo = new OfficalInfo()
+    global.__config = getConfig(officalInfo)
     const background = new Background()
     await background.process()
     const backgrounds = ['operator_bg.png', ...background.files]

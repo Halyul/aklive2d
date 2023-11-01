@@ -12,6 +12,7 @@
     "directory": "node aklive2d directory",
     "charwords:update": "node aklive2d charwords:update",
     "charwords:build": "node aklive2d charwords:build",
+    "logo": "node aklive2d logo",
     "music": "node aklive2d music",
     "vite:dev": "vite",
     "vite:build": "vite build",

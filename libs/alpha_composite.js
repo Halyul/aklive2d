@@ -29,7 +29,18 @@ export default class AlphaComposite {
   }
 
   async toBuffer(filename, extractedDir) {
-    return await sharp(path.join(extractedDir, filename)).toBuffer()
+    const file = path.join(extractedDir, filename)
+    const { data, info } = await sharp(file).raw().toBuffer({ resolveWithObject: true })
+    const { width, height, channels } = info;
+    const pixelArray = new Uint8ClampedArray(data.buffer);
+    for (let i = 0; i < pixelArray.length; i += 4) {
+      let alpha = pixelArray[i + 3] / 255;
+      pixelArray[i + 0] = pixelArray[i + 0] * alpha
+      pixelArray[i + 1] = pixelArray[i + 1] * alpha
+      pixelArray[i + 2] = pixelArray[i + 2] * alpha
+    }
+
+    return await sharp(pixelArray, { raw: { width, height, channels } }).png().toBuffer();
   }
 
 } 

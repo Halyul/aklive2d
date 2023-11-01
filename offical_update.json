@@ -9,7 +9,8 @@
                 "en-US": "VIRTUOSA"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310848.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310848.html",
+            "id": "202310848"
         },
         {
             "color": "rgb(51, 63, 115)",
@@ -18,7 +19,8 @@
                 "en-US": "W DALI"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310850.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310850.html",
+            "id": "202310850"
         },
         {
             "color": "rgb(222, 2, 7)",
@@ -27,7 +29,8 @@
                 "en-US": "WINGBREAKER"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310899.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310899.html",
+            "id": "202310899"
         }
     ],
     "2023/08": [
@@ -38,7 +41,8 @@
                 "en-US": "TOWERING IS CLIFF OF NOSTALGIA"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202308807.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202308807.html",
+            "id": "202308807"
         }
     ],
     "2023/07": [
@@ -49,7 +53,8 @@
                 "en-US": "GAVIAL THE INVINCIBLE HD26"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307886.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307886.html",
+            "id": "202307886"
         },
         {
             "color": "rgb(34, 187, 255)",
@@ -58,7 +63,8 @@
                 "en-US": "EYJAFJALLA THE HVÍT ASKA"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307865.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307865.html",
+            "id": "202307865"
         },
         {
             "color": "rgba(253, 188, 208, 0.97)",
@@ -67,7 +73,8 @@
                 "en-US": "SUMMER FLOWERS FA394"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307824.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307824.html",
+            "id": "202307824"
         }
     ],
     "2023/04": [
@@ -78,7 +85,8 @@
                 "en-US": "REMNANT"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304833.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304833.html",
+            "id": "202304833"
         },
         {
             "color": "rgb(146, 212, 143)",
@@ -87,7 +95,8 @@
                 "en-US": "MUELSYSE"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304611.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304611.html",
+            "id": "202304611"
         },
         {
             "color": "rgb(140, 7, 7)",
@@ -96,7 +105,8 @@
                 "en-US": "BORN AS ONE"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304670.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304670.html",
+            "id": "202304670"
         },
         {
             "color": "rgb(6, 34, 129)",
@@ -105,7 +115,8 @@
                 "en-US": "TEN THOUSAND MOUNTAINS"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304659.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304659.html",
+            "id": "202304659"
         }
     ],
     "2023/02": [
@@ -116,7 +127,8 @@
                 "en-US": "SNOWY PLAINS IN WORDS"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202302698.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202302698.html",
+            "id": "202302698"
         }
     ],
     "2023/01": [
@@ -127,7 +139,8 @@
                 "en-US": "CHONGYUE"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301606.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301606.html",
+            "id": "202301606"
         },
         {
             "color": "rgb(37, 148, 197)",
@@ -136,7 +149,8 @@
                 "en-US": "IT DOES WASH THE STRINGS"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301647.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301647.html",
+            "id": "202301647"
         }
     ],
     "2022/12": [
@@ -147,7 +161,8 @@
                 "en-US": "SUMMER FEAST"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202211685.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202211685.html",
+            "id": "202211685"
         }
     ],
     "2022/11": [
@@ -158,7 +173,8 @@
                 "en-US": "TEXAS THE OMERTOSA"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210210.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210210.html",
+            "id": "202210210"
         },
         {
             "color": "rgb(231, 166, 144)",
@@ -167,7 +183,8 @@
                 "en-US": "DREAM IN A MOMENT"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210664.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210664.html",
+            "id": "202210664"
         },
         {
             "color": "rgb(141, 213, 228)",
@@ -176,7 +193,8 @@
                 "en-US": "RELIGHT"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210623.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210623.html",
+            "id": "202210623"
         },
         {
             "color": "rgb(116, 177, 222)",
@@ -185,7 +203,8 @@
                 "en-US": "BECOME ANEW"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210632.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210632.html",
+            "id": "202210632"
         }
     ],
     "2022/10": [
@@ -196,7 +215,8 @@
                 "en-US": "TRUST YOUR EYES"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210279.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210279.html",
+            "id": "202210279"
         }
     ],
     "2022/08": [
@@ -207,7 +227,8 @@
                 "en-US": "GAVIAL THE INVINCIBLE"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208258.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208258.html",
+            "id": "202208258"
         },
         {
             "color": "rgb(177, 226, 249)",
@@ -216,7 +237,8 @@
                 "en-US": "COLORFUL WONDERLAND CW03"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208297.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208297.html",
+            "id": "202208297"
         }
     ],
     "2022/05": [
@@ -227,7 +249,8 @@
                 "en-US": "SPECTER THE UNCHAINED"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204284.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204284.html",
+            "id": "202204284"
         },
         {
             "color": "rgba(95, 116, 187, 0.74)",
@@ -236,7 +259,8 @@
                 "en-US": "SUBLIMATION"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204205.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204205.html",
+            "id": "202204205"
         }
     ],
     "2022/04": [
@@ -247,7 +271,8 @@
                 "en-US": "FOCUS"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203222.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203222.html",
+            "id": "202203222"
         }
     ],
     "2022/01": [
@@ -258,7 +283,8 @@
                 "en-US": "LING"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220383.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220383.html",
+            "id": "20220383"
         },
         {
             "color": "rgb(78, 201, 187)",
@@ -267,7 +293,8 @@
                 "en-US": "EVERYTHING IS A MIRACLE"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220321.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220321.html",
+            "id": "20220321"
         }
     ],
     "2021/11": [
@@ -278,7 +305,8 @@
                 "en-US": "NEARL THE RADIANT KNIGHT"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220304.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220304.html",
+            "id": "20220304"
         }
     ],
     "2021/08": [
@@ -289,7 +317,8 @@
                 "en-US": "CH'EN THE HOLUNGDAY"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220345.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220345.html",
+            "id": "20220345"
         }
     ],
     "2021/05": [
@@ -300,7 +329,8 @@
                 "en-US": "SKADI THE CORRUPTING HEART"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220396.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220396.html",
+            "id": "20220396"
         }
     ],
     "2021/02": [
@@ -311,7 +341,8 @@
                 "en-US": "DUSK"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203263.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203263.html",
+            "id": "202203263"
         },
         {
             "color": "rgb(187, 163, 106)",
@@ -320,7 +351,8 @@
                 "en-US": "UNFETTERED FREEDOM"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220362.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220362.html",
+            "id": "20220362"
         }
     ],
     "2020/11": [
@@ -331,7 +363,8 @@
                 "en-US": "ROSMONTIS"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220378.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220378.html",
+            "id": "20220378"
         },
         {
             "color": "rgba(0, 0, 0, 0.83)",
@@ -340,7 +373,8 @@
                 "en-US": "WONDER"
             },
             "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202206246.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202206246.html",
+            "id": "202206246"
         }
     ],
     "2020/05": [
@@ -351,7 +385,8 @@
                 "en-US": "W"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220319.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220319.html",
+            "id": "20220319"
         }
     ],
     "2020/01": [
@@ -362,7 +397,8 @@
                 "en-US": "NIAN"
             },
             "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203231.html"
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203231.html",
+            "id": "202203231"
         }
     ]
 }

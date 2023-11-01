@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#72",
+  "_sprites": [
+    {
+      "name": "char_431_ashlok_epoque#28",
+      "guid": "7778cd493de959f4da9fc2fcf3a7c5a1",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4100_caper_2",
+      "guid": "9958c96e7380529439a846e6ffaee332",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4100_caper_1",
+      "guid": "0115ee031de59294b88f0ede30af11e4",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4098_vvana_2",
+      "guid": "fac3663278a85d8408c3b6abdfeffa5f",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4098_vvana_1",
+      "guid": "23f5fa290b98e60488df1b84e4877bc4",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4088_hodrer_2",
+      "guid": "e58d57299529e3c478a7e989420b2f21",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4088_hodrer_1",
+      "guid": "78a8bce94e391dc45bfeeba6d999ded2",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4064_mlynar_epoque#28",
+      "guid": "d5b58e661aa57cc4f98a953cdaf20526",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4011_lessng_2",
+      "guid": "1572e057593373649aa12516f15662d2",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4011_lessng_1",
+      "guid": "ea6b18e9eadf21b4aae2098177a99773",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_245_cello_2",
+      "guid": "4caeb67961a3e7c4bb25a2687b01fc45",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_245_cello_1",
+      "guid": "f013a1a1c74f07e4887d0da45618cf9f",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -3563046072872327175
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -7225463077484517249
+    },
+    "size": 1024
+  },
+  "_index": 72,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_431_ashlok_epoque#28",
+        "guid": "7778cd493de959f4da9fc2fcf3a7c5a1",
+        "md5": "3b957d697477f5242fa41c34e92f2da0"
+      },
+      {
+        "name": "char_4100_caper_2",
+        "guid": "9958c96e7380529439a846e6ffaee332",
+        "md5": "861984cbfca3683cdc719ff3b62235f3"
+      },
+      {
+        "name": "char_4100_caper_1",
+        "guid": "0115ee031de59294b88f0ede30af11e4",
+        "md5": "10b35acbf164a1a764e7a83c3b5bb3cd"
+      },
+      {
+        "name": "char_4098_vvana_2",
+        "guid": "fac3663278a85d8408c3b6abdfeffa5f",
+        "md5": "33b89124c264bff4846f5789abf788d7"
+      },
+      {
+        "name": "char_4098_vvana_1",
+        "guid": "23f5fa290b98e60488df1b84e4877bc4",
+        "md5": "cff287eb7a07ee4360816b47e272b6e9"
+      },
+      {
+        "name": "char_4088_hodrer_2",
+        "guid": "e58d57299529e3c478a7e989420b2f21",
+        "md5": "f4d20781c4622d6ded59648eaddcc7e7"
+      },
+      {
+        "name": "char_4088_hodrer_1",
+        "guid": "78a8bce94e391dc45bfeeba6d999ded2",
+        "md5": "ac7ff8d86f3210faf8737bb527c4aa93"
+      },
+      {
+        "name": "char_4064_mlynar_epoque#28",
+        "guid": "d5b58e661aa57cc4f98a953cdaf20526",
+        "md5": "c213a969f97c5735e0c7a45a77c345ee"
+      },
+      {
+        "name": "char_4011_lessng_2",
+        "guid": "1572e057593373649aa12516f15662d2",
+        "md5": "871d0f8219050baf5048dae35e8b5b00"
+      },
+      {
+        "name": "char_4011_lessng_1",
+        "guid": "ea6b18e9eadf21b4aae2098177a99773",
+        "md5": "ab8f97faa5cae2361d46e7173b377197"
+      },
+      {
+        "name": "char_245_cello_2",
+        "guid": "4caeb67961a3e7c4bb25a2687b01fc45",
+        "md5": "2e7381e522df2eb8922db8fed2a54837"
+      },
+      {
+        "name": "char_245_cello_1",
+        "guid": "f013a1a1c74f07e4887d0da45618cf9f",
+        "md5": "88e0b34e6701f45ecbe6fdf148ada253"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#72",
+        "guid": "96b6298d7ca08f04f89d98a4300d61fd",
+        "md5": "b6fb8e25fbce30cf7c444ad529c033ab"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#72a",
+        "guid": "068caac19fcbd504e9953f77e8adecba",
+        "md5": "c526dabc14c1dc3ca8306dfb9fd971f3"
+      }
+    ]
+  }
+}

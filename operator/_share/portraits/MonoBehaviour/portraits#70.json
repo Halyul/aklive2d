@@ -71,11 +71,35 @@
       "rotate": 0
     },
     {
+      "name": "char_4019_ncdeer_ncdeer#1",
+      "guid": "5c38a639cd40b9146816ed0325d62937",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_209_ardign_epoque#26",
+      "guid": "74284ba37c929e34189434505051f4d4",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
       "name": "char_2023_ling_ncg#1",
       "guid": "8a6ab56a34898704ea33529228155757",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 546,
         "y": 362,
         "w": 180,
         "h": 360
@@ -87,7 +111,7 @@
       "guid": "78cc58468fb3c3d4d97333214d1ee9b3",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 0,
         "w": 180,
         "h": 360
@@ -99,7 +123,7 @@
       "guid": "6ebc8f70937981743ac8f8b5d9310536",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 362,
         "w": 180,
         "h": 360
@@ -111,12 +135,12 @@
       "guid": "4300452aed0ef0145bbc6e0ea72f4ec4",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 0,
-        "w": 180,
-        "h": 360
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -160,6 +184,16 @@
         "md5": "8152bc54fee6125376be538fd9709aeb"
       },
       {
+        "name": "char_4019_ncdeer_ncdeer#1",
+        "guid": "5c38a639cd40b9146816ed0325d62937",
+        "md5": "f908f9fb808842c1e566d86c6814f296"
+      },
+      {
+        "name": "char_209_ardign_epoque#26",
+        "guid": "74284ba37c929e34189434505051f4d4",
+        "md5": "2b845af5750898791e9782dda6cdb7e5"
+      },
+      {
         "name": "char_2023_ling_ncg#1",
         "guid": "8a6ab56a34898704ea33529228155757",
         "md5": "fc965cdc284a785fe79e8955fe89c590"
@@ -184,14 +218,14 @@
       {
         "name": "portraits#70",
         "guid": "fa568f92d7483dd48be2d962bfa25fd1",
-        "md5": "358c74a9171c7fdd5a3eef7eb9c3b952"
+        "md5": "fbd609492a5f7b75a8b563da221f1838"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#70a",
         "guid": "345539ff8666b914789ec264b2bb1092",
-        "md5": "2aec38bd586659f3b511a0c24d57a179"
+        "md5": "581e426e85cc64d6754c62d08f63ebda"
       }
     ]
   }

@@ -3384,15 +3384,23 @@
     },
     {
       "name": "char_4082_qiubai_ncg#1",
-      "atlas": 70
+      "atlas": 71
+    },
+    {
+      "name": "char_4019_ncdeer_ncdeer#1",
+      "atlas": 71
+    },
+    {
+      "name": "char_209_ardign_epoque#26",
+      "atlas": 71
     },
     {
       "name": "char_2023_ling_ncg#1",
-      "atlas": 70
+      "atlas": 71
     },
     {
       "name": "char_106_franka_ncg#1",
-      "atlas": 70
+      "atlas": 71
     },
     {
       "name": "char_1034_jesca2_2",
@@ -3401,6 +3409,130 @@
     {
       "name": "char_1034_jesca2_1",
       "atlas": 70
+    },
+    {
+      "name": "char_494_vendla_2",
+      "atlas": 71
+    },
+    {
+      "name": "char_494_vendla_1",
+      "atlas": 71
+    },
+    {
+      "name": "char_492_quercu_witch#4",
+      "atlas": 71
+    },
+    {
+      "name": "char_436_whispr_witch#4",
+      "atlas": 71
+    },
+    {
+      "name": "char_427_vigil_epoque#27",
+      "atlas": 71
+    },
+    {
+      "name": "char_4048_doroth_witch#4",
+      "atlas": 71
+    },
+    {
+      "name": "char_300_phenxi_witch#4",
+      "atlas": 71
+    },
+    {
+      "name": "char_431_ashlok_epoque#28",
+      "atlas": 72
+    },
+    {
+      "name": "char_4100_caper_2",
+      "atlas": 72
+    },
+    {
+      "name": "char_4100_caper_1",
+      "atlas": 72
+    },
+    {
+      "name": "char_4098_vvana_2",
+      "atlas": 72
+    },
+    {
+      "name": "char_4098_vvana_1",
+      "atlas": 72
+    },
+    {
+      "name": "char_4088_hodrer_2",
+      "atlas": 72
+    },
+    {
+      "name": "char_4088_hodrer_1",
+      "atlas": 72
+    },
+    {
+      "name": "char_4064_mlynar_epoque#28",
+      "atlas": 72
+    },
+    {
+      "name": "char_4011_lessng_2",
+      "atlas": 72
+    },
+    {
+      "name": "char_4011_lessng_1",
+      "atlas": 72
+    },
+    {
+      "name": "char_245_cello_2",
+      "atlas": 72
+    },
+    {
+      "name": "char_245_cello_1",
+      "atlas": 72
+    },
+    {
+      "name": "char_499_kaitou_2",
+      "atlas": 73
+    },
+    {
+      "name": "char_499_kaitou_1",
+      "atlas": 73
+    },
+    {
+      "name": "char_4110_delphn_2",
+      "atlas": 73
+    },
+    {
+      "name": "char_4110_delphn_1",
+      "atlas": 73
+    },
+    {
+      "name": "char_4109_baslin_2",
+      "atlas": 73
+    },
+    {
+      "name": "char_4109_baslin_1",
+      "atlas": 73
+    },
+    {
+      "name": "char_405_absin_epoque#28",
+      "atlas": 73
+    },
+    {
+      "name": "char_222_bpipe_epoque#28",
+      "atlas": 73
+    },
+    {
+      "name": "char_126_shotst_epoque#28",
+      "atlas": 73
+    },
+    {
+      "name": "char_1028_texas2_iteration#1",
+      "atlas": 73
+    },
+    {
+      "name": "char_4107_vrdant_2",
+      "atlas": 74
+    },
+    {
+      "name": "char_4107_vrdant_1",
+      "atlas": 74
     }
   ],
   "_atlases": [
@@ -3474,7 +3606,11 @@
     "Arts/CharPortraits/portraits#67",
     "Arts/CharPortraits/portraits#68",
     "Arts/CharPortraits/portraits#69",
-    "Arts/CharPortraits/portraits#70"
+    "Arts/CharPortraits/portraits#70",
+    "Arts/CharPortraits/portraits#71",
+    "Arts/CharPortraits/portraits#72",
+    "Arts/CharPortraits/portraits#73",
+    "Arts/CharPortraits/portraits#74"
   ],
   "_inputSpriteDir": "Assets/Torappu/Arts/CharPortraits",
   "_outputAtlasDir": "Assets/Torappu/Arts/CharPortraits/[X]Atlas",

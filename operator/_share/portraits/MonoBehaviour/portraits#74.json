@@ -1,0 +1,79 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#74",
+  "_sprites": [
+    {
+      "name": "char_4107_vrdant_2",
+      "guid": "0e39a9587003bd444b8d2041eb5e1e46",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4107_vrdant_1",
+      "guid": "c21c7f89ff2748243a21f3907aea4ad1",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -1174887431588593105
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -4668554427460424591
+    },
+    "size": 512
+  },
+  "_index": 74,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_4107_vrdant_2",
+        "guid": "0e39a9587003bd444b8d2041eb5e1e46",
+        "md5": "fdd5d07b5ef8992d07f4c9ffaf6efe76"
+      },
+      {
+        "name": "char_4107_vrdant_1",
+        "guid": "c21c7f89ff2748243a21f3907aea4ad1",
+        "md5": "7de71f837e482ad6d7e5002ddc743182"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#74",
+        "guid": "c2fc91b502c6bb44f9a0057978010da3",
+        "md5": "8fd430d222c3741755e2482f0c38cbc3"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#74a",
+        "guid": "7498c8a0257cedc479cbb15641b4f61b",
+        "md5": "7d779be38987e963efe01adf2bfad8c7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#73",
+  "_sprites": [
+    {
+      "name": "char_499_kaitou_2",
+      "guid": "9576ab3d265cfd243a4d045678aa6bae",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_499_kaitou_1",
+      "guid": "d998d8f5315750946b14c7906c4f88f8",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4110_delphn_2",
+      "guid": "2fc9e5d424da95f4d9ca2bd8fa8e9216",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4110_delphn_1",
+      "guid": "0fc0eb086aec0b049a82cd5a2668f9e7",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4109_baslin_2",
+      "guid": "e9e73f196e5ef9949b93c466850ebe2a",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4109_baslin_1",
+      "guid": "98aac7024f1dab240bc7b39932eba830",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_405_absin_epoque#28",
+      "guid": "b2016bb38f52b984dabff595c900735e",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_222_bpipe_epoque#28",
+      "guid": "fe3c5daedc67a8f4d898bf24a444765e",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_126_shotst_epoque#28",
+      "guid": "fae6bf31ad00ad949b6021c16c360fb9",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1028_texas2_iteration#1",
+      "guid": "48e05582c2a48c64da60a00d6d51bfed",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 6329090044547490841
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -4560397130734553059
+    },
+    "size": 1024
+  },
+  "_index": 73,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_499_kaitou_2",
+        "guid": "9576ab3d265cfd243a4d045678aa6bae",
+        "md5": "473d165be60dc06efd67043000cce776"
+      },
+      {
+        "name": "char_499_kaitou_1",
+        "guid": "d998d8f5315750946b14c7906c4f88f8",
+        "md5": "38bc94134b286db3551a89a2e1b03980"
+      },
+      {
+        "name": "char_4110_delphn_2",
+        "guid": "2fc9e5d424da95f4d9ca2bd8fa8e9216",
+        "md5": "b946ec766703750702824798cfd7ff17"
+      },
+      {
+        "name": "char_4110_delphn_1",
+        "guid": "0fc0eb086aec0b049a82cd5a2668f9e7",
+        "md5": "3c6e6b0bedfefd9617c999c4fbe3c3f4"
+      },
+      {
+        "name": "char_4109_baslin_2",
+        "guid": "e9e73f196e5ef9949b93c466850ebe2a",
+        "md5": "890858640b13f3609b0394f0f39d9b49"
+      },
+      {
+        "name": "char_4109_baslin_1",
+        "guid": "98aac7024f1dab240bc7b39932eba830",
+        "md5": "247bbef68927ff63e7b68422b9196912"
+      },
+      {
+        "name": "char_405_absin_epoque#28",
+        "guid": "b2016bb38f52b984dabff595c900735e",
+        "md5": "48062a68747a66a1919c87d2dfa44164"
+      },
+      {
+        "name": "char_222_bpipe_epoque#28",
+        "guid": "fe3c5daedc67a8f4d898bf24a444765e",
+        "md5": "ff8334b7327c4e16a91e01c8efc77ec4"
+      },
+      {
+        "name": "char_126_shotst_epoque#28",
+        "guid": "fae6bf31ad00ad949b6021c16c360fb9",
+        "md5": "e1374b6bd46af3ac523be8c919f3b4fe"
+      },
+      {
+        "name": "char_1028_texas2_iteration#1",
+        "guid": "48e05582c2a48c64da60a00d6d51bfed",
+        "md5": "dd1adcf2bd48de2eb205bc76d47c709c"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#73",
+        "guid": "f9b69cd7b646e84498f773d2002b0500",
+        "md5": "57786fbba8432c551088184937053f64"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#73a",
+        "guid": "2c0eae2e0081bd847b491deac6abbdf0",
+        "md5": "63a3006db02a293ab43c96ab106c027b"
+      }
+    ]
+  }
+}

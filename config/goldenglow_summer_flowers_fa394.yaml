@@ -1,4 +1,3 @@
-date: 2023/07
 filename: dyn_illust_char_377_gdglow_summer#12
 logo: logo_victoria
 fallback_name: char_377_gdglow_summer#12
@@ -7,7 +6,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-color: rgba(253, 188, 208, 0.97)
 codename:
   zh-CN: 夏卉 FA394 · 澄闪
   en-US: Summer Flowers FA394 / Goldenglow
+offical_id: "202307824"

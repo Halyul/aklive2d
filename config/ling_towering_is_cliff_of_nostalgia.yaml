@@ -1,4 +1,3 @@
-date: 2023/08
 filename: dyn_illust_char_2023_ling_ncg#1
 logo: logo_sui
 fallback_name: char_2023_ling_ncg#1
@@ -7,7 +6,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-color: rgb(183, 227, 243)
 codename:
   zh-CN: 崖高梦远 · 令
   en-US: Towering is Cliff of Nostalgia
+offical_id: "202308807"

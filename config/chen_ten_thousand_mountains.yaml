@@ -1,4 +1,3 @@
-date: 2023/04
 filename: dyn_illust_char_1013_chen2_boc#6
 logo: logo_rhodes_override
 fallback_name: char_1013_chen2_boc#6
@@ -7,7 +6,7 @@ viewport_right: 1
 viewport_top: 2
 viewport_bottom: -1
 invert_filter: false
-color: rgb(6, 34, 129)
 codename:
   zh-CN: 万重山 · 假日威龙陈
   en-US: Ten Thousand Mountains / Ch'en/Chen the Holungday
+offical_id: "202304659"

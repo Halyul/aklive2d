@@ -52,7 +52,7 @@
     "react-router-dom": "^6.17.0",
     "react-simple-typewriter": "^5.0.1",
     "reset-css": "^5.0.2",
-    "sharp": "^0.31.3",
+    "sharp": "^0.32.6",
     "yaml": "^2.3.3"
   }
 }

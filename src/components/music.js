@@ -10,6 +10,7 @@ export default class Music {
   #useMusic = false
   #timeOffset = 0.3
   #volume = 0.5
+  #isUsingCustomMusic = false
 
   constructor(el) {
     this.#el = el
@@ -80,7 +81,7 @@ export default class Music {
   }
 
   changeMusic(name) {
-    if (name !== this.#currentMusic) {
+    if (name !== this.#currentMusic && !this.#isUsingCustomMusic) {
       this.#currentMusic = name
       if (this.#useMusic) {
         this.#audioLoopEl.pause()
@@ -90,14 +91,33 @@ export default class Music {
     }
   }
 
+  setMusic(data, type) {
+    this.#audioLoopEl.src = data
+    this.#audioLoopEl.querySelector('source').type = `audio/${type}`
+    this.#isUsingCustomMusic = true
+    this.#playMusic()
+  }
+
+  resetMusic() {
+    this.#isUsingCustomMusic = false
+    this.#playMusic()
+  }
+
   #playMusic() {
-    const introOgg = this.#mapping[this.#currentMusic].intro
-    const intro = `./assets/${this.#folder}/${introOgg}`
-    const loop = `./assets/${this.#folder}/${this.#mapping[this.#currentMusic].loop}`
-    this.#audioLoopEl.src = loop
-    if (introOgg) {
-      this.#audioIntroEl.src = intro || loop
+    if (!this.#isUsingCustomMusic) {
+      const introOgg = this.#mapping[this.#currentMusic].intro
+      const intro = `./assets/${this.#folder}/${introOgg}`
+      const loop = `./assets/${this.#folder}/${this.#mapping[this.#currentMusic].loop}`
+      this.#audioLoopEl.src = loop
+      this.#audioLoopEl.querySelector('source').type = 'audio/ogg'
+      if (introOgg) {
+        this.#audioIntroEl.src = intro || loop
+        this.#audioIntroEl.querySelector('source').type = 'audio/ogg'
+      } else {
+        this.#audioLoopEl.play()
+      }
     } else {
+      this.#audioIntroEl.pause()
       this.#audioLoopEl.play()
     }
   }

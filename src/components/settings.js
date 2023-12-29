@@ -327,11 +327,36 @@ export default class Settings {
     this.resetLogoImage()
     this.logoReset()
     this.resetBackground()
+    this.resetMusic()
     this.setLogoDisplay(this.#defaulthideLogo)
     this.setFPS(this.#defaultFps)
     document.getElementById("fps_slider").value = this.#defaultFps
     document.getElementById("fps_input").value = this.#defaultFps
     this.spinePlayer.play()
+  }
+
+  setMusicFromWE(url) {
+    const type = url.split(".").pop()
+    window.music.setMusic(url, type)
+    document.getElementById("custom_music_clear").disabled = false
+  }
+
+  setMusic(e) {
+    this.#readFile(
+      e,
+      (readerEvent) => {
+        const content = readerEvent.target.result;
+        const type = content.split(";")[0].split(":")[1]
+        window.music.setMusic(content, type)
+      },
+      () => document.getElementById("custom_music_clear").disabled = false
+    )
+  }
+
+  resetMusic() {
+    document.getElementById("custom_music").value = ""
+    document.getElementById("custom_music_clear").disabled = true
+    window.music.resetMusic()
   }
 
   #insertHTML() {
@@ -348,7 +373,7 @@ export default class Settings {
           <div id="operator_logo_realted">
             <div>
               <label for="logo_image">Logo Image (Store Locally)</label>
-              <input type="file" id="logo_image" />
+              <input type="file" id="logo_image" accept="image/*"/>
               <button type="button" id="logo_image_clear" disabled>Clear</button>
             </div>
             <div>
@@ -382,7 +407,7 @@ export default class Settings {
           </div>
           <div>
             <label for="custom_background"> Custom Background (Store Locally)</label>
-            <input type="file" id="custom_background"/>
+            <input type="file" id="custom_background" accept="image/*"/>
             <button type="button" disabled id="custom_background_clear" disabled>Clear</button>
           </div>
         </div>
@@ -441,6 +466,11 @@ export default class Settings {
               <select name="music_select" id="music_select">
                 ${this.#updateOptions("music_select", window.music.music)}
               </select>
+            </div>
+            <div>
+              <label for="custom_music"> Custom Music (Store Locally)</label>
+              <input type="file" id="custom_music" accept="audio/*"/>
+              <button type="button" disabled id="custom_music_clear" disabled>Clear</button>
             </div>
             <div>
               <label for="music_volume">Music Volume</label>
@@ -661,6 +691,10 @@ export default class Settings {
         }
       }, {
         id: "music_select", event: "change", handler: e => window.music.changeMusic(e.currentTarget.value)
+      }, {
+        id: "custom_music", event: "change", handler: e => _this.setMusic(e)
+      }, {
+        id: "custom_music_clear", event: "click", handler: () => _this.resetMusic()
       }, {
         id: "music_volume_slider", event: "input", handler: e => {
           _this.#sync(e.currentTarget, "music_volume_input");

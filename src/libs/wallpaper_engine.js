@@ -49,7 +49,7 @@ window.wallpaperPropertyListener = {
         }
         if (properties.background) {
             if (properties.background.value) {
-                window.settings.setBackgoundImage(`url('file:///${properties.background.value}`)
+                window.settings.setBackgoundImage(`url('file:///${properties.background.value}')`)
                 window.settings.functionInsights("setBackgoundImage", Object.keys(properties) !== 1)
             } else {
                 window.settings.resetBackground()
@@ -102,6 +102,14 @@ window.wallpaperPropertyListener = {
         if (properties.music_volume) {
             window.music.volume = properties.music_volume.value
             window.settings.functionInsights("music_volume", Object.keys(properties) !== 1)
+        }
+        if (properties.custom_music) {
+            if (properties.custom_music.value) {
+                window.settings.setMusicFromWE(`file:///${properties.custom_music.value}`)
+                window.settings.functionInsights("setMusic", Object.keys(properties) !== 1)
+            } else {
+                window.settings.resetMusic()
+            }
         }
         if (properties.position) {
             if (!properties.position.value) {

@@ -2,7 +2,7 @@ description: !match "~{split('config', 'title' ,' - ')[0]} Live 2D\n~{split('con
 localization:
   en-us:
     ui_notice_title: <hr><h4>📝 Notes</h4><hr>
-    ui_notice_changelog: <span><b>New Background and Music Added!</b></span>
+    ui_notice_changelog: <span><b>Set your own music now!</b></span>
     ui_notice_set_fps: <span><b>Set FPS target in Settings</b></span>
     ui_notice_github: "Github: https://gura.ch/aklive2d-gh"
     ui_notice_other_operators: "Previews: https://gura.ch/aklive2d"
@@ -34,13 +34,14 @@ localization:
     ui_music_title: <hr><h4>📝 Music</h4><hr>
     ui_music_notice: <span><b>Please adjust the 'Offset' value if you notice audio cutoff</b></span>
     ui_music_notice1: <span><b>'bg_rhodes_day.png' and 'operator_bg.png' use the same music, it is not a bug.</b></span>
+    ui_custom_music: Custom Music
     ui_music_selection: Music
     ui_music_volume: Volume
     ui_music_offset: Offset
     ui_useStartAnimation_title: Use Start Animation
   zh-chs:
     ui_notice_title: <hr><h4>📝 通知</h4><hr>
-    ui_notice_changelog: <span><b>已添加新背景和音乐! </b></span>
+    ui_notice_changelog: <span><b>可设定自定义音乐! </b></span>
     ui_notice_set_fps: <span><b>在设置中设定FPS目标</b></span>
     ui_notice_github: "Github: https://gura.ch/aklive2d-gh"
     ui_notice_other_operators: "预览: https://gura.ch/aklive2d"
@@ -73,6 +74,7 @@ localization:
     ui_music_notice: <span><b>如若发现音频截止，请调节 '弥补' 数值</b></span>
     ui_music_notice1: <span><b>'bg_rhodes_day.png' 和 'operator_bg.png' 使用同样的音乐，并非Bug</b></span>
     ui_music_selection: 音乐
+    ui_custom_music: 自定义音乐
     ui_music_volume: 音量
     ui_music_offset: 弥补
     ui_useStartAnimation_title: 使用开始动画
@@ -243,6 +245,11 @@ properties:
      type: combo
      value: !match ~{var('assets', "music")[0]}
      options: !match ~{var('assets', "musicOptions")}
+  - key: custom_music
+    value: 
+     text: ui_custom_music
+     type: file
+     value: ""
   - key: music_volume
     value: 
      text: ui_music_volume

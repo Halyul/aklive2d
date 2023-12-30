@@ -10,6 +10,7 @@ document.querySelector('#app').innerHTML = `
   <div id="settings" hidden></div>
   <div id="voice_box" hidden></div>
   <div id="music_box" hidden></div> 
+  <div id="video_background"></div>
   <div id="widget-wrapper">
     <div id="fallback"
       style="background-image: url(./assets/${import.meta.env.VITE_FALLBACK_FILENAME}.png)"

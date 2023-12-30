@@ -359,6 +359,16 @@ export default class Settings {
     window.music.resetMusic()
   }
 
+  setVideoFromWE(url) {
+    const type = url.split(".").pop()
+    document.getElementById("custom_video_background_clear").disabled = false
+  }
+
+  resetVideo() {
+    document.getElementById("custom_video_background").value = ""
+    document.getElementById("custom_video_background_clear").disabled = true
+  }
+
   #insertHTML() {
     this.#el.innerHTML = `
       <div>
@@ -409,6 +419,11 @@ export default class Settings {
             <label for="custom_background"> Custom Background (Store Locally)</label>
             <input type="file" id="custom_background" accept="image/*"/>
             <button type="button" disabled id="custom_background_clear" disabled>Clear</button>
+          </div>
+          <div>
+            <label for="custom_video_background"> Custom Video Background (Store Locally)</label>
+            <input type="file" id="custom_video_background" accept="video/*"/>
+            <button type="button" disabled id="custom_video_background_clear" disabled>Clear</button>
           </div>
         </div>
         <div>

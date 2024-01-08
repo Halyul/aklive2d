@@ -1,6 +1,18 @@
 {
-    "length": 36,
-    "latest": "2023/11",
+    "length": 37,
+    "latest": "2024/01",
+    "2024/01": [
+        {
+            "color": "rgb(228, 183, 19)",
+            "codename": {
+                "zh-CN": "博物 · 焰影苇草",
+                "en-US": "CURATOR"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401871.html",
+            "id": "202401871"
+        }
+    ],
     "2023/11": [
         {
             "color": "rgb(189, 103, 7)",

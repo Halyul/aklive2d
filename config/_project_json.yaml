@@ -82,9 +82,9 @@ properties:
   - key: notice_title
     value: 
      text: ui_notice_title
-  - key: notice_changelog
-    value: 
-     text: ui_notice_changelog
+  # - key: notice_changelog
+  #   value: 
+  #    text: ui_notice_changelog
   - key: notice_set_fps
     value: 
      text: ui_notice_set_fps
@@ -245,11 +245,12 @@ properties:
      type: combo
      value: !match ~{var('assets', "music")[0]}
      options: !match ~{var('assets', "musicOptions")}
-  - key: custom_music
-    value: 
-     text: ui_custom_music
-     type: file
-     value: ""
+  # - key: custom_music
+  #   value: 
+  #    text: ui_custom_music
+  #    condition: music_title.value == true
+  #    type: file
+  #    value: ""
   - key: music_volume
     value: 
      text: ui_music_volume

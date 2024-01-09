@@ -100,7 +100,9 @@ export default class Music {
 
   resetMusic() {
     this.#isUsingCustomMusic = false
-    this.#playMusic()
+    if (this.#useMusic) {
+      this.#playMusic()
+    }
   }
 
   #playMusic() {

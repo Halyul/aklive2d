@@ -1,0 +1,232 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#74",
+  "_sprites": [
+    {
+      "name": "char_466_qanik_snow#6",
+      "guid": "1623d168eaa3a1741bfe40ba63f88ab3",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4081_warmy_1",
+      "guid": "16b5db3baad16dd4da217c3966b91d1b",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4065_judge_snow#6",
+      "guid": "8a027ce4506666543b7d37bca8d4e580",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4017_puzzle_epoque#29",
+      "guid": "ba4fcfa3e5ab4e841945f52640610185",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_388_mint_epoque#30",
+      "guid": "40fe353408fb31141bab204145b22573",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_343_tknogi_snow#6",
+      "guid": "acc26f800dc33124990b42bd24d6d14d",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_212_ansel_epoque#29",
+      "guid": "b5352d46e09ee104e95d4ac68e86fac9",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_194_leto_2",
+      "guid": "57e8f5420d5c13d48b6662d2f95ede06",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_194_leto_1",
+      "guid": "bd939175648e09f41ba317513bf7258d",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_183_skgoat_epoque#30",
+      "guid": "afd1b7e0d12b9a64d934ec78c7a5bb59",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1020_reed2_epoque#30",
+      "guid": "b2f6831a1597a17428d8a6a4641ec6a7",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -1174887431588593105
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -4668554427460424591
+    },
+    "size": 1024
+  },
+  "_index": 74,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_466_qanik_snow#6",
+        "guid": "1623d168eaa3a1741bfe40ba63f88ab3",
+        "md5": "3de082e4517af961b371461b3e79ffce"
+      },
+      {
+        "name": "char_4081_warmy_1",
+        "guid": "16b5db3baad16dd4da217c3966b91d1b",
+        "md5": "b18364a9e3282f83284fe064187486c3"
+      },
+      {
+        "name": "char_4065_judge_snow#6",
+        "guid": "8a027ce4506666543b7d37bca8d4e580",
+        "md5": "afd84c5e8669a4b36e4487bacf251852"
+      },
+      {
+        "name": "char_4017_puzzle_epoque#29",
+        "guid": "ba4fcfa3e5ab4e841945f52640610185",
+        "md5": "72a421a653d74cfb026378560323d70c"
+      },
+      {
+        "name": "char_388_mint_epoque#30",
+        "guid": "40fe353408fb31141bab204145b22573",
+        "md5": "0d7d82f2b2fa34bdfd64c69afc2373a3"
+      },
+      {
+        "name": "char_343_tknogi_snow#6",
+        "guid": "acc26f800dc33124990b42bd24d6d14d",
+        "md5": "f19739e20c5eb634321ca816405b6671"
+      },
+      {
+        "name": "char_212_ansel_epoque#29",
+        "guid": "b5352d46e09ee104e95d4ac68e86fac9",
+        "md5": "2377ed9a46ef996f04199182d22e1f3c"
+      },
+      {
+        "name": "char_194_leto_2",
+        "guid": "57e8f5420d5c13d48b6662d2f95ede06",
+        "md5": "cc0801539e8f16ea12ca6448a2d14532"
+      },
+      {
+        "name": "char_194_leto_1",
+        "guid": "bd939175648e09f41ba317513bf7258d",
+        "md5": "7be12a80f8d5a69b5b5db289887b02a6"
+      },
+      {
+        "name": "char_183_skgoat_epoque#30",
+        "guid": "afd1b7e0d12b9a64d934ec78c7a5bb59",
+        "md5": "7a2e400a2118081df461dcef004abcf8"
+      },
+      {
+        "name": "char_1020_reed2_epoque#30",
+        "guid": "b2f6831a1597a17428d8a6a4641ec6a7",
+        "md5": "66917c3fba1264f3e9a3a39c8e26ea20"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#74",
+        "guid": "c2fc91b502c6bb44f9a0057978010da3",
+        "md5": "d445cc7140040b1ea90ae778f298f4ca"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#74a",
+        "guid": "7498c8a0257cedc479cbb15641b4f61b",
+        "md5": "2535a6d66a67271ccb0ebeca112403b7"
+      }
+    ]
+  }
+}

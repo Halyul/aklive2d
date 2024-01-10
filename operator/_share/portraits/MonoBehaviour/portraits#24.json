@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#24",
+  "_sprites": [
+    {
+      "name": "char_363_toddi_1",
+      "guid": "4b27c42a496b45444a4e453b8cad8c7d",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_362_saga_2",
+      "guid": "5a2a4bcacc52789469bc52d93b540a7c",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_362_saga_1",
+      "guid": "de67cc3b50dad534f9837c1a65893cc5",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_365_aprl_2",
+      "guid": "8f5a4e1b7788c784da301aed8664e374",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_365_aprl_1",
+      "guid": "7f074911e206e1145aee4ee46fef20b8",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_363_toddi_2",
+      "guid": "cbc23c8cec13e5846805ed4f00f83f20",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_356_broca_1",
+      "guid": "b9bde9bb604dbe84089e9bbc8bc6f9e1",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_355_ethan_2",
+      "guid": "70c7c29e7fc57a941b1ffa79dfa9cdee",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_355_ethan_1",
+      "guid": "843bbff0472a69344aacfa626208838d",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_358_lisa_2",
+      "guid": "304c9e0ec321f3b4fa7a77a17839d680",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_358_lisa_1",
+      "guid": "b6a4b8a7f28bd194aa60a51da35806f4",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_356_broca_2",
+      "guid": "82580859368140843a0d57d3e5eb42d8",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -7254170437229826746
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 8139161130569540231
+    },
+    "size": 1024
+  },
+  "_index": 24,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_363_toddi_1",
+        "guid": "4b27c42a496b45444a4e453b8cad8c7d",
+        "md5": "798aada67ab27771fa2ff81fe3d6aadc"
+      },
+      {
+        "name": "char_362_saga_2",
+        "guid": "5a2a4bcacc52789469bc52d93b540a7c",
+        "md5": "af6d7be5e5cb2d620443ca052721c22b"
+      },
+      {
+        "name": "char_362_saga_1",
+        "guid": "de67cc3b50dad534f9837c1a65893cc5",
+        "md5": "ff4c36c9b845665e7d126fc1e91ce5da"
+      },
+      {
+        "name": "char_365_aprl_2",
+        "guid": "8f5a4e1b7788c784da301aed8664e374",
+        "md5": "2802e15878ec85e8f6b297ec48c8ae71"
+      },
+      {
+        "name": "char_365_aprl_1",
+        "guid": "7f074911e206e1145aee4ee46fef20b8",
+        "md5": "1dec05af21b6e5ea3be6b374b30fc57a"
+      },
+      {
+        "name": "char_363_toddi_2",
+        "guid": "cbc23c8cec13e5846805ed4f00f83f20",
+        "md5": "40a12f683d7d75f56ab6191de04bcac6"
+      },
+      {
+        "name": "char_356_broca_1",
+        "guid": "b9bde9bb604dbe84089e9bbc8bc6f9e1",
+        "md5": "a7527fa231f78ac679128555263bb31e"
+      },
+      {
+        "name": "char_355_ethan_2",
+        "guid": "70c7c29e7fc57a941b1ffa79dfa9cdee",
+        "md5": "efe968db555c54e1a253543ee9515c5e"
+      },
+      {
+        "name": "char_355_ethan_1",
+        "guid": "843bbff0472a69344aacfa626208838d",
+        "md5": "15ddae89c8b7d361782f58aa7b96ec5a"
+      },
+      {
+        "name": "char_358_lisa_2",
+        "guid": "304c9e0ec321f3b4fa7a77a17839d680",
+        "md5": "7691e2fb61bb6ff52494886c4253b616"
+      },
+      {
+        "name": "char_358_lisa_1",
+        "guid": "b6a4b8a7f28bd194aa60a51da35806f4",
+        "md5": "a7eaffbe2b04144c37fafddd9975b7dc"
+      },
+      {
+        "name": "char_356_broca_2",
+        "guid": "82580859368140843a0d57d3e5eb42d8",
+        "md5": "b8bc162c03e1743549ccc1851e5156de"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#24",
+        "guid": "62377a0d8227ec24bb753786d883db43",
+        "md5": "e46c0dabaaf7b4043ec035de60d3e1f0"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#24a",
+        "guid": "36fe003d1e27d5844b057df58d0c2ca9",
+        "md5": "bf8a3faefbcb5808304d7545b1b52d13"
+      }
+    ]
+  }
+}

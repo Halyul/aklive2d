@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#36",
+  "_sprites": [
+    {
+      "name": "char_124_kroos_witch#1",
+      "guid": "0e9174abcb8e42f43bb1c687654c9bfb",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_123_fang_winter#1",
+      "guid": "c0424a1240ca4fd4d83d62412b6fab87",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_122_beagle_boc#1",
+      "guid": "74e1d7eb407ca744dae69b2c5746a6c8",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_129_bluep_marthe#3",
+      "guid": "3c25bb2440f290548ab10ed0c638fa72",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_128_plosis_epoque#3",
+      "guid": "d6fbdf05b9db1a64d85caa008a1e030c",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_126_shotst_epoque#10",
+      "guid": "9d1efba0c3baf534d982e2b1f1d18660",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_115_headbr_marthe#2",
+      "guid": "f3db6bca8aa97714f9c21a2febf09049",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_115_headbr_it#1",
+      "guid": "1a75fca0bbbeb3f409f372cfc58e2247",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_113_cqbw_epoque#7",
+      "guid": "5f32827da83b5304288a882b5c565395",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_120_hibisc_nian#1",
+      "guid": "5e1b1972ea5331642983f84b3bafce3a",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_118_yuki_boc#2",
+      "guid": "463316d292d525f44b71020d4e3f44b1",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_117_myrrh_wild#1",
+      "guid": "a99d8688ca6c350438b4e695abf58a1f",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -6216592523155151772
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 4761113983234765813
+    },
+    "size": 1024
+  },
+  "_index": 36,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_124_kroos_witch#1",
+        "guid": "0e9174abcb8e42f43bb1c687654c9bfb",
+        "md5": "c9d736a3dbc34cabacc6582e5059da0d"
+      },
+      {
+        "name": "char_123_fang_winter#1",
+        "guid": "c0424a1240ca4fd4d83d62412b6fab87",
+        "md5": "fbb9bd82d63b9dcb15165f6dc462668e"
+      },
+      {
+        "name": "char_122_beagle_boc#1",
+        "guid": "74e1d7eb407ca744dae69b2c5746a6c8",
+        "md5": "3d9fe2e89747b09ab401f8cfd4994d70"
+      },
+      {
+        "name": "char_129_bluep_marthe#3",
+        "guid": "3c25bb2440f290548ab10ed0c638fa72",
+        "md5": "572e08196155039c59558192f5d82c7f"
+      },
+      {
+        "name": "char_128_plosis_epoque#3",
+        "guid": "d6fbdf05b9db1a64d85caa008a1e030c",
+        "md5": "31540e68c1606b5862637d8150bbbf35"
+      },
+      {
+        "name": "char_126_shotst_epoque#10",
+        "guid": "9d1efba0c3baf534d982e2b1f1d18660",
+        "md5": "eea77edaabdd0da9d1784c9f86469f49"
+      },
+      {
+        "name": "char_115_headbr_marthe#2",
+        "guid": "f3db6bca8aa97714f9c21a2febf09049",
+        "md5": "73ad23620cb2a85a78c0a1014b52a41d"
+      },
+      {
+        "name": "char_115_headbr_it#1",
+        "guid": "1a75fca0bbbeb3f409f372cfc58e2247",
+        "md5": "d790cd1172da54ae74b460145a0c6780"
+      },
+      {
+        "name": "char_113_cqbw_epoque#7",
+        "guid": "5f32827da83b5304288a882b5c565395",
+        "md5": "ffb93be2febb54dbf66fc9f0d38dfb70"
+      },
+      {
+        "name": "char_120_hibisc_nian#1",
+        "guid": "5e1b1972ea5331642983f84b3bafce3a",
+        "md5": "3432dfa1d1e77374d13d9699d0e28deb"
+      },
+      {
+        "name": "char_118_yuki_boc#2",
+        "guid": "463316d292d525f44b71020d4e3f44b1",
+        "md5": "de370a3e1f09fc5fe0b733e37315e4ed"
+      },
+      {
+        "name": "char_117_myrrh_wild#1",
+        "guid": "a99d8688ca6c350438b4e695abf58a1f",
+        "md5": "3e862c4e4eb2be8c809bc0f970d25073"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#36",
+        "guid": "5e154efae690398418aa8e4385f2ac7a",
+        "md5": "4cc2edc8b14409262470ab59480e4537"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#36a",
+        "guid": "70963c7302bc5e149adf124dd2bfbbd1",
+        "md5": "3fec85e173e512d0a9c2b3d73963374d"
+      }
+    ]
+  }
+}

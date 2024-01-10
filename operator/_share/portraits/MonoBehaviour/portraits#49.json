@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#49",
+  "_sprites": [
+    {
+      "name": "char_2013_cerber_whirlwind#2",
+      "guid": "c7c6e818f2676874f90adc0ad9215170",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_198_blackd_winter#1",
+      "guid": "de991edfa2559d048bd4eb73aa4fc2b8",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_198_blackd_as#1",
+      "guid": "c7946fc92f0397c4ca45db18e2acc9bd",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_243_waaifu_whirlwind#2",
+      "guid": "5c9c21fbd513bf64fa8bac99c3d6d148",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_241_panda_nian#7",
+      "guid": "ff5da9828a038c2448c450a2fe4f6c75",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_2015_dusk_nian#7",
+      "guid": "8c4b5801067d65045a3d4189682609f1",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_188_helage_boc#2",
+      "guid": "44f1ab0cfd2073a4792368bfdca15bb3",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_187_ccheal_epoque#2",
+      "guid": "342b2eca88a7aa541bea195bd609c78a",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_181_flower_epoque#9",
+      "guid": "e22a0570d341c8d4c862b49ea04993a4",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_197_poca_epoque#12",
+      "guid": "443fa8e2373a4354e9a0f9854e5e0b5e",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_196_sunbr_summer#1",
+      "guid": "e4ea585db035a1e4490781a870287e18",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_195_glassb_kitchen#1",
+      "guid": "de9cdd1b6ad26e246ae9cd6dbd07fb71",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 8677007065543286558
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -6339126410695682307
+    },
+    "size": 1024
+  },
+  "_index": 49,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_2013_cerber_whirlwind#2",
+        "guid": "c7c6e818f2676874f90adc0ad9215170",
+        "md5": "aada14b9068d0f3f97defe4e2d3313e7"
+      },
+      {
+        "name": "char_198_blackd_winter#1",
+        "guid": "de991edfa2559d048bd4eb73aa4fc2b8",
+        "md5": "bea92de81e2921606bc6687bfe3eb04e"
+      },
+      {
+        "name": "char_198_blackd_as#1",
+        "guid": "c7946fc92f0397c4ca45db18e2acc9bd",
+        "md5": "98536f31d9180258d4d4b6dfea373af6"
+      },
+      {
+        "name": "char_243_waaifu_whirlwind#2",
+        "guid": "5c9c21fbd513bf64fa8bac99c3d6d148",
+        "md5": "4c9f6e4b126a3aa60f2df331fba2594c"
+      },
+      {
+        "name": "char_241_panda_nian#7",
+        "guid": "ff5da9828a038c2448c450a2fe4f6c75",
+        "md5": "2977f0f219dc2b96886f1c486ac735ee"
+      },
+      {
+        "name": "char_2015_dusk_nian#7",
+        "guid": "8c4b5801067d65045a3d4189682609f1",
+        "md5": "5f8d9c1e72724f0648ddb3c62afc7578"
+      },
+      {
+        "name": "char_188_helage_boc#2",
+        "guid": "44f1ab0cfd2073a4792368bfdca15bb3",
+        "md5": "04217983a5bbea38f3a30c1b43cbe442"
+      },
+      {
+        "name": "char_187_ccheal_epoque#2",
+        "guid": "342b2eca88a7aa541bea195bd609c78a",
+        "md5": "1c3d952ec560f0203b540653f1a3cb1b"
+      },
+      {
+        "name": "char_181_flower_epoque#9",
+        "guid": "e22a0570d341c8d4c862b49ea04993a4",
+        "md5": "006764f87f4466634675b0f230b375f4"
+      },
+      {
+        "name": "char_197_poca_epoque#12",
+        "guid": "443fa8e2373a4354e9a0f9854e5e0b5e",
+        "md5": "b08438ac37873fd67d4c615345ce07c8"
+      },
+      {
+        "name": "char_196_sunbr_summer#1",
+        "guid": "e4ea585db035a1e4490781a870287e18",
+        "md5": "e70879e39f01504413779948fd36500f"
+      },
+      {
+        "name": "char_195_glassb_kitchen#1",
+        "guid": "de9cdd1b6ad26e246ae9cd6dbd07fb71",
+        "md5": "d84e271f3a66a1754807fc122da2ad67"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#49",
+        "guid": "7d7588cd37c6b60418f93af1cb73a784",
+        "md5": "7392aec767369c21e89c56de6aa9d9c8"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#49a",
+        "guid": "5fade1bf5034a67429602473d9fcba62",
+        "md5": "c7c7eb60544a47b97506d728769a4185"
+      }
+    ]
+  }
+}

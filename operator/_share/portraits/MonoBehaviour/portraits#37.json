@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#37",
+  "_sprites": [
+    {
+      "name": "char_145_prove_summer#3",
+      "guid": "42cb6d3d756b31e49911a219eb4397d9",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_144_red_summer#6",
+      "guid": "13b23a3462b6fe74f9dbab69a81aab3b",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_143_ghost_winter#1",
+      "guid": "6ae0a097bc7dd994f8fb95c059a6498a",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_148_nearl_summer#2",
+      "guid": "74151369e02c3194b8505a4004d26c65",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_147_shining_summer#1",
+      "guid": "988870dc79ae7e74fa4d9d29e7ac51c4",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_145_prove_wild#5",
+      "guid": "0ae99032299b7e64589cd9a75f713eda",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_134_ifrit_summer#1",
+      "guid": "66712a70a5639eb4a8c375d90087fb2f",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_134_ifrit_kfc#1",
+      "guid": "b2504d07a0c891443a7ad5801299a6c2",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_130_doberm_epoque#7",
+      "guid": "2c27d5751d2d62449bff896437766b78",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_140_whitew_boc#1",
+      "guid": "326bfed0249df5e489c889b2c775ef46",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_137_brownb_kitchen#1",
+      "guid": "f04f3c2f9d47daf4ea21f62779ef2aef",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_136_hsguma_nian#3",
+      "guid": "634d3db5244ca4e4aa2323465ca5f8f3",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 5726925228394956990
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -3548437962405383566
+    },
+    "size": 1024
+  },
+  "_index": 37,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_145_prove_summer#3",
+        "guid": "42cb6d3d756b31e49911a219eb4397d9",
+        "md5": "a9a32e657af77d54e9d25f36dca80919"
+      },
+      {
+        "name": "char_144_red_summer#6",
+        "guid": "13b23a3462b6fe74f9dbab69a81aab3b",
+        "md5": "cf5919ec619e7a0e5dc6268b20b8d1a2"
+      },
+      {
+        "name": "char_143_ghost_winter#1",
+        "guid": "6ae0a097bc7dd994f8fb95c059a6498a",
+        "md5": "c6b8bc8ef70929d4bc343d131bf97006"
+      },
+      {
+        "name": "char_148_nearl_summer#2",
+        "guid": "74151369e02c3194b8505a4004d26c65",
+        "md5": "975cb048d8c99ffecec4cac0f018eef0"
+      },
+      {
+        "name": "char_147_shining_summer#1",
+        "guid": "988870dc79ae7e74fa4d9d29e7ac51c4",
+        "md5": "3cd8c9fef46a4e2d5f474b59ddcfc71b"
+      },
+      {
+        "name": "char_145_prove_wild#5",
+        "guid": "0ae99032299b7e64589cd9a75f713eda",
+        "md5": "5520e3a2eaaf10f96b10b5e517a65b29"
+      },
+      {
+        "name": "char_134_ifrit_summer#1",
+        "guid": "66712a70a5639eb4a8c375d90087fb2f",
+        "md5": "e120f14b96f6ecfd2878611bda8fd761"
+      },
+      {
+        "name": "char_134_ifrit_kfc#1",
+        "guid": "b2504d07a0c891443a7ad5801299a6c2",
+        "md5": "c51ce5140180a90552b6b791b4c362dd"
+      },
+      {
+        "name": "char_130_doberm_epoque#7",
+        "guid": "2c27d5751d2d62449bff896437766b78",
+        "md5": "77d801f0f98fbad041f8e54a6d16aae4"
+      },
+      {
+        "name": "char_140_whitew_boc#1",
+        "guid": "326bfed0249df5e489c889b2c775ef46",
+        "md5": "786dda56d732cf65fc1289e2ce389ece"
+      },
+      {
+        "name": "char_137_brownb_kitchen#1",
+        "guid": "f04f3c2f9d47daf4ea21f62779ef2aef",
+        "md5": "d6ed44377fdf5a97072927cc78a556f4"
+      },
+      {
+        "name": "char_136_hsguma_nian#3",
+        "guid": "634d3db5244ca4e4aa2323465ca5f8f3",
+        "md5": "ffecbc48a0ed3dfbb9a20ea62a492f9e"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#37",
+        "guid": "f77146503b51c51449fbd88f246ff36c",
+        "md5": "3503569584a9ffb92bb05c8ecabf39d4"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#37a",
+        "guid": "dc590de70a4cd8249b08452fdc41b560",
+        "md5": "ba6c6cda50d52f40078bbdab8cc604ae"
+      }
+    ]
+  }
+}

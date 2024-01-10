@@ -1,8 +1,8 @@
 name: Build release and push to Github
 
-# on:
-#   push:
-#     branches: [ main ]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build:
@@ -24,12 +24,11 @@ jobs:
         run: pnpm run build-all
       - name: Build directory
         run: pnpm run vite:directory:build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./release
-          cname: arknights.halyul.dev
-          allow_empty_commit: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: aklive2d
+          directory: release
+          wranglerVersion: '3'

@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#22",
+  "_sprites": [
+    {
+      "name": "char_343_tknogi_1",
+      "guid": "2e37c941ab4156d439ca9cac00910053",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_340_shwaz_2",
+      "guid": "0e5a70492a0b402469d44183bab62f0b",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_340_shwaz_1",
+      "guid": "9c08a61a71d46f443a295682b810e769",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_344_beewax_2",
+      "guid": "852a36d911c45994e812071b41117460",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_344_beewax_1",
+      "guid": "6b06d40c9365d094e9b49122cb63cf72",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_343_tknogi_2",
+      "guid": "b3b150a53517b4f4f92b5aee8da8e582",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_337_utage_1",
+      "guid": "ff3efa1b7fb79c0489014e38b6f6fbd2",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_336_folivo_2",
+      "guid": "ecab7b4acb119c14496b93c14117f638",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_336_folivo_1",
+      "guid": "5d161e9a8ad54e848a76cda17a6a61cc",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_338_iris_2",
+      "guid": "b9afbb0950dbeca458083ecfb6ca5214",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_338_iris_1",
+      "guid": "28d806aa13f687046b97ea97388d59fd",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_337_utage_2",
+      "guid": "7f485633032f631488d93a87c21cd382",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 3170409633341513629
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 2776819338202494430
+    },
+    "size": 1024
+  },
+  "_index": 22,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_343_tknogi_1",
+        "guid": "2e37c941ab4156d439ca9cac00910053",
+        "md5": "acdb0b8052d921d1c73942e3c8284592"
+      },
+      {
+        "name": "char_340_shwaz_2",
+        "guid": "0e5a70492a0b402469d44183bab62f0b",
+        "md5": "02c262c261722132b5e94fb37b5b0949"
+      },
+      {
+        "name": "char_340_shwaz_1",
+        "guid": "9c08a61a71d46f443a295682b810e769",
+        "md5": "ba322afa5c75538bb3b2a5b7c1a97b56"
+      },
+      {
+        "name": "char_344_beewax_2",
+        "guid": "852a36d911c45994e812071b41117460",
+        "md5": "01e423821c648cc773ceeec3a7fd7042"
+      },
+      {
+        "name": "char_344_beewax_1",
+        "guid": "6b06d40c9365d094e9b49122cb63cf72",
+        "md5": "972af0555f96eb1100e924b8d6e8acc6"
+      },
+      {
+        "name": "char_343_tknogi_2",
+        "guid": "b3b150a53517b4f4f92b5aee8da8e582",
+        "md5": "05aa98ad4f3028bb3ba46fe11b846e83"
+      },
+      {
+        "name": "char_337_utage_1",
+        "guid": "ff3efa1b7fb79c0489014e38b6f6fbd2",
+        "md5": "5885aa07e81535ff1690c393f3fe05a4"
+      },
+      {
+        "name": "char_336_folivo_2",
+        "guid": "ecab7b4acb119c14496b93c14117f638",
+        "md5": "32b0f34eead9f429bdedcf2cb6d85363"
+      },
+      {
+        "name": "char_336_folivo_1",
+        "guid": "5d161e9a8ad54e848a76cda17a6a61cc",
+        "md5": "da3fb5f3b1fd3cae55e9493573098ef7"
+      },
+      {
+        "name": "char_338_iris_2",
+        "guid": "b9afbb0950dbeca458083ecfb6ca5214",
+        "md5": "2fe5c621a18da2f0158fcccffcd8c73e"
+      },
+      {
+        "name": "char_338_iris_1",
+        "guid": "28d806aa13f687046b97ea97388d59fd",
+        "md5": "7d2c17eef3f024dcd669d7a91d4f5617"
+      },
+      {
+        "name": "char_337_utage_2",
+        "guid": "7f485633032f631488d93a87c21cd382",
+        "md5": "861523f1a9f06db45141193da0d4c4b9"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#22",
+        "guid": "7c0e851763795bd46b1d1d542a0a621c",
+        "md5": "6483014dd2adcc18dce40b61d196d1e5"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#22a",
+        "guid": "d7376804270b0d541b1e2061f2ca3bdc",
+        "md5": "f783bffac591ea00a504f84db6b98205"
+      }
+    ]
+  }
+}

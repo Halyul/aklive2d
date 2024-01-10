@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#44",
+  "_sprites": [
+    {
+      "name": "char_291_aglina_boc#1",
+      "guid": "cf41b3304f071894aa890d828de051da",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_291_aglina_summer#5",
+      "guid": "96b37ea0c3d01074ca0e41cfc5cf4e4b",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_293_thorns_it#1",
+      "guid": "d9aae9fe341a9aa44a71a340e3ad174b",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_294_ayer_boc#3",
+      "guid": "5d4e3a8ed9f627c4daf0893c6d10519f",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_298_susuro_summer#6",
+      "guid": "9342370835aa11c4aa462a0bda98f3d5",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_308_swire_nian#2",
+      "guid": "36f9bcbb29c77cb47ac8f95d6020e5f5",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_311_mudrok_summer#6",
+      "guid": "dec04b41e35484a4096336782a2a2c19",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_326_glacus_ghost#1",
+      "guid": "187cfd65a07603c4dbb3e2277efbe14c",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_328_cammou_witch#2",
+      "guid": "64835f72138355a4b89b7c17cabb1dad",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_332_archet_shining#1",
+      "guid": "e9a9e8f7f8f13214091cebf860878af0",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_333_sidero_summer#6",
+      "guid": "82b539f7c6e8c344790e3a9472661541",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_337_utage_summer#4",
+      "guid": "f4988003cbc22864ea3afd3a7ca756d7",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -7665585159413622326
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 8290091517494271427
+    },
+    "size": 1024
+  },
+  "_index": 44,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_291_aglina_boc#1",
+        "guid": "cf41b3304f071894aa890d828de051da",
+        "md5": "678af765818fdd25aee7d795692cfd01"
+      },
+      {
+        "name": "char_291_aglina_summer#5",
+        "guid": "96b37ea0c3d01074ca0e41cfc5cf4e4b",
+        "md5": "56a2a047a38edeaf1a6b7d56d658e87f"
+      },
+      {
+        "name": "char_293_thorns_it#1",
+        "guid": "d9aae9fe341a9aa44a71a340e3ad174b",
+        "md5": "0b2eaaca0509727331030ab5a0bf5650"
+      },
+      {
+        "name": "char_294_ayer_boc#3",
+        "guid": "5d4e3a8ed9f627c4daf0893c6d10519f",
+        "md5": "0ad88d991589531542c640466ca072d2"
+      },
+      {
+        "name": "char_298_susuro_summer#6",
+        "guid": "9342370835aa11c4aa462a0bda98f3d5",
+        "md5": "8cdae1d7b6f65517f690bf0526d3dcee"
+      },
+      {
+        "name": "char_308_swire_nian#2",
+        "guid": "36f9bcbb29c77cb47ac8f95d6020e5f5",
+        "md5": "f87f77df10fabceff833f95c4e246cab"
+      },
+      {
+        "name": "char_311_mudrok_summer#6",
+        "guid": "dec04b41e35484a4096336782a2a2c19",
+        "md5": "08a6e4f6ef700bf66a2f202b3cfd1be6"
+      },
+      {
+        "name": "char_326_glacus_ghost#1",
+        "guid": "187cfd65a07603c4dbb3e2277efbe14c",
+        "md5": "a6cab4f08521f1ef44a0553b70f722b4"
+      },
+      {
+        "name": "char_328_cammou_witch#2",
+        "guid": "64835f72138355a4b89b7c17cabb1dad",
+        "md5": "92e723042161954fb150977388c360bf"
+      },
+      {
+        "name": "char_332_archet_shining#1",
+        "guid": "e9a9e8f7f8f13214091cebf860878af0",
+        "md5": "b1c3eabff6ea340d3d0abb0661e92b7b"
+      },
+      {
+        "name": "char_333_sidero_summer#6",
+        "guid": "82b539f7c6e8c344790e3a9472661541",
+        "md5": "9f5f975cf68b37931309d881d68c5ecc"
+      },
+      {
+        "name": "char_337_utage_summer#4",
+        "guid": "f4988003cbc22864ea3afd3a7ca756d7",
+        "md5": "03e6c9fc5f0665e6fdf853504782fc24"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#44",
+        "guid": "ec6a257d9ff35e943b7093b05444b174",
+        "md5": "888ed87c74159b1e258640301083265f"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#44a",
+        "guid": "9473a776cee8e4c439554771687f8355",
+        "md5": "04c759920f07b4a74038d2f23b8a137a"
+      }
+    ]
+  }
+}

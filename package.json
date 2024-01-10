@@ -20,8 +20,7 @@
     "vite:directory:dev": "vite dev",
     "vite:directory:build": "vite build",
     "vite:directory:preview": "vite preview",
-    "offical_update": "node aklive2d offical_update",
-    "cf:pages": "npm run build-all && npm run vite:directory:build"
+    "offical_update": "node aklive2d offical_update"
   },
   "devDependencies": {
     "@perfsee/rollup": "^1.10.0",

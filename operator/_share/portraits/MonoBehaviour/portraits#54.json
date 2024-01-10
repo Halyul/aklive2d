@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#54",
+  "_sprites": [
+    {
+      "name": "char_211_adnach_sale#5",
+      "guid": "9559206c787b3fc44b69a810429f1b12",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_131_flameb_summer#8",
+      "guid": "6e3ac4265b8667e4fa12a868dd766986",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4048_doroth_2",
+      "guid": "ef18a096087c8d5499fa99ccabe53b63",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_426_billro_summer#8",
+      "guid": "dfdd1ac5b38fe1442af1615e0b5c8c2d",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_420_flamtl_game#2",
+      "guid": "4549f9451bb15c948b4feb2670f37631",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_346_aosta_game#2",
+      "guid": "9ee0040a18b57d64c9ed5120e859bee8",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_135_halo_1",
+      "guid": "a2bfe8b98c9e77b46b19fd75881153e5",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1027_greyy2_2",
+      "guid": "f7aaa1ae845f16044a267bc3de0eaa78",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1027_greyy2_1",
+      "guid": "265ed396341e21744b80db47c78b86ed",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4048_doroth_1",
+      "guid": "f05c9b1910e2b7b40b8848aef8871d04",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_478_kirara_game#2",
+      "guid": "5950955a75c4d8c4195972f64583e733",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_135_halo_2",
+      "guid": "3067969da35cd2a4e9ebb6c75e3e0545",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 4613805960671751047
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -4466009744262728836
+    },
+    "size": 1024
+  },
+  "_index": 54,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_211_adnach_sale#5",
+        "guid": "9559206c787b3fc44b69a810429f1b12",
+        "md5": "5e2b10e785eb0c64757b8ef30dd6ae3e"
+      },
+      {
+        "name": "char_131_flameb_summer#8",
+        "guid": "6e3ac4265b8667e4fa12a868dd766986",
+        "md5": "b9f802aba1d789b3a379dbca509449e5"
+      },
+      {
+        "name": "char_4048_doroth_2",
+        "guid": "ef18a096087c8d5499fa99ccabe53b63",
+        "md5": "4c880082f86a2ff0a187e6c03b40ea80"
+      },
+      {
+        "name": "char_426_billro_summer#8",
+        "guid": "dfdd1ac5b38fe1442af1615e0b5c8c2d",
+        "md5": "f878e5e3ba91f213e7fb6a63dabb97dd"
+      },
+      {
+        "name": "char_420_flamtl_game#2",
+        "guid": "4549f9451bb15c948b4feb2670f37631",
+        "md5": "3557638b9b6e005c18527277a3d4ae8e"
+      },
+      {
+        "name": "char_346_aosta_game#2",
+        "guid": "9ee0040a18b57d64c9ed5120e859bee8",
+        "md5": "6ce9f2363eb7b1750d0d0aca5069de86"
+      },
+      {
+        "name": "char_135_halo_1",
+        "guid": "a2bfe8b98c9e77b46b19fd75881153e5",
+        "md5": "e505ea528779a610bc923930f43e431d"
+      },
+      {
+        "name": "char_1027_greyy2_2",
+        "guid": "f7aaa1ae845f16044a267bc3de0eaa78",
+        "md5": "eaa10adef387bb50cd864993decc7551"
+      },
+      {
+        "name": "char_1027_greyy2_1",
+        "guid": "265ed396341e21744b80db47c78b86ed",
+        "md5": "25f16997135f467899f987c05cb92590"
+      },
+      {
+        "name": "char_4048_doroth_1",
+        "guid": "f05c9b1910e2b7b40b8848aef8871d04",
+        "md5": "c1ae53043628a84dc6cfe63a6326f386"
+      },
+      {
+        "name": "char_478_kirara_game#2",
+        "guid": "5950955a75c4d8c4195972f64583e733",
+        "md5": "da2f29079bf81b04e5c1b8f6aed39c58"
+      },
+      {
+        "name": "char_135_halo_2",
+        "guid": "3067969da35cd2a4e9ebb6c75e3e0545",
+        "md5": "41963f7a67ce46445b8913934f36c725"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#54",
+        "guid": "0da1ef7a81a25b147a04efa2ddecac5f",
+        "md5": "e6831b3e2d99fa9878eb78f54a881cea"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#54a",
+        "guid": "07bb40cf926545e4ca44ded8c682c4d7",
+        "md5": "a08e9a7715fcfdc23ea6237084635c48"
+      }
+    ]
+  }
+}

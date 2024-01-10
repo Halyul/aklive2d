@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#68",
+  "_sprites": [
+    {
+      "name": "char_498_inside_2",
+      "guid": "59a0e4be018169440b0c735e34332d54",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_488_buildr_2",
+      "guid": "94a13db7bc37c904f936d54dcf515c40",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_488_buildr_1",
+      "guid": "669b79c164ca88a42b01fc0f861b744a",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4106_bryota_1",
+      "guid": "263c461a2d40bb841acc0836eb8afd51",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_348_ceylon_summer#13",
+      "guid": "870303ccf09f2fe44bca2153e404b3c4",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_2012_typhon_wild#9",
+      "guid": "6f30c586a5548d148934e0f14a3f691e",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_151_myrtle_summer#12",
+      "guid": "7db57aa402eda8b49bea9d898f129d90",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_121_lava_sale#9",
+      "guid": "3dee7bbba85ae3840a8dcf6d1cba2d4e",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1026_gvial2_summer#12",
+      "guid": "27704decc6a6e0145a566069c98508ea",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1016_agoat2_2",
+      "guid": "b281fe35dd2d35343a5d270695657aef",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1016_agoat2_1",
+      "guid": "fefa9cff12d5fbc45ab42b2eb91c5137",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_1001_amiya2_casc#1",
+      "guid": "72bc34a70cea8bb47bcda8e66423ecdb",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 2433578655957622075
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 762645008724791321
+    },
+    "size": 1024
+  },
+  "_index": 68,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_498_inside_2",
+        "guid": "59a0e4be018169440b0c735e34332d54",
+        "md5": "d9a40de52c30254c89d5edd8c9aa32d5"
+      },
+      {
+        "name": "char_488_buildr_2",
+        "guid": "94a13db7bc37c904f936d54dcf515c40",
+        "md5": "f8fafe62b8e114ccbdc21a6b9d32239a"
+      },
+      {
+        "name": "char_488_buildr_1",
+        "guid": "669b79c164ca88a42b01fc0f861b744a",
+        "md5": "32151fd09cddb34b142a76e5b5daccc7"
+      },
+      {
+        "name": "char_4106_bryota_1",
+        "guid": "263c461a2d40bb841acc0836eb8afd51",
+        "md5": "9819e285e415d4c6a305974cf4e6cd38"
+      },
+      {
+        "name": "char_348_ceylon_summer#13",
+        "guid": "870303ccf09f2fe44bca2153e404b3c4",
+        "md5": "44d86c5bc79a49e17a22d5ba3307a3b2"
+      },
+      {
+        "name": "char_2012_typhon_wild#9",
+        "guid": "6f30c586a5548d148934e0f14a3f691e",
+        "md5": "47ce480cfbe67bf2a7b6a12b45277adf"
+      },
+      {
+        "name": "char_151_myrtle_summer#12",
+        "guid": "7db57aa402eda8b49bea9d898f129d90",
+        "md5": "c2295d7ce7f5634d421f20ae432738d7"
+      },
+      {
+        "name": "char_121_lava_sale#9",
+        "guid": "3dee7bbba85ae3840a8dcf6d1cba2d4e",
+        "md5": "477d240de80529c9818ba73654b497bf"
+      },
+      {
+        "name": "char_1026_gvial2_summer#12",
+        "guid": "27704decc6a6e0145a566069c98508ea",
+        "md5": "e4f0542cf58dec607a7e15a2cca8d913"
+      },
+      {
+        "name": "char_1016_agoat2_2",
+        "guid": "b281fe35dd2d35343a5d270695657aef",
+        "md5": "137ee19a3809415f336209d4feda2bb9"
+      },
+      {
+        "name": "char_1016_agoat2_1",
+        "guid": "fefa9cff12d5fbc45ab42b2eb91c5137",
+        "md5": "97ca77f1fbe05b837b9353a701d8c2c2"
+      },
+      {
+        "name": "char_1001_amiya2_casc#1",
+        "guid": "72bc34a70cea8bb47bcda8e66423ecdb",
+        "md5": "4dcc83a14c6b6bcd2d159e4b454dc7ce"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#68",
+        "guid": "4fc357f7d8f6cd0468903e690056b052",
+        "md5": "4cc2edf382de31ab05c154a98855b629"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#68a",
+        "guid": "fd62d433ad6fd1d429cf7c8f02381e37",
+        "md5": "f7fb0b084dece4ad363c64120fc8e7c0"
+      }
+    ]
+  }
+}

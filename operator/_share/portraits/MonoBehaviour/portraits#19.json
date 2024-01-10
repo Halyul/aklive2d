@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#19",
+  "_sprites": [
+    {
+      "name": "char_293_thorns_1",
+      "guid": "4bd34ed474b34ec45abfe94657361b19",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_291_aglina_2",
+      "guid": "6afc256dad33d094b869bc83f4e4a75f",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_291_aglina_1",
+      "guid": "0067c92378c5bb843b0b4080aad73d67",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_294_ayer_2",
+      "guid": "23ab21ad82934834c8489c8b4c9e2fd4",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_294_ayer_1",
+      "guid": "b214b5d087f684143b1c5397ead3591e",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_293_thorns_2",
+      "guid": "538378d7eb2477044b40e0f45c7cb7e9",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_289_gyuki_1",
+      "guid": "7dab9f8e0e07a8149a0bf8fe715e6f8b",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_286_cast3_1",
+      "guid": "9ab15385469995a4ebe997152ca03114",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_285_medic2_1",
+      "guid": "28540ea6fa444ca44b026baf68373f60",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_290_vigna_2",
+      "guid": "6885057282258694288275570363c9e1",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_290_vigna_1",
+      "guid": "b1d2767ea39874b4ea5125acb8e9b8c7",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_289_gyuki_2",
+      "guid": "9b14424746175ce44a47088f99ffa2fb",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 4581249437630812002
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 3685985774340099158
+    },
+    "size": 1024
+  },
+  "_index": 19,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_293_thorns_1",
+        "guid": "4bd34ed474b34ec45abfe94657361b19",
+        "md5": "c136cdbec3c6a466a3ed534dc25a7850"
+      },
+      {
+        "name": "char_291_aglina_2",
+        "guid": "6afc256dad33d094b869bc83f4e4a75f",
+        "md5": "c01cf59a520cab60fdc7ebbcac991955"
+      },
+      {
+        "name": "char_291_aglina_1",
+        "guid": "0067c92378c5bb843b0b4080aad73d67",
+        "md5": "1ccdbc4e0f4c377279972badddea93dd"
+      },
+      {
+        "name": "char_294_ayer_2",
+        "guid": "23ab21ad82934834c8489c8b4c9e2fd4",
+        "md5": "ea669c855cffad75efe14f262bff8df3"
+      },
+      {
+        "name": "char_294_ayer_1",
+        "guid": "b214b5d087f684143b1c5397ead3591e",
+        "md5": "2278aa3362e05f1be9f36f32fb1d8fe5"
+      },
+      {
+        "name": "char_293_thorns_2",
+        "guid": "538378d7eb2477044b40e0f45c7cb7e9",
+        "md5": "3693173878432093609ad256c81d177c"
+      },
+      {
+        "name": "char_289_gyuki_1",
+        "guid": "7dab9f8e0e07a8149a0bf8fe715e6f8b",
+        "md5": "cdddf3c09c5f625d634fe321fa473cef"
+      },
+      {
+        "name": "char_286_cast3_1",
+        "guid": "9ab15385469995a4ebe997152ca03114",
+        "md5": "8805fabf3231c0600a112cac38e467e9"
+      },
+      {
+        "name": "char_285_medic2_1",
+        "guid": "28540ea6fa444ca44b026baf68373f60",
+        "md5": "6111a64e525859a9b212ab1dbc91e1bb"
+      },
+      {
+        "name": "char_290_vigna_2",
+        "guid": "6885057282258694288275570363c9e1",
+        "md5": "10acdff1137b5b5e0a1b2ff950c439ca"
+      },
+      {
+        "name": "char_290_vigna_1",
+        "guid": "b1d2767ea39874b4ea5125acb8e9b8c7",
+        "md5": "00b7c6d5193b9fc6a89af734de3c81f6"
+      },
+      {
+        "name": "char_289_gyuki_2",
+        "guid": "9b14424746175ce44a47088f99ffa2fb",
+        "md5": "79c107dc610288cfb2fe9beb48a663fe"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#19",
+        "guid": "737d1dfa38d37d742b00e7d080838ecc",
+        "md5": "9434741f6f2a4037c4d2c89662c0186d"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#19a",
+        "guid": "8958dff090aef8a478cb5b1076b6e3fd",
+        "md5": "1ddf50b55a03cffdada2a2a4cb0f1594"
+      }
+    ]
+  }
+}

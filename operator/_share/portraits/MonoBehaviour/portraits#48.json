@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#48",
+  "_sprites": [
+    {
+      "name": "char_174_slbell_snow#1",
+      "guid": "9bbdb2142d8c1a644850e336017e3775",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_112_siege_wild#2",
+      "guid": "58aed51730d23ba4a99bc5ccecf33642",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_109_fmout_epoque#2",
+      "guid": "4b1ab248c99c76e4e96e6d1dff93057c",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_181_flower_daily#1",
+      "guid": "cbd74416ae2dee34f94baf18a0b911ac",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_180_amgoat_summer#5",
+      "guid": "8e827efa26d23d44db84fd73c2a21368",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_179_cgbird_witch#1",
+      "guid": "b3fc30aab4f80e847af4c7655d04dec9",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_107_liskam_nian#2",
+      "guid": "04f73f3f7e7ef094cb1ceb5d53f3d6a4",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_103_angel_wild#1",
+      "guid": "40fbb6cca5085d44bbeb96405e499940",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_103_angel_kfc#1",
+      "guid": "8c107c7062aca0c4cb5a92f2a78fbde1",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_108_silent_winter#2",
+      "guid": "07f0302acea7c6844bd0885235d6892c",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_108_silent_sweep#1",
+      "guid": "a942d41206b5c06489f4ec2233e31fb1",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_107_liskam_striker#1",
+      "guid": "431295d1d51423a4e993c8cae540031d",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 4685257011085523498
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -3594992187887764959
+    },
+    "size": 1024
+  },
+  "_index": 48,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_174_slbell_snow#1",
+        "guid": "9bbdb2142d8c1a644850e336017e3775",
+        "md5": "5487915fb595bd0ae8f6d8fc7cb61c0e"
+      },
+      {
+        "name": "char_112_siege_wild#2",
+        "guid": "58aed51730d23ba4a99bc5ccecf33642",
+        "md5": "cddc58394a31d78e8bc364af1a945c26"
+      },
+      {
+        "name": "char_109_fmout_epoque#2",
+        "guid": "4b1ab248c99c76e4e96e6d1dff93057c",
+        "md5": "0f16f99694cc551d02107af1feada6e6"
+      },
+      {
+        "name": "char_181_flower_daily#1",
+        "guid": "cbd74416ae2dee34f94baf18a0b911ac",
+        "md5": "c9901da42b048f1b0db2dbcc538ce410"
+      },
+      {
+        "name": "char_180_amgoat_summer#5",
+        "guid": "8e827efa26d23d44db84fd73c2a21368",
+        "md5": "a0ca7ec6a206908eb928cfca46a32318"
+      },
+      {
+        "name": "char_179_cgbird_witch#1",
+        "guid": "b3fc30aab4f80e847af4c7655d04dec9",
+        "md5": "cabd0a2f2ca4d0b54cc97cc515d05bb0"
+      },
+      {
+        "name": "char_107_liskam_nian#2",
+        "guid": "04f73f3f7e7ef094cb1ceb5d53f3d6a4",
+        "md5": "3cb2ec2a638f59283ca9638a0bbce20a"
+      },
+      {
+        "name": "char_103_angel_wild#1",
+        "guid": "40fbb6cca5085d44bbeb96405e499940",
+        "md5": "09d22fb616d3d109ced4afcddbbf3fab"
+      },
+      {
+        "name": "char_103_angel_kfc#1",
+        "guid": "8c107c7062aca0c4cb5a92f2a78fbde1",
+        "md5": "567e0378cc07a44a07f64e714fddfa46"
+      },
+      {
+        "name": "char_108_silent_winter#2",
+        "guid": "07f0302acea7c6844bd0885235d6892c",
+        "md5": "fc505fd7d283bc747c70b906e1909052"
+      },
+      {
+        "name": "char_108_silent_sweep#1",
+        "guid": "a942d41206b5c06489f4ec2233e31fb1",
+        "md5": "ec6ac0ee966e46418a4fd2e5b99a420f"
+      },
+      {
+        "name": "char_107_liskam_striker#1",
+        "guid": "431295d1d51423a4e993c8cae540031d",
+        "md5": "face99c45865fb6bc87c887688863ffe"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#48",
+        "guid": "372493037254619448b552e1f290e673",
+        "md5": "5784487f75b68b7f891c9a2472d56568"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#48a",
+        "guid": "40f46d80d6006e94389d4dc618482b81",
+        "md5": "5a7a162c8cf6180245261551d685a3a1"
+      }
+    ]
+  }
+}

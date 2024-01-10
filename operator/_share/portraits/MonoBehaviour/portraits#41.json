@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#41",
+  "_sprites": [
+    {
+      "name": "char_235_jesica_sweep#1",
+      "guid": "11599a0f71f91cf43aa31bdca1da3ce7",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_235_jesica_nian#2",
+      "guid": "3c7f2b5259db7d74eac6355a5a96006b",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_226_hmau_nian#4",
+      "guid": "f62e1b4053865a549b26a3b0533848ff",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_236_rope_witch#1",
+      "guid": "f5b67da9e03fd0f4b9ca99ae0a5d1f12",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_236_rope_summer#2",
+      "guid": "8dfeba7737414284b8c7ea8442aa0625",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_235_jesica_wild#2",
+      "guid": "fb646eec0dda9bc4e8d14a4affaf3578",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_219_meteo_sweep#1",
+      "guid": "bea1ce18478a3344c92027fe3f579bdb",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_218_cuttle_epoque#12",
+      "guid": "ae7485a010708be48af79cece78e23a7",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_215_mantic_epoque#4",
+      "guid": "bf648bf917392bc4f87fc0ee7f8e8efa",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_225_haak_nian#4",
+      "guid": "04847788ddd69f04781baa123997e975",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_222_bpipe_race#1",
+      "guid": "934817b672157534ea2dc450d9108ae5",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_220_grani_epoque#6",
+      "guid": "966bca36a2fcb384f98e5990e8216957",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -8305265828912044198
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 6719898911793521255
+    },
+    "size": 1024
+  },
+  "_index": 41,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_235_jesica_sweep#1",
+        "guid": "11599a0f71f91cf43aa31bdca1da3ce7",
+        "md5": "e46c7f8cecc4e343bd1198c313c22968"
+      },
+      {
+        "name": "char_235_jesica_nian#2",
+        "guid": "3c7f2b5259db7d74eac6355a5a96006b",
+        "md5": "5e5ea7dc703a47f71f812587664377fd"
+      },
+      {
+        "name": "char_226_hmau_nian#4",
+        "guid": "f62e1b4053865a549b26a3b0533848ff",
+        "md5": "bd462cd3367ce40c31666a54140bed1e"
+      },
+      {
+        "name": "char_236_rope_witch#1",
+        "guid": "f5b67da9e03fd0f4b9ca99ae0a5d1f12",
+        "md5": "7403b894b5823ab459469ae63d901f7b"
+      },
+      {
+        "name": "char_236_rope_summer#2",
+        "guid": "8dfeba7737414284b8c7ea8442aa0625",
+        "md5": "f1989030428dc0b7a74a29b478607ad8"
+      },
+      {
+        "name": "char_235_jesica_wild#2",
+        "guid": "fb646eec0dda9bc4e8d14a4affaf3578",
+        "md5": "559289d601dd91d3e7d37f7fef385d9d"
+      },
+      {
+        "name": "char_219_meteo_sweep#1",
+        "guid": "bea1ce18478a3344c92027fe3f579bdb",
+        "md5": "8eb8e601d081eecbabdc5f36aa34f6dd"
+      },
+      {
+        "name": "char_218_cuttle_epoque#12",
+        "guid": "ae7485a010708be48af79cece78e23a7",
+        "md5": "342d71e7eea94da922c382a339fbeeae"
+      },
+      {
+        "name": "char_215_mantic_epoque#4",
+        "guid": "bf648bf917392bc4f87fc0ee7f8e8efa",
+        "md5": "8b596141563d1112287541a0cd550c19"
+      },
+      {
+        "name": "char_225_haak_nian#4",
+        "guid": "04847788ddd69f04781baa123997e975",
+        "md5": "5efd887a025ef2dbe366e258a3943d66"
+      },
+      {
+        "name": "char_222_bpipe_race#1",
+        "guid": "934817b672157534ea2dc450d9108ae5",
+        "md5": "bd61181c5666c3cf55a2dfc1d1c8901d"
+      },
+      {
+        "name": "char_220_grani_epoque#6",
+        "guid": "966bca36a2fcb384f98e5990e8216957",
+        "md5": "d26d4e3e9204c32c6cd5c5ba65988f8b"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#41",
+        "guid": "34c4882566573df4cab89affb5eedd92",
+        "md5": "1057d34de17193a01b990b001ecd7444"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#41a",
+        "guid": "f7982b312883a7b4cbd419127d306389",
+        "md5": "94bd25743847a44572ff3feb8d9449b2"
+      }
+    ]
+  }
+}

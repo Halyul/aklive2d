@@ -1,0 +1,232 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#43",
+  "_sprites": [
+    {
+      "name": "char_290_vigna_summer#1",
+      "guid": "75b737a239cfb1b4e851bad442577d30",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_290_vigna_as#1",
+      "guid": "052f23e0a738229478a7bb1d5159eb4c",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_286_cast3_summer#1",
+      "guid": "00b05c4f8264c6a4da3101df1e90438e",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_284_spot_boc#3",
+      "guid": "018b0606da54b4944beb8b7b41777502",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_283_midn_boc#1",
+      "guid": "c80945989f90ff544a54d0367b47f5e7",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_279_excu_boc#1",
+      "guid": "2c6ad7baa4b7dab4e93aa87d18bfeeeb",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_277_sqrrel_ghost#1",
+      "guid": "987ddf2678e7ec344997290adaaef7fd",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_274_astesi_shining#1",
+      "guid": "a6ccac253a484dc4781a4574ae8a82ab",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_274_astesi_epoque#5",
+      "guid": "e83681d0795924244b862797badebc0e",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_272_strong_summer#6",
+      "guid": "78fa95faa44390e4aa51872bb691f08d",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_271_spikes_winter#2",
+      "guid": "e6d7230fa8c4cae478c04d98a5d81570",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -7155062361616681862
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 8274846426874320879
+    },
+    "size": 1024
+  },
+  "_index": 43,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_290_vigna_summer#1",
+        "guid": "75b737a239cfb1b4e851bad442577d30",
+        "md5": "c6c33dac2faf40424684a5f38fc1e6e2"
+      },
+      {
+        "name": "char_290_vigna_as#1",
+        "guid": "052f23e0a738229478a7bb1d5159eb4c",
+        "md5": "522d659f163cd114084d0b7ded3e202f"
+      },
+      {
+        "name": "char_286_cast3_summer#1",
+        "guid": "00b05c4f8264c6a4da3101df1e90438e",
+        "md5": "03e8ffdad1eda8f329b1b842d917cf7d"
+      },
+      {
+        "name": "char_284_spot_boc#3",
+        "guid": "018b0606da54b4944beb8b7b41777502",
+        "md5": "bbc5d47057f17b9c0e288e00d0383f05"
+      },
+      {
+        "name": "char_283_midn_boc#1",
+        "guid": "c80945989f90ff544a54d0367b47f5e7",
+        "md5": "f0a8494b849029cfb113bdb88939aa6b"
+      },
+      {
+        "name": "char_279_excu_boc#1",
+        "guid": "2c6ad7baa4b7dab4e93aa87d18bfeeeb",
+        "md5": "760ec4270c4c909dd7c9bfb333daf97a"
+      },
+      {
+        "name": "char_277_sqrrel_ghost#1",
+        "guid": "987ddf2678e7ec344997290adaaef7fd",
+        "md5": "9bfd765b2904baf06fd5d757ba613e1e"
+      },
+      {
+        "name": "char_274_astesi_shining#1",
+        "guid": "a6ccac253a484dc4781a4574ae8a82ab",
+        "md5": "22b59f76ae21e4ba6a6a605db729cdf3"
+      },
+      {
+        "name": "char_274_astesi_epoque#5",
+        "guid": "e83681d0795924244b862797badebc0e",
+        "md5": "e5505e21b5c2f321430e5fcbc8831a76"
+      },
+      {
+        "name": "char_272_strong_summer#6",
+        "guid": "78fa95faa44390e4aa51872bb691f08d",
+        "md5": "cd14984fb3f2bab97763c5a5ebb0a7a1"
+      },
+      {
+        "name": "char_271_spikes_winter#2",
+        "guid": "e6d7230fa8c4cae478c04d98a5d81570",
+        "md5": "0c8d9c26a14ceead0305aee84f7c9bd2"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#43",
+        "guid": "db2f9bda5dd7e9f46adb8158e0193eaa",
+        "md5": "cfed8e122b152c0fd68ce0f1874668bf"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#43a",
+        "guid": "26339e9c74e454b41b72b61647d55d78",
+        "md5": "7033032f7f312cc0757a7bcee462d361"
+      }
+    ]
+  }
+}

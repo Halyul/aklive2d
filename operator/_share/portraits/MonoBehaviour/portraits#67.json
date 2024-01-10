@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#67",
+  "_sprites": [
+    {
+      "name": "char_498_inside_1",
+      "guid": "9f45031269f066c4ab6e8d38ba555743",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_479_sleach_summer#11",
+      "guid": "b24b981475382624e91da8d16bd549c3",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4102_threye_2",
+      "guid": "b4a34023934619145b2d356e21647b29",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4102_threye_1",
+      "guid": "53997bdfa99f94b489afec50b36c2672",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4072_ironmn_summer#11",
+      "guid": "7fb06610ce8447f4f9599062df4d2987",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_344_beewax_summer#11",
+      "guid": "cde7a792c68ba6a4eaa4071f4b45d20c",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_341_sntlla_2",
+      "guid": "34d4b76777b9e6940b08c1b1de5fc6f6",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_341_sntlla_1",
+      "guid": "9a3a3cff18d8f924e95a1d00e40f45bb",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_302_glaze_summer#11",
+      "guid": "b1eef3f6163f22048b8f275d20ff5f73",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_2012_typhon_2",
+      "guid": "0e022a608253b9c4e8e26deecb613d7f",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_2012_typhon_1",
+      "guid": "804acf7ee28f66b4984740fd08f6b338",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_135_halo_epoque#25",
+      "guid": "516890e0b5533ed4d859ad6ec60bc7eb",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 7474423412366634861
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 7866818464861956226
+    },
+    "size": 1024
+  },
+  "_index": 67,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_498_inside_1",
+        "guid": "9f45031269f066c4ab6e8d38ba555743",
+        "md5": "e8eaa547ba6dbc26a0b3df4ce5931f65"
+      },
+      {
+        "name": "char_479_sleach_summer#11",
+        "guid": "b24b981475382624e91da8d16bd549c3",
+        "md5": "b1ea54848c23c0dc0cd526ee18e19605"
+      },
+      {
+        "name": "char_4102_threye_2",
+        "guid": "b4a34023934619145b2d356e21647b29",
+        "md5": "5f0d7e496667888415e96b18cf2332a8"
+      },
+      {
+        "name": "char_4102_threye_1",
+        "guid": "53997bdfa99f94b489afec50b36c2672",
+        "md5": "649a6349c34671331c2594032bf7ddaa"
+      },
+      {
+        "name": "char_4072_ironmn_summer#11",
+        "guid": "7fb06610ce8447f4f9599062df4d2987",
+        "md5": "53f4f71574f1a04dc6e14ef2ca0b8733"
+      },
+      {
+        "name": "char_344_beewax_summer#11",
+        "guid": "cde7a792c68ba6a4eaa4071f4b45d20c",
+        "md5": "a9d8729dade12a749ef3d4aa6b460eaa"
+      },
+      {
+        "name": "char_341_sntlla_2",
+        "guid": "34d4b76777b9e6940b08c1b1de5fc6f6",
+        "md5": "1c3a16f8ac04db0772cf050517835bdf"
+      },
+      {
+        "name": "char_341_sntlla_1",
+        "guid": "9a3a3cff18d8f924e95a1d00e40f45bb",
+        "md5": "2e632ac13567c266b15fdceeec40cd78"
+      },
+      {
+        "name": "char_302_glaze_summer#11",
+        "guid": "b1eef3f6163f22048b8f275d20ff5f73",
+        "md5": "f9b58ba0104bb39c3b76da3121812fe4"
+      },
+      {
+        "name": "char_2012_typhon_2",
+        "guid": "0e022a608253b9c4e8e26deecb613d7f",
+        "md5": "1bce2e3c43eefe05a37e3e9569d420dc"
+      },
+      {
+        "name": "char_2012_typhon_1",
+        "guid": "804acf7ee28f66b4984740fd08f6b338",
+        "md5": "a9faeccfe5d8014ec2b000d192dc9246"
+      },
+      {
+        "name": "char_135_halo_epoque#25",
+        "guid": "516890e0b5533ed4d859ad6ec60bc7eb",
+        "md5": "996129f9a150d2a5621a21caaab59304"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#67",
+        "guid": "053ce646613db4b4185c19f99e677fc6",
+        "md5": "953539b0bec0f1452a092bb89d3531e4"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#67a",
+        "guid": "1eede6d65690fbb439c65376643bae1e",
+        "md5": "0ae0985ee252a4673b699663f46b0434"
+      }
+    ]
+  }
+}

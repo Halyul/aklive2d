@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#59",
+  "_sprites": [
+    {
+      "name": "char_476_blkngt_nian#8",
+      "guid": "1b2c6a78467cde74f8f8d76ab17314a0",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_466_qanik_2",
+      "guid": "ceb1064970135454aa434ee337804934",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_466_qanik_1",
+      "guid": "4087ff6dd879ab0489004630472db267",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_427_vigil_2",
+      "guid": "6652b9422b6119449ba681a154b4e135",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_427_vigil_1",
+      "guid": "3c3e7463d0a670a4ba61fcd6f1a80040",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4065_judge_2",
+      "guid": "103bf5372a9880949a53d4209a2f3742",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4065_judge_1",
+      "guid": "c841785f9a768354a8ad627ca84c1c38",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4063_quartz_2",
+      "guid": "41a2f2a28df864d4093a0d9083e2ba42",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4043_erato_snow#5",
+      "guid": "5f0a86d5b9bf44348a0f0757b1a3d7d7",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4004_pudd_snow#5",
+      "guid": "96007bd60bc8eb7488290dcbd4dfe10b",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_377_gdglow_snow#5",
+      "guid": "e4513be456299fc4d8738bac9b729342",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_1014_nearl2_epoque#17",
+      "guid": "f53e47dee97561b43a24ff1951c8d82c",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 7815639148511319604
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -7963273344373441910
+    },
+    "size": 1024
+  },
+  "_index": 59,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_476_blkngt_nian#8",
+        "guid": "1b2c6a78467cde74f8f8d76ab17314a0",
+        "md5": "cd2aa955f65105f5a95da529b2b2d5f5"
+      },
+      {
+        "name": "char_466_qanik_2",
+        "guid": "ceb1064970135454aa434ee337804934",
+        "md5": "b5d193d1daa402f9f6c90663755dc761"
+      },
+      {
+        "name": "char_466_qanik_1",
+        "guid": "4087ff6dd879ab0489004630472db267",
+        "md5": "7c1538f0824c3615d6c0ec0c8776c021"
+      },
+      {
+        "name": "char_427_vigil_2",
+        "guid": "6652b9422b6119449ba681a154b4e135",
+        "md5": "a517f0c125a8b20b229674a6f53acca6"
+      },
+      {
+        "name": "char_427_vigil_1",
+        "guid": "3c3e7463d0a670a4ba61fcd6f1a80040",
+        "md5": "ff2e33c8897574729016be6003433897"
+      },
+      {
+        "name": "char_4065_judge_2",
+        "guid": "103bf5372a9880949a53d4209a2f3742",
+        "md5": "4b51cafa0dff48955e2bdb3879288fa2"
+      },
+      {
+        "name": "char_4065_judge_1",
+        "guid": "c841785f9a768354a8ad627ca84c1c38",
+        "md5": "992108a7cc8c530261bd9bde94f6f821"
+      },
+      {
+        "name": "char_4063_quartz_2",
+        "guid": "41a2f2a28df864d4093a0d9083e2ba42",
+        "md5": "1535a6daac6bb89742bd85a6cffa3cef"
+      },
+      {
+        "name": "char_4043_erato_snow#5",
+        "guid": "5f0a86d5b9bf44348a0f0757b1a3d7d7",
+        "md5": "2569aa0598d23d21cea6ac0b1892abbd"
+      },
+      {
+        "name": "char_4004_pudd_snow#5",
+        "guid": "96007bd60bc8eb7488290dcbd4dfe10b",
+        "md5": "af8ffe2d8e73ceacc5f9726c6759b07d"
+      },
+      {
+        "name": "char_377_gdglow_snow#5",
+        "guid": "e4513be456299fc4d8738bac9b729342",
+        "md5": "5e3a46c83bfddd0c846f1c88ab90bfb5"
+      },
+      {
+        "name": "char_1014_nearl2_epoque#17",
+        "guid": "f53e47dee97561b43a24ff1951c8d82c",
+        "md5": "7e2eb5f0b2390f7643eee94b6db7bc3a"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#59",
+        "guid": "6dbef4e25ea6b5f42bb8af35ee95e64b",
+        "md5": "c79b07a27d85f891b5cd9e568b68a52a"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#59a",
+        "guid": "e06383eaae3d39c41b963f8245f83f60",
+        "md5": "b8f2f48e48cef1ab576f648213832ab9"
+      }
+    ]
+  }
+}

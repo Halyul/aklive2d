@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#1",
+  "_sprites": [
+    {
+      "name": "char_101_sora_2",
+      "guid": "230ee0022ecf98c49b79d56869a24ec1",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_101_sora_1",
+      "guid": "e6e0375328d44804498cf8fbb6232690",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1014_nearl2_2",
+      "guid": "e1f2bfa35afc1db4a8be18eb604a6b3f",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_103_angel_1",
+      "guid": "6d5ae6954e405f64a89faaadc381108d",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_102_texas_2",
+      "guid": "54b9de5ef09df4d499cb3b5d4f42dc05",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_102_texas_1",
+      "guid": "3b6d53819c23dea4ca756be0c113cc55",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1012_skadi2_2",
+      "guid": "264bdc00bd1e26b4e9a58fb1ba25d344",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1012_skadi2_1",
+      "guid": "5e2b72294dbad0a42860f72ec2450413",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1011_lava2_2",
+      "guid": "b0b515097462968488bb24fc8ef46c01",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1014_nearl2_1",
+      "guid": "a5455d82aae96424ab4f0c45d8705bca",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1013_chen2_2",
+      "guid": "d618831d436cac34e8df33d793b31fe5",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_1013_chen2_1",
+      "guid": "d60fa6c2c582b324da8477bc07a05c19",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -5510381206653559033
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -8926206980186672785
+    },
+    "size": 1024
+  },
+  "_index": 1,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_101_sora_2",
+        "guid": "230ee0022ecf98c49b79d56869a24ec1",
+        "md5": "6e1ce1dce28c346d5fb5a4a291907c3d"
+      },
+      {
+        "name": "char_101_sora_1",
+        "guid": "e6e0375328d44804498cf8fbb6232690",
+        "md5": "695d2a041d05e4da980b366405e18518"
+      },
+      {
+        "name": "char_1014_nearl2_2",
+        "guid": "e1f2bfa35afc1db4a8be18eb604a6b3f",
+        "md5": "d16d24d64c11ca0167ca898029f6a5b9"
+      },
+      {
+        "name": "char_103_angel_1",
+        "guid": "6d5ae6954e405f64a89faaadc381108d",
+        "md5": "b1aa7a803210ad36f28641bc2044af76"
+      },
+      {
+        "name": "char_102_texas_2",
+        "guid": "54b9de5ef09df4d499cb3b5d4f42dc05",
+        "md5": "d0a81dc1da06bbf62c7d0ca0a1fc2158"
+      },
+      {
+        "name": "char_102_texas_1",
+        "guid": "3b6d53819c23dea4ca756be0c113cc55",
+        "md5": "da80cbe45fe54dc233d748af2387ab54"
+      },
+      {
+        "name": "char_1012_skadi2_2",
+        "guid": "264bdc00bd1e26b4e9a58fb1ba25d344",
+        "md5": "70fa38c9bf3ff8a639f66b2f401943f7"
+      },
+      {
+        "name": "char_1012_skadi2_1",
+        "guid": "5e2b72294dbad0a42860f72ec2450413",
+        "md5": "5c9ab9c6e880ab2cf8fc50cefd39e825"
+      },
+      {
+        "name": "char_1011_lava2_2",
+        "guid": "b0b515097462968488bb24fc8ef46c01",
+        "md5": "cd0025c9ed46bfba26449b1659f2f98f"
+      },
+      {
+        "name": "char_1014_nearl2_1",
+        "guid": "a5455d82aae96424ab4f0c45d8705bca",
+        "md5": "76e9091aaff9e57746419a084cea05d4"
+      },
+      {
+        "name": "char_1013_chen2_2",
+        "guid": "d618831d436cac34e8df33d793b31fe5",
+        "md5": "0c5897b66f236fe2ba8846b83de4db20"
+      },
+      {
+        "name": "char_1013_chen2_1",
+        "guid": "d60fa6c2c582b324da8477bc07a05c19",
+        "md5": "2ce107df02d3e8b121ff78ab396a1755"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#1",
+        "guid": "b3783b8bccf284b4cb62aecf73ba4cd3",
+        "md5": "6ac1b4531e35109ee082c1963d669945"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#1a",
+        "guid": "7324ad36ae98eee4cb83b1ff19c714e8",
+        "md5": "08a1741f2e97d080c3b4c07361a98cf7"
+      }
+    ]
+  }
+}

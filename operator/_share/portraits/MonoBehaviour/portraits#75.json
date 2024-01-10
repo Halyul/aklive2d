@@ -1,0 +1,198 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#75",
+  "_sprites": [
+    {
+      "name": "char_4117_ray_2",
+      "guid": "22ff9387290a79145baee81c81b1a0d9",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4117_ray_1",
+      "guid": "207254a6d349145478976fb553af3f03",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4116_blkkgt_2",
+      "guid": "12cfcb7d48c109941b867f96ab015a51",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4116_blkkgt_1",
+      "guid": "0d4e70849aea0884eb842203e8084924",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4114_harold_2",
+      "guid": "7574962484283604faed0928ccd86cea",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4114_harold_1",
+      "guid": "0d5542b2cd5b0894b8e84f54bcf85524",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4107_vrdant_2",
+      "guid": "0e39a9587003bd444b8d2041eb5e1e46",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4107_vrdant_1",
+      "guid": "c21c7f89ff2748243a21f3907aea4ad1",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4081_warmy_2",
+      "guid": "8b56eb21a19a93c44a1799632f70d54d",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -7897156595478689742
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -1152285500921312982
+    },
+    "size": 1024
+  },
+  "_index": 75,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_4117_ray_2",
+        "guid": "22ff9387290a79145baee81c81b1a0d9",
+        "md5": "e4e5442c8343f43700d77da61b5898f3"
+      },
+      {
+        "name": "char_4117_ray_1",
+        "guid": "207254a6d349145478976fb553af3f03",
+        "md5": "5cf7d32d023b026afcb6637b57448f94"
+      },
+      {
+        "name": "char_4116_blkkgt_2",
+        "guid": "12cfcb7d48c109941b867f96ab015a51",
+        "md5": "5bd5f92061c9525a036a2acf78bc8a84"
+      },
+      {
+        "name": "char_4116_blkkgt_1",
+        "guid": "0d4e70849aea0884eb842203e8084924",
+        "md5": "169d7d3ca3435b659b75fcadcdbeb2d6"
+      },
+      {
+        "name": "char_4114_harold_2",
+        "guid": "7574962484283604faed0928ccd86cea",
+        "md5": "cb71647b4b8f8e7b459e3bf1835b91d8"
+      },
+      {
+        "name": "char_4114_harold_1",
+        "guid": "0d5542b2cd5b0894b8e84f54bcf85524",
+        "md5": "693b757b98a43bccb32171423723086b"
+      },
+      {
+        "name": "char_4107_vrdant_2",
+        "guid": "0e39a9587003bd444b8d2041eb5e1e46",
+        "md5": "fdd5d07b5ef8992d07f4c9ffaf6efe76"
+      },
+      {
+        "name": "char_4107_vrdant_1",
+        "guid": "c21c7f89ff2748243a21f3907aea4ad1",
+        "md5": "7de71f837e482ad6d7e5002ddc743182"
+      },
+      {
+        "name": "char_4081_warmy_2",
+        "guid": "8b56eb21a19a93c44a1799632f70d54d",
+        "md5": "2e6afe95f6e96210d8ebe784a924fd9d"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#75",
+        "guid": "a496beea5455d424f894405f5884033c",
+        "md5": "f73f3f50c34313deb0610c99c90d0559"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#75a",
+        "guid": "3b52934fe07f4c74389caed875dfb8ea",
+        "md5": "87684b3552285f446b7f5effc2cdb361"
+      }
+    ]
+  }
+}

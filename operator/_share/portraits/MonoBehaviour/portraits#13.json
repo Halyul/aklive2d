@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#13",
+  "_sprites": [
+    {
+      "name": "char_219_meteo_1",
+      "guid": "403bba32ffa5b2d499c8ed52104db5a4",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_218_cuttle_2",
+      "guid": "455e5d221dd3abe41b1c18d9fb085b3b",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_218_cuttle_1",
+      "guid": "b39e1308b70123941b65c302daa67eed",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_220_grani_2",
+      "guid": "0a9faa5bd547fda46967c4d9cd44aaf9",
+      "atlas": 0,
+      "rect": {
+        "x": 184,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_220_grani_1",
+      "guid": "4a63df6031a04d04587a50d813852a68",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_219_meteo_2",
+      "guid": "2b4b290f9306b0e44b2ac2fb6c1d7ae4",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_214_kafka_1",
+      "guid": "9bd9530af449200449269fcf4c749ef6",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_213_mostma_2",
+      "guid": "c5596b38294280f439f91a9a90e00cbb",
+      "atlas": 0,
+      "rect": {
+        "x": 548,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_213_mostma_1",
+      "guid": "bc72f822c26bc2149b7e5421507d31b1",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_215_mantic_2",
+      "guid": "6bb24c10bf18890409b935f987b89bfc",
+      "atlas": 0,
+      "rect": {
+        "x": 730,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_215_mantic_1",
+      "guid": "c3a8048519c67c543a8e6cc31233ba4f",
+      "atlas": 0,
+      "rect": {
+        "x": 2,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_214_kafka_2",
+      "guid": "c22fe2cef4ad81c49bff091511196684",
+      "atlas": 0,
+      "rect": {
+        "x": 366,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -3178554818020740785
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -2098203193679496293
+    },
+    "size": 1024
+  },
+  "_index": 13,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_219_meteo_1",
+        "guid": "403bba32ffa5b2d499c8ed52104db5a4",
+        "md5": "a903c97484a04c752b386fdb40bd3291"
+      },
+      {
+        "name": "char_218_cuttle_2",
+        "guid": "455e5d221dd3abe41b1c18d9fb085b3b",
+        "md5": "32231c1c8e86b7027e358869f29d6d20"
+      },
+      {
+        "name": "char_218_cuttle_1",
+        "guid": "b39e1308b70123941b65c302daa67eed",
+        "md5": "03383f121672560014a381c784261ce9"
+      },
+      {
+        "name": "char_220_grani_2",
+        "guid": "0a9faa5bd547fda46967c4d9cd44aaf9",
+        "md5": "971db9d40c9a4d7dffa7e0d069427818"
+      },
+      {
+        "name": "char_220_grani_1",
+        "guid": "4a63df6031a04d04587a50d813852a68",
+        "md5": "0c75454f18a563034cf6ebf2664956f8"
+      },
+      {
+        "name": "char_219_meteo_2",
+        "guid": "2b4b290f9306b0e44b2ac2fb6c1d7ae4",
+        "md5": "5c7332ae7fd35de7e4b331d573665e2b"
+      },
+      {
+        "name": "char_214_kafka_1",
+        "guid": "9bd9530af449200449269fcf4c749ef6",
+        "md5": "d82ef54eded57ae81987fa3946885b00"
+      },
+      {
+        "name": "char_213_mostma_2",
+        "guid": "c5596b38294280f439f91a9a90e00cbb",
+        "md5": "29282896b152c894e705812b42c1bec9"
+      },
+      {
+        "name": "char_213_mostma_1",
+        "guid": "bc72f822c26bc2149b7e5421507d31b1",
+        "md5": "c66a75b148071980315378725aae6ba4"
+      },
+      {
+        "name": "char_215_mantic_2",
+        "guid": "6bb24c10bf18890409b935f987b89bfc",
+        "md5": "38a6448998b28f233446853af92dace1"
+      },
+      {
+        "name": "char_215_mantic_1",
+        "guid": "c3a8048519c67c543a8e6cc31233ba4f",
+        "md5": "9b82b4d3c3b263985d6d80378fe170ec"
+      },
+      {
+        "name": "char_214_kafka_2",
+        "guid": "c22fe2cef4ad81c49bff091511196684",
+        "md5": "926915c96365d8cc853e4dd27caede40"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#13",
+        "guid": "f4eba8f96439e7f4080625bc716ab278",
+        "md5": "61ceb7f2f318df4fff486a7373cab3c5"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#13a",
+        "guid": "1b1035c8ba4c6454a804b014e9ac4968",
+        "md5": "b59f6904abdbdc63b4a73af6e652737d"
+      }
+    ]
+  }
+}

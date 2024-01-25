@@ -17,7 +17,7 @@ export default class Background {
     this.#files = fs.readdirSync(this.#extractFolder).filter((f) => {
       return f.endsWith('.png') && f.includes('_left');
     })
-    if (this.#files.length + 2 !== fs.readdirSync(this.#backgroundFolder).length) {
+    if (this.#files.length !== fs.readdirSync(this.#backgroundFolder).length - 1) {
       await Promise.all(this.#files.map(async (f) => {
         const filenamePrefix = path.parse(f).name.replace('_left', '');
         await this.#composite(filenamePrefix, '.png');

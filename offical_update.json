@@ -1,6 +1,18 @@
 {
-    "length": 37,
-    "latest": "2024/01",
+    "length": 38,
+    "latest": "2024/02",
+    "2024/02": [
+        {
+            "color": "rgb(187, 109, 22)",
+            "codename": {
+                "zh-CN": "何处栖 · 重岳",
+                "en-US": "ALIGHTING"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401812.html",
+            "id": "202401812"
+        }
+    ],
     "2024/01": [
         {
             "color": "rgb(228, 183, 19)",

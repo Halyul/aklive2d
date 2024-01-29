@@ -1,7 +1,17 @@
 {
-    "length": 38,
+    "length": 39,
     "latest": "2024/02",
     "2024/02": [
+        {
+            "color": "rgb(174, 216, 236)",
+            "codename": {
+                "zh-CN": "列瑶台 · 林",
+                "en-US": "HEAVENLY MIRAGE"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401034.html",
+            "id": "202401034"
+        },
         {
             "color": "rgb(187, 109, 22)",
             "codename": {

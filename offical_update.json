@@ -1,7 +1,17 @@
 {
-    "length": 39,
+    "length": 40,
     "latest": "2024/02",
     "2024/02": [
+        {
+            "color": "rgb(34, 187, 255)",
+            "codename": {
+                "zh-CN": "黍",
+                "en-US": "SHU"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401025.html",
+            "id": "202401025"
+        },
         {
             "color": "rgb(174, 216, 236)",
             "codename": {

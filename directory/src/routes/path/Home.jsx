@@ -169,7 +169,7 @@ export default function Home() {
       {
         officalUpdate.length > operators.length && (
           <section>
-            <section className={classes['offical-update']}>
+            <section className={`${classes['offical-update']} ${classes.group}`}>
               <section className={classes.info}>
                 <section className={classes.content}>
                   <section className={classes.text}>{officalUpdate.length - operators.length} {i18n("new_op_wait_to_update")}</section>

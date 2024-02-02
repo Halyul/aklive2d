@@ -1,0 +1,640 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Arknights: Alighting / Chongyue Live 2D\n明日方舟：何处栖 · 重岳 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n\nLive preview on: https://gura.ch/aklive2d\nGithub: https://gura.ch/aklive2d-gh\nCheck out our privacy policy at https://gura.ch/pp",
+	"file" : "index.html",
+	"general" : 
+	{
+		"localization" : 
+		{
+			"en-us" : 
+			{
+				"ui_background_title" : "<hr><h4>🖼️ Background</h4><hr>",
+				"ui_custom_background" : "Custom Background",
+				"ui_custom_music" : "Custom Music",
+				"ui_default_background" : "Default Background",
+				"ui_logo_image" : "Logo Image",
+				"ui_logo_opacity" : "Logo Opacity",
+				"ui_logo_ratio" : "Logo Ratio",
+				"ui_logo_title" : "<hr><h4>😐 Logo</h4><hr>",
+				"ui_music_notice" : "<span><b>Please adjust the 'Offset' value if you notice audio cutoff</b></span>",
+				"ui_music_notice1" : "<span><b>'bg_rhodes_day.png' and 'operator_bg.png' use the same music, it is not a bug.</b></span>",
+				"ui_music_offset" : "Offset",
+				"ui_music_selection" : "Music",
+				"ui_music_title" : "<hr><h4>📝 Music</h4><hr>",
+				"ui_music_volume" : "Volume",
+				"ui_notice_changelog" : "<span><b>Set your own music now!</b></span>",
+				"ui_notice_github" : "Github: https://gura.ch/aklive2d-gh",
+				"ui_notice_other_operators" : "Previews: https://gura.ch/aklive2d",
+				"ui_notice_set_fps" : "<span><b>Set FPS target in Settings</b></span>",
+				"ui_notice_title" : "<hr><h4>📝 Notes</h4><hr>",
+				"ui_operator_logo" : "Operator Logo",
+				"ui_position_padding_bottom" : "Padding Bottom",
+				"ui_position_padding_left" : "Padding Left",
+				"ui_position_padding_right" : "Padding Right",
+				"ui_position_padding_top" : "Padding Top",
+				"ui_position_title" : "<hr><h4>⚠️ Posistion</h4><hr>",
+				"ui_privacy_do_not_track" : "Send usage data",
+				"ui_privacy_text" : "<span><b>Check out our privacy policy at https://gura.ch/pp</b></span>",
+				"ui_privacy_title" : "<hr><h4>📜 Privacy</h4><hr>",
+				"ui_subtitle_lang" : "Subtitle Language",
+				"ui_subtitle_title" : "<hr><h4>📑 Subtitle</h4><hr>",
+				"ui_translate_x" : "X Axis Position",
+				"ui_translate_y" : "Y Axis Position",
+				"ui_useStartAnimation_title" : "Use Start Animation",
+				"ui_voice_actor_title" : "<hr><h4>🗣️ Voice Actor</h4><hr>",
+				"ui_voice_idle" : "Idle Timeout",
+				"ui_voice_lang" : "Voice Language",
+				"ui_voice_next" : "Voice Interval",
+				"ui_voice_title" : "<hr><h4>🔈Voice</h4><hr>"
+			},
+			"zh-chs" : 
+			{
+				"ui_background_title" : "<hr><h4>🖼️ 背景</h4><hr>",
+				"ui_custom_background" : "背景图片",
+				"ui_custom_music" : "自定义音乐",
+				"ui_default_background" : "默认背景",
+				"ui_logo_image" : "图标图片",
+				"ui_logo_opacity" : "图标透明度",
+				"ui_logo_ratio" : "图标比例",
+				"ui_logo_title" : "<hr><h4>😐 图标</h4><hr>",
+				"ui_music_notice" : "<span><b>如若发现音频截止，请调节 '弥补' 数值</b></span>",
+				"ui_music_notice1" : "<span><b>'bg_rhodes_day.png' 和 'operator_bg.png' 使用同样的音乐，并非Bug</b></span>",
+				"ui_music_offset" : "弥补",
+				"ui_music_selection" : "音乐",
+				"ui_music_title" : "<hr><h4>🎵 音乐</h4><hr>",
+				"ui_music_volume" : "音量",
+				"ui_notice_changelog" : "<span><b>可设定自定义音乐! </b></span>",
+				"ui_notice_github" : "Github: https://gura.ch/aklive2d-gh",
+				"ui_notice_other_operators" : "预览: https://gura.ch/aklive2d",
+				"ui_notice_set_fps" : "<span><b>在设置中设定FPS目标</b></span>",
+				"ui_notice_title" : "<hr><h4>📝 通知</h4><hr>",
+				"ui_operator_logo" : "干员图标",
+				"ui_position_padding_bottom" : "底部距离",
+				"ui_position_padding_left" : "左部距离",
+				"ui_position_padding_right" : "右部距离",
+				"ui_position_padding_top" : "上部距离",
+				"ui_position_title" : "<hr><h4>⚠️ 位置</h4><hr>",
+				"ui_privacy_do_not_track" : "发送使用数据",
+				"ui_privacy_text" : "<span><b>在 https://gura.ch/pp 查看我们的隐私政策</b></span>",
+				"ui_privacy_title" : "<hr><h4>📜 隐私</h4><hr>",
+				"ui_subtitle_lang" : "字幕语言",
+				"ui_subtitle_title" : "<hr><h4>📑 字幕</h4><hr>",
+				"ui_translate_x" : "X 轴位置",
+				"ui_translate_y" : "Y 轴位置",
+				"ui_useStartAnimation_title" : "使用开始动画",
+				"ui_voice_actor_title" : "<hr><h4>🗣️ 声优</h4><hr>",
+				"ui_voice_idle" : "待机间隔",
+				"ui_voice_lang" : "语音语言",
+				"ui_voice_next" : "下一条语音间隔",
+				"ui_voice_title" : "<hr><h4>🔈语音</h4><hr>"
+			}
+		},
+		"properties" : 
+		{
+			"background" : 
+			{
+				"index" : 13,
+				"order" : 113,
+				"text" : "ui_custom_background",
+				"type" : "file",
+				"value" : ""
+			},
+			"background_title" : 
+			{
+				"index" : 11,
+				"order" : 111,
+				"text" : "ui_background_title"
+			},
+			"defaultbackground" : 
+			{
+				"index" : 12,
+				"options" : 
+				[
+					{
+						"label" : "operator_bg.png",
+						"value" : "operator_bg.png"
+					},
+					{
+						"label" : "bg_anniversary_1.png",
+						"value" : "bg_anniversary_1.png"
+					},
+					{
+						"label" : "bg_iberia_1.png",
+						"value" : "bg_iberia_1.png"
+					},
+					{
+						"label" : "bg_kalts_1.png",
+						"value" : "bg_kalts_1.png"
+					},
+					{
+						"label" : "bg_kazimierz_1.png",
+						"value" : "bg_kazimierz_1.png"
+					},
+					{
+						"label" : "bg_laterano_1.png",
+						"value" : "bg_laterano_1.png"
+					},
+					{
+						"label" : "bg_main_victoria_1.png",
+						"value" : "bg_main_victoria_1.png"
+					},
+					{
+						"label" : "bg_rhine_1.png",
+						"value" : "bg_rhine_1.png"
+					},
+					{
+						"label" : "bg_rhodes_day.png",
+						"value" : "bg_rhodes_day.png"
+					},
+					{
+						"label" : "bg_rhodes_night.png",
+						"value" : "bg_rhodes_night.png"
+					},
+					{
+						"label" : "bg_rogue_1.png",
+						"value" : "bg_rogue_1.png"
+					},
+					{
+						"label" : "bg_rogue_2.png",
+						"value" : "bg_rogue_2.png"
+					},
+					{
+						"label" : "bg_rogue_3.png",
+						"value" : "bg_rogue_3.png"
+					},
+					{
+						"label" : "bg_siesta_1.png",
+						"value" : "bg_siesta_1.png"
+					},
+					{
+						"label" : "bg_ursus_1.png",
+						"value" : "bg_ursus_1.png"
+					},
+					{
+						"label" : "bg_yan_1.png",
+						"value" : "bg_yan_1.png"
+					}
+				],
+				"order" : 112,
+				"text" : "ui_default_background",
+				"type" : "combo",
+				"value" : "operator_bg.png"
+			},
+			"logo" : 
+			{
+				"index" : 5,
+				"order" : 105,
+				"text" : "ui_operator_logo",
+				"type" : "bool",
+				"value" : true
+			},
+			"logo_title" : 
+			{
+				"index" : 4,
+				"order" : 104,
+				"text" : "ui_logo_title"
+			},
+			"logoimage" : 
+			{
+				"condition" : "logo.value == true",
+				"index" : 6,
+				"order" : 106,
+				"text" : "ui_logo_image",
+				"type" : "file",
+				"value" : ""
+			},
+			"logoopacity" : 
+			{
+				"condition" : "logo.value == true",
+				"fraction" : false,
+				"index" : 8,
+				"max" : 100,
+				"min" : 0,
+				"order" : 108,
+				"text" : "ui_logo_opacity",
+				"type" : "slider",
+				"value" : 30
+			},
+			"logoratio" : 
+			{
+				"condition" : "logo.value == true",
+				"fraction" : true,
+				"index" : 7,
+				"max" : 100,
+				"min" : 0,
+				"order" : 107,
+				"precision" : 1,
+				"step" : 0.1,
+				"text" : "ui_logo_ratio",
+				"type" : "slider",
+				"value" : 61.8
+			},
+			"logox" : 
+			{
+				"condition" : "logo.value == true",
+				"fraction" : false,
+				"index" : 9,
+				"max" : 100,
+				"min" : 0,
+				"order" : 109,
+				"text" : "ui_translate_x",
+				"type" : "slider",
+				"value" : 0
+			},
+			"logoy" : 
+			{
+				"condition" : "logo.value == true",
+				"fraction" : false,
+				"index" : 10,
+				"max" : 100,
+				"min" : 0,
+				"order" : 110,
+				"text" : "ui_translate_y",
+				"type" : "slider",
+				"value" : 0
+			},
+			"music_notice" : 
+			{
+				"condition" : "music_title.value == true",
+				"index" : 24,
+				"order" : 124,
+				"text" : "ui_music_notice"
+			},
+			"music_notice1" : 
+			{
+				"condition" : "music_title.value == true",
+				"index" : 25,
+				"order" : 125,
+				"text" : "ui_music_notice1"
+			},
+			"music_offset" : 
+			{
+				"condition" : "music_title.value == true",
+				"fraction" : true,
+				"index" : 28,
+				"max" : 1,
+				"min" : 0,
+				"order" : 128,
+				"precision" : 2,
+				"step" : 0.01,
+				"text" : "ui_music_offset",
+				"type" : "slider",
+				"value" : 0.3
+			},
+			"music_selection" : 
+			{
+				"condition" : "music_title.value == true",
+				"index" : 26,
+				"options" : 
+				[
+					{
+						"label" : "bg_rhodes_day.png",
+						"value" : "bg_rhodes_day.png"
+					},
+					{
+						"label" : "bg_rhodes_night.png",
+						"value" : "bg_rhodes_night.png"
+					},
+					{
+						"label" : "bg_main_victoria_1.png",
+						"value" : "bg_main_victoria_1.png"
+					},
+					{
+						"label" : "bg_siesta_1.png",
+						"value" : "bg_siesta_1.png"
+					},
+					{
+						"label" : "bg_kazimierz_1.png",
+						"value" : "bg_kazimierz_1.png"
+					},
+					{
+						"label" : "bg_ursus_1.png",
+						"value" : "bg_ursus_1.png"
+					},
+					{
+						"label" : "bg_yan_1.png",
+						"value" : "bg_yan_1.png"
+					},
+					{
+						"label" : "bg_iberia_1.png",
+						"value" : "bg_iberia_1.png"
+					},
+					{
+						"label" : "bg_anniversary_1.png",
+						"value" : "bg_anniversary_1.png"
+					},
+					{
+						"label" : "bg_rogue_1.png",
+						"value" : "bg_rogue_1.png"
+					},
+					{
+						"label" : "bg_rogue_2.png",
+						"value" : "bg_rogue_2.png"
+					},
+					{
+						"label" : "bg_laterano_1.png",
+						"value" : "bg_laterano_1.png"
+					},
+					{
+						"label" : "bg_rhine_1.png",
+						"value" : "bg_rhine_1.png"
+					},
+					{
+						"label" : "bg_kalts_1.png",
+						"value" : "bg_kalts_1.png"
+					},
+					{
+						"label" : "bg_rogue_3.png",
+						"value" : "bg_rogue_3.png"
+					},
+					{
+						"label" : "operator_bg.png",
+						"value" : "operator_bg.png"
+					}
+				],
+				"order" : 126,
+				"text" : "ui_music_selection",
+				"type" : "combo",
+				"value" : "bg_rhodes_day.png"
+			},
+			"music_title" : 
+			{
+				"index" : 23,
+				"order" : 123,
+				"text" : "ui_music_title",
+				"type" : "bool",
+				"value" : false
+			},
+			"music_volume" : 
+			{
+				"condition" : "music_title.value == true",
+				"fraction" : false,
+				"index" : 27,
+				"max" : 100,
+				"min" : 0,
+				"order" : 127,
+				"text" : "ui_music_volume",
+				"type" : "slider",
+				"value" : 50
+			},
+			"notice_github" : 
+			{
+				"index" : 2,
+				"order" : 102,
+				"text" : "ui_notice_github"
+			},
+			"notice_other_operators" : 
+			{
+				"index" : 3,
+				"order" : 103,
+				"text" : "ui_notice_other_operators"
+			},
+			"notice_set_fps" : 
+			{
+				"index" : 1,
+				"order" : 101,
+				"text" : "ui_notice_set_fps"
+			},
+			"notice_title" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "ui_notice_title"
+			},
+			"paddingbottom" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 34,
+				"max" : 100,
+				"min" : -100,
+				"order" : 134,
+				"text" : "ui_position_padding_bottom",
+				"type" : "slider",
+				"value" : 0
+			},
+			"paddingleft" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 31,
+				"max" : 100,
+				"min" : -100,
+				"order" : 131,
+				"text" : "ui_position_padding_left",
+				"type" : "slider",
+				"value" : 0
+			},
+			"paddingright" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 32,
+				"max" : 100,
+				"min" : -100,
+				"order" : 132,
+				"text" : "ui_position_padding_right",
+				"type" : "slider",
+				"value" : 0
+			},
+			"paddingtop" : 
+			{
+				"condition" : "position.value == true",
+				"fraction" : false,
+				"index" : 33,
+				"max" : 100,
+				"min" : -100,
+				"order" : 133,
+				"text" : "ui_position_padding_top",
+				"type" : "slider",
+				"value" : 0
+			},
+			"position" : 
+			{
+				"index" : 30,
+				"order" : 130,
+				"text" : "ui_position_title",
+				"type" : "bool",
+				"value" : false
+			},
+			"privacy_text" : 
+			{
+				"index" : 36,
+				"order" : 136,
+				"text" : "ui_privacy_text"
+			},
+			"privacydonottrack" : 
+			{
+				"index" : 37,
+				"order" : 137,
+				"text" : "ui_privacy_do_not_track",
+				"type" : "bool",
+				"value" : true
+			},
+			"privacytitle" : 
+			{
+				"index" : 35,
+				"order" : 135,
+				"text" : "ui_privacy_title"
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"useStartAnimation" : 
+			{
+				"index" : 29,
+				"order" : 129,
+				"text" : "ui_useStartAnimation_title",
+				"type" : "bool",
+				"value" : true
+			},
+			"voiceactor" : 
+			{
+				"condition" : "voicesubtitle.value == true",
+				"index" : 22,
+				"order" : 122,
+				"text" : "ui_voice_actor_title",
+				"type" : "bool",
+				"value" : false
+			},
+			"voiceidle" : 
+			{
+				"condition" : "voicetitle.value == true",
+				"fraction" : false,
+				"index" : 16,
+				"min" : 0,
+				"order" : 116,
+				"text" : "ui_voice_idle",
+				"type" : "textinput",
+				"value" : 10
+			},
+			"voicelanguage" : 
+			{
+				"condition" : "voicetitle.value == true",
+				"index" : 15,
+				"options" : 
+				[
+					{
+						"label" : "CN_MANDARIN",
+						"value" : "CN_MANDARIN"
+					},
+					{
+						"label" : "JP",
+						"value" : "JP"
+					},
+					{
+						"label" : "KR",
+						"value" : "KR"
+					},
+					{
+						"label" : "EN",
+						"value" : "EN"
+					},
+					{
+						"label" : "CN_TOPOLECT",
+						"value" : "CN_TOPOLECT"
+					}
+				],
+				"order" : 115,
+				"text" : "ui_voice_lang",
+				"type" : "combo",
+				"value" : "CN_MANDARIN"
+			},
+			"voicenext" : 
+			{
+				"condition" : "voicetitle.value == true",
+				"fraction" : false,
+				"index" : 17,
+				"min" : 0,
+				"order" : 117,
+				"text" : "ui_voice_next",
+				"type" : "textinput",
+				"value" : 3
+			},
+			"voicesubtitle" : 
+			{
+				"condition" : "voicetitle.value == true",
+				"index" : 18,
+				"order" : 118,
+				"text" : "ui_subtitle_title",
+				"type" : "bool",
+				"value" : false
+			},
+			"voicesubtitlelanguage" : 
+			{
+				"condition" : "voicesubtitle.value == true",
+				"index" : 19,
+				"options" : 
+				[
+					{
+						"label" : "zh-CN",
+						"value" : "zh-CN"
+					},
+					{
+						"label" : "en-US",
+						"value" : "en-US"
+					},
+					{
+						"label" : "ja-JP",
+						"value" : "ja-JP"
+					},
+					{
+						"label" : "ko-KR",
+						"value" : "ko-KR"
+					}
+				],
+				"order" : 119,
+				"text" : "ui_subtitle_lang",
+				"type" : "combo",
+				"value" : "zh-CN"
+			},
+			"voicesubtitlex" : 
+			{
+				"condition" : "voicesubtitle.value == true",
+				"fraction" : false,
+				"index" : 20,
+				"max" : 100,
+				"min" : 0,
+				"order" : 120,
+				"text" : "ui_translate_x",
+				"type" : "slider",
+				"value" : 0
+			},
+			"voicesubtitley" : 
+			{
+				"condition" : "voicesubtitle.value == true",
+				"fraction" : false,
+				"index" : 21,
+				"max" : 100,
+				"min" : 0,
+				"order" : 121,
+				"text" : "ui_translate_y",
+				"type" : "slider",
+				"value" : 100
+			},
+			"voicetitle" : 
+			{
+				"index" : 14,
+				"order" : 114,
+				"text" : "ui_voice_title",
+				"type" : "bool",
+				"value" : false
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"snapshotformat" : -1,
+	"snapshotoverlay" : "",
+	"tags" : [ "Game" ],
+	"title" : "Arknights: Alighting / Chongyue - 明日方舟：何处栖 · 重岳",
+	"type" : "web",
+	"version" : 3,
+	"workshopid" : "3152180187",
+	"workshopurl" : "steam://url/CommunityFilePage/3152180187"
+}

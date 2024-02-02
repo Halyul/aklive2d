@@ -6,14 +6,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use PNPM
         uses: pnpm/action-setup@v2
         with:

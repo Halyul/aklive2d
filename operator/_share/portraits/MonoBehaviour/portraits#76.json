@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#76",
+  "_sprites": [
+    {
+      "name": "char_4122_grabds_2",
+      "guid": "b66e5008b9472184db4f0896c46c4e77",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4122_grabds_1",
+      "guid": "fcb01a7de12a51d45849e9e9ddfefabe",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4121_zuole_2",
+      "guid": "871b3c78aa5c90d46b1115c98e900f7e",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4121_zuole_1",
+      "guid": "d504e7b80206a414d80f9cb24efe36d3",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4119_wanqin_2",
+      "guid": "15757b4c5dc790e48b12031ef8f4e1bd",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4119_wanqin_1",
+      "guid": "70e42cce07d59894da5dfafb92116747",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4117_ray_2",
+      "guid": "22ff9387290a79145baee81c81b1a0d9",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4117_ray_1",
+      "guid": "207254a6d349145478976fb553af3f03",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4116_blkkgt_2",
+      "guid": "12cfcb7d48c109941b867f96ab015a51",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_297_hamoni_unveiling#1",
+      "guid": "b80c07c618704d742a959262c2822604",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_271_spikes_unveiling#1",
+      "guid": "31fe786b784676d4ba4899699fda6ecb",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_2024_chyue_nian#10",
+      "guid": "c57b64a5fda94f845af33cf5b52d847c",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 4860172748791990936
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": -1491372183234200281
+    },
+    "size": 1024
+  },
+  "_index": 76,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_4122_grabds_2",
+        "guid": "b66e5008b9472184db4f0896c46c4e77",
+        "md5": "f5ad25ca670e4b42028dd3cb259b90a9"
+      },
+      {
+        "name": "char_4122_grabds_1",
+        "guid": "fcb01a7de12a51d45849e9e9ddfefabe",
+        "md5": "7dd83d711604f32b3bdcbbce57498863"
+      },
+      {
+        "name": "char_4121_zuole_2",
+        "guid": "871b3c78aa5c90d46b1115c98e900f7e",
+        "md5": "a4c46c08d08e365889ff1359b40776d2"
+      },
+      {
+        "name": "char_4121_zuole_1",
+        "guid": "d504e7b80206a414d80f9cb24efe36d3",
+        "md5": "55676213b936a5f9ca21aa52b8068038"
+      },
+      {
+        "name": "char_4119_wanqin_2",
+        "guid": "15757b4c5dc790e48b12031ef8f4e1bd",
+        "md5": "b76fb51946a3d090be4bf08b6571eb02"
+      },
+      {
+        "name": "char_4119_wanqin_1",
+        "guid": "70e42cce07d59894da5dfafb92116747",
+        "md5": "5f993f34f64707cb41731c5e8137dc72"
+      },
+      {
+        "name": "char_4117_ray_2",
+        "guid": "22ff9387290a79145baee81c81b1a0d9",
+        "md5": "e4e5442c8343f43700d77da61b5898f3"
+      },
+      {
+        "name": "char_4117_ray_1",
+        "guid": "207254a6d349145478976fb553af3f03",
+        "md5": "5cf7d32d023b026afcb6637b57448f94"
+      },
+      {
+        "name": "char_4116_blkkgt_2",
+        "guid": "12cfcb7d48c109941b867f96ab015a51",
+        "md5": "5bd5f92061c9525a036a2acf78bc8a84"
+      },
+      {
+        "name": "char_297_hamoni_unveiling#1",
+        "guid": "b80c07c618704d742a959262c2822604",
+        "md5": "b6df17d381e4dc0a88798058ee15aef1"
+      },
+      {
+        "name": "char_271_spikes_unveiling#1",
+        "guid": "31fe786b784676d4ba4899699fda6ecb",
+        "md5": "fba07a6673e0e12534ad07265ee513f0"
+      },
+      {
+        "name": "char_2024_chyue_nian#10",
+        "guid": "c57b64a5fda94f845af33cf5b52d847c",
+        "md5": "f316d16412e402ccacf32ec0117e08a3"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#76",
+        "guid": "9ebc7833e5b37044587f4190cbe38c40",
+        "md5": "ffc2ac2efd12e5cabfb26863f80329bb"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#76a",
+        "guid": "257501d51992c3f4f8810eb72752f19a",
+        "md5": "f8c97e6c2c7cba65af171c592dea7fdd"
+      }
+    ]
+  }
+}

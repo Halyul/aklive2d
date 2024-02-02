@@ -35,11 +35,23 @@
       "rotate": 0
     },
     {
+      "name": "char_4078_bdhkgt_yun#2",
+      "guid": "ea11de707400897478bd78c975fea08f",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
       "name": "char_4065_judge_snow#6",
       "guid": "8a027ce4506666543b7d37bca8d4e580",
       "atlas": 0,
       "rect": {
-        "x": 0,
+        "x": 182,
         "y": 362,
         "w": 180,
         "h": 360
@@ -51,8 +63,8 @@
       "guid": "ba4fcfa3e5ab4e841945f52640610185",
       "atlas": 0,
       "rect": {
-        "x": 182,
-        "y": 362,
+        "x": 364,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -64,7 +76,7 @@
       "atlas": 0,
       "rect": {
         "x": 364,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -75,8 +87,8 @@
       "guid": "acc26f800dc33124990b42bd24d6d14d",
       "atlas": 0,
       "rect": {
-        "x": 364,
-        "y": 362,
+        "x": 546,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -88,7 +100,7 @@
       "atlas": 0,
       "rect": {
         "x": 546,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -99,8 +111,8 @@
       "guid": "57e8f5420d5c13d48b6662d2f95ede06",
       "atlas": 0,
       "rect": {
-        "x": 546,
-        "y": 362,
+        "x": 728,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -112,7 +124,7 @@
       "atlas": 0,
       "rect": {
         "x": 728,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -123,19 +135,19 @@
       "guid": "afd1b7e0d12b9a64d934ec78c7a5bb59",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 362,
-        "w": 180,
-        "h": 360
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     },
     {
       "name": "char_1020_reed2_epoque#30",
       "guid": "b2f6831a1597a17428d8a6a4641ec6a7",
       "atlas": 0,
       "rect": {
-        "x": 0,
+        "x": 364,
         "y": 724,
         "w": 360,
         "h": 180
@@ -167,6 +179,11 @@
         "name": "char_4081_warmy_1",
         "guid": "16b5db3baad16dd4da217c3966b91d1b",
         "md5": "b18364a9e3282f83284fe064187486c3"
+      },
+      {
+        "name": "char_4078_bdhkgt_yun#2",
+        "guid": "ea11de707400897478bd78c975fea08f",
+        "md5": "f406b4d0711161874fd4f7b79a3cae24"
       },
       {
         "name": "char_4065_judge_snow#6",
@@ -218,14 +235,14 @@
       {
         "name": "portraits#74",
         "guid": "c2fc91b502c6bb44f9a0057978010da3",
-        "md5": "d445cc7140040b1ea90ae778f298f4ca"
+        "md5": "c8789c17ce08a60e71104c01e0aaa851"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#74a",
         "guid": "7498c8a0257cedc479cbb15641b4f61b",
-        "md5": "2535a6d66a67271ccb0ebeca112403b7"
+        "md5": "4725418feba8b365aec4342d7cd60495"
       }
     ]
   }

@@ -1,0 +1,79 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#77",
+  "_sprites": [
+    {
+      "name": "char_4023_rfalcn_2",
+      "guid": "c67aef532452edd42b4e369a2da476ed",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4023_rfalcn_1",
+      "guid": "ebca3588af34cea4697f34921163f4fc",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -6834471149430156231
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 5019846516150458636
+    },
+    "size": 512
+  },
+  "_index": 77,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_4023_rfalcn_2",
+        "guid": "c67aef532452edd42b4e369a2da476ed",
+        "md5": "3912948b2fe51c64e486d3c88575a173"
+      },
+      {
+        "name": "char_4023_rfalcn_1",
+        "guid": "ebca3588af34cea4697f34921163f4fc",
+        "md5": "4f26683115679d5185e6e51f4f7716a8"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#77",
+        "guid": "058801a803fb46648bc1e166d2c3d9d6",
+        "md5": "1ed0798da2cb1674d470496687dbbfa4"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#77a",
+        "guid": "52d697bd3b67fc54eb038d7ab23811a0",
+        "md5": "1682279f645dd9a78eaa16a58e00802d"
+      }
+    ]
+  }
+}

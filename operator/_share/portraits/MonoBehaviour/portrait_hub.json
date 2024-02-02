@@ -3543,6 +3543,10 @@
       "atlas": 74
     },
     {
+      "name": "char_4078_bdhkgt_yun#2",
+      "atlas": 74
+    },
+    {
       "name": "char_4065_judge_snow#6",
       "atlas": 74
     },
@@ -3579,15 +3583,7 @@
       "atlas": 74
     },
     {
-      "name": "char_4117_ray_2",
-      "atlas": 75
-    },
-    {
-      "name": "char_4117_ray_1",
-      "atlas": 75
-    },
-    {
-      "name": "char_4116_blkkgt_2",
+      "name": "char_449_glider_nian#10",
       "atlas": 75
     },
     {
@@ -3613,6 +3609,78 @@
     {
       "name": "char_4081_warmy_2",
       "atlas": 75
+    },
+    {
+      "name": "char_4080_lin_nian#10",
+      "atlas": 75
+    },
+    {
+      "name": "char_4066_highmo_nian#10",
+      "atlas": 75
+    },
+    {
+      "name": "char_2025_shu_2",
+      "atlas": 75
+    },
+    {
+      "name": "char_2025_shu_1",
+      "atlas": 75
+    },
+    {
+      "name": "char_4122_grabds_2",
+      "atlas": 76
+    },
+    {
+      "name": "char_4122_grabds_1",
+      "atlas": 76
+    },
+    {
+      "name": "char_4121_zuole_2",
+      "atlas": 76
+    },
+    {
+      "name": "char_4121_zuole_1",
+      "atlas": 76
+    },
+    {
+      "name": "char_4119_wanqin_2",
+      "atlas": 76
+    },
+    {
+      "name": "char_4119_wanqin_1",
+      "atlas": 76
+    },
+    {
+      "name": "char_4117_ray_2",
+      "atlas": 76
+    },
+    {
+      "name": "char_4117_ray_1",
+      "atlas": 76
+    },
+    {
+      "name": "char_4116_blkkgt_2",
+      "atlas": 76
+    },
+    {
+      "name": "char_297_hamoni_unveiling#1",
+      "atlas": 76
+    },
+    {
+      "name": "char_271_spikes_unveiling#1",
+      "atlas": 76
+    },
+    {
+      "name": "char_2024_chyue_nian#10",
+      "atlas": 76
+    },
+    {
+      "name": "char_4023_rfalcn_2",
+      "atlas": 77
+    },
+    {
+      "name": "char_4023_rfalcn_1",
+      "atlas": 77
     }
   ],
   "_atlases": [
@@ -3691,7 +3759,9 @@
     "Arts/CharPortraits/portraits#72",
     "Arts/CharPortraits/portraits#73",
     "Arts/CharPortraits/portraits#74",
-    "Arts/CharPortraits/portraits#75"
+    "Arts/CharPortraits/portraits#75",
+    "Arts/CharPortraits/portraits#76",
+    "Arts/CharPortraits/portraits#77"
   ],
   "_inputSpriteDir": "Assets/Torappu/Arts/CharPortraits",
   "_outputAtlasDir": "Assets/Torappu/Arts/CharPortraits/[X]Atlas",

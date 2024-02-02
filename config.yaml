@@ -66,3 +66,6 @@ operators:
   texas_the_omertosa_wingbreaker: !include config/texas_the_omertosa_wingbreaker.yaml
   mwynar_w_dali: !include config/mwynar_w_dali.yaml
   reed_the_frame_shadow_curator: !include config/reed_the_frame_shadow_curator.yaml
+  shu: !include config/shu.yaml
+  lin_heavenly_mirage: !include config/lin_heavenly_mirage.yaml
+  chongyue_alighting: !include config/chongyue_alighting.yaml

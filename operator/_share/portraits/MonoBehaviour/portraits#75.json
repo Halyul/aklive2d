@@ -11,36 +11,12 @@
   "m_Name": "portraits#75",
   "_sprites": [
     {
-      "name": "char_4117_ray_2",
-      "guid": "22ff9387290a79145baee81c81b1a0d9",
+      "name": "char_449_glider_nian#10",
+      "guid": "86f6b007f1e4d6045967805803613ad2",
       "atlas": 0,
       "rect": {
         "x": 0,
         "y": 0,
-        "w": 180,
-        "h": 360
-      },
-      "rotate": 0
-    },
-    {
-      "name": "char_4117_ray_1",
-      "guid": "207254a6d349145478976fb553af3f03",
-      "atlas": 0,
-      "rect": {
-        "x": 182,
-        "y": 0,
-        "w": 180,
-        "h": 360
-      },
-      "rotate": 0
-    },
-    {
-      "name": "char_4116_blkkgt_2",
-      "guid": "12cfcb7d48c109941b867f96ab015a51",
-      "atlas": 0,
-      "rect": {
-        "x": 0,
-        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -52,7 +28,7 @@
       "atlas": 0,
       "rect": {
         "x": 182,
-        "y": 362,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -63,8 +39,8 @@
       "guid": "7574962484283604faed0928ccd86cea",
       "atlas": 0,
       "rect": {
-        "x": 364,
-        "y": 0,
+        "x": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -75,7 +51,7 @@
       "guid": "0d5542b2cd5b0894b8e84f54bcf85524",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 182,
         "y": 362,
         "w": 180,
         "h": 360
@@ -87,7 +63,7 @@
       "guid": "0e39a9587003bd444b8d2041eb5e1e46",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 364,
         "y": 0,
         "w": 180,
         "h": 360
@@ -99,7 +75,7 @@
       "guid": "c21c7f89ff2748243a21f3907aea4ad1",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 364,
         "y": 362,
         "w": 180,
         "h": 360
@@ -111,12 +87,60 @@
       "guid": "8b56eb21a19a93c44a1799632f70d54d",
       "atlas": 0,
       "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4080_lin_nian#10",
+      "guid": "5ee10dd9c87a400439e7c1a1b2cb65f3",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4066_highmo_nian#10",
+      "guid": "7db14404f76d35e4d83a0d99a175f425",
+      "atlas": 0,
+      "rect": {
         "x": 728,
         "y": 0,
         "w": 180,
         "h": 360
       },
       "rotate": 0
+    },
+    {
+      "name": "char_2025_shu_2",
+      "guid": "61539b360a855bc41adb0dbeaefe64a7",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_2025_shu_1",
+      "guid": "c839537c9be6abd41b20a702708786b4",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -135,19 +159,9 @@
   "_sign": {
     "m_sprites": [
       {
-        "name": "char_4117_ray_2",
-        "guid": "22ff9387290a79145baee81c81b1a0d9",
-        "md5": "e4e5442c8343f43700d77da61b5898f3"
-      },
-      {
-        "name": "char_4117_ray_1",
-        "guid": "207254a6d349145478976fb553af3f03",
-        "md5": "5cf7d32d023b026afcb6637b57448f94"
-      },
-      {
-        "name": "char_4116_blkkgt_2",
-        "guid": "12cfcb7d48c109941b867f96ab015a51",
-        "md5": "5bd5f92061c9525a036a2acf78bc8a84"
+        "name": "char_449_glider_nian#10",
+        "guid": "86f6b007f1e4d6045967805803613ad2",
+        "md5": "af54e1bf7b00450e1fb1cd456faa38f1"
       },
       {
         "name": "char_4116_blkkgt_1",
@@ -178,20 +192,40 @@
         "name": "char_4081_warmy_2",
         "guid": "8b56eb21a19a93c44a1799632f70d54d",
         "md5": "2e6afe95f6e96210d8ebe784a924fd9d"
+      },
+      {
+        "name": "char_4080_lin_nian#10",
+        "guid": "5ee10dd9c87a400439e7c1a1b2cb65f3",
+        "md5": "ce9af389c72520950e55e89697ed8370"
+      },
+      {
+        "name": "char_4066_highmo_nian#10",
+        "guid": "7db14404f76d35e4d83a0d99a175f425",
+        "md5": "015988cbd04d943e3ea07eca79287251"
+      },
+      {
+        "name": "char_2025_shu_2",
+        "guid": "61539b360a855bc41adb0dbeaefe64a7",
+        "md5": "119b59da30660a9174eabb9e4e143433"
+      },
+      {
+        "name": "char_2025_shu_1",
+        "guid": "c839537c9be6abd41b20a702708786b4",
+        "md5": "4035ea605af1e7c67c1e782313a06262"
       }
     ],
     "m_atlases": [
       {
         "name": "portraits#75",
         "guid": "a496beea5455d424f894405f5884033c",
-        "md5": "f73f3f50c34313deb0610c99c90d0559"
+        "md5": "1fc0a17da229cd6d8e019e485392bf97"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#75a",
         "guid": "3b52934fe07f4c74389caed875dfb8ea",
-        "md5": "87684b3552285f446b7f5effc2cdb361"
+        "md5": "26ac2157630b9ed5eb2fe14d53f6dc9d"
       }
     ]
   }

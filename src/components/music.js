@@ -93,7 +93,7 @@ export default class Music {
 
   setMusic(data, type) {
     this.#audioLoopEl.src = data
-    this.#audioLoopEl.querySelector('source').type = `audio/${type}`
+    this.#audioLoopEl.querySelector('source').type = type
     this.#isUsingCustomMusic = true
     this.#playMusic()
   }

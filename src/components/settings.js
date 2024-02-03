@@ -138,23 +138,19 @@ export default class Settings {
     this.functionInsights("setLogo", this.isWallpaperEngine)
   }
 
-  #readFile(e, onload, callback = () => { }) {
+  #readFile(e, callback = () => { }) {
     const file = e.target.files[0]
     if (!file) return
-    const reader = new FileReader()
-    reader.readAsDataURL(file);
-    reader.onload = readerEvent => onload(readerEvent)
-    callback()
+    callback(URL.createObjectURL(file.slice()), file.type)
   }
 
   setLogoImage(e) {
     this.#readFile(
       e,
-      (readerEvent) => {
-        const content = readerEvent.target.result;
-        this.setLogo(content, false)
-      },
-      () => document.getElementById("logo_image_clear").disabled = false
+      (blobURL, type) => {
+        this.setLogo(blobURL, false)
+        document.getElementById("logo_image_clear").disabled = false
+      }
     )
   }
 
@@ -198,11 +194,10 @@ export default class Settings {
   setBackground(e) {
     this.#readFile(
       e,
-      (readerEvent) => {
-        const content = readerEvent.target.result;
-        this.setBackgoundImage(`url("${content}")`)
-      },
-      () => document.getElementById("custom_background_clear").disabled = false
+      (blobURL, type) => {
+        this.setBackgoundImage(`url("${blobURL}")`)
+        document.getElementById("custom_background_clear").disabled = false
+      }
     )
   }
 
@@ -359,12 +354,10 @@ export default class Settings {
   setMusic(e) {
     this.#readFile(
       e,
-      (readerEvent) => {
-        const content = readerEvent.target.result;
-        const type = content.split(";")[0].split(":")[1]
-        window.music.setMusic(content, type)
-      },
-      () => document.getElementById("custom_music_clear").disabled = false
+      (blobURL, type) => {
+        window.music.setMusic(blobURL, type)
+        document.getElementById("custom_music_clear").disabled = false
+      }
     )
   }
 

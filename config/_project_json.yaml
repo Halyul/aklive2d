@@ -247,12 +247,13 @@ properties:
      type: combo
      value: !match ~{var('assets', "music")[0]}
      options: !match ~{var('assets', "musicOptions")}
-  # - key: custom_music
-  #   value: 
-  #    text: ui_custom_music
-  #    condition: music_title.value == true
-  #    type: file
-  #    value: ""
+  - key: custom_music
+    value: 
+     text: ui_custom_music
+     condition: music_title.value == true
+     type: file
+     fileType: video
+     value: ""
   - key: music_volume
     value: 
      text: ui_music_volume

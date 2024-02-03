@@ -81,7 +81,7 @@ export default class Music {
   }
 
   changeMusic(name) {
-    if (name !== this.#currentMusic && !this.#isUsingCustomMusic) {
+    if (name !== null && name !== this.#currentMusic && !this.#isUsingCustomMusic) {
       this.#currentMusic = name
       if (this.#useMusic) {
         this.#audioLoopEl.pause()

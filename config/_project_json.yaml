@@ -16,6 +16,7 @@ localization:
     ui_operator_logo: Operator Logo
     ui_translate_x: X Axis Position
     ui_translate_y: Y Axis Position
+    ui_scale: Scale
     ui_position_title: <hr><h4>⚠️ Posistion</h4><hr>
     ui_position_padding_bottom: Padding Bottom
     ui_position_padding_left: Padding Left
@@ -55,6 +56,7 @@ localization:
     ui_operator_logo: 干员图标
     ui_translate_x: X 轴位置
     ui_translate_y: Y 轴位置
+    ui_scale: 比例
     ui_position_title: <hr><h4>⚠️ 位置</h4><hr>
     ui_position_padding_bottom: 底部距离
     ui_position_padding_left: 左部距离
@@ -276,6 +278,15 @@ properties:
      text: ui_useStartAnimation_title
      type: bool
      value: true
+  - key: scale
+    value: 
+     text: ui_scale
+     type: slider
+     value: 1
+     fraction: true
+     max: 10
+     min: 0
+     step: 0.1
   - key: position
     value: 
      text: ui_position_title

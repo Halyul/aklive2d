@@ -11389,7 +11389,8 @@ var spine;
 					}
 					var devicePixelRatio = window.devicePixelRatio || 1;
 					var viewportSize = this.scale(viewport.width, viewport.height, this.canvas.width, this.canvas.height);
-					this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x;
+					// this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x;
+					this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x * window.settings.scale;
 					this.sceneRenderer.camera.position.x = viewport.x + viewport.width / 2;
 					this.sceneRenderer.camera.position.y = viewport.y + viewport.height / 2;
 					this.sceneRenderer.begin();

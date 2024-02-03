@@ -16,6 +16,7 @@ export default class Settings {
   #defaultPadRight = getPercentage(`${import.meta.env.VITE_VIEWPORT_RIGHT}%`)
   #defaultPadTop = getPercentage(`${import.meta.env.VITE_VIEWPORT_TOP}%`)
   #defaultPadBottom = getPercentage(`${import.meta.env.VITE_VIEWPORT_BOTTOM}%`)
+  #defaultScale = 1
   #defaultLogoX = 0
   #defaultLogoY = 0
   #defaultViewport = {
@@ -34,6 +35,7 @@ export default class Settings {
   #padRight = this.#defaultPadRight
   #padTop = this.#defaultPadTop
   #padBottom = this.#defaultPadBottom
+  #scale = this.#defaultScale
   #logoX = this.#defaultLogoX
   #logoY = this.#defaultLogoY
   #isInsightsInited = false
@@ -219,6 +221,14 @@ export default class Settings {
     })
   }
 
+  setScale(value) {
+    this.#scale = value
+  }
+
+  get scale() {
+    return 1 / this.#scale
+  }
+
   positionPadding(key, value) {
     switch (key) {
       case "left":
@@ -258,6 +268,10 @@ export default class Settings {
     document.getElementById("position_padding_top_input").value = this.#defaultPadTop
     document.getElementById("position_padding_bottom_slider").value = this.#defaultPadBottom
     document.getElementById("position_padding_bottom_input").value = this.#defaultPadBottom
+  }
+  
+  scaleReset() {
+    this.#scale = this.#defaultScale
   }
 
   elementPosition(el, x, y) {
@@ -318,6 +332,7 @@ export default class Settings {
 
   reset() {
     this.positionReset()
+    this.scaleReset()
     this.setLogoRatio(this.#defaultRatio)
     document.getElementById("logo_ratio_slider").value = this.#defaultRatio
     document.getElementById("logo_ratio_input").value = this.#defaultRatio
@@ -498,6 +513,11 @@ export default class Settings {
               <input type="number" id="music_switch_offset_input"  min="0" max="1" step="0.01" name="music_switch_offset" value="${window.music.timeOffset}" />
             </div>
           </div>
+        </div>
+        <div>
+          <label for="scale">Scale</label>
+          <input type="range" min="0" max="10" step="0.1" id="scale_slider" value="${this.#scale}" />
+          <input type="number" id="scale_input" name="scale" value="${this.#scale}" step="0.1"/>
         </div>
         <div>
           <label for="position">Position</label>
@@ -734,6 +754,16 @@ export default class Settings {
         id: "position", event: "click", handler: e => {
           _this.#showRelated(e.currentTarget, "position_realted");
           if (!e.currentTarget.checked) _this.positionReset();
+        }
+      }, {
+        id: "scale_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "scale_input");
+          _this.setScale(e.currentTarget.value);
+        }
+      }, {
+        id: "scale_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "scale_slider");
+          _this.setScale(e.currentTarget.value);
         }
       }, {
         id: "position_padding_left_slider", event: "input", handler: e => {

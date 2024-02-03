@@ -111,6 +111,10 @@ window.wallpaperPropertyListener = {
                 window.settings.resetMusic()
             }
         }
+        if (properties.scale) {
+            window.settings.setScale(properties.scale.value)
+            window.settings.functionInsights("setScale", Object.keys(properties) !== 1)
+        }
         if (properties.position) {
             if (!properties.position.value) {
                 window.settings.positionReset()

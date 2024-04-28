@@ -1,6 +1,18 @@
 {
-    "length": 41,
-    "latest": "2024/04",
+    "length": 42,
+    "latest": "2024/05",
+    "2024/05": [
+        {
+            "color": "rgb(164, 1, 1)",
+            "codename": {
+                "zh-CN": "燃烧天穹下 · 伊内丝",
+                "en-US": "INES"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404087.html",
+            "id": "202404087"
+        }
+    ],
     "2024/04": [
         {
             "color": "rgb(45, 155, 203)",

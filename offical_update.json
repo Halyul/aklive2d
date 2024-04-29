@@ -1,7 +1,17 @@
 {
-    "length": 42,
+    "length": 43,
     "latest": "2024/05",
     "2024/05": [
+        {
+            "color": "rgb(232, 0, 0)",
+            "codename": {
+                "zh-CN": "红女爵 · 浊心斯卡蒂",
+                "en-US": "RED COUNTESS"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404008.html",
+            "id": "202404008"
+        },
         {
             "color": "rgb(164, 1, 1)",
             "codename": {

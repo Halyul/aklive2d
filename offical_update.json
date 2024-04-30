@@ -1,7 +1,27 @@
 {
-    "length": 43,
+    "length": 45,
     "latest": "2024/05",
     "2024/05": [
+        {
+            "color": "rgb(210, 14, 16)",
+            "codename": {
+                "zh-CN": "维什戴尔",
+                "en-US": "WISADEL"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404049.html",
+            "id": "202404049"
+        },
+        {
+            "color": "rgb(18, 185, 187)",
+            "codename": {
+                "zh-CN": "新枝 · 缪尔赛思",
+                "en-US": "MUELSYSE"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404090.html",
+            "id": "202404090"
+        },
         {
             "color": "rgb(232, 0, 0)",
             "codename": {

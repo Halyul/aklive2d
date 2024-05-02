@@ -30,9 +30,10 @@ export default class AssetsProcessor {
         // generate portrait
         const portraitDir = path.join(this.#shareFolder, "portraits")
         const portraitHub = JSON.parse(readSync(path.join(portraitDir, "MonoBehaviour", "portrait_hub.json")))
-        const portraitAtlas = portraitHub._sprites.find((item) => item.name === fallback_name).atlas
+        const fallback_name_lowerCase = fallback_name.toLowerCase()
+        const portraitAtlas = portraitHub._sprites.find((item) => item.name.toLowerCase() === fallback_name_lowerCase).atlas
         const portraitJson = JSON.parse(readSync(path.join(portraitDir, "MonoBehaviour", `portraits#${portraitAtlas}.json`)))
-        const item = portraitJson._sprites.find((item) => item.name === fallback_name)
+        const item = portraitJson._sprites.find((item) => item.name.toLowerCase() === fallback_name_lowerCase)
         const rect = {
             ...item.rect,
             rotate: item.rotate

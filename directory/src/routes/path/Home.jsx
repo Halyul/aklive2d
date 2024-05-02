@@ -174,7 +174,7 @@ export default function Home() {
                 <section className={classes.content}>
                   <section className={classes.text}>{officalUpdate.length - operators.length} {i18n("new_op_wait_to_update")}</section>
                   <section className={`${classes['styled-selection']}`}>
-                    {officalUpdate[officalUpdate.latest].map((entry, index) => {
+                    {officalUpdate[officalUpdate.dates[0]].map((entry, index) => {
                       return (
                         <Link
                           reloadDocument

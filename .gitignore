@@ -135,3 +135,4 @@ spine-runtimes/*
 _*.json
 .DS_Store
 *test*
+*_v2/*

@@ -1,4 +1,6 @@
-folder: 
+folder:
+  directory_src: directory
+  showcase_src: showcase
   operator: ./operator/
   release: ./release/
   background: background

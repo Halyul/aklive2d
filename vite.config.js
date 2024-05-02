@@ -118,13 +118,13 @@ class ViteRunner {
       ...this.#baseViteConfig,
       envDir: path.join(__projectRoot, this.#globalConfig.folder.operator, operatorName),
       publicDir: path.resolve(__projectRoot, this.#globalConfig.folder.release, operatorName),
-      root: path.resolve(__projectRoot),
+      root: path.resolve(__projectRoot, this.#globalConfig.folder.showcase_src),
       server: {
         ...this.#baseViteConfig.server,
       },
       resolve: {
         alias: {
-          '@': path.resolve(__projectRoot, './src'),
+          '@': path.resolve(__projectRoot, this.#globalConfig.folder.showcase_src, './src'),
           '!': path.resolve(__projectRoot, this.#globalConfig.folder.operator, operatorName),
         },
       },
@@ -147,7 +147,7 @@ class ViteRunner {
     if (process.env.npm_lifecycle_event === 'vite:directory:build') {
       global.__config = this.#globalConfig
     }
-    const directoryDir = path.resolve(__projectRoot, 'directory')
+    const directoryDir = path.resolve(__projectRoot, this.#globalConfig.folder.directory_src)
     this.#mode = process.argv[3]
     // const publicDir = path.resolve(__projectRoot, this.#globalConfig.folder.release)
     const assetsDir = '_directory'
@@ -170,7 +170,7 @@ class ViteRunner {
       resolve: {
         alias: {
           '@': path.resolve(directoryDir, './src'),
-          '!': path.resolve(__projectRoot, './src'),
+          '!': path.resolve(__projectRoot, this.#globalConfig.folder.showcase_src, './src'),
         },
       },
       build: {

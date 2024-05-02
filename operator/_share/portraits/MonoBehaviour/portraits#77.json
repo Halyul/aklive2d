@@ -11,8 +11,8 @@
   "m_Name": "portraits#77",
   "_sprites": [
     {
-      "name": "char_4023_rfalcn_2",
-      "guid": "c67aef532452edd42b4e369a2da476ed",
+      "name": "char_4126_fuze_2",
+      "guid": "8d168a72c9aaf6546aab23d3abc8842f",
       "atlas": 0,
       "rect": {
         "x": 0,
@@ -23,8 +23,8 @@
       "rotate": 0
     },
     {
-      "name": "char_4023_rfalcn_1",
-      "guid": "ebca3588af34cea4697f34921163f4fc",
+      "name": "char_4126_fuze_1",
+      "guid": "4010dcb96e792d04ba4c4fc2fa0b2c7a",
       "atlas": 0,
       "rect": {
         "x": 182,
@@ -33,6 +33,126 @@
         "h": 360
       },
       "rotate": 0
+    },
+    {
+      "name": "char_4125_rdoc_2",
+      "guid": "b1ffbbaea0a6ac74498b8f46cf8997e7",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4125_rdoc_1",
+      "guid": "dce2ba54b576f8441aa4bab05c6b7b33",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4124_iana_2",
+      "guid": "a9badbedf5e99b743b1d1f8588c0adec",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4124_iana_1",
+      "guid": "e47aa6dc3d8341745a19e1700194724b",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4123_ela_rainbow6#2",
+      "guid": "ee5735df07a66eb4394a008e756edffa",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4123_ela_2",
+      "guid": "9ac306ef3cb5a6b479b836f173584640",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4123_ela_1",
+      "guid": "b6a27c779bf8ae241a337177bbc6179e",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4023_rfalcn_2",
+      "guid": "c67aef532452edd42b4e369a2da476ed",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4023_rfalcn_1",
+      "guid": "ebca3588af34cea4697f34921163f4fc",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_192_falco_marthe#6",
+      "guid": "1cea19143ea02a94095568075dc73839",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -45,11 +165,56 @@
       "m_FileID": 0,
       "m_PathID": 5019846516150458636
     },
-    "size": 512
+    "size": 1024
   },
   "_index": 77,
   "_sign": {
     "m_sprites": [
+      {
+        "name": "char_4126_fuze_2",
+        "guid": "8d168a72c9aaf6546aab23d3abc8842f",
+        "md5": "93b8271de17158f3851f6332345461bf"
+      },
+      {
+        "name": "char_4126_fuze_1",
+        "guid": "4010dcb96e792d04ba4c4fc2fa0b2c7a",
+        "md5": "7a54b1646fc0bdf75636f3394d45e797"
+      },
+      {
+        "name": "char_4125_rdoc_2",
+        "guid": "b1ffbbaea0a6ac74498b8f46cf8997e7",
+        "md5": "57cb8e71749ed1053ebe8b63f5a3f075"
+      },
+      {
+        "name": "char_4125_rdoc_1",
+        "guid": "dce2ba54b576f8441aa4bab05c6b7b33",
+        "md5": "11dd1fb431bf59058342a067222c56b6"
+      },
+      {
+        "name": "char_4124_iana_2",
+        "guid": "a9badbedf5e99b743b1d1f8588c0adec",
+        "md5": "a93489d679054ab2bbf75dd818fb7657"
+      },
+      {
+        "name": "char_4124_iana_1",
+        "guid": "e47aa6dc3d8341745a19e1700194724b",
+        "md5": "973fd519ef8602974300cb977a69201e"
+      },
+      {
+        "name": "char_4123_ela_rainbow6#2",
+        "guid": "ee5735df07a66eb4394a008e756edffa",
+        "md5": "315fbd0ab9b8085976689825c372a4f1"
+      },
+      {
+        "name": "char_4123_ela_2",
+        "guid": "9ac306ef3cb5a6b479b836f173584640",
+        "md5": "e39939c10a37e2bc0a75cf7badb7b06d"
+      },
+      {
+        "name": "char_4123_ela_1",
+        "guid": "b6a27c779bf8ae241a337177bbc6179e",
+        "md5": "ea21d990f773d6eb3de61fc68231c46c"
+      },
       {
         "name": "char_4023_rfalcn_2",
         "guid": "c67aef532452edd42b4e369a2da476ed",
@@ -59,20 +224,25 @@
         "name": "char_4023_rfalcn_1",
         "guid": "ebca3588af34cea4697f34921163f4fc",
         "md5": "4f26683115679d5185e6e51f4f7716a8"
+      },
+      {
+        "name": "char_192_falco_marthe#6",
+        "guid": "1cea19143ea02a94095568075dc73839",
+        "md5": "c08e8bb7c1c3cbb09857460ed1ce839d"
       }
     ],
     "m_atlases": [
       {
         "name": "portraits#77",
         "guid": "058801a803fb46648bc1e166d2c3d9d6",
-        "md5": "1ed0798da2cb1674d470496687dbbfa4"
+        "md5": "0b5a3283b05bb558791df313aefc5a0b"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#77a",
         "guid": "52d697bd3b67fc54eb038d7ab23811a0",
-        "md5": "1682279f645dd9a78eaa16a58e00802d"
+        "md5": "2661dddcf88804f8827b84ace291713d"
       }
     ]
   }

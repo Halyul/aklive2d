@@ -1,0 +1,685 @@
+
+dyn_portrait_char_2023_ling_ncg#1.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG_Ef
+  rotate: false
+  xy: 2, 768
+  size: 512, 254
+  orig: 512, 254
+  offset: 0, 0
+  index: -1
+Ling_Bag
+  rotate: false
+  xy: 516, 972
+  size: 72, 50
+  orig: 72, 50
+  offset: 0, 0
+  index: -1
+Ling_Bag_Tape
+  rotate: false
+  xy: 870, 584
+  size: 43, 65
+  orig: 43, 65
+  offset: 0, 0
+  index: -1
+Ling_Bag_a
+  rotate: false
+  xy: 802, 580
+  size: 24, 41
+  orig: 24, 41
+  offset: 0, 0
+  index: -1
+Ling_Belly
+  rotate: false
+  xy: 446, 209
+  size: 49, 111
+  orig: 49, 111
+  offset: 0, 0
+  index: -1
+Ling_Belt
+  rotate: false
+  xy: 676, 420
+  size: 107, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
+Ling_Chest
+  rotate: false
+  xy: 516, 792
+  size: 311, 231
+  orig: 311, 233
+  offset: 0, 0
+  index: -1
+Ling_Chest_Temple_shadow
+  rotate: false
+  xy: 930, 725
+  size: 87, 78
+  orig: 87, 78
+  offset: 0, 0
+  index: -1
+Ling_Coat_L
+  rotate: true
+  xy: 348, 477
+  size: 93, 220
+  orig: 216, 566
+  offset: 121, 346
+  index: -1
+Ling_Coat_R
+  rotate: true
+  xy: 245, 432
+  size: 55, 172
+  orig: 197, 439
+  offset: 0, 267
+  index: -1
+Ling_Coat_blue_l
+  rotate: true
+  xy: 673, 603
+  size: 150, 261
+  orig: 151, 269
+  offset: 0, 0
+  index: -1
+Ling_Coat_blue_la
+  rotate: 270
+  xy: 2, 451
+  size: 229, 253
+  orig: 235, 253
+  offset: 0, 0
+  index: -1
+Ling_Coat_blue_lup
+  rotate: 180
+  xy: 785, 405
+  size: 237, 141
+  orig: 237, 145
+  offset: 0, 4
+  index: -1
+Ling_Coat_blue_r
+  rotate: 270
+  xy: 306, 323
+  size: 105, 209
+  orig: 105, 209
+  offset: 0, 0
+  index: -1
+Ling_Coat_blue_r_Fr
+  rotate: false
+  xy: 660, 213
+  size: 48, 114
+  orig: 48, 114
+  offset: 0, 0
+  index: -1
+Ling_Coat_blue_ra
+  rotate: false
+  xy: 396, 387
+  size: 259, 172
+  orig: 259, 172
+  offset: 0, 0
+  index: -1
+Ling_Coat_blue_rb
+  rotate: false
+  xy: 2, 557
+  size: 44, 80
+  orig: 44, 80
+  offset: 0, 0
+  index: -1
+Ling_Face
+  rotate: true
+  xy: 210, 609
+  size: 157, 198
+  orig: 157, 200
+  offset: 0, 2
+  index: -1
+Ling_Face_Back_light
+  rotate: true
+  xy: 822, 918
+  size: 104, 168
+  orig: 104, 168
+  offset: 0, 0
+  index: -1
+Ling_Face_shadow
+  rotate: false
+  xy: 656, 488
+  size: 155, 148
+  orig: 155, 163
+  offset: 0, 0
+  index: -1
+Ling_Face_water_A
+  rotate: false
+  xy: 618, 1013
+  size: 22, 9
+  orig: 22, 9
+  offset: 0, 0
+  index: -1
+Ling_Face_water_B
+  rotate: false
+  xy: 559, 780
+  size: 13, 38
+  orig: 13, 38
+  offset: 0, 0
+  index: -1
+Ling_Face_water_C
+  rotate: false
+  xy: 757, 709
+  size: 22, 22
+  orig: 22, 25
+  offset: 0, 1
+  index: -1
+Ling_Hr_A
+  rotate: false
+  xy: 479, 620
+  size: 218, 159
+  orig: 246, 291
+  offset: 0, 0
+  index: -1
+Ling_Hr_A_back
+  rotate: true
+  xy: 903, 566
+  size: 184, 119
+  orig: 184, 121
+  offset: 0, 2
+  index: -1
+Ling_Hr_Ab
+  rotate: false
+  xy: 483, 341
+  size: 169, 87
+  orig: 290, 181
+  offset: 0, 0
+  index: -1
+Ling_Hr_Bow
+  rotate: false
+  xy: 926, 343
+  size: 61, 81
+  orig: 61, 81
+  offset: 0, 0
+  index: -1
+Ling_Hr_Bow_a
+  rotate: true
+  xy: 517, 200
+  size: 187, 208
+  orig: 187, 208
+  offset: 0, 0
+  index: -1
+Ling_Hr_Bow_b
+  rotate: 270
+  xy: 429, 133
+  size: 162, 196
+  orig: 162, 196
+  offset: 0, 0
+  index: -1
+Ling_Hr_Bow_f
+  rotate: false
+  xy: 611, 464
+  size: 112, 57
+  orig: 112, 57
+  offset: 0, 0
+  index: -1
+Ling_Hr_Braid
+  rotate: false
+  xy: 297, 245
+  size: 148, 82
+  orig: 171, 203
+  offset: 16, 0
+  index: -1
+Ling_Hr_Braid_aa
+  rotate: false
+  xy: 523, 956
+  size: 30, 19
+  orig: 30, 19
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Bangs
+  rotate: false
+  xy: 58, 194
+  size: 79, 118
+  orig: 79, 118
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Bangs_a
+  rotate: false
+  xy: 931, 149
+  size: 63, 145
+  orig: 63, 145
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Bangs_b
+  rotate: false
+  xy: 126, 254
+  size: 124, 163
+  orig: 124, 163
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Bangs_bb
+  rotate: 180
+  xy: 721, 169
+  size: 191, 100
+  orig: 191, 100
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Horn
+  rotate: false
+  xy: 627, 256
+  size: 64, 107
+  orig: 64, 107
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Horn_a
+  rotate: false
+  xy: 516, 785
+  size: 41, 41
+  orig: 41, 41
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Temple
+  rotate: 270
+  xy: 652, 300
+  size: 113, 285
+  orig: 113, 285
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Temple_a
+  rotate: false
+  xy: 371, 159
+  size: 18, 124
+  orig: 18, 124
+  offset: 0, 0
+  index: -1
+Ling_Hr_L_Temple_aa
+  rotate: false
+  xy: 418, 434
+  size: 54, 47
+  orig: 54, 47
+  offset: 0, 0
+  index: -1
+Ling_Hr_M_Bangs
+  rotate: false
+  xy: 2, 204
+  size: 54, 141
+  orig: 54, 141
+  offset: 0, 0
+  index: -1
+Ling_Hr_M_Bangs_a
+  rotate: false
+  xy: 343, 165
+  size: 31, 121
+  orig: 31, 121
+  offset: 0, 0
+  index: -1
+Ling_Hr_R
+  rotate: false
+  xy: 833, 224
+  size: 31, 80
+  orig: 31, 80
+  offset: 0, 0
+  index: -1
+Ling_Hr_R_Bangs
+  rotate: 270
+  xy: 172, 327
+  size: 96, 168
+  orig: 96, 168
+  offset: 0, 0
+  index: -1
+Ling_Hr_R_Bangs_a
+  rotate: true
+  xy: 86, 490
+  size: 125, 198
+  orig: 129, 198
+  offset: 4, 0
+  index: -1
+Ling_Hr_R_Horn
+  rotate: false
+  xy: 977, 202
+  size: 45, 94
+  orig: 45, 94
+  offset: 0, 0
+  index: -1
+Ling_Hr_R_Horn_a
+  rotate: false
+  xy: 828, 583
+  size: 36, 45
+  orig: 36, 45
+  offset: 0, 0
+  index: -1
+Ling_Hr_R_Temple
+  rotate: 180
+  xy: 851, 219
+  size: 171, 232
+  orig: 171, 232
+  offset: 0, 0
+  index: -1
+Ling_Hr_R_Temple_a
+  rotate: false
+  xy: 327, 195
+  size: 36, 89
+  orig: 36, 89
+  offset: 0, 0
+  index: -1
+Ling_Hr_back
+  rotate: 180
+  xy: 581, 728
+  size: 414, 184
+  orig: 414, 184
+  offset: 0, 0
+  index: -1
+Ling_Hr_top
+  rotate: false
+  xy: 2, 613
+  size: 206, 153
+  orig: 206, 153
+  offset: 0, 0
+  index: -1
+Ling_L_Arm
+  rotate: false
+  xy: 2, 449
+  size: 93, 93
+  orig: 93, 93
+  offset: 0, 0
+  index: -1
+Ling_L_Arm_Tape
+  rotate: false
+  xy: 530, 252
+  size: 38, 100
+  orig: 38, 100
+  offset: 0, 0
+  index: -1
+Ling_L_Arm_aback
+  rotate: false
+  xy: 1002, 815
+  size: 20, 26
+  orig: 20, 26
+  offset: 0, 0
+  index: -1
+Ling_L_Arm_b
+  rotate: false
+  xy: 93, 321
+  size: 33, 77
+  orig: 33, 77
+  offset: 0, 0
+  index: -1
+Ling_L_Arm_bb
+  rotate: false
+  xy: 994, 969
+  size: 26, 54
+  orig: 26, 56
+  offset: 0, 2
+  index: -1
+Ling_L_Arm_rope
+  rotate: false
+  xy: 211, 295
+  size: 19, 60
+  orig: 19, 60
+  offset: 0, 0
+  index: -1
+Ling_L_Ear
+  rotate: false
+  xy: 741, 987
+  size: 72, 35
+  orig: 72, 35
+  offset: 0, 0
+  index: -1
+Ling_L_Ear_a
+  rotate: false
+  xy: 509, 261
+  size: 35, 100
+  orig: 35, 100
+  offset: 0, 0
+  index: -1
+Ling_L_Eye
+  rotate: false
+  xy: 193, 748
+  size: 54, 18
+  orig: 57, 18
+  offset: 0, 0
+  index: -1
+Ling_L_Eye_a
+  rotate: false
+  xy: 804, 957
+  size: 16, 21
+  orig: 16, 22
+  offset: 0, 0
+  index: -1
+Ling_L_Eye_red
+  rotate: false
+  xy: 907, 708
+  size: 56, 27
+  orig: 56, 27
+  offset: 0, 0
+  index: -1
+Ling_L_Eyeball
+  rotate: false
+  xy: 786, 958
+  size: 23, 27
+  orig: 23, 27
+  offset: 0, 0
+  index: -1
+Ling_L_Eyebrow
+  rotate: false
+  xy: 344, 755
+  size: 38, 12
+  orig: 38, 13
+  offset: 0, 0
+  index: -1
+Ling_L_Eyeclose
+  rotate: false
+  xy: 436, 746
+  size: 52, 20
+  orig: 52, 20
+  offset: 0, 0
+  index: -1
+Ling_L_Eyewhite
+  rotate: false
+  xy: 695, 776
+  size: 41, 25
+  orig: 41, 25
+  offset: 0, 0
+  index: -1
+Ling_L_Forearm
+  rotate: 180
+  xy: 259, 489
+  size: 173, 158
+  orig: 173, 158
+  offset: 0, 0
+  index: -1
+Ling_L_Forearm_b
+  rotate: false
+  xy: 784, 460
+  size: 82, 58
+  orig: 82, 58
+  offset: 0, 0
+  index: -1
+Ling_L_shoulder
+  rotate: true
+  xy: 409, 550
+  size: 183, 228
+  orig: 183, 228
+  offset: 0, 0
+  index: -1
+Ling_L_shoulder_back
+  rotate: false
+  xy: 919, 854
+  size: 63, 62
+  orig: 63, 62
+  offset: 0, 0
+  index: -1
+Ling_Mouth
+  rotate: false
+  xy: 453, 737
+  size: 33, 12
+  orig: 33, 14
+  offset: 0, 1
+  index: -1
+Ling_Mouth_a
+  rotate: false
+  xy: 995, 809
+  size: 25, 8
+  orig: 26, 12
+  offset: 1, 3
+  index: -1
+Ling_Mouth_o
+  rotate: false
+  xy: 758, 983
+  size: 15, 9
+  orig: 24, 10
+  offset: 0, 0
+  index: -1
+Ling_Mouth_smile
+  rotate: false
+  xy: 164, 757
+  size: 33, 10
+  orig: 33, 13
+  offset: 0, 3
+  index: -1
+Ling_Neck
+  rotate: 270
+  xy: 813, 476
+  size: 154, 167
+  orig: 154, 167
+  offset: 0, 0
+  index: -1
+Ling_Nose
+  rotate: false
+  xy: 779, 837
+  size: 26, 20
+  orig: 26, 20
+  offset: 0, 0
+  index: -1
+Ling_R_Arm
+  rotate: false
+  xy: 412, 555
+  size: 61, 49
+  orig: 61, 49
+  offset: 0, 0
+  index: -1
+Ling_R_Arm_a
+  rotate: false
+  xy: 799, 226
+  size: 57, 80
+  orig: 57, 80
+  offset: 0, 0
+  index: -1
+Ling_R_Ear
+  rotate: false
+  xy: 232, 278
+  size: 22, 72
+  orig: 22, 72
+  offset: 0, 0
+  index: -1
+Ling_R_Eye
+  rotate: false
+  xy: 648, 777
+  size: 33, 14
+  orig: 33, 14
+  offset: 0, 0
+  index: -1
+Ling_R_Eye_a
+  rotate: false
+  xy: 992, 973
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+Ling_R_Eye_red
+  rotate: false
+  xy: 516, 829
+  size: 27, 24
+  orig: 27, 24
+  offset: 0, 0
+  index: -1
+Ling_R_Eyeball
+  rotate: false
+  xy: 572, 781
+  size: 18, 21
+  orig: 18, 22
+  offset: 0, 1
+  index: -1
+Ling_R_Eyeclose
+  rotate: false
+  xy: 940, 754
+  size: 33, 14
+  orig: 33, 19
+  offset: 0, 3
+  index: -1
+Ling_R_Eyewhite
+  rotate: false
+  xy: 897, 896
+  size: 23, 20
+  orig: 23, 20
+  offset: 0, 0
+  index: -1
+Ling_R_Forarm
+  rotate: false
+  xy: 177, 602
+  size: 56, 39
+  orig: 56, 39
+  offset: 0, 0
+  index: -1
+Ling_R_Hand
+  rotate: false
+  xy: 625, 593
+  size: 43, 39
+  orig: 43, 39
+  offset: 0, 0
+  index: -1
+Ling_R_Hand_back
+  rotate: false
+  xy: 516, 943
+  size: 12, 17
+  orig: 12, 17
+  offset: 0, 0
+  index: -1
+Ling_R_bangs_rr
+  rotate: false
+  xy: 979, 833
+  size: 43, 135
+  orig: 43, 135
+  offset: 0, 0
+  index: -1
+Ling_Ra_Finger_a
+  rotate: false
+  xy: 893, 372
+  size: 31, 49
+  orig: 35, 49
+  offset: 0, 0
+  index: -1
+Ling_Ra_Finger_b
+  rotate: false
+  xy: 588, 996
+  size: 28, 26
+  orig: 28, 26
+  offset: 0, 0
+  index: -1
+Ling_Ra_Hand
+  rotate: false
+  xy: 738, 786
+  size: 35, 46
+  orig: 35, 46
+  offset: 0, 0
+  index: -1
+Ling_Tail
+  rotate: false
+  xy: 2, 400
+  size: 308, 55
+  orig: 482, 367
+  offset: 174, 286
+  index: -1
+Weapon
+  rotate: false
+  xy: 582, 331
+  size: 360, 145
+  orig: 765, 277
+  offset: 293, 90
+  index: -1
+Weapon_D_hand
+  rotate: false
+  xy: 388, 711
+  size: 46, 55
+  orig: 46, 55
+  offset: 0, 0
+  index: -1
+Weapon_tape
+  rotate: 180
+  xy: 2, 210
+  size: 294, 201
+  orig: 294, 201
+  offset: 0, 0
+  index: -1

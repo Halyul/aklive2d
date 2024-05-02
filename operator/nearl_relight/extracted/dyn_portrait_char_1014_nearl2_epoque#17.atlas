@@ -1,0 +1,790 @@
+
+dyn_portrait_char_1014_nearl2_epoque#17.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/Nearl_  Medicine
+  rotate: false
+  xy: 2, 994
+  size: 27, 28
+  orig: 27, 28
+  offset: 0, 0
+  index: -1
+A/Nearl_Armor_Front
+  rotate: false
+  xy: 399, 201
+  size: 113, 39
+  orig: 113, 39
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_1
+  rotate: 270
+  xy: 2, 532
+  size: 149, 175
+  orig: 149, 175
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_10
+  rotate: false
+  xy: 300, 367
+  size: 235, 98
+  orig: 235, 98
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_11
+  rotate: false
+  xy: 533, 292
+  size: 87, 40
+  orig: 87, 40
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_2
+  rotate: false
+  xy: 996, 526
+  size: 25, 43
+  orig: 25, 43
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_3
+  rotate: false
+  xy: 878, 239
+  size: 113, 110
+  orig: 113, 110
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_4
+  rotate: false
+  xy: 708, 451
+  size: 149, 56
+  orig: 149, 56
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_5
+  rotate: false
+  xy: 626, 977
+  size: 30, 45
+  orig: 30, 45
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_6
+  rotate: 180
+  xy: 240, 416
+  size: 241, 171
+  orig: 241, 171
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_7
+  rotate: false
+  xy: 992, 629
+  size: 29, 45
+  orig: 29, 45
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_8
+  rotate: false
+  xy: 250, 302
+  size: 68, 45
+  orig: 68, 45
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Hair_9
+  rotate: false
+  xy: 775, 818
+  size: 32, 49
+  orig: 32, 49
+  offset: 0, 0
+  index: -1
+A/Nearl_B_Neck_Cloth
+  rotate: false
+  xy: 664, 292
+  size: 111, 59
+  orig: 111, 59
+  offset: 0, 0
+  index: -1
+A/Nearl_Back_Head
+  rotate: false
+  xy: 626, 579
+  size: 187, 90
+  orig: 187, 90
+  offset: 0, 0
+  index: -1
+A/Nearl_Belt_Thick
+  rotate: 180
+  xy: 738, 201
+  size: 144, 78
+  orig: 144, 78
+  offset: 0, 0
+  index: -1
+A/Nearl_Belt_Thin
+  rotate: 180
+  xy: 2, 169
+  size: 194, 74
+  orig: 194, 74
+  offset: 0, 0
+  index: -1
+A/Nearl_Chest
+  rotate: 180
+  xy: 462, 760
+  size: 185, 262
+  orig: 185, 262
+  offset: 0, 0
+  index: -1
+A/Nearl_Dial
+  rotate: false
+  xy: 566, 506
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+A/Nearl_F_Neck_Cloth
+  rotate: false
+  xy: 340, 340
+  size: 141, 81
+  orig: 141, 81
+  offset: 0, 0
+  index: -1
+A/Nearl_Feather
+  rotate: false
+  xy: 102, 209
+  size: 61, 118
+  orig: 61, 118
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_1
+  rotate: false
+  xy: 2, 134
+  size: 21, 93
+  orig: 21, 93
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_10
+  rotate: false
+  xy: 450, 133
+  size: 66, 67
+  orig: 66, 67
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_11
+  rotate: false
+  xy: 54, 690
+  size: 42, 97
+  orig: 42, 97
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_12
+  rotate: false
+  xy: 733, 671
+  size: 165, 140
+  orig: 165, 140
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_2
+  rotate: false
+  xy: 2, 694
+  size: 71, 142
+  orig: 71, 142
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_3
+  rotate: false
+  xy: 990, 661
+  size: 32, 127
+  orig: 32, 127
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_4
+  rotate: true
+  xy: 669, 423
+  size: 26, 132
+  orig: 26, 132
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_5
+  rotate: true
+  xy: 537, 355
+  size: 69, 164
+  orig: 69, 164
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_6
+  rotate: true
+  xy: 252, 477
+  size: 51, 127
+  orig: 51, 127
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_7
+  rotate: true
+  xy: 637, 682
+  size: 50, 90
+  orig: 50, 90
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_8
+  rotate: true
+  xy: 208, 367
+  size: 60, 99
+  orig: 60, 99
+  offset: 0, 0
+  index: -1
+A/Nearl_Hair_9
+  rotate: false
+  xy: 930, 345
+  size: 92, 167
+  orig: 92, 167
+  offset: 0, 0
+  index: -1
+A/Nearl_Head
+  rotate: 180
+  xy: 649, 806
+  size: 158, 216
+  orig: 158, 216
+  offset: 0, 0
+  index: -1
+A/Nearl_Head_Annex_1
+  rotate: true
+  xy: 514, 164
+  size: 61, 76
+  orig: 61, 76
+  offset: 0, 0
+  index: -1
+A/Nearl_Head_Annex_2
+  rotate: false
+  xy: 900, 678
+  size: 29, 80
+  orig: 29, 80
+  offset: 0, 0
+  index: -1
+A/Nearl_Head_Annex_3
+  rotate: false
+  xy: 340, 984
+  size: 107, 38
+  orig: 107, 38
+  offset: 0, 0
+  index: -1
+A/Nearl_Head_Annex_4
+  rotate: false
+  xy: 188, 977
+  size: 150, 45
+  orig: 150, 45
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Arm
+  rotate: true
+  xy: 411, 652
+  size: 106, 213
+  orig: 106, 213
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Arm_Armor
+  rotate: false
+  xy: 924, 695
+  size: 71, 163
+  orig: 71, 163
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Arm_Armor_2
+  rotate: false
+  xy: 924, 860
+  size: 83, 162
+  orig: 83, 162
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Armor
+  rotate: false
+  xy: 182, 324
+  size: 46, 52
+  orig: 46, 52
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Armor_2
+  rotate: false
+  xy: 423, 772
+  size: 67, 69
+  orig: 67, 69
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Coat_4
+  rotate: false
+  xy: 84, 669
+  size: 180, 186
+  orig: 564, 587
+  offset: 384, 383
+  index: -1
+A/Nearl_L_Ear_1
+  rotate: false
+  xy: 383, 142
+  size: 68, 63
+  orig: 68, 63
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Ear_2
+  rotate: false
+  xy: 409, 931
+  size: 50, 51
+  orig: 50, 51
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Ear_3
+  rotate: false
+  xy: 836, 365
+  size: 68, 73
+  orig: 68, 73
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eye_Close
+  rotate: false
+  xy: 696, 545
+  size: 42, 32
+  orig: 42, 32
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eyeball
+  rotate: false
+  xy: 449, 1007
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eyeblow
+  rotate: false
+  xy: 61, 815
+  size: 45, 10
+  orig: 45, 10
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eyecorner
+  rotate: false
+  xy: 128, 1013
+  size: 6, 9
+  orig: 6, 9
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eyelash
+  rotate: false
+  xy: 630, 963
+  size: 31, 12
+  orig: 31, 12
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eyelash_2
+  rotate: false
+  xy: 137, 1010
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eyelash_3
+  rotate: false
+  xy: 252, 927
+  size: 39, 17
+  orig: 39, 17
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eyelid
+  rotate: false
+  xy: 205, 962
+  size: 23, 13
+  orig: 23, 13
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Eyewhite
+  rotate: false
+  xy: 282, 958
+  size: 23, 17
+  orig: 23, 17
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Forearm
+  rotate: false
+  xy: 179, 538
+  size: 192, 72
+  orig: 192, 72
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Forearm_Armor
+  rotate: false
+  xy: 178, 630
+  size: 150, 34
+  orig: 150, 34
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Forearm_Coat_Back
+  rotate: false
+  xy: 2, 666
+  size: 465, 356
+  orig: 465, 356
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Hair_Long_1
+  rotate: true
+  xy: 133, 133
+  size: 67, 113
+  orig: 67, 113
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Hair_Long_2
+  rotate: false
+  xy: 163, 855
+  size: 51, 21
+  orig: 51, 21
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Hair_Long_3
+  rotate: false
+  xy: 482, 522
+  size: 81, 29
+  orig: 81, 29
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Hair_Long_4
+  rotate: true
+  xy: 693, 397
+  size: 134, 251
+  orig: 134, 251
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Huge_Belt_a
+  rotate: false
+  xy: 480, 265
+  size: 202, 115
+  orig: 202, 115
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Huge_Belt_b
+  rotate: 270
+  xy: 62, 194
+  size: 49, 221
+  orig: 49, 221
+  offset: 0, 0
+  index: -1
+A/Nearl_L_Huge_Belt_c
+  rotate: 180
+  xy: 64, 208
+  size: 334, 230
+  orig: 334, 230
+  offset: 0, 0
+  index: -1
+A/Nearl_M_Coat
+  rotate: true
+  xy: 809, 813
+  size: 210, 113
+  orig: 388, 633
+  offset: 178, 520
+  index: -1
+A/Nearl_Mouth_Close
+  rotate: false
+  xy: 777, 1011
+  size: 26, 11
+  orig: 26, 11
+  offset: 0, 0
+  index: -1
+A/Nearl_Mouth_Open
+  rotate: false
+  xy: 658, 1007
+  size: 22, 15
+  orig: 22, 15
+  offset: 0, 0
+  index: -1
+A/Nearl_Mouth_Smile
+  rotate: false
+  xy: 455, 852
+  size: 29, 13
+  orig: 29, 13
+  offset: 0, 0
+  index: -1
+A/Nearl_Neck
+  rotate: true
+  xy: 943, 185
+  size: 56, 79
+  orig: 56, 79
+  offset: 0, 0
+  index: -1
+A/Nearl_Necklace_1
+  rotate: false
+  xy: 613, 467
+  size: 141, 111
+  orig: 141, 111
+  offset: 0, 0
+  index: -1
+A/Nearl_Nose
+  rotate: false
+  xy: 887, 447
+  size: 37, 57
+  orig: 37, 57
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Arm
+  rotate: false
+  xy: 815, 574
+  size: 168, 95
+  orig: 168, 95
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Arm_Armor
+  rotate: false
+  xy: 744, 478
+  size: 159, 95
+  orig: 159, 95
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Arm_Belt
+  rotate: false
+  xy: 997, 799
+  size: 24, 59
+  orig: 24, 59
+  offset: 0, 0
+  index: -1
+A/Nearl_R_B_Hair
+  rotate: false
+  xy: 36, 233
+  size: 68, 164
+  orig: 68, 164
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Ear_1
+  rotate: false
+  xy: 993, 256
+  size: 29, 94
+  orig: 29, 94
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Ear_2
+  rotate: false
+  xy: 2, 464
+  size: 50, 67
+  orig: 50, 67
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Ear_3
+  rotate: true
+  xy: 524, 606
+  size: 44, 97
+  orig: 44, 97
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eye_Close
+  rotate: false
+  xy: 232, 939
+  size: 48, 36
+  orig: 48, 36
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eyeball
+  rotate: false
+  xy: 31, 1007
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eyeblow
+  rotate: false
+  xy: 885, 546
+  size: 59, 26
+  orig: 59, 26
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eyecorner
+  rotate: false
+  xy: 49, 1012
+  size: 6, 10
+  orig: 6, 10
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eyelash
+  rotate: false
+  xy: 567, 765
+  size: 35, 18
+  orig: 35, 18
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eyelash_2
+  rotate: false
+  xy: 1009, 1009
+  size: 7, 13
+  orig: 7, 13
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eyelash_3
+  rotate: false
+  xy: 453, 621
+  size: 49, 29
+  orig: 49, 29
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eyelid
+  rotate: false
+  xy: 594, 1007
+  size: 25, 16
+  orig: 25, 16
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Eyewhite
+  rotate: false
+  xy: 153, 1003
+  size: 25, 19
+  orig: 25, 19
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Hair_Long_1
+  rotate: true
+  xy: 248, 168
+  size: 43, 149
+  orig: 43, 149
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Hair_Long_2
+  rotate: true
+  xy: 808, 127
+  size: 83, 133
+  orig: 83, 133
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Hair_Long_3
+  rotate: false
+  xy: 743, 347
+  size: 88, 48
+  orig: 88, 48
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Hair_Long_4
+  rotate: false
+  xy: 109, 379
+  size: 49, 92
+  orig: 49, 92
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Hair_Long_5
+  rotate: 270
+  xy: 2, 423
+  size: 113, 332
+  orig: 113, 332
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Huge_Belt_a
+  rotate: 180
+  xy: 654, 225
+  size: 269, 152
+  orig: 270, 158
+  offset: 1, 0
+  index: -1
+A/Nearl_R_Huge_Belt_b
+  rotate: true
+  xy: 332, 213
+  size: 118, 247
+  orig: 118, 247
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Huge_Belt_c
+  rotate: 270
+  xy: 724, 319
+  size: 276, 297
+  orig: 276, 297
+  offset: 0, 0
+  index: -1
+A/Nearl_R_Shoulder
+  rotate: false
+  xy: 2, 319
+  size: 58, 102
+  orig: 58, 102
+  offset: 0, 0
+  index: -1
+A/Nearl_Scarf
+  rotate: false
+  xy: 125, 369
+  size: 113, 134
+  orig: 113, 134
+  offset: 0, 0
+  index: -1
+A/Nearl_Scarf_2
+  rotate: false
+  xy: 355, 553
+  size: 258, 134
+  orig: 258, 134
+  offset: 0, 0
+  index: -1
+A/Nearl_Sheld
+  rotate: false
+  xy: 640, 709
+  size: 80, 103
+  orig: 80, 103
+  offset: 0, 0
+  index: -1
+A/Nearl_Sily_Hair
+  rotate: false
+  xy: 639, 823
+  size: 41, 42
+  orig: 41, 42
+  offset: 0, 0
+  index: -1
+A/Nearl_String_1
+  rotate: true
+  xy: 497, 154
+  size: 32, 145
+  orig: 32, 145
+  offset: 0, 0
+  index: -1
+A/Nearl_String_2
+  rotate: false
+  xy: 472, 433
+  size: 195, 82
+  orig: 195, 82
+  offset: 0, 0
+  index: -1
+A/Nearl_String_3
+  rotate: true
+  xy: 675, 224
+  size: 40, 112
+  orig: 40, 112
+  offset: 0, 0
+  index: -1
+A/Nearl_String_4
+  rotate: false
+  xy: 230, 265
+  size: 224, 101
+  orig: 224, 101
+  offset: 0, 0
+  index: -1
+A/Nearl_String_5
+  rotate: 180
+  xy: 83, 274
+  size: 257, 176
+  orig: 257, 176
+  offset: 0, 0
+  index: -1
+A/Nearl_String_6
+  rotate: 180
+  xy: 586, 164
+  size: 160, 99
+  orig: 160, 99
+  offset: 0, 0
+  index: -1
+A/Nearl_String_7
+  rotate: false
+  xy: 456, 206
+  size: 164, 78
+  orig: 164, 78
+  offset: 0, 0
+  index: -1
+A/Nearl_String_8
+  rotate: false
+  xy: 762, 169
+  size: 152, 51
+  orig: 152, 51
+  offset: 0, 0
+  index: -1
+A/Nearl_String_9
+  rotate: false
+  xy: 596, 717
+  size: 45, 82
+  orig: 45, 84
+  offset: 0, 0
+  index: -1
+A/Nearl_White_Hair
+  rotate: true
+  xy: 362, 302
+  size: 63, 109
+  orig: 63, 109
+  offset: 0, 0
+  index: -1

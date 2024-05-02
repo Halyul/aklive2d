@@ -1,0 +1,713 @@
+
+dyn_portrait_char_1013_chen2_boc#6.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/A_Chen_Hat_BackBa
+  rotate: false
+  xy: 59, 286
+  size: 290, 137
+  orig: 290, 137
+  offset: 0, 0
+  index: -1
+A/A_Chen_Hat_BackBb
+  rotate: false
+  xy: 543, 159
+  size: 290, 126
+  orig: 290, 136
+  offset: 0, 0
+  index: -1
+A/Chen_B_Hair_A
+  rotate: true
+  xy: 774, 152
+  size: 66, 227
+  orig: 66, 227
+  offset: 0, 0
+  index: -1
+A/Chen_B_Hair_C
+  rotate: 180
+  xy: 700, 185
+  size: 208, 206
+  orig: 208, 209
+  offset: 0, 3
+  index: -1
+A/Chen_B_Hair_D
+  rotate: false
+  xy: 543, 99
+  size: 71, 73
+  orig: 71, 73
+  offset: 0, 0
+  index: -1
+A/Chen_B_Hair_E
+  rotate: false
+  xy: 2, 958
+  size: 66, 64
+  orig: 66, 64
+  offset: 0, 0
+  index: -1
+A/Chen_B_Hair_F
+  rotate: false
+  xy: 887, 214
+  size: 71, 81
+  orig: 71, 81
+  offset: 0, 0
+  index: -1
+A/Chen_B_Hair_G
+  rotate: false
+  xy: 249, 105
+  size: 186, 118
+  orig: 186, 118
+  offset: 0, 0
+  index: -1
+A/Chen_B_Hair_H
+  rotate: false
+  xy: 713, 226
+  size: 298, 226
+  orig: 298, 226
+  offset: 0, 0
+  index: -1
+A/Chen_Back_Collar
+  rotate: false
+  xy: 296, 987
+  size: 100, 35
+  orig: 100, 35
+  offset: 0, 0
+  index: -1
+A/Chen_Back_Hair
+  rotate: true
+  xy: 63, 488
+  size: 232, 237
+  orig: 232, 237
+  offset: 0, 0
+  index: -1
+A/Chen_Belt_B
+  rotate: false
+  xy: 521, 982
+  size: 139, 40
+  orig: 139, 40
+  offset: 0, 0
+  index: -1
+A/Chen_Chest
+  rotate: false
+  xy: 873, 350
+  size: 149, 124
+  orig: 149, 124
+  offset: 0, 0
+  index: -1
+A/Chen_Chest_Belt
+  rotate: false
+  xy: 545, 966
+  size: 57, 28
+  orig: 57, 28
+  offset: 0, 0
+  index: -1
+A/Chen_Cloak_Back_B
+  rotate: true
+  xy: 2, 698
+  size: 325, 408
+  orig: 325, 408
+  offset: 0, 0
+  index: -1
+A/Chen_CloseMouth
+  rotate: false
+  xy: 604, 967
+  size: 37, 22
+  orig: 37, 22
+  offset: 0, 0
+  index: -1
+A/Chen_Cloth
+  rotate: true
+  xy: 270, 188
+  size: 58, 254
+  orig: 58, 254
+  offset: 0, 0
+  index: -1
+A/Chen_F_Cloth
+  rotate: false
+  xy: 428, 235
+  size: 105, 146
+  orig: 105, 146
+  offset: 0, 0
+  index: -1
+A/Chen_F_HairA
+  rotate: true
+  xy: 217, 588
+  size: 65, 139
+  orig: 65, 139
+  offset: 0, 0
+  index: -1
+A/Chen_F_HairB
+  rotate: 180
+  xy: 742, 392
+  size: 123, 89
+  orig: 123, 89
+  offset: 0, 0
+  index: -1
+A/Chen_F_HairC
+  rotate: true
+  xy: 435, 478
+  size: 73, 131
+  orig: 73, 131
+  offset: 0, 0
+  index: -1
+A/Chen_F_HairD
+  rotate: false
+  xy: 13, 253
+  size: 54, 104
+  orig: 54, 104
+  offset: 0, 0
+  index: -1
+A/Chen_Face_ShaA
+  rotate: false
+  xy: 944, 695
+  size: 76, 159
+  orig: 76, 159
+  offset: 0, 0
+  index: -1
+A/Chen_Face_ShaB
+  rotate: false
+  xy: 540, 519
+  size: 112, 121
+  orig: 112, 121
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_BackA
+  rotate: true
+  xy: 412, 642
+  size: 380, 192
+  orig: 380, 192
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_BackB
+  rotate: false
+  xy: 510, 253
+  size: 261, 55
+  orig: 261, 55
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_DecoA
+  rotate: false
+  xy: 370, 958
+  size: 26, 32
+  orig: 26, 32
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_Front
+  rotate: false
+  xy: 302, 442
+  size: 563, 227
+  orig: 563, 227
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_Inside
+  rotate: false
+  xy: 284, 571
+  size: 66, 33
+  orig: 66, 33
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_LineA
+  rotate: 270
+  xy: 846, 59
+  size: 78, 141
+  orig: 78, 141
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_LineB
+  rotate: false
+  xy: 58, 261
+  size: 145, 37
+  orig: 145, 37
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_LineC
+  rotate: false
+  xy: 8, 51
+  size: 96, 85
+  orig: 96, 85
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_LineD
+  rotate: 270
+  xy: 256, 42
+  size: 96, 97
+  orig: 98, 97
+  offset: 0, 0
+  index: -1
+A/Chen_Hat_LineE
+  rotate: false
+  xy: 150, 638
+  size: 34, 73
+  orig: 34, 73
+  offset: 0, 0
+  index: -1
+A/Chen_Head
+  rotate: false
+  xy: 594, 581
+  size: 188, 224
+  orig: 188, 224
+  offset: 0, 0
+  index: -1
+A/Chen_L_Band
+  rotate: false
+  xy: 2, 816
+  size: 29, 13
+  orig: 29, 13
+  offset: 0, 0
+  index: -1
+A/Chen_L_Body
+  rotate: false
+  xy: 803, 674
+  size: 144, 348
+  orig: 144, 348
+  offset: 0, 0
+  index: -1
+A/Chen_L_BraidA
+  rotate: 270
+  xy: 124, 402
+  size: 84, 93
+  orig: 84, 93
+  offset: 0, 0
+  index: -1
+A/Chen_L_BraidB
+  rotate: false
+  xy: 105, 261
+  size: 79, 26
+  orig: 79, 26
+  offset: 0, 0
+  index: -1
+A/Chen_L_BraidD
+  rotate: false
+  xy: 2, 357
+  size: 340, 174
+  orig: 340, 174
+  offset: 0, 0
+  index: -1
+A/Chen_L_Brow
+  rotate: false
+  xy: 73, 987
+  size: 33, 12
+  orig: 33, 12
+  offset: 0, 0
+  index: -1
+A/Chen_L_Chain
+  rotate: false
+  xy: 594, 787
+  size: 39, 78
+  orig: 39, 78
+  offset: 0, 0
+  index: -1
+A/Chen_L_Coat
+  rotate: true
+  xy: 151, 606
+  size: 259, 316
+  orig: 259, 316
+  offset: 0, 0
+  index: -1
+A/Chen_L_Coat_DecoB
+  rotate: 270
+  xy: 26, 132
+  size: 105, 159
+  orig: 105, 159
+  offset: 0, 0
+  index: -1
+A/Chen_L_Collar
+  rotate: false
+  xy: 186, 72
+  size: 100, 83
+  orig: 100, 83
+  offset: 0, 0
+  index: -1
+A/Chen_L_Dress_Sleeeve_A
+  rotate: 270
+  xy: 758, 415
+  size: 131, 264
+  orig: 131, 264
+  offset: 0, 0
+  index: -1
+A/Chen_L_Dress_Sleeeve_B
+  rotate: false
+  xy: 576, 308
+  size: 106, 88
+  orig: 106, 88
+  offset: 0, 0
+  index: -1
+A/Chen_L_EyeLid_D
+  rotate: false
+  xy: 150, 1007
+  size: 25, 15
+  orig: 25, 15
+  offset: 0, 0
+  index: -1
+A/Chen_L_EyeLid_U
+  rotate: false
+  xy: 806, 640
+  size: 40, 32
+  orig: 40, 32
+  offset: 0, 0
+  index: -1
+A/Chen_L_EyeLid_U_Cls
+  rotate: false
+  xy: 263, 1006
+  size: 24, 16
+  orig: 24, 16
+  offset: 0, 0
+  index: -1
+A/Chen_L_EyeLid_U_Cls_S
+  rotate: false
+  xy: 125, 1001
+  size: 23, 21
+  orig: 23, 21
+  offset: 0, 0
+  index: -1
+A/Chen_L_EyeWhite
+  rotate: false
+  xy: 781, 709
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+A/Chen_L_Eye_Light
+  rotate: false
+  xy: 648, 1014
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+A/Chen_L_Eye_LightB
+  rotate: false
+  xy: 81, 1017
+  size: 6, 5
+  orig: 6, 5
+  offset: 0, 0
+  index: -1
+A/Chen_L_Eyeball
+  rotate: false
+  xy: 788, 913
+  size: 21, 25
+  orig: 21, 25
+  offset: 0, 0
+  index: -1
+A/Chen_L_HairA
+  rotate: false
+  xy: 290, 56
+  size: 99, 60
+  orig: 99, 60
+  offset: 0, 0
+  index: -1
+A/Chen_L_HairB
+  rotate: true
+  xy: 672, 119
+  size: 69, 149
+  orig: 69, 149
+  offset: 0, 0
+  index: -1
+A/Chen_L_HairC
+  rotate: false
+  xy: 8, 581
+  size: 67, 119
+  orig: 67, 119
+  offset: 0, 0
+  index: -1
+A/Chen_L_HairD
+  rotate: true
+  xy: 707, 547
+  size: 131, 100
+  orig: 131, 102
+  offset: 0, 2
+  index: -1
+A/Chen_L_Horn
+  rotate: false
+  xy: 2, 866
+  size: 23, 90
+  orig: 23, 90
+  offset: 0, 0
+  index: -1
+A/Chen_L_Lid
+  rotate: false
+  xy: 339, 972
+  size: 26, 13
+  orig: 26, 13
+  offset: 0, 0
+  index: -1
+A/Chen_L_Pendant
+  rotate: true
+  xy: 741, 113
+  size: 43, 220
+  orig: 43, 220
+  offset: 0, 0
+  index: -1
+A/Chen_L_Pupillary
+  rotate: false
+  xy: 288, 1015
+  size: 5, 7
+  orig: 5, 7
+  offset: 0, 0
+  index: -1
+A/Chen_L_SleeveA
+  rotate: 270
+  xy: 358, 505
+  size: 191, 180
+  orig: 191, 180
+  offset: 0, 0
+  index: -1
+A/Chen_L_SleeveB
+  rotate: false
+  xy: 554, 741
+  size: 268, 281
+  orig: 268, 281
+  offset: 0, 0
+  index: -1
+A/Chen_L_Sleeve_InA
+  rotate: false
+  xy: 684, 313
+  size: 54, 72
+  orig: 54, 72
+  offset: 0, 0
+  index: -1
+A/Chen_L_Sleeve_InB
+  rotate: false
+  xy: 389, 366
+  size: 63, 71
+  orig: 63, 71
+  offset: 0, 0
+  index: -1
+A/Chen_Neck
+  rotate: false
+  xy: 927, 855
+  size: 89, 167
+  orig: 89, 167
+  offset: 0, 0
+  index: -1
+A/Chen_Neck_A
+  rotate: false
+  xy: 398, 965
+  size: 45, 57
+  orig: 45, 57
+  offset: 0, 0
+  index: -1
+A/Chen_Neck_B
+  rotate: false
+  xy: 973, 271
+  size: 49, 84
+  orig: 49, 84
+  offset: 0, 0
+  index: -1
+A/Chen_Nose
+  rotate: false
+  xy: 2, 831
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+A/Chen_OpenMouth
+  rotate: false
+  xy: 503, 1010
+  size: 13, 12
+  orig: 14, 12
+  offset: 1, 0
+  index: -1
+A/Chen_OpenMouth2
+  rotate: false
+  xy: 709, 1011
+  size: 7, 11
+  orig: 7, 11
+  offset: 0, 0
+  index: -1
+A/Chen_R_Band
+  rotate: false
+  xy: 781, 970
+  size: 16, 52
+  orig: 16, 52
+  offset: 0, 0
+  index: -1
+A/Chen_R_Body
+  rotate: true
+  xy: 423, 371
+  size: 114, 292
+  orig: 114, 292
+  offset: 0, 0
+  index: -1
+A/Chen_R_BraidA
+  rotate: false
+  xy: 322, 244
+  size: 89, 209
+  orig: 89, 209
+  offset: 0, 0
+  index: -1
+A/Chen_R_BraidB
+  rotate: true
+  xy: 869, 647
+  size: 80, 82
+  orig: 80, 82
+  offset: 0, 0
+  index: -1
+A/Chen_R_BraidC
+  rotate: true
+  xy: 120, 66
+  size: 64, 99
+  orig: 64, 99
+  offset: 0, 0
+  index: -1
+A/Chen_R_BraidD
+  rotate: 270
+  xy: 37, 76
+  size: 96, 227
+  orig: 96, 227
+  offset: 0, 0
+  index: -1
+A/Chen_R_BraidE
+  rotate: 270
+  xy: 14, 213
+  size: 131, 332
+  orig: 131, 332
+  offset: 0, 0
+  index: -1
+A/Chen_R_BraidF
+  rotate: 270
+  xy: 2, 336
+  size: 78, 283
+  orig: 78, 283
+  offset: 0, 0
+  index: -1
+A/Chen_R_Brow
+  rotate: false
+  xy: 500, 647
+  size: 54, 26
+  orig: 54, 26
+  offset: 0, 0
+  index: -1
+A/Chen_R_Coat
+  rotate: false
+  xy: 371, 139
+  size: 170, 100
+  orig: 170, 100
+  offset: 0, 0
+  index: -1
+A/Chen_R_Collar
+  rotate: false
+  xy: 257, 465
+  size: 43, 76
+  orig: 43, 76
+  offset: 0, 0
+  index: -1
+A/Chen_R_Ear
+  rotate: false
+  xy: 2, 548
+  size: 40, 47
+  orig: 40, 47
+  offset: 0, 0
+  index: -1
+A/Chen_R_EyeLid_D
+  rotate: false
+  xy: 389, 936
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+A/Chen_R_EyeLid_U
+  rotate: false
+  xy: 59, 995
+  size: 63, 27
+  orig: 63, 27
+  offset: 0, 0
+  index: -1
+A/Chen_R_EyeLid_U_Cls
+  rotate: false
+  xy: 982, 832
+  size: 38, 21
+  orig: 38, 21
+  offset: 0, 0
+  index: -1
+A/Chen_R_EyeLid_U_Cls_S
+  rotate: false
+  xy: 851, 999
+  size: 34, 23
+  orig: 34, 23
+  offset: 0, 0
+  index: -1
+A/Chen_R_EyeWhite
+  rotate: false
+  xy: 662, 989
+  size: 46, 33
+  orig: 46, 33
+  offset: 0, 0
+  index: -1
+A/Chen_R_Eye_Light
+  rotate: false
+  xy: 320, 1015
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+A/Chen_R_Eye_LightB
+  rotate: false
+  xy: 89, 1016
+  size: 5, 6
+  orig: 5, 6
+  offset: 0, 0
+  index: -1
+A/Chen_R_Eyeball
+  rotate: false
+  xy: 782, 940
+  size: 27, 29
+  orig: 27, 29
+  offset: 0, 0
+  index: -1
+A/Chen_R_HairA
+  rotate: true
+  xy: 549, 190
+  size: 82, 182
+  orig: 82, 182
+  offset: 0, 0
+  index: -1
+A/Chen_R_HairB
+  rotate: true
+  xy: 437, 70
+  size: 77, 114
+  orig: 77, 114
+  offset: 0, 0
+  index: -1
+A/Chen_R_HairC
+  rotate: 180
+  xy: 926, 75
+  size: 96, 111
+  orig: 96, 111
+  offset: 0, 0
+  index: -1
+A/Chen_R_Horn
+  rotate: 270
+  xy: 108, 123
+  size: 126, 152
+  orig: 126, 152
+  offset: 0, 0
+  index: -1
+A/Chen_R_Lid
+  rotate: false
+  xy: 887, 1005
+  size: 33, 17
+  orig: 33, 17
+  offset: 0, 0
+  index: -1
+A/Chen_R_Pendant
+  rotate: true
+  xy: 610, 100
+  size: 46, 199
+  orig: 46, 199
+  offset: 0, 0
+  index: -1
+A/Chen_R_Pupillary
+  rotate: false
+  xy: 718, 1014
+  size: 6, 8
+  orig: 6, 8
+  offset: 0, 0
+  index: -1
+A/Chen_R_SleeveA
+  rotate: false
+  xy: 849, 533
+  size: 173, 163
+  orig: 173, 163
+  offset: 0, 0
+  index: -1

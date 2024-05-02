@@ -3411,6 +3411,10 @@
       "atlas": 70
     },
     {
+      "name": "char_010_chen_sale#10",
+      "atlas": 70
+    },
+    {
       "name": "char_494_vendla_2",
       "atlas": 71
     },
@@ -3619,6 +3623,10 @@
       "atlas": 75
     },
     {
+      "name": "char_385_finlpp_nian#11",
+      "atlas": 75
+    },
+    {
       "name": "char_2025_shu_2",
       "atlas": 75
     },
@@ -3675,12 +3683,184 @@
       "atlas": 76
     },
     {
+      "name": "char_4126_fuze_2",
+      "atlas": 77
+    },
+    {
+      "name": "char_4126_fuze_1",
+      "atlas": 77
+    },
+    {
+      "name": "char_4125_rdoc_2",
+      "atlas": 77
+    },
+    {
+      "name": "char_4125_rdoc_1",
+      "atlas": 77
+    },
+    {
+      "name": "char_4124_iana_2",
+      "atlas": 77
+    },
+    {
+      "name": "char_4124_iana_1",
+      "atlas": 77
+    },
+    {
+      "name": "char_4123_ela_rainbow6#2",
+      "atlas": 77
+    },
+    {
+      "name": "char_4123_ela_2",
+      "atlas": 77
+    },
+    {
+      "name": "char_4123_ela_1",
+      "atlas": 77
+    },
+    {
       "name": "char_4023_rfalcn_2",
       "atlas": 77
     },
     {
       "name": "char_4023_rfalcn_1",
       "atlas": 77
+    },
+    {
+      "name": "char_192_falco_marthe#6",
+      "atlas": 77
+    },
+    {
+      "name": "char_446_aroma_2",
+      "atlas": 78
+    },
+    {
+      "name": "char_446_aroma_1",
+      "atlas": 78
+    },
+    {
+      "name": "char_4132_ascln_2",
+      "atlas": 78
+    },
+    {
+      "name": "char_4132_ascln_1",
+      "atlas": 78
+    },
+    {
+      "name": "char_4131_odda_2",
+      "atlas": 78
+    },
+    {
+      "name": "char_4131_odda_1",
+      "atlas": 78
+    },
+    {
+      "name": "char_4130_luton_2",
+      "atlas": 78
+    },
+    {
+      "name": "char_4130_luton_1",
+      "atlas": 78
+    },
+    {
+      "name": "char_4082_qiubai_epoque#31",
+      "atlas": 78
+    },
+    {
+      "name": "char_4027_heyak_ambiencesynesthesia#4",
+      "atlas": 78
+    },
+    {
+      "name": "char_172_svrash_ambiencesynesthesia#4",
+      "atlas": 78
+    },
+    {
+      "name": "char_1033_swire2_ambiencesynesthesia#4",
+      "atlas": 78
+    },
+    {
+      "name": "char_4136_phonor_1",
+      "atlas": 79
+    },
+    {
+      "name": "char_4134_cetsyr_2",
+      "atlas": 79
+    },
+    {
+      "name": "char_4134_cetsyr_1",
+      "atlas": 79
+    },
+    {
+      "name": "char_4133_logos_2",
+      "atlas": 79
+    },
+    {
+      "name": "char_4133_logos_1",
+      "atlas": 79
+    },
+    {
+      "name": "char_1037_amiya3_2",
+      "atlas": 79
+    },
+    {
+      "name": "char_1036_fang2_2",
+      "atlas": 79
+    },
+    {
+      "name": "char_1036_fang2_1",
+      "atlas": 79
+    },
+    {
+      "name": "char_1035_wisdel_2",
+      "atlas": 79
+    },
+    {
+      "name": "char_1035_wisdel_1",
+      "atlas": 79
+    },
+    {
+      "name": "char_1012_skadi2_iteration#2",
+      "atlas": 79
+    },
+    {
+      "name": "char_489_serum_epoque#31",
+      "atlas": 80
+    },
+    {
+      "name": "char_464_cement_epoque#31",
+      "atlas": 80
+    },
+    {
+      "name": "char_440_pinecn_epoque#31",
+      "atlas": 80
+    },
+    {
+      "name": "char_4125_rdoc_rainbow6#2",
+      "atlas": 80
+    },
+    {
+      "name": "char_4124_iana_rainbow6#2",
+      "atlas": 80
+    },
+    {
+      "name": "char_4087_ines_boc#8",
+      "atlas": 80
+    },
+    {
+      "name": "char_293_thorns_boc#8",
+      "atlas": 80
+    },
+    {
+      "name": "char_249_mlyss_boc#8",
+      "atlas": 80
+    },
+    {
+      "name": "char_230_savage_boc#8",
+      "atlas": 80
+    },
+    {
+      "name": "char_129_bluep_iteration#2",
+      "atlas": 80
     }
   ],
   "_atlases": [
@@ -3761,7 +3941,10 @@
     "Arts/CharPortraits/portraits#74",
     "Arts/CharPortraits/portraits#75",
     "Arts/CharPortraits/portraits#76",
-    "Arts/CharPortraits/portraits#77"
+    "Arts/CharPortraits/portraits#77",
+    "Arts/CharPortraits/portraits#78",
+    "Arts/CharPortraits/portraits#79",
+    "Arts/CharPortraits/portraits#80"
   ],
   "_inputSpriteDir": "Assets/Torappu/Arts/CharPortraits",
   "_outputAtlasDir": "Assets/Torappu/Arts/CharPortraits/[X]Atlas",

@@ -1,2106 +1,2106 @@
 
 dyn_illust_char_2023_ling_ncg#1.png
-size: 2048,2048
+size: 2136,2136
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 BG_Ef
-  rotate: false
-  xy: 2, 1792
+  rotate: true
+  xy: 1804, 1622
   size: 512, 254
   orig: 512, 254
   offset: 0, 0
   index: -1
 BG_Flower_a
   rotate: false
-  xy: 722, 1869
+  xy: 750, 1423
   size: 103, 85
   orig: 103, 85
   offset: 0, 0
   index: -1
 BG_Flower_aa
   rotate: false
-  xy: 2, 932
+  xy: 1938, 1061
   size: 83, 111
   orig: 83, 111
   offset: 0, 0
   index: -1
 BG_Flower_aaa
   rotate: false
-  xy: 676, 629
+  xy: 1081, 1810
   size: 55, 92
   orig: 55, 92
   offset: 0, 0
   index: -1
 BG_Flower_aaaa
   rotate: false
-  xy: 1129, 665
+  xy: 341, 57
   size: 56, 63
   orig: 56, 63
   offset: 0, 0
   index: -1
 BG_Flower_aaaaa
-  rotate: false
-  xy: 775, 931
+  rotate: true
+  xy: 409, 1698
   size: 112, 81
   orig: 112, 81
   offset: 0, 0
   index: -1
 BG_Flower_aaaaaa
   rotate: false
-  xy: 1226, 683
+  xy: 258, 71
   size: 81, 51
   orig: 81, 51
   offset: 0, 0
   index: -1
 BG_Flower_aaaaaaa
   rotate: false
-  xy: 947, 1349
+  xy: 814, 126
   size: 106, 72
   orig: 106, 72
   offset: 0, 0
   index: -1
 BG_Flower_aaaaaaaa
   rotate: false
-  xy: 1456, 1974
+  xy: 923, 1521
   size: 138, 72
   orig: 138, 72
   offset: 0, 0
   index: -1
 BG_Flower_aaaaaaaaa
   rotate: false
-  xy: 1162, 1362
+  xy: 70, 64
   size: 74, 67
   orig: 74, 67
   offset: 0, 0
   index: -1
 BG_Flower_aaaaaaaaaa
-  rotate: true
-  xy: 301, 747
+  rotate: false
+  xy: 1587, 32
   size: 98, 120
   orig: 98, 120
   offset: 0, 0
   index: -1
 BG_Flower_b
   rotate: false
-  xy: 1919, 1014
+  xy: 1120, 281
   size: 121, 122
   orig: 121, 122
   offset: 0, 0
   index: -1
 BG_Flower_bb
   rotate: false
-  xy: 375, 1230
+  xy: 414, 748
   size: 173, 135
   orig: 173, 139
   offset: 0, 0
   index: -1
 BG_Flower_c
-  rotate: 180
-  xy: 420, 1006
+  rotate: false
+  xy: 1439, 696
   size: 108, 124
   orig: 108, 124
   offset: 0, 0
   index: -1
 BG_Flower_cc
   rotate: false
-  xy: 1724, 1138
+  xy: 1691, 968
   size: 150, 121
   orig: 150, 121
   offset: 0, 0
   index: -1
 BG_Flower_d
   rotate: false
-  xy: 310, 843
+  xy: 929, 1127
   size: 123, 90
   orig: 123, 90
   offset: 0, 0
   index: -1
 BG_Flower_dd
   rotate: false
-  xy: 1353, 1621
+  xy: 465, 596
   size: 160, 82
   orig: 160, 82
   offset: 0, 0
   index: -1
 BG_Flower_e
   rotate: false
-  xy: 1891, 1722
+  xy: 1316, 900
   size: 56, 97
   orig: 56, 97
   offset: 0, 0
   index: -1
 BG_Flower_ea
   rotate: false
-  xy: 608, 1387
+  xy: 1828, 1360
   size: 103, 90
   orig: 103, 90
   offset: 0, 0
   index: -1
 BG_Flower_eaa
   rotate: false
-  xy: 1739, 650
+  xy: 846, 1701
   size: 80, 52
   orig: 80, 52
   offset: 0, 0
   index: -1
 BG_Flower_eaaa
   rotate: false
-  xy: 29, 692
+  xy: 843, 780
   size: 88, 71
   orig: 88, 71
   offset: 0, 0
   index: -1
 BG_Flower_eaaaa
   rotate: false
-  xy: 2, 622
+  xy: 1500, 1048
   size: 59, 93
   orig: 59, 93
   offset: 0, 0
   index: -1
 BG_Flower_eaaaaa
   rotate: false
-  xy: 1523, 852
+  xy: 1699, 1762
   size: 63, 68
   orig: 63, 68
   offset: 0, 0
   index: -1
 BG_Flower_eaaaaaa
-  rotate: 270
-  xy: 578, 1014
+  rotate: true
+  xy: 1714, 299
   size: 58, 419
   orig: 58, 419
   offset: 0, 0
   index: -1
 BG_Flower_ee
   rotate: false
-  xy: 1286, 760
+  xy: 1974, 113
   size: 74, 100
   orig: 74, 100
   offset: 0, 0
   index: -1
 BG_Flower_eee
   rotate: false
-  xy: 1139, 1683
+  xy: 1160, 2097
   size: 73, 37
   orig: 73, 37
   offset: 0, 0
   index: -1
 BG_Flower_eeee
   rotate: false
-  xy: 564, 796
+  xy: 323, 726
   size: 89, 83
   orig: 89, 83
   offset: 0, 0
   index: -1
 BG_Flower_eeeee
-  rotate: false
-  xy: 1187, 604
+  rotate: true
+  xy: 779, 1976
   size: 51, 123
   orig: 51, 123
   offset: 0, 0
   index: -1
 BG_Flower_eeeeee
   rotate: false
-  xy: 587, 1090
+  xy: 880, 1392
   size: 81, 52
   orig: 81, 52
   offset: 0, 0
   index: -1
 BG_Flower_f
   rotate: false
-  xy: 311, 932
+  xy: 1999, 336
   size: 134, 107
   orig: 134, 107
   offset: 0, 0
   index: -1
 BG_Flower_ff
   rotate: false
-  xy: 266, 1408
+  xy: 1895, 212
   size: 143, 89
   orig: 143, 89
   offset: 0, 0
   index: -1
 BG_Flower_fff
   rotate: false
-  xy: 2, 1061
+  xy: 1852, 383
   size: 158, 129
   orig: 158, 129
   offset: 0, 0
   index: -1
 BG_Flower_ffff
   rotate: false
-  xy: 71, 1324
+  xy: 824, 2029
   size: 176, 105
   orig: 176, 105
   offset: 0, 0
   index: -1
 BG_Flower_g
-  rotate: true
-  xy: 1614, 846
+  rotate: false
+  xy: 2040, 189
   size: 88, 108
   orig: 88, 108
   offset: 0, 0
   index: -1
 BG_Flower_gg
   rotate: false
-  xy: 689, 1681
+  xy: 2, 745
   size: 102, 90
   orig: 102, 90
   offset: 0, 0
   index: -1
 BG_Flower_ggg
-  rotate: true
-  xy: 1422, 917
+  rotate: 180
+  xy: 2, 195
   size: 130, 115
   orig: 130, 115
   offset: 0, 0
   index: -1
 BG_Flower_gggg
   rotate: false
-  xy: 1294, 946
+  xy: 1217, 211
   size: 147, 113
   orig: 147, 113
   offset: 0, 0
   index: -1
 BG_Flower_h
   rotate: false
-  xy: 822, 729
+  xy: 1225, 84
   size: 97, 87
   orig: 97, 87
   offset: 0, 0
   index: -1
 BG_Flower_ha
-  rotate: true
-  xy: 818, 1409
+  rotate: false
+  xy: 229, 2007
   size: 109, 127
   orig: 109, 127
   offset: 0, 0
   index: -1
 BG_Flower_haa
-  rotate: true
-  xy: 1574, 1120
+  rotate: false
+  xy: 2, 1464
   size: 136, 158
   orig: 136, 158
   offset: 0, 0
   index: -1
 BG_Flower_haaa
   rotate: false
-  xy: 1101, 1049
+  xy: 364, 333
   size: 115, 135
   orig: 115, 135
   offset: 0, 0
   index: -1
 BG_Flower_haaaa
   rotate: false
-  xy: 896, 928
+  xy: 163, 188
   size: 156, 138
   orig: 165, 138
   offset: 0, 0
   index: -1
 BG_Flower_haaaaa
   rotate: false
-  xy: 1926, 1751
+  xy: 916, 253
   size: 120, 112
   orig: 120, 112
   offset: 0, 0
   index: -1
 BG_Flower_hb
   rotate: false
-  xy: 1912, 1138
+  xy: 2000, 447
   size: 134, 133
   orig: 134, 133
   offset: 0, 0
   index: -1
 BG_Flower_hbb
   rotate: false
-  xy: 1108, 1871
+  xy: 927, 1653
   size: 171, 175
   orig: 171, 175
   offset: 0, 0
   index: -1
 BG_Flower_hbbb
   rotate: true
-  xy: 1623, 1692
+  xy: 1862, 1266
   size: 354, 266
   orig: 354, 266
   offset: 0, 0
   index: -1
 BG_Flower_hbbbb
   rotate: false
-  xy: 2, 1527
+  xy: 1499, 999
   size: 290, 263
   orig: 290, 263
   offset: 0, 0
   index: -1
 BG_Flower_hh
   rotate: false
-  xy: 1349, 786
+  xy: 1147, 144
   size: 88, 104
   orig: 88, 104
   offset: 0, 0
   index: -1
 BG_Flower_hhh
   rotate: false
-  xy: 437, 736
+  xy: 2, 85
   size: 80, 108
   orig: 80, 108
   offset: 0, 0
   index: -1
 BG_Flower_hhhh
   rotate: true
-  xy: 599, 683
+  xy: 286, 163
   size: 55, 121
   orig: 55, 121
   offset: 0, 0
   index: -1
 BG_Flower_hhhhh
-  rotate: true
-  xy: 1241, 1047
+  rotate: false
+  xy: 2, 1057
   size: 118, 153
   orig: 118, 153
   offset: 0, 0
   index: -1
 BG_Flower_hhhhhh
   rotate: false
-  xy: 1766, 1402
+  xy: 1059, 931
   size: 65, 68
   orig: 65, 68
   offset: 0, 0
   index: -1
 BG_Flower_hhhhhhh
   rotate: false
-  xy: 1821, 697
+  xy: 285, 882
   size: 80, 95
   orig: 80, 95
   offset: 0, 0
   index: -1
 BG_Flower_j
-  rotate: true
-  xy: 168, 820
+  rotate: false
+  xy: 1613, 89
   size: 81, 107
   orig: 81, 107
   offset: 0, 0
   index: -1
 BG_Flower_jj
   rotate: false
-  xy: 1840, 902
+  xy: 1948, 56
   size: 66, 55
   orig: 66, 55
   offset: 0, 0
   index: -1
 BG_Flower_jjj
   rotate: false
-  xy: 711, 1556
+  xy: 1489, 924
   size: 72, 57
   orig: 72, 57
   offset: 0, 0
   index: -1
 BG_Flower_jjjj
   rotate: false
-  xy: 720, 867
+  xy: 1003, 2072
   size: 155, 62
   orig: 155, 62
   offset: 0, 0
   index: -1
 BG_Flower_k
-  rotate: false
-  xy: 674, 905
+  rotate: true
+  xy: 2016, 1166
   size: 99, 116
   orig: 99, 116
   offset: 0, 0
   index: -1
 BG_Flower_l
-  rotate: 180
-  xy: 1792, 1021
+  rotate: false
+  xy: 1200, 1089
   size: 125, 124
   orig: 125, 124
   offset: 0, 0
   index: -1
 BG_Sword
   rotate: true
-  xy: 550, 1204
+  xy: 235, 537
   size: 141, 243
   orig: 141, 243
   offset: 0, 0
   index: -1
 BG_butterfly_a
   rotate: false
-  xy: 1979, 1716
+  xy: 666, 1646
   size: 39, 33
   orig: 39, 33
   offset: 0, 0
   index: -1
 BG_butterfly_aa
   rotate: false
-  xy: 1564, 1337
+  xy: 2, 980
   size: 63, 75
   orig: 63, 75
   offset: 0, 0
   index: -1
 BG_butterfly_b
   rotate: false
-  xy: 1065, 1613
+  xy: 2103, 2041
   size: 28, 31
   orig: 28, 31
   offset: 0, 0
   index: -1
 BG_butterfly_bb
   rotate: false
-  xy: 1256, 995
+  xy: 2094, 1984
   size: 35, 50
   orig: 35, 50
   offset: 0, 0
   index: -1
 BG_butterfly_c
   rotate: false
-  xy: 656, 1847
+  xy: 1273, 1866
   size: 25, 27
   orig: 25, 27
   offset: 0, 0
   index: -1
 BG_butterfly_cc
   rotate: false
-  xy: 2003, 1991
+  xy: 385, 1855
   size: 42, 55
   orig: 42, 55
   offset: 0, 0
   index: -1
 BG_butterfly_ccc
   rotate: false
-  xy: 1025, 1260
+  xy: 971, 819
   size: 45, 36
   orig: 45, 36
   offset: 0, 0
   index: -1
 BG_butterfly_da
   rotate: false
-  xy: 1107, 2021
+  xy: 823, 2109
   size: 35, 25
   orig: 35, 25
   offset: 0, 0
   index: -1
 BG_butterfly_dda
   rotate: false
-  xy: 1992, 644
+  xy: 1891, 34
   size: 46, 68
   orig: 46, 68
   offset: 0, 0
   index: -1
 BG_butterfly_e
   rotate: false
-  xy: 1314, 1845
+  xy: 1781, 2070
   size: 21, 28
   orig: 21, 28
   offset: 0, 0
   index: -1
 BG_butterfly_ee
   rotate: false
-  xy: 1576, 650
+  xy: 1155, 1090
   size: 43, 60
   orig: 43, 60
   offset: 0, 0
   index: -1
 BG_butterfly_eee
   rotate: false
-  xy: 2003, 1339
+  xy: 1815, 1582
   size: 43, 38
   orig: 43, 38
   offset: 0, 0
   index: -1
 BG_water_Light
   rotate: false
-  xy: 1343, 1294
+  xy: 241, 680
   size: 703, 40
   orig: 703, 40
   offset: 0, 0
   index: -1
 BG_water_a
   rotate: false
-  xy: 516, 1686
+  xy: 393, 1332
   size: 855, 360
   orig: 855, 360
   offset: 0, 0
   index: -1
 BG_water_b
   rotate: 180
-  xy: 1095, 1183
+  xy: 1031, 474
   size: 427, 238
   orig: 427, 238
   offset: 0, 0
   index: -1
 BG_water_c
   rotate: 180
-  xy: 908, 1560
+  xy: 72, 915
   size: 1069, 184
   orig: 1069, 184
   offset: 0, 0
   index: -1
 BG_water_d
   rotate: true
-  xy: 102, 1276
+  xy: 2, 696
   size: 250, 586
   orig: 250, 586
   offset: 0, 0
   index: -1
 BG_water_e
   rotate: false
-  xy: 713, 1295
+  xy: 590, 722
   size: 382, 206
   orig: 382, 206
   offset: 0, 0
   index: -1
 Ling_Bag
   rotate: false
-  xy: 1092, 996
-  size: 72, 50
-  orig: 72, 50
+  xy: 1366, 219
+  size: 144, 100
+  orig: 144, 100
   offset: 0, 0
   index: -1
 Ling_Bag_Tape
-  rotate: false
-  xy: 321, 1677
-  size: 43, 65
-  orig: 43, 65
+  rotate: true
+  xy: 435, 1220
+  size: 85, 129
+  orig: 85, 129
   offset: 0, 0
   index: -1
 Ling_Bag_a
   rotate: false
-  xy: 881, 2005
-  size: 24, 41
-  orig: 24, 41
+  xy: 493, 997
+  size: 46, 82
+  orig: 47, 82
   offset: 0, 0
   index: -1
 Ling_Belly
   rotate: false
-  xy: 1994, 714
-  size: 49, 111
-  orig: 49, 111
+  xy: 1873, 521
+  size: 98, 222
+  orig: 98, 222
   offset: 0, 0
   index: -1
 Ling_Belt
   rotate: false
-  xy: 2, 1412
-  size: 107, 58
-  orig: 108, 58
+  xy: 707, 1556
+  size: 214, 116
+  orig: 216, 116
   offset: 0, 0
   index: -1
 Ling_Bottle
-  rotate: 180
-  xy: 726, 1041
-  size: 219, 164
-  orig: 219, 164
+  rotate: false
+  xy: 1225, 364
+  size: 221, 166
+  orig: 221, 166
   offset: 0, 0
   index: -1
 Ling_Bottle_a
   rotate: false
-  xy: 598, 1169
-  size: 89, 83
-  orig: 90, 85
+  xy: 679, 1731
+  size: 91, 85
+  orig: 92, 87
   offset: 1, 0
   index: -1
 Ling_Bottle_b
-  rotate: 270
-  xy: 375, 698
-  size: 97, 223
-  orig: 99, 223
+  rotate: true
+  xy: 1289, 67
+  size: 99, 225
+  orig: 101, 225
   offset: 0, 0
   index: -1
 Ling_Bottle_c
-  rotate: true
-  xy: 98, 642
-  size: 65, 137
-  orig: 65, 137
+  rotate: false
+  xy: 1200, 1748
+  size: 67, 139
+  orig: 67, 139
   offset: 0, 0
   index: -1
 Ling_Bottle_d
   rotate: false
-  xy: 1914, 1613
-  size: 50, 32
-  orig: 50, 32
+  xy: 894, 1522
+  size: 52, 34
+  orig: 52, 34
   offset: 0, 0
   index: -1
 Ling_Bottle_e
   rotate: false
-  xy: 1205, 769
-  size: 33, 60
-  orig: 33, 60
+  xy: 2098, 1569
+  size: 35, 62
+  orig: 35, 62
   offset: 0, 0
   index: -1
 Ling_Chest
   rotate: false
-  xy: 1495, 1588
-  size: 311, 231
-  orig: 311, 233
+  xy: 326, 1902
+  size: 313, 233
+  orig: 313, 235
   offset: 0, 0
   index: -1
 Ling_Chest_Temple_shadow
   rotate: false
-  xy: 1485, 618
+  xy: 902, 1032
   size: 87, 78
   orig: 87, 78
   offset: 0, 0
   index: -1
 Ling_Coat_L
   rotate: 270
-  xy: 1479, 1394
-  size: 214, 566
-  orig: 216, 566
+  xy: 391, 1706
+  size: 429, 1132
+  orig: 433, 1132
   offset: 0, 0
   index: -1
 Ling_Coat_L_Bow_a
   rotate: true
-  xy: 581, 718
-  size: 104, 129
-  orig: 104, 129
+  xy: 960, 1008
+  size: 207, 258
+  orig: 207, 258
   offset: 0, 0
   index: -1
 Ling_Coat_L_Bow_b
-  rotate: false
-  xy: 1868, 620
-  size: 104, 84
-  orig: 104, 84
+  rotate: 180
+  xy: 1237, 291
+  size: 207, 168
+  orig: 207, 168
   offset: 0, 0
   index: -1
 Ling_Coat_L_white
-  rotate: true
-  xy: 210, 1499
+  rotate: false
+  xy: 1304, 926
   size: 194, 318
   orig: 199, 318
   offset: 5, 0
   index: -1
 Ling_Coat_L_white_a
   rotate: false
-  xy: 1041, 798
+  xy: 693, 142
   size: 104, 72
   orig: 104, 72
   offset: 0, 0
   index: -1
 Ling_Coat_La
   rotate: false
-  xy: 641, 789
+  xy: 1692, 119
   size: 122, 140
   orig: 122, 140
   offset: 0, 0
   index: -1
 Ling_Coat_Laa
   rotate: false
-  xy: 1072, 1219
+  xy: 1084, 1600
   size: 94, 92
   orig: 94, 92
   offset: 0, 0
   index: -1
 Ling_Coat_Laaa
   rotate: false
-  xy: 1957, 1474
+  xy: 492, 1685
   size: 83, 68
   orig: 83, 68
   offset: 0, 0
   index: -1
 Ling_Coat_M_white
-  rotate: 270
-  xy: 1281, 1707
+  rotate: true
+  xy: 1508, 1419
   size: 339, 361
   orig: 339, 361
   offset: 0, 0
   index: -1
 Ling_Coat_R
-  rotate: 270
-  xy: 1095, 1127
-  size: 197, 439
-  orig: 197, 439
+  rotate: true
+  xy: 1250, 1052
+  size: 394, 877
+  orig: 394, 877
   offset: 0, 0
   index: -1
 Ling_Coat_R_Bow_a
-  rotate: false
-  xy: 1296, 613
-  size: 79, 121
-  orig: 79, 121
+  rotate: 270
+  xy: 1652, 226
+  size: 158, 241
+  orig: 158, 241
   offset: 0, 0
   index: -1
 Ling_Coat_R_white
   rotate: false
-  xy: 839, 819
+  xy: 194, 451
   size: 131, 88
   orig: 131, 88
   offset: 0, 0
   index: -1
 Ling_Coat_R_white_a
   rotate: false
-  xy: 1526, 1510
+  xy: 899, 88
   size: 110, 50
   orig: 110, 50
   offset: 0, 0
   index: -1
 Ling_Coat_blue_l
-  rotate: 270
-  xy: 159, 1150
-  size: 150, 261
-  orig: 151, 269
+  rotate: true
+  xy: 2, 1137
+  size: 299, 522
+  orig: 302, 538
   offset: 0, 0
   index: -1
 Ling_Coat_blue_la
   rotate: 270
-  xy: 1492, 1020
+  xy: 2, 318
   size: 229, 253
   orig: 235, 253
   offset: 0, 0
   index: -1
 Ling_Coat_blue_lup
-  rotate: false
-  xy: 436, 902
+  rotate: 180
+  xy: 496, 237
   size: 237, 141
   orig: 237, 145
   offset: 0, 4
   index: -1
 Ling_Coat_blue_r
   rotate: 270
-  xy: 870, 1160
-  size: 105, 209
-  orig: 105, 209
+  xy: 1494, 829
+  size: 210, 417
+  orig: 210, 417
   offset: 0, 0
   index: -1
 Ling_Coat_blue_r_Fr
   rotate: false
-  xy: 1669, 1084
+  xy: 1452, 422
   size: 48, 114
   orig: 48, 114
   offset: 0, 0
   index: -1
 Ling_Coat_blue_ra
   rotate: false
-  xy: 76, 900
+  xy: 308, 204
   size: 259, 172
   orig: 259, 172
   offset: 0, 0
   index: -1
 Ling_Coat_blue_rb
   rotate: false
-  xy: 465, 1609
-  size: 44, 80
-  orig: 44, 80
+  xy: 2084, 1082
+  size: 46, 82
+  orig: 46, 82
   offset: 0, 0
   index: -1
 Ling_Face
   rotate: false
-  xy: 1864, 1849
+  xy: 1950, 693
   size: 157, 198
   orig: 157, 200
   offset: 0, 2
   index: -1
 Ling_Face_Back_light
-  rotate: true
-  xy: 1394, 1340
+  rotate: false
+  xy: 1595, 511
   size: 104, 168
   orig: 104, 168
   offset: 0, 0
   index: -1
 Ling_Face_shadow
-  rotate: 180
-  xy: 233, 1027
+  rotate: false
+  xy: 975, 343
   size: 155, 148
   orig: 155, 163
   offset: 0, 0
   index: -1
 Ling_Face_water_A
   rotate: false
-  xy: 731, 2037
+  xy: 1716, 2125
   size: 22, 9
   orig: 22, 9
   offset: 0, 0
   index: -1
 Ling_Face_water_B
   rotate: false
-  xy: 1277, 1952
+  xy: 214, 2050
   size: 13, 38
   orig: 13, 38
   offset: 0, 0
   index: -1
 Ling_Face_water_C
   rotate: false
-  xy: 1128, 1873
+  xy: 816, 2023
   size: 22, 22
   orig: 22, 25
   offset: 0, 1
   index: -1
 Ling_Hr_A
-  rotate: 270
-  xy: 1233, 1332
-  size: 246, 291
-  orig: 246, 291
+  rotate: true
+  xy: 1220, 1642
+  size: 492, 582
+  orig: 492, 582
   offset: 0, 0
   index: -1
 Ling_Hr_A_back
   rotate: false
-  xy: 300, 1672
+  xy: 678, 796
   size: 184, 119
   orig: 184, 121
   offset: 0, 2
   index: -1
 Ling_Hr_Aa
   rotate: false
-  xy: 936, 746
-  size: 147, 78
-  orig: 147, 78
+  xy: 1228, 602
+  size: 294, 156
+  orig: 294, 156
   offset: 0, 0
   index: -1
 Ling_Hr_Aaa
   rotate: false
-  xy: 598, 1588
+  xy: 2, 525
   size: 308, 175
   orig: 308, 180
   offset: 0, 5
   index: -1
 Ling_Hr_Aaaa
   rotate: false
-  xy: 936, 675
+  xy: 622, 61
   size: 146, 58
   orig: 146, 58
   offset: 0, 0
   index: -1
 Ling_Hr_Aaaaa
   rotate: false
-  xy: 212, 1326
+  xy: 1993, 1238
   size: 63, 48
   orig: 63, 48
   offset: 0, 0
   index: -1
 Ling_Hr_Ab
-  rotate: false
-  xy: 2, 1344
-  size: 290, 181
-  orig: 290, 181
+  rotate: 180
+  xy: 360, 1300
+  size: 580, 362
+  orig: 580, 362
   offset: 0, 0
   index: -1
 Ling_Hr_B
   rotate: false
-  xy: 786, 1097
+  xy: 2, 423
   size: 321, 195
   orig: 321, 195
   offset: 0, 0
   index: -1
 Ling_Hr_Bb
-  rotate: true
-  xy: 1684, 672
+  rotate: false
+  xy: 1758, 43
   size: 131, 104
   orig: 131, 104
   offset: 0, 0
   index: -1
 Ling_Hr_Bow
   rotate: false
-  xy: 259, 1690
+  xy: 836, 43
   size: 61, 81
   orig: 61, 81
   offset: 0, 0
   index: -1
 Ling_Hr_Bow_a
-  rotate: 270
-  xy: 1551, 712
-  size: 187, 208
-  orig: 187, 208
+  rotate: true
+  xy: 1719, 542
+  size: 373, 415
+  orig: 373, 415
   offset: 0, 0
   index: -1
 Ling_Hr_Bow_b
   rotate: 270
-  xy: 393, 604
-  size: 162, 196
-  orig: 162, 196
+  xy: 1479, 344
+  size: 324, 392
+  orig: 324, 392
   offset: 0, 0
   index: -1
 Ling_Hr_Bow_f
   rotate: false
-  xy: 1462, 689
+  xy: 572, 727
   size: 112, 57
   orig: 112, 57
   offset: 0, 0
   index: -1
 Ling_Hr_Braid
-  rotate: true
-  xy: 384, 1043
-  size: 170, 203
-  orig: 171, 203
+  rotate: false
+  xy: 1100, 1568
+  size: 339, 406
+  orig: 341, 406
   offset: 0, 0
   index: -1
 Ling_Hr_Braid_a
-  rotate: true
-  xy: 662, 721
+  rotate: false
+  xy: 1321, 1832
   size: 149, 180
   orig: 150, 180
   offset: 1, 0
   index: -1
 Ling_Hr_Braid_aa
   rotate: false
-  xy: 1378, 2027
-  size: 30, 19
-  orig: 30, 19
+  xy: 1739, 2097
+  size: 60, 37
+  orig: 60, 37
   offset: 0, 0
   index: -1
 Ling_Hr_Braid_b
   rotate: 270
-  xy: 938, 602
-  size: 139, 189
-  orig: 139, 189
+  xy: 2, 268
+  size: 277, 377
+  orig: 277, 377
   offset: 0, 0
   index: -1
 Ling_Hr_C
-  rotate: 180
-  xy: 1397, 1020
+  rotate: false
+  xy: 1458, 282
   size: 192, 110
   orig: 192, 110
   offset: 0, 0
   index: -1
 Ling_Hr_Cc
   rotate: true
-  xy: 1053, 925
+  xy: 735, 237
   size: 172, 186
   orig: 172, 186
   offset: 0, 0
   index: -1
 Ling_Hr_Ccc
-  rotate: 180
-  xy: 2, 1119
+  rotate: 270
+  xy: 862, 435
   size: 170, 301
   orig: 225, 301
   offset: 55, 0
   index: -1
 Ling_Hr_L_Bangs
   rotate: false
-  xy: 2, 1535
+  xy: 2, 1221
   size: 79, 118
   orig: 79, 118
   offset: 0, 0
   index: -1
 Ling_Hr_L_Bangs_a
-  rotate: false
-  xy: 1643, 624
+  rotate: true
+  xy: 269, 1408
   size: 63, 145
   orig: 63, 145
   offset: 0, 0
   index: -1
 Ling_Hr_L_Bangs_b
-  rotate: true
-  xy: 1183, 784
+  rotate: 270
+  xy: 194, 354
   size: 124, 163
   orig: 124, 163
   offset: 0, 0
   index: -1
 Ling_Hr_L_Bangs_bb
   rotate: false
-  xy: 920, 679
+  xy: 648, 51
   size: 191, 100
   orig: 191, 100
   offset: 0, 0
   index: -1
 Ling_Hr_L_Horn
   rotate: false
-  xy: 1583, 737
+  xy: 1908, 104
   size: 64, 107
   orig: 64, 107
   offset: 0, 0
   index: -1
 Ling_Hr_L_Horn_a
   rotate: false
-  xy: 1309, 1643
+  xy: 574, 2093
   size: 41, 41
   orig: 41, 41
   offset: 0, 0
   index: -1
 Ling_Hr_L_Temple
   rotate: 270
-  xy: 1689, 842
+  xy: 1151, 161
   size: 113, 285
   orig: 113, 285
   offset: 0, 0
   index: -1
 Ling_Hr_L_Temple_a
   rotate: true
-  xy: 417, 1212
+  xy: 73, 1355
   size: 18, 124
   orig: 18, 124
   offset: 0, 0
   index: -1
 Ling_Hr_L_Temple_aa
   rotate: false
-  xy: 413, 1455
+  xy: 1428, 1609
   size: 54, 47
   orig: 54, 47
   offset: 0, 0
   index: -1
 Ling_Hr_M_Bangs
   rotate: false
-  xy: 2, 717
+  xy: 2040, 46
   size: 54, 141
   orig: 54, 141
   offset: 0, 0
   index: -1
 Ling_Hr_M_Bangs_a
   rotate: false
-  xy: 722, 598
+  xy: 2102, 1776
   size: 31, 121
   orig: 31, 121
   offset: 0, 0
   index: -1
 Ling_Hr_R
   rotate: false
-  xy: 1581, 821
+  xy: 2, 1892
   size: 31, 80
   orig: 31, 80
   offset: 0, 0
   index: -1
 Ling_Hr_R_Bangs
-  rotate: 270
-  xy: 1196, 897
+  rotate: true
+  xy: 598, 1011
   size: 96, 168
   orig: 96, 168
   offset: 0, 0
   index: -1
 Ling_Hr_R_Bangs_a
-  rotate: true
-  xy: 1366, 798
+  rotate: 270
+  xy: 424, 140
   size: 125, 198
   orig: 129, 198
   offset: 4, 0
   index: -1
 Ling_Hr_R_Horn
   rotate: false
-  xy: 171, 1072
+  xy: 407, 40
   size: 45, 94
   orig: 45, 94
   offset: 0, 0
   index: -1
 Ling_Hr_R_Horn_a
   rotate: false
-  xy: 109, 643
+  xy: 619, 633
   size: 36, 45
   orig: 36, 45
   offset: 0, 0
   index: -1
 Ling_Hr_R_Temple
-  rotate: 270
-  xy: 2, 751
+  rotate: true
+  xy: 892, 741
   size: 171, 232
   orig: 171, 232
   offset: 0, 0
   index: -1
 Ling_Hr_R_Temple_a
   rotate: false
-  xy: 1365, 604
+  xy: 78, 1399
   size: 36, 89
   orig: 36, 89
   offset: 0, 0
   index: -1
 Ling_Hr_back
-  rotate: 180
-  xy: 1628, 1337
-  size: 414, 184
-  orig: 414, 184
+  rotate: false
+  xy: 1245, 732
+  size: 416, 186
+  orig: 416, 186
   offset: 0, 0
   index: -1
 Ling_Hr_top
   rotate: false
-  xy: 903, 1893
+  xy: 619, 1981
   size: 206, 153
   orig: 206, 153
   offset: 0, 0
   index: -1
 Ling_LF_Arm
-  rotate: false
-  xy: 939, 1546
+  rotate: true
+  xy: 1155, 756
   size: 124, 102
   orig: 124, 102
   offset: 0, 0
   index: -1
 Ling_LF_Arm_down
   rotate: false
-  xy: 1080, 1039
+  xy: 2103, 2074
   size: 19, 60
   orig: 19, 60
   offset: 0, 0
   index: -1
 Ling_LF_Bottle
   rotate: false
-  xy: 1758, 1615
+  xy: 579, 1921
   size: 116, 75
   orig: 116, 75
   offset: 0, 0
   index: -1
 Ling_LF_Bottle_a
   rotate: false
-  xy: 234, 640
+  xy: 172, 54
   size: 78, 80
   orig: 78, 80
   offset: 0, 0
   index: -1
 Ling_LF_Bottle_b
   rotate: false
-  xy: 68, 792
+  xy: 1220, 585
   size: 101, 79
   orig: 101, 79
   offset: 0, 0
   index: -1
 Ling_LF_Forearm
   rotate: false
-  xy: 407, 656
+  xy: 319, 273
   size: 108, 58
   orig: 108, 58
   offset: 0, 0
   index: -1
 Ling_LF_Forearm_a
   rotate: false
-  xy: 1834, 1454
+  xy: 235, 861
   size: 48, 55
   orig: 48, 55
   offset: 0, 0
   index: -1
 Ling_LF_Forearm_b
-  rotate: 180
-  xy: 113, 812
+  rotate: false
+  xy: 1070, 723
   size: 88, 95
   orig: 88, 95
   offset: 0, 0
   index: -1
 Ling_LF_Forearm_bb
-  rotate: 270
-  xy: 245, 596
+  rotate: true
+  xy: 1587, 412
   size: 106, 135
   orig: 106, 135
   offset: 0, 0
   index: -1
 Ling_LF_Forearm_c
   rotate: false
-  xy: 187, 1516
+  xy: 1047, 450
   size: 37, 77
   orig: 37, 77
   offset: 0, 0
   index: -1
 Ling_LF_Forearm_e
   rotate: false
-  xy: 1373, 1705
+  xy: 1097, 1362
   size: 34, 41
   orig: 34, 41
   offset: 0, 0
   index: -1
 Ling_LF_Forearm_tape
   rotate: false
-  xy: 540, 1589
+  xy: 1934, 1300
   size: 86, 95
   orig: 86, 95
   offset: 0, 0
   index: -1
 Ling_LF_Hand
   rotate: false
-  xy: 1823, 646
+  xy: 1335, 1189
   size: 62, 52
   orig: 62, 52
   offset: 0, 0
   index: -1
 Ling_LF_Shoulder
   rotate: false
-  xy: 246, 663
+  xy: 122, 766
   size: 144, 86
   orig: 144, 86
   offset: 0, 0
   index: -1
 Ling_L_Arm
   rotate: false
-  xy: 1691, 1043
-  size: 93, 93
-  orig: 93, 93
+  xy: 306, 1021
+  size: 185, 186
+  orig: 185, 186
   offset: 0, 0
   index: -1
 Ling_L_Arm_Tape
-  rotate: false
-  xy: 361, 600
-  size: 38, 100
-  orig: 38, 100
+  rotate: true
+  xy: 1176, 1537
+  size: 75, 200
+  orig: 75, 200
   offset: 0, 0
   index: -1
 Ling_L_Arm_aback
   rotate: false
-  xy: 1247, 1877
-  size: 20, 26
-  orig: 20, 26
+  xy: 227, 1371
+  size: 40, 52
+  orig: 40, 52
   offset: 0, 0
   index: -1
 Ling_L_Arm_b
   rotate: false
-  xy: 288, 829
-  size: 33, 77
-  orig: 33, 77
+  xy: 1695, 37
+  size: 65, 153
+  orig: 65, 153
   offset: 0, 0
   index: -1
 Ling_L_Arm_bb
   rotate: false
-  xy: 790, 1456
-  size: 26, 54
-  orig: 26, 56
-  offset: 0, 2
+  xy: 2080, 1457
+  size: 52, 107
+  orig: 52, 112
+  offset: 0, 5
   index: -1
 Ling_L_Arm_rope
   rotate: false
-  xy: 2, 844
-  size: 19, 60
-  orig: 19, 60
+  xy: 1764, 1721
+  size: 38, 119
+  orig: 38, 119
   offset: 0, 0
   index: -1
 Ling_L_Ear
   rotate: false
-  xy: 1232, 2011
+  xy: 1376, 1516
   size: 72, 35
   orig: 72, 35
   offset: 0, 0
   index: -1
 Ling_L_Ear_a
   rotate: false
-  xy: 1880, 1150
+  xy: 2099, 1884
   size: 35, 100
   orig: 35, 100
   offset: 0, 0
   index: -1
 Ling_L_Eye
   rotate: false
-  xy: 238, 1772
+  xy: 1426, 2116
   size: 54, 18
   orig: 57, 18
   offset: 0, 0
   index: -1
 Ling_L_Eye_a
   rotate: false
-  xy: 1879, 2007
+  xy: 1468, 2108
   size: 16, 21
   orig: 16, 22
   offset: 0, 0
   index: -1
 Ling_L_Eye_red
   rotate: false
-  xy: 1080, 1687
+  xy: 893, 1681
   size: 56, 27
   orig: 56, 27
   offset: 0, 0
   index: -1
 Ling_L_Eyeball
   rotate: false
-  xy: 1809, 1999
+  xy: 1549, 2107
   size: 23, 27
   orig: 23, 27
   offset: 0, 0
   index: -1
 Ling_L_Eyebrow
   rotate: false
-  xy: 674, 2035
+  xy: 781, 2123
   size: 38, 12
   orig: 38, 13
   offset: 0, 0
   index: -1
 Ling_L_Eyeclose
   rotate: false
-  xy: 1017, 1879
+  xy: 974, 2114
   size: 52, 20
   orig: 52, 20
   offset: 0, 0
   index: -1
 Ling_L_Eyewhite
   rotate: false
-  xy: 1891, 1822
+  xy: 1278, 1981
   size: 41, 25
   orig: 41, 25
   offset: 0, 0
   index: -1
 Ling_L_Finger_a
-  rotate: true
-  xy: 1881, 687
-  size: 60, 111
-  orig: 60, 111
+  rotate: false
+  xy: 548, 1092
+  size: 62, 113
+  orig: 62, 113
   offset: 0, 0
   index: -1
 Ling_L_Finger_b
   rotate: false
-  xy: 55, 1383
-  size: 30, 38
-  orig: 30, 38
+  xy: 1047, 1817
+  size: 32, 40
+  orig: 32, 40
   offset: 0, 0
   index: -1
 Ling_L_Finger_bb
   rotate: false
-  xy: 793, 1648
-  size: 36, 49
-  orig: 36, 49
+  xy: 893, 1261
+  size: 38, 51
+  orig: 38, 51
   offset: 0, 0
   index: -1
 Ling_L_Finger_c
   rotate: false
-  xy: 771, 1063
-  size: 40, 36
-  orig: 40, 36
+  xy: 1701, 628
+  size: 42, 38
+  orig: 42, 38
   offset: 0, 0
   index: -1
 Ling_L_Finger_cc
   rotate: false
-  xy: 1629, 1338
-  size: 39, 58
-  orig: 41, 58
+  xy: 2, 1208
+  size: 41, 60
+  orig: 43, 60
   offset: 2, 0
   index: -1
 Ling_L_Finger_d
   rotate: false
-  xy: 1248, 1521
-  size: 38, 32
-  orig: 38, 32
+  xy: 307, 1034
+  size: 40, 34
+  orig: 40, 34
   offset: 0, 0
   index: -1
 Ling_L_Finger_dd
   rotate: false
-  xy: 822, 1856
-  size: 23, 48
-  orig: 23, 48
+  xy: 122, 1050
+  size: 25, 50
+  orig: 25, 50
   offset: 0, 0
   index: -1
 Ling_L_Finger_e
   rotate: false
-  xy: 683, 1847
-  size: 35, 26
-  orig: 35, 26
+  xy: 697, 1961
+  size: 37, 28
+  orig: 37, 28
   offset: 0, 0
   index: -1
 Ling_L_Finger_ee
   rotate: false
-  xy: 576, 1425
-  size: 30, 38
-  orig: 30, 38
+  xy: 569, 1801
+  size: 32, 40
+  orig: 32, 40
   offset: 0, 0
   index: -1
 Ling_L_Foot
-  rotate: true
-  xy: 1690, 902
-  size: 128, 148
-  orig: 128, 148
+  rotate: 270
+  xy: 1837, 912
+  size: 256, 296
+  orig: 256, 296
   offset: 0, 0
   index: -1
 Ling_L_Foot_a
   rotate: false
-  xy: 1766, 2018
-  size: 56, 28
-  orig: 56, 28
+  xy: 1287, 1803
+  size: 112, 55
+  orig: 112, 55
   offset: 0, 0
   index: -1
 Ling_L_Forearm
-  rotate: true
-  xy: 551, 1570
-  size: 173, 158
-  orig: 173, 158
+  rotate: false
+  xy: 629, 365
+  size: 175, 160
+  orig: 175, 160
   offset: 0, 0
   index: -1
 Ling_L_Forearm_a
   rotate: true
-  xy: 259, 717
-  size: 231, 252
-  orig: 231, 252
+  xy: 916, 29
+  size: 233, 254
+  orig: 233, 254
   offset: 0, 0
   index: -1
 Ling_L_Forearm_aa
-  rotate: 270
-  xy: 1347, 676
-  size: 150, 203
-  orig: 150, 203
+  rotate: false
+  xy: 2, 301
+  size: 152, 205
+  orig: 152, 205
   offset: 0, 0
   index: -1
 Ling_L_Forearm_b
   rotate: false
-  xy: 21, 641
-  size: 82, 58
-  orig: 82, 58
+  xy: 1383, 484
+  size: 84, 60
+  orig: 84, 60
   offset: 0, 0
   index: -1
 Ling_L_Hand
   rotate: false
-  xy: 1962, 1614
-  size: 83, 100
-  orig: 83, 100
+  xy: 1829, 147
+  size: 85, 102
+  orig: 85, 102
   offset: 0, 0
   index: -1
 Ling_L_Leg
-  rotate: 270
-  xy: 560, 891
-  size: 108, 113
-  orig: 108, 113
+  rotate: true
+  xy: 1087, 868
+  size: 216, 227
+  orig: 216, 227
   offset: 0, 0
   index: -1
 Ling_L_Leg_a
   rotate: true
-  xy: 904, 1705
-  size: 90, 328
-  orig: 90, 328
+  xy: 930, 1215
+  size: 180, 656
+  orig: 180, 656
   offset: 0, 0
   index: -1
 Ling_L_Leg_shadow
-  rotate: false
-  xy: 1269, 1876
-  size: 46, 67
-  orig: 46, 67
+  rotate: 270
+  xy: 1440, 165
+  size: 92, 133
+  orig: 92, 133
   offset: 0, 0
   index: -1
 Ling_L_shoulder
-  rotate: true
-  xy: 541, 1095
-  size: 183, 228
-  orig: 183, 228
+  rotate: false
+  xy: 1686, 356
+  size: 185, 230
+  orig: 185, 230
   offset: 0, 0
   index: -1
 Ling_L_shoulder_back
-  rotate: false
-  xy: 539, 652
-  size: 63, 62
-  orig: 63, 62
+  rotate: 180
+  xy: 1025, 206
+  size: 125, 123
+  orig: 125, 123
   offset: 0, 0
   index: -1
 Ling_La_Bottle
   rotate: false
-  xy: 607, 1916
+  xy: 484, 1561
   size: 113, 84
   orig: 115, 84
   offset: 0, 0
   index: -1
 Ling_La_Bottle_a
   rotate: false
-  xy: 757, 2028
+  xy: 1508, 2070
   size: 26, 18
   orig: 26, 18
   offset: 0, 0
   index: -1
 Ling_La_Bottle_b
-  rotate: false
-  xy: 735, 767
+  rotate: true
+  xy: 120, 493
   size: 55, 98
   orig: 55, 98
   offset: 0, 0
   index: -1
 Ling_La_Bottle_c
   rotate: true
-  xy: 1401, 1166
+  xy: 932, 1397
   size: 34, 122
   orig: 35, 122
   offset: 1, 0
   index: -1
 Ling_La_Forearm
   rotate: false
-  xy: 849, 1800
+  xy: 1089, 41
   size: 93, 78
   orig: 93, 78
   offset: 0, 0
   index: -1
 Ling_La_Forearm_a
-  rotate: true
-  xy: 525, 636
+  rotate: false
+  xy: 1774, 73
   size: 56, 164
   orig: 56, 164
   offset: 0, 0
   index: -1
 Ling_La_Forearm_aa
-  rotate: true
-  xy: 425, 1362
+  rotate: false
+  xy: 1689, 35
   size: 21, 124
   orig: 21, 124
   offset: 0, 0
   index: -1
 Ling_La_Forearm_b
   rotate: false
-  xy: 147, 1230
+  xy: 2015, 1045
   size: 24, 46
   orig: 24, 46
   offset: 0, 0
   index: -1
 Ling_La_Forearm_c
   rotate: false
-  xy: 1124, 764
+  xy: 868, 1177
   size: 60, 72
   orig: 60, 72
   offset: 0, 0
   index: -1
 Ling_La_Forearm_cc
   rotate: false
-  xy: 2, 1524
+  xy: 2, 1645
   size: 18, 62
   orig: 18, 62
   offset: 0, 0
   index: -1
 Ling_La_Hand
   rotate: false
-  xy: 329, 1139
+  xy: 1250, 1343
   size: 68, 53
   orig: 68, 53
   offset: 0, 0
   index: -1
 Ling_Lup_Arm
   rotate: false
-  xy: 958, 846
-  size: 138, 105
-  orig: 144, 105
+  xy: 90, 1376
+  size: 276, 211
+  orig: 289, 211
   offset: 0, 0
   index: -1
 Ling_Lup_Arm_a
   rotate: false
-  xy: 130, 607
+  xy: 1071, 1046
   size: 45, 81
   orig: 45, 81
   offset: 0, 0
   index: -1
 Ling_Lup_Arm_back
   rotate: false
-  xy: 1218, 1083
-  size: 19, 65
-  orig: 19, 65
+  xy: 2096, 58
+  size: 37, 129
+  orig: 37, 129
   offset: 0, 0
   index: -1
 Ling_Lup_Arm_tape
   rotate: false
-  xy: 2016, 1867
+  xy: 2103, 1660
   size: 28, 122
   orig: 28, 122
   offset: 0, 0
   index: -1
 Ling_Lup_Finger
   rotate: false
-  xy: 1618, 1818
-  size: 55, 48
-  orig: 55, 48
+  xy: 308, 1589
+  size: 57, 50
+  orig: 57, 50
   offset: 0, 0
   index: -1
 Ling_Lup_Forearm
-  rotate: true
-  xy: 43, 995
-  size: 75, 195
-  orig: 75, 195
+  rotate: false
+  xy: 555, 298
+  size: 79, 197
+  orig: 79, 197
   offset: 0, 0
   index: -1
 Ling_Lup_Forearm_a
   rotate: false
-  xy: 1404, 596
+  xy: 961, 77
   size: 134, 109
   orig: 134, 109
   offset: 0, 0
   index: -1
 Ling_Lup_Forearm_aa
   rotate: false
-  xy: 1834, 605
+  xy: 1690, 421
   size: 105, 72
   orig: 105, 72
   offset: 0, 0
   index: -1
 Ling_Lup_Forearm_b
   rotate: false
-  xy: 1719, 1599
+  xy: 287, 1982
   size: 37, 38
   orig: 37, 38
   offset: 0, 0
   index: -1
 Ling_Lup_Hand
   rotate: false
-  xy: 1724, 772
-  size: 102, 99
-  orig: 117, 99
+  xy: 92, 114
+  size: 104, 101
+  orig: 119, 101
   offset: 7, 0
   index: -1
 Ling_Mouth
   rotate: false
-  xy: 526, 1868
+  xy: 1259, 2123
   size: 33, 12
   orig: 33, 14
   offset: 0, 1
   index: -1
 Ling_Mouth_a
   rotate: false
-  xy: 897, 2039
+  xy: 1401, 2127
   size: 25, 8
   orig: 26, 12
   offset: 1, 3
   index: -1
 Ling_Mouth_o
   rotate: false
-  xy: 854, 2038
+  xy: 438, 2126
   size: 15, 9
   orig: 24, 10
   offset: 0, 0
   index: -1
 Ling_Mouth_smile
   rotate: false
-  xy: 1065, 2037
+  xy: 1056, 2062
   size: 33, 10
   orig: 33, 13
   offset: 0, 3
   index: -1
 Ling_Neck
-  rotate: 270
-  xy: 1530, 926
-  size: 154, 167
-  orig: 154, 167
+  rotate: false
+  xy: 1491, 393
+  size: 156, 169
+  orig: 156, 169
   offset: 0, 0
   index: -1
 Ling_Nose
   rotate: false
-  xy: 1888, 2026
+  xy: 1232, 2114
   size: 26, 20
   orig: 26, 20
   offset: 0, 0
   index: -1
 Ling_R_Arm
   rotate: false
-  xy: 516, 1818
-  size: 61, 49
-  orig: 61, 49
-  offset: 0, 0
+  xy: 1575, 192
+  size: 121, 96
+  orig: 121, 97
+  offset: 0, 1
   index: -1
 Ling_R_Arm_a
-  rotate: false
-  xy: 417, 849
-  size: 57, 80
-  orig: 57, 80
+  rotate: true
+  xy: 588, 1501
+  size: 113, 160
+  orig: 113, 160
   offset: 0, 0
   index: -1
 Ling_R_Calf
   rotate: false
-  xy: 516, 1845
-  size: 138, 102
-  orig: 138, 102
+  xy: 1522, 668
+  size: 276, 204
+  orig: 276, 204
   offset: 0, 0
   index: -1
 Ling_R_Ear
   rotate: false
-  xy: 479, 847
+  xy: 470, 1174
   size: 22, 72
   orig: 22, 72
   offset: 0, 0
   index: -1
 Ling_R_Eye
   rotate: false
-  xy: 713, 1906
+  xy: 949, 2120
   size: 33, 14
   orig: 33, 14
   offset: 0, 0
   index: -1
 Ling_R_Eye_a
   rotate: false
-  xy: 866, 2030
+  xy: 824, 2091
   size: 16, 17
   orig: 16, 17
   offset: 0, 0
   index: -1
 Ling_R_Eye_red
   rotate: false
-  xy: 516, 1877
+  xy: 969, 2032
   size: 27, 24
   orig: 27, 24
   offset: 0, 0
   index: -1
 Ling_R_Eyeball
   rotate: false
-  xy: 1976, 2026
+  xy: 597, 2071
   size: 18, 21
   orig: 18, 22
   offset: 0, 1
   index: -1
 Ling_R_Eyeclose
   rotate: false
-  xy: 1144, 2033
+  xy: 860, 2121
   size: 33, 14
   orig: 33, 19
   offset: 0, 3
   index: -1
 Ling_R_Eyewhite
   rotate: false
-  xy: 1564, 2026
+  xy: 547, 2114
   size: 23, 20
   orig: 23, 20
   offset: 0, 0
   index: -1
 Ling_R_Foot
   rotate: 270
-  xy: 1088, 838
-  size: 100, 151
-  orig: 100, 151
+  xy: 2, 801
+  size: 199, 301
+  orig: 199, 301
   offset: 0, 0
   index: -1
 Ling_R_Foot_a
   rotate: false
-  xy: 1430, 1004
-  size: 37, 45
-  orig: 37, 45
+  xy: 2, 1373
+  size: 74, 89
+  orig: 74, 89
   offset: 0, 0
   index: -1
 Ling_R_Forarm
   rotate: false
-  xy: 995, 1120
-  size: 56, 39
-  orig: 56, 39
+  xy: 1737, 751
+  size: 112, 77
+  orig: 112, 77
   offset: 0, 0
   index: -1
 Ling_R_Hand
   rotate: false
-  xy: 508, 1522
-  size: 43, 39
-  orig: 43, 39
+  xy: 111, 616
+  size: 86, 78
+  orig: 86, 78
   offset: 0, 0
   index: -1
 Ling_R_Hand_back
   rotate: false
-  xy: 2028, 1972
-  size: 12, 17
-  orig: 12, 17
+  xy: 2031, 1586
+  size: 24, 34
+  orig: 24, 34
   offset: 0, 0
   index: -1
 Ling_R_Leg
-  rotate: false
-  xy: 1834, 1958
-  size: 53, 88
-  orig: 53, 88
+  rotate: true
+  xy: 128, 1046
+  size: 106, 176
+  orig: 106, 176
   offset: 0, 0
   index: -1
 Ling_R_Leg_a
   rotate: true
-  xy: 1854, 945
-  size: 88, 178
-  orig: 88, 178
+  xy: 612, 1057
+  size: 177, 355
+  orig: 177, 355
   offset: 0, 0
   index: -1
 Ling_R_bangs_rr
   rotate: true
-  xy: 1234, 1555
+  xy: 768, 1028
   size: 43, 135
   orig: 43, 135
   offset: 0, 0
   index: -1
 Ling_Ra_Arm
-  rotate: true
-  xy: 1912, 855
+  rotate: false
+  xy: 1972, 562
   size: 98, 128
   orig: 98, 128
   offset: 0, 0
   index: -1
 Ling_Ra_Arm_a
   rotate: false
-  xy: 944, 1776
+  xy: 515, 1486
   size: 121, 34
   orig: 122, 34
   offset: 0, 0
   index: -1
 Ling_Ra_Arm_s
   rotate: false
-  xy: 445, 1124
+  xy: 1258, 1445
   size: 82, 41
   orig: 82, 41
   offset: 0, 0
   index: -1
 Ling_Ra_Finger_a
   rotate: false
-  xy: 2, 1237
+  xy: 1290, 1076
   size: 31, 49
   orig: 35, 49
   offset: 0, 0
   index: -1
 Ling_Ra_Finger_b
   rotate: false
-  xy: 1095, 1614
+  xy: 1027, 2045
   size: 28, 26
   orig: 28, 26
   offset: 0, 0
   index: -1
 Ling_Ra_Forearm
   rotate: false
-  xy: 747, 656
+  xy: 732, 570
   size: 91, 109
   orig: 102, 110
   offset: 11, 1
   index: -1
 Ling_Ra_Hand
   rotate: false
-  xy: 1730, 1382
+  xy: 1488, 1205
   size: 35, 46
   orig: 35, 46
   offset: 0, 0
   index: -1
 Ling_Ru_Arm
   rotate: false
-  xy: 1197, 1650
+  xy: 945, 134
   size: 109, 82
   orig: 109, 82
   offset: 0, 0
   index: -1
 Ling_Ru_Arm_a
   rotate: false
-  xy: 1572, 1958
+  xy: 1510, 603
   size: 48, 81
   orig: 48, 81
   offset: 0, 0
   index: -1
 Ling_Ru_Arm_tape
   rotate: false
-  xy: 1628, 598
+  xy: 2, 1938
   size: 18, 125
   orig: 18, 125
   offset: 0, 0
   index: -1
 Ling_Ru_Finger_a
   rotate: false
-  xy: 2029, 1513
+  xy: 1785, 1844
   size: 17, 38
   orig: 17, 38
   offset: 0, 0
   index: -1
 Ling_Ru_Finger_c
   rotate: false
-  xy: 1891, 1683
+  xy: 992, 2041
   size: 38, 41
   orig: 38, 41
   offset: 0, 0
   index: -1
 Ling_Ru_Forarm
-  rotate: false
-  xy: 787, 617
+  rotate: true
+  xy: 1553, 1444
   size: 64, 112
   orig: 64, 112
   offset: 0, 0
   index: -1
 Ling_Ru_Hand
   rotate: false
-  xy: 1535, 906
+  xy: 186, 2080
   size: 39, 54
   orig: 39, 54
   offset: 0, 0
   index: -1
 Ling_Tail
   rotate: false
-  xy: 487, 1504
+  xy: 488, 964
   size: 482, 341
   orig: 482, 367
   offset: 0, 0
   index: -1
 Ling_Tail_Va
   rotate: false
-  xy: 1635, 1519
+  xy: 429, 1864
   size: 38, 38
   orig: 38, 38
   offset: 0, 0
   index: -1
 Ling_Tail_Vb
   rotate: false
-  xy: 260, 1472
+  xy: 403, 2099
   size: 32, 35
   orig: 32, 35
   offset: 0, 0
   index: -1
 Ling_Tail_Vc
   rotate: false
-  xy: 295, 1366
+  xy: 1777, 1678
   size: 25, 41
   orig: 25, 41
   offset: 0, 0
   index: -1
 Ling_Tail_Vd
   rotate: false
-  xy: 1359, 1339
+  xy: 1657, 981
   size: 32, 56
   orig: 32, 56
   offset: 0, 0
   index: -1
 Ling_Tail_Ve
   rotate: false
-  xy: 2, 1732
+  xy: 139, 1515
   size: 26, 58
   orig: 26, 58
   offset: 0, 0
   index: -1
 Ling_Tail_Vf
   rotate: false
-  xy: 1326, 611
+  xy: 1468, 1908
   size: 19, 72
   orig: 19, 72
   offset: 0, 0
   index: -1
 Ling_up_Bottle
   rotate: false
-  xy: 135, 874
-  size: 180, 100
-  orig: 181, 100
+  xy: 575, 186
+  size: 182, 102
+  orig: 183, 102
   offset: 0, 0
   index: -1
 Ling_up_Bottle_a
   rotate: false
-  xy: 1101, 729
-  size: 183, 125
-  orig: 183, 125
+  xy: 265, 122
+  size: 185, 127
+  orig: 185, 127
   offset: 0, 0
   index: -1
 Ling_up_Bottle_b
   rotate: false
-  xy: 1266, 736
-  size: 235, 90
-  orig: 235, 93
+  xy: 454, 102
+  size: 237, 92
+  orig: 237, 95
   offset: 0, 3
   index: -1
 Ling_up_Bottle_bow
   rotate: false
-  xy: 886, 1555
-  size: 48, 35
-  orig: 48, 35
+  xy: 1795, 929
+  size: 50, 37
+  orig: 50, 37
   offset: 0, 0
   index: -1
 Weapon
   rotate: 180
-  xy: 505, 1150
-  size: 765, 277
-  orig: 765, 277
+  xy: 492, 1265
+  size: 1530, 554
+  orig: 1530, 554
   offset: 0, 0
   index: -1
 Weapon_D
-  rotate: true
-  xy: 1395, 1249
+  rotate: false
+  xy: 2060, 1564
   size: 43, 571
   orig: 43, 591
   offset: 0, 20
   index: -1
 Weapon_D_hand
   rotate: false
-  xy: 840, 638
+  xy: 1921, 867
   size: 46, 55
   orig: 46, 55
   offset: 0, 0
   index: -1
 Weapon_Dc
   rotate: false
-  xy: 1071, 1871
+  xy: 340, 2088
   size: 63, 47
   orig: 66, 48
   offset: 1, 0
   index: -1
 Weapon_Dt
-  rotate: false
-  xy: 501, 784
+  rotate: true
+  xy: 784, 191
   size: 62, 182
   orig: 62, 185
   offset: 0, 0
   index: -1
 Weapon_Dy
   rotate: false
-  xy: 719, 1989
-  size: 114, 48
-  orig: 114, 49
-  offset: 0, 1
+  xy: 1062, 1477
+  size: 219, 84
+  orig: 219, 86
+  offset: 0, 2
   index: -1
 Weapon_F
-  rotate: false
-  xy: 1543, 1191
-  size: 29, 58
-  orig: 29, 58
+  rotate: true
+  xy: 1477, 57
+  size: 58, 116
+  orig: 58, 116
   offset: 0, 0
   index: -1
 Weapon_F_a
   rotate: false
-  xy: 852, 639
-  size: 84, 100
-  orig: 84, 100
+  xy: 399, 356
+  size: 167, 199
+  orig: 167, 200
   offset: 0, 0
   index: -1
 Weapon_F_b
   rotate: false
-  xy: 2, 1170
-  size: 99, 63
-  orig: 99, 63
+  xy: 757, 323
+  size: 196, 125
+  orig: 197, 125
   offset: 0, 0
   index: -1
 Weapon_F_c
-  rotate: false
-  xy: 1844, 749
-  size: 201, 97
-  orig: 201, 97
+  rotate: 180
+  xy: 825, 615
+  size: 402, 194
+  orig: 402, 194
   offset: 0, 0
   index: -1
 Weapon_F_cc
   rotate: false
-  xy: 1706, 700
-  size: 154, 108
-  orig: 154, 109
-  offset: 0, 1
+  xy: 477, 462
+  size: 308, 216
+  orig: 308, 218
+  offset: 0, 2
   index: -1
 Weapon_F_d
   rotate: false
-  xy: 838, 1672
-  size: 65, 72
-  orig: 68, 72
+  xy: 1095, 405
+  size: 129, 144
+  orig: 136, 144
   offset: 0, 0
   index: -1
 Weapon_F_e
-  rotate: false
-  xy: 1389, 650
-  size: 90, 58
-  orig: 90, 66
-  offset: 0, 8
+  rotate: 270
+  xy: 1438, 1484
+  size: 181, 114
+  orig: 181, 131
+  offset: 0, 17
   index: -1
 Weapon_F_f
-  rotate: false
-  xy: 1363, 1038
-  size: 31, 54
-  orig: 31, 54
+  rotate: true
+  xy: 1292, 52
+  size: 61, 108
+  orig: 61, 108
   offset: 0, 0
   index: -1
 Weapon_F_g
   rotate: false
-  xy: 124, 695
-  size: 159, 69
-  orig: 159, 71
-  offset: 0, 2
+  xy: 731, 499
+  size: 318, 138
+  orig: 318, 142
+  offset: 0, 4
   index: -1
 Weapon_F_h
-  rotate: false
-  xy: 1673, 598
-  size: 62, 109
-  orig: 62, 109
+  rotate: true
+  xy: 1398, 56
+  size: 123, 218
+  orig: 123, 218
   offset: 0, 0
   index: -1
 Weapon_F_light_a
   rotate: false
-  xy: 947, 1051
+  xy: 1486, 2090
   size: 61, 44
   orig: 61, 44
   offset: 0, 0
   index: -1
 Weapon_F_light_b
   rotate: false
-  xy: 1430, 1451
+  xy: 1588, 1260
   size: 47, 37
   orig: 47, 37
   offset: 0, 0
   index: -1
 Weapon_F_light_c
   rotate: false
-  xy: 786, 1960
+  xy: 1120, 61
   size: 123, 86
   orig: 123, 86
   offset: 0, 0
   index: -1
 Weapon_Light_a
   rotate: false
-  xy: 1420, 2019
-  size: 32, 27
-  orig: 32, 27
+  xy: 1774, 1092
+  size: 63, 54
+  orig: 63, 54
   offset: 0, 0
   index: -1
 Weapon_Light_b
-  rotate: 270
-  xy: 964, 1421
-  size: 196, 282
-  orig: 196, 282
+  rotate: false
+  xy: 2, 1571
+  size: 392, 563
+  orig: 392, 563
   offset: 0, 0
   index: -1
 Weapon_c
   rotate: false
-  xy: 1230, 622
-  size: 40, 59
-  orig: 42, 59
-  offset: 2, 0
+  xy: 193, 69
+  size: 80, 118
+  orig: 84, 118
+  offset: 4, 0
   index: -1
 Weapon_tape
   rotate: 180
-  xy: 2, 777
-  size: 294, 201
-  orig: 294, 201
+  xy: 1005, 538
+  size: 588, 402
+  orig: 588, 402
   offset: 0, 0
   index: -1

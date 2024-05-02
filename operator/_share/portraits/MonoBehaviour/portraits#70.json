@@ -141,6 +141,18 @@
         "h": 180
       },
       "rotate": 1
+    },
+    {
+      "name": "char_010_chen_sale#10",
+      "guid": "398b6c2f24fda6b4aa0f5e6a19d95a75",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -212,20 +224,25 @@
         "name": "char_1034_jesca2_1",
         "guid": "4300452aed0ef0145bbc6e0ea72f4ec4",
         "md5": "fa9ed0e7f51b890e119ef77c3bcce6f8"
+      },
+      {
+        "name": "char_010_chen_sale#10",
+        "guid": "398b6c2f24fda6b4aa0f5e6a19d95a75",
+        "md5": "8387c48aa429179a13fb2efa2246da9e"
       }
     ],
     "m_atlases": [
       {
         "name": "portraits#70",
         "guid": "fa568f92d7483dd48be2d962bfa25fd1",
-        "md5": "fbd609492a5f7b75a8b563da221f1838"
+        "md5": "40b579d16580e508a2e2f3b57b606789"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#70a",
         "guid": "345539ff8666b914789ec264b2bb1092",
-        "md5": "581e426e85cc64d6754c62d08f63ebda"
+        "md5": "be9292bfca5bbcbce6a6a1f5ee0fd7f9"
       }
     ]
   }

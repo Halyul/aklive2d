@@ -1,0 +1,720 @@
+
+dyn_portrait_char_4064_mlynar_epoque#28.png
+size: 1000,1000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Mlynar_Ahoge
+  rotate: false
+  xy: 732, 653
+  size: 44, 39
+  orig: 44, 39
+  offset: 0, 0
+  index: -1
+Mlynar_B_Scarf
+  rotate: false
+  xy: 266, 198
+  size: 96, 54
+  orig: 96, 54
+  offset: 0, 0
+  index: -1
+Mlynar_Back_Hair
+  rotate: false
+  xy: 568, 574
+  size: 162, 174
+  orig: 162, 174
+  offset: 0, 0
+  index: -1
+Mlynar_Body_Light
+  rotate: 270
+  xy: 2, 187
+  size: 133, 181
+  orig: 133, 181
+  offset: 0, 0
+  index: -1
+Mlynar_Braid_A
+  rotate: false
+  xy: 84, 28
+  size: 73, 58
+  orig: 73, 58
+  offset: 0, 0
+  index: -1
+Mlynar_Braid_B
+  rotate: false
+  xy: 341, 59
+  size: 272, 100
+  orig: 272, 100
+  offset: 0, 0
+  index: -1
+Mlynar_Braid_C
+  rotate: false
+  xy: 709, 26
+  size: 145, 58
+  orig: 145, 58
+  offset: 0, 0
+  index: -1
+Mlynar_Braid_D
+  rotate: 270
+  xy: 870, 112
+  size: 147, 127
+  orig: 147, 127
+  offset: 0, 0
+  index: -1
+Mlynar_Braid_E
+  rotate: 180
+  xy: 2, 112
+  size: 237, 128
+  orig: 241, 128
+  offset: 4, 0
+  index: -1
+Mlynar_Chest
+  rotate: 180
+  xy: 495, 750
+  size: 232, 249
+  orig: 238, 271
+  offset: 0, 0
+  index: -1
+Mlynar_Chest_Back
+  rotate: false
+  xy: 891, 293
+  size: 89, 182
+  orig: 89, 182
+  offset: 0, 0
+  index: -1
+Mlynar_F_Scarf
+  rotate: 180
+  xy: 586, 144
+  size: 150, 99
+  orig: 150, 99
+  offset: 0, 0
+  index: -1
+Mlynar_Face
+  rotate: false
+  xy: 834, 477
+  size: 164, 223
+  orig: 164, 223
+  offset: 0, 0
+  index: -1
+Mlynar_Head_Light
+  rotate: false
+  xy: 591, 422
+  size: 178, 150
+  orig: 178, 150
+  offset: 0, 0
+  index: -1
+Mlynar_L_B_Hair_A
+  rotate: false
+  xy: 193, 855
+  size: 25, 102
+  orig: 25, 102
+  offset: 0, 0
+  index: -1
+Mlynar_L_B_Hair_B
+  rotate: false
+  xy: 981, 901
+  size: 16, 55
+  orig: 16, 55
+  offset: 0, 0
+  index: -1
+Mlynar_L_B_Hair_C
+  rotate: true
+  xy: 853, 38
+  size: 33, 116
+  orig: 33, 116
+  offset: 0, 0
+  index: -1
+Mlynar_L_B_Hair_D
+  rotate: false
+  xy: 470, 912
+  size: 24, 86
+  orig: 24, 86
+  offset: 0, 0
+  index: -1
+Mlynar_L_B_Hair_E
+  rotate: false
+  xy: 848, 904
+  size: 14, 51
+  orig: 14, 52
+  offset: 0, 0
+  index: -1
+Mlynar_L_B_Hair_F
+  rotate: true
+  xy: 738, 174
+  size: 47, 212
+  orig: 47, 212
+  offset: 0, 0
+  index: -1
+Mlynar_L_B_Hair_G
+  rotate: 270
+  xy: 216, 234
+  size: 195, 218
+  orig: 195, 218
+  offset: 0, 0
+  index: -1
+Mlynar_L_Brow
+  rotate: false
+  xy: 230, 306
+  size: 52, 17
+  orig: 52, 17
+  offset: 0, 0
+  index: -1
+Mlynar_L_Brow_ShaU
+  rotate: false
+  xy: 984, 870
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: -1
+Mlynar_L_CloseEye
+  rotate: false
+  xy: 755, 646
+  size: 39, 10
+  orig: 39, 10
+  offset: 0, 0
+  index: -1
+Mlynar_L_Cloth_A
+  rotate: 270
+  xy: 637, 214
+  size: 69, 326
+  orig: 69, 326
+  offset: 0, 0
+  index: -1
+Mlynar_L_Collar_A
+  rotate: 270
+  xy: 897, 68
+  size: 62, 101
+  orig: 62, 101
+  offset: 0, 0
+  index: -1
+Mlynar_L_Collar_B
+  rotate: true
+  xy: 229, 69
+  size: 78, 103
+  orig: 78, 103
+  offset: 0, 0
+  index: -1
+Mlynar_L_DownLid
+  rotate: false
+  xy: 806, 508
+  size: 33, 10
+  orig: 33, 10
+  offset: 0, 0
+  index: -1
+Mlynar_L_Ear
+  rotate: false
+  xy: 838, 946
+  size: 21, 52
+  orig: 21, 52
+  offset: 0, 0
+  index: -1
+Mlynar_L_EarA_A
+  rotate: false
+  xy: 854, 302
+  size: 34, 101
+  orig: 34, 101
+  offset: 0, 0
+  index: -1
+Mlynar_L_EarA_B
+  rotate: 270
+  xy: 465, 35
+  size: 50, 83
+  orig: 50, 83
+  offset: 0, 0
+  index: -1
+Mlynar_L_EarA_C
+  rotate: 270
+  xy: 608, 55
+  size: 46, 99
+  orig: 46, 99
+  offset: 0, 0
+  index: -1
+Mlynar_L_EyeLid_D
+  rotate: false
+  xy: 803, 987
+  size: 35, 11
+  orig: 36, 11
+  offset: 0, 0
+  index: -1
+Mlynar_L_EyeLid_U
+  rotate: false
+  xy: 725, 409
+  size: 40, 11
+  orig: 40, 11
+  offset: 0, 0
+  index: -1
+Mlynar_L_EyeSocket
+  rotate: false
+  xy: 169, 827
+  size: 42, 15
+  orig: 42, 15
+  offset: 0, 0
+  index: -1
+Mlynar_L_EyeSocket_Sha_A
+  rotate: false
+  xy: 349, 976
+  size: 53, 22
+  orig: 53, 22
+  offset: 0, 0
+  index: -1
+Mlynar_L_EyeSocket_Sha_B
+  rotate: false
+  xy: 467, 873
+  size: 26, 16
+  orig: 26, 16
+  offset: 0, 0
+  index: -1
+Mlynar_L_EyeSocket_Sha_C
+  rotate: false
+  xy: 404, 984
+  size: 26, 14
+  orig: 26, 14
+  offset: 0, 0
+  index: -1
+Mlynar_L_EyeWhite
+  rotate: false
+  xy: 281, 985
+  size: 32, 13
+  orig: 32, 13
+  offset: 0, 0
+  index: -1
+Mlynar_L_Eye_A
+  rotate: false
+  xy: 272, 990
+  size: 7, 8
+  orig: 7, 8
+  offset: 0, 0
+  index: -1
+Mlynar_L_Eye_B
+  rotate: false
+  xy: 485, 963
+  size: 17, 11
+  orig: 17, 11
+  offset: 0, 0
+  index: -1
+Mlynar_L_Eye_Canthus
+  rotate: false
+  xy: 984, 988
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+Mlynar_L_F_Collar_A
+  rotate: 180
+  xy: 70, 857
+  size: 156, 141
+  orig: 156, 141
+  offset: 0, 0
+  index: -1
+Mlynar_L_F_Collar_B
+  rotate: false
+  xy: 432, 265
+  size: 83, 406
+  orig: 83, 406
+  offset: 0, 0
+  index: -1
+Mlynar_L_Hair_A
+  rotate: false
+  xy: 340, 669
+  size: 17, 139
+  orig: 17, 139
+  offset: 0, 0
+  index: -1
+Mlynar_L_Hair_Aa
+  rotate: true
+  xy: 324, 54
+  size: 17, 139
+  orig: 17, 139
+  offset: 0, 0
+  index: -1
+Mlynar_L_Hair_B
+  rotate: false
+  xy: 535, 676
+  size: 29, 72
+  orig: 29, 72
+  offset: 0, 0
+  index: -1
+Mlynar_L_Hair_C
+  rotate: true
+  xy: 532, 90
+  size: 53, 157
+  orig: 53, 157
+  offset: 0, 0
+  index: -1
+Mlynar_L_Hair_D
+  rotate: false
+  xy: 394, 202
+  size: 42, 65
+  orig: 42, 65
+  offset: 0, 0
+  index: -1
+Mlynar_L_Hair_E
+  rotate: 270
+  xy: 691, 98
+  size: 74, 124
+  orig: 74, 124
+  offset: 0, 0
+  index: -1
+Mlynar_L_Shirt_A
+  rotate: 180
+  xy: 210, 308
+  size: 141, 690
+  orig: 141, 690
+  offset: 0, 0
+  index: -1
+Mlynar_L_Vest
+  rotate: 270
+  xy: 517, 257
+  size: 69, 335
+  orig: 69, 335
+  offset: 0, 0
+  index: -1
+Mlynar_L_Vest_B
+  rotate: false
+  xy: 2, 861
+  size: 41, 138
+  orig: 41, 139
+  offset: 0, 1
+  index: -1
+Mlynar_Mouth
+  rotate: false
+  xy: 673, 980
+  size: 50, 18
+  orig: 50, 18
+  offset: 0, 0
+  index: -1
+Mlynar_Mouth_Open
+  rotate: false
+  xy: 480, 975
+  size: 49, 23
+  orig: 49, 23
+  offset: 0, 0
+  index: -1
+Mlynar_Mouth_Smile
+  rotate: false
+  xy: 531, 980
+  size: 51, 18
+  orig: 51, 18
+  offset: 0, 0
+  index: -1
+Mlynar_Neck
+  rotate: false
+  xy: 859, 821
+  size: 125, 178
+  orig: 125, 180
+  offset: 0, 2
+  index: -1
+Mlynar_Nose
+  rotate: false
+  xy: 872, 774
+  size: 27, 53
+  orig: 27, 53
+  offset: 0, 0
+  index: -1
+Mlynar_Nose_Sha
+  rotate: false
+  xy: 2, 954
+  size: 15, 44
+  orig: 15, 44
+  offset: 0, 0
+  index: -1
+Mlynar_R_B_Collar
+  rotate: false
+  xy: 127, 64
+  size: 81, 53
+  orig: 81, 54
+  offset: 0, 1
+  index: -1
+Mlynar_R_B_Hair_A
+  rotate: false
+  xy: 957, 959
+  size: 36, 39
+  orig: 36, 39
+  offset: 0, 0
+  index: -1
+Mlynar_R_B_Hair_B
+  rotate: false
+  xy: 619, 363
+  size: 45, 78
+  orig: 45, 78
+  offset: 0, 0
+  index: -1
+Mlynar_R_B_Hair_C
+  rotate: true
+  xy: 730, 62
+  size: 38, 101
+  orig: 38, 101
+  offset: 0, 0
+  index: -1
+Mlynar_R_Brow
+  rotate: false
+  xy: 895, 704
+  size: 38, 10
+  orig: 38, 11
+  offset: 0, 1
+  index: -1
+Mlynar_R_Brow_ShaU
+  rotate: false
+  xy: 479, 985
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+Mlynar_R_CloseEye
+  rotate: false
+  xy: 771, 504
+  size: 31, 12
+  orig: 31, 12
+  offset: 0, 0
+  index: -1
+Mlynar_R_Cloth_A
+  rotate: false
+  xy: 729, 653
+  size: 164, 345
+  orig: 164, 348
+  offset: 0, 0
+  index: -1
+Mlynar_R_Collar_A
+  rotate: false
+  xy: 819, 71
+  size: 71, 100
+  orig: 71, 100
+  offset: 0, 0
+  index: -1
+Mlynar_R_Collar_A_Sha
+  rotate: false
+  xy: 2, 47
+  size: 58, 65
+  orig: 58, 65
+  offset: 0, 0
+  index: -1
+Mlynar_R_DownLid
+  rotate: false
+  xy: 705, 974
+  size: 27, 8
+  orig: 27, 8
+  offset: 0, 0
+  index: -1
+Mlynar_R_EarA_A
+  rotate: false
+  xy: 245, 314
+  size: 52, 74
+  orig: 52, 74
+  offset: 0, 0
+  index: -1
+Mlynar_R_EarA_B
+  rotate: false
+  xy: 779, 518
+  size: 52, 65
+  orig: 52, 65
+  offset: 0, 0
+  index: -1
+Mlynar_R_EarA_C
+  rotate: false
+  xy: 939, 635
+  size: 56, 79
+  orig: 56, 79
+  offset: 0, 0
+  index: -1
+Mlynar_R_Emblem
+  rotate: 180
+  xy: 380, 896
+  size: 95, 102
+  orig: 96, 102
+  offset: 1, 0
+  index: -1
+Mlynar_R_EyeLid_D
+  rotate: false
+  xy: 966, 479
+  size: 31, 9
+  orig: 31, 9
+  offset: 0, 0
+  index: -1
+Mlynar_R_EyeLid_U
+  rotate: false
+  xy: 746, 562
+  size: 33, 11
+  orig: 33, 11
+  offset: 0, 0
+  index: -1
+Mlynar_R_EyeSocket
+  rotate: false
+  xy: 962, 822
+  size: 35, 14
+  orig: 35, 14
+  offset: 0, 0
+  index: -1
+Mlynar_R_EyeSocket_Sha_A
+  rotate: false
+  xy: 150, 840
+  size: 43, 21
+  orig: 43, 21
+  offset: 0, 0
+  index: -1
+Mlynar_R_EyeSocket_Sha_B
+  rotate: false
+  xy: 982, 880
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+Mlynar_R_EyeSocket_Sha_C
+  rotate: false
+  xy: 477, 890
+  size: 13, 20
+  orig: 13, 20
+  offset: 0, 0
+  index: -1
+Mlynar_R_EyeWhite
+  rotate: false
+  xy: 129, 867
+  size: 29, 11
+  orig: 29, 11
+  offset: 0, 0
+  index: -1
+Mlynar_R_Eye_A
+  rotate: false
+  xy: 17, 991
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+Mlynar_R_Eye_B
+  rotate: false
+  xy: 843, 891
+  size: 15, 10
+  orig: 15, 10
+  offset: 0, 0
+  index: -1
+Mlynar_R_Eye_Canthus
+  rotate: false
+  xy: 228, 992
+  size: 8, 6
+  orig: 8, 6
+  offset: 0, 0
+  index: -1
+Mlynar_R_F_Collar
+  rotate: true
+  xy: 737, 570
+  size: 105, 123
+  orig: 105, 123
+  offset: 0, 0
+  index: -1
+Mlynar_R_F_Collar_B
+  rotate: false
+  xy: 501, 320
+  size: 145, 488
+  orig: 145, 488
+  offset: 0, 0
+  index: -1
+Mlynar_R_Hair_A
+  rotate: false
+  xy: 170, 655
+  size: 39, 104
+  orig: 39, 104
+  offset: 0, 0
+  index: -1
+Mlynar_R_Hair_B
+  rotate: false
+  xy: 326, 317
+  size: 45, 137
+  orig: 45, 137
+  offset: 0, 0
+  index: -1
+Mlynar_R_Hair_C
+  rotate: true
+  xy: 386, 116
+  size: 68, 191
+  orig: 68, 191
+  offset: 0, 0
+  index: -1
+Mlynar_R_Hair_D
+  rotate: true
+  xy: 185, 140
+  size: 120, 214
+  orig: 132, 214
+  offset: 0, 0
+  index: -1
+Mlynar_R_Hair_E
+  rotate: false
+  xy: 546, 299
+  size: 46, 50
+  orig: 46, 50
+  offset: 0, 0
+  index: -1
+Mlynar_R_Satin_A
+  rotate: 270
+  xy: 287, 48
+  size: 78, 87
+  orig: 78, 87
+  offset: 0, 0
+  index: -1
+Mlynar_R_Satin_Air
+  rotate: false
+  xy: 909, 716
+  size: 89, 104
+  orig: 89, 104
+  offset: 0, 0
+  index: -1
+Mlynar_R_Satin_B
+  rotate: false
+  xy: 102, 877
+  size: 32, 58
+  orig: 32, 58
+  offset: 0, 0
+  index: -1
+Mlynar_R_Satin_C
+  rotate: false
+  xy: 179, 611
+  size: 29, 49
+  orig: 29, 49
+  offset: 0, 0
+  index: -1
+Mlynar_R_Satin_D
+  rotate: false
+  xy: 2, 74
+  size: 124, 108
+  orig: 124, 108
+  offset: 0, 0
+  index: -1
+Mlynar_R_Shirt_A
+  rotate: false
+  xy: 2, 261
+  size: 245, 737
+  orig: 245, 737
+  offset: 0, 0
+  index: -1
+Mlynar_R_Shoulder_Armor
+  rotate: false
+  xy: 675, 300
+  size: 108, 120
+  orig: 108, 120
+  offset: 0, 0
+  index: -1
+Mlynar_R_SleeveC
+  rotate: false
+  xy: 763, 286
+  size: 126, 216
+  orig: 126, 216
+  offset: 0, 0
+  index: -1
+Mlynar_R_Vest
+  rotate: 180
+  xy: 318, 426
+  size: 186, 572
+  orig: 186, 572
+  offset: 0, 0
+  index: -1
+Mlynar_Scarf_A
+  rotate: false
+  xy: 438, 165
+  size: 124, 105
+  orig: 124, 105
+  offset: 0, 0
+  index: -1
+Mlynar_Scarf_B
+  rotate: false
+  xy: 2, 329
+  size: 33, 104
+  orig: 33, 104
+  offset: 0, 0
+  index: -1

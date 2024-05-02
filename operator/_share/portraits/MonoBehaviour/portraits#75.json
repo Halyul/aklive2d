@@ -119,8 +119,8 @@
       "rotate": 0
     },
     {
-      "name": "char_2025_shu_2",
-      "guid": "61539b360a855bc41adb0dbeaefe64a7",
+      "name": "char_385_finlpp_nian#11",
+      "guid": "9b2fbbf370039544a96b691a6ff3d293",
       "atlas": 0,
       "rect": {
         "x": 728,
@@ -131,11 +131,23 @@
       "rotate": 0
     },
     {
+      "name": "char_2025_shu_2",
+      "guid": "61539b360a855bc41adb0dbeaefe64a7",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
       "name": "char_2025_shu_1",
       "guid": "c839537c9be6abd41b20a702708786b4",
       "atlas": 0,
       "rect": {
-        "x": 0,
+        "x": 364,
         "y": 724,
         "w": 360,
         "h": 180
@@ -204,6 +216,11 @@
         "md5": "015988cbd04d943e3ea07eca79287251"
       },
       {
+        "name": "char_385_finlpp_nian#11",
+        "guid": "9b2fbbf370039544a96b691a6ff3d293",
+        "md5": "9860b198041786cb303dfa50b0079535"
+      },
+      {
         "name": "char_2025_shu_2",
         "guid": "61539b360a855bc41adb0dbeaefe64a7",
         "md5": "119b59da30660a9174eabb9e4e143433"
@@ -218,14 +235,14 @@
       {
         "name": "portraits#75",
         "guid": "a496beea5455d424f894405f5884033c",
-        "md5": "1fc0a17da229cd6d8e019e485392bf97"
+        "md5": "6de6945d3621d76b6120df06bef2cc69"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#75a",
         "guid": "3b52934fe07f4c74389caed875dfb8ea",
-        "md5": "26ac2157630b9ed5eb2fe14d53f6dc9d"
+        "md5": "80bb85bbedd43789855072904eb18de3"
       }
     ]
   }

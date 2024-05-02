@@ -199,12 +199,12 @@ export default function Home() {
                                 <section className={classes.title}>
                                   {entry.codename[language]}
                                 </section>
-                                <seection className={classes['arrow-icon']}>
+                                <section className={classes['arrow-icon']}>
                                   <section className={classes.bar}></section>
                                   <section className={classes.bar}></section>
                                   <section className={classes.bar}></section>
                                   <section className={classes.bar}></section>
-                                </seection>
+                                </section>
                               </section>
                             </section>
                           </section>

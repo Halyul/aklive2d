@@ -444,12 +444,12 @@ export default function Operator() {
                     <section className={`${classes.text} ${classes['no-overflow']}`}>
                       {i18n('web_version')}
                     </section>
-                    <seection className={classes['arrow-icon']}>
+                    <section className={classes['arrow-icon']}>
                       <section className={classes.bar}></section>
                       <section className={classes.bar}></section>
                       <section className={classes.bar}></section>
                       <section className={classes.bar}></section>
-                    </seection>
+                    </section>
                   </section>
                 </section>
               </Link>
@@ -468,12 +468,12 @@ export default function Operator() {
                         <section className={`${classes.text} ${classes['no-overflow']}`}>
                           {i18n('steam_workshop')}
                         </section>
-                        <seection className={classes['arrow-icon']}>
+                        <section className={classes['arrow-icon']}>
                           <section className={classes.bar}></section>
                           <section className={classes.bar}></section>
                           <section className={classes.bar}></section>
                           <section className={classes.bar}></section>
-                        </seection>
+                        </section>
                       </section>
                     </section>
                   </Link>

@@ -11063,6 +11063,10 @@ var spine;
 				config.showControls = true;
 			if (typeof config.defaultMix === "undefined")
 				config.defaultMix = 0.25;
+			config.devicePixelRatio = window.devicePixelRatio || 1;
+			config.settingsScale = 1;
+			if (typeof window.settings !== "undefined")
+				config.settingsScale = window.settings.scale;
 			return config;
 		};
 		SpinePlayer.prototype.showError = function (error) {
@@ -11387,10 +11391,11 @@ var spine;
 							height: oldViewport.height + (viewport.height - oldViewport.height) * transitionAlpha
 						};
 					}
-					var devicePixelRatio = window.devicePixelRatio || 1;
+					var devicePixelRatio = this.config.devicePixelRatio;
 					var viewportSize = this.scale(viewport.width, viewport.height, this.canvas.width, this.canvas.height);
 					// this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x;
-					this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x * window.settings.scale;
+					
+					this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x * this.config.settingsScale;
 					this.sceneRenderer.camera.position.x = viewport.x + viewport.width / 2;
 					this.sceneRenderer.camera.position.y = viewport.y + viewport.height / 2;
 					this.sceneRenderer.begin();

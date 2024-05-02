@@ -69,3 +69,8 @@ operators:
   shu: !include config/shu.yaml
   lin_heavenly_mirage: !include config/lin_heavenly_mirage.yaml
   chongyue_alighting: !include config/chongyue_alighting.yaml
+  wisadel: !include config/wisadel.yaml
+  muelsyse_young_branch: !include config/muelsyse_young_branch.yaml
+  skadi_the_corrupting_heart_red_countess: !include config/skadi_the_corrupting_heart_red_countess.yaml
+  ines_under_the_flaming_dome: !include config/ines_under_the_flaming_dome.yaml
+  silverash_never_melting_ice: !include config/silverash_never_melting_ice.yaml

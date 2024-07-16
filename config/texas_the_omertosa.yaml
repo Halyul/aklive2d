@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 缄默德克萨斯
   en-US: Texas the Omertosa
+use_json: false
 offical_id: "202210210"

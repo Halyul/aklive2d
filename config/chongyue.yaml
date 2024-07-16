@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 重岳
   en-US: Chongyue
+use_json: false
 offical_id: "202301606"

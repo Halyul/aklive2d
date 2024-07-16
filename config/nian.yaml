@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 年
   en-US: Nian
+use_json: false
 offical_id: "202203231"

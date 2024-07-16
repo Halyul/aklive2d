@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 复现荣光 · 耀骑士临光
   en-US: Relight / Nearl
+use_json: false
 offical_id: "202210623"

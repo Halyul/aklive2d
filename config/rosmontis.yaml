@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 迷迭香
   en-US: Rosmontis
+use_json: false
 offical_id: "20220378"

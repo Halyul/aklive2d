@@ -220,6 +220,9 @@ async function main() {
       }, {
         key: "music_mapping",
         value: JSON.stringify(musicMapping)
+      }, {
+        key: "use_json",
+        value: __config.operators[OPERATOR_NAME].use_json
       }
     ]), envPath)
 

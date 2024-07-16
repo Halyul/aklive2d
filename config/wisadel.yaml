@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 维什戴尔
   en-US: Wisadel
+use_json: false
 offical_id: "202404049"

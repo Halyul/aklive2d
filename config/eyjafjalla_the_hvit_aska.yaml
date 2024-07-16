@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 纯烬艾雅法拉
   en-US: Eyjafjalla the Hvít Aska
+use_json: false
 offical_id: "202307865"

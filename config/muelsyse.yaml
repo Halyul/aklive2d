@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 缪尔赛思
   en-US: Muelsyse
+use_json: false
 offical_id: "202304611"

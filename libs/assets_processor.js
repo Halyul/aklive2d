@@ -43,14 +43,20 @@ export default class AssetsProcessor {
         const croppedBuffer = await this.#alphaCompositer.crop(portraitBuffer, rect)
         await write(croppedBuffer, path.join(this.#operatorSourceFolder, this.#operatorName, `${fallback_name}_portrait.png`))
 
-        return await this.generateAssets(__config.operators[this.#operatorName].filename, extractedDir)
+        return await this.generateAssets(__config.operators[this.#operatorName].filename, extractedDir, __config.operators[this.#operatorName].use_json)
     }
 
-    async generateAssets(filename, extractedDir) {
+    async generateAssets(filename, extractedDir, useJSON=false) {
         const BASE64_BINARY_PREFIX = 'data:application/octet-stream;base64,'
         const BASE64_PNG_PREFIX = 'data:image/png;base64,'
         const assetsJson = {}
-        const skelFilename = `${filename}.skel`
+
+        let skelFilename;
+        if (useJSON) {
+            skelFilename = `${filename}.json`
+        } else {
+            skelFilename = `${filename}.skel`
+        }
         const skel = await read(path.join(extractedDir, skelFilename), null)
         const atlasFilename = `${filename}.atlas`
         const atlas = await read(path.join(extractedDir, atlasFilename))

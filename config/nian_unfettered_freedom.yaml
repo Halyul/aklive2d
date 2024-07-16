@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 乐逍遥 · 年
   en-US: Unfettered Freedom / Nian
+use_json: false
 offical_id: "20220362"

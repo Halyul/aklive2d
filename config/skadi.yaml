@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 浊心斯卡蒂
   en-US: Skadi the Corrupting Heart
+use_json: false
 offical_id: "20220396"

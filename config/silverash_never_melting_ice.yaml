@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 不融冰 · 银灰
   en-US: Never-Melting Ice / SilverAsh
+use_json: false
 offical_id: "202404066"

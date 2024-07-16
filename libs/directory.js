@@ -34,20 +34,6 @@ export default function ({ backgrounds, musicMapping }) {
       .sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date)),
   }
 
-  const changelogs = read(path.join(__projectRoot, 'changelogs.yaml'))
-  const changelogsArray = Object.keys(changelogs).reduce((acc, cur) => {
-    const array = []
-    Object.keys(changelogs[cur]).map((item) => {
-      array.push({
-        key: cur,
-        date: item,
-        content: [...changelogs[cur][item]]
-      })
-    })
-    acc.push(array)
-    return acc
-  }, [])
-
   __config.directory.error.files.forEach((key) => {
     const assetsProcessor = new AssetsProcessor()
     assetsProcessor.generateAssets(key.key, extractedFolder).then((content) => {
@@ -88,7 +74,6 @@ export default function ({ backgrounds, musicMapping }) {
   ]), path.join(__projectRoot, 'directory', '.env'))
 
   writeSync(JSON.stringify(directoryJson, null), path.join(directoryAssetFolder, "_directory.json"))
-  writeSync(JSON.stringify(changelogsArray, null), path.join(directoryAssetFolder, "_changelogs.json"))
   writeSync(JSON.stringify(backgrounds, null), path.join(directoryAssetFolder, "_backgrounds.json"))
   filesToCopy.forEach((key) => {
     copy(path.join(sourceFolder, key, 'assets.json'), path.join(targetFolder, `${__config.operators[key].filename}.json`))

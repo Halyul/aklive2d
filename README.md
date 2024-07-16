@@ -149,7 +149,7 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 | Background | arts/ui/homebackground/wrapper/ | Sprite |
 | Voice Clips | audio/sound_beta_2/voice{_*}/ | AudioClip |
 | Voice Lines<sup>3</sup> | gamedata/excel/charword_table.ab | TextAsset |
-| Portrait Images<sup>1</sup> | arts/charportraits | Texture2D |
+| Portrait Images<sup>1</sup> | arts/charportraits | Texture2D & MonoBehaviour |
 | Home Music<sup>2</sup> | audio/sound_beta_2/music | AudioClip |
 
 <sup>1</sup>: `portrait_hub` is required to locate the image
@@ -157,3 +157,21 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 <sup>2</sup>: `gamedata/excel/display_meta_table.json->homeBackgroundData`<sup>3</sup> and `gamedata/excel/audio_data.json`<sup>3</sup> is required to locate the music.
 
 <sup>3</sup>: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData) for the Chinese version and [Kengxxiao/ArknightsGameData_YoStar](https://github.com/Kengxxiao/ArknightsGameData_YoStar) for other regions.
+
+## URLs
+
+| Name | URL | Note |
+|------|-----|------|
+| Config | [link](https://ak-conf.hypergryph.com/config/prod/official/Android/version) | Version info |
+| Current Hot Update JSON | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/hot_update_list.json) | Directory JSON | 
+| Voice JP | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vcjp.dat) | Voice JP |
+| Voice CN | [link 1](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vccn.dat), [link 2](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vcbsc.dat) | Voice CN |
+| Voice KR | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vckr.dat) | Voice KR |
+| Voice EN | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vcen.dat) | Voice EN |
+| Voice Custom | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vccsm.dat) | Voice Custom |
+| Misc | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_v052.dat) | Latest Home Background, Skin Static Image |
+| Init | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_init.dat) | Logos, Background, Portrait Images |
+| Dynaimc Characters | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_dynilst.dat) | Dynaimc Character |
+| Static Image | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_crart.dat) | Operator Static Image |
+| Home Music | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_music.dat) | Home Music |
+| L Com? | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_lcom.dat) | portrait_hub.ab |

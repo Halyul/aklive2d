@@ -1,15 +1,15 @@
 .return-button {
-  %arrow-shared {
-    border-top: 0.24rem solid transparent;
-    border-bottom: 0.24rem solid transparent;
-  }
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0.6rem 0;
   width: 3rem;
   cursor: pointer;
+
+  %arrow-shared {
+    border-top: 0.24rem solid transparent;
+    border-bottom: 0.24rem solid transparent;
+  }
 
   .wrapper {
     display: flex;

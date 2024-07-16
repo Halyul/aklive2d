@@ -1,0 +1,215 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#82",
+  "_sprites": [
+    {
+      "name": "char_4147_mitm_2",
+      "guid": "00565e13e9aa6a641ba482a42097ed3a",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4147_mitm_1",
+      "guid": "cb4640d9fc696434d92e5dd6367d1b59",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4146_nymph_2",
+      "guid": "0185d73ddfc15e54ba646d112331aaab",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4146_nymph_1",
+      "guid": "fa1c13e5e95157d43b7c3866b3cb80e7",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4082_qiubai_epoque#31",
+      "guid": "65f7ff86c76108d4194604d6f305076d",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4032_provs_summer#17",
+      "guid": "b1f8d58f201fe434d9048b0b5504118a",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4027_heyak_ambiencesynesthesia#4",
+      "guid": "ea2bfc2f35354b2479348a4343b12a85",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_282_catap_summer#17",
+      "guid": "d218120a88e54f8489860967753077a9",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_2012_typhon_summer#17",
+      "guid": "9af8243099ce1ea41bdd075c45d4bbf3",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1020_reed2_summer#17",
+      "guid": "a32e11f47e22aea4ba895fa550ecab73",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 2771697861590635028
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 4929277022262629210
+    },
+    "size": 1024
+  },
+  "_index": 82,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_4147_mitm_2",
+        "guid": "00565e13e9aa6a641ba482a42097ed3a",
+        "md5": "93235d5b7e6a739bb3317900d480301d"
+      },
+      {
+        "name": "char_4147_mitm_1",
+        "guid": "cb4640d9fc696434d92e5dd6367d1b59",
+        "md5": "1a85653b9ad3e40f3cb598c5b48c4b89"
+      },
+      {
+        "name": "char_4146_nymph_2",
+        "guid": "0185d73ddfc15e54ba646d112331aaab",
+        "md5": "5bed42a845c554e9ae40b44d439a2b6e"
+      },
+      {
+        "name": "char_4146_nymph_1",
+        "guid": "fa1c13e5e95157d43b7c3866b3cb80e7",
+        "md5": "852ba7eb8c1e541edb9596dab67ac4d4"
+      },
+      {
+        "name": "char_4082_qiubai_epoque#31",
+        "guid": "65f7ff86c76108d4194604d6f305076d",
+        "md5": "320faec2f237849bc70e9269f8d2a7b5"
+      },
+      {
+        "name": "char_4032_provs_summer#17",
+        "guid": "b1f8d58f201fe434d9048b0b5504118a",
+        "md5": "7386ed1b8acf0cba3faabad557be5f73"
+      },
+      {
+        "name": "char_4027_heyak_ambiencesynesthesia#4",
+        "guid": "ea2bfc2f35354b2479348a4343b12a85",
+        "md5": "e8cfea151d074185fc1278d605c833f6"
+      },
+      {
+        "name": "char_282_catap_summer#17",
+        "guid": "d218120a88e54f8489860967753077a9",
+        "md5": "96120854b582f712468dea4a5c65dda7"
+      },
+      {
+        "name": "char_2012_typhon_summer#17",
+        "guid": "9af8243099ce1ea41bdd075c45d4bbf3",
+        "md5": "f9e212671fc66193333c7bffec5cdd01"
+      },
+      {
+        "name": "char_1020_reed2_summer#17",
+        "guid": "a32e11f47e22aea4ba895fa550ecab73",
+        "md5": "08be35482dd0ccd82b222e93d67f47de"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#82",
+        "guid": "077a4c2d29ba42446a4c1ffe344aa527",
+        "md5": "1abbdb49436351ac902a04225087d165"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#82a",
+        "guid": "9b793bfc0d48b974b8c6d4a2f1a1516a",
+        "md5": "9d55e3196088ad5d8e8993ce66010f42"
+      }
+    ]
+  }
+}

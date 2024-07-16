@@ -1,0 +1,249 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#81",
+  "_sprites": [
+    {
+      "name": "char_4145_ulpia_2",
+      "guid": "329e1065525074841aff6a4fa3933044",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4145_ulpia_1",
+      "guid": "48861d7137fdf5b4b936f15f3ad245ea",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4137_udflow_2",
+      "guid": "4eceb25962f83cd47b57e6e39a04da48",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4137_udflow_1",
+      "guid": "fc494a106a890a14a85223703e277302",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4122_grabds_yun#3",
+      "guid": "d83ed0bbb67bf484daa7c755ebc6a7ff",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4091_ulika_sanrio#1",
+      "guid": "72637764e95aeca47949bcefe72c6bed",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4079_haini_2",
+      "guid": "1ec4248a672378048904693351cd9659",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4079_haini_1",
+      "guid": "aca53e95c28330e429869f1a9783c779",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4065_judge_epoque#33",
+      "guid": "e05ef7faa7864784987c3c58ad4a326f",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4006_melnte_epoque#33",
+      "guid": "033ccb12c9edee547ae6e26754b385d2",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_377_gdglow_sanrio#1",
+      "guid": "73bdf28ba42809f40b59ed6fb0bff820",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
+      "name": "char_322_lmlee_sanrio#1",
+      "guid": "921722a48cab86b448b7badf03701098",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": 2417047571134463577
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 8001742032028095983
+    },
+    "size": 1024
+  },
+  "_index": 81,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_4145_ulpia_2",
+        "guid": "329e1065525074841aff6a4fa3933044",
+        "md5": "74c36e75f115041101dbdff4a96226b6"
+      },
+      {
+        "name": "char_4145_ulpia_1",
+        "guid": "48861d7137fdf5b4b936f15f3ad245ea",
+        "md5": "1f8f13f116b353b5fed1d2b7807f9a15"
+      },
+      {
+        "name": "char_4137_udflow_2",
+        "guid": "4eceb25962f83cd47b57e6e39a04da48",
+        "md5": "8be5cea2e4768619a74f2b46fa4fa27a"
+      },
+      {
+        "name": "char_4137_udflow_1",
+        "guid": "fc494a106a890a14a85223703e277302",
+        "md5": "1b81770a16d651b7f63c503bb01cbfa8"
+      },
+      {
+        "name": "char_4122_grabds_yun#3",
+        "guid": "d83ed0bbb67bf484daa7c755ebc6a7ff",
+        "md5": "263aa54a28a9bb5872ca013c45276225"
+      },
+      {
+        "name": "char_4091_ulika_sanrio#1",
+        "guid": "72637764e95aeca47949bcefe72c6bed",
+        "md5": "00a7e35e95571b99707ad05f4b8932ce"
+      },
+      {
+        "name": "char_4079_haini_2",
+        "guid": "1ec4248a672378048904693351cd9659",
+        "md5": "f8600e848c461c87d7b8b841494de986"
+      },
+      {
+        "name": "char_4079_haini_1",
+        "guid": "aca53e95c28330e429869f1a9783c779",
+        "md5": "8ae0ba58a67e7e8e753ac6593a65ee91"
+      },
+      {
+        "name": "char_4065_judge_epoque#33",
+        "guid": "e05ef7faa7864784987c3c58ad4a326f",
+        "md5": "c8966123c3db8f07010cf6110d36f299"
+      },
+      {
+        "name": "char_4006_melnte_epoque#33",
+        "guid": "033ccb12c9edee547ae6e26754b385d2",
+        "md5": "31d7d7c98f2648649476b33d48885438"
+      },
+      {
+        "name": "char_377_gdglow_sanrio#1",
+        "guid": "73bdf28ba42809f40b59ed6fb0bff820",
+        "md5": "f2262cf6888ad151b58074fff38cec45"
+      },
+      {
+        "name": "char_322_lmlee_sanrio#1",
+        "guid": "921722a48cab86b448b7badf03701098",
+        "md5": "81daf2a2b8dc39d5c5958c47bd05bbf0"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#81",
+        "guid": "ea205eebe78f9a14799095ac5f56092c",
+        "md5": "f3093e211a725cd4de79ee50b87b2d4d"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#81a",
+        "guid": "8291f213b91f0b94082950e8080111d8",
+        "md5": "b9c42064740c81d3862931471b1a0873"
+      }
+    ]
+  }
+}

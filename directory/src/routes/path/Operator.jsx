@@ -173,7 +173,7 @@ export default function Operator() {
 
   useEffect(() => {
     if (spineRef.current?.children.length === 0 && spineData && config) {
-      setSpinePlayer(new spine.SpinePlayer(spineRef.current, {
+      const playerConfig = {
         skelUrl: `./assets/${config.filename.replace('#', '%23')}.skel`,
         atlasUrl: `./assets/${config.filename.replace('#', '%23')}.atlas`,
         rawDataURIs: spineData,
@@ -215,7 +215,15 @@ export default function Operator() {
             lastVoiceId = currentVoiceId
           }
         }
-      }))
+      }
+
+      if (config.use_json) {
+        playerConfig.jsonUrl = `./assets/${config.filename.replace('#', '%23')}.json`;
+      } else {
+        playerConfig.skelUrl = `./assets/${config.filename.replace('#', '%23')}.skel`;
+      }
+
+      setSpinePlayer(new spine.SpinePlayer(spineRef.current, playerConfig))
     }
   }, [config, spineData, spineAnimation]);
 

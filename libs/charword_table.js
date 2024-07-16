@@ -110,12 +110,14 @@ export default class CharwordTable {
     Object.values(data.charWords).forEach(item => {
       const operatorInfo = Object.values(this.#charwordTable.operators).filter(element => element.info[region][item.wordKey])
       if (operatorInfo.length > 0) {
-        if (typeof operatorInfo[0].voice[region][item.wordKey] === 'undefined') {
-          operatorInfo[0].voice[region][item.wordKey] = {}
-        }
-        operatorInfo[0].voice[region][item.wordKey][item.voiceId] = {
-          title: item.voiceTitle,
-          text: item.voiceText.replace(/{@nickname}/g, NICKNAME[region]),
+        for (const operator of operatorInfo) {
+          if (typeof operator.voice[region][item.wordKey] === 'undefined') {
+            operator.voice[region][item.wordKey] = {}
+          }
+          operator.voice[region][item.wordKey][item.voiceId] = {
+            title: item.voiceTitle,
+            text: item.voiceText.replace(/{@nickname}/g, NICKNAME[region]),
+          }
         }
       }
     })

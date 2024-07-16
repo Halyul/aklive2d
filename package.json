@@ -23,36 +23,35 @@
     "offical_update": "node aklive2d offical_update"
   },
   "devDependencies": {
-    "@perfsee/rollup": "^1.13.0",
-    "@types/react": "^18.3.1",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.6.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react": "^7.34.4",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "postcss": "^8.4.38",
+    "postcss": "^8.4.39",
     "prop-types": "^15.8.1",
     "rollup": "^3.29.4",
-    "sass": "^1.76.0",
-    "stylelint": "^15.11.0",
-    "stylelint-config-standard": "^30.0.1",
-    "stylelint-config-standard-scss": "^7.0.1",
-    "vite": "^4.5.3"
+    "sass": "^1.77.8",
+    "stylelint": "^16.7.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "vite": "^5.3.3"
   },
   "dependencies": {
     "@parcellab/react-use-umami": "^2.0.1",
     "dotenv": "^16.4.5",
-    "jotai": "^2.8.0",
+    "jotai": "^2.9.0",
     "jsdom": "^22.1.0",
     "node-fetch": "^3.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-refresh": "^0.14.2",
-    "react-router-dom": "^6.23.0",
+    "react-router-dom": "^6.24.1",
     "react-simple-typewriter": "^5.0.1",
     "reset-css": "^5.0.2",
     "sharp": "^0.32.6",
-    "yaml": "^2.4.2"
+    "yaml": "^2.4.5"
   }
 }

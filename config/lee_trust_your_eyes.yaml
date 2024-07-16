@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 手到牌来 · 老鲤
   en-US: Trust Your Eyes / Lee
+use_json: false
 offical_id: "202210279"

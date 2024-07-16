@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 令
   en-US: Ling
+use_json: false
 offical_id: "20220383"

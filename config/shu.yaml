@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 黍
   en-US: Shu
+use_json: false
 offical_id: "202401025"

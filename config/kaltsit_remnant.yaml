@@ -9,4 +9,5 @@ invert_filter: false
 codename:
   zh-CN: 残余 · 凯尔希
   en-US: Remnant / Kal'tsit
+use_json: false
 offical_id: "202304833"

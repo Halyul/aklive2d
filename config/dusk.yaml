@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 夕
   en-US: Dusk
+use_json: false
 offical_id: "202203263"

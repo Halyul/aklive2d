@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 归溟幽灵鲨
   en-US: Specter the Unchained
+use_json: false
 offical_id: "202204284"

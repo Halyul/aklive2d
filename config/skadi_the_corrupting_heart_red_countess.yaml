@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 红女爵 · 浊心斯卡蒂
   en-US: Red Countess / Skadi the Corrupting Heart
+use_json: false
 offical_id: "202404008"

@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 生而为一 · 归溟幽灵鲨
   en-US: Born as One / Specter the Unchained
+use_json: false
 offical_id: "202304670"

@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 远路 · 玛恩纳
   en-US: W Dali / Młynar
+use_json: false
 offical_id: "202310850"

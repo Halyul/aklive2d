@@ -9,4 +9,5 @@ invert_filter: true
 codename:
   zh-CN: 何处栖 · 重岳
   en-US: Alighting / Chongyue
+use_json: false
 offical_id: "202401812"

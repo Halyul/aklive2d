@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: 恍惚 · W
   en-US: Wonder / W
+use_json: false
 offical_id: "202206246"

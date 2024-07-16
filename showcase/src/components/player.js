@@ -9,8 +9,7 @@ let isPlayingInteract = false;
 
 export default function spinePlayer(el) {
   el.hidden = false
-  return new spine.SpinePlayer(el, {
-    skelUrl: `./assets/${import.meta.env.VITE_FILENAME}.skel`,
+  const playerConfig = {
     atlasUrl: `./assets/${import.meta.env.VITE_FILENAME}.atlas`,
     rawDataURIs: assets,
     premultipliedAlpha: true,
@@ -62,5 +61,11 @@ export default function spinePlayer(el) {
       window.settings.success()
       window.music.success()
     },
-  })
+  }
+  if (import.meta.env.VITE_USE_JSON === "true") {
+    playerConfig.jsonUrl = `./assets/${import.meta.env.VITE_FILENAME}.json`
+  } else {
+    playerConfig.skelUrl = `./assets/${import.meta.env.VITE_FILENAME}.skel`
+  }
+  return new spine.SpinePlayer(el, playerConfig)
 }

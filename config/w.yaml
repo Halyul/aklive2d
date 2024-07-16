@@ -9,4 +9,5 @@ invert_filter: true
 codename: 
   zh-CN: W
   en-US: W
+use_json: false
 offical_id: "20220319"

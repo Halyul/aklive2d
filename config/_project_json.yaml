@@ -2,7 +2,6 @@ description: !match "~{split('config', 'title' ,' - ')[0]} Live 2D\n~{split('con
 localization:
   en-us:
     ui_notice_title: <hr><h4>📝 Notes</h4><hr>
-    ui_notice_changelog: <span><b>Set your own music now!</b></span>
     ui_notice_set_fps: <span><b>Set FPS target in Settings</b></span>
     ui_notice_github: "Github: https://gura.ch/aklive2d-gh"
     ui_notice_other_operators: "Previews: https://gura.ch/aklive2d"
@@ -42,7 +41,6 @@ localization:
     ui_useStartAnimation_title: Use Start Animation
   zh-chs:
     ui_notice_title: <hr><h4>📝 通知</h4><hr>
-    ui_notice_changelog: <span><b>可设定自定义音乐! </b></span>
     ui_notice_set_fps: <span><b>在设置中设定FPS目标</b></span>
     ui_notice_github: "Github: https://gura.ch/aklive2d-gh"
     ui_notice_other_operators: "预览: https://gura.ch/aklive2d"
@@ -84,9 +82,6 @@ properties:
   - key: notice_title
     value: 
      text: ui_notice_title
-  # - key: notice_changelog
-  #   value: 
-  #    text: ui_notice_changelog
   - key: notice_set_fps
     value: 
      text: ui_notice_set_fps

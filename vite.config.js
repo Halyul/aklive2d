@@ -10,7 +10,6 @@ import Music from './libs/music.js';
 import Background from './libs/background.js'
 import directory from './libs/directory.js'
 import OfficalInfo from './libs/offical_info.js';
-import { PerfseePlugin } from '@perfsee/rollup'
 
 global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
 
@@ -157,10 +156,6 @@ class ViteRunner {
       base: "/",
       plugins: [
         react(),
-        // PerfseePlugin({
-        //   project: 'aklive2d',
-        //   artifactName: 'directory',
-        // }),
       ],
       publicDir: path.resolve(__projectRoot, this.#globalConfig.folder.release),
       root: directoryDir,

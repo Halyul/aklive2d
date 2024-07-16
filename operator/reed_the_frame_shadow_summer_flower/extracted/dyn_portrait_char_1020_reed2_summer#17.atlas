@@ -1,0 +1,671 @@
+
+dyn_portrait_char_1020_reed2_summer#17.png
+size: 940,940
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Reed2_A_FrontHair
+  rotate: true
+  xy: 303, 188
+  size: 92, 93
+  orig: 92, 93
+  offset: 0, 0
+  index: -1
+Reed2_B_Bow_1
+  rotate: 180
+  xy: 806, 655
+  size: 132, 191
+  orig: 134, 218
+  offset: 2, 21
+  index: -1
+Reed2_B_Bow_2
+  rotate: false
+  xy: 166, 326
+  size: 216, 117
+  orig: 226, 119
+  offset: 10, 0
+  index: -1
+Reed2_B_Bow_3
+  rotate: false
+  xy: 170, 413
+  size: 251, 122
+  orig: 260, 124
+  offset: 1, 2
+  index: -1
+Reed2_BackHair_1
+  rotate: 270
+  xy: 531, 69
+  size: 118, 145
+  orig: 118, 145
+  offset: 0, 0
+  index: -1
+Reed2_BackHair_13
+  rotate: true
+  xy: 646, 382
+  size: 137, 292
+  orig: 140, 294
+  offset: 0, 2
+  index: -1
+Reed2_BackHair_14
+  rotate: false
+  xy: 447, 410
+  size: 140, 133
+  orig: 140, 133
+  offset: 0, 0
+  index: -1
+Reed2_BackHair_2
+  rotate: 270
+  xy: 550, 211
+  size: 152, 198
+  orig: 176, 246
+  offset: 0, 8
+  index: -1
+Reed2_BackHair_3
+  rotate: true
+  xy: 567, 146
+  size: 99, 157
+  orig: 109, 157
+  offset: 0, 0
+  index: -1
+Reed2_BackHair_4
+  rotate: 270
+  xy: 747, 192
+  size: 111, 191
+  orig: 119, 193
+  offset: 0, 0
+  index: -1
+Reed2_BackHair_5
+  rotate: false
+  xy: 88, 87
+  size: 345, 108
+  orig: 370, 119
+  offset: 25, 4
+  index: -1
+Reed2_Body_1
+  rotate: false
+  xy: 2, 543
+  size: 233, 395
+  orig: 233, 395
+  offset: 0, 0
+  index: -1
+Reed2_Bow_1
+  rotate: 270
+  xy: 707, 579
+  size: 116, 116
+  orig: 116, 119
+  offset: 0, 3
+  index: -1
+Reed2_Bow_2
+  rotate: 180
+  xy: 801, 158
+  size: 137, 78
+  orig: 137, 78
+  offset: 0, 0
+  index: -1
+Reed2_Ear
+  rotate: false
+  xy: 676, 847
+  size: 34, 52
+  orig: 34, 52
+  offset: 0, 0
+  index: -1
+Reed2_Face_1
+  rotate: 180
+  xy: 425, 721
+  size: 175, 218
+  orig: 175, 220
+  offset: 0, 0
+  index: -1
+Reed2_Face_2
+  rotate: false
+  xy: 201, 903
+  size: 71, 35
+  orig: 71, 35
+  offset: 0, 0
+  index: -1
+Reed2_Flower
+  rotate: true
+  xy: 177, 162
+  size: 110, 109
+  orig: 110, 109
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_1
+  rotate: false
+  xy: 2, 64
+  size: 124, 68
+  orig: 124, 68
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_10
+  rotate: false
+  xy: 712, 229
+  size: 226, 203
+  orig: 226, 203
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_11
+  rotate: true
+  xy: 398, 196
+  size: 58, 131
+  orig: 58, 131
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_12
+  rotate: true
+  xy: 271, 142
+  size: 44, 99
+  orig: 44, 99
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_13
+  rotate: 270
+  xy: 763, 55
+  size: 102, 173
+  orig: 102, 175
+  offset: 0, 2
+  index: -1
+Reed2_FrontHair_2
+  rotate: false
+  xy: 410, 878
+  size: 48, 60
+  orig: 48, 60
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_3
+  rotate: false
+  xy: 203, 673
+  size: 31, 81
+  orig: 31, 81
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_4
+  rotate: false
+  xy: 354, 46
+  size: 96, 87
+  orig: 96, 87
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_5
+  rotate: true
+  xy: 773, 109
+  size: 63, 131
+  orig: 70, 132
+  offset: 6, 1
+  index: -1
+Reed2_FrontHair_6
+  rotate: false
+  xy: 602, 805
+  size: 72, 133
+  orig: 72, 133
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_7
+  rotate: true
+  xy: 2, 154
+  size: 72, 140
+  orig: 72, 144
+  offset: 0, 4
+  index: -1
+Reed2_FrontHair_8
+  rotate: true
+  xy: 39, 253
+  size: 145, 262
+  orig: 145, 262
+  offset: 0, 0
+  index: -1
+Reed2_FrontHair_9
+  rotate: false
+  xy: 772, 431
+  size: 79, 77
+  orig: 79, 85
+  offset: 0, 8
+  index: -1
+Reed2_Hair_1
+  rotate: false
+  xy: 676, 901
+  size: 66, 37
+  orig: 66, 37
+  offset: 0, 0
+  index: -1
+Reed2_Hair_2
+  rotate: false
+  xy: 571, 649
+  size: 242, 291
+  orig: 275, 299
+  offset: 0, 0
+  index: -1
+Reed2_Hair_3
+  rotate: true
+  xy: 597, 738
+  size: 108, 120
+  orig: 115, 120
+  offset: 0, 0
+  index: -1
+Reed2_Hair_4
+  rotate: true
+  xy: 437, 36
+  size: 142, 178
+  orig: 160, 179
+  offset: 4, 0
+  index: -1
+Reed2_L2_Eye_1
+  rotate: false
+  xy: 2, 865
+  size: 34, 17
+  orig: 34, 17
+  offset: 0, 0
+  index: -1
+Reed2_L2_Eye_2
+  rotate: false
+  xy: 609, 730
+  size: 51, 23
+  orig: 51, 23
+  offset: 0, 0
+  index: -1
+Reed2_L_Arm_Up
+  rotate: 270
+  xy: 459, 522
+  size: 196, 266
+  orig: 196, 269
+  offset: 0, 0
+  index: -1
+Reed2_L_Eye_1
+  rotate: false
+  xy: 850, 648
+  size: 43, 12
+  orig: 43, 12
+  offset: 0, 0
+  index: -1
+Reed2_L_Eye_2
+  rotate: false
+  xy: 589, 432
+  size: 61, 22
+  orig: 61, 22
+  offset: 0, 0
+  index: -1
+Reed2_L_Eye_3
+  rotate: false
+  xy: 58, 898
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+Reed2_L_Eye_4
+  rotate: false
+  xy: 589, 477
+  size: 63, 47
+  orig: 63, 47
+  offset: 0, 0
+  index: -1
+Reed2_L_Eye_5
+  rotate: false
+  xy: 666, 724
+  size: 21, 12
+  orig: 21, 12
+  offset: 0, 0
+  index: -1
+Reed2_L_Eye_7
+  rotate: false
+  xy: 660, 630
+  size: 40, 17
+  orig: 40, 17
+  offset: 0, 0
+  index: -1
+Reed2_L_Eye_8
+  rotate: false
+  xy: 489, 553
+  size: 47, 30
+  orig: 47, 30
+  offset: 0, 0
+  index: -1
+Reed2_L_Eye_S2
+  rotate: false
+  xy: 278, 494
+  size: 53, 22
+  orig: 53, 22
+  offset: 0, 0
+  index: -1
+Reed2_L_Eyeball
+  rotate: false
+  xy: 910, 521
+  size: 28, 28
+  orig: 28, 28
+  offset: 0, 0
+  index: -1
+Reed2_L_Eyebrow
+  rotate: false
+  xy: 2, 410
+  size: 48, 8
+  orig: 48, 8
+  offset: 0, 0
+  index: -1
+Reed2_L_Horn_1
+  rotate: true
+  xy: 306, 256
+  size: 76, 245
+  orig: 85, 245
+  offset: 0, 0
+  index: -1
+Reed2_L_Horn_2
+  rotate: true
+  xy: 678, 121
+  size: 75, 82
+  orig: 75, 82
+  offset: 0, 0
+  index: -1
+Reed2_Neck
+  rotate: true
+  xy: 464, 126
+  size: 71, 101
+  orig: 77, 101
+  offset: 2, 0
+  index: -1
+Reed2_Nose
+  rotate: false
+  xy: 243, 482
+  size: 34, 36
+  orig: 34, 36
+  offset: 0, 0
+  index: -1
+Reed2_R2_Eye_1
+  rotate: false
+  xy: 276, 629
+  size: 32, 20
+  orig: 32, 20
+  offset: 0, 0
+  index: -1
+Reed2_R2_Eye_2
+  rotate: false
+  xy: 454, 732
+  size: 36, 19
+  orig: 38, 23
+  offset: 2, 0
+  index: -1
+Reed2_R_Arm_Up
+  rotate: 270
+  xy: 699, 465
+  size: 181, 239
+  orig: 181, 245
+  offset: 0, 6
+  index: -1
+Reed2_R_Bag
+  rotate: true
+  xy: 2, 420
+  size: 121, 151
+  orig: 121, 151
+  offset: 0, 0
+  index: -1
+Reed2_R_Eye_1
+  rotate: false
+  xy: 354, 926
+  size: 24, 12
+  orig: 24, 12
+  offset: 0, 0
+  index: -1
+Reed2_R_Eye_2
+  rotate: false
+  xy: 626, 788
+  size: 43, 16
+  orig: 43, 20
+  offset: 0, 4
+  index: -1
+Reed2_R_Eye_3
+  rotate: false
+  xy: 266, 883
+  size: 17, 19
+  orig: 17, 19
+  offset: 0, 0
+  index: -1
+Reed2_R_Eye_4
+  rotate: false
+  xy: 81, 376
+  size: 45, 43
+  orig: 45, 43
+  offset: 0, 0
+  index: -1
+Reed2_R_Eye_5
+  rotate: false
+  xy: 187, 708
+  size: 32, 18
+  orig: 32, 18
+  offset: 0, 0
+  index: -1
+Reed2_R_Eye_8
+  rotate: false
+  xy: 274, 910
+  size: 31, 28
+  orig: 31, 28
+  offset: 0, 0
+  index: -1
+Reed2_R_Eye_S2
+  rotate: false
+  xy: 229, 844
+  size: 29, 23
+  orig: 32, 23
+  offset: 1, 0
+  index: -1
+Reed2_R_Eyeball
+  rotate: false
+  xy: 548, 705
+  size: 21, 27
+  orig: 21, 27
+  offset: 0, 0
+  index: -1
+Reed2_R_Eyebrow
+  rotate: false
+  xy: 476, 709
+  size: 28, 18
+  orig: 28, 18
+  offset: 0, 0
+  index: -1
+Reed2_R_Horn_1
+  rotate: true
+  xy: 452, 335
+  size: 90, 252
+  orig: 90, 252
+  offset: 0, 0
+  index: -1
+Reed2_R_Horn_2
+  rotate: false
+  xy: 383, 337
+  size: 65, 71
+  orig: 65, 71
+  offset: 0, 0
+  index: -1
+Reed2_Shirt_1
+  rotate: true
+  xy: 225, 605
+  size: 335, 267
+  orig: 369, 287
+  offset: 7, 0
+  index: -1
+Reed2_Shirt_2
+  rotate: false
+  xy: 207, 861
+  size: 53, 40
+  orig: 53, 40
+  offset: 0, 0
+  index: -1
+Reed2_Shirt_3
+  rotate: false
+  xy: 654, 488
+  size: 47, 31
+  orig: 47, 31
+  offset: 0, 0
+  index: -1
+Reed2_Shirt_4
+  rotate: false
+  xy: 142, 107
+  size: 180, 59
+  orig: 180, 60
+  offset: 0, 1
+  index: -1
+Reed2_Shirt_5
+  rotate: false
+  xy: 2, 884
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+Reed2_Shirt_6
+  rotate: false
+  xy: 814, 853
+  size: 110, 85
+  orig: 110, 85
+  offset: 0, 0
+  index: -1
+Reed2_Shirt_7
+  rotate: false
+  xy: 2, 228
+  size: 180, 50
+  orig: 180, 50
+  offset: 0, 0
+  index: -1
+Reed2_Shirt_8
+  rotate: 180
+  xy: 227, 517
+  size: 261, 123
+  orig: 264, 125
+  offset: 3, 0
+  index: -1
+Reed2_mouth1_1
+  rotate: false
+  xy: 194, 695
+  size: 18, 12
+  orig: 18, 12
+  offset: 0, 0
+  index: -1
+Reed2_mouth1_2
+  rotate: false
+  xy: 577, 923
+  size: 19, 15
+  orig: 19, 15
+  offset: 0, 0
+  index: -1
+Reed2_mouth1_3
+  rotate: false
+  xy: 58, 916
+  size: 28, 22
+  orig: 28, 22
+  offset: 0, 0
+  index: -1
+Reed2_mouth1_4
+  rotate: false
+  xy: 905, 828
+  size: 30, 23
+  orig: 30, 23
+  offset: 0, 0
+  index: -1
+Reed2_mouth1_5
+  rotate: false
+  xy: 800, 710
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+Reed2_mouth2_1
+  rotate: false
+  xy: 550, 689
+  size: 35, 14
+  orig: 35, 14
+  offset: 0, 0
+  index: -1
+Reed2_mouth2_2
+  rotate: false
+  xy: 550, 689
+  size: 35, 14
+  orig: 35, 14
+  offset: 0, 0
+  index: -1
+Reed2_mouth2_3
+  rotate: false
+  xy: 307, 920
+  size: 45, 18
+  orig: 45, 18
+  offset: 0, 0
+  index: -1
+Reed2_mouth2_4
+  rotate: false
+  xy: 712, 874
+  size: 46, 25
+  orig: 46, 25
+  offset: 0, 0
+  index: -1
+Reed2_mouth3_1
+  rotate: false
+  xy: 789, 699
+  size: 24, 9
+  orig: 24, 9
+  offset: 0, 0
+  index: -1
+Reed2_mouth3_2
+  rotate: false
+  xy: 789, 699
+  size: 24, 9
+  orig: 24, 9
+  offset: 0, 0
+  index: -1
+Reed2_mouth3_3
+  rotate: false
+  xy: 589, 456
+  size: 39, 19
+  orig: 39, 19
+  offset: 0, 0
+  index: -1
+Reed2_mouth3_4
+  rotate: false
+  xy: 727, 446
+  size: 37, 17
+  orig: 37, 17
+  offset: 0, 0
+  index: -1
+Reed2_mouth4_1
+  rotate: false
+  xy: 2, 545
+  size: 38, 14
+  orig: 38, 14
+  offset: 0, 0
+  index: -1
+Reed2_mouth4_2
+  rotate: false
+  xy: 155, 444
+  size: 38, 20
+  orig: 38, 20
+  offset: 0, 0
+  index: -1
+Reed2_mouth4_3
+  rotate: false
+  xy: 171, 927
+  size: 27, 11
+  orig: 27, 11
+  offset: 0, 0
+  index: -1
+Reed2_mouth4_4
+  rotate: false
+  xy: 895, 649
+  size: 43, 23
+  orig: 43, 23
+  offset: 0, 0
+  index: -1
+Reed2_mouth4_5
+  rotate: false
+  xy: 181, 537
+  size: 46, 25
+  orig: 46, 25
+  offset: 0, 0
+  index: -1
+Reed2_mouth4_6
+  rotate: false
+  xy: 409, 411
+  size: 36, 21
+  orig: 36, 21
+  offset: 0, 0
+  index: -1
+Reed2_mouth4_7
+  rotate: false
+  xy: 422, 643
+  size: 35, 23
+  orig: 35, 23
+  offset: 0, 0
+  index: -1

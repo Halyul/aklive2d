@@ -136,3 +136,4 @@ _*.json
 .DS_Store
 *test*
 *_v2/*
+assets/*

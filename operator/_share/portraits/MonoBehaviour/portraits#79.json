@@ -131,11 +131,23 @@
       "rotate": 0
     },
     {
+      "name": "char_1031_slent2_epoque#32",
+      "guid": "3c256e1876c3f06498240694bdab7763",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
+    },
+    {
       "name": "char_1012_skadi2_iteration#2",
       "guid": "048ce46293886a54dbeb90f473e5ede9",
       "atlas": 0,
       "rect": {
-        "x": 0,
+        "x": 364,
         "y": 724,
         "w": 360,
         "h": 180
@@ -209,6 +221,11 @@
         "md5": "640b3db091d37dc290d4e264a5197ff6"
       },
       {
+        "name": "char_1031_slent2_epoque#32",
+        "guid": "3c256e1876c3f06498240694bdab7763",
+        "md5": "53412ae4d7ed3927ac7e2da666daa95b"
+      },
+      {
         "name": "char_1012_skadi2_iteration#2",
         "guid": "048ce46293886a54dbeb90f473e5ede9",
         "md5": "3c1c801967824c20f9a3b6b5f054c115"
@@ -218,14 +235,14 @@
       {
         "name": "portraits#79",
         "guid": "be3e12cda1d96ba4894c05dcddf35610",
-        "md5": "c9fb31daeb47c139acd4a2b45cb716d6"
+        "md5": "2e79f3fef78679c330b92097403b5939"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#79a",
         "guid": "13b5dcab46ae2c441961948ca8bdb0fc",
-        "md5": "efad6cb8bf8888eeac4895f99f693556"
+        "md5": "c624c8d15554fb667505ed5c368e0f26"
       }
     ]
   }

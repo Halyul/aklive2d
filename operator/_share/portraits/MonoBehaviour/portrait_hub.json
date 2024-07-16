@@ -3384,23 +3384,23 @@
     },
     {
       "name": "char_4082_qiubai_ncg#1",
-      "atlas": 71
+      "atlas": 70
     },
     {
       "name": "char_4019_ncdeer_ncdeer#1",
-      "atlas": 71
+      "atlas": 70
     },
     {
       "name": "char_209_ardign_epoque#26",
-      "atlas": 71
+      "atlas": 70
     },
     {
       "name": "char_2023_ling_ncg#1",
-      "atlas": 71
+      "atlas": 70
     },
     {
       "name": "char_106_franka_ncg#1",
-      "atlas": 71
+      "atlas": 70
     },
     {
       "name": "char_1034_jesca2_2",
@@ -3432,6 +3432,10 @@
     },
     {
       "name": "char_427_vigil_epoque#27",
+      "atlas": 71
+    },
+    {
+      "name": "char_4062_totter_summer#17",
       "atlas": 71
     },
     {
@@ -3731,6 +3735,14 @@
       "atlas": 77
     },
     {
+      "name": "char_498_inside_kitchen#2",
+      "atlas": 78
+    },
+    {
+      "name": "char_474_glady_epoque#33",
+      "atlas": 78
+    },
+    {
       "name": "char_446_aroma_2",
       "atlas": 78
     },
@@ -3760,14 +3772,6 @@
     },
     {
       "name": "char_4130_luton_1",
-      "atlas": 78
-    },
-    {
-      "name": "char_4082_qiubai_epoque#31",
-      "atlas": 78
-    },
-    {
-      "name": "char_4027_heyak_ambiencesynesthesia#4",
       "atlas": 78
     },
     {
@@ -3819,6 +3823,10 @@
       "atlas": 79
     },
     {
+      "name": "char_1031_slent2_epoque#32",
+      "atlas": 79
+    },
+    {
       "name": "char_1012_skadi2_iteration#2",
       "atlas": 79
     },
@@ -3847,6 +3855,10 @@
       "atlas": 80
     },
     {
+      "name": "char_376_therex_marthe#7",
+      "atlas": 80
+    },
+    {
       "name": "char_293_thorns_boc#8",
       "atlas": 80
     },
@@ -3859,8 +3871,100 @@
       "atlas": 80
     },
     {
+      "name": "char_136_hsguma_summer#16",
+      "atlas": 80
+    },
+    {
       "name": "char_129_bluep_iteration#2",
       "atlas": 80
+    },
+    {
+      "name": "char_4145_ulpia_2",
+      "atlas": 81
+    },
+    {
+      "name": "char_4145_ulpia_1",
+      "atlas": 81
+    },
+    {
+      "name": "char_4137_udflow_2",
+      "atlas": 81
+    },
+    {
+      "name": "char_4137_udflow_1",
+      "atlas": 81
+    },
+    {
+      "name": "char_4122_grabds_yun#3",
+      "atlas": 81
+    },
+    {
+      "name": "char_4091_ulika_sanrio#1",
+      "atlas": 81
+    },
+    {
+      "name": "char_4079_haini_2",
+      "atlas": 81
+    },
+    {
+      "name": "char_4079_haini_1",
+      "atlas": 81
+    },
+    {
+      "name": "char_4065_judge_epoque#33",
+      "atlas": 81
+    },
+    {
+      "name": "char_4006_melnte_epoque#33",
+      "atlas": 81
+    },
+    {
+      "name": "char_377_gdglow_sanrio#1",
+      "atlas": 81
+    },
+    {
+      "name": "char_322_lmlee_sanrio#1",
+      "atlas": 81
+    },
+    {
+      "name": "char_4147_mitm_2",
+      "atlas": 82
+    },
+    {
+      "name": "char_4147_mitm_1",
+      "atlas": 82
+    },
+    {
+      "name": "char_4146_nymph_2",
+      "atlas": 82
+    },
+    {
+      "name": "char_4146_nymph_1",
+      "atlas": 82
+    },
+    {
+      "name": "char_4082_qiubai_epoque#31",
+      "atlas": 82
+    },
+    {
+      "name": "char_4032_provs_summer#17",
+      "atlas": 82
+    },
+    {
+      "name": "char_4027_heyak_ambiencesynesthesia#4",
+      "atlas": 82
+    },
+    {
+      "name": "char_282_catap_summer#17",
+      "atlas": 82
+    },
+    {
+      "name": "char_2012_typhon_summer#17",
+      "atlas": 82
+    },
+    {
+      "name": "char_1020_reed2_summer#17",
+      "atlas": 82
     }
   ],
   "_atlases": [
@@ -3944,7 +4048,9 @@
     "Arts/CharPortraits/portraits#77",
     "Arts/CharPortraits/portraits#78",
     "Arts/CharPortraits/portraits#79",
-    "Arts/CharPortraits/portraits#80"
+    "Arts/CharPortraits/portraits#80",
+    "Arts/CharPortraits/portraits#81",
+    "Arts/CharPortraits/portraits#82"
   ],
   "_inputSpriteDir": "Assets/Torappu/Arts/CharPortraits",
   "_outputAtlasDir": "Assets/Torappu/Arts/CharPortraits/[X]Atlas",

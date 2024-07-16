@@ -11,12 +11,36 @@
   "m_Name": "portraits#78",
   "_sprites": [
     {
+      "name": "char_498_inside_kitchen#2",
+      "guid": "0fc011ca151d4b542b0d23d346847a6d",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_474_glady_epoque#33",
+      "guid": "e13e50456a6aacf46bd8bb739384a166",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
       "name": "char_446_aroma_2",
       "guid": "df6de9efbc6ae0a49a897128df812589",
       "atlas": 0,
       "rect": {
         "x": 0,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -28,7 +52,7 @@
       "atlas": 0,
       "rect": {
         "x": 182,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -39,8 +63,8 @@
       "guid": "34d6dd449c6405b4494a6edeba8791dc",
       "atlas": 0,
       "rect": {
-        "x": 0,
-        "y": 362,
+        "x": 364,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -51,7 +75,7 @@
       "guid": "ee8dbf2ef30bdcf40937b7b7fe615712",
       "atlas": 0,
       "rect": {
-        "x": 182,
+        "x": 364,
         "y": 362,
         "w": 180,
         "h": 360
@@ -63,7 +87,7 @@
       "guid": "39c9ac3a8000e984582c457d9df97221",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 546,
         "y": 0,
         "w": 180,
         "h": 360
@@ -75,7 +99,7 @@
       "guid": "b68fb72726d8d544089498269d5029c5",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 546,
         "y": 362,
         "w": 180,
         "h": 360
@@ -87,7 +111,7 @@
       "guid": "40335e4bf8394894598df8a651e85abf",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 0,
         "w": 180,
         "h": 360
@@ -97,30 +121,6 @@
     {
       "name": "char_4130_luton_1",
       "guid": "d9951821c61131040b76e9beadfe1cc0",
-      "atlas": 0,
-      "rect": {
-        "x": 546,
-        "y": 362,
-        "w": 180,
-        "h": 360
-      },
-      "rotate": 0
-    },
-    {
-      "name": "char_4082_qiubai_epoque#31",
-      "guid": "65f7ff86c76108d4194604d6f305076d",
-      "atlas": 0,
-      "rect": {
-        "x": 728,
-        "y": 0,
-        "w": 180,
-        "h": 360
-      },
-      "rotate": 0
-    },
-    {
-      "name": "char_4027_heyak_ambiencesynesthesia#4",
-      "guid": "ea2bfc2f35354b2479348a4343b12a85",
       "atlas": 0,
       "rect": {
         "x": 728,
@@ -171,6 +171,16 @@
   "_sign": {
     "m_sprites": [
       {
+        "name": "char_498_inside_kitchen#2",
+        "guid": "0fc011ca151d4b542b0d23d346847a6d",
+        "md5": "432231f7e5c8e878c716ea727dcda16b"
+      },
+      {
+        "name": "char_474_glady_epoque#33",
+        "guid": "e13e50456a6aacf46bd8bb739384a166",
+        "md5": "6d58bf61f231170d3e777ebbd42447b0"
+      },
+      {
         "name": "char_446_aroma_2",
         "guid": "df6de9efbc6ae0a49a897128df812589",
         "md5": "7dd767fe50b22d4e8ee981faa8b2a5f3"
@@ -211,16 +221,6 @@
         "md5": "4e74e5af30b271c06c0e9e66d4ed6389"
       },
       {
-        "name": "char_4082_qiubai_epoque#31",
-        "guid": "65f7ff86c76108d4194604d6f305076d",
-        "md5": "320faec2f237849bc70e9269f8d2a7b5"
-      },
-      {
-        "name": "char_4027_heyak_ambiencesynesthesia#4",
-        "guid": "ea2bfc2f35354b2479348a4343b12a85",
-        "md5": "e8cfea151d074185fc1278d605c833f6"
-      },
-      {
         "name": "char_172_svrash_ambiencesynesthesia#4",
         "guid": "1fd5d7388958ac94687cfe7ea453f562",
         "md5": "71d586fed47653e947ff21f4d09089a3"
@@ -235,14 +235,14 @@
       {
         "name": "portraits#78",
         "guid": "1d839596358822a469d5857886ddf958",
-        "md5": "b75bb31c3d87db7a77c2688017ac7b10"
+        "md5": "8522c2c112c191c88466cf184226d994"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#78a",
         "guid": "ecc861616acde324f960649047339b9b",
-        "md5": "411d2efd683190b2e52584f71cd090ca"
+        "md5": "fb351f1ca34e280750e95c44490c0ef0"
       }
     ]
   }

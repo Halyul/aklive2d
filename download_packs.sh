@@ -8,8 +8,15 @@ CURRENT_VERSION=$(curl -X GET \
   --header 'X-Unity-Version: 2017.4.39f1' \
   | jq -r ".resVersion")
 
+CURRENT_LPACK_V=$(curl -X GET \
+  "https://ak.hycdn.cn/assetbundle/official/Android/assets/${CURRENT_VERSION}/hot_update_list.json" \
+  --header 'Accept: */*' \
+  --header 'User-Agent: Dalvik/2.1.0 (Linux; U; Android 12; 22021211RC Build/V417IR)' \
+  --header 'X-Unity-Version: 2017.4.39f1' \
+  | jq -r '.packInfos | .[] | select( .name | test("^lpack_v[0-9]+")) | .name')
+
 TARGET_FOLDER="assets"
-FILES=("lpack_vcjp lpack_vccn lpack_vcbsc lpack_vckr lpack_vcen lpack_vccsm lpack_v052 lpack_init lpack_dynilst lpack_crart lpack_music lpack_lcom")
+FILES=("lpack_vcjp lpack_vccn lpack_vcbsc lpack_vckr lpack_vcen lpack_vccsm lpack_init lpack_dynilst lpack_crart lpack_music lpack_lcom ${CURRENT_LPACK_V}")
 AK_HOST="ak.hycdn.cn:443:123.184.27.60"
 
 echo

@@ -11069,6 +11069,11 @@ var spine;
 				config.settingsScale = window.settings.scale;
 			return config;
 		};
+		SpinePlayer.prototype.getOperatorScale = function () {
+			if (typeof window.settings !== "undefined")
+				return window.settings.scale;
+			return this.config.settingsScale
+		};
 		SpinePlayer.prototype.showError = function (error) {
 			var errorDom = findWithClass(this.dom, "spine-player-error")[0];
 			errorDom.classList.remove("spine-player-hidden");
@@ -11395,7 +11400,7 @@ var spine;
 					var viewportSize = this.scale(viewport.width, viewport.height, this.canvas.width, this.canvas.height);
 					// this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x;
 					
-					this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x * this.config.settingsScale;
+					this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x * this.getOperatorScale();
 					this.sceneRenderer.camera.position.x = viewport.x + viewport.width / 2;
 					this.sceneRenderer.camera.position.y = viewport.y + viewport.height / 2;
 					this.sceneRenderer.begin();

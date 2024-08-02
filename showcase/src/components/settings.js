@@ -509,7 +509,7 @@ export default class Settings {
         </div>
         <div>
           <label for="scale">Scale</label>
-          <input type="range" min="0" max="10" step="0.1" id="scale_slider" value="${this.#scale}" />
+          <input type="range" min="0.1" max="10" step="0.1" id="scale_slider" value="${this.#scale}" />
           <input type="number" id="scale_input" name="scale" value="${this.#scale}" step="0.1"/>
         </div>
         <div>

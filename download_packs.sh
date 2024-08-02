@@ -15,8 +15,8 @@ CURRENT_LPACK_V=$(curl -X GET \
   --header 'X-Unity-Version: 2017.4.39f1' \
   | jq -r '.packInfos | .[] | select( .name | test("^lpack_v[0-9]+")) | .name')
 
-TARGET_FOLDER="assets"
-FILES=("lpack_vcjp lpack_vccn lpack_vcbsc lpack_vckr lpack_vcen lpack_vccsm lpack_init lpack_dynilst lpack_crart lpack_music lpack_lcom ${CURRENT_LPACK_V}")
+TARGET_FOLDER="temp"
+FILES_TO_DOWNLOAD=("lpack_misc lpack_vcjp lpack_vccn lpack_vcbsc lpack_vckr lpack_vcen lpack_vccsm lpack_init lpack_dynilst lpack_crart lpack_music lpack_lcom ${CURRENT_LPACK_V}")
 AK_HOST="ak.hycdn.cn:443:123.184.27.60"
 
 echo
@@ -27,13 +27,27 @@ echo
 # echo "Extracting APK" 
 # unzip -q $current_file "assets/AB/Android/*" -d ./$TARGET_FOLDER && rm $current_file
 
-for file in $FILES
+for file in $FILES_TO_DOWNLOAD
 do
-    current_file=./$TARGET_FOLDER/$file.dat
-    echo "Downloading $current_file"
-    curl --resolve $AK_HOST --create-dirs -o $current_file https://ak.hycdn.cn/assetbundle/official/Android/assets/$CURRENT_VERSION/$file.dat
+  current_file=./$TARGET_FOLDER/$file.dat
+  echo "Downloading $current_file"
+  curl --resolve $AK_HOST --create-dirs -o $current_file https://ak.hycdn.cn/assetbundle/official/Android/assets/$CURRENT_VERSION/$file.dat
 
-    echo "Extracting $file" 
-    unzip -q $current_file -d ./$TARGET_FOLDER && rm $current_file
+  echo "Extracting $file" 
+  unzip -q $current_file -d ./$TARGET_FOLDER && rm $current_file
+  echo
+done
+
+ASSET_FOLDER="assets"
+FILES_TO_KEEP=("spritepack/ui_camp_logo_h2_0.ab" "spritepack/ui_camp_logo_h2_linkage_0.ab" "arts/dynchars" "chararts" "skinpack" "arts/ui/homebackground/wrapper" "arts/charportraits" "audio/sound_beta_2/music" "audio/sound_beta_2/voice*")
+FILES_DESTS=("ui_camp_logo_h2_0.ab" "ui_camp_logo_h2_linkage_0.ab" "dynchars" "chararts" "skinpack" "homebackground" "charportraits" "music" ".")
+mkdir -p ./$ASSET_FOLDER
+
+for i in "${!FILES_TO_KEEP[@]}"; do
+    current_file=./$TARGET_FOLDER/${FILES_TO_KEEP[$i]}
+    target_file=./$ASSET_FOLDER/${FILES_DESTS[$i]}
+    echo "Moving $current_file"
+    mv $current_file $target_file
     echo
 done
+rm -r $TARGET_FOLDER

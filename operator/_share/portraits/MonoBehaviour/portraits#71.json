@@ -35,8 +35,8 @@
       "rotate": 0
     },
     {
-      "name": "char_492_quercu_witch#4",
-      "guid": "a8224695eab137f4fb383f59246072cc",
+      "name": "char_4140_lasher_2",
+      "guid": "6152b509ac342a64cafa61f21aa489d8",
       "atlas": 0,
       "rect": {
         "x": 0,
@@ -47,8 +47,8 @@
       "rotate": 0
     },
     {
-      "name": "char_436_whispr_witch#4",
-      "guid": "cc146551296a0be4ea9b9b0bcc896c1c",
+      "name": "char_4140_lasher_1",
+      "guid": "0cf890d2921bcee4fb5a4f1eb2d49a47",
       "atlas": 0,
       "rect": {
         "x": 182,
@@ -59,8 +59,8 @@
       "rotate": 0
     },
     {
-      "name": "char_427_vigil_epoque#27",
-      "guid": "99c568b85e249db46ab0783e3f6d7d43",
+      "name": "char_4139_papyrs_2",
+      "guid": "e89f3a987dd084248804a65fd8bebd14",
       "atlas": 0,
       "rect": {
         "x": 364,
@@ -71,8 +71,8 @@
       "rotate": 0
     },
     {
-      "name": "char_4062_totter_summer#17",
-      "guid": "f8e53d66f615f674fa5e174847aa9027",
+      "name": "char_4139_papyrs_1",
+      "guid": "fd1a4e9595fe2d543b760b995b8184f5",
       "atlas": 0,
       "rect": {
         "x": 364,
@@ -83,8 +83,8 @@
       "rotate": 0
     },
     {
-      "name": "char_4048_doroth_witch#4",
-      "guid": "b546e1bcced40bb4dba7ecbcb634ec1e",
+      "name": "char_4138_narant_2",
+      "guid": "9bb0a9a704ba43f498ac7b7066ba0788",
       "atlas": 0,
       "rect": {
         "x": 546,
@@ -95,8 +95,8 @@
       "rotate": 0
     },
     {
-      "name": "char_300_phenxi_witch#4",
-      "guid": "05de36745b4be114096c213241b39c54",
+      "name": "char_4138_narant_1",
+      "guid": "c9f586f1802e8744fb8b531e19d92d24",
       "atlas": 0,
       "rect": {
         "x": 546,
@@ -105,6 +105,42 @@
         "h": 360
       },
       "rotate": 0
+    },
+    {
+      "name": "char_4058_pepe_2",
+      "guid": "49b87ad4edbbde04daa0450d72022cea",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4058_pepe_1",
+      "guid": "08f8880f6be8e404ab8a22ba85a00cc7",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_1016_agoat2_epoque#34",
+      "guid": "2b1b26b0a6777574e8aa5a47ef18821c",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
+      },
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -133,48 +169,63 @@
         "md5": "4a911401fe2191c1743f9a64fb3bd56f"
       },
       {
-        "name": "char_492_quercu_witch#4",
-        "guid": "a8224695eab137f4fb383f59246072cc",
-        "md5": "4f236396082532281945477ed7b69a55"
+        "name": "char_4140_lasher_2",
+        "guid": "6152b509ac342a64cafa61f21aa489d8",
+        "md5": "22377d2086b9aee377ea862c6147fed6"
       },
       {
-        "name": "char_436_whispr_witch#4",
-        "guid": "cc146551296a0be4ea9b9b0bcc896c1c",
-        "md5": "8f64f06ead7133e80a90a61a73d0eadf"
+        "name": "char_4140_lasher_1",
+        "guid": "0cf890d2921bcee4fb5a4f1eb2d49a47",
+        "md5": "0ffe409da81ee95c7824156153cf5bab"
       },
       {
-        "name": "char_427_vigil_epoque#27",
-        "guid": "99c568b85e249db46ab0783e3f6d7d43",
-        "md5": "7d1465a9abc10fbc61d807c05b5e4d26"
+        "name": "char_4139_papyrs_2",
+        "guid": "e89f3a987dd084248804a65fd8bebd14",
+        "md5": "a88ea44fac3a5c65f00f0ca8623f101b"
       },
       {
-        "name": "char_4062_totter_summer#17",
-        "guid": "f8e53d66f615f674fa5e174847aa9027",
-        "md5": "eb729067e43c16d237752b4b6f5882dd"
+        "name": "char_4139_papyrs_1",
+        "guid": "fd1a4e9595fe2d543b760b995b8184f5",
+        "md5": "b8a7898502f0bdc9bfc3b9553ef50e83"
       },
       {
-        "name": "char_4048_doroth_witch#4",
-        "guid": "b546e1bcced40bb4dba7ecbcb634ec1e",
-        "md5": "109f067beb932a3f7fdfead099be7c66"
+        "name": "char_4138_narant_2",
+        "guid": "9bb0a9a704ba43f498ac7b7066ba0788",
+        "md5": "fb2bee3e3cd551dc03d68927743b622a"
       },
       {
-        "name": "char_300_phenxi_witch#4",
-        "guid": "05de36745b4be114096c213241b39c54",
-        "md5": "957fb80be2cc0b7524e564a19921a962"
+        "name": "char_4138_narant_1",
+        "guid": "c9f586f1802e8744fb8b531e19d92d24",
+        "md5": "08f6d7866940230c3ae43691d517edc7"
+      },
+      {
+        "name": "char_4058_pepe_2",
+        "guid": "49b87ad4edbbde04daa0450d72022cea",
+        "md5": "d727b1923ee8eb6c14edde8d9e340877"
+      },
+      {
+        "name": "char_4058_pepe_1",
+        "guid": "08f8880f6be8e404ab8a22ba85a00cc7",
+        "md5": "8a30b160391f0e7b693d8a78953eaf9b"
+      },
+      {
+        "name": "char_1016_agoat2_epoque#34",
+        "guid": "2b1b26b0a6777574e8aa5a47ef18821c",
+        "md5": "002040043c845c84625cc483de6a1e4f"
       }
     ],
     "m_atlases": [
       {
         "name": "portraits#71",
         "guid": "71160b0d52e92544f980e5defcb30dca",
-        "md5": "e34a7719e473a65f35746fc51e414376"
+        "md5": "86e84a219a6e32610139a843adee553e"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#71a",
         "guid": "1ac1e278d7b37f64abe77b86167b818c",
-        "md5": "594e65ef461870e97734aef64a42343f"
+        "md5": "d7f21a65f6729b382731d0adcaf3c819"
       }
     ]
   }

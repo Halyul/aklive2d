@@ -11,12 +11,36 @@
   "m_Name": "portraits#82",
   "_sprites": [
     {
+      "name": "char_4151_tinman_2",
+      "guid": "842f09388c3713f4a8cc064e164435d8",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4151_tinman_1",
+      "guid": "ce919f6090851d741bdd6391077f8b55",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
       "name": "char_4147_mitm_2",
       "guid": "00565e13e9aa6a641ba482a42097ed3a",
       "atlas": 0,
       "rect": {
         "x": 0,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -28,7 +52,7 @@
       "atlas": 0,
       "rect": {
         "x": 182,
-        "y": 0,
+        "y": 362,
         "w": 180,
         "h": 360
       },
@@ -39,8 +63,8 @@
       "guid": "0185d73ddfc15e54ba646d112331aaab",
       "atlas": 0,
       "rect": {
-        "x": 0,
-        "y": 362,
+        "x": 364,
+        "y": 0,
         "w": 180,
         "h": 360
       },
@@ -51,7 +75,7 @@
       "guid": "fa1c13e5e95157d43b7c3866b3cb80e7",
       "atlas": 0,
       "rect": {
-        "x": 182,
+        "x": 364,
         "y": 362,
         "w": 180,
         "h": 360
@@ -63,7 +87,7 @@
       "guid": "65f7ff86c76108d4194604d6f305076d",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 546,
         "y": 0,
         "w": 180,
         "h": 360
@@ -75,7 +99,7 @@
       "guid": "b1f8d58f201fe434d9048b0b5504118a",
       "atlas": 0,
       "rect": {
-        "x": 364,
+        "x": 546,
         "y": 362,
         "w": 180,
         "h": 360
@@ -87,7 +111,7 @@
       "guid": "ea2bfc2f35354b2479348a4343b12a85",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 0,
         "w": 180,
         "h": 360
@@ -99,7 +123,7 @@
       "guid": "d218120a88e54f8489860967753077a9",
       "atlas": 0,
       "rect": {
-        "x": 546,
+        "x": 728,
         "y": 362,
         "w": 180,
         "h": 360
@@ -111,24 +135,24 @@
       "guid": "9af8243099ce1ea41bdd075c45d4bbf3",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 0,
-        "w": 180,
-        "h": 360
+        "x": 0,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     },
     {
       "name": "char_1020_reed2_summer#17",
       "guid": "a32e11f47e22aea4ba895fa550ecab73",
       "atlas": 0,
       "rect": {
-        "x": 728,
-        "y": 362,
-        "w": 180,
-        "h": 360
+        "x": 364,
+        "y": 724,
+        "w": 360,
+        "h": 180
       },
-      "rotate": 0
+      "rotate": 1
     }
   ],
   "_atlas": {
@@ -146,6 +170,16 @@
   "_index": 82,
   "_sign": {
     "m_sprites": [
+      {
+        "name": "char_4151_tinman_2",
+        "guid": "842f09388c3713f4a8cc064e164435d8",
+        "md5": "637a8bb573c7dba7fc07b24b7ad9f357"
+      },
+      {
+        "name": "char_4151_tinman_1",
+        "guid": "ce919f6090851d741bdd6391077f8b55",
+        "md5": "946ec6b1bb0ae5694d55df5865c1c97e"
+      },
       {
         "name": "char_4147_mitm_2",
         "guid": "00565e13e9aa6a641ba482a42097ed3a",
@@ -201,14 +235,14 @@
       {
         "name": "portraits#82",
         "guid": "077a4c2d29ba42446a4c1ffe344aa527",
-        "md5": "1abbdb49436351ac902a04225087d165"
+        "md5": "978349deaa261ddb69223c1b2d2d62de"
       }
     ],
     "m_alphas": [
       {
         "name": "portraits#82a",
         "guid": "9b793bfc0d48b974b8c6d4a2f1a1516a",
-        "md5": "9d55e3196088ad5d8e8993ce66010f42"
+        "md5": "ec906abf956e469ad3a11543bcf5fcf2"
       }
     ]
   }

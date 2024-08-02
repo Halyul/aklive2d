@@ -3423,27 +3423,39 @@
       "atlas": 71
     },
     {
-      "name": "char_492_quercu_witch#4",
+      "name": "char_4140_lasher_2",
       "atlas": 71
     },
     {
-      "name": "char_436_whispr_witch#4",
+      "name": "char_4140_lasher_1",
       "atlas": 71
     },
     {
-      "name": "char_427_vigil_epoque#27",
+      "name": "char_4139_papyrs_2",
       "atlas": 71
     },
     {
-      "name": "char_4062_totter_summer#17",
+      "name": "char_4139_papyrs_1",
       "atlas": 71
     },
     {
-      "name": "char_4048_doroth_witch#4",
+      "name": "char_4138_narant_2",
       "atlas": 71
     },
     {
-      "name": "char_300_phenxi_witch#4",
+      "name": "char_4138_narant_1",
+      "atlas": 71
+    },
+    {
+      "name": "char_4058_pepe_2",
+      "atlas": 71
+    },
+    {
+      "name": "char_4058_pepe_1",
+      "atlas": 71
+    },
+    {
+      "name": "char_1016_agoat2_epoque#34",
       "atlas": 71
     },
     {
@@ -3927,6 +3939,14 @@
       "atlas": 81
     },
     {
+      "name": "char_4151_tinman_2",
+      "atlas": 82
+    },
+    {
+      "name": "char_4151_tinman_1",
+      "atlas": 82
+    },
+    {
       "name": "char_4147_mitm_2",
       "atlas": 82
     },
@@ -3965,6 +3985,46 @@
     {
       "name": "char_1020_reed2_summer#17",
       "atlas": 82
+    },
+    {
+      "name": "char_492_quercu_witch#4",
+      "atlas": 83
+    },
+    {
+      "name": "char_488_buildr_epoque#34",
+      "atlas": 83
+    },
+    {
+      "name": "char_436_whispr_witch#4",
+      "atlas": 83
+    },
+    {
+      "name": "char_427_vigil_epoque#27",
+      "atlas": 83
+    },
+    {
+      "name": "char_4088_hodrer_sightseer#1",
+      "atlas": 83
+    },
+    {
+      "name": "char_4062_totter_summer#17",
+      "atlas": 83
+    },
+    {
+      "name": "char_4048_doroth_witch#4",
+      "atlas": 83
+    },
+    {
+      "name": "char_400_weedy_sightseer#1",
+      "atlas": 83
+    },
+    {
+      "name": "char_300_phenxi_witch#4",
+      "atlas": 83
+    },
+    {
+      "name": "char_179_cgbird_sightseer#1",
+      "atlas": 83
     }
   ],
   "_atlases": [
@@ -4050,7 +4110,8 @@
     "Arts/CharPortraits/portraits#79",
     "Arts/CharPortraits/portraits#80",
     "Arts/CharPortraits/portraits#81",
-    "Arts/CharPortraits/portraits#82"
+    "Arts/CharPortraits/portraits#82",
+    "Arts/CharPortraits/portraits#83"
   ],
   "_inputSpriteDir": "Assets/Torappu/Arts/CharPortraits",
   "_outputAtlasDir": "Assets/Torappu/Arts/CharPortraits/[X]Atlas",

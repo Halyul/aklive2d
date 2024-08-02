@@ -1,0 +1,215 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6831197485353024473
+  },
+  "m_Name": "portraits#83",
+  "_sprites": [
+    {
+      "name": "char_492_quercu_witch#4",
+      "guid": "a8224695eab137f4fb383f59246072cc",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_488_buildr_epoque#34",
+      "guid": "48af569f58bd1884d96dc7b1e401c428",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_436_whispr_witch#4",
+      "guid": "cc146551296a0be4ea9b9b0bcc896c1c",
+      "atlas": 0,
+      "rect": {
+        "x": 0,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_427_vigil_epoque#27",
+      "guid": "99c568b85e249db46ab0783e3f6d7d43",
+      "atlas": 0,
+      "rect": {
+        "x": 182,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4088_hodrer_sightseer#1",
+      "guid": "d04dce1aa026b174490ab13437573bdb",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4062_totter_summer#17",
+      "guid": "f8e53d66f615f674fa5e174847aa9027",
+      "atlas": 0,
+      "rect": {
+        "x": 364,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_4048_doroth_witch#4",
+      "guid": "b546e1bcced40bb4dba7ecbcb634ec1e",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_400_weedy_sightseer#1",
+      "guid": "f14b5ff105c59a042bc7e8b1134f6dad",
+      "atlas": 0,
+      "rect": {
+        "x": 546,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_300_phenxi_witch#4",
+      "guid": "05de36745b4be114096c213241b39c54",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 0,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    },
+    {
+      "name": "char_179_cgbird_sightseer#1",
+      "guid": "748e6876d00498a42a5445cf9bc072e4",
+      "atlas": 0,
+      "rect": {
+        "x": 728,
+        "y": 362,
+        "w": 180,
+        "h": 360
+      },
+      "rotate": 0
+    }
+  ],
+  "_atlas": {
+    "index": 0,
+    "texture": {
+      "m_FileID": 0,
+      "m_PathID": -2639185856780309343
+    },
+    "alpha": {
+      "m_FileID": 0,
+      "m_PathID": 7131761235601889088
+    },
+    "size": 1024
+  },
+  "_index": 83,
+  "_sign": {
+    "m_sprites": [
+      {
+        "name": "char_492_quercu_witch#4",
+        "guid": "a8224695eab137f4fb383f59246072cc",
+        "md5": "4f236396082532281945477ed7b69a55"
+      },
+      {
+        "name": "char_488_buildr_epoque#34",
+        "guid": "48af569f58bd1884d96dc7b1e401c428",
+        "md5": "608d3c119804a3ec585e0810cafd3ef2"
+      },
+      {
+        "name": "char_436_whispr_witch#4",
+        "guid": "cc146551296a0be4ea9b9b0bcc896c1c",
+        "md5": "8f64f06ead7133e80a90a61a73d0eadf"
+      },
+      {
+        "name": "char_427_vigil_epoque#27",
+        "guid": "99c568b85e249db46ab0783e3f6d7d43",
+        "md5": "7d1465a9abc10fbc61d807c05b5e4d26"
+      },
+      {
+        "name": "char_4088_hodrer_sightseer#1",
+        "guid": "d04dce1aa026b174490ab13437573bdb",
+        "md5": "d4e47ad9b777f4775bcaec9ba68005cb"
+      },
+      {
+        "name": "char_4062_totter_summer#17",
+        "guid": "f8e53d66f615f674fa5e174847aa9027",
+        "md5": "eb729067e43c16d237752b4b6f5882dd"
+      },
+      {
+        "name": "char_4048_doroth_witch#4",
+        "guid": "b546e1bcced40bb4dba7ecbcb634ec1e",
+        "md5": "109f067beb932a3f7fdfead099be7c66"
+      },
+      {
+        "name": "char_400_weedy_sightseer#1",
+        "guid": "f14b5ff105c59a042bc7e8b1134f6dad",
+        "md5": "6c118ba747a8f20450ca4598d3a87577"
+      },
+      {
+        "name": "char_300_phenxi_witch#4",
+        "guid": "05de36745b4be114096c213241b39c54",
+        "md5": "957fb80be2cc0b7524e564a19921a962"
+      },
+      {
+        "name": "char_179_cgbird_sightseer#1",
+        "guid": "748e6876d00498a42a5445cf9bc072e4",
+        "md5": "32ed889402831cfdf4347fa8ceb884f7"
+      }
+    ],
+    "m_atlases": [
+      {
+        "name": "portraits#83",
+        "guid": "313d1f751d4a096458793a65a650d10b",
+        "md5": "4f99774d255b283869df70cf9601e4f7"
+      }
+    ],
+    "m_alphas": [
+      {
+        "name": "portraits#83a",
+        "guid": "d0d01aa4286d1344ba450d6bcb80ce36",
+        "md5": "407223da6e7329bc30a8fd1083a88942"
+      }
+    ]
+  }
+}

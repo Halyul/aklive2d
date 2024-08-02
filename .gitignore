@@ -137,3 +137,4 @@ _*.json
 *test*
 *_v2/*
 assets/*
+temp/*

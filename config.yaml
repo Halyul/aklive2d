@@ -77,3 +77,6 @@ operators:
   ines_under_the_flaming_dome: !include config/ines_under_the_flaming_dome.yaml
   silverash_never_melting_ice: !include config/silverash_never_melting_ice.yaml
   reed_the_frame_shadow_summer_flower: !include config/reed_the_frame_shadow_summer_flower.yaml
+  eyjafjalla_the_hvit_aska_a_picnic_before_a_long_trip: !include config/eyjafjalla_the_hvit_aska_a_picnic_before_a_long_trip.yaml
+  pepe: !include config/pepe.yaml
+  nightingale_iakhu_of_flows: !include config/nightingale_iakhu_of_flows.yaml

@@ -1,0 +1,626 @@
+{
+  "contentrating": "Everyone",
+  "description": "Arknights: Iakhu of Flows / Nightingale Live 2D\n明日方舟：流辉 · 夜莺 Live 2D\nThe model is extracted from game with Spine support.\n模型来自游戏内提取，支持Spine\nPlease set your FPS target in Wallpaper Engine > Settings > Performance > FPS\n\nLive preview on: https://gura.ch/aklive2d\nGithub: https://gura.ch/aklive2d-gh\nCheck out our privacy policy at https://gura.ch/pp",
+  "file": "index.html",
+  "general": {
+    "localization": {
+      "en-us": {
+        "ui_notice_title": "<hr><h4>📝 Notes</h4><hr>",
+        "ui_notice_set_fps": "<span><b>Set FPS target in Settings</b></span>",
+        "ui_notice_github": "Github: https://gura.ch/aklive2d-gh",
+        "ui_notice_other_operators": "Previews: https://gura.ch/aklive2d",
+        "ui_background_title": "<hr><h4>🖼️ Background</h4><hr>",
+        "ui_custom_background": "Custom Background",
+        "ui_default_background": "Default Background",
+        "ui_logo_title": "<hr><h4>😐 Logo</h4><hr>",
+        "ui_logo_image": "Logo Image",
+        "ui_logo_opacity": "Logo Opacity",
+        "ui_logo_ratio": "Logo Ratio",
+        "ui_operator_logo": "Operator Logo",
+        "ui_translate_x": "X Axis Position",
+        "ui_translate_y": "Y Axis Position",
+        "ui_scale": "Scale",
+        "ui_position_title": "<hr><h4>⚠️ Posistion</h4><hr>",
+        "ui_position_padding_bottom": "Padding Bottom",
+        "ui_position_padding_left": "Padding Left",
+        "ui_position_padding_right": "Padding Right",
+        "ui_position_padding_top": "Padding Top",
+        "ui_voice_title": "<hr><h4>🔈Voice</h4><hr>",
+        "ui_voice_lang": "Voice Language",
+        "ui_voice_idle": "Idle Timeout",
+        "ui_voice_next": "Voice Interval",
+        "ui_subtitle_title": "<hr><h4>📑 Subtitle</h4><hr>",
+        "ui_subtitle_lang": "Subtitle Language",
+        "ui_voice_actor_title": "<hr><h4>🗣️ Voice Actor</h4><hr>",
+        "ui_privacy_title": "<hr><h4>📜 Privacy</h4><hr>",
+        "ui_privacy_text": "<span><b>Check out our privacy policy at https://gura.ch/pp</b></span>",
+        "ui_privacy_do_not_track": "Send usage data",
+        "ui_music_title": "<hr><h4>📝 Music</h4><hr>",
+        "ui_music_notice": "<span><b>Please adjust the 'Offset' value if you notice audio cutoff</b></span>",
+        "ui_music_notice1": "<span><b>'bg_rhodes_day.png' and 'operator_bg.png' use the same music, it is not a bug.</b></span>",
+        "ui_custom_music": "Custom Music",
+        "ui_music_selection": "Music",
+        "ui_music_volume": "Volume",
+        "ui_music_offset": "Offset",
+        "ui_useStartAnimation_title": "Use Start Animation"
+      },
+      "zh-chs": {
+        "ui_notice_title": "<hr><h4>📝 通知</h4><hr>",
+        "ui_notice_set_fps": "<span><b>在设置中设定FPS目标</b></span>",
+        "ui_notice_github": "Github: https://gura.ch/aklive2d-gh",
+        "ui_notice_other_operators": "预览: https://gura.ch/aklive2d",
+        "ui_background_title": "<hr><h4>🖼️ 背景</h4><hr>",
+        "ui_custom_background": "背景图片",
+        "ui_default_background": "默认背景",
+        "ui_logo_title": "<hr><h4>😐 图标</h4><hr>",
+        "ui_logo_image": "图标图片",
+        "ui_logo_opacity": "图标透明度",
+        "ui_logo_ratio": "图标比例",
+        "ui_operator_logo": "干员图标",
+        "ui_translate_x": "X 轴位置",
+        "ui_translate_y": "Y 轴位置",
+        "ui_scale": "比例",
+        "ui_position_title": "<hr><h4>⚠️ 位置</h4><hr>",
+        "ui_position_padding_bottom": "底部距离",
+        "ui_position_padding_left": "左部距离",
+        "ui_position_padding_right": "右部距离",
+        "ui_position_padding_top": "上部距离",
+        "ui_voice_title": "<hr><h4>🔈语音</h4><hr>",
+        "ui_voice_lang": "语音语言",
+        "ui_voice_idle": "待机间隔",
+        "ui_voice_next": "下一条语音间隔",
+        "ui_subtitle_title": "<hr><h4>📑 字幕</h4><hr>",
+        "ui_subtitle_lang": "字幕语言",
+        "ui_voice_actor_title": "<hr><h4>🗣️ 声优</h4><hr>",
+        "ui_privacy_title": "<hr><h4>📜 隐私</h4><hr>",
+        "ui_privacy_text": "<span><b>在 https://gura.ch/pp 查看我们的隐私政策</b></span>",
+        "ui_privacy_do_not_track": "发送使用数据",
+        "ui_music_title": "<hr><h4>🎵 音乐</h4><hr>",
+        "ui_music_notice": "<span><b>如若发现音频截止，请调节 '弥补' 数值</b></span>",
+        "ui_music_notice1": "<span><b>'bg_rhodes_day.png' 和 'operator_bg.png' 使用同样的音乐，并非Bug</b></span>",
+        "ui_music_selection": "音乐",
+        "ui_custom_music": "自定义音乐",
+        "ui_music_volume": "音量",
+        "ui_music_offset": "弥补",
+        "ui_useStartAnimation_title": "使用开始动画"
+      }
+    },
+    "properties": {
+      "notice_title": {
+        "index": 0,
+        "order": 100,
+        "text": "ui_notice_title"
+      },
+      "notice_set_fps": {
+        "index": 1,
+        "order": 101,
+        "text": "ui_notice_set_fps"
+      },
+      "notice_github": {
+        "index": 2,
+        "order": 102,
+        "text": "ui_notice_github"
+      },
+      "notice_other_operators": {
+        "index": 3,
+        "order": 103,
+        "text": "ui_notice_other_operators"
+      },
+      "logo_title": {
+        "index": 4,
+        "order": 104,
+        "text": "ui_logo_title"
+      },
+      "logo": {
+        "index": 5,
+        "order": 105,
+        "text": "ui_operator_logo",
+        "type": "bool",
+        "value": true
+      },
+      "logoimage": {
+        "index": 6,
+        "order": 106,
+        "text": "ui_logo_image",
+        "type": "file",
+        "value": "",
+        "condition": "logo.value == true"
+      },
+      "logoratio": {
+        "index": 7,
+        "order": 107,
+        "text": "ui_logo_ratio",
+        "type": "slider",
+        "value": 61.8,
+        "condition": "logo.value == true",
+        "fraction": true,
+        "max": 100,
+        "min": 0,
+        "step": 0.1,
+        "precision": 1
+      },
+      "logoopacity": {
+        "index": 8,
+        "order": 108,
+        "text": "ui_logo_opacity",
+        "type": "slider",
+        "value": 30,
+        "condition": "logo.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": 0
+      },
+      "logox": {
+        "index": 9,
+        "order": 109,
+        "text": "ui_translate_x",
+        "type": "slider",
+        "value": 0,
+        "condition": "logo.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": 0
+      },
+      "logoy": {
+        "index": 10,
+        "order": 110,
+        "text": "ui_translate_y",
+        "type": "slider",
+        "value": 0,
+        "condition": "logo.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": 0
+      },
+      "background_title": {
+        "index": 11,
+        "order": 111,
+        "text": "ui_background_title"
+      },
+      "defaultbackground": {
+        "index": 12,
+        "order": 112,
+        "text": "ui_default_background",
+        "type": "combo",
+        "value": "operator_bg.png",
+        "options": [
+          {
+            "label": "operator_bg.png",
+            "value": "operator_bg.png"
+          },
+          {
+            "label": "bg_anniversary_1.png",
+            "value": "bg_anniversary_1.png"
+          },
+          {
+            "label": "bg_iberia_1.png",
+            "value": "bg_iberia_1.png"
+          },
+          {
+            "label": "bg_kalts_1.png",
+            "value": "bg_kalts_1.png"
+          },
+          {
+            "label": "bg_kazimierz_1.png",
+            "value": "bg_kazimierz_1.png"
+          },
+          {
+            "label": "bg_laterano_1.png",
+            "value": "bg_laterano_1.png"
+          },
+          {
+            "label": "bg_main_victoria_1.png",
+            "value": "bg_main_victoria_1.png"
+          },
+          {
+            "label": "bg_rainbowsix_1.png",
+            "value": "bg_rainbowsix_1.png"
+          },
+          {
+            "label": "bg_rhine_1.png",
+            "value": "bg_rhine_1.png"
+          },
+          {
+            "label": "bg_rhodes_day.png",
+            "value": "bg_rhodes_day.png"
+          },
+          {
+            "label": "bg_rhodes_flower_1.png",
+            "value": "bg_rhodes_flower_1.png"
+          },
+          {
+            "label": "bg_rhodes_night.png",
+            "value": "bg_rhodes_night.png"
+          },
+          {
+            "label": "bg_rogue_1.png",
+            "value": "bg_rogue_1.png"
+          },
+          {
+            "label": "bg_rogue_2.png",
+            "value": "bg_rogue_2.png"
+          },
+          {
+            "label": "bg_rogue_3.png",
+            "value": "bg_rogue_3.png"
+          },
+          {
+            "label": "bg_sanrio_1.png",
+            "value": "bg_sanrio_1.png"
+          },
+          {
+            "label": "bg_siesta_1.png",
+            "value": "bg_siesta_1.png"
+          },
+          {
+            "label": "bg_ursus_1.png",
+            "value": "bg_ursus_1.png"
+          },
+          {
+            "label": "bg_yan_1.png",
+            "value": "bg_yan_1.png"
+          }
+        ]
+      },
+      "background": {
+        "index": 13,
+        "order": 113,
+        "text": "ui_custom_background",
+        "type": "file",
+        "value": ""
+      },
+      "voicetitle": {
+        "index": 14,
+        "order": 114,
+        "text": "ui_voice_title",
+        "type": "bool",
+        "value": false
+      },
+      "voicelanguage": {
+        "index": 15,
+        "order": 115,
+        "text": "ui_voice_lang",
+        "type": "combo",
+        "condition": "voicetitle.value == true",
+        "value": "CN_MANDARIN",
+        "options": [
+          {
+            "label": "CN_MANDARIN",
+            "value": "CN_MANDARIN"
+          },
+          {
+            "label": "JP",
+            "value": "JP"
+          },
+          {
+            "label": "KR",
+            "value": "KR"
+          },
+          {
+            "label": "EN",
+            "value": "EN"
+          }
+        ]
+      },
+      "voiceidle": {
+        "index": 16,
+        "order": 116,
+        "text": "ui_voice_idle",
+        "type": "textinput",
+        "value": 10,
+        "condition": "voicetitle.value == true",
+        "fraction": false,
+        "min": 0
+      },
+      "voicenext": {
+        "index": 17,
+        "order": 117,
+        "text": "ui_voice_next",
+        "type": "textinput",
+        "value": 3,
+        "condition": "voicetitle.value == true",
+        "fraction": false,
+        "min": 0
+      },
+      "voicesubtitle": {
+        "index": 18,
+        "order": 118,
+        "text": "ui_subtitle_title",
+        "condition": "voicetitle.value == true",
+        "type": "bool",
+        "value": false
+      },
+      "voicesubtitlelanguage": {
+        "index": 19,
+        "order": 119,
+        "text": "ui_subtitle_lang",
+        "type": "combo",
+        "condition": "voicesubtitle.value == true",
+        "value": "zh-CN",
+        "options": [
+          {
+            "label": "zh-CN",
+            "value": "zh-CN"
+          },
+          {
+            "label": "en-US",
+            "value": "en-US"
+          },
+          {
+            "label": "ja-JP",
+            "value": "ja-JP"
+          },
+          {
+            "label": "ko-KR",
+            "value": "ko-KR"
+          }
+        ]
+      },
+      "voicesubtitlex": {
+        "index": 20,
+        "order": 120,
+        "text": "ui_translate_x",
+        "type": "slider",
+        "value": 0,
+        "condition": "voicesubtitle.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": 0
+      },
+      "voicesubtitley": {
+        "index": 21,
+        "order": 121,
+        "text": "ui_translate_y",
+        "type": "slider",
+        "value": 100,
+        "condition": "voicesubtitle.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": 0
+      },
+      "voiceactor": {
+        "index": 22,
+        "order": 122,
+        "text": "ui_voice_actor_title",
+        "condition": "voicesubtitle.value == true",
+        "type": "bool",
+        "value": false
+      },
+      "music_title": {
+        "index": 23,
+        "order": 123,
+        "text": "ui_music_title",
+        "type": "bool",
+        "value": false
+      },
+      "music_notice": {
+        "index": 24,
+        "order": 124,
+        "text": "ui_music_notice",
+        "condition": "music_title.value == true"
+      },
+      "music_notice1": {
+        "index": 25,
+        "order": 125,
+        "text": "ui_music_notice1",
+        "condition": "music_title.value == true"
+      },
+      "music_selection": {
+        "index": 26,
+        "order": 126,
+        "text": "ui_music_selection",
+        "condition": "music_title.value == true",
+        "type": "combo",
+        "value": "bg_rhodes_day.png",
+        "options": [
+          {
+            "label": "bg_rhodes_day.png",
+            "value": "bg_rhodes_day.png"
+          },
+          {
+            "label": "bg_rhodes_night.png",
+            "value": "bg_rhodes_night.png"
+          },
+          {
+            "label": "bg_main_victoria_1.png",
+            "value": "bg_main_victoria_1.png"
+          },
+          {
+            "label": "bg_siesta_1.png",
+            "value": "bg_siesta_1.png"
+          },
+          {
+            "label": "bg_kazimierz_1.png",
+            "value": "bg_kazimierz_1.png"
+          },
+          {
+            "label": "bg_ursus_1.png",
+            "value": "bg_ursus_1.png"
+          },
+          {
+            "label": "bg_yan_1.png",
+            "value": "bg_yan_1.png"
+          },
+          {
+            "label": "bg_iberia_1.png",
+            "value": "bg_iberia_1.png"
+          },
+          {
+            "label": "bg_anniversary_1.png",
+            "value": "bg_anniversary_1.png"
+          },
+          {
+            "label": "bg_rogue_1.png",
+            "value": "bg_rogue_1.png"
+          },
+          {
+            "label": "bg_rogue_2.png",
+            "value": "bg_rogue_2.png"
+          },
+          {
+            "label": "bg_laterano_1.png",
+            "value": "bg_laterano_1.png"
+          },
+          {
+            "label": "bg_rhine_1.png",
+            "value": "bg_rhine_1.png"
+          },
+          {
+            "label": "bg_kalts_1.png",
+            "value": "bg_kalts_1.png"
+          },
+          {
+            "label": "bg_rogue_3.png",
+            "value": "bg_rogue_3.png"
+          },
+          {
+            "label": "bg_rainbowsix_1.png",
+            "value": "bg_rainbowsix_1.png"
+          },
+          {
+            "label": "bg_rhodes_flower_1.png",
+            "value": "bg_rhodes_flower_1.png"
+          },
+          {
+            "label": "bg_sanrio_1.png",
+            "value": "bg_sanrio_1.png"
+          },
+          {
+            "label": "operator_bg.png",
+            "value": "operator_bg.png"
+          }
+        ]
+      },
+      "custom_music": {
+        "index": 27,
+        "order": 127,
+        "text": "ui_custom_music",
+        "condition": "music_title.value == true",
+        "type": "file",
+        "fileType": "video",
+        "value": ""
+      },
+      "music_volume": {
+        "index": 28,
+        "order": 128,
+        "text": "ui_music_volume",
+        "type": "slider",
+        "value": 50,
+        "condition": "music_title.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": 0
+      },
+      "music_offset": {
+        "index": 29,
+        "order": 129,
+        "text": "ui_music_offset",
+        "type": "slider",
+        "value": 0.3,
+        "condition": "music_title.value == true",
+        "fraction": true,
+        "precision": 2,
+        "step": 0.01,
+        "max": 1,
+        "min": 0
+      },
+      "useStartAnimation": {
+        "index": 30,
+        "order": 130,
+        "text": "ui_useStartAnimation_title",
+        "type": "bool",
+        "value": true
+      },
+      "scale": {
+        "index": 31,
+        "order": 131,
+        "text": "ui_scale",
+        "type": "slider",
+        "value": 1,
+        "fraction": true,
+        "max": 10,
+        "min": 0,
+        "step": 0.1
+      },
+      "position": {
+        "index": 32,
+        "order": 132,
+        "text": "ui_position_title",
+        "type": "bool",
+        "value": false
+      },
+      "paddingleft": {
+        "index": 33,
+        "order": 133,
+        "text": "ui_position_padding_left",
+        "type": "slider",
+        "value": 0,
+        "condition": "position.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": -100
+      },
+      "paddingright": {
+        "index": 34,
+        "order": 134,
+        "text": "ui_position_padding_right",
+        "type": "slider",
+        "value": 0,
+        "condition": "position.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": -100
+      },
+      "paddingtop": {
+        "index": 35,
+        "order": 135,
+        "text": "ui_position_padding_top",
+        "type": "slider",
+        "value": 0,
+        "condition": "position.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": -100
+      },
+      "paddingbottom": {
+        "index": 36,
+        "order": 136,
+        "text": "ui_position_padding_bottom",
+        "type": "slider",
+        "value": 0,
+        "condition": "position.value == true",
+        "fraction": false,
+        "max": 100,
+        "min": -100
+      },
+      "privacytitle": {
+        "index": 37,
+        "order": 137,
+        "text": "ui_privacy_title"
+      },
+      "privacy_text": {
+        "index": 38,
+        "order": 138,
+        "text": "ui_privacy_text"
+      },
+      "privacydonottrack": {
+        "index": 39,
+        "order": 139,
+        "text": "ui_privacy_do_not_track",
+        "type": "bool",
+        "value": true
+      }
+    }
+  },
+  "preview": "preview.jpg",
+  "ratingsex": "none",
+  "ratingviolence": "none",
+  "snapshotformat": -1,
+  "snapshotoverlay": "",
+  "tags": [
+    "Game"
+  ],
+  "title": "Arknights: Iakhu of Flows / Nightingale - 明日方舟：流辉 · 夜莺",
+  "type": "web",
+  "version": 2
+}

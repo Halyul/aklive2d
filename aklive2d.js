@@ -58,10 +58,10 @@ async function main() {
       await officalInfo.update()
       process.exit(0)
     case 'cf:upload':
-      (new CFPages()).upload()
+      await (new CFPages()).upload()
       process.exit(0)
     case 'cf:download':
-      (new CFPages()).download()
+      await (new CFPages()).download()
       process.exit(0)
     default:
       break

@@ -1,3 +1,4 @@
+akassets_url: https://akassets.halyul.dev
 folder:
   auto_update_data: ./data/auto_update
   operator_data: ./data/operator/

@@ -83,6 +83,13 @@
       "request": "launch",
       "command": "pnpm run cf:upload",
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: cf:download",
+      "request": "launch",
+      "command": "pnpm run cf:download",
+      "cwd": "${workspaceFolder}"
     }
   ]
 }

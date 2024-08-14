@@ -1,12 +1,11 @@
 /* eslint-disable no-undef */
 import path from 'path'
 import { writeSync, copy, readSync as readFile } from './file.js'
-import { read } from './yaml.js';
 import AssetsProcessor from './assets_processor.js'
 import EnvGenerator from './env_generator.js'
 
-export default function ({ backgrounds, musicMapping }) {
-  const extractedFolder = path.join(__projectRoot, __config.folder.operator, '_directory')
+export default function (dataDir, { backgrounds, musicMapping }) {
+  const extractedFolder = path.join(dataDir, '_directory')
   const targetFolder = path.join(__projectRoot, __config.folder.release, __config.folder.directory);
   const directoryAssetFolder = path.join(__projectRoot, 'directory', 'src');
   const sourceFolder = path.join(__projectRoot, __config.folder.operator);
@@ -24,7 +23,7 @@ export default function ({ backgrounds, musicMapping }) {
 
           cur.workshopId = null
           try {
-            cur.workshopId = JSON.parse(readFile(path.join(__projectRoot, __config.folder.operator, cur.link, 'project.json'))).workshopid
+            cur.workshopId = JSON.parse(readFile(path.join(dataDir, cur.link, 'project.json'))).workshopid
           } catch (e) {
             console.log(`No workshop id for ${cur.link}!`)
           }

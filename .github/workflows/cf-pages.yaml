@@ -16,9 +16,9 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Build all
-        run: pnpm run build-all
+        run: pnpm run operator:build-all
       - name: Build directory
-        run: pnpm run vite:directory:build
+        run: pnpm run directory:build
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:

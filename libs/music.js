@@ -5,7 +5,7 @@ import Downloader from "./downloader.js"
 
 export default class Music {
   #downloader = new Downloader()
-  #sharedPath = path.join(__projectRoot, __config.folder.operator, __config.folder.share)
+  #sharedPath = path.join(__projectRoot, __config.folder.auto_update_data)
 
   async process() {
     const { metaTable, audioDataTable } = await this.#download()
@@ -49,8 +49,8 @@ export default class Music {
     }
   }
 
-  copy() {
-    const musicFolder = path.join(__projectRoot, __config.folder.operator, __config.folder.share, __config.folder.music);
+  copy(shareDir) {
+    const musicFolder = path.join(shareDir, __config.folder.music);
     const musicTable = JSON.parse(readSync(path.join(this.#sharedPath, `music_table.json`)))
     const musicMapping = {}
     const musicToCopy = []

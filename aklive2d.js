@@ -7,7 +7,7 @@ import { fork } from 'child_process';
 import getConfig from './libs/config.js'
 import ProjectJson from './libs/project_json.js'
 import EnvGenerator from './libs/env_generator.js'
-import { write, rmdir, copy, writeSync, copyDir, readdirSync, exists } from './libs/file.js'
+import { write, rmdir, copy, writeSync, copyDir, readdirSync, exists, mkdir } from './libs/file.js'
 import AssetsProcessor from './libs/assets_processor.js'
 import init from './libs/initializer.js'
 import directory from './libs/directory.js'
@@ -15,13 +15,17 @@ import Background from './libs/background.js'
 import CharwordTable from './libs/charword_table.js';
 import Music from './libs/music.js';
 import OfficalInfo from './libs/offical_info.js';
+import CFPages from './libs/cf_pages.js';
 
 async function main() {
   global.__projectRoot = path.dirname(fileURLToPath(import.meta.url))
   const officalInfo = new OfficalInfo()
   global.__config = getConfig(officalInfo)
-
   global.__error = []
+
+  const OPERATOR_SOURCE_FOLDER = path.join(__projectRoot, __config.folder.operator)
+  const OPERATOR_SOURCE_DATA_FOLDER = path.join(__projectRoot, __config.folder.operator_data)
+  const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_DATA_FOLDER, __config.folder.share)
 
   const op = process.argv[2]
   let OPERATOR_NAMES = process.argv.slice(3);
@@ -35,17 +39,12 @@ async function main() {
    * directory: build directory
    */
   switch (op) {
-    case 'directory':
-      assert(OPERATOR_NAMES.length !== 0, 'Please set a mode for Directory.')
-      fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
-      return
-    case 'build-all':
-    case 'charwords:build':
+    case 'operator:build-all':
       for (const [key,] of Object.entries(__config.operators)) {
         OPERATOR_NAMES.push(key)
       }
       break
-    case 'preview':
+    case 'operator:preview':
       assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
       fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAMES])
       return
@@ -58,16 +57,22 @@ async function main() {
     case 'offical_update':
       await officalInfo.update()
       process.exit(0)
+    case 'cf:upload':
+      (new CFPages()).upload()
+      process.exit(0)
+    case 'cf:download':
+      (new CFPages()).download()
+      process.exit(0)
     default:
       break
   }
 
   assert(OPERATOR_NAMES.length !== 0, 'Please set the operator name.')
 
-  const background = new Background()
+  const background = new Background(OPERATOR_SHARE_FOLDER, OPERATOR_SOURCE_FOLDER)
   await background.process()
   const backgrounds = ['operator_bg.png', ...background.files]
-  const { musicToCopy, musicMapping } = musicTable.copy()
+  const { musicToCopy, musicMapping } = musicTable.copy(OPERATOR_SHARE_FOLDER)
 
   for (const e of musicToCopy) {
     const musicPath = path.join(e.source, e.filename)
@@ -83,12 +88,10 @@ async function main() {
   }
 
   for (const OPERATOR_NAME of OPERATOR_NAMES) {
-    const OPERATOR_SOURCE_FOLDER = path.join(__projectRoot, __config.folder.operator)
     const OPERATOR_RELEASE_FOLDER = path.join(__projectRoot, __config.folder.release, OPERATOR_NAME)
     const SHOWCASE_PUBLIC_ASSSETS_FOLDER = path.join(OPERATOR_RELEASE_FOLDER, "assets")
-    const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, 'extracted')
-    const VOICE_FOLDERS = __config.folder.voice.sub.map((sub) => path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, __config.folder.voice.main, sub.name))
-    const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_FOLDER, __config.folder.share)
+    const EXTRACTED_FOLDER = path.join(OPERATOR_SOURCE_DATA_FOLDER, OPERATOR_NAME, 'extracted')
+    const VOICE_FOLDERS = __config.folder.voice.sub.map((sub) => path.join(OPERATOR_SOURCE_DATA_FOLDER, OPERATOR_NAME, __config.folder.voice.main, sub.name))
 
     /**
      * Skip assets generation part
@@ -104,6 +107,7 @@ async function main() {
     }
 
     rmdir(OPERATOR_RELEASE_FOLDER)
+    mkdir(path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME))
 
     const charwordTableLookup = charwordTable.lookup(OPERATOR_NAME)
     const voiceJson = {}
@@ -143,13 +147,6 @@ async function main() {
       console.log(`charword_table is not available`)
     }
 
-    switch (op) {
-      case 'charwords:build':
-        continue
-      default:
-        break
-    }
-
     // check whether voice files has been added
     const customVoiceName = voiceLangs.filter(i => !__config.folder.voice.sub.map(e => e.lang).includes(i))[0]
     const voiceLangMapping = __config.folder.voice.sub.filter(e => {
@@ -161,7 +158,7 @@ async function main() {
       }
     })
     for (const voiceSubFolderMapping of voiceLangMapping) {
-      const voiceSubFolder = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, __config.folder.voice.main, voiceSubFolderMapping.name)
+      const voiceSubFolder = path.join(OPERATOR_SOURCE_DATA_FOLDER, OPERATOR_NAME, __config.folder.voice.main, voiceSubFolderMapping.name)
       if (readdirSync(voiceSubFolder).length === 0) {
         __error.push(`Voice folder ${voiceSubFolderMapping.name} for ${OPERATOR_NAME} is empty.`)
       }
@@ -237,10 +234,10 @@ async function main() {
     })
 
     const assetsProcessor = new AssetsProcessor(OPERATOR_NAME, OPERATOR_SHARE_FOLDER)
-    assetsProcessor.process(EXTRACTED_FOLDER).then((content) => {
-      write(JSON.stringify(content.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
-    })
-
+    const assetContent = await assetsProcessor.process(EXTRACTED_FOLDER)
+    write(JSON.stringify(assetContent.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
+    
+    // copy remaining files
     const filesToCopy = [
       ...background.getFilesToCopy(SHOWCASE_PUBLIC_ASSSETS_FOLDER),
       ...musicToCopy.map(entry => {
@@ -251,7 +248,7 @@ async function main() {
       }),
       {
         filename: 'preview.jpg',
-        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME),
+        source: path.join(OPERATOR_SOURCE_DATA_FOLDER, OPERATOR_NAME),
         target: path.join(OPERATOR_RELEASE_FOLDER)
       },
       {
@@ -281,7 +278,7 @@ async function main() {
 
     const foldersToCopy = [
       {
-        source: path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, __config.folder.voice.main),
+        source: path.join(OPERATOR_SOURCE_DATA_FOLDER, OPERATOR_NAME, __config.folder.voice.main),
         target: path.join(SHOWCASE_PUBLIC_ASSSETS_FOLDER, __config.folder.voice.main)
       }
     ]
@@ -289,20 +286,18 @@ async function main() {
       copyDir(folder.source, folder.target)
     })
   }
-
-  directory({ backgrounds, musicMapping })
+  switch (op) {
+    case op.startsWith('directory'):
+      directory(OPERATOR_SOURCE_DATA_FOLDER, { backgrounds, musicMapping })
+    default:
+      break
+  }
   if (__error.length > 0) {
     const str = `${__error.length} error${__error.length > 1 ? 's were' : ' was'} found:\n${__error.join('\n')}`
     throw new Error(str)
   } else {
-    switch (op) {
-      case 'charwords:build':
-        return
-      default:
-        for (const OPERATOR_NAME of OPERATOR_NAMES) {
-          fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAME])
-        }
-        return
+    for (const OPERATOR_NAME of OPERATOR_NAMES) {
+      fork(path.join(__projectRoot, 'vite.config.js'), [op, OPERATOR_NAME])
     }
   }
 }

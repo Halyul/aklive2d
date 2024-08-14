@@ -4,23 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node aklive2d dev",
-    "build": "node aklive2d build",
-    "build-all": "node aklive2d build-all",
-    "preview": "node aklive2d preview",
+    "operator:dev": "node aklive2d operator:dev",
+    "operator:build": "node aklive2d operator:build",
+    "operator:build-all": "node aklive2d operator:build-all",
     "init": "node aklive2d init",
-    "directory": "node aklive2d directory",
     "charwords:update": "node aklive2d charwords:update",
-    "charwords:build": "node aklive2d charwords:build",
-    "logo": "node aklive2d logo",
     "music": "node aklive2d music",
-    "vite:dev": "vite",
-    "vite:build": "vite build",
-    "vite:preview": "vite preview",
-    "vite:directory:dev": "vite dev",
-    "vite:directory:build": "vite build",
-    "vite:directory:preview": "vite preview",
-    "offical_update": "node aklive2d offical_update"
+    "directory:dev": "vite dev",
+    "directory:build": "vite build",
+    "directory:preview": "vite preview",
+    "offical_update": "node aklive2d offical_update",
+    "cf:upload": "node aklive2d cf:upload",
+    "cf:download": "node aklive2d cf:download"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -37,7 +32,8 @@
     "stylelint": "^16.8.1",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
-    "vite": "^5.3.5"
+    "vite": "^5.3.5",
+    "wrangler": "^3.71.0"
   },
   "dependencies": {
     "@parcellab/react-use-umami": "^2.0.1",

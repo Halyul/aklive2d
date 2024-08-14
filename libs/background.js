@@ -2,29 +2,29 @@
 import path from 'path';
 import fs from 'fs';
 import sharp from "sharp";
+import { mkdir } from './file.js'
 
 export default class Background {
   #backgroundFolder
+  #backgroundOutputFolder
   #extractFolder
   #files
 
-  constructor() {
-    this.#backgroundFolder = path.join(__projectRoot, __config.folder.operator, __config.folder.share, __config.folder.background);
+  constructor(shareDir, targetDir) {
+    this.#backgroundFolder = path.join(shareDir, __config.folder.background);
+    this.#backgroundOutputFolder = path.join(targetDir, `_${__config.folder.background}`);
     this.#extractFolder = path.join(this.#backgroundFolder, 'extracted');
+    mkdir(this.#backgroundOutputFolder);
   }
 
   async process() {
     this.#files = fs.readdirSync(this.#extractFolder).filter((f) => {
       return f.endsWith('.png') && f.includes('_left');
     })
-    if (this.#files.length !== fs.readdirSync(this.#backgroundFolder).length - 1) {
-      await Promise.all(this.#files.map(async (f) => {
-        const filenamePrefix = path.parse(f).name.replace('_left', '');
-        await this.#composite(filenamePrefix, '.png');
-      }))
-    } else {
-      console.log('Background images already exist, skip generation.')
-    }
+    await Promise.all(this.#files.map(async (f) => {
+      const filenamePrefix = path.parse(f).name.replace('_left', '');
+      await this.#composite(filenamePrefix, '.png');
+    }))
   }
 
   async #composite(filenamePrefix, fileExt) {
@@ -45,7 +45,7 @@ export default class Background {
           left: metadata.width,
         },
       ])
-      .toFile(path.join(this.#backgroundFolder, `${filenamePrefix}${fileExt}`));
+      .toFile(path.join(this.#backgroundOutputFolder, `${filenamePrefix}${fileExt}`));
   }
 
   get files() {
@@ -56,7 +56,7 @@ export default class Background {
     return this.#files.map((f) => {
       return {
         filename: f.replace('_left', ''),
-        source: path.join(this.#backgroundFolder),
+        source: path.join(this.#backgroundOutputFolder),
         target: path.join(publicAssetsDir, __config.folder.background)
       };
     })

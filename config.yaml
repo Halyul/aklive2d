@@ -1,4 +1,6 @@
 folder:
+  auto_update_data: ./data/auto_update
+  operator_data: ./data/operator/
   directory_src: directory
   showcase_src: showcase
   operator: ./operator/

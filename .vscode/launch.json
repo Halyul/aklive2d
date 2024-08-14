@@ -25,7 +25,7 @@
       "type": "node-terminal",
       "name": "Run Script: build-all",
       "request": "launch",
-      "command": "pnpm run build-all",
+      "command": "pnpm run operator:build-all",
       "cwd": "${workspaceFolder}"
     },
     {
@@ -75,6 +75,13 @@
       "name": "Run Script: offical_update",
       "request": "launch",
       "command": "pnpm run offical_update",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: cf:upload",
+      "request": "launch",
+      "command": "pnpm run cf:upload",
       "cwd": "${workspaceFolder}"
     }
   ]

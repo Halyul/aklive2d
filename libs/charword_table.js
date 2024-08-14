@@ -30,7 +30,7 @@ export function getOperatorId(operatorConfig) {
 
 export default class CharwordTable {
   #operatorIDs = Object.values(__config.operators).map(operator => { return getOperatorId(operator) })
-  #charwordTablePath = path.join(__projectRoot, __config.folder.operator, __config.folder.share)
+  #charwordTablePath = path.join(__projectRoot, __config.folder.auto_update_data)
   #charwordTableFile = path.join(this.#charwordTablePath, 'charword_table.json')
   #charwordTable = JSON.parse(readSync(this.#charwordTableFile)) || {
     config: {

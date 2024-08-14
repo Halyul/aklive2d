@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import { defineConfig } from 'vite'
 import assert from 'assert'
 import react from '@vitejs/plugin-react-swc'
 import getConfig from './libs/config.js'
@@ -18,7 +18,6 @@ class ViteRunner {
   #globalConfig = getConfig(this.#officalInfo)
   #mode
   #baseViteConfig = {
-    plugins: [splitVendorChunkPlugin()],
     configFile: false,
     base: "",
     server: {
@@ -32,22 +31,19 @@ class ViteRunner {
   get config() {
     let result;
     const temp = process.env.npm_lifecycle_event.split(':')
-    this.#mode = temp[0] === "vite" ? temp[1] : process.argv[2]
-    switch (this.#mode) {
+    const runType = temp[0]
+    this.#mode = temp[1]
+    switch (runType) {
       case 'directory':
         result = {
           data: this.#directoryConfig,
         }
-        const op = temp[2] || process.argv[3]
-        if (op !== 'preview') {
+        if (this.#mode !== 'preview') {
           rmdir(path.resolve(__projectRoot, this.#globalConfig.folder.release, "_directory"))
           rmdir(path.resolve(__projectRoot, this.#globalConfig.folder.release, "index.html"))
         }
         break
-      case 'dev':
-      case 'build':
-      case 'build-all':
-      case 'preview':
+      case 'operator':
         result = {
           data: this.#operatorConfig,
         }
@@ -143,12 +139,10 @@ class ViteRunner {
   }
 
   get #directoryConfig() {
-    if (process.env.npm_lifecycle_event === 'vite:directory:build') {
+    if (process.env.npm_lifecycle_event === 'directory:build') {
       global.__config = this.#globalConfig
     }
     const directoryDir = path.resolve(__projectRoot, this.#globalConfig.folder.directory_src)
-    this.#mode = process.argv[3]
-    // const publicDir = path.resolve(__projectRoot, this.#globalConfig.folder.release)
     const assetsDir = '_directory'
     return {
       ...this.#baseViteConfig,
@@ -191,15 +185,18 @@ class ViteRunner {
 }
 
 async function main() {
-  if (process.env.npm_lifecycle_event.includes('vite')) {
+  if (process.env.npm_lifecycle_event.includes('directory')) {
     const officalInfo = new OfficalInfo()
     global.__config = getConfig(officalInfo)
-    const background = new Background()
+    const OPERATOR_SOURCE_FOLDER = path.join(__projectRoot, __config.folder.operator)
+    const OPERATOR_SOURCE_DATA_FOLDER = path.join(__projectRoot, __config.folder.operator_data)
+    const OPERATOR_SHARE_FOLDER = path.join(OPERATOR_SOURCE_DATA_FOLDER, __config.folder.share)
+    const background = new Background(OPERATOR_SHARE_FOLDER, OPERATOR_SOURCE_FOLDER)
     await background.process()
     const backgrounds = ['operator_bg.png', ...background.files]
-    const { musicMapping } = (new Music()).copy()
+    const { musicMapping } = (new Music()).copy(OPERATOR_SHARE_FOLDER)
 
-    directory({ backgrounds, musicMapping })
+    directory(OPERATOR_SOURCE_DATA_FOLDER, { backgrounds, musicMapping })
     return
   }
   const runner = new ViteRunner()

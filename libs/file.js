@@ -73,3 +73,11 @@ export function readdirSync(dir) {
   }
   return fs.readdirSync(dir)
 }
+
+export function fileTypeSync(dir) {
+  if (!exists(dir)) {
+    console.warn(`Source ${dir} does not exist.`)
+    return null
+  }
+  return fs.statSync(dir).isDirectory() ? 'dir' : 'file'
+}

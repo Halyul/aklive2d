@@ -138,3 +138,5 @@ _*.json
 *_v2/*
 assets/*
 temp/*
+operator/*
+data/operator/*

@@ -22,8 +22,6 @@ jobs:
         run: pnpm i
       - name: Update charwords
         run: pnpm run charwords:update
-      - name: Build operator charwords
-        run: pnpm run charwords:build
       - name: Commit changes if any
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

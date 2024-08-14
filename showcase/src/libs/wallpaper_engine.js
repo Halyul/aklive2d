@@ -111,6 +111,18 @@ window.wallpaperPropertyListener = {
                 window.settings.resetMusic()
             }
         }
+        if (properties.custom_video) {
+            if (properties.custom_video.value) {
+                window.settings.setVideoFromWE(`file:///${properties.custom_video.value}`)
+                window.settings.functionInsights("setVideo", Object.keys(properties) !== 1)
+            } else {
+                window.settings.resetVideo()
+            }
+        }
+        if (properties.video_volume) {
+            window.settings.setVideoVolume(properties.video_volume.value)
+            window.settings.functionInsights("video_volume", Object.keys(properties) !== 1)
+        }
         if (properties.scale) {
             window.settings.setScale(properties.scale.value)
             window.settings.functionInsights("setScale", Object.keys(properties) !== 1)

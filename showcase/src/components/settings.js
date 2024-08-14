@@ -5,6 +5,7 @@ const getPercentage = (value) => parseInt(value.replace("%", ""))
 export default class Settings {
   #el
   #logoEl
+  #videoEl
   #defaultLogoImage
   #defaultFps = 60
   #defaultRatio = 61.8
@@ -64,7 +65,7 @@ export default class Settings {
     resize()
     this.#setLogoInvertFilter(this.#defaultInvertFilter)
     this.setLogoOpacity(this.#defaultOpacity)
-
+    this.#videoEl = document.getElementById("video-src")
     this.#insertHTML()
   }
 
@@ -367,12 +368,33 @@ export default class Settings {
     window.music.resetMusic()
   }
 
+  setVideo(e) {
+    this.#readFile(
+      e,
+      (blobURL, type) => {
+        this.#videoEl.src = blobURL
+        this.#videoEl.load()
+        document.getElementById("custom_video_background_clear").disabled = false
+      }
+    )
+  }
+
+  setVideoVolume(value) {
+    this.#videoEl.volume = value / 100
+  }
+
+  getVideoVolume() {
+    return this.#videoEl.volume * 100
+  }
+
   setVideoFromWE(url) {
-    const type = url.split(".").pop()
+    this.#videoEl.src = url
+    this.#videoEl.load()
     document.getElementById("custom_video_background_clear").disabled = false
   }
 
   resetVideo() {
+    this.#videoEl.src = ""
     document.getElementById("custom_video_background").value = ""
     document.getElementById("custom_video_background_clear").disabled = true
   }
@@ -428,10 +450,21 @@ export default class Settings {
             <input type="file" id="custom_background" accept="image/*"/>
             <button type="button" disabled id="custom_background_clear" disabled>Clear</button>
           </div>
-          <div>
-            <label for="custom_video_background"> Custom Video Background (Store Locally)</label>
-            <input type="file" id="custom_video_background" accept="video/*"/>
-            <button type="button" disabled id="custom_video_background_clear" disabled>Clear</button>
+        </div>
+        <div>
+          <label for="video">Video</label>
+          <input type="checkbox" id="video" name="video" />
+          <div id="video_realted" hidden>
+            <div>
+              <label for="custom_video_background"> Custom Video Background (Store Locally)</label>
+              <input type="file" id="custom_video_background" accept="video/*"/>
+              <button type="button" disabled id="custom_video_background_clear" disabled>Clear</button>
+            </div>
+            <div>
+              <label for="video_volume">Video Volume</label>
+              <input type="range" min="0" max="100" step="1" id="video_volume_slider" value="${this.getVideoVolume()}" />
+              <input type="number" id="video_volume_input"  min="0" max="100" step="1" name="video_volume" value="${this.getVideoVolume() }" />
+            </div>
           </div>
         </div>
         <div>
@@ -742,6 +775,25 @@ export default class Settings {
         id: "music_switch_offset_input", event: "change", handler: e => {
           _this.#sync(e.currentTarget, "music_switch_offset_slider");
           window.music.timeOffset = parseFloat(e.currentTarget.value)
+        }
+      }, {
+        id: "video", event: "click", handler: e => {
+          _this.#showRelated(e.currentTarget, "video_realted");
+          if (!e.currentTarget.checked) _this.resetVideo()
+        }
+      }, {
+        id: "custom_video_background", event: "change", handler: e => _this.setVideo(e)
+      }, {
+        id: "custom_video_background_clear", event: "click", handler: () => _this.resetVideo()
+      }, {
+        id: "video_volume_slider", event: "input", handler: e => {
+          _this.#sync(e.currentTarget, "video_volume_input");
+          this.setVideoVolume(parseInt(e.currentTarget.value))
+        }
+      }, {
+        id: "video_volume_input", event: "change", handler: e => {
+          _this.#sync(e.currentTarget, "video_volume_slider");
+          this.setVideoVolume(parseInt(e.currentTarget.value))
         }
       }, {
         id: "position", event: "click", handler: e => {

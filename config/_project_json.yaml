@@ -25,7 +25,7 @@ localization:
     ui_voice_lang: Voice Language
     ui_voice_idle: Idle Timeout
     ui_voice_next: Voice Interval
-    ui_subtitle_title: <hr><h4>📑 Subtitle</h4><hr>
+    ui_subtitle_title: <hr><h4>🎵 Subtitle</h4><hr>
     ui_subtitle_lang: Subtitle Language
     ui_voice_actor_title: <hr><h4>🗣️ Voice Actor</h4><hr>
     ui_privacy_title: <hr><h4>📜 Privacy</h4><hr>
@@ -39,6 +39,9 @@ localization:
     ui_music_volume: Volume
     ui_music_offset: Offset
     ui_useStartAnimation_title: Use Start Animation
+    ui_video_title: <hr><h4>📝 Video</h4><hr>
+    ui_custom_video: Custom Video
+    ui_video_volume: Volume
   zh-chs:
     ui_notice_title: <hr><h4>📝 通知</h4><hr>
     ui_notice_set_fps: <span><b>在设置中设定FPS目标</b></span>
@@ -78,6 +81,9 @@ localization:
     ui_music_volume: 音量
     ui_music_offset: 弥补
     ui_useStartAnimation_title: 使用开始动画
+    ui_video_title: <hr><h4>📹 视频</h4><hr>
+    ui_custom_video: 自定义视频
+    ui_video_volume: 音量
 properties:
   - key: notice_title
     value: 
@@ -268,6 +274,27 @@ properties:
      precision: 2
      step: 0.01
      max: 1
+     min: 0
+  - key: video_title
+    value: 
+     text: ui_video_title
+     type: bool
+     value: false
+  - key: custom_video
+    value: 
+     text: ui_video_music
+     condition: video_title.value == true
+     type: file
+     fileType: video
+     value: ""
+  - key: video_volume
+    value: 
+     text: ui_video_volume
+     type: slider
+     value: 100
+     condition: video_title.value == true
+     fraction: false
+     max: 100
      min: 0
   - key: useStartAnimation
     value: 

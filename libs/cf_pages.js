@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
+import pThrottle from 'p-throttle';
 import { spawnSync } from 'child_process';
 import { readdirSync, fileTypeSync, writeSync, mkdir, exists } from './file.js';
 
@@ -28,20 +29,23 @@ export default class CFPages {
         let list = data.children.flatMap((child) => {
             return this.#generateDownloadList(child, this.#downloadPath);
         });
+        const throttle = pThrottle({
+            limit: 10,
+            interval: 500
+        })
         while (list.length > 0) {
             const retry = [];
-            for (const file of list) {
-                let toDownload = false;
+            await Promise.all(list.map(throttle(async (file) => {
+                let isExists = false;
                 let suppressedPath = file.target.replace(this.#downloadPath, '');
                 if (exists(file.target)) {
                     const hash = await this.#getHash(file.target);
-                    if (hash !== file.hash) {
-                        toDownload = true;
-                    } else {
+                    if (hash === file.hash) {
+                        isExists = true
                         console.log("File already exists and hash matches:", suppressedPath);
                     }
                 }
-                if (!exists(file.target) || toDownload) {
+                if (!isExists) {
                     await fetch(file.url)
                         .then(response => {
                             return response.arrayBuffer();
@@ -61,7 +65,7 @@ export default class CFPages {
                             retry.push(file);
                         });
                 }
-            }
+            })));
             list = retry;
         }
     }

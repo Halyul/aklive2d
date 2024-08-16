@@ -146,7 +146,12 @@ export default function Error() {
         }
       }))
     }
-  }, [playVoice, spineData]);
+    return () => {
+      if (spinePlayer) {
+        spinePlayer.dispose()
+      }
+    }
+  }, [playVoice, spineData, spinePlayer]);
 
   return (
     <section className={classes.error}>

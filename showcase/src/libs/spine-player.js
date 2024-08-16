@@ -2390,7 +2390,7 @@ var spine;
 			var asset = this.assets[path];
 			if (asset.dispose)
 				asset.dispose();
-			this.assets[path] = null;
+			delete this.assets[path];
 		};
 		AssetManager.prototype.removeAll = function () {
 			for (var key in this.assets) {
@@ -8599,6 +8599,10 @@ var spine;
 					};
 				}
 			}
+			LoadingScreen.prototype.dispose = function () {
+				this.logo.dispose()
+				this.spinner.dispose();
+			}
 			LoadingScreen.prototype.draw = function (complete) {
 				if (complete === void 0) { complete = false; }
 				if (complete && this.fadeOut > LoadingScreen.FADE_SECONDS)
@@ -10883,7 +10887,7 @@ var spine;
 					dismissed = true;
 				}
 			};
-			window.addEventListener("click", windowClickListener);
+			this.player.addEventListener(window, "click", windowClickListener);
 		};
 		return Popup;
 	}());
@@ -10993,12 +10997,29 @@ var spine;
 			this.viewportTransitionStart = 0;
 			this.stopRequestAnimationFrame = false;
 			this.cancelId = 0;
+			this.disposed = false;
+			this.eventListeners = [];
 			if (typeof parent === "string")
 				this.parent = document.getElementById(parent);
 			else
 				this.parent = parent;
 			this.parent.appendChild(this.render());
 		}
+		SpinePlayer.prototype.dispose = function () {
+			this.sceneRenderer.dispose();
+			this.loadingScreen.dispose();
+			this.assetManager.dispose();
+			for (var i = 0; i < this.eventListeners.length; i++) {
+				var eventListener = this.eventListeners[i];
+				eventListener.target.removeEventListener(eventListener.event, eventListener.func);
+			}
+			// this.parent.removeChild(this.dom);
+			this.disposed = true;
+		};
+		SpinePlayer.prototype.addEventListener = function (target, event, func) {
+			this.eventListeners.push({ target: target, event: event, func: func });
+			target.addEventListener(event, func);
+		};
 		SpinePlayer.prototype.validateConfig = function (config) {
 			if (!config)
 				throw new Error("Please pass a configuration to new.spine.SpinePlayer().");
@@ -11196,9 +11217,7 @@ var spine;
 			logoButton.onclick = function () {
 				window.open("http://esotericsoftware.com");
 			};
-			window.onresize = function () {
-				_this.drawFrame(false);
-			};
+			this.addEventListener(window, "resize", () => this.drawFrame(false));
 			return dom;
 		};
 		SpinePlayer.prototype.showSpeedDialog = function (speedButton) {
@@ -11343,6 +11362,7 @@ var spine;
 		};
 		SpinePlayer.prototype.drawFrame = function (requestNextFrame) {
 			var _this = this;
+			if (this.disposed) return;
 			if (requestNextFrame === void 0) { requestNextFrame = true; }
 			if (requestNextFrame && !this.stopRequestAnimationFrame)
 				requestAnimationFrame(function () { return _this.drawFrame(); });
@@ -11648,12 +11668,12 @@ var spine;
 			});
 			var mouseOverControls = true;
 			var mouseOverCanvas = false;
-			document.addEventListener("mousemove", function (ev) {
+			this.addEventListener(document, "mousemove", (ev) => {
 				if (ev instanceof MouseEvent) {
 					handleHover(ev.clientX, ev.clientY);
 				}
 			});
-			document.addEventListener("touchmove", function (ev) {
+			this.addEventListener(document, "touchmove", (ev) => {
 				if (ev instanceof TouchEvent) {
 					var touches = ev.changedTouches;
 					if (touches.length > 0) {

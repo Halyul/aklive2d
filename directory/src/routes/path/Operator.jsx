@@ -79,6 +79,7 @@ export default function Operator() {
   const [spineAnimation, setSpineAnimation] = useState(defaultSpineAnimation)
   const { i18n } = useI18n()
   const [spinePlayer, setSpinePlayer] = useState(null)
+  const [prevLink, setPrevLink] = useState(null)
   const [voiceLang, _setVoiceLang] = useState(null)
   const [currentBackground, setCurrentBackground] = useAtom(backgroundAtom)
   const [voiceConfig, setVoiceConfig] = useState(null)
@@ -170,7 +171,7 @@ export default function Operator() {
       setTitle(getPartialName("name", config.codename[language]))
     }
   }, [config, language, key, setTitle])
-
+  
   useEffect(() => {
     if (spineRef.current?.children.length === 0 && spineData && config) {
       const playerConfig = {
@@ -222,10 +223,15 @@ export default function Operator() {
       } else {
         playerConfig.skelUrl = `./assets/${config.filename.replace('#', '%23')}.skel`;
       }
-
+      setPrevLink(config.link)
       setSpinePlayer(new spine.SpinePlayer(spineRef.current, playerConfig))
     }
-  }, [config, spineData, spineAnimation]);
+    return () => {
+      if (spinePlayer && prevLink === config.link) {
+        spinePlayer.dispose()
+      }
+    }
+  }, [config, spineData, spineAnimation, setSpinePlayer, spinePlayer, prevLink]);
 
   useEffect(() => {
     if (voiceConfig && voiceLang) {

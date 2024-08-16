@@ -7,7 +7,7 @@ import EnvGenerator from './env_generator.js'
 export default function (dataDir, { backgrounds, musicMapping }) {
   const extractedFolder = path.join(dataDir, '_directory')
   const targetFolder = path.join(__projectRoot, __config.folder.release, __config.folder.directory);
-  const directoryAssetFolder = path.join(__projectRoot, 'directory', 'src');
+  const directoryAssetFolder = path.join(__projectRoot, __config.folder.directory_src, 'src');
   const sourceFolder = path.join(__projectRoot, __config.folder.operator);
   const filesToCopy = Object.keys(__config.operators)
   const directoryJson = {

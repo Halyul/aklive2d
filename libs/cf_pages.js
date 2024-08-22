@@ -5,7 +5,7 @@ import crypto from 'crypto';
 import pThrottle from 'p-throttle';
 import { spawnSync } from 'child_process';
 import { readdirSync, fileTypeSync, writeSync, mkdir, exists } from './file.js';
-
+//TODO: Utilizing github actions to upload base.zip and update.zip
 export default class CFPages {
     #uploadPath = path.join(__projectRoot, __config.folder.operator_data);
     #downloadPath = path.join(__projectRoot, __config.folder.operator_data);
@@ -25,13 +25,13 @@ export default class CFPages {
         const indexFile = `${__config.akassets_url}/index.json`
         const resp = await fetch(indexFile);
         const data = await resp.json();
-        mkdir(this.#downloadPath);
+        if (!exists(this.#downloadPath)) mkdir(this.#downloadPath);
         let list = data.children.flatMap((child) => {
             return this.#generateDownloadList(child, this.#downloadPath);
         });
         const throttle = pThrottle({
             limit: 10,
-            interval: 500
+            interval: 100
         })
         while (list.length > 0) {
             const retry = [];
@@ -42,7 +42,7 @@ export default class CFPages {
                     const hash = await this.#getHash(file.target);
                     if (hash === file.hash) {
                         isExists = true
-                        console.log("File already exists and hash matches:", suppressedPath);
+                        // console.log("File already exists and hash matches:", suppressedPath);
                     }
                 }
                 if (!isExists) {

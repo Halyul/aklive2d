@@ -70,7 +70,7 @@ export default function (dataDir, { backgrounds, musicMapping }) {
       key: "music_mapping",
       value: JSON.stringify(musicMapping)
     }
-  ]), path.join(__projectRoot, 'directory', '.env'))
+  ]), path.join(__projectRoot, __config.folder.directory_src, '.env'))
 
   writeSync(JSON.stringify(directoryJson, null), path.join(directoryAssetFolder, "_directory.json"))
   writeSync(JSON.stringify(backgrounds, null), path.join(directoryAssetFolder, "_backgrounds.json"))

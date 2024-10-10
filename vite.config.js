@@ -185,6 +185,14 @@ class ViteRunner {
 }
 
 async function main() {
+  if (process.env.npm_lifecycle_event.includes('directory')) return;
+  const runner = new ViteRunner()
+  await runner.start()
+}
+
+main()
+
+export default defineConfig(async () => {
   if (process.env.npm_lifecycle_event.includes('directory')) {
     const officalInfo = new OfficalInfo()
     global.__config = getConfig(officalInfo)
@@ -197,12 +205,6 @@ async function main() {
     const { musicMapping } = (new Music()).copy(OPERATOR_SHARE_FOLDER)
 
     directory(OPERATOR_SOURCE_DATA_FOLDER, { backgrounds, musicMapping })
-    return
   }
-  const runner = new ViteRunner()
-  await runner.start()
-}
-
-main()
-
-export default defineConfig((new ViteRunner()).config.data)
+  return (new ViteRunner()).config.data
+})

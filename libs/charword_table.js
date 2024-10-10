@@ -124,7 +124,11 @@ export default class CharwordTable {
   }
 
   async #download(region) {
-    return await (new Downloader()).github(`https://api.github.com/repos/${REGION_URLS[region]}/commits?path=${region}/gamedata/excel/charword_table.json`, `https://raw.githubusercontent.com/${REGION_URLS[region]}/master/${region}/gamedata/excel/charword_table.json`, path.join(this.#charwordTablePath, `charword_table_${region}.json`))
+    return await (new Downloader()).github(
+      `https://api.github.com/repos/${REGION_URLS[region]}/commits?path=${region}/gamedata/excel/charword_table.json`,
+      `https://raw.githubusercontent.com/${REGION_URLS[region]}/master/${region}/gamedata/excel/charword_table.json`,
+      path.join(this.#charwordTablePath, `charword_table_${region}.json`)
+    )
   }
 
 }

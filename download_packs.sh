@@ -39,8 +39,8 @@ do
 done
 
 ASSET_FOLDER="assets"
-FILES_TO_KEEP=("spritepack/ui_camp_logo_h2_0.ab" "spritepack/ui_camp_logo_h2_linkage_0.ab" "arts/dynchars" "chararts" "skinpack" "arts/ui/homebackground/wrapper" "arts/charportraits" "audio/sound_beta_2/music" "audio/sound_beta_2/voice*")
-FILES_DESTS=("ui_camp_logo_h2_0.ab" "ui_camp_logo_h2_linkage_0.ab" "dynchars" "chararts" "skinpack" "homebackground" "charportraits" "music" ".")
+FILES_TO_KEEP=("spritepack/ui_camp_logo_0.ab" "arts/dynchars" "chararts" "skinpack" "arts/ui/homebackground/wrapper" "arts/charportraits" "audio/sound_beta_2/music" "audio/sound_beta_2/voice*")
+FILES_DESTS=("ui_camp_logo_0.ab" "dynchars" "chararts" "skinpack" "homebackground" "charportraits" "music" ".")
 mkdir -p ./$ASSET_FOLDER
 
 for i in "${!FILES_TO_KEEP[@]}"; do

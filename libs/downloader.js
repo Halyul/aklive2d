@@ -10,10 +10,11 @@ export default class Downloader {
         const historyData = await historyResponse.json()
         const lastCommit = historyData[0]
         const lastCommitDate = new Date(lastCommit.commit.committer.date)
-        console.log(`Last commit date: ${lastCommitDate.getTime()}`)
         const ext = path.extname(filepath)
         const basename = path.basename(filepath).replace(ext, '')
         filepath = path.join(filepath, "..", `${basename}_${lastCommitDate.getTime()}${ext}`)
+        const dirpath = path.join(filepath, "..")
+        console.log(`Last ${basename} commit date: ${lastCommitDate.getTime()}`)
 
         if (exists(filepath)) {
             console.log(`${basename} is the latest version.`)
@@ -25,10 +26,10 @@ export default class Downloader {
         console.log(`${basename} is updated.`)
 
         // remove old file
-        const files = readdirSync(path.join(__projectRoot, __config.folder.operator, __config.folder.share))
+        const files = readdirSync(path.join(dirpath))
         for (const file of files) {
             if (file.startsWith(basename) && file !== path.basename(filepath)) {
-                rm(path.join(__projectRoot, __config.folder.operator, __config.folder.share, file))
+                rm(path.join(dirpath, file))
             }
         }
         return data

@@ -30,7 +30,7 @@ export default function spinePlayer(el) {
     defaultMix: 0,
     success: function (widget) {
       if (widget.skeleton.data.animations.map(e => e.name).includes("Start") && window.settings.useStartAnimation) {
-        widget.animationState.setAnimation(0, "Start", false, 0)
+        widget.animationState.setAnimation(0, "Start", false)
       }
       widget.animationState.addAnimation(0, "Idle", true, 0);
       widget.animationState.addListener({
@@ -42,7 +42,7 @@ export default function spinePlayer(el) {
         complete: () => {
           if (window.performance.now() - resetTime >= 8 * 1000 && Math.random() < 0.3) {
             resetTime = window.performance.now();
-            let entry = widget.animationState.setAnimation(0, "Special", false, 0);
+            let entry = widget.animationState.setAnimation(0, "Special", false);
             entry.mixDuration = 0.3;
             widget.animationState.addAnimation(0, "Idle", true, 0);
           }
@@ -53,7 +53,7 @@ export default function spinePlayer(el) {
           return;
         }
         isPlayingInteract = true;
-        let entry = widget.animationState.setAnimation(0, "Interact", false, 0);
+        let entry = widget.animationState.setAnimation(0, "Interact", false);
         entry.mixDuration = 0.3;
         widget.animationState.addAnimation(0, "Idle", true, 0);
       }

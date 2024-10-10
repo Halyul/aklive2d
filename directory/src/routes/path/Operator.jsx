@@ -33,7 +33,7 @@ const getVoiceFoler = (lang) => {
   const voiceFolder = folderObject.sub.find(e => e.lang === lang) || folderObject.sub.find(e => e.name === 'custom')
   return `${folderObject.main}/${voiceFolder.name}`
 }
-const defaultSpineAnimation = 'Idle'
+const defaultSpineAnimationName = 'Idle'
 const backgroundAtom = atom(BACKGROUNDS[0])
 
 const getPartialName = (type, input) => {
@@ -76,10 +76,9 @@ export default function Operator() {
   // eslint-disable-next-line no-unused-vars
   const _trackEvt = useUmami(`/${key}`, `${key}`)
   const spineRef = useRef(null)
-  const [spineAnimation, setSpineAnimation] = useState(defaultSpineAnimation)
+  const [spineAnimationName, setSpineAnimationName] = useState(defaultSpineAnimationName)
   const { i18n } = useI18n()
   const [spinePlayer, setSpinePlayer] = useState(null)
-  const [prevLink, setPrevLink] = useState(null)
   const [voiceLang, _setVoiceLang] = useState(null)
   const [currentBackground, setCurrentBackground] = useAtom(backgroundAtom)
   const [voiceConfig, setVoiceConfig] = useState(null)
@@ -121,7 +120,7 @@ export default function Operator() {
       setConfig(config)
       configRef.current = config
       fetch(`/${import.meta.env.VITE_DIRECTORY_FOLDER}/${config.filename.replace("#", "%23")}.json`).then(res => res.json()).then(data => {
-        setSpineAnimation(defaultSpineAnimation)
+        setSpineAnimationName(defaultSpineAnimationName)
         setSpineData(data)
       })
       setHeaderIcon(config.type)
@@ -178,7 +177,7 @@ export default function Operator() {
         skelUrl: `./assets/${config.filename.replace('#', '%23')}.skel`,
         atlasUrl: `./assets/${config.filename.replace('#', '%23')}.atlas`,
         rawDataURIs: spineData,
-        animation: spineAnimation,
+        animation: spineAnimationName,
         premultipliedAlpha: true,
         alpha: true,
         backgroundColor: "#00000000",
@@ -223,15 +222,17 @@ export default function Operator() {
       } else {
         playerConfig.skelUrl = `./assets/${config.filename.replace('#', '%23')}.skel`;
       }
-      setPrevLink(config.link)
       setSpinePlayer(new spine.SpinePlayer(spineRef.current, playerConfig))
     }
+  }, [config, spineData, spineAnimationName, setSpinePlayer, spinePlayer]);
+
+  useEffect(() => {
     return () => {
-      if (spinePlayer && prevLink === config.link) {
+      if (spinePlayer) {
         spinePlayer.dispose()
       }
     }
-  }, [config, spineData, spineAnimation, setSpinePlayer, spinePlayer, prevLink]);
+  }, [spinePlayer])
 
   useEffect(() => {
     if (voiceConfig && voiceLang) {
@@ -302,42 +303,34 @@ export default function Operator() {
     }
   }, [voiceLang])
 
+  const setSpineAnimation = useCallback((animation) => {
+    playAnimationVoice(animation)
+    const entry = spinePlayer.animationState.setAnimation(0, animation, true)
+    entry.mixDuration = 0.3;
+    setSpineAnimationName(animation)
+  }, [playAnimationVoice, spinePlayer])
+
   const spineSettings = [
     {
       name: 'animation',
       options: [
         {
           name: 'idle',
-          onClick: () => {
-            const animation = "Idle"
-            playAnimationVoice(animation)
-            spinePlayer.animationState.setAnimation(0, animation, true, 0)
-            setSpineAnimation(animation)
-          },
+          onClick: () => setSpineAnimation("Idle"),
           activeRule: () => {
-            return spineAnimation === 'Idle'
+            return spineAnimationName === 'Idle'
           }
         }, {
           name: 'interact',
-          onClick: () => {
-            const animation = "Interact"
-            playAnimationVoice(animation)
-            spinePlayer.animationState.setAnimation(0, animation, true, 0)
-            setSpineAnimation(animation)
-          },
+          onClick: () => setSpineAnimation("Interact"),
           activeRule: () => {
-            return spineAnimation === 'Interact'
+            return spineAnimationName === 'Interact'
           }
         }, {
           name: 'special',
-          onClick: () => {
-            const animation = "Special"
-            playAnimationVoice(animation)
-            spinePlayer.animationState.setAnimation(0, animation, true, 0)
-            setSpineAnimation(animation)
-          },
+          onClick: () => setSpineAnimation("Special"),
           activeRule: () => {
-            return spineAnimation === 'Special'
+            return spineAnimationName === 'Special'
           }
         }
       ]
@@ -353,7 +346,7 @@ export default function Operator() {
               setVoiceLang(null)
             }
             if (!isVoicePlayingRef.current) {
-              playAnimationVoice(spineAnimation)
+              playAnimationVoice(spineAnimationName)
             }
           },
           activeRule: () => {

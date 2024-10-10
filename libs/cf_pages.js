@@ -14,7 +14,7 @@ export default class CFPages {
     async upload() {
         const tree = await this.#generateDirTree(this.#uploadPath);
         writeSync(JSON.stringify(tree, null), path.join(this.#uploadPath, 'index.json'));
-        const wrangler = spawnSync('pnpm', ['wrangler', 'pages', 'deploy', this.#uploadPath]);
+        const wrangler = spawnSync('pnpm', ['wrangler', 'pages', 'deploy', this.#uploadPath, "--project-name", __config.akassets.project_name]);
 
         console.log('error', wrangler.error);
         console.log('stdout ', wrangler.stdout.toString());
@@ -22,7 +22,7 @@ export default class CFPages {
     }
 
     async download() {
-        const indexFile = `${__config.akassets_url}/index.json`
+        const indexFile = `${__config.akassets.url}/index.json`
         const resp = await fetch(indexFile);
         const data = await resp.json();
         if (!exists(this.#downloadPath)) mkdir(this.#downloadPath);
@@ -86,7 +86,7 @@ export default class CFPages {
             }
         } else {
             return [{
-                url: `${__config.akassets_url}/${baseUrl + data.name.replace('#', '%23')}`,
+                url: `${__config.akassets.url}/${baseUrl + data.name.replace('#', '%23')}`,
                 target: path.join(baseDir, data.name),
                 hash: data.hash
             }]
@@ -108,7 +108,8 @@ export default class CFPages {
             const filePath = path.join(dir, file);
             const dirType = fileTypeSync(filePath);
             if (dirType === 'dir') {
-                tree.children.push(await this.#generateDirTree(filePath))
+                const children = await this.#generateDirTree(filePath);
+                if (children) tree.children.push(children);
             } else {
                 tree.children.push({
                     name: file,

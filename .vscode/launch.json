@@ -11,7 +11,7 @@
       "type": "node-terminal",
       "name": "Run Script: charword",
       "request": "launch",
-      "command": "pnpm run charword",
+      "command": "pnpm run charwords:update",
       "cwd": "${workspaceFolder}"
     },
     {

@@ -83,3 +83,4 @@ operators:
   eyjafjalla_the_hvit_aska_a_picnic_before_a_long_trip: !include config/eyjafjalla_the_hvit_aska_a_picnic_before_a_long_trip.yaml
   pepe: !include config/pepe.yaml
   nightingale_iakhu_of_flows: !include config/nightingale_iakhu_of_flows.yaml
+  degenbrecher_the_shadow_of_dark_moon: !include config/degenbrecher_the_shadow_of_dark_moon.yaml

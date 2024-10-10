@@ -14,7 +14,7 @@ export default class ProjectJson {
 
   constructor(operatorName, operatorShareFolder, assets) {
     this.#operatorName = operatorName
-    this.#operatorSourceFolder = path.join(__projectRoot, __config.folder.operator)
+    this.#operatorSourceFolder = path.join(__projectRoot, __config.folder.operator_data)
     this.#operatorShareFolder = operatorShareFolder
     this.#assets = assets
   }

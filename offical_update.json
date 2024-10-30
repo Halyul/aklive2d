@@ -1,5 +1,5 @@
 {
-    "length": 53,
+    "length": 54,
     "dates": [
         "2024-10-01",
         "2024-07-01",
@@ -30,6 +30,16 @@
         "2020-01-01"
     ],
     "2024-10-01": [
+        {
+            "color": null,
+            "codename": {
+                "zh-CN": "荒芜拉普兰德",
+                "en-US": "Lappland the Decadenza"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410440.html",
+            "id": "202410440"
+        },
         {
             "color": null,
             "codename": {

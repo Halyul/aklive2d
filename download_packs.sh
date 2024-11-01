@@ -16,8 +16,8 @@ CURRENT_LPACK_V=$(curl -X GET \
   | jq -r '.packInfos | .[] | select( .name | test("^lpack_v[0-9]+")) | .name')
 
 TARGET_FOLDER="temp"
-FILES_TO_DOWNLOAD=("lpack_misc lpack_vcjp lpack_vccn lpack_vcbsc lpack_vckr lpack_vcen lpack_vccsm lpack_init lpack_dynilst lpack_crart lpack_music lpack_lcom ${CURRENT_LPACK_V}")
-AK_HOST="ak.hycdn.cn:443:123.184.27.60"
+FILES_TO_DOWNLOAD=("lpack_misc1 lpack_misc2 lpack_misc3 lpack_misc4 lpack_vcjp1 lpack_vcjp2 lpack_vcjp3 lpack_vccn1 lpack_vccn2 lpack_vcbsc lpack_vckr1 lpack_vckr2 lpack_vcen1 lpack_vcen2 lpack_vccsm lpack_init1 lpack_init2 lpack_init3 lpack_init4 lpack_dynilst lpack_crart1 lpack_crart2 lpack_music1 lpack_music2 lpack_lcom ${CURRENT_LPACK_V}")
+AK_HOST="ak.hycdn.cn:443:112.60.32.19"
 
 echo
 

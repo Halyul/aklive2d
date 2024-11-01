@@ -2,14 +2,6 @@
 
 A project that builds showcase webpage for Arknights Live2D-equipped operators. Showcase webpage can be used as a wallpaper for Wallpaper Engine on Windows or [Plash](https://github.com/sindresorhus/Plash) on macOS (not tested).
 
-## Upcoming Updates
-
-Version: `2023 Summer Fest`
-
-- [x] ~~Eyjafjalla the Hvít Aska~~
-- [x] ~~Holiday / Gavial the Invincible~~
-- [x] ~~Summer Flowers / Goldenglow~~
-
 ## Softwares
 - For Windows users: Use [Wallpaper Engine](https://www.wallpaperengine.io/en) or other softwares that support using webpage as desktop wallpaper.
 - For macOS users: Use [Plash](https://github.com/sindresorhus/Plash), however, I don't have macOS machine, so your mileage may vary.

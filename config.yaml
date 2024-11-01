@@ -86,3 +86,7 @@ operators:
   pepe: !include config/pepe.yaml
   nightingale_iakhu_of_flows: !include config/nightingale_iakhu_of_flows.yaml
   degenbrecher_the_shadow_of_dark_moon: !include config/degenbrecher_the_shadow_of_dark_moon.yaml
+  lappland_the_decadenza: !include config/lappland_the_decadenza.yaml
+  texas_the_omertosa_il_se_de_no: !include config/texas_the_omertosa_il_se_de_no.yaml
+  executor_the_ex_foedere_allmind_as_one: !include config/executor_the_ex_foedere_allmind_as_one.yaml
+  virtuosa_diversity_oneness: !include config/virtuosa_diversity_oneness.yaml

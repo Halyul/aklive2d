@@ -1,6 +1,7 @@
 {
-    "length": 54,
+    "length": 55,
     "dates": [
+        "2024-12-09",
         "2024-10-01",
         "2024-07-01",
         "2024-05-01",
@@ -28,6 +29,18 @@
         "2020-11-01",
         "2020-05-01",
         "2020-01-01"
+    ],
+    "2024-12-09": [
+        {
+            "color": null,
+            "codename": {
+                "zh-CN": "霹雳导演 · 年",
+                "en-US": "Thunderbolt Director"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412491.html",
+            "id": "202412491"
+        }
     ],
     "2024-10-01": [
         {

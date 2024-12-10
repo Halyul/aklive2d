@@ -1,7 +1,8 @@
 {
-    "length": 55,
+    "length": 56,
     "dates": [
         "2024-12-09",
+        "2024-12-01",
         "2024-10-01",
         "2024-07-01",
         "2024-05-01",
@@ -40,6 +41,18 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412491.html",
             "id": "202412491"
+        }
+    ],
+    "2024-12-01": [
+        {
+            "color": null,
+            "codename": {
+                "zh-CN": "全能演员 · 重岳",
+                "en-US": "All-Round Actor"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412452.html",
+            "id": "202412452"
         }
     ],
     "2024-10-01": [

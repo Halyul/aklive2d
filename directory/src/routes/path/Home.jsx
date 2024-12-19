@@ -22,7 +22,7 @@ import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils';
 import CharIcon from '@/component/char_icon';
 import Border from '@/component/border';
-import useUmami from '@/state/insights';
+import useInsight from '@/state/insight';
 import Switch from '@/component/switch';
 import SearchBox from '@/component/search_box';
 
@@ -31,7 +31,7 @@ let lastVoiceState = 'ended'
 
 export default function Home() {
   // eslint-disable-next-line no-unused-vars
-  const _trackEvt = useUmami('/', "Dynamic Compile")
+  const _trackEvt = useInsight()
   const {
     setTitle,
     setTabs,

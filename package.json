@@ -36,7 +36,6 @@
     "wrangler": "^3.96.0"
   },
   "dependencies": {
-    "@parcellab/react-use-umami": "^2.0.1",
     "dotenv": "^16.4.7",
     "jotai": "^2.10.4",
     "jsdom": "^22.1.0",

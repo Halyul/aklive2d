@@ -39,9 +39,8 @@ export default class Settings {
   #scale = this.#defaultScale
   #logoX = this.#defaultLogoX
   #logoY = this.#defaultLogoY
-  #isInsightsInited = false
+  #isInsightInited = false
   #doNotTrack = false
-  #lastFunctionInsights = null
   #useStartAnimation = true
 
   constructor(el, logoEl) {
@@ -71,38 +70,25 @@ export default class Settings {
 
   success() {
     this.loadViewport()
-    this.insights(false, false)
+    this.insight(false, false)
     this.#updateOptions("animation_selection", this.spinePlayer.skeleton.data.animations.map(e => e.name))
     if ((new URLSearchParams(window.location.search)).has("settings") || import.meta.env.MODE === 'development') {
       this.open()
     }
   }
 
-  insights(isWallpaperEngine, doNotTrack) {
+  insight(isWallpaperEngine, doNotTrack) {
     this.isWallpaperEngine = isWallpaperEngine
-    if (this.#isInsightsInited || import.meta.env.MODE === 'development') return
-    this.#isInsightsInited = true
+    if (this.#isInsightInited || import.meta.env.MODE === 'development') return
+    this.#isInsightInited = true
     this.#doNotTrack = doNotTrack
     if (this.#doNotTrack) return
     try {
-      window.umami?.track(props => ({
-        ...props,
-        url: `/${import.meta.env.VITE_LINK}${isWallpaperEngine ? "?steam" : ""}`
-      }));
+      window.counterscale = {
+        q: [["set", "siteId", `aklive2d-${import.meta.env.VITE_LINK}`], ["trackPageview"]],
+      };
+      window.counterscaleOnDemandTrack && window.counterscaleOnDemandTrack();
     } catch(e) {
-      console.warn && console.warn(e.message)
-    }
-  }
-
-  functionInsights(functionName, toSkip = false) {
-    if (!this.#isInsightsInited || this.#doNotTrack || import.meta.env.MODE === 'development' || functionName === this.#lastFunctionInsights || toSkip) return
-    try {
-      window.umami?.track(props => ({
-        ...props,
-        name: `${functionName}`,
-        url: `/${import.meta.env.VITE_LINK}${this.isWallpaperEngine ? "?steam" : ""}`
-      }));
-    } catch (e) {
       console.warn && console.warn(e.message)
     }
   }
@@ -110,12 +96,10 @@ export default class Settings {
   setFPS(value) {
     this.#fps = value
     this.spinePlayer.setFps(value)
-    this.functionInsights("setFPS", this.isWallpaperEngine)
   }
 
   setLogoDisplay(flag) {
     this.#logoEl.hidden = flag;
-    this.functionInsights("setLogoDisplay", this.isWallpaperEngine)
   }
 
   #resize(_this, value) {
@@ -136,7 +120,6 @@ export default class Settings {
     this.#logoEl.src = src
     this.#resize()
     this.#setLogoInvertFilter(invert_filter)
-    this.functionInsights("setLogo", this.isWallpaperEngine)
   }
 
   #readFile(e, callback = () => { }) {
@@ -163,18 +146,15 @@ export default class Settings {
   setLogoRatio(value) {
     this.#ratio = value
     this.#resize(this, value)
-    this.functionInsights("setLogoRatio", this.isWallpaperEngine)
   }
 
   setLogoOpacity(value) {
     this.#logoEl.style.opacity = value / 100
     this.#opacity = value
-    this.functionInsights("setLogoOpacity", this.isWallpaperEngine)
   }
 
-  setBackgoundImage(v, skipInsights = false) {
+  setBackgoundImage(v) {
     document.body.style.backgroundImage = v
-    if (!skipInsights) this.functionInsights("setBackgoundImage", this.isWallpaperEngine);
   }
 
   get currentBackground() {
@@ -187,9 +167,8 @@ export default class Settings {
   setDefaultBackground(e) {
     this.#defaultBackgroundImage = `url("${import.meta.env.BASE_URL}assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${e}")`
     if (document.getElementById("custom_background_clear").disabled && !document.body.style.backgroundImage.startsWith("url(\"file:")) {
-      this.setBackgoundImage(this.#defaultBackgroundImage, true)
+      this.setBackgoundImage(this.#defaultBackgroundImage)
     }
-    this.functionInsights("setDefaultBackground", this.isWallpaperEngine)
   }
 
   setBackground(e) {
@@ -247,7 +226,6 @@ export default class Settings {
         break;
     }
     this.loadViewport()
-    this.functionInsights("positionPadding", this.isWallpaperEngine)
   }
 
   positionReset() {
@@ -297,7 +275,6 @@ export default class Settings {
         break;
     }
     this.elementPosition(this.#logoEl, this.#logoX, this.#logoY)
-    this.functionInsights("logoPadding", this.isWallpaperEngine)
   }
 
   logoReset() {

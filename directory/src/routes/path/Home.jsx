@@ -174,10 +174,11 @@ export default function Home() {
                 <section className={classes.content}>
                   <section className={classes.text}>{officalUpdate.length - operators.length} {i18n("new_op_wait_to_update")}</section>
                   <section className={`${classes['styled-selection']}`}>
-                    {officalUpdate[officalUpdate.dates[0]].map((entry, index) => {
-                      if (index >= officalUpdate.length - operators.length) {
-                        return null
-                      }
+                    {officalUpdate.dates.reduce((acc, cur) => {
+                      const op = officalUpdate[cur];
+                      return [...acc, ...op];
+                    }, []).slice(0, officalUpdate.length - operators.length)
+                    .map((entry, index) => {
                       return (
                         <Link
                           reloadDocument

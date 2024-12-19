@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@parcellab/react-use-umami':
-        specifier: ^2.0.1
-        version: 2.0.1(react@18.3.1)
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
@@ -592,11 +589,6 @@ packages:
   '@parcel/watcher@2.5.0':
     resolution: {integrity: sha512-i0GV1yJnm2n3Yq1qw6QrUrd/LI9bE8WEBOTtOkpCXHHdyN3TAGgqAK/DAT05z4fq2x04cARXt2pDmjWjL92iTQ==}
     engines: {node: '>= 10.0.0'}
-
-  '@parcellab/react-use-umami@2.0.1':
-    resolution: {integrity: sha512-C/EdfRm7OyFVmMhrrSITZ79VXLreNZEJnAdpmJ9NaTcy+Wijjf0+wHF8JA5ex+J5/Owv7gVBIj6i/+Kv04nlKA==}
-    peerDependencies:
-      react: '>=16.8.0'
 
   '@remix-run/router@1.21.0':
     resolution: {integrity: sha512-xfSkCAchbdG5PnbrKqFWwia4Bi61nH+wm8wLEqfHDyp7Y3dZzgqS2itV8i4gAq9pC2HsTpwyBC6Ds8VHZ96JlA==}
@@ -2872,10 +2864,6 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.5.0
       '@parcel/watcher-win32-x64': 2.5.0
     optional: true
-
-  '@parcellab/react-use-umami@2.0.1(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
 
   '@remix-run/router@1.21.0': {}
 

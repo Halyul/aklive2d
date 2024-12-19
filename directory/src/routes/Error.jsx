@@ -20,7 +20,7 @@ import { useHeader } from '@/state/header';
 import VoiceElement from '@/component/voice';
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
-import useUmami from '@/state/insights';
+import useInsight from '@/state/insight';
 
 const voiceOnAtom = atomWithStorage('voiceOn', false)
 const config = JSON.parse(import.meta.env.VITE_ERROR_FILES)
@@ -31,7 +31,7 @@ let lastVoiceState = 'ended'
 
 export default function Error() {
   // eslint-disable-next-line no-unused-vars
-  const _trackEvt = useUmami('/error', "Error")
+  const _trackEvt = useInsight()
   const error = useRouteError();
   const navigate = useNavigate();
   const {

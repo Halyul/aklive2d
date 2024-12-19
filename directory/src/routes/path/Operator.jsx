@@ -18,7 +18,7 @@ import {
 import { useHeader } from '@/state/header';
 import { useAppbar } from '@/state/appbar';
 import VoiceElement from '@/component/voice';
-import useUmami from '@/state/insights'
+import useInsight from '@/state/insight'
 import spine from '!/libs/spine-player'
 import '!/libs/spine-player.css'
 import Border from '@/component/border';
@@ -74,7 +74,7 @@ export default function Operator() {
   const [config, setConfig] = useState(null)
   const [spineData, setSpineData] = useState(null)
   // eslint-disable-next-line no-unused-vars
-  const _trackEvt = useUmami(`/${key}`, `${key}`)
+  const _trackEvt = useInsight(key)
   const spineRef = useRef(null)
   const [spineAnimationName, setSpineAnimationName] = useState(defaultSpineAnimationName)
   const { i18n } = useI18n()

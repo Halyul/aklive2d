@@ -1,5 +1,5 @@
 {
-    "length": 56,
+    "length": 57,
     "dates": [
         "2024-12-09",
         "2024-12-01",
@@ -44,6 +44,16 @@
         }
     ],
     "2024-12-01": [
+        {
+            "color": null,
+            "codename": {
+                "zh-CN": "寰宇独奏 · 阿米娅",
+                "en-US": "Solo Around The World"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412473.html",
+            "id": "202412473"
+        },
         {
             "color": null,
             "codename": {

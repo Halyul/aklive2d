@@ -79,13 +79,13 @@ export default class Settings {
 
   insight(isWallpaperEngine, doNotTrack) {
     this.isWallpaperEngine = isWallpaperEngine
-    if (this.#isInsightInited || import.meta.env.MODE === 'development') return
+    if (this.#isInsightInited) return
     this.#isInsightInited = true
     this.#doNotTrack = doNotTrack
     if (this.#doNotTrack) return
     try {
       window.counterscale = {
-        q: [["set", "siteId", `aklive2d-${import.meta.env.VITE_LINK}`], ["trackPageview"]],
+        q: [["set", "siteId", import.meta.env.VITE_INSIGHT_ID], ["trackPageview", {path: `/${import.meta.env.VITE_LINK}`}]],
       };
       window.counterscaleOnDemandTrack();
     } catch(e) {

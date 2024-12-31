@@ -1,6 +1,7 @@
 akassets: 
   project_name: akassets
   url: https://akassets.halyul.dev
+insight_id: aklive2d
 folder:
   auto_update_data: ./data/auto_update
   operator_data: ./data/operator/

@@ -167,6 +167,10 @@ async function main() {
     const envPath = path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, '.env')
     writeSync((new EnvGenerator()).generate([
       {
+        key: "insight_id",
+        value: __config.insight_id
+      },
+      {
         key: "link",
         value: __config.operators[OPERATOR_NAME].link
       }, {
@@ -236,7 +240,7 @@ async function main() {
     const assetsProcessor = new AssetsProcessor(OPERATOR_NAME, OPERATOR_SHARE_FOLDER)
     const assetContent = await assetsProcessor.process(EXTRACTED_FOLDER)
     write(JSON.stringify(assetContent.assetsJson, null), path.join(OPERATOR_SOURCE_FOLDER, OPERATOR_NAME, `assets.json`))
-    
+
     // copy remaining files
     const filesToCopy = [
       ...background.getFilesToCopy(SHOWCASE_PUBLIC_ASSSETS_FOLDER),

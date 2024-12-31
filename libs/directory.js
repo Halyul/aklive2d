@@ -42,6 +42,10 @@ export default function (dataDir, { backgrounds, musicMapping }) {
 
   writeSync((new EnvGenerator()).generate([
     {
+      key: "insight_id",
+      value: __config.insight_id
+    },
+    {
       key: "app_title",
       value: __config.directory.title
     }, {

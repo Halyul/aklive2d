@@ -93,3 +93,4 @@ operators:
   virtuosa_diversity_oneness: !include config/virtuosa_diversity_oneness.yaml
   chongyue_allround_actor: !include config/chongyue_allround_actor.yaml
   nian_thunderbolt_director: !include config/nian_thunderbolt_director.yaml
+  amiya_solo_around_the_world: !include config/amiya_solo_around_the_world.yaml

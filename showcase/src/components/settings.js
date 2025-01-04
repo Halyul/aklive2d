@@ -79,13 +79,17 @@ export default class Settings {
 
   insight(isWallpaperEngine, doNotTrack) {
     this.isWallpaperEngine = isWallpaperEngine
-    if (this.#isInsightInited) return
+    if (this.#isInsightInited || import.meta.env.MODE === 'development') return
     this.#isInsightInited = true
     this.#doNotTrack = doNotTrack
     if (this.#doNotTrack) return
     try {
+      const config = {
+        path: `/${import.meta.env.VITE_LINK}`
+      }
+      if (this.isWallpaperEngine) config.hostname = "file://wallpaperengine.local";
       window.counterscale = {
-        q: [["set", "siteId", import.meta.env.VITE_INSIGHT_ID], ["trackPageview", {path: `/${import.meta.env.VITE_LINK}`}]],
+        q: [["set", "siteId", import.meta.env.VITE_INSIGHT_ID], ["trackPageview", config]],
       };
       window.counterscaleOnDemandTrack();
     } catch(e) {

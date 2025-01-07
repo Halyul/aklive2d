@@ -319,34 +319,11 @@ export default class Settings {
     this.resetLogoImage()
     this.logoReset()
     this.resetBackground()
-    this.resetMusic()
     this.setLogoDisplay(this.#defaulthideLogo)
     this.setFPS(this.#defaultFps)
     document.getElementById("fps_slider").value = this.#defaultFps
     document.getElementById("fps_input").value = this.#defaultFps
     this.spinePlayer.play()
-  }
-
-  setMusicFromWE(url) {
-    const type = url.split(".").pop()
-    window.music.setMusic(url, type)
-    document.getElementById("custom_music_clear").disabled = false
-  }
-
-  setMusic(e) {
-    this.#readFile(
-      e,
-      (blobURL, type) => {
-        window.music.setMusic(blobURL, type)
-        document.getElementById("custom_music_clear").disabled = false
-      }
-    )
-  }
-
-  resetMusic() {
-    document.getElementById("custom_music").value = ""
-    document.getElementById("custom_music_clear").disabled = true
-    window.music.resetMusic()
   }
 
   setVideo(e) {
@@ -445,79 +422,6 @@ export default class Settings {
               <label for="video_volume">Video Volume</label>
               <input type="range" min="0" max="100" step="1" id="video_volume_slider" value="${this.getVideoVolume()}" />
               <input type="number" id="video_volume_input"  min="0" max="100" step="1" name="video_volume" value="${this.getVideoVolume() }" />
-            </div>
-          </div>
-        </div>
-        <div>
-          <label for="voice">Voice</label>
-          <input type="checkbox" id="voice" name="voice"/>
-          <div id="voice_realted" hidden>
-            <div>
-              <label for="voice_lang_select">Choose the language of voice:</label>
-              <select name="voice_lang" id="voice_lang_select">
-                ${this.#updateOptions("voice_lang_select", window.voice.languages)}
-              </select>
-            </div>
-            <div>
-              <label for="voice_idle_duration">Idle Duration (min)</label>
-              <input type="number" id="voice_idle_duration_input" min="0" name="voice_idle_duration" value="${window.voice.idleDuration}" />
-            </div>
-            <div>
-              <label for="voice_next_duration">Next Duration (min)</label>
-              <input type="number" id="voice_next_duration_input" name="voice_next_duration" value="${window.voice.nextDuration}" />
-            </div>
-            <div>
-              <label for="subtitle">Subtitle</label>
-              <input type="checkbox" id="subtitle" name="subtitle"/>
-              <div id="subtitle_realted" hidden>
-                <div>
-                  <label for="subtitle_lang_select">Choose the language of subtitle:</label>
-                  <select name="subtitle_lang" id="subtitle_lang_select">
-                    ${this.#updateOptions("subtitle_lang_select", window.voice.subtitleLanguages)}
-                  </select>
-                </div>
-                <div>
-                  <label for="subtitle_padding_x">Subtitle X Position</label>
-                  <input type="range" min="0" max="100" id="subtitle_padding_x_slider" value="${window.voice.subtitleX}" />
-                  <input type="number" id="subtitle_padding_x_input" name="subtitle_padding_x" value="${window.voice.subtitleX}" />
-                </div>
-                <div>
-                  <label for="subtitle_padding_y">Subtitle Y Position</label>
-                  <input type="range" min="0" max="100" id="subtitle_padding_y_slider" value="${window.voice.subtitleY}" />
-                  <input type="number" id="subtitle_padding_y_input" name="subtitle_padding_y" value="${window.voice.subtitleY}" />
-                </div>
-                <div>
-                  <label for="voice_actor">Voice Actor</label>
-                  <input type="checkbox" id="voice_actor" name="voice_actor"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <label for="music">Music</label>
-          <input type="checkbox" id="music" name="music" />
-          <div id="music_realted" hidden>
-            <div>
-              <label for="music_select">Choose theme music:</label>
-              <select name="music_select" id="music_select">
-                ${this.#updateOptions("music_select", window.music.music)}
-              </select>
-            </div>
-            <div>
-              <label for="custom_music"> Custom Music (Store Locally)</label>
-              <input type="file" id="custom_music" accept="audio/*"/>
-              <button type="button" disabled id="custom_music_clear" disabled>Clear</button>
-            </div>
-            <div>
-              <label for="music_volume">Music Volume</label>
-              <input type="range" min="0" max="100" step="1" id="music_volume_slider" value="${window.music.volume}" />
-              <input type="number" id="music_volume_input"  min="0" max="100" step="1" name="music_volume" value="${window.music.volume}" />
-            </div>
-            <div>
-              <label for="music_switch_offset">Music Swtich Offset</label>
-              <input type="range" min="0" max="1" step="0.01" id="music_switch_offset_slider" value="${window.music.timeOffset}" />
-              <input type="number" id="music_switch_offset_input"  min="0" max="1" step="0.01" name="music_switch_offset" value="${window.music.timeOffset}" />
             </div>
           </div>
         </div>
@@ -675,88 +579,6 @@ export default class Settings {
         id: "custom_background", event: "change", handler: e => _this.setBackground(e)
       }, {
         id: "custom_background_clear", event: "click", handler: () => _this.resetBackground()
-      }, {
-        id: "voice", event: "click", handler: e => {
-          _this.#showRelated(e.currentTarget, "voice_realted");
-          window.voice.useVoice = e.currentTarget.checked;
-        }
-      }, {
-        id: "voice_lang_select", event: "change", handler: e => {
-          window.voice.language = e.currentTarget.value
-          _this.#updateOptions("subtitle_lang_select", window.voice.subtitleLanguages)
-          _this.#getCurrentOptions("subtitle_lang_select", window.voice.subtitleLanguage)
-        }
-      }, {
-        id: "voice_idle_duration_input", event: "change", handler: e => {
-          window.voice.idleDuration = parseInt(e.currentTarget.value)
-        }
-      }, {
-        id: "voice_next_duration_input", event: "change", handler: e => {
-          window.voice.nextDuration = parseInt(e.currentTarget.value)
-        }
-      }, {
-        id: "subtitle", event: "click", handler: e => {
-          _this.#showRelated(e.currentTarget, "subtitle_realted");
-          window.voice.useSubtitle = e.currentTarget.checked;
-        }
-      }, {
-        id: "subtitle_lang_select", event: "change", handler: e => window.voice.subtitleLanguage = e.currentTarget.value
-      }, {
-        id: "subtitle_padding_x_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "subtitle_padding_x_input");
-          window.voice.subtitleX = e.currentTarget.value
-        }
-      }, {
-        id: "subtitle_padding_x_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "subtitle_padding_x_slider");
-          window.voice.subtitleX = e.currentTarget.value
-        }
-      }, {
-        id: "subtitle_padding_y_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "subtitle_padding_y_input");
-          window.voice.subtitleY = e.currentTarget.value
-        }
-      }, {
-        id: "subtitle_padding_y_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "subtitle_padding_y_slider");
-          window.voice.subtitleY = e.currentTarget.value
-        }
-      }, {
-        id: "voice_actor", event: "click", handler: e => {
-          window.voice.useVoiceActor = e.currentTarget.checked;
-        }
-      }, {
-        id: "music", event: "click", handler: e => {
-          _this.#showRelated(e.currentTarget, "music_realted");
-          window.music.useMusic = e.currentTarget.checked;
-          window.music.changeMusic(this.currentBackground)
-        }
-      }, {
-        id: "music_select", event: "change", handler: e => window.music.changeMusic(e.currentTarget.value)
-      }, {
-        id: "custom_music", event: "change", handler: e => _this.setMusic(e)
-      }, {
-        id: "custom_music_clear", event: "click", handler: () => _this.resetMusic()
-      }, {
-        id: "music_volume_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "music_volume_input");
-          window.music.volume = parseInt(e.currentTarget.value)
-        }
-      }, {
-        id: "music_volume_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "music_volume_slider");
-          window.music.volume = parseInt(e.currentTarget.value)
-        }
-      }, {
-        id: "music_switch_offset_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "music_switch_offset_input");
-          window.music.timeOffset = parseFloat(e.currentTarget.value)
-        }
-      }, {
-        id: "music_switch_offset_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "music_switch_offset_slider");
-          window.music.timeOffset = parseFloat(e.currentTarget.value)
-        }
       }, {
         id: "video", event: "click", handler: e => {
           _this.#showRelated(e.currentTarget, "video_realted");

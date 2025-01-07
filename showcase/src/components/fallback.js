@@ -1,4 +1,4 @@
-import { insertChild } from "@/components/helper";
+import { insertHTMLChild } from "@/components/helper";
 import '@/components/fallback.css'
 
 export default class Fallback {
@@ -21,6 +21,6 @@ export default class Fallback {
                 style="background-image: url(./assets/${import.meta.env.VITE_FALLBACK_FILENAME}.png)"
             />
         `
-        insertChild(parentEl, this.#el)
+        insertHTMLChild(parentEl, this.#el)
     }
 }

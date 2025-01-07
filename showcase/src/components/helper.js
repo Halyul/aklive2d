@@ -8,7 +8,7 @@ export const isWebGLSupported = () => {
     }
 }
 
-export const insertChild = (parent, child) => {
+export const insertHTMLChild = (parent, child) => {
     parent.appendChild(child)
 }
 
@@ -27,3 +27,46 @@ export const updateElementPosition = (el, x, y) => {
     const ypx = y * yRange / 100
     el.style.transform = `translate(${xpx}px, ${ypx}px)`
 }
+
+export const updateHTMLOptions = (id, array) => {
+    const e = document.getElementById(id);
+    const value = array.map(item => `<option value="${item}">${item}</option>`)
+    if (e) {
+        e.innerHTML = value.join("");
+    }
+    return value
+}
+
+export const addEventListeners = (listeners) => {
+    listeners.forEach(listener => {
+        document.getElementById(listener.id).addEventListener(listener.event, e => listener.handler(e))
+    })
+}
+
+export const showRelatedHTML = (e, relatedSettingsID, revert = false) => {
+    const eRelatedSettings = document.getElementById(relatedSettingsID)
+    const checked = revert ? !e.checked : e.checked;
+    if (checked) {
+      eRelatedSettings.hidden = false;
+    } else {
+      eRelatedSettings.hidden = true;
+    }
+}
+  
+export const getCurrentHTMLOptions = (id, value) => {
+    const e = document.getElementById(id);
+    const options = [...e]
+    const toSelecteIndex = options.findIndex(i => options.find(o => o.value === value) === i)
+    e.selectedIndex = toSelecteIndex;
+}
+  
+export const syncHTMLValue = (source, targetID) => {
+    if (typeof source === "string") source = document.getElementById(source);
+    document.getElementById(targetID).value = source.value;
+}
+  
+export const readFile = (e, callback = () => { }) => {
+    const file = e.target.files[0]
+    if (!file) return
+    callback(URL.createObjectURL(file.slice()), file.type)
+  }

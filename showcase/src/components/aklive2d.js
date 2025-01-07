@@ -1,4 +1,6 @@
 import Voice from "@/components/voice";
+import Fallback from "@/components/fallback";
+import { isWebGLSupported } from "@/components/helper";
 
 export default class AKLive2D {
     #el
@@ -12,7 +14,12 @@ export default class AKLive2D {
     }
 
     init() {
-        this.#voice.init(this.#el, this.#widgetEl);
+        if (isWebGLSupported) {
+            this.#voice.init(this.#el, this.#widgetEl);
+        } else {
+            (new Fallback()).init(this.#widgetEl)
+        }
+        
     }
 
     #backCompatibility() {

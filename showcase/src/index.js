@@ -13,10 +13,6 @@ document.getElementById('app').innerHTML = `
     <video autoplay loop disablepictureinpicture id="video-src" />
   </div>
   <div id="widget-wrapper">
-    <div id="fallback"
-      style="background-image: url(./assets/${import.meta.env.VITE_FALLBACK_FILENAME}.png)"
-      hidden
-    ></div> 
     <div id="player" hidden></div>
   </div>
 `
@@ -30,9 +26,5 @@ console.log("All resources are extracted from Arknights. Github: https://gura.ch
 if (check_web_gl()) {
   import('@/components/player').then(({ default: spinePlayer }) => {
     window.settings.spinePlayer = spinePlayer(document.querySelector('#player'))
-  })
-} else {
-  import('@/components/fallback').then(({ default: fallback }) => {
-    fallback(document.querySelector('#fallback'))
   })
 }

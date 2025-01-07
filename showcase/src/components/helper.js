@@ -1,3 +1,13 @@
+export const isWebGLSupported = () => {
+    try {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        return ctx != null;
+    } catch (e) {
+        return false;
+    }
+}
+
 export const insertChild = (parent, child) => {
     parent.appendChild(child)
 }

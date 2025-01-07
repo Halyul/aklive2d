@@ -9,14 +9,8 @@ document.getElementById('app').innerHTML = `
   <div id="video_background">
     <video autoplay loop disablepictureinpicture id="video-src" />
   </div>
-  <div id="widget-wrapper">
-    <div id="player" hidden></div>
-  </div>
+  <div id="widget-wrapper" />
 `
 window.aklive2d = new AKLive2D(document.getElementById('app'), document.getElementById('widget-wrapper'))
 window.aklive2d.init()
 window.settings = new Settings(document.querySelector('#settings'), document.querySelector('#logo'))
-
-import('@/components/player').then(({ default: spinePlayer }) => {
-  window.settings.spinePlayer = spinePlayer(document.querySelector('#player'))
-})

@@ -1,47 +1,23 @@
 import '@/components/settings.css'
 
-const getPercentage = (value) => parseInt(value.replace("%", ""))
-
 export default class Settings {
   #el
   #logoEl
   #videoEl
   #defaultLogoImage
-  #defaultFps = 60
   #defaultRatio = 61.8
   #defaultOpacity = 30
   #defaulthideLogo = false
   #defaultBackgroundImage = getComputedStyle(document.body).backgroundImage
   #defaultInvertFilter = import.meta.env.VITE_INVERT_FILTER === "true"
-  #defaultPadLeft = getPercentage(`${import.meta.env.VITE_VIEWPORT_LEFT}%`)
-  #defaultPadRight = getPercentage(`${import.meta.env.VITE_VIEWPORT_RIGHT}%`)
-  #defaultPadTop = getPercentage(`${import.meta.env.VITE_VIEWPORT_TOP}%`)
-  #defaultPadBottom = getPercentage(`${import.meta.env.VITE_VIEWPORT_BOTTOM}%`)
-  #defaultScale = 1
   #defaultLogoX = 0
   #defaultLogoY = 0
-  #defaultViewport = {
-    debugRender: false,
-    padLeft: `${this.#defaultPadLeft}%`,
-    padRight: `${this.#defaultPadRight}%`,
-    padTop: `${this.#defaultPadTop}%`,
-    padBottom: `${this.#defaultPadBottom}%`,
-    x: 0,
-    y: 0,
-  }
-  #fps = this.#defaultFps
   #ratio = this.#defaultRatio
   #opacity = this.#defaultOpacity
-  #padLeft = this.#defaultPadLeft
-  #padRight = this.#defaultPadRight
-  #padTop = this.#defaultPadTop
-  #padBottom = this.#defaultPadBottom
-  #scale = this.#defaultScale
   #logoX = this.#defaultLogoX
   #logoY = this.#defaultLogoY
   #isInsightInited = false
   #doNotTrack = false
-  #useStartAnimation = true
 
   constructor(el, logoEl) {
     this.isWallpaperEngine = false
@@ -71,7 +47,6 @@ export default class Settings {
   success() {
     this.loadViewport()
     this.insight(false, false)
-    this.#updateOptions("animation_selection", this.spinePlayer.skeleton.data.animations.map(e => e.name))
     if ((new URLSearchParams(window.location.search)).has("settings") || import.meta.env.MODE === 'development') {
       this.open()
     }
@@ -95,11 +70,6 @@ export default class Settings {
     } catch(e) {
       console.warn && console.warn(e.message)
     }
-  }
-
-  setFPS(value) {
-    this.#fps = value
-    this.spinePlayer.setFps(value)
   }
 
   setLogoDisplay(flag) {
@@ -191,67 +161,6 @@ export default class Settings {
     this.setBackgoundImage(this.#defaultBackgroundImage)
   }
 
-  loadViewport() {
-    this.spinePlayer.updateViewport({
-      padLeft: `${this.#padLeft}%`,
-      padRight: `${this.#padRight}%`,
-      padTop: `${this.#padTop}%`,
-      padBottom: `${this.#padBottom}%`,
-    })
-  }
-
-  setScale(value) {
-    this.#scale = value
-  }
-
-  get scale() {
-    return 1 / this.#scale
-  }
-
-  positionPadding(key, value) {
-    switch (key) {
-      case "left":
-        this.#padLeft = value
-        break;
-      case "right":
-        this.#padRight = value
-        break;
-      case "top":
-        this.#padTop = value
-        break;
-      case "bottom":
-        this.#padBottom = value
-        break;
-      default:
-        this.#padLeft = value.left
-        this.#padRight = value.right
-        this.#padTop = value.top
-        this.#padBottom = value.bottom
-        break;
-    }
-    this.loadViewport()
-  }
-
-  positionReset() {
-    this.#padLeft = this.#defaultPadLeft
-    this.#padRight = this.#defaultPadRight
-    this.#padTop = this.#defaultPadTop
-    this.#padBottom = this.#defaultPadBottom
-    this.spinePlayer.updateViewport(this.#defaultViewport)
-    document.getElementById("position_padding_left_slider").value = this.#defaultPadLeft
-    document.getElementById("position_padding_left_input").value = this.#defaultPadLeft
-    document.getElementById("position_padding_right_slider").value = this.#defaultPadRight
-    document.getElementById("position_padding_right_input").value = this.#defaultPadRight
-    document.getElementById("position_padding_top_slider").value = this.#defaultPadTop
-    document.getElementById("position_padding_top_input").value = this.#defaultPadTop
-    document.getElementById("position_padding_bottom_slider").value = this.#defaultPadBottom
-    document.getElementById("position_padding_bottom_input").value = this.#defaultPadBottom
-  }
-  
-  scaleReset() {
-    this.#scale = this.#defaultScale
-  }
-
   elementPosition(el, x, y) {
     const computedStyle = getComputedStyle(el)
     const elWidth = computedStyle.width
@@ -291,14 +200,6 @@ export default class Settings {
     document.getElementById("logo_padding_y_input").value = this.#defaultLogoY
   }
 
-  set useStartAnimation(v) {
-    this.#useStartAnimation = v
-  }
-
-  get useStartAnimation() {
-    return this.#useStartAnimation
-  }
-
   open() {
     this.#el.hidden = false;
   }
@@ -309,7 +210,7 @@ export default class Settings {
 
   reset() {
     this.positionReset()
-    this.scaleReset()
+    // this.scaleReset()
     this.setLogoRatio(this.#defaultRatio)
     document.getElementById("logo_ratio_slider").value = this.#defaultRatio
     document.getElementById("logo_ratio_input").value = this.#defaultRatio
@@ -320,9 +221,9 @@ export default class Settings {
     this.logoReset()
     this.resetBackground()
     this.setLogoDisplay(this.#defaulthideLogo)
-    this.setFPS(this.#defaultFps)
-    document.getElementById("fps_slider").value = this.#defaultFps
-    document.getElementById("fps_input").value = this.#defaultFps
+    // this.setFPS(this.#defaultFps)
+    // document.getElementById("fps_slider").value = this.#defaultFps
+    // document.getElementById("fps_input").value = this.#defaultFps
     this.spinePlayer.play()
   }
 
@@ -360,11 +261,6 @@ export default class Settings {
   #insertHTML() {
     this.#el.innerHTML = `
       <div>
-        <div>
-          <label for="fps">FPS</label>
-          <input type="range" min="1" max="60" value="${this.#fps}" step="1" id="fps_slider"/>
-          <input type="number" id="fps_input" min="1" max="60" name="fps" value="${this.#fps}" />
-        </div>
         <div>
           <label for="operator_logo">Operator Logo</label>
           <input type="checkbox" id="operator_logo" name="operator_logo" checked/>
@@ -426,47 +322,6 @@ export default class Settings {
           </div>
         </div>
         <div>
-          <label for="scale">Scale</label>
-          <input type="range" min="0.1" max="10" step="0.1" id="scale_slider" value="${this.#scale}" />
-          <input type="number" id="scale_input" name="scale" value="${this.#scale}" step="0.1"/>
-        </div>
-        <div>
-          <label for="position">Position</label>
-          <input type="checkbox" id="position" name="position" />
-          <div id="position_realted" hidden>
-            <div>
-              <label for="position_padding_left">Padding Left</label>
-              <input type="range" min="-100" max="100" id="position_padding_left_slider" value="${this.#padLeft}" />
-              <input type="number" id="position_padding_left_input" name="position_padding_left" value="${this.#padLeft}" />
-            </div>
-            <div>
-              <label for="position_padding_right">Padding Right</label>
-              <input type="range" min="-100" max="100" id="position_padding_right_slider" value="${this.padRight}" />
-              <input type="number" id="position_padding_right_input" name="position_padding_right" value="${this.#padRight}" />
-            </div>
-            <div>
-              <label for="position_padding_top">Padding Top</label>
-              <input type="range" min="-100" max="100" id="position_padding_top_slider" value="${this.#padTop}" />
-              <input type="number" id="position_padding_top_input" name="position_padding_top" value="${this.#padTop}" />
-            </div>
-            <div>
-              <label for="position_padding_bottom">Padding Bottom</label>
-              <input type="range" min="-100" max="100" id="position_padding_bottom_slider" value="${this.#padBottom}" />
-              <input type="number" id="position_padding_bottom_input" name="position_padding_bottom" value="${this.#padBottom}" />
-            </div>
-          </div>
-        </div>
-        <div>
-          <label for="animation_select">Animation:</label>
-          <select name="animation_select" id="animation_selection"></select>
-        </div>
-        <div>
-          <label for="use_start_animation">Use Start Animation</label>
-          <input type="checkbox" id="use_start_animation" name="use_start_animation" checked/>
-        </div>
-        <div>
-          <button type="button" id="settings_play" disabled>Play</button>
-          <button type="button" id="settings_pause">Pause</button>
           <button type="button" id="settings_reset">Reset</button>
           <button type="button" id="settings_close">Close</button>
           <button type="button" id="settings_to_directory">Back to Directory</button>
@@ -500,31 +355,10 @@ export default class Settings {
     return value
   }
 
-  #getCurrentOptions(id, value) {
-    const e = document.getElementById(id);
-    const options = [...e]
-    const toSelecteIndex = options.findIndex(i => options.find(o => o.value === value) === i)
-    e.selectedIndex = toSelecteIndex;
-  }
-
   #addEventListeners() {
     const _this = this;
     const listeners = [
       {
-        id: "fps_slider", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "fps_input");
-          _this.setFPS(e.currentTarget.value);
-        }
-      }, {
-        id: "fps_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "fps_input");
-        }
-      }, {
-        id: "fps_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "fps_slider");
-          _this.setFPS(e.currentTarget.value);
-        }
-      }, {
         id: "operator_logo", event: "click", handler: e => {
           _this.#showRelated(e.currentTarget, "operator_logo_realted");
           _this.setLogoDisplay(!e.currentTarget.checked)
@@ -599,85 +433,9 @@ export default class Settings {
           this.setVideoVolume(parseInt(e.currentTarget.value))
         }
       }, {
-        id: "position", event: "click", handler: e => {
-          _this.#showRelated(e.currentTarget, "position_realted");
-          if (!e.currentTarget.checked) _this.positionReset();
-        }
-      }, {
-        id: "scale_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "scale_input");
-          _this.setScale(e.currentTarget.value);
-        }
-      }, {
-        id: "scale_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "scale_slider");
-          _this.setScale(e.currentTarget.value);
-        }
-      }, {
-        id: "position_padding_left_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "position_padding_left_input");
-          _this.positionPadding("left", e.currentTarget.value);
-        }
-      }, {
-        id: "position_padding_left_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "position_padding_left_slider");
-          _this.positionPadding("left", e.currentTarget.value);
-        }
-      }, {
-        id: "position_padding_right_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "position_padding_right_input");
-          _this.positionPadding("right", e.currentTarget.value);
-        }
-      }, {
-        id: "position_padding_right_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "position_padding_right_slider");
-          _this.positionPadding("right", e.currentTarget.value);
-        }
-      }, {
-        id: "position_padding_top_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "position_padding_top_input");
-          _this.positionPadding("top", e.currentTarget.value);
-        }
-      }, {
-        id: "position_padding_top_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "position_padding_top_slider");
-          _this.positionPadding("top", e.currentTarget.value);
-        }
-      }, {
-        id: "position_padding_bottom_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "position_padding_bottom_input");
-          _this.positionPadding("bottom", e.currentTarget.value);
-        }
-      }, {
-        id: "position_padding_bottom_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "position_padding_bottom_slider");
-          _this.positionPadding("bottom", e.currentTarget.value);
-        }
-      }, {
-        id: "settings_play", event: "click", handler: e => {
-          this.spinePlayer.play();
-          e.currentTarget.disabled = true;
-          document.getElementById("settings_pause").disabled = false;
-        }
-      }, {
-        id: "settings_pause", event: "click", handler: e => {
-          this.spinePlayer.pause();
-          e.currentTarget.disabled = true;
-          document.getElementById("settings_play").disabled = false;
-        }
-      }, {
         id: "settings_reset", event: "click", handler: () => _this.reset()
       }, {
         id: "settings_close", event: "click", handler: () => _this.close()
-      }, {
-        id: "animation_selection", event: "change", handler: e => {
-          this.spinePlayer.animationState.setAnimation(0, e.currentTarget.value, false, 0)
-          this.spinePlayer.animationState.addAnimation(0, "Idle", true, 0);
-        }
-      }, {
-        id: "use_start_animation", event: "click", handler: e => {
-          this.#useStartAnimation = e.currentTarget.checked;
-        }
       }, {
         id: "settings_to_directory", event: "click", handler: () => {
           window.location.href = '/';

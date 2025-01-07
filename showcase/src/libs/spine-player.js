@@ -11085,15 +11085,16 @@ var spine;
 			if (typeof config.defaultMix === "undefined")
 				config.defaultMix = 0.25;
 			config.devicePixelRatio = window.devicePixelRatio || 1;
-			config.settingsScale = 1;
-			if (typeof window.settings !== "undefined")
-				config.settingsScale = window.settings.scale;
+			// TO-FIX
+			if (typeof config.scale === "undefined")
+				config.scale = 1;
 			return config;
 		};
+		SpinePlayer.prototype.setOperatorScale = function (v) {
+			this.config.scale = v
+		};
 		SpinePlayer.prototype.getOperatorScale = function () {
-			if (typeof window.settings !== "undefined")
-				return window.settings.scale;
-			return this.config.settingsScale
+			return this.config.scale
 		};
 		SpinePlayer.prototype.showError = function (error) {
 			var errorDom = findWithClass(this.dom, "spine-player-error")[0];

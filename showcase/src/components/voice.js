@@ -1,329 +1,346 @@
+import { insertChild, updateElementPosition } from "@/components/helper";
+
 import charword_table from '!/charword_table.json'
 import '@/components/voice.css'
 
+
 export default class Voice {
-  #el
-  #widgetEl
-  #audioEl = new Audio()
-  #audioElId = 'voice-audio'
-  #defaultRegion = charword_table.config.default_region
-  #defaultIdleDuration = 10 * 60 * 1000
-  #defaultNextDuration = 3 * 60 * 1000
-  #voiceLanguages = Object.keys(charword_table.voiceLangs["zh-CN"])
-  #defaultVoiceLang = this.#voiceLanguages[0]
-  #voiceLang = this.#defaultVoiceLang
-  #subtitleLang = this.#defaultRegion
-  #useSubtitle = false
-  #useVoice = false
-  #useVoiceActor = false
-  #isPlaying = false
-  #currentVoiceId = null
-  #lastVoiceId = null
-  #idleListener = -1
-  #idleDuration = this.#defaultIdleDuration
-  #nextListener = -1
-  #nextDuration = this.#defaultNextDuration
-  #lastClickToNext = false
-  #voiceFolderObject = this.#getVoiceFolderObject()
-  #voiceList = Object.keys(this.#getVoices())
-  #defaultSubtitleX = 0
-  #defaultSubtitleY = 0
-  #subtitleX = this.#defaultSubtitleX
-  #subtitleY = this.#defaultSubtitleY
-
-  constructor(el, widgetEl) {
-    this.#el = el
-    this.#widgetEl = widgetEl
-  }
-
-  init() {
-    this.#insertHTML()
-    this.#audioEl = document.getElementById(this.#audioElId)
-  }
-
-  success() {
-    const audioEndedFunc = () => {
-      this.#isPlaying = false
-      this.#setCurrentSubtitle(null)
-      this.#lastClickToNext = false
+    #el = document.createElement("div")
+    #parentEl
+    #widgetEl
+    #default = {
+        region: charword_table.config.default_region,
+        duration: {
+            idle: 10 * 60 * 1000,
+            next: 3 * 60 * 1000
+        },
+        language: {
+            voice: null
+        },
+        subtitle: {
+            x: 0,
+            y: 0
+        }
     }
-    this.#audioEl.addEventListener('ended', audioEndedFunc)
-    this.#playEntryVoice()
-    this.#initNextVoiceTimer()
-    this.#widgetEl.addEventListener('click', () => {
-      this.#lastClickToNext = true
-      this.#nextVoice()
-    })
-    document.addEventListener('mousemove', () => {
-      if (this.#idleListener === -1) {
-        this.#initIdleVoiceTimer()
-      }
-    })
-  }
-
-  /**
-   * @param {boolean} show
-   */
-  set useSubtitle(show) {
-    this.#useSubtitle = show
-    this.#el.hidden = !show
-  }
-
-  get useSubtitle() {
-    return this.#useSubtitle
-  }
-
-  /**
-   * @param {boolean} show
-   */
-  set useVoice(show) {
-    this.#useVoice = show
-    this.#playEntryVoice()
-    if (!show && this.#isPlaying) {
-      this.#audioEl.pause()
+    #voice = {
+        languages: Object.keys(charword_table.voiceLangs[this.#default.region]),
+        id: {
+            current: null,
+            last: null
+        },
+        listener: {
+            idle: -1,
+            next: -1
+        },
+        lastClickToNext: false,
+        locations: null,
+        list: null
     }
-  }
-
-  get useVoice() {
-    return this.#useVoice
-  }
-
-  /**
-   * @param {boolean} show
-   */
-  set useVoiceActor(show) {
-    this.#useVoiceActor = show
-    document.getElementById('voice_actor_box').hidden = !show
-  }
-
-  get useVoiceActor() {
-    return this.#useVoiceActor
-  }
-
-  /**
-   * @param {string} lang
-   */
-  set subtitleLanguage(lang) {
-    if (this.#getSubtitleLanguages().includes(lang)) {
-      this.#subtitleLang = lang
-    } else {
-      this.#subtitleLang = this.#defaultRegion
+    #audio = {
+        id: "voice-audio",
+        el: new Audio(),
+        isPlaying: false
     }
-  }
-
-  get subtitleLanguage() {
-    return this.#subtitleLang
-  }
-
-  get subtitleLanguages() {
-    return this.#getSubtitleLanguages()
-  }
-
-  /**
-   * @param {int} x
-   */
-  set subtitleX(x) {
-    this.#subtitleX = x
-    this.#updateSubtitlePosition()
-  }
-
-  get subtitleX() {
-    return this.#subtitleX
-  }
-
-  /**
-   * @param {int} y
-   */
-  set subtitleY(y) {
-    this.#subtitleY = y - 100
-    this.#updateSubtitlePosition()
-  }
-
-  get subtitleY() {
-    return this.#subtitleY + 100
-  }
-
-  #updateSubtitlePosition() {
-    window.settings.elementPosition(this.#el, this.#subtitleX, this.#subtitleY)
-  }
-
-  /**
-   * @param {string} lang
-   */
-  set language(lang) {
-    if (this.#voiceLanguages.includes(lang)) {
-      this.#voiceLang = lang
-    } else {
-      this.#voiceLang = this.#defaultVoiceLang
+    #config = {
+        useSubtitle: false,
+        useVoice: false,
+        useVoiceActor: false,
+        voiceLang: null,
+        subtitleLang: this.#default.region,
+        subtitleX: this.#default.subtitle.x,
+        subtitleY: this.#default.subtitle.y,
+        durationIdle: this.#default.duration.idle,
+        durationNext: this.#default.duration.next
     }
-    const availableSubtitleLang = this.#getSubtitleLanguages()
-    if (!availableSubtitleLang.includes(this.#subtitleLang)) {
-      this.#subtitleLang = availableSubtitleLang[0]
+
+    constructor() {
+        this.#default.language.voice = this.#voice.languages[0]
+        this.#config.voiceLang = this.#default.language.voice
+        this.#voice.locations = this.#getVoiceLocations()
+        this.#voice.list = Object.keys(this.#getVoices())
     }
-  }
 
-  get language() {
-    return this.#voiceLang
-  }
-
-  get languages() {
-    return this.#voiceLanguages
-  }
-
-  /**
-   * @param {int} duration 
-   */
-  set idleDuration(duration) {
-    clearInterval(this.#idleListener)
-    if (duration !== 0) {
-      this.#idleDuration = duration * 60 * 1000
-      this.#initIdleVoiceTimer()
+    set useSubtitle(show) {
+        this.#config.useSubtitle = show
+        this.#el.hidden = !show
     }
-  }
 
-  get idleDuration() {
-    return this.#idleDuration / 60 / 1000
-  }
-
-  /**
-   * @param {int} duration 
-   */
-  set nextDuration(duration) {
-    clearInterval(this.#nextListener)
-    if (duration !== 0) {
-      this.#nextDuration = duration * 60 * 1000
-      this.#initNextVoiceTimer()
+    get useSubtitle() {
+        return this.#config.useSubtitle
     }
-  }
 
-  get nextDuration() {
-    return this.#nextDuration / 60 / 1000
-  }
-
-  #initIdleVoiceTimer() {
-    this.#idleListener = setInterval(() => {
-      this.#playSpecialVoice("闲置")
-      clearInterval(this.#idleListener)
-      this.#idleListener = -1
-    }, this.#idleDuration)
-  }
-
-  #initNextVoiceTimer() {
-    this.#nextListener = setInterval(() => {
-      if (!this.#lastClickToNext) {
-        this.#nextVoice()
-      }
-    }, this.#nextDuration)
-  }
-
-  #nextVoice() {
-    const voiceId = () => {
-      const id = this.#voiceList[Math.floor((Math.random() * this.#voiceList.length))]
-      return id === this.#lastVoiceId ? voiceId() : id
+    set useVoice(show) {
+        this.#config.useVoice = show
+        this.#playEntryVoice()
+        if (!show && this.#audio.isPlaying) {
+            this.#audio.el.pause()
+        }
     }
-    this.#playVoice(voiceId())
-  }
 
-  #playEntryVoice() {
-    this.#playSpecialVoice("问候")
-  }
-
-  #setCurrentSubtitle(id) {
-    if (id === null) {
-      setTimeout(() => {
-        if (this.#isPlaying) return
-        this.#el.style.opacity = 0
-      }, 5 * 1000);
-      return
+    get useVoice() {
+        return this.#config.useVoice
     }
-    const subtitle = this.#getSubtitleById(id)
-    const title = subtitle.title
-    const content = subtitle.text
-    const cvInfo = charword_table.voiceLangs[this.subtitleLanguage][this.#voiceLang]
-    document.getElementById('voice_title').innerText = title
-    document.getElementById('voice_subtitle').innerText = content
-    this.#el.style.opacity = 1
-    document.getElementById('voice_actor_name').innerText = cvInfo.join('')
-  }
 
-  #playVoice(id) {
-    if (!this.useVoice) return
-    this.#lastVoiceId = this.#currentVoiceId
-    this.#currentVoiceId = id
-    this.#audioEl.src = `./assets/${this.#getVoiceFoler()
-      }/${id}.ogg`
-    let startPlayPromise = this.#audioEl.play()
-    if (startPlayPromise !== undefined) {
-      startPlayPromise
-        .then(() => {
-          this.#isPlaying = true
-          this.#setCurrentSubtitle(id)
+    set useVoiceActor(show) {
+        this.#config.useVoiceActor = show
+        document.getElementById('voice-actor-box').hidden = !show
+    }
+
+    get useVoiceActor() {
+        return this.#config.useVoiceActor
+    }
+
+    set subtitleLanguage(lang) {
+        if (this.#getSubtitleLanguages().includes(lang)) {
+            this.#config.subtitleLang = lang
+        } else {
+            this.#config.subtitleLang = this.#default.region
+        }
+        this.#setCurrentSubtitle(this.#voice.id.current)
+    }
+
+    get subtitleLanguage() {
+        return this.#config.subtitleLang
+    }
+
+    get subtitleLanguages() {
+        return this.#getSubtitleLanguages()
+    }
+
+    set subtitleX(x) {
+        this.#config.subtitleX = x
+        this.#updateSubtitlePosition()
+    }
+
+    get subtitleX() {
+        return this.#config.subtitleX
+    }
+
+    set subtitleY(y) {
+        this.#config.subtitleY = y - 100
+        this.#updateSubtitlePosition()
+    }
+
+    get subtitleY() {
+        return this.#config.subtitleY + 100
+    }
+
+    set language(lang) {
+        if (this.#voice.languages.includes(lang)) {
+            this.#config.voiceLang = lang
+        } else {
+            this.#config.voiceLang = this.#default.language.voice
+        }
+        const availableSubtitleLang = this.#getSubtitleLanguages()
+        if (!availableSubtitleLang.includes(this.#config.subtitleLang)) {
+            this.#config.subtitleLang = availableSubtitleLang[0]
+        }
+    }
+
+    get language() {
+        return this.#config.voiceLang
+    }
+
+    get languages() {
+        return this.#voice.languages
+    }
+
+    set durationIdle(duration) {
+        clearInterval(this.#voice.listener.idle)
+        if (duration !== 0) {
+            this.#config.durationIdle = duration * 60 * 1000
+            this.#initIdleVoiceTimer()
+        }
+    }
+
+    set idleDuration(duration) {
+        // Note: Back Compatibility
+        this.durationIdle = duration
+    }
+
+    get durationIdle() {
+        return this.#config.durationIdle / 60 / 1000
+    }
+
+    get idleDuration() {
+        // Note: Back Compatibility
+        return this.durationIdle
+    }
+
+    set durationNext(duration) {
+        clearInterval(this.#voice.listener.next)
+        if (duration !== 0) {
+            this.#config.durationNext = duration * 60 * 1000
+            this.#initNextVoiceTimer()
+        }
+    }
+
+    set nextDuration(duration) {
+        // Note: Back Compatibility
+        this.durationNext = duration
+    }
+
+    get durationNext() {
+        return this.#config.durationNext / 60 / 1000
+    }
+
+    get nextDuration() {
+        // Note: Back Compatibility
+        return this.durationNext
+    }
+
+    init(el, widgetEl) {
+        this.#parentEl = el
+        this.#widgetEl = widgetEl
+        this.#el.id = "voice-box"
+        this.#el.hidden = true
+        this.#el.innerHTML = `
+            <audio id="${this.#audio.id}" autoplay>
+                <source type="audio/ogg" />
+            </audio>
+            <div class="voice-wrapper" id="voice-wrapper">
+                <div class="voice-title" id="voice-title"></div>
+                <div class="voice-subtitle">
+                <div id="voice-subtitle"></div>
+                <div class="voice-triangle"></div>
+                </div>
+            </div>
+            <div id="voice-actor-box" hidden>
+                <div class="voice-actor">
+                <span class="voice-actor-icon"></span>
+                <span id="voice-actor-name" class="voice-actor-name"></span>
+                </div>
+            </div>
+        `
+        insertChild(this.#parentEl, this.#el)
+    }
+
+    success() {
+        const audioEndedFunc = () => {
+            this.#audio.isPlaying = false
+            this.#setCurrentSubtitle(null)
+            this.#audio.lastClickToNext = false
+        }
+        this.#audio.el.addEventListener('ended', audioEndedFunc)
+        this.#playEntryVoice()
+        this.#initNextVoiceTimer()
+        this.#widgetEl.addEventListener('click', () => {
+            this.#audio.lastClickToNext = true
+            this.#nextVoice()
         })
-        .catch(() => {
-          return
+        document.addEventListener('mousemove', () => {
+            if (this.#voice.listener.idle === -1) {
+                this.#initIdleVoiceTimer()
+            }
         })
     }
-  }
 
-  #playSpecialVoice(matcher) {
-    const voices = this.#getVoices()
-    const voiceId = Object.keys(voices).find(e => voices[e].title === matcher)
-    this.#playVoice(voiceId)
-  }
-
-  #getVoiceFoler() {
-    const folderObject = this.#voiceFolderObject
-    return `${folderObject.main}/${folderObject.sub.find(e => e.lang === this.#voiceLang).name}`
-  }
-
-  #getVoices() {
-    return charword_table.subtitleLangs[this.#subtitleLang].default
-  }
-
-  #getSubtitleById(id) {
-    const obj = charword_table.subtitleLangs[this.#subtitleLang]
-    let key = 'default'
-    if (obj[this.#voiceLang]) {
-      key = this.#voiceLang
+    #getVoiceLocations() {
+        const folders = JSON.parse(import.meta.env.VITE_VOICE_FOLDERS)
+        const customVoiceName = this.#voice.languages.filter(i => !folders.sub.map(e => e.lang).includes(i))[0]
+        folders.sub = folders.sub.map(e => {
+            return {
+                name: e.name,
+                lang: e.lang === "CUSTOM" ? customVoiceName : e.lang
+            }
+        })
+        return folders
     }
-    return obj[key][id]
-  }
 
-  #getVoiceFolderObject() {
-    const folderObject = JSON.parse(import.meta.env.VITE_VOICE_FOLDERS)
-    const languagesCopy = this.#voiceLanguages.slice()
-    const customVoiceName = languagesCopy.filter(i => !folderObject.sub.map(e => e.lang).includes(i))[0]
-    folderObject.sub = folderObject.sub.map(e => {
-      return {
-        name: e.name,
-        lang: e.lang === "CUSTOM" ? customVoiceName : e.lang
-      }
-    })
-    return folderObject
-  }
+    #getVoices() {
+        return charword_table.subtitleLangs[this.#config.subtitleLang].default
+    }
 
-  #getSubtitleLanguages() {
-    return Object.keys(charword_table.subtitleLangs)
-  }
+    #playEntryVoice() {
+        this.#playSpecialVoice("问候")
+    }
 
-  #insertHTML() {
-    this.#el.innerHTML = `
-      <audio id="${this.#audioElId}" autoplay>
-        <source type="audio/ogg" />
-      </audio>
-      <div class="voice-wrapper" id="voice_wrapper">
-        <div class="voice-title" id="voice_title"></div>
-        <div class="voice-subtitle">
-          <div id="voice_subtitle"></div>
-          <div class="voice-triangle"></div>
-        </div>
-      </div>
-      <div id="voice_actor_box" hidden>
-        <div class="voice-actor">
-          <span class="voice-actor-icon"></span>
-          <span id="voice_actor_name" class="voice-actor-name"></span>
-        </div>
-      </div>
-    `
-  }
+    #playSpecialVoice(matcher) {
+        const voices = this.#getVoices()
+        const voiceId = Object.keys(voices).find(e => voices[e].title === matcher)
+        this.#playVoice(voiceId)
+    }
+
+    #playVoice(id) {
+        if (!this.useVoice) return
+        this.#voice.id.last = this.#voice.id.current
+        this.#voice.id.current = id
+        this.#audio.el.src = `./assets/${this.#getVoiceLocation()
+            }/${id}.ogg`
+        let startPlayPromise = this.#audio.el.play()
+        if (startPlayPromise !== undefined) {
+            startPlayPromise
+                .then(() => {
+                    this.#audio.isPlaying = true
+                    this.#setCurrentSubtitle(id)
+                })
+                .catch(() => {
+                    return
+                })
+        }
+    }
+
+    #getVoiceLocation() {
+        const locations = this.#voice.locations
+        return `${locations.main}/${locations.sub.find(e => e.lang === this.#config.voiceLang).name}`
+    }
+
+    #setCurrentSubtitle(id) {
+        if (id === null) {
+            setTimeout(() => {
+                if (this.#audio.isPlaying) return
+                this.#el.style.opacity = 0
+            }, 5 * 1000);
+            return
+        }
+        const subtitle = this.#getSubtitleById(id)
+        const title = subtitle.title
+        const content = subtitle.text
+        const cvInfo = charword_table.voiceLangs[this.subtitleLanguage][this.#config.voiceLang]
+        document.getElementById('voice-title').innerText = title
+        document.getElementById('voice-subtitle').innerText = content
+        this.#el.style.opacity = 1
+        document.getElementById('voice-actor-name').innerText = cvInfo.join('')
+    }
+
+    #getSubtitleById(id) {
+        const obj = charword_table.subtitleLangs[this.#config.subtitleLang]
+        let key = 'default'
+        if (obj[this.#config.voiceLang]) {
+            key = this.#config.voiceLang
+        }
+        return obj[key][id]
+    }
+
+    #getSubtitleLanguages() {
+        return Object.keys(charword_table.subtitleLangs)
+    }
+
+    #updateSubtitlePosition() {
+        updateElementPosition(this.#el, this.#config.subtitleX, this.#config.subtitleY)
+    }
+
+    #initNextVoiceTimer() {
+        this.#voice.listener.next = setInterval(() => {
+            if (!this.#voice.lastClickToNext) {
+                this.#nextVoice()
+            }
+        }, this.#config.durationNext)
+    }
+
+    #nextVoice() {
+        const getVoiceId = () => {
+            const id = this.#voice.list[Math.floor((Math.random() * this.#voice.list.length))]
+            return id === this.#voice.id.last ? getVoiceId() : id
+        }
+        this.#playVoice(getVoiceId())
+    }
+
+    #initIdleVoiceTimer() {
+        this.#voice.listener.idle = setInterval(() => {
+            this.#playSpecialVoice("闲置")
+            clearInterval(this.#voice.listener.idle)
+            this.#voice.listener.idle = -1
+        }, this.#config.durationIdle)
+    }
 }

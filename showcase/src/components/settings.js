@@ -3,12 +3,10 @@ import '@/components/settings.css'
 export default class Settings {
   #el
   #logoEl
-  #videoEl
   #defaultLogoImage
   #defaultRatio = 61.8
   #defaultOpacity = 30
   #defaulthideLogo = false
-  #defaultBackgroundImage = getComputedStyle(document.body).backgroundImage
   #defaultInvertFilter = import.meta.env.VITE_INVERT_FILTER === "true"
   #defaultLogoX = 0
   #defaultLogoY = 0
@@ -38,7 +36,7 @@ export default class Settings {
     resize()
     this.#setLogoInvertFilter(this.#defaultInvertFilter)
     this.setLogoOpacity(this.#defaultOpacity)
-    this.#videoEl = document.getElementById("video-src")
+    
     this.#insertHTML()
   }
 
@@ -121,40 +119,6 @@ export default class Settings {
     this.#opacity = value
   }
 
-  setBackgoundImage(v) {
-    document.body.style.backgroundImage = v
-  }
-
-  get currentBackground() {
-    if (!document.getElementById("custom_background_clear").disabled) {
-      return null
-    }
-    return this.#defaultBackgroundImage.replace(/^(url\(('|"))(.+)(\/)(.+.png)(('|")\))$/, '$5')
-  }
-
-  setDefaultBackground(e) {
-    this.#defaultBackgroundImage = `url("${import.meta.env.BASE_URL}assets/${import.meta.env.VITE_BACKGROUND_FOLDER}/${e}")`
-    if (document.getElementById("custom_background_clear").disabled && !document.body.style.backgroundImage.startsWith("url(\"file:")) {
-      this.setBackgoundImage(this.#defaultBackgroundImage)
-    }
-  }
-
-  setBackground(e) {
-    this.#readFile(
-      e,
-      (blobURL, type) => {
-        this.setBackgoundImage(`url("${blobURL}")`)
-        document.getElementById("custom_background_clear").disabled = false
-      }
-    )
-  }
-
-  resetBackground() {
-    document.getElementById("custom_background").value = ""
-    document.getElementById("custom_background_clear").disabled = true
-    this.setBackgoundImage(this.#defaultBackgroundImage)
-  }
-
   elementPosition(el, x, y) {
     const computedStyle = getComputedStyle(el)
     const elWidth = computedStyle.width
@@ -194,37 +158,6 @@ export default class Settings {
     document.getElementById("logo_padding_y_input").value = this.#defaultLogoY
   }
 
-  setVideo(e) {
-    this.#readFile(
-      e,
-      (blobURL, type) => {
-        this.#videoEl.src = blobURL
-        this.#videoEl.load()
-        document.getElementById("custom_video_background_clear").disabled = false
-      }
-    )
-  }
-
-  setVideoVolume(value) {
-    this.#videoEl.volume = value / 100
-  }
-
-  getVideoVolume() {
-    return this.#videoEl.volume * 100
-  }
-
-  setVideoFromWE(url) {
-    this.#videoEl.src = url
-    this.#videoEl.load()
-    document.getElementById("custom_video_background_clear").disabled = false
-  }
-
-  resetVideo() {
-    this.#videoEl.src = ""
-    document.getElementById("custom_video_background").value = ""
-    document.getElementById("custom_video_background_clear").disabled = true
-  }
-
   #insertHTML() {
     this.#el.innerHTML = `
       <div>
@@ -259,36 +192,7 @@ export default class Settings {
             </div>
           </div>
         </div>
-        <div>
-          <div>
-            <label for="default_background_select">Choose a default background:</label>
-            <select name="default_backgrounds" id="default_background_select">
-                ${this.#updateOptions(null, JSON.parse(import.meta.env.VITE_BACKGROUND_FILES))}
-            </select>
-          </div>
-          <div>
-            <label for="custom_background"> Custom Background (Store Locally)</label>
-            <input type="file" id="custom_background" accept="image/*"/>
-            <button type="button" disabled id="custom_background_clear" disabled>Clear</button>
-          </div>
-        </div>
-        <div>
-          <label for="video">Video</label>
-          <input type="checkbox" id="video" name="video" />
-          <div id="video_realted" hidden>
-            <div>
-              <label for="custom_video_background"> Custom Video Background (Store Locally)</label>
-              <input type="file" id="custom_video_background" accept="video/*"/>
-              <button type="button" disabled id="custom_video_background_clear" disabled>Clear</button>
-            </div>
-            <div>
-              <label for="video_volume">Video Volume</label>
-              <input type="range" min="0" max="100" step="1" id="video_volume_slider" value="${this.getVideoVolume()}" />
-              <input type="number" id="video_volume_input"  min="0" max="100" step="1" name="video_volume" value="${this.getVideoVolume() }" />
-            </div>
-          </div>
-        </div>
-      </div>
+      </div>  
     `
     this.#addEventListeners()
   }
@@ -368,31 +272,6 @@ export default class Settings {
         id: "logo_padding_y_input", event: "change", handler: e => {
           _this.#sync(e.currentTarget, "logo_padding_y_slider");
           _this.logoPadding("y", e.currentTarget.value);
-        }
-      }, {
-        id: "default_background_select", event: "change", handler: e => _this.setDefaultBackground(e.currentTarget.value)
-      }, {
-        id: "custom_background", event: "change", handler: e => _this.setBackground(e)
-      }, {
-        id: "custom_background_clear", event: "click", handler: () => _this.resetBackground()
-      }, {
-        id: "video", event: "click", handler: e => {
-          _this.#showRelated(e.currentTarget, "video_realted");
-          if (!e.currentTarget.checked) _this.resetVideo()
-        }
-      }, {
-        id: "custom_video_background", event: "change", handler: e => _this.setVideo(e)
-      }, {
-        id: "custom_video_background_clear", event: "click", handler: () => _this.resetVideo()
-      }, {
-        id: "video_volume_slider", event: "input", handler: e => {
-          _this.#sync(e.currentTarget, "video_volume_input");
-          this.setVideoVolume(parseInt(e.currentTarget.value))
-        }
-      }, {
-        id: "video_volume_input", event: "change", handler: e => {
-          _this.#sync(e.currentTarget, "video_volume_slider");
-          this.setVideoVolume(parseInt(e.currentTarget.value))
         }
       }, 
     ]

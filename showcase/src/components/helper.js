@@ -12,6 +12,10 @@ export const insertHTMLChild = (parent, child) => {
     parent.appendChild(child)
 }
 
+export const insertHTMLNodeBefore = (parent, sibling, child) => {
+    parent.insertBefore(child, sibling)
+}
+
 const getIntPx = (value) => parseInt(value.replace("px", ""))
 export const updateElementPosition = (el, x, y) => {
     const computedStyle = getComputedStyle(el)

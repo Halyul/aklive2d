@@ -72,7 +72,7 @@ export default class Player {
     this.fps = fps
   }
 
-  #resetFPS() {
+  resetFPS() {
     this.fps = this.#default.fps
     document.getElementById("fps-slider").value = this.#default.fps
     document.getElementById("fps-input").value = this.#default.fps
@@ -88,13 +88,13 @@ export default class Player {
     this.scale = v
   }
 
-  #resetScale() {
+  resetScale() {
     this.#config.scale = this.#default.scale
   }
 
   scaleReset() {
     // Note: Back Compatibility
-    this.#resetScale()
+    this.resetScale()
   }
 
   get scale() {
@@ -255,7 +255,7 @@ export default class Player {
     this.#loadViewport()
   }
 
-  #resetPosition() {
+  resetPosition() {
     this.#config.padding.left = this.#default.padding.left
     this.#config.padding.right = this.#default.padding.right
     this.#config.padding.top = this.#default.padding.top
@@ -273,15 +273,7 @@ export default class Player {
 
   positionReset() {
     // Note: Back Compatibility
-    this.#resetPosition()
-  }
-
-  get reset() {
-    return {
-      fps: this.#resetFPS,
-      scale: this.#resetScale,
-      position: this.#resetPosition,
-    }
+    this.resetPosition()
   }
 
   get HTML() {
@@ -387,7 +379,7 @@ export default class Player {
       }, {
         id: "position", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "position-realted");
-          if (!e.currentTarget.checked) this.reset.position();
+          if (!e.currentTarget.checked) this.resetPosition();
         }
       }, {
         id: "position-padding-left-slider", event: "input", handler: e => {

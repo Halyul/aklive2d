@@ -2,6 +2,7 @@ import Voice from "@/components/voice";
 import Fallback from "@/components/fallback";
 import Music from "@/components/music";
 import Player from "@/components/player";
+import Background from "@/components/background";
 import {
   isWebGLSupported,
   insertHTMLChild,
@@ -17,6 +18,7 @@ export default class AKLive2D {
   #voice = new Voice()
   #music = new Music()
   #player = new Player()
+  #background = new Background()
 
   constructor(appEl, widgetEl) {
     document.title = import.meta.env.VITE_TITLE
@@ -32,6 +34,7 @@ export default class AKLive2D {
 
   init() {
     if (isWebGLSupported) {
+      this.#background.init(this.#appEl, this.#widgetEl);
       this.#voice.init(this.#appEl, this.#widgetEl);
       this.#music.init(this.#appEl);
       this.#player.init(this.#widgetEl, this);
@@ -41,6 +44,7 @@ export default class AKLive2D {
     this.#el.id = "settings-box"
     this.#el.innerHTML = `
     <div>
+      ${this.#background.HTML}
       ${this.#player.HTML}
       ${this.#voice.HTML}
       ${this.#music.HTML}
@@ -56,6 +60,7 @@ export default class AKLive2D {
       {
         event: "player-ready", handler: () => this.success()
       },
+      ...this.#background.listeners,
       ...this.#player.listeners,
       ...this.#voice.listeners,
       ...this.#music.listeners,

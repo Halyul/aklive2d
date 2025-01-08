@@ -4,7 +4,6 @@ import Settings from '@/components/settings'
 import AKLive2D from '@/components/aklive2d'
 
 document.getElementById('app').innerHTML = `
-  <img src="./assets/${import.meta.env.VITE_LOGO_FILENAME}.png" class="logo invert-filter" id="logo" alt="operator logo" />
   <div id="settings"></div>
   <div id="widget-wrapper" />
 `

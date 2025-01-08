@@ -138,6 +138,11 @@ export default class Background {
     this.volume = v
   }
 
+  reset() {
+    this.resetImage()
+    this.resetVideo()
+  }
+
   get HTML() {
     return `
     <div>

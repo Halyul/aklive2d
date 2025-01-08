@@ -3,6 +3,7 @@ import Fallback from "@/components/fallback";
 import Music from "@/components/music";
 import Player from "@/components/player";
 import Background from "@/components/background";
+import Logo from "@/components/logo";
 import {
   isWebGLSupported,
   insertHTMLChild,
@@ -19,6 +20,7 @@ export default class AKLive2D {
   #music = new Music()
   #player = new Player()
   #background = new Background()
+  #logo = new Logo()
 
   constructor(appEl, widgetEl) {
     document.title = import.meta.env.VITE_TITLE
@@ -34,6 +36,7 @@ export default class AKLive2D {
 
   init() {
     if (isWebGLSupported) {
+      this.#logo.init(this.#appEl);
       this.#background.init(this.#appEl, this.#widgetEl);
       this.#voice.init(this.#appEl, this.#widgetEl);
       this.#music.init(this.#appEl);
@@ -44,6 +47,7 @@ export default class AKLive2D {
     this.#el.id = "settings-box"
     this.#el.innerHTML = `
     <div>
+    ${this.#logo.HTML}
       ${this.#background.HTML}
       ${this.#player.HTML}
       ${this.#voice.HTML}
@@ -60,6 +64,7 @@ export default class AKLive2D {
       {
         event: "player-ready", handler: () => this.success()
       },
+      ...this.#logo.listeners,
       ...this.#background.listeners,
       ...this.#player.listeners,
       ...this.#voice.listeners,
@@ -85,22 +90,9 @@ export default class AKLive2D {
   }
 
   reset() {
-    // this.positionReset()
-    // this.scaleReset()
-    // this.setLogoRatio(this.#defaultRatio)
-    // document.getElementById("logo_ratio_slider").value = this.#defaultRatio
-    // document.getElementById("logo_ratio_input").value = this.#defaultRatio
-    // this.setLogoOpacity(this.#defaultOpacity)
-    // document.getElementById("logo_opacity_slider").value = this.#defaultOpacity
-    // document.getElementById("logo_opacity_input").value = this.#defaultOpacity
-    // this.resetLogoImage()
-    // this.logoReset()
-    // this.resetBackground()
-    // this.setLogoDisplay(this.#defaulthideLogo)
-    // this.setFPS(this.#defaultFps)
-    // document.getElementById("fps_slider").value = this.#defaultFps
-    // document.getElementById("fps_input").value = this.#defaultFps
-    // this.spinePlayer.play()
+    this.#player.reset()
+    this.#background.reset()
+    this.#logo.reset()
   }
 
   success() {

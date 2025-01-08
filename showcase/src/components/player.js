@@ -25,25 +25,12 @@ export default class Player {
       bottom: parseInt(import.meta.env.VITE_VIEWPORT_BOTTOM),
     },
     scale: 1,
-    viewport: null
   }
   #config = {
     fps: this.#default.fps,
     useStartAnimation: true,
-    padding: this.#default.padding,
+    padding: {...this.#default.padding},
     scale: this.#default.scale
-  }
-
-  constructor() {
-    this.#default.viewport = {
-      debugRender: false,
-      padLeft: `${this.#default.padding.left}%`,
-      padRight: `${this.#default.padding.right}%`,
-      padTop: `${this.#default.padding.top}%`,
-      padBottom: `${this.#default.padding.bottom}%`,
-      x: 0,
-      y: 0,
-    }
   }
 
   set useStartAnimation(v) {
@@ -89,7 +76,7 @@ export default class Player {
   }
 
   resetScale() {
-    this.#config.scale = this.#default.scale
+    this.scale = this.#default.scale
   }
 
   scaleReset() {
@@ -228,6 +215,7 @@ export default class Player {
     if (typeof v.top === "undefined") v.top = this.#config.padding.top;
     if (typeof v.bottom === "undefined") v.bottom = this.#config.padding.bottom;
     this.#config.padding = v
+    this.#loadViewport()
   }
 
   positionPadding(key, value) {
@@ -256,11 +244,7 @@ export default class Player {
   }
 
   resetPosition() {
-    this.#config.padding.left = this.#default.padding.left
-    this.#config.padding.right = this.#default.padding.right
-    this.#config.padding.top = this.#default.padding.top
-    this.#config.padding.bottom = this.#default.padding.bottom
-    this.#spine.updateViewport(this.#default.viewport)
+    this.padding = {...this.#default.padding}
     document.getElementById("position-padding-left-slider").value = this.#default.padding.left
     document.getElementById("position-padding-left-input").value = this.#default.padding.left
     document.getElementById("position-padding-right-slider").value = this.#default.padding.right
@@ -274,6 +258,13 @@ export default class Player {
   positionReset() {
     // Note: Back Compatibility
     this.resetPosition()
+  }
+
+  reset() {
+    this.resetFPS()
+    this.resetPosition()
+    this.resetScale()
+    this.#spine.play()
   }
 
   get HTML() {

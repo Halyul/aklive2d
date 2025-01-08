@@ -4,6 +4,7 @@ import Music from "@/components/music";
 import Player from "@/components/player";
 import Background from "@/components/background";
 import Logo from "@/components/logo";
+import Insight from "@/components/insight";
 import {
   isWebGLSupported,
   insertHTMLChild,
@@ -21,6 +22,7 @@ export default class AKLive2D {
   #player = new Player()
   #background = new Background()
   #logo = new Logo()
+  #insight = new Insight()
 
   constructor(appEl, widgetEl) {
     document.title = import.meta.env.VITE_TITLE
@@ -69,6 +71,7 @@ export default class AKLive2D {
       ...this.#player.listeners,
       ...this.#voice.listeners,
       ...this.#music.listeners,
+      ...this.#insight.listeners,
       {
         id: "settings-reset", event: "click", handler: () => this.reset()
       }, {
@@ -101,6 +104,7 @@ export default class AKLive2D {
     this.#background.link(this.#music)
     this.#voice.success()
     this.#music.success()
+    this.#insight.success()
     if (this.#queries.has("settings") || this.#queries.has("aklive2d") || import.meta.env.MODE === 'development') {
       this.open()
     }

@@ -56,7 +56,7 @@ export default class Background {
   }
 
   set volume(v) {
-    this.#videoEl.volume = v / 100
+    this.#videoEl.volume = parseInt(v) / 100
   }
 
   get current() {
@@ -185,6 +185,18 @@ export default class Background {
   get listeners() {
     return [
       {
+        event: "background-set-default", handler: e => this.default = e.detail
+      }, {
+        event: "background-set-custom", handler: e => this.custom = e.detail
+      }, {
+        event: "background-set-video", handler: e => this.video = e.detail
+      }, {
+        event: "background-set-volume", handler: e => this.volume = e.detail
+      }, {
+        event: "background-reset-image", handler: () => this.resetImage()
+      }, {
+        event: "background-reset-video", handler: () => this.resetVideo()
+      }, {
         id: "default-background-select", event: "change", handler: e => {
           this.default = e.currentTarget.value
           this.#musicObj.music = e.currentTarget.value
@@ -205,12 +217,12 @@ export default class Background {
       }, {
         id: "video-volume-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "video-volume-input");
-          this.volume = parseInt(e.currentTarget.value)
+          this.volume = e.currentTarget.value
         }
       }, {
         id: "video-volume-input", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "video-volume-slider");
-          this.volume = parseInt(e.currentTarget.value)
+          this.volume = e.currentTarget.value
         }
       }, 
     ]

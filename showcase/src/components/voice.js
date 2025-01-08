@@ -204,14 +204,14 @@ export default class Voice {
     if (typeof v.idle !== "undefined") {
       clearInterval(this.#voice.listener.idle)
       if (v.idle !== 0) {
-        this.#config.duration.idle = v.idle * 60 * 1000
+        this.#config.duration.idle = parseInt(v.idle) * 60 * 1000
         this.#initIdleVoiceTimer()
       }
     }
     if (typeof v.next !== "undefined") {
       clearInterval(this.#voice.listener.next)
       if (v.next !== 0) {
-        this.#config.duration.next = v.next * 60 * 1000
+        this.#config.duration.next = parseInt(v.next) * 60 * 1000
         this.#initNextVoiceTimer()
       }
     }
@@ -485,6 +485,20 @@ export default class Voice {
   get listeners() {
     return [
       {
+        event: "voice-set-usevoice", handler: e => this.useVoice = e.detail
+      }, {
+        event: "voice-set-language", handler: e => this.language = e.detail
+      }, {
+        event: "voice-set-duration", handler: e => this.duration = e.detail
+      }, {
+        event: "voice-set-usesubtitle", handler: e => this.useSubtitle = e.detail
+      }, {
+        event: "voice-set-subtitlelanguage", handler: e => this.subtitleLanguage = e.detail
+      }, {
+        event: "voice-set-subtitleposition", handler: e => this.position = e.detail
+      }, {
+        event: "voice-set-usevoiceactor", handler: e => this.useVoiceActor = e.detail
+      }, {
         id: "voice", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "voice-realted");
           this.useVoice = e.currentTarget.checked;
@@ -498,13 +512,13 @@ export default class Voice {
       }, {
         id: "voice-idle-duration-input", event: "change", handler: e => {
           this.duration = {
-            idle: parseInt(e.currentTarget.value)
+            idle: e.currentTarget.value
           }
         }
       }, {
         id: "voice-next-duration-input", event: "change", handler: e => {
           this.duration = {
-            next: parseInt(e.currentTarget.value)
+            next: e.currentTarget.value
           }
         }
       }, {

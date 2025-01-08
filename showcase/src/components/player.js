@@ -4,6 +4,9 @@ import {
   showRelatedHTML,
   syncHTMLValue
 } from "@/components/helper";
+import {
+  PlayerReadyEvent
+} from "@/components/event"
 import '@/libs/spine-player.css'
 import spine from '@/libs/spine-player'
 import assets from '!/assets.json'
@@ -142,8 +145,7 @@ export default class Player {
           widget.animationState.addAnimation(0, "Idle", true, 0);
         }
         _this.success()
-        const event = new Event("player-ready");
-        document.dispatchEvent(event);
+        document.dispatchEvent(PlayerReadyEvent);
       },
     }
     if (import.meta.env.VITE_USE_JSON === "true") {
@@ -250,7 +252,7 @@ export default class Player {
     }
   }
 
-  resetPosition() {
+  resetPadding() {
     this.padding = {...this.#default.padding}
     document.getElementById("position-padding-left-slider").value = this.#default.padding.left
     document.getElementById("position-padding-left-input").value = this.#default.padding.left
@@ -264,12 +266,12 @@ export default class Player {
 
   positionReset() {
     // Note: Back Compatibility
-    this.resetPosition()
+    this.resetPadding()
   }
 
   reset() {
     this.resetFPS()
-    this.resetPosition()
+    this.resetPadding()
     this.resetScale()
     this.#spine.play()
   }
@@ -330,6 +332,16 @@ export default class Player {
   get listeners() {
     return [
       {
+        event: "player-set-fps", handler: e => this.fps = e.detail
+      }, {
+        event: "player-set-scale", handler: e => this.scale = e.detail
+      }, {
+        event: "player-set-padding", handler: e => this.padding = e.detail
+      }, {
+        event: "player-reset-padding", handler: () => this.resetPadding()
+      }, {
+        event: "player-set-usestartanimation", handler: e => this.useStartAnimation = e.detail
+      }, {
         id: "fps-slider", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "fps-input");
           this.fps = e.currentTarget.value;
@@ -377,7 +389,7 @@ export default class Player {
       }, {
         id: "position", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "position-realted");
-          if (!e.currentTarget.checked) this.resetPosition();
+          if (!e.currentTarget.checked) this.resetPadding();
         }
       }, {
         id: "position-padding-left-slider", event: "input", handler: e => {

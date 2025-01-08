@@ -9669,10 +9669,10 @@ var spine;
 				var canvas = this.canvas;
 				var w = canvas.clientWidth;
 				var h = canvas.clientHeight;
-				var devicePixelRatio = window.devicePixelRatio || 1;
-				if (canvas.width != Math.floor(w * devicePixelRatio) || canvas.height != Math.floor(h * devicePixelRatio)) {
-					canvas.width = Math.floor(w * devicePixelRatio);
-					canvas.height = Math.floor(h * devicePixelRatio);
+				var devicePixelRatio = () => window.devicePixelRatio || 1;
+				if (canvas.width != Math.floor(w * devicePixelRatio()) || canvas.height != Math.floor(h * devicePixelRatio())) {
+					canvas.width = Math.floor(w * devicePixelRatio());
+					canvas.height = Math.floor(h * devicePixelRatio());
 				}
 				this.context.gl.viewport(0, 0, canvas.width, canvas.height);
 				if (resizeMode === ResizeMode.Stretch) {
@@ -11084,7 +11084,7 @@ var spine;
 				config.showControls = true;
 			if (typeof config.defaultMix === "undefined")
 				config.defaultMix = 0.25;
-			config.devicePixelRatio = window.devicePixelRatio || 1;
+			config.devicePixelRatio = () => window.devicePixelRatio || 1;
 			if (typeof config.scale === "undefined")
 				config.scale = 1;
 			return config;
@@ -11416,7 +11416,7 @@ var spine;
 							height: oldViewport.height + (viewport.height - oldViewport.height) * transitionAlpha
 						};
 					}
-					var devicePixelRatio = this.config.devicePixelRatio;
+					var devicePixelRatio = this.config.devicePixelRatio();
 					var viewportSize = this.scale(viewport.width, viewport.height, this.canvas.width, this.canvas.height);
 					// this.sceneRenderer.camera.zoom = viewport.width * devicePixelRatio / viewportSize.x;
 					

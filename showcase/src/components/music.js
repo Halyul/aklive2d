@@ -139,7 +139,7 @@ export default class Music {
     }
   }
 
-  set customMusic(url) {
+  set custom(url) {
     readFile(
       url,
       (blobURL, type) => {
@@ -151,7 +151,7 @@ export default class Music {
 
   setMusic(e) {
     // Note: Back Compatibility
-    this.customMusic = e.target.files[0]
+    this.custom = e.target.files[0]
   }
 
   reset() {
@@ -234,6 +234,16 @@ export default class Music {
   get listeners() {
     return [
       {
+        event: "music-set-music", handler: e => this.music = e.detail
+      }, {
+        event: "music-set-usemusic", handler: e => this.useMusic = e.detail
+      }, {
+        event: "music-set-volume", handler: e => this.fps = e.detail
+      }, {
+        event: "music-set-custom", handler: e => this.custom = e.detail
+      }, {
+        event: "music-reset", handler: () => this.reset()
+      }, {
         id: "music", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "music-realted");
           this.useMusic = e.currentTarget.checked;
@@ -241,7 +251,7 @@ export default class Music {
       }, {
         id: "music-select", event: "change", handler: e => this.music = e.currentTarget.value
       }, {
-        id: "custom-music", event: "change", handler: e => this.customMusic = e.target.files[0]
+        id: "custom-music", event: "change", handler: e => this.custom = e.target.files[0]
       }, {
         id: "custom-music-clear", event: "click", handler: () => this.reset()
       }, {

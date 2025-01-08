@@ -1,36 +1,33 @@
-import '@/components/settings.css'
-
-export default class Settings {
+export default class Insight {
   #isInsightInited = false
-  #doNotTrack = false
-
-  constructor() {
-    this.isWallpaperEngine = false
-    this.spinePlayer = null
-  }
 
   success() {
-    this.insight(false, false)
+    this.insight(false)
   }
 
-  insight(isWallpaperEngine, doNotTrack) {
-    this.isWallpaperEngine = isWallpaperEngine
+  insight(doNotTrack, isFromWallpaperEngine = false) {
     if (this.#isInsightInited || import.meta.env.MODE === 'development') return
     this.#isInsightInited = true
-    this.#doNotTrack = doNotTrack
-    if (this.#doNotTrack) return
+    if (doNotTrack) return
     try {
       const config = {
         path: `/${import.meta.env.VITE_LINK}`
       }
-      if (this.isWallpaperEngine) config.hostname = "file://wallpaperengine.local";
+      if (isFromWallpaperEngine) config.hostname = "file://wallpaperengine.local";
       window.counterscale = {
         q: [["set", "siteId", import.meta.env.VITE_INSIGHT_ID], ["trackPageview", config]],
       };
       window.counterscaleOnDemandTrack();
-    } catch(e) {
+    } catch (e) {
       console.warn && console.warn(e.message)
     }
   }
 
+  get listeners() {
+    return [
+      {
+        event: "insight-register", handler: e => this.insight(e.detail, true)
+      }
+    ]
+  }
 }

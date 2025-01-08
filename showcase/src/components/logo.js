@@ -52,7 +52,7 @@ export default class Logo {
     resize()
   }
 
-  setImage(src, invertFilter) {
+  setImage(src, invertFilter = false) {
     this.#imageEl.src = src
     this.#resize()
     this.#setInvertFilter(invertFilter)
@@ -272,14 +272,26 @@ export default class Logo {
   get listeners() {
     return [
       {
+        event: "logo-set-hidden", handler: e => this.hidden = e.detail
+      }, {
+        event: "logo-set-ratio", handler: e => this.ratio = e.detail
+      }, {
+        event: "logo-set-opacity", handler: e => this.opacity = e.detail
+      }, {
+        event: "logo-set-image", handler: e => this.image = e.detail
+      }, {
+        event: "logo-reset-image", handler: () => this.resetImage()
+      }, {
+        event: "logo-set-position", handler: e => this.position = e.detail
+      }, {
         id: "operator-logo", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "operator-logo-realted");
-          this.setLogoDisplay(!e.currentTarget.checked)
+          this.hidden = !e.currentTarget.checked;
         }
       }, {
-        id: "logo-image", event: "change", handler: e => this.setLogoImage(e)
+        id: "logo-image", event: "change", handler: e => this.image = e.target.files[0]
       }, {
-        id: "logo-image-clear", event: "click", handler: () => this.resetLogoImage()
+        id: "logo-image-clear", event: "click", handler: () => this.resetImage()
       }, {
         id: "logo-ratio-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "logo-ratio-input");

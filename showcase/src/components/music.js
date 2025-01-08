@@ -51,7 +51,7 @@ export default class Music {
     this.#audio.loop.el.volume = value
   }
 
-  get music() {
+  get musics() {
     return this.#music.list
   }
 
@@ -69,7 +69,16 @@ export default class Music {
   }
 
   get currentMusic() {
+    // Note: Back Compatibility
+    return this.music
+  }
+
+  get music() {
     return this.#music.current
+  }
+
+  get isUsingCustom() {
+    return this.#music.isUsingCustom
   }
 
   init(el) {
@@ -105,10 +114,16 @@ export default class Music {
   }
 
   success() {
-    if (this.#music.current === null) this.changeMusic(window.settings.currentBackground)
+    // TO-FIX
+    if (this.#music.current === null) this.music = window.settings.currentBackground
   }
 
   changeMusic(name) {
+    // Note: Back Compatibility
+    this.music = name
+  }
+
+  set music(name) {
     if (name !== null && name !== this.#music.current && !this.#music.isUsingCustom) {
       this.#music.current = name
       if (this.#config.useMusic) {
@@ -119,15 +134,9 @@ export default class Music {
     }
   }
 
-  setMusicFromWE(url) {
-    const type = url.split(".").pop()
-    this.#setMusic(url, type)
-    document.getElementById("custom-music-clear").disabled = false
-  }
-
-  setMusic(e) {
+  set customMusic(url) {
     readFile(
-      e,
+      url,
       (blobURL, type) => {
         this.#setMusic(blobURL, type)
         document.getElementById("custom-music-clear").disabled = false
@@ -135,7 +144,12 @@ export default class Music {
     )
   }
 
-  resetMusic() {
+  setMusic(e) {
+    // Note: Back Compatibility
+    this.customMusic = e.target.files[0]
+  }
+
+  reset() {
     document.getElementById("custom-music").value = ""
     document.getElementById("custom-music-clear").disabled = true
     this.#music.isUsingCustom = false
@@ -165,10 +179,12 @@ export default class Music {
         this.#audio.loop.el.volume = 0
         this.#audio.loop.el.play()
       } else {
+        this.#audio.loop.el.volume = this.#config.volume
         this.#audio.loop.el.play()
       }
     } else {
       this.#audio.intro.el.pause()
+      this.#audio.loop.el.volume = this.#config.volume
       this.#audio.loop.el.play()
     }
   }
@@ -187,7 +203,7 @@ export default class Music {
         <div>
           <label for="music-select">Choose theme music:</label>
           <select name="music-select" id="music-select">
-            ${updateHTMLOptions("music-select", this.music)}
+            ${updateHTMLOptions("music-select", this.musics)}
           </select>
         </div>
         <div>
@@ -217,14 +233,14 @@ export default class Music {
           showRelatedHTML(e.currentTarget, "music-realted");
           this.useMusic = e.currentTarget.checked;
           //TODO: update
-          this.changeMusic(window.settings.currentBackground)
+          this.music = window.settings.currentBackground
         }
       }, {
-        id: "music-select", event: "change", handler: e => this.changeMusic(e.currentTarget.value)
+        id: "music-select", event: "change", handler: e => this.music = e.currentTarget.value
       }, {
-        id: "custom-music", event: "change", handler: e => this.setMusic(e)
+        id: "custom-music", event: "change", handler: e => this.customMusic = e.target.files[0]
       }, {
-        id: "custom-music-clear", event: "click", handler: () => this.resetMusic()
+        id: "custom-music-clear", event: "click", handler: () => this.reset()
       }, {
         id: "music-volume-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "music-volume-input");

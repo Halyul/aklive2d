@@ -39,7 +39,11 @@ export const updateHTMLOptions = (id, array) => {
 
 export const addEventListeners = (listeners) => {
     listeners.forEach(listener => {
-        document.getElementById(listener.id).addEventListener(listener.event, e => listener.handler(e))
+        if (typeof listener.id === "undefined") {
+            document.addEventListener(listener.event, e => listener.handler(e))
+        } else {
+            document.getElementById(listener.id).addEventListener(listener.event, e => listener.handler(e))
+        }
     })
 }
 
@@ -65,8 +69,7 @@ export const syncHTMLValue = (source, targetID) => {
     document.getElementById(targetID).value = source.value;
 }
   
-export const readFile = (e, callback = () => { }) => {
-    const file = e.target.files[0]
+export const readFile = (file, callback = () => { }) => {
     if (!file) return
     callback(URL.createObjectURL(file.slice()), file.type)
   }

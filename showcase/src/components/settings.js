@@ -30,8 +30,6 @@ export default class Settings {
 
   #init() {
     const _this = this
-    window.addEventListener("contextmenu", e => e.preventDefault());
-    document.addEventListener("gesturestart", e => e.preventDefault());
 
     const resize = () => {
       _this.#resize(_this)
@@ -45,11 +43,7 @@ export default class Settings {
   }
 
   success() {
-    this.loadViewport()
     this.insight(false, false)
-    if ((new URLSearchParams(window.location.search)).has("settings") || import.meta.env.MODE === 'development') {
-      this.open()
-    }
   }
 
   insight(isWallpaperEngine, doNotTrack) {
@@ -200,33 +194,6 @@ export default class Settings {
     document.getElementById("logo_padding_y_input").value = this.#defaultLogoY
   }
 
-  open() {
-    this.#el.hidden = false;
-  }
-
-  close() {
-    this.#el.hidden = true;
-  }
-
-  reset() {
-    this.positionReset()
-    // this.scaleReset()
-    this.setLogoRatio(this.#defaultRatio)
-    document.getElementById("logo_ratio_slider").value = this.#defaultRatio
-    document.getElementById("logo_ratio_input").value = this.#defaultRatio
-    this.setLogoOpacity(this.#defaultOpacity)
-    document.getElementById("logo_opacity_slider").value = this.#defaultOpacity
-    document.getElementById("logo_opacity_input").value = this.#defaultOpacity
-    this.resetLogoImage()
-    this.logoReset()
-    this.resetBackground()
-    this.setLogoDisplay(this.#defaulthideLogo)
-    // this.setFPS(this.#defaultFps)
-    // document.getElementById("fps_slider").value = this.#defaultFps
-    // document.getElementById("fps_input").value = this.#defaultFps
-    this.spinePlayer.play()
-  }
-
   setVideo(e) {
     this.#readFile(
       e,
@@ -320,11 +287,6 @@ export default class Settings {
               <input type="number" id="video_volume_input"  min="0" max="100" step="1" name="video_volume" value="${this.getVideoVolume() }" />
             </div>
           </div>
-        </div>
-        <div>
-          <button type="button" id="settings_reset">Reset</button>
-          <button type="button" id="settings_close">Close</button>
-          <button type="button" id="settings_to_directory">Back to Directory</button>
         </div>
       </div>
     `
@@ -432,15 +394,7 @@ export default class Settings {
           _this.#sync(e.currentTarget, "video_volume_slider");
           this.setVideoVolume(parseInt(e.currentTarget.value))
         }
-      }, {
-        id: "settings_reset", event: "click", handler: () => _this.reset()
-      }, {
-        id: "settings_close", event: "click", handler: () => _this.close()
-      }, {
-        id: "settings_to_directory", event: "click", handler: () => {
-          window.location.href = '/';
-        }
-      }
+      }, 
     ]
 
     listeners.forEach(listener => {

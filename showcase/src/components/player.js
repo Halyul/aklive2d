@@ -68,10 +68,11 @@ export default class Player {
   }
 
   setFPS(fps) {
+    // Note: Back Compatibility
     this.fps = fps
   }
 
-  resetFPS() {
+  #resetFPS() {
     this.fps = this.#default.fps
     document.getElementById("fps-slider").value = this.#default.fps
     document.getElementById("fps-input").value = this.#default.fps
@@ -83,15 +84,17 @@ export default class Player {
   }
 
   setScale(v) {
+    // Note: Back Compatibility
     this.scale = v
   }
 
-  resetScale() {
+  #resetScale() {
     this.#config.scale = this.#default.scale
   }
 
   scaleReset() {
-    this.resetScale()
+    // Note: Back Compatibility
+    this.#resetScale()
   }
 
   get scale() {
@@ -151,9 +154,9 @@ export default class Player {
           entry.mixDuration = 0.3;
           widget.animationState.addAnimation(0, "Idle", true, 0);
         }
-        window.voice.success()
         _this.success()
-        window.music.success()
+        const event = new Event("player-ready");
+        document.dispatchEvent(event);
       },
     }
     if (import.meta.env.VITE_USE_JSON === "true") {
@@ -165,11 +168,11 @@ export default class Player {
   }
 
   success() {
-    this.loadViewport()
+    this.#loadViewport()
     updateHTMLOptions("animation-selection", this.#spine.skeleton.data.animations.map(e => e.name))
   }
 
-  loadViewport() {
+  #loadViewport() {
     this.#spine.updateViewport({
       padLeft: `${this.#config.padding.left}%`,
       padRight: `${this.#config.padding.right}%`,
@@ -184,7 +187,7 @@ export default class Player {
 
   set padLeft(v) {
     this.#config.padding.left = v
-    this.loadViewport()
+    this.#loadViewport()
   }
 
   get padRight() {
@@ -193,7 +196,7 @@ export default class Player {
 
   set padRight(v) {
     this.#config.padding.right = v
-    this.loadViewport()
+    this.#loadViewport()
   }
 
   get padTop() {
@@ -202,7 +205,7 @@ export default class Player {
 
   set padTop(v) {
     this.#config.padding.top = v
-    this.loadViewport()
+    this.#loadViewport()
   }
 
   get padBottom() {
@@ -211,10 +214,24 @@ export default class Player {
 
   set padBottom(v) {
     this.#config.padding.bottom = v
-    this.loadViewport()
+    this.#loadViewport()
+  }
+
+  get padding() {
+    return this.#config.padding
+  }
+
+  set padding(v) {
+    if (typeof v !== "object") return;
+    if (typeof v.left === "undefined") v.left = this.#config.padding.left;
+    if (typeof v.right === "undefined") v.right = this.#config.padding.right;
+    if (typeof v.top === "undefined") v.top = this.#config.padding.top;
+    if (typeof v.bottom === "undefined") v.bottom = this.#config.padding.bottom;
+    this.#config.padding = v
   }
 
   positionPadding(key, value) {
+    // Note: Back Compatibility
     switch (key) {
       case "left":
         this.#config.padding.left = value
@@ -235,10 +252,10 @@ export default class Player {
         this.#config.padding.bottom = value.bottom
         break;
     }
-    this.loadViewport()
+    this.#loadViewport()
   }
 
-  resetPosition() {
+  #resetPosition() {
     this.#config.padding.left = this.#default.padding.left
     this.#config.padding.right = this.#default.padding.right
     this.#config.padding.top = this.#default.padding.top
@@ -255,7 +272,16 @@ export default class Player {
   }
 
   positionReset() {
-    this.resetPosition()
+    // Note: Back Compatibility
+    this.#resetPosition()
+  }
+
+  get reset() {
+    return {
+      fps: this.#resetFPS,
+      scale: this.#resetScale,
+      position: this.#resetPosition,
+    }
   }
 
   get HTML() {
@@ -361,7 +387,7 @@ export default class Player {
       }, {
         id: "position", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "position-realted");
-          if (!e.currentTarget.checked) this.positionReset();
+          if (!e.currentTarget.checked) this.reset.position();
         }
       }, {
         id: "position-padding-left-slider", event: "input", handler: e => {

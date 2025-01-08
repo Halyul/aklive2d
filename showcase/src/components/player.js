@@ -169,39 +169,43 @@ export default class Player {
   }
 
   get padLeft() {
-    return this.#config.padding.left
+    return this.padding.left
   }
 
   set padLeft(v) {
-    this.#config.padding.left = v
-    this.#loadViewport()
+    this.padding = {
+      left: v
+    }
   }
 
   get padRight() {
-    return this.#config.padding.right
+    return this.padding.right
   }
 
   set padRight(v) {
-    this.#config.padding.right = v
-    this.#loadViewport()
+    this.padding = {
+      right: v
+    }
   }
 
   get padTop() {
-    return this.#config.padding.top
+    return this.padding.top
   }
 
   set padTop(v) {
-    this.#config.padding.top = v
-    this.#loadViewport()
+    this.padding = {
+      top: v
+    }
   }
 
   get padBottom() {
-    return this.#config.padding.bottom
+    return this.padding.bottom
   }
 
   set padBottom(v) {
-    this.#config.padding.bottom = v
-    this.#loadViewport()
+    this.padding = {
+      bottom: v
+    }
   }
 
   get padding() {
@@ -210,11 +214,10 @@ export default class Player {
 
   set padding(v) {
     if (typeof v !== "object") return;
-    if (typeof v.left === "undefined") v.left = this.#config.padding.left;
-    if (typeof v.right === "undefined") v.right = this.#config.padding.right;
-    if (typeof v.top === "undefined") v.top = this.#config.padding.top;
-    if (typeof v.bottom === "undefined") v.bottom = this.#config.padding.bottom;
-    this.#config.padding = v
+    if (typeof v.left !== "undefined") this.#config.padding.left = v.left;
+    if (typeof v.right !== "undefined") this.#config.padding.right = v.right ;
+    if (typeof v.top !== "undefined") this.#config.padding.top = v.top;
+    if (typeof v.bottom !== "undefined") this.#config.padding.bottom = v.bottom;
     this.#loadViewport()
   }
 
@@ -222,25 +225,29 @@ export default class Player {
     // Note: Back Compatibility
     switch (key) {
       case "left":
-        this.#config.padding.left = value
+        this.padding = {
+          left: value
+        }
         break;
       case "right":
-        this.#config.padding.right = value
+        this.padding = {
+          right: value
+        }
         break;
       case "top":
-        this.#config.padding.top = value
+        this.padding = {
+          top: value
+        }
         break;
       case "bottom":
-        this.#config.padding.bottom = value
+        this.padding = {
+          bottom: value
+        }
         break;
       default:
-        this.#config.padding.left = value.left
-        this.#config.padding.right = value.right
-        this.#config.padding.top = value.top
-        this.#config.padding.bottom = value.bottom
+        this.#config.padding = value
         break;
     }
-    this.#loadViewport()
   }
 
   resetPosition() {
@@ -296,23 +303,23 @@ export default class Player {
         <div id="position-realted" hidden>
           <div>
             <label for="position-padding-left">Padding Left</label>
-            <input type="range" min="-100" max="100" id="position-padding-left-slider" value="${this.padLeft}" />
-            <input type="number" id="position-padding-left-input" name="position-padding-left" value="${this.padLeft}" />
+            <input type="range" min="-100" max="100" id="position-padding-left-slider" value="${this.padding.left}" />
+            <input type="number" id="position-padding-left-input" name="position-padding-left" value="${this.padding.left}" />
           </div>
           <div>
             <label for="position-padding-right">Padding Right</label>
-            <input type="range" min="-100" max="100" id="position-padding-right-slider" value="${this.padRight}" />
-            <input type="number" id="position-padding-right-input" name="position-padding-right" value="${this.padRight}" />
+            <input type="range" min="-100" max="100" id="position-padding-right-slider" value="${this.padding.right}" />
+            <input type="number" id="position-padding-right-input" name="position-padding-right" value="${this.padding.right}" />
           </div>
           <div>
             <label for="position-padding-top">Padding Top</label>
-            <input type="range" min="-100" max="100" id="position-padding-top-slider" value="${this.padTop}" />
-            <input type="number" id="position-padding-top-input" name="position-padding-top" value="${this.padTop}" />
+            <input type="range" min="-100" max="100" id="position-padding-top-slider" value="${this.padding.top}" />
+            <input type="number" id="position-padding-top-input" name="position-padding-top" value="${this.padding.top}" />
           </div>
           <div>
             <label for="position-padding-bottom">Padding Bottom</label>
-            <input type="range" min="-100" max="100" id="position-padding-bottom-slider" value="${this.padBottom}" />
-            <input type="number" id="position-padding-bottom-input" name="position-padding-bottom" value="${this.padBottom}" />
+            <input type="range" min="-100" max="100" id="position-padding-bottom-slider" value="${this.padding.bottom}" />
+            <input type="number" id="position-padding-bottom-input" name="position-padding-bottom" value="${this.padding.bottom}" />
           </div>
         </div>
       </div>
@@ -375,42 +382,58 @@ export default class Player {
       }, {
         id: "position-padding-left-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "position-padding-left-input");
-          this.padLeft = e.currentTarget.value;
+          this.padding = {
+            left: e.currentTarget.value
+          }
         }
       }, {
         id: "position-padding-left-input", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "position-padding-left-slider");
-          this.padLeft = e.currentTarget.value;
+          this.padding = {
+            left: e.currentTarget.value
+          }
         }
       }, {
         id: "position-padding-right-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "position-padding-right-input");
-          this.padRight = e.currentTarget.value;
+          this.padding = {
+            right: e.currentTarget.value
+          }
         }
       }, {
         id: "position-padding-right-input", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "position-padding-right-slider");
-          this.padRight = e.currentTarget.value;
+          this.padding = {
+            right: e.currentTarget.value
+          }
         }
       }, {
         id: "position-padding-top-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "position-padding-top-input");
-          this.padTop = e.currentTarget.value;
+          this.padding = {
+            top: e.currentTarget.value
+          }
         }
       }, {
         id: "position-padding-top-input", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "position-padding-top-slider");
-          this.padTop = e.currentTarget.value;
+          this.padding = {
+            top: e.currentTarget.value
+          }
         }
       }, {
         id: "position-padding-bottom-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "position-padding-bottom-input");
-          this.padBottom = e.currentTarget.value;
+          this.padding = {
+            bottom: e.currentTarget.value
+          }
         }
       }, {
         id: "position-padding-bottom-input", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "position-padding-bottom-slider");
-          this.padBottom = e.currentTarget.value;
+          this.padding = {
+            bottom: e.currentTarget.value
+          }
         }
       },
     ]

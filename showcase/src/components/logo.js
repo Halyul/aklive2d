@@ -71,7 +71,7 @@ export default class Logo {
   #resize(_this, value) {
     _this = _this || this
     _this.#imageEl.width = window.innerWidth / 2 * (value || _this.ratio) / 100
-    updateElementPosition(_this.#imageEl, _this.#config.position.x, _this.#config.position.y)
+    updateElementPosition(_this.#imageEl, _this.#config.position)
   }
 
   #setInvertFilter(v) {
@@ -110,21 +110,23 @@ export default class Logo {
   }
 
   get x() {
-    return this.#config.position.x
+    return this.position.x
   }
 
   set x(v) {
-    this.#config.position.x = v
-    updateElementPosition(this.#imageEl, this.#config.position.x, this.#config.position.y)
+    this.position = {
+      x: v
+    }
   }
 
   get y() {
-    return this.#config.position.y
+    return this.position.y
   }
 
   set y(v) {
-    this.#config.position.y = v
-    updateElementPosition(this.#imageEl, this.#config.position.x, this.#config.position.y)
+    this.position = {
+      y: v
+    }
   }
 
   get position() {
@@ -133,27 +135,32 @@ export default class Logo {
 
   set position(v) {
     if (typeof v !== "object") return;
-    if (typeof v.x === "undefined") v.x = this.#config.position.x;
-    if (typeof v.y === "undefined") v.y = this.#config.position.y;
-    this.#config.position = v
-    updateElementPosition(this.#imageEl, this.#config.position.x, this.#config.position.y)
+    if (typeof v.x !== "undefined") this.#config.position.x = v.x;
+    if (typeof v.y !== "undefined") this.#config.position.y = v.y;
+    this.#updateLogoPosition()
+  }
+
+  #updateLogoPosition() {
+    updateElementPosition(this.#imageEl, this.#config.position)
   }
 
   logoPadding(key, value) {
     // Note: Back Compatibility
     switch (key) {
       case "x":
-        this.#config.position.x = value
+        this.position = {
+          x: value
+        }
         break;
       case "y":
-        this.#config.position.y = value
+        this.position = {
+          y: value
+        }
         break;
       default:
-        this.#config.position.x = value.x
-        this.#config.position.y = value.y
+        this.position = value
         break;
     }
-    updateElementPosition(this.#imageEl, this.#config.position.x, this.#config.position.y)
   }
 
   setLogoOpacity(v) {
@@ -250,13 +257,13 @@ export default class Logo {
         </div>
         <div>
           <label for="logo-position-x">Logo X Position</label>
-            <input type="range" min="0" max="100" id="logo-position-x-slider" value="${this.x}" />
-            <input type="number" id="logo-position-x-input" name="logo-position-x" value="${this.x}" />
+            <input type="range" min="0" max="100" id="logo-position-x-slider" value="${this.position.x}" />
+            <input type="number" id="logo-position-x-input" name="logo-position-x" value="${this.position.x}" />
         </div>
         <div>
           <label for="logo-position-y">Logo Y Position</label>
-          <input type="range" min="0" max="100" id="logo-position-y-slider" value="${this.y}" />
-          <input type="number" id="logo-position-y-input" name="logo-position-y" value="${this.y}" />
+          <input type="range" min="0" max="100" id="logo-position-y-slider" value="${this.position.y}" />
+          <input type="number" id="logo-position-y-input" name="logo-position-y" value="${this.position.y}" />
         </div>
       </div>
     `
@@ -296,22 +303,30 @@ export default class Logo {
       }, {
         id: "logo-position-x-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "logo-position-x-input");
-          this.x = e.currentTarget.value;
+          this.position = {
+            x: e.currentTarget.value
+          }
         }
       }, {
         id: "logo-position-x-input", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "logo-position-x-slider");
-          this.x = e.currentTarget.value;
+          this.position = {
+            x: e.currentTarget.value
+          }
         }
       }, {
         id: "logo-position-y-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "logo-position-y-input");
-          this.y = e.currentTarget.value;
+          this.position = {
+            y: e.currentTarget.value
+          }
         }
       }, {
         id: "logo-position-y-input", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "logo-position-y-slider");
-          this.y = e.currentTarget.value;
+          this.position = {
+            y: e.currentTarget.value
+          }
         }
       },
     ]

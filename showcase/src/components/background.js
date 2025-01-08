@@ -18,6 +18,7 @@ export default class Background {
   #config = {
     image: null
   }
+  #musicObj
 
   init(el, widgetEl) {
     this.#parentEl = el
@@ -143,6 +144,10 @@ export default class Background {
     this.resetVideo()
   }
 
+  link(musicObj) {
+    this.#musicObj = musicObj
+  }
+
   get HTML() {
     return `
     <div>
@@ -180,7 +185,10 @@ export default class Background {
   get listeners() {
     return [
       {
-        id: "default-background-select", event: "change", handler: e => this.default = e.currentTarget.value
+        id: "default-background-select", event: "change", handler: e => {
+          this.default = e.currentTarget.value
+          this.#musicObj.music = e.currentTarget.value
+        }
       }, {
         id: "custom-background", event: "change", handler: e => this.custom = e.target.files[0]
       }, {

@@ -31,6 +31,7 @@ export default class Music {
     timeOffset: 0.3,
     volume: 0.5
   }
+  #backgroundObj
 
   get timeOffset() {
     return this.#config.timeOffset
@@ -114,8 +115,11 @@ export default class Music {
   }
 
   success() {
-    // TO-FIX
-    if (this.#music.current === null) this.music = window.settings.currentBackground
+    if (this.#music.current === null) this.music = this.#backgroundObj.current
+  }
+
+  link(backgroundObj) {
+    this.#backgroundObj = backgroundObj
   }
 
   changeMusic(name) {
@@ -124,13 +128,14 @@ export default class Music {
   }
 
   set music(name) {
-    if (name !== null && name !== this.#music.current && !this.#music.isUsingCustom) {
+    if (name !== null && name !== this.#music.current) {
       this.#music.current = name
-      if (this.#config.useMusic) {
+      if (this.#config.useMusic && !this.#music.isUsingCustom) {
         this.#audio.loop.el.pause()
         this.#audio.intro.el.pause()
         this.#playMusic()
       }
+      document.getElementById("music-select").selectedIndex = this.musics.findIndex(e => e === name)
     }
   }
 
@@ -232,8 +237,6 @@ export default class Music {
         id: "music", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "music-realted");
           this.useMusic = e.currentTarget.checked;
-          //TODO: update
-          this.music = window.settings.currentBackground
         }
       }, {
         id: "music-select", event: "change", handler: e => this.music = e.currentTarget.value

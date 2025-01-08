@@ -11085,7 +11085,6 @@ var spine;
 			if (typeof config.defaultMix === "undefined")
 				config.defaultMix = 0.25;
 			config.devicePixelRatio = window.devicePixelRatio || 1;
-			// TO-FIX
 			if (typeof config.scale === "undefined")
 				config.scale = 1;
 			return config;

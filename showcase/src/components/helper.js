@@ -17,8 +17,7 @@ export const insertHTMLNodeBefore = (parent, sibling, child) => {
 }
 
 const getIntPx = (value) => parseInt(value.replace("px", ""))
-export const updateElementPosition = (el, x, y) => {
-  // TODO, use single position
+export const updateElementPosition = (el, position) => {
   const computedStyle = getComputedStyle(el)
   const elWidth = getIntPx(computedStyle.width)
   const elHeight = getIntPx(computedStyle.height)
@@ -28,8 +27,8 @@ export const updateElementPosition = (el, x, y) => {
   const windowHeight = window.innerHeight
   const xRange = windowWidth - (elWidth + elMarginLeft + elMarginRight)
   const yRange = windowHeight - elHeight
-  const xpx = x * xRange / 100
-  const ypx = y * yRange / 100
+  const xpx = position.x * xRange / 100
+  const ypx = position.y * yRange / 100
   el.style.transform = `translate(${xpx}px, ${ypx}px)`
 }
 

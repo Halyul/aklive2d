@@ -93,9 +93,12 @@ export default class AKLive2D {
     this.#player.reset()
     this.#background.reset()
     this.#logo.reset()
+    this.#voice.reset()
   }
 
   success() {
+    this.#music.link(this.#background)
+    this.#background.link(this.#music)
     this.#voice.success()
     this.#music.success()
     if (this.#queries.has("settings") || this.#queries.has("aklive2d") || import.meta.env.MODE === 'development') {

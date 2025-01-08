@@ -1,6 +1,6 @@
 @import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap";
 
-#voice_box {
+#voice-box {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -22,35 +22,34 @@
     padding: 2px 8px;
     font-size: 14px;
     min-width: 120px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 6px rgb(0 0 0 / 50%);
     z-index: 1;
 }
 
 .voice-subtitle {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgb(0 0 0 / 65%);
     color: white;
     padding: 16px;
     font-size: 18px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px rgb(0 0 0 / 50%);
     position: relative;
 }
 
 .voice-triangle {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     right: 8px;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 8px 8px 8px 8px;
-    border-color: white transparent transparent transparent;
+    border-width: 8px;
+    border-color: white transparent transparent;
 }
 
 .voice-actor {
     margin-top: 10px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
 }
@@ -58,7 +57,7 @@
 .voice-actor-icon {
     height: 32px;
     width: 32px;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgb(0 0 0);
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAXCAYAAAAGAx/kAAACGElEQVQ4jY2UO4sUQRSFv+6e3hkf6yqi62LiD1DRwGRFZDUTRTAVMTHzHxhosBgr+IhMzIXFRzKJYiQoCLqroYGCgiDK6K6z8+hj0Kd2yrZn8EJRza06X91761Ynkphgh4ETwBB4BrwZu1NS3WhJui1pTSNblXTLa/9oxoEWNd4W/xc0K6kzAfRd0lxV16jJdg6YBtaAB8AvoPA4D+wEZoEvsSgGJYAiXwf4EEFyYOC1qYqmFhQ2bQEO+MYKILMv1tWCikqKm4CPwKoF00DTa6pqkqiP9gIHgR3AWaDvdJIoip4jewh8BVaAz1XQOeAKcNcp9O0fAqlTLgzsApeBa8BSNbUUaAFvgVdMtnlHmsXiEHrHpw+iaOps4BRlDUASQDnw3uA9QHsCqA3sMmjFmhRJmaSmO/SmpCeSjktarunqd5IWJLUl3bCmKSlLJGWuVQbMAHcoi3oPWAAOOerXwFPgErAVuEjZGkNgkEhKDco9bwOuG/Ac+OS67ANOGngV+OYDewEUqt+gvLWmxxHgFHDapz52fV4C64Z3PW+AUsPyCJYCP4FHPuQMsNlRrHv0DRo2XP3Ccw/4Tdl8U2GTb6trYYimYNQ6Gw0pYDuwn1E7hJR3W3TMvp5hKbAM/IC/n8hR4L6hqSPJGT3QjPIfFX4nDeAC8CIGhTrBqNsz16plWN/R9KJShGzUiCBBnFS+FYmCP41gBaA/cImMsTl24NIAAAAASUVORK5CYII=');
     background-position: center;
     background-repeat: no-repeat;
@@ -68,7 +67,7 @@
     height: 16px;
     font-size: 16px;
     line-height: 16px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgb(0 0 0 / 30%);
     color: white;
     display: inline-block;
     padding: 8px;

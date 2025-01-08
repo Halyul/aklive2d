@@ -170,6 +170,11 @@ export default class Player {
     })
   }
 
+  loadViewport() {
+    // Note: Back Compatibility
+    this.#loadViewport()
+  }
+
   get padLeft() {
     return this.padding.left
   }

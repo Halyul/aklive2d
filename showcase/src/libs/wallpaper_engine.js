@@ -47,7 +47,7 @@ window.wallpaperPropertyListener = {
     }
     if (properties.background) {
       if (properties.background.value) {
-        document.dispatchEvent(Event.BackgroundSetCustomEventFn(`url('file:///${properties.background.value}')`))
+        document.dispatchEvent(Event.BackgroundSetCustomEventFn(`file:///${properties.background.value}`))
       } else {
         document.dispatchEvent(Event.BackgroundResetImageEvent)
       }
@@ -60,12 +60,12 @@ window.wallpaperPropertyListener = {
     }
     if (properties.voiceidle) {
       document.dispatchEvent(Event.VoiceSetDurationEventFn({
-        idle: parseInt(properties.voiceidle.value)
+        idle: properties.voiceidle.value
       }))
     }
     if (properties.voicenext) {
       document.dispatchEvent(Event.VoiceSetDurationEventFn({
-        next: parseInt(properties.voicenext.value)
+        next: properties.voicenext.value
       }))
     }
     if (properties.voicesubtitle) {

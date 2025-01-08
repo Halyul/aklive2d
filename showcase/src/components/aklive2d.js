@@ -8,7 +8,8 @@ import Insight from "@/components/insight";
 import {
   isWebGLSupported,
   insertHTMLChild,
-  addEventListeners
+  addEventListeners,
+  updateElementPosition,
 } from "@/components/helper";
 import '@/components/aklive2d.css'
 
@@ -33,7 +34,6 @@ export default class AKLive2D {
 
     this.#appEl = appEl
     this.#widgetEl = widgetEl
-    this.#backCompatibility()
   }
 
   init() {
@@ -47,6 +47,7 @@ export default class AKLive2D {
       (new Fallback()).init(this.#widgetEl)
     }
     this.#el.id = "settings-box"
+    this.#el.hidden = true
     this.#el.innerHTML = `
     <div>
     ${this.#logo.HTML}
@@ -108,11 +109,47 @@ export default class AKLive2D {
     if (this.#queries.has("settings") || this.#queries.has("aklive2d") || import.meta.env.MODE === 'development') {
       this.open()
     }
+    this.#backCompatibility()
   }
 
   #backCompatibility() {
     window.voice = this.#voice
     window.music = this.#music
-    window.player = this.#player
+    window.settings = {
+      spinePlayer: this.#player.spine,
+      setFPS: this.#player.setFPS,
+      setLogoDisplay: this.#logo.setLogoDisplay,
+      setLogo: this.#logo.setLogo,
+      setLogoImage: this.#logo.setLogoImage,
+      resetLogoImage: this.#logo.resetLogoImage,
+      setLogoRatio: this.#logo.setLogoRatio,
+      setLogoOpacity: this.#logo.setLogoOpacity,
+      setBackgoundImage: this.#background.setBackgroundImage,
+      currentBackground: this.#background.currentBackground,
+      setDefaultBackground: this.#background.setDefaultBackground,
+      setBackground: this.#background.setBackground,
+      resetBackground: this.#background.resetBackground,
+      loadViewport: this.#player.loadViewport,
+      setScale: this.#player.setScale,
+      scale: this.#player.scale,
+      positionPadding: this.#player.positionPadding,
+      positionReset: this.#player.positionReset,
+      scaleReset: this.#player.scaleReset,
+      elementPosition: updateElementPosition,
+      logoPadding: this.#logo.logoPadding,
+      logoReset: this.#logo.logoReset,
+      useStartAnimation: this.#player.useStartAnimation,
+      open: this.open,
+      close: this.close,
+      reset: this.reset,
+      setMusicFromWE: this.#music.setMusicFromWE,
+      setMusic: this.#music.setMusic,
+      resetMusic: this.#music.resetMusic,
+      setVideo: this.#background.setVideo,
+      setVideoVolume: this.#background.setVideoVolume,
+      getVideoVolume: this.#background.getVideoVolume,
+      setVideoFromWE: this.#background.setVideoFromWE,
+      resetVideo: this.#background.resetVideo
+    }
   }
 }

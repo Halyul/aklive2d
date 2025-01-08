@@ -140,13 +140,23 @@ export default class Music {
   }
 
   set custom(url) {
-    readFile(
-      url,
-      (blobURL, type) => {
-        this.#setMusic(blobURL, type)
-        document.getElementById("custom-music-clear").disabled = false
-      }
-    )
+    const update = (url, type) => {
+      this.#setMusic(url, type)
+      document.getElementById("custom-music-clear").disabled = false
+    }
+    if (typeof url === "object") {
+      readFile(
+        url,
+        (blobURL, type) => update(blobURL, type)
+      )
+    } else {
+      update(url, url.split(".").pop())
+    }
+  }
+
+  setMusicFromWE(url) {
+    // Note: Back Compatibility
+    this.custom = url
   }
 
   setMusic(e) {
@@ -161,6 +171,11 @@ export default class Music {
     if (this.#config.useMusic) {
       this.#playMusic()
     }
+  }
+
+  resetMusic() {
+    // Note: Back Compatibility
+    this.reset()
   }
 
   #setMusic(data, type) {
@@ -238,7 +253,7 @@ export default class Music {
       }, {
         event: "music-set-usemusic", handler: e => this.useMusic = e.detail
       }, {
-        event: "music-set-volume", handler: e => this.fps = e.detail
+        event: "music-set-volume", handler: e => this.volume = e.detail
       }, {
         event: "music-set-custom", handler: e => this.custom = e.detail
       }, {

@@ -59,13 +59,18 @@ export default class Logo {
   }
 
   set image(v) {
-    readFile(
-      v,
-      (blobURL) => {
-        this.setImage(blobURL, false)
-        document.getElementById("logo-image-clear").disabled = false
-      }
-    )
+    const update = (url) => {
+      this.setImage(url, false)
+      document.getElementById("logo-image-clear").disabled = false
+    }
+    if (typeof v === "object") {
+      readFile(
+        v,
+        (blobURL) => update(blobURL)
+      )
+    } else {
+      update(v)
+    }
   }
 
   #resize(_this, value) {

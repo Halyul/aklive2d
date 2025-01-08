@@ -82,6 +82,7 @@ export default class Voice {
     if (!show && this.#audio.isPlaying) {
       this.#audio.el.pause()
     }
+    this.#toggleSubtitle(0)
   }
 
   get useVoice() {
@@ -359,7 +360,7 @@ export default class Voice {
     if (id === null) {
       setTimeout(() => {
         if (this.#audio.isPlaying) return
-        this.#el.style.opacity = 0
+        this.#toggleSubtitle(0)
       }, 5 * 1000);
       return
     }
@@ -371,8 +372,12 @@ export default class Voice {
     document.getElementById('voice-subtitle').innerText = content
     document.getElementById('voice-actor-name').innerText = cvInfo.join('')
     if (this.#audio.isPlaying) {
-      this.#el.style.opacity = 1
+      this.#toggleSubtitle(1)
     }
+  }
+
+  #toggleSubtitle(v) {
+    this.#el.style.opacity = v ? 1 : 0
   }
 
   #getSubtitleById(id) {

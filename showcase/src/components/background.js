@@ -36,19 +36,19 @@ export default class Background {
   }
 
   set video(v) {
+    const update = (url) => {
+      this.#videoEl.src = url
+          this.#videoEl.load()
+      document.getElementById("custom-video-background-clear").disabled = false
+    }
     if (typeof v === "object") {
       readFile(
         v,
-        (blobURL) => {
-          this.#videoEl.src = blobURL
-          this.#videoEl.load()
-        }
+        (blobURL) => update(blobURL)
       )
     } else {
-      this.#videoEl.src = v
-      this.#videoEl.load()
+      update(v)
     }
-    document.getElementById("custom-video-background-clear").disabled = false
   }
 
   get volume() {
@@ -71,14 +71,19 @@ export default class Background {
   }
 
   set custom(v) {
-    readFile(
-      v,
-      (blobURL) => {
-        this.#config.image = v
-        this.image = blobURL
-        document.getElementById("custom-background-clear").disabled = false
-      }
-    )
+    const update = (url) => {
+      this.#config.image = v
+      this.image = url
+      document.getElementById("custom-background-clear").disabled = false
+    }
+    if (typeof v === "object") {
+      readFile(
+        v,
+        (blobURL) => update(blobURL)
+      )
+    } else {
+      update(v)
+    }
   }
 
   setVideoFromWE(url) {

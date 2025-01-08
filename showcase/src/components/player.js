@@ -161,6 +161,10 @@ export default class Player {
     updateHTMLOptions(this.#spine.skeleton.data.animations.map(e => e.name), "animation-selection")
   }
 
+  get node() {
+    return this.#el
+  }
+
   #loadViewport() {
     this.#spine.updateViewport({
       padLeft: `${this.#config.padding.left}%`,

@@ -1,9 +1,9 @@
 import {
-  insertHTMLNodeBefore,
   readFile,
   updateHTMLOptions,
   showRelatedHTML,
   syncHTMLValue,
+  insertHTMLChild,
 } from "@/components/helper";
 import "@/components/background.css"
 
@@ -20,14 +20,14 @@ export default class Background {
   }
   #musicObj
 
-  init(el, widgetEl) {
+  init(el) {
     this.#parentEl = el
     this.#el.id = "background-box"
     this.image = this.#default.location + this.#default.image
     this.#el.innerHTML = `
       <video autoplay loop disablepictureinpicture id="video-src" />
     `
-    insertHTMLNodeBefore(this.#parentEl, widgetEl, this.#el)
+    insertHTMLChild(this.#parentEl, this.#el)
     this.#videoEl = document.getElementById("video-src")
   }
 

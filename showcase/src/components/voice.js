@@ -13,7 +13,6 @@ import '@/components/voice.css'
 export default class Voice {
   #el = document.createElement("div")
   #parentEl
-  #widgetEl
   #default = {
     region: charword_table.config.default_region,
     duration: {
@@ -58,6 +57,7 @@ export default class Voice {
     },
     duration: {...this.#default.duration}
   }
+  #playerObj
 
   constructor() {
     this.#default.language.voice = this.#voice.languages[0]
@@ -259,9 +259,8 @@ export default class Voice {
     return this.duration.next
   }
 
-  init(el, widgetEl) {
+  init(el) {
     this.#parentEl = el
-    this.#widgetEl = widgetEl
     this.#el.id = "voice-box"
     this.#el.hidden = true
     this.#el.innerHTML = `
@@ -294,7 +293,7 @@ export default class Voice {
     this.#audio.el.addEventListener('ended', audioEndedFunc)
     this.#playEntryVoice()
     this.#initNextVoiceTimer()
-    this.#widgetEl.addEventListener('click', () => {
+    this.#playerObj.node.addEventListener('click', () => {
       this.#audio.lastClickToNext = true
       this.#nextVoice()
     })
@@ -303,6 +302,10 @@ export default class Voice {
         this.#initIdleVoiceTimer()
       }
     })
+  }
+
+  link(playerObj) {
+    this.#playerObj = playerObj
   }
 
   #getVoiceLocations() {

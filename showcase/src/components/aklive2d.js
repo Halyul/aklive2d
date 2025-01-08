@@ -16,7 +16,6 @@ import '@/components/aklive2d.css'
 export default class AKLive2D {
   #el = document.createElement("div")
   #appEl
-  #widgetEl
   #queries = new URLSearchParams(window.location.search)
   #voice = new Voice()
   #music = new Music()
@@ -25,7 +24,7 @@ export default class AKLive2D {
   #logo = new Logo()
   #insight = new Insight()
 
-  constructor(appEl, widgetEl) {
+  constructor(appEl) {
     document.title = import.meta.env.VITE_TITLE
     console.log("All resources are extracted from Arknights. Github: https://gura.ch/aklive2d-gh")
 
@@ -33,24 +32,23 @@ export default class AKLive2D {
     document.addEventListener("gesturestart", e => e.preventDefault());
 
     this.#appEl = appEl
-    this.#widgetEl = widgetEl
   }
 
   init() {
-    if (isWebGLSupported) {
-      this.#logo.init(this.#appEl);
-      this.#background.init(this.#appEl, this.#widgetEl);
-      this.#voice.init(this.#appEl, this.#widgetEl);
-      this.#music.init(this.#appEl);
-      this.#player.init(this.#widgetEl, this);
+    this.#logo.init(this.#appEl);
+    this.#background.init(this.#appEl);
+    this.#voice.init(this.#appEl);
+    this.#music.init(this.#appEl);
+    if (isWebGLSupported()) {
+      this.#player.init(this.#appEl);
     } else {
-      (new Fallback()).init(this.#widgetEl)
+      (new Fallback()).init(this.#appEl)
     }
     this.#el.id = "settings-box"
     this.#el.hidden = true
     this.#el.innerHTML = `
     <div>
-    ${this.#logo.HTML}
+      ${this.#logo.HTML}
       ${this.#background.HTML}
       ${this.#player.HTML}
       ${this.#voice.HTML}
@@ -103,6 +101,7 @@ export default class AKLive2D {
   success() {
     this.#music.link(this.#background)
     this.#background.link(this.#music)
+    this.#voice.link(this.#player)
     this.#voice.success()
     this.#music.success()
     this.#insight.success()

@@ -158,7 +158,7 @@ export default class Player {
 
   success() {
     this.#loadViewport()
-    updateHTMLOptions("animation-selection", this.#spine.skeleton.data.animations.map(e => e.name))
+    updateHTMLOptions(this.#spine.skeleton.data.animations.map(e => e.name), "animation-selection")
   }
 
   #loadViewport() {

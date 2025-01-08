@@ -32,11 +32,10 @@ export const updateElementPosition = (el, position) => {
   el.style.transform = `translate(${xpx}px, ${ypx}px)`
 }
 
-export const updateHTMLOptions = (id, array) => {
-  const e = document.getElementById(id);
+export const updateHTMLOptions = (array, id = null) => {
   const value = array.map(item => `<option value="${item}">${item}</option>`)
-  if (e) {
-    e.innerHTML = value.join("");
+  if (id) {
+    document.getElementById(id).innerHTML = value.join("");
   }
   return value
 }

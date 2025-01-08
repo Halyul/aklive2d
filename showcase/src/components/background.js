@@ -159,7 +159,7 @@ export default class Background {
       <div>
         <label for="default-background-select">Choose a default background:</label>
         <select name="default-backgrounds" id="default-background-select">
-            ${updateHTMLOptions(null, JSON.parse(import.meta.env.VITE_BACKGROUND_FILES))}
+            ${updateHTMLOptions(JSON.parse(import.meta.env.VITE_BACKGROUND_FILES))}
         </select>
       </div>
       <div>

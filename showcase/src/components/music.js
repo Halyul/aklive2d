@@ -3,7 +3,8 @@ import {
   updateHTMLOptions,
   showRelatedHTML,
   syncHTMLValue,
-  readFile
+  readFile,
+  getCurrentHTMLOptions
 } from "@/components/helper";
 
 export default class Music {
@@ -135,7 +136,7 @@ export default class Music {
         this.#audio.intro.el.pause()
         this.#playMusic()
       }
-      document.getElementById("music-select").selectedIndex = this.musics.findIndex(e => e === name)
+      getCurrentHTMLOptions("music-select", name)
     }
   }
 
@@ -223,7 +224,7 @@ export default class Music {
         <div>
           <label for="music-select">Choose theme music:</label>
           <select name="music-select" id="music-select">
-            ${updateHTMLOptions("music-select", this.musics)}
+            ${updateHTMLOptions(this.musics)}
           </select>
         </div>
         <div>

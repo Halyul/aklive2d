@@ -3,7 +3,6 @@ import {
   updateElementPosition,
   updateHTMLOptions,
   showRelatedHTML,
-  getCurrentHTMLOptions,
   syncHTMLValue
 } from "@/components/helper";
 
@@ -445,7 +444,7 @@ export default class Voice {
         <div>
           <label for="voice-lang-select">Choose the language of voice:</label>
           <select name="voice-lang" id="voice-lang-select">
-            ${updateHTMLOptions("voice-lang-select", this.languages)}
+            ${updateHTMLOptions(this.languages)}
           </select>
         </div>
         <div>
@@ -463,7 +462,7 @@ export default class Voice {
             <div>
               <label for="subtitle-lang-select">Choose the language of subtitle:</label>
               <select name="subtitle-lang" id="subtitle-lang-select">
-                ${updateHTMLOptions("subtitle-lang-select", this.subtitleLanguages)}
+                ${updateHTMLOptions(this.subtitleLanguages)}
               </select>
             </div>
             <div>
@@ -511,8 +510,6 @@ export default class Voice {
       }, {
         id: "voice-lang-select", event: "change", handler: e => {
           this.language = e.currentTarget.value
-          updateHTMLOptions("subtitle-lang-select", this.subtitleLanguages)
-          getCurrentHTMLOptions("subtitle-lang-select", this.subtitleLanguage)
         }
       }, {
         id: "voice-idle-duration-input", event: "change", handler: e => {

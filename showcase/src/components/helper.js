@@ -42,10 +42,10 @@ export const updateHTMLOptions = (array, id = null) => {
 
 export const addEventListeners = (listeners) => {
   listeners.forEach(listener => {
-    if (typeof listener.id === "undefined") {
-      document.addEventListener(listener.event, e => listener.handler(e))
-    } else {
+    if (listener.id) {
       document.getElementById(listener.id).addEventListener(listener.event, e => listener.handler(e))
+    } else {
+      document.addEventListener(listener.event, e => listener.handler(e))
     }
   })
 }

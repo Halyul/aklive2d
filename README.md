@@ -47,28 +47,11 @@ To generate the latest charword_table.json
 ```
 ### Webpage & JavaScript
 
-Add query string `settings` to bring up the settings panel to adjust your settings. Then use appropriate JavaScript code to load your settings
+Add query string `aklive2d` to bring up the settings panel to adjust your settings. 
+Settings can be adjusted under `window.aklive2d` or by dispatching custom events (under `window.aklive2d.events`) to `document`. 
+Examples can be found at `showcase/src/libs/wallpaper_engine.js`.
 
-``` javascript
-settings.setFPS(integer) // set FPS
-settings.setLogoDisplay(boolean) // display logo or not
-settings.setLogoRatio(float) // the ratio of the logo
-settings.setLogoOpacity(float) // the opacity of the logo
-settings.setLogo(url) // change the logo, url: image url, removeInvert: boolean
-settings.resetLogoImage() // reset to the default logo
-settings.setDefaultBackground(url) // change the default background, url: image filename from `background` folder
-settings.setBackgoundImage(url) // change the background, url: image url
-settings.resetBackground() // reset to the default background
-settings.positionPadding("left", integer) // left padding
-settings.positionPadding("right", integer) // right padding
-settings.positionPadding("top", integer) // top padding
-settings.positionPadding("bottom", integer) // bottom padding
-settings.positionReset() // reset the position
-
-settings.open() // open settings panel
-settings.close() // close settings panel
-settings.reset() // reset settings
-```
+Using JS events to change settings is recommended.
 
 ## Config
 ### General Config

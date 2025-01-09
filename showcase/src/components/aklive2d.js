@@ -5,6 +5,7 @@ import Player from "@/components/player";
 import Background from "@/components/background";
 import Logo from "@/components/logo";
 import Insight from "@/components/insight";
+import * as Event from "@/components/event";
 import {
   isWebGLSupported,
   insertHTMLChild,
@@ -17,11 +18,11 @@ export default class AKLive2D {
   #el = document.createElement("div")
   #appEl
   #queries = new URLSearchParams(window.location.search)
-  #voice = new Voice()
-  #music = new Music()
-  #player = new Player()
-  #background = new Background()
-  #logo = new Logo()
+  #voice
+  #music
+  #player
+  #background
+  #logo
   #insight = new Insight()
 
   constructor(appEl) {
@@ -32,18 +33,16 @@ export default class AKLive2D {
     document.addEventListener("gesturestart", e => e.preventDefault());
 
     this.#appEl = appEl
-  }
-
-  init() {
-    this.#logo.init(this.#appEl);
-    this.#background.init(this.#appEl);
-    this.#voice.init(this.#appEl);
-    this.#music.init(this.#appEl);
+    this.#logo = new Logo(this.#appEl)
+    this.#background = new Background(this.#appEl)
+    this.#voice = new Voice(this.#appEl)
+    this.#music = new Music(this.#appEl)
     if (isWebGLSupported()) {
-      this.#player.init(this.#appEl);
+      this.#player = new Player(this.#appEl)
     } else {
-      (new Fallback()).init(this.#appEl)
+      new Fallback(this.#appEl)
     }
+
     this.#el.id = "settings-box"
     this.#el.hidden = true
     this.#el.innerHTML = `
@@ -63,15 +62,8 @@ export default class AKLive2D {
     insertHTMLChild(this.#appEl, this.#el)
     addEventListeners([
       {
-        event: "player-ready", handler: () => this.success()
-      },
-      ...this.#logo.listeners,
-      ...this.#background.listeners,
-      ...this.#player.listeners,
-      ...this.#voice.listeners,
-      ...this.#music.listeners,
-      ...this.#insight.listeners,
-      {
+        event: "player-ready", handler: () => this.#success()
+      }, {
         id: "settings-reset", event: "click", handler: () => this.reset()
       }, {
         id: "settings-close", event: "click", handler: () => this.close()
@@ -79,8 +71,52 @@ export default class AKLive2D {
         id: "settings-to-directory", event: "click", handler: () => {
           window.location.href = '/';
         }
-      }
+      },
+      ...this.#logo.listeners,
+      ...this.#background.listeners,
+      ...this.#player.listeners,
+      ...this.#voice.listeners,
+      ...this.#music.listeners,
+      ...this.#insight.listeners,
     ])
+  }
+
+  get voice() {
+    return this.#voice
+  }
+
+  get music() {
+    return this.#music
+  }
+
+  get player() {
+    return this.#player
+  }
+  
+  get background() {
+    return this.#background
+  }
+
+  get logo() {
+    return this.#logo
+  }
+
+  get events() {
+    return Event
+  }
+
+  get config() {
+    return {
+      player: this.#player.config,
+      background: this.#background.config,
+      logo: this.#logo.config,
+      music: this.#music.config,
+      voice: this.#voice.config
+    }
+  }
+
+  get configStr() {
+    return JSON.stringify(this.config, null)
   }
 
   open() {
@@ -96,59 +132,36 @@ export default class AKLive2D {
     this.#background.reset()
     this.#logo.reset()
     this.#voice.reset()
+    this.#music.reset()
   }
 
-  success() {
+  #success() {
     this.#music.link(this.#background)
     this.#background.link(this.#music)
     this.#voice.link(this.#player)
+    this.#player.success()
     this.#voice.success()
     this.#music.success()
     this.#insight.success()
-    if (this.#queries.has("settings") || this.#queries.has("aklive2d") || import.meta.env.MODE === 'development') {
+    if (this.#queries.has("aklive2d") || import.meta.env.MODE === 'development') {
       this.open()
     }
-    this.#backCompatibility()
+    this.#registerBackCompatibilityFns()
   }
 
-  #backCompatibility() {
-    window.voice = this.#voice
-    window.music = this.#music
+  #registerBackCompatibilityFns() {
+    const _this = this
+    window.voice = _this.#voice
+    window.music = _this.#music
     window.settings = {
-      spinePlayer: this.#player.spine,
-      setFPS: this.#player.setFPS,
-      setLogoDisplay: this.#logo.setLogoDisplay,
-      setLogo: this.#logo.setLogo,
-      setLogoImage: this.#logo.setLogoImage,
-      resetLogoImage: this.#logo.resetLogoImage,
-      setLogoRatio: this.#logo.setLogoRatio,
-      setLogoOpacity: this.#logo.setLogoOpacity,
-      setBackgoundImage: this.#background.setBackgroundImage,
-      currentBackground: this.#background.currentBackground,
-      setDefaultBackground: this.#background.setDefaultBackground,
-      setBackground: this.#background.setBackground,
-      resetBackground: this.#background.resetBackground,
-      loadViewport: this.#player.loadViewport,
-      setScale: this.#player.setScale,
-      scale: this.#player.scale,
-      positionPadding: this.#player.positionPadding,
-      positionReset: this.#player.positionReset,
-      scaleReset: this.#player.scaleReset,
       elementPosition: updateElementPosition,
-      logoPadding: this.#logo.logoPadding,
-      logoReset: this.#logo.logoReset,
-      useStartAnimation: this.#player.useStartAnimation,
-      open: this.open,
-      close: this.close,
-      reset: this.reset,
-      setMusicFromWE: this.#music.setMusicFromWE,
-      setMusic: this.#music.setMusic,
-      resetMusic: this.#music.resetMusic,
-      setVideo: this.#background.setVideo,
-      setVideoVolume: this.#background.setVideoVolume,
-      getVideoVolume: this.#background.getVideoVolume,
-      setVideoFromWE: this.#background.setVideoFromWE,
-      resetVideo: this.#background.resetVideo
+      open: _this.open,
+      close: _this.close,
+      reset: _this.reset,
+      ..._this.#player.backCompatibilityFns,
+      ..._this.#logo.backCompatibilityFns,
+      ..._this.#music.backCompatibilityFns,
+      ..._this.#background.backCompatibilityFns
     }
   }
 }

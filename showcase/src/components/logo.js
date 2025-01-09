@@ -27,10 +27,11 @@ export default class Logo {
     hidden: this.#default.hidden,
     ratio: this.#default.ratio,
     opacity: this.#default.opacity,
-    position: {...this.#default.position}
+    position: { ...this.#default.position },
+    name: null
   }
 
-  init(el) {
+  constructor(el) {
     this.#parentEl = el
     this.#el.id = "logo-box"
     this.#el.innerHTML = `
@@ -43,34 +44,48 @@ export default class Logo {
     this.#updateSizeOnWindowResize()
   }
 
-  #updateSizeOnWindowResize() {
-    const _this = this
-    const resize = () => {
-      _this.#resize(_this)
-    }
-    window.addEventListener("resize", resize, true);
-    resize()
-  }
-
   setImage(src, invertFilter = false) {
     this.#imageEl.src = src
     this.#resize()
     this.#setInvertFilter(invertFilter)
   }
 
-  set image(v) {
-    const update = (url) => {
-      this.setImage(url, false)
-      document.getElementById("logo-image-clear").disabled = false
-    }
-    if (typeof v === "object") {
-      readFile(
-        v,
-        (blobURL) => update(blobURL)
-      )
-    } else {
-      update(v)
-    }
+  resetPosition() {
+    this.position = {...this.#default.position}
+    document.getElementById("logo-position-x-slider").value = this.#default.position.x
+    document.getElementById("logo-position-x-input").value = this.#default.position.x
+    document.getElementById("logo-position-y-slider").value = this.#default.position.y
+    document.getElementById("logo-position-y-input").value = this.#default.position.y
+  }
+
+  resetImage() {
+    this.#config.name = null
+    this.setImage(this.#default.location + this.#default.image, this.#default.useInvertFilter)
+    document.getElementById("logo-image-clear").disabled = true
+  }
+
+  resetOpacity() {
+    this.opacity = this.#default.opacity
+    document.getElementById("logo-opacity-slider").value = this.#default.opacity
+    document.getElementById("logo-opacity-input").value = this.#default.opacity
+  }
+
+  resetHidden() {
+    this.hidden = this.#default.hidden
+  }
+
+  resetRatio() {
+    this.ratio = this.#default.ratio
+    document.getElementById("logo-ratio-slider").value = this.#default.ratio
+    document.getElementById("logo-ratio-input").value = this.#default.ratio
+  }
+
+  reset() {
+    this.resetPosition()
+    this.resetImage()
+    this.resetRatio()
+    this.resetOpacity()
+    this.resetHidden()
   }
 
   #resize(_this, value) {
@@ -84,6 +99,38 @@ export default class Logo {
       this.#imageEl.style.filter = "invert(0)"
     } else {
       this.#imageEl.style.filter = "invert(1)"
+    }
+  }
+
+  #updateLogoPosition() {
+    updateElementPosition(this.#imageEl, this.#config.position)
+  }
+
+  #updateSizeOnWindowResize() {
+    const _this = this
+    const resize = () => {
+      _this.#resize(_this)
+    }
+    window.addEventListener("resize", resize, true);
+    resize()
+  }
+
+  set image(v) {
+    const update = (url, v = null) => {
+      this.#config.name = {
+        isLocalFile: v !== null,
+        value: v ? v.name : url
+      }
+      this.setImage(url, false)
+      document.getElementById("logo-image-clear").disabled = false
+    }
+    if (typeof v === "object") {
+      readFile(
+        v,
+        (blobURL) => update(blobURL, v)
+      )
+    } else {
+      update(v)
     }
   }
 
@@ -140,115 +187,61 @@ export default class Logo {
 
   set position(v) {
     if (typeof v !== "object") return;
-    if (typeof v.x !== "undefined") this.#config.position.x = v.x;
-    if (typeof v.y !== "undefined") this.#config.position.y = v.y;
+    if (v.x) this.#config.position.x = v.x;
+    if (v.y) this.#config.position.y = v.y;
     this.#updateLogoPosition()
   }
 
-  #updateLogoPosition() {
-    updateElementPosition(this.#imageEl, this.#config.position)
-  }
-
-  logoPadding(key, value) {
-    // Note: Back Compatibility
-    switch (key) {
-      case "x":
-        this.position = {
-          x: value
+  get backCompatibilityFns() {
+    const _this = this
+    return {
+      setLogoDisplay: (v) => _this.hidden = v,
+      setLogo: _this.setImage,
+      setLogoImage: (e) => _this.image = e.target.files[0],
+      resetLogoImage: _this.resetImage,
+      setLogoRatio: (v) => _this.ratio = v,
+      setLogoOpacity: (v) => _this.opacity = v,
+      logoPadding: (key, value) => {
+        switch (key) {
+          case "x":
+            this.position = {
+              x: value
+            }
+            break;
+          case "y":
+            this.position = {
+              y: value
+            }
+            break;
+          default:
+            this.position = value
+            break;
         }
-        break;
-      case "y":
-        this.position = {
-          y: value
-        }
-        break;
-      default:
-        this.position = value
-        break;
+      },
+      logoReset: _this.resetPosition
     }
   }
 
-  setLogoOpacity(v) {
-    // Note: Back Compatibility
-    this.opacity = v
-  }
-
-  setLogoRatio(value) {
-    // Note: Back Compatibility
-    this.ratio = value
-  }
-
-  setLogoDisplay(flag) {
-    // Note: Back Compatibility
-    this.hidden = flag;
-  }
-
-  setLogo(src, invertFilter) {
-    // Note: Back Compatibility
-    this.setImage(src, invertFilter)
-  }
-
-  setLogoImage(e) {
-    // Note: Back Compatibility
-    this.image = e.target.files[0]
-  }
-
-  resetPosition() {
-    this.position = {...this.#default.position}
-    document.getElementById("logo-position-x-slider").value = this.#default.position.x
-    document.getElementById("logo-position-x-input").value = this.#default.position.x
-    document.getElementById("logo-position-y-slider").value = this.#default.position.y
-    document.getElementById("logo-position-y-input").value = this.#default.position.y
-  }
-
-  logoReset() {
-    // Note: Back Compatibility
-    this.resetPosition()
-  }
-
-  resetImage() {
-    this.setImage(this.#default.location + this.#default.image, this.#default.useInvertFilter)
-    document.getElementById("logo-image-clear").disabled = true
-  }
-
-  resetLogoImage() {
-    // Note: Back Compatibility
-    this.resetImage()
-  }
-
-  resetOpacity() {
-    this.setLogoOpacity(this.#default.opacity)
-    document.getElementById("logo-opacity-slider").value = this.#default.opacity
-    document.getElementById("logo-opacity-input").value = this.#default.opacity
-  }
-
-  resetHidden() {
-    this.hidden = this.#default.hidden
-  }
-
-  resetRatio() {
-    this.ratio = this.#default.ratio
-    document.getElementById("logo-ratio-slider").value = this.#default.ratio
-    document.getElementById("logo-ratio-input").value = this.#default.ratio
-  }
-
-  reset() {
-    this.resetPosition()
-    this.resetImage()
-    this.resetRatio()
-    this.resetOpacity()
-    this.resetHidden()
+  get config() {
+    return {
+      ...this.#config
+    }
   }
 
   get HTML() {
     return `
       <label for="operator-logo">Operator Logo</label>
-      <input type="checkbox" id="operator-logo" name="operator-logo" checked/>
-      <div id="operator-logo-realted">
+      <input type="checkbox" id="operator-logo" name="operator-logo" ${this.hidden ? "" : "checked"}/>
+      <div id="operator-logo-realted" ${this.hidden ? "hidden" : ""}>
         <div>
           <label for="logo-image">Logo Image (Store Locally)</label>
           <input type="file" id="logo-image" accept="image/*"/>
-          <button type="button" id="logo-image-clear" disabled>Clear</button>
+          <button type="button" id="logo-image-clear" ${this.#config.name ? this.#config.name.isLocalFile ? "" : "disabled" : "disabled"}>Clear</button>
+        </div>
+        <div>
+          <label for="logo-image-url">Logo Image URL:</label>
+          <input type="text" id="logo-image-url" name="logo-image-url" value="${this.#config.name ? this.#config.name.value : ""}">
+          <button type="button" id="logo-image-url-apply">Apply</button>
         </div>
         <div>
           <label for="logo-ratio">Logo Ratio</label>
@@ -297,6 +290,8 @@ export default class Logo {
         id: "logo-image", event: "change", handler: e => this.image = e.target.files[0]
       }, {
         id: "logo-image-clear", event: "click", handler: () => this.resetImage()
+      }, {
+        id: "logo-image-url-apply", event: "click", handler: () => this.image = document.getElementById("logo-image-url").value
       }, {
         id: "logo-ratio-slider", event: "input", handler: e => {
           syncHTMLValue(e.currentTarget, "logo-ratio-input");

@@ -4,7 +4,7 @@ import '@/components/fallback.css'
 export default class Fallback {
   #el = document.createElement("div")
 
-  init(parentEl) {
+  constructor(parentEl) {
     alert('WebGL is unavailable. Fallback image will be used.');
     const calculateScale = (width, height) => {
       return { x: window.innerWidth / width, y: window.innerHeight / height };

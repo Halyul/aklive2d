@@ -32,66 +32,14 @@ export default class Player {
   #config = {
     fps: this.#default.fps,
     useStartAnimation: true,
-    padding: {...this.#default.padding},
+    usePadding: false,
+    padding: {
+      ...this.#default.padding
+    },
     scale: this.#default.scale
   }
 
-  set useStartAnimation(v) {
-    this.#config.useStartAnimation = v
-  }
-
-  get useStartAnimation() {
-    return this.#config.useStartAnimation
-  }
-
-  get spine() {
-    return this.#spine
-  }
-
-  set fps(v) {
-    this.#config.fps = v
-    this.#spine.setFps(v)
-  }
-
-  get fps() {
-    return this.#config.fps
-  }
-
-  setFPS(fps) {
-    // Note: Back Compatibility
-    this.fps = fps
-  }
-
-  resetFPS() {
-    this.fps = this.#default.fps
-    document.getElementById("fps-slider").value = this.#default.fps
-    document.getElementById("fps-input").value = this.#default.fps
-  }
-
-  set scale(v) {
-    this.#config.scale = 1 / v
-    this.#spine.setOperatorScale(1 / v)
-  }
-
-  setScale(v) {
-    // Note: Back Compatibility
-    this.scale = v
-  }
-
-  resetScale() {
-    this.scale = this.#default.scale
-  }
-
-  scaleReset() {
-    // Note: Back Compatibility
-    this.resetScale()
-  }
-
-  get scale() {
-    return this.#config.scale
-  }
-
-  init(el) {
+  constructor(el) {
     this.#parentEl = el
     this.#el.id = "player-box"
     insertHTMLChild(this.#parentEl, this.#el)
@@ -144,7 +92,6 @@ export default class Player {
           entry.mixDuration = 0.3;
           widget.animationState.addAnimation(0, "Idle", true, 0);
         }
-        _this.success()
         document.dispatchEvent(PlayerReadyEvent);
       },
     }
@@ -161,8 +108,33 @@ export default class Player {
     updateHTMLOptions(this.#spine.skeleton.data.animations.map(e => e.name), "animation-selection")
   }
 
-  get node() {
-    return this.#el
+  resetPadding() {
+    this.padding = {...this.#default.padding}
+    document.getElementById("position-padding-left-slider").value = this.#default.padding.left
+    document.getElementById("position-padding-left-input").value = this.#default.padding.left
+    document.getElementById("position-padding-right-slider").value = this.#default.padding.right
+    document.getElementById("position-padding-right-input").value = this.#default.padding.right
+    document.getElementById("position-padding-top-slider").value = this.#default.padding.top
+    document.getElementById("position-padding-top-input").value = this.#default.padding.top
+    document.getElementById("position-padding-bottom-slider").value = this.#default.padding.bottom
+    document.getElementById("position-padding-bottom-input").value = this.#default.padding.bottom
+  }
+
+  resetScale() {
+    this.scale = this.#default.scale
+  }
+
+  resetFPS() {
+    this.fps = this.#default.fps
+    document.getElementById("fps-slider").value = this.#default.fps
+    document.getElementById("fps-input").value = this.#default.fps
+  }
+
+  reset() {
+    this.resetFPS()
+    this.resetPadding()
+    this.resetScale()
+    this.#spine.play()
   }
 
   #loadViewport() {
@@ -174,9 +146,46 @@ export default class Player {
     })
   }
 
-  loadViewport() {
-    // Note: Back Compatibility
-    this.#loadViewport()
+  get usePadding() {
+    return this.#config.usePadding
+  }
+
+  set usePadding(v) {
+    this.#config.usePadding = v
+  }
+
+  set useStartAnimation(v) {
+    this.#config.useStartAnimation = v
+  }
+
+  get useStartAnimation() {
+    return this.#config.useStartAnimation
+  }
+
+  get spine() {
+    return this.#spine
+  }
+
+  set fps(v) {
+    this.#config.fps = v
+    this.#spine.setFps(v)
+  }
+
+  get fps() {
+    return this.#config.fps
+  }
+
+  set scale(v) {
+    this.#config.scale = 1 / v
+    this.#spine.setOperatorScale(1 / v)
+  }
+
+  get scale() {
+    return this.#config.scale
+  }
+
+  get node() {
+    return this.#el
   }
 
   get padLeft() {
@@ -225,64 +234,56 @@ export default class Player {
 
   set padding(v) {
     if (typeof v !== "object") return;
-    if (typeof v.left !== "undefined") this.#config.padding.left = v.left;
-    if (typeof v.right !== "undefined") this.#config.padding.right = v.right ;
-    if (typeof v.top !== "undefined") this.#config.padding.top = v.top;
-    if (typeof v.bottom !== "undefined") this.#config.padding.bottom = v.bottom;
+    if (v.left) this.#config.padding.left = v.left;
+    if (v.right) this.#config.padding.right = v.right ;
+    if (v.top) this.#config.padding.top = v.top;
+    if (v.bottom) this.#config.padding.bottom = v.bottom;
     this.#loadViewport()
   }
 
-  positionPadding(key, value) {
-    // Note: Back Compatibility
-    switch (key) {
-      case "left":
-        this.padding = {
-          left: value
+  get backCompatibilityFns() {
+    const _this = this
+    return {
+      spinePlayer: _this.#spine,
+      setFPS: (fps) => _this.fps = fps,
+      loadViewport: _this.#loadViewport,
+      setScale: (v) => this.scale = v,
+      scale: _this.scale,
+      positionPadding: (key, value) => {
+        switch (key) {
+          case "left":
+            this.padding = {
+              left: value
+            }
+            break;
+          case "right":
+            this.padding = {
+              right: value
+            }
+            break;
+          case "top":
+            this.padding = {
+              top: value
+            }
+            break;
+          case "bottom":
+            this.padding = {
+              bottom: value
+            }
+            break;
+          default:
+            this.#config.padding = value
+            break;
         }
-        break;
-      case "right":
-        this.padding = {
-          right: value
-        }
-        break;
-      case "top":
-        this.padding = {
-          top: value
-        }
-        break;
-      case "bottom":
-        this.padding = {
-          bottom: value
-        }
-        break;
-      default:
-        this.#config.padding = value
-        break;
+      },
+      positionReset: _this.resetPadding,
+      scaleReset: _this.resetScale,
+      useStartAnimation: _this.useStartAnimation
     }
   }
 
-  resetPadding() {
-    this.padding = {...this.#default.padding}
-    document.getElementById("position-padding-left-slider").value = this.#default.padding.left
-    document.getElementById("position-padding-left-input").value = this.#default.padding.left
-    document.getElementById("position-padding-right-slider").value = this.#default.padding.right
-    document.getElementById("position-padding-right-input").value = this.#default.padding.right
-    document.getElementById("position-padding-top-slider").value = this.#default.padding.top
-    document.getElementById("position-padding-top-input").value = this.#default.padding.top
-    document.getElementById("position-padding-bottom-slider").value = this.#default.padding.bottom
-    document.getElementById("position-padding-bottom-input").value = this.#default.padding.bottom
-  }
-
-  positionReset() {
-    // Note: Back Compatibility
-    this.resetPadding()
-  }
-
-  reset() {
-    this.resetFPS()
-    this.resetPadding()
-    this.resetScale()
-    this.#spine.play()
+  get config() {
+    return {...this.#config}
   }
 
   get HTML() {
@@ -310,8 +311,8 @@ export default class Player {
       </div>
       <div>
         <label for="position">Position</label>
-        <input type="checkbox" id="position" name="position" />
-        <div id="position-realted" hidden>
+        <input type="checkbox" id="position" name="position" ${this.usePadding ? "checked" : ""}/>
+        <div id="position-realted" ${this.usePadding ? "" : "hidden"}>
           <div>
             <label for="position-padding-left">Padding Left</label>
             <input type="range" min="-100" max="100" id="position-padding-left-slider" value="${this.padding.left}" />
@@ -398,6 +399,7 @@ export default class Player {
       }, {
         id: "position", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "position-realted");
+          this.usePadding = e.currentTarget.checked;
           if (!e.currentTarget.checked) this.resetPadding();
         }
       }, {

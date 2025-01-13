@@ -76,3 +76,15 @@ export const readFile = (file, callback = () => { }) => {
   if (!file) return
   callback(URL.createObjectURL(file.slice()), file.type)
 }
+
+export const createCustomEvent = (name, withArg = false) => {
+  const ret = {
+    name,
+  }
+  if (withArg) {
+    ret.handler = (detail) => new CustomEvent(name, {detail})
+  } else {
+    ret.handler = () => new Event(name)
+  }
+  return ret
+}

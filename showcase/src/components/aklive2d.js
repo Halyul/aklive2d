@@ -5,7 +5,7 @@ import Player from "@/components/player";
 import Background from "@/components/background";
 import Logo from "@/components/logo";
 import Insight from "@/components/insight";
-import * as Event from "@/components/event";
+import Events from "@/components/events";
 import {
   isWebGLSupported,
   insertHTMLChild,
@@ -62,7 +62,7 @@ export default class AKLive2D {
     insertHTMLChild(this.#appEl, this.#el)
     addEventListeners([
       {
-        event: "player-ready", handler: () => this.#success()
+        event: Events.Player.Ready.name, handler: () => this.#success()
       }, {
         id: "settings-reset", event: "click", handler: () => this.reset()
       }, {
@@ -102,7 +102,7 @@ export default class AKLive2D {
   }
 
   get events() {
-    return Event
+    return Events
   }
 
   get config() {

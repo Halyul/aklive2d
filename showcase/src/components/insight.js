@@ -1,3 +1,5 @@
+import {createCustomEvent} from "@/components/helper"
+
 export default class Insight {
   #isInsightInited = false
 
@@ -26,8 +28,12 @@ export default class Insight {
   get listeners() {
     return [
       {
-        event: "insight-register", handler: e => this.insight(e.detail, true)
+        event: Events.Register.name, handler: e => this.insight(e.detail, true)
       }
     ]
   }
+}
+
+export const Events = {
+  Register: createCustomEvent("insight-register", true)
 }

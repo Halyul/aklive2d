@@ -4,6 +4,7 @@ import {
   showRelatedHTML,
   syncHTMLValue,
   insertHTMLChild,
+  createCustomEvent,
 } from "@/components/helper";
 import "@/components/background.css"
 
@@ -200,17 +201,17 @@ export default class Background {
   get listeners() {
     return [
       {
-        event: "background-set-default", handler: e => this.default = e.detail
+        event: Events.SetDefault.name, handler: e => this.default = e.detail
       }, {
-        event: "background-set-custom", handler: e => this.custom = e.detail
+        event: Events.SetCustom.name, handler: e => this.custom = e.detail
       }, {
-        event: "background-set-video", handler: e => this.video = e.detail
+        event: Events.SetVideo.name, handler: e => this.video = e.detail
       }, {
-        event: "background-set-volume", handler: e => this.volume = e.detail
+        event: Events.SetVolume.name, handler: e => this.volume = e.detail
       }, {
-        event: "background-reset-image", handler: () => this.resetImage()
+        event: Events.ResetImage.name, handler: () => this.resetImage()
       }, {
-        event: "background-reset-video", handler: () => this.resetVideo()
+        event: Events.ResetVideo.name, handler: () => this.resetVideo()
       }, {
         id: "default-background-select", event: "change", handler: e => {
           this.default = e.currentTarget.value
@@ -246,4 +247,13 @@ export default class Background {
       }, 
     ]
   }
+}
+
+export const Events = {
+  SetDefault: createCustomEvent("background-set-default", true),
+  SetCustom: createCustomEvent("background-set-custom", true),
+  SetVideo: createCustomEvent("background-set-video", true),
+  SetVolume: createCustomEvent("background-set-volume", true),
+  ResetImage: createCustomEvent("background-reset-image"),
+  ResetVideo: createCustomEvent("background-reset-video"),
 }

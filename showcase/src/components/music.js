@@ -4,7 +4,8 @@ import {
   showRelatedHTML,
   syncHTMLValue,
   readFile,
-  getCurrentHTMLOptions
+  getCurrentHTMLOptions,
+  createCustomEvent,
 } from "@/components/helper";
 
 export default class Music {
@@ -265,15 +266,15 @@ export default class Music {
   get listeners() {
     return [
       {
-        event: "music-set-music", handler: e => this.music = e.detail
+        event: Events.SetMusic.name, handler: e => this.music = e.detail
       }, {
-        event: "music-set-usemusic", handler: e => this.useMusic = e.detail
+        event: Events.SetUseMusic.name, handler: e => this.useMusic = e.detail
       }, {
-        event: "music-set-volume", handler: e => this.volume = e.detail
+        event: Events.SetVolume.name, handler: e => this.volume = e.detail
       }, {
-        event: "music-set-custom", handler: e => this.custom = e.detail
+        event: Events.SetCustom.name, handler: e => this.custom = e.detail
       }, {
-        event: "music-reset", handler: () => this.reset()
+        event: Events.Reset.name, handler: () => this.reset()
       }, {
         id: "music", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "music-realted");
@@ -310,4 +311,12 @@ export default class Music {
       },
     ]
   }
+}
+
+export const Events = {
+  SetMusic: createCustomEvent("music-set-music", true),
+  SetUseMusic: createCustomEvent("music-set-usemusic", true),
+  SetVolume: createCustomEvent("music-set-volume", true),
+  SetCustom: createCustomEvent("music-set-custom", true),
+  Reset: createCustomEvent("music-reset"),
 }

@@ -4,6 +4,7 @@ import {
   readFile,
   showRelatedHTML,
   syncHTMLValue,
+  createCustomEvent,
 } from "@/components/helper";
 import "@/components/logo.css"
 
@@ -270,17 +271,17 @@ export default class Logo {
   get listeners() {
     return [
       {
-        event: "logo-set-hidden", handler: e => this.hidden = e.detail
+        event: Events.SetHidden.name, handler: e => this.hidden = e.detail
       }, {
-        event: "logo-set-ratio", handler: e => this.ratio = e.detail
+        event: Events.SetRatio.name, handler: e => this.ratio = e.detail
       }, {
-        event: "logo-set-opacity", handler: e => this.opacity = e.detail
+        event: Events.SetOpacity.name, handler: e => this.opacity = e.detail
       }, {
-        event: "logo-set-image", handler: e => this.image = e.detail
+        event: Events.SetImage.name, handler: e => this.image = e.detail
       }, {
-        event: "logo-reset-image", handler: () => this.resetImage()
+        event: Events.ResetImage.name, handler: () => this.resetImage()
       }, {
-        event: "logo-set-position", handler: e => this.position = e.detail
+        event: Events.SetPosition.name, handler: e => this.position = e.detail
       }, {
         id: "operator-logo", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "operator-logo-realted");
@@ -343,4 +344,13 @@ export default class Logo {
       },
     ]
   }
+}
+
+export const Events = {
+  SetHidden: createCustomEvent("logo-set-hidden", true),
+  SetRatio: createCustomEvent("logo-set-ratio", true),
+  SetOpacity: createCustomEvent("logo-set-opacity", true),
+  SetImage: createCustomEvent("logo-set-image", true),
+  ResetImage: createCustomEvent("logo-reset-image"),
+  SetPosition: createCustomEvent("logo-set-position", true),
 }

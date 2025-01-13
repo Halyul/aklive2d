@@ -2,11 +2,9 @@ import {
   insertHTMLChild,
   updateHTMLOptions,
   showRelatedHTML,
-  syncHTMLValue
+  syncHTMLValue,
+  createCustomEvent,
 } from "@/components/helper";
-import {
-  PlayerReadyEvent
-} from "@/components/event"
 import '@/libs/spine-player.css'
 import spine from '@/libs/spine-player'
 import assets from '!/assets.json'
@@ -92,7 +90,7 @@ export default class Player {
           entry.mixDuration = 0.3;
           widget.animationState.addAnimation(0, "Idle", true, 0);
         }
-        document.dispatchEvent(PlayerReadyEvent);
+        document.dispatchEvent(Events.Ready.handler());
       },
     }
     if (import.meta.env.VITE_USE_JSON === "true") {
@@ -342,15 +340,15 @@ export default class Player {
   get listeners() {
     return [
       {
-        event: "player-set-fps", handler: e => this.fps = e.detail
+        event: Events.SetFPS.name, handler: e => this.fps = e.detail
       }, {
-        event: "player-set-scale", handler: e => this.scale = e.detail
+        event: Events.SetScale.name, handler: e => this.scale = e.detail
       }, {
-        event: "player-set-padding", handler: e => this.padding = e.detail
+        event: Events.SetPadding.name, handler: e => this.padding = e.detail
       }, {
-        event: "player-reset-padding", handler: () => this.resetPadding()
+        event: Events.ResetPadding.name, handler: () => this.resetPadding()
       }, {
-        event: "player-set-usestartanimation", handler: e => this.useStartAnimation = e.detail
+        event: Events.SetUseStartAnimation.name, handler: e => this.useStartAnimation = e.detail
       }, {
         id: "fps-slider", event: "change", handler: e => {
           syncHTMLValue(e.currentTarget, "fps-input");
@@ -461,4 +459,13 @@ export default class Player {
       },
     ]
   }
+}
+
+export const Events = {
+  Ready: createCustomEvent("player-ready"),
+  SetFPS: createCustomEvent("player-set-fps", true),
+  SetScale: createCustomEvent("player-set-scale", true),
+  SetPadding: createCustomEvent("player-set-padding", true),
+  ResetPadding: createCustomEvent("player-reset-padding"),
+  SetUseStartAnimation: createCustomEvent("player-set-usestartanimation", true),
 }

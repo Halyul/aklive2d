@@ -3,7 +3,8 @@ import {
   updateElementPosition,
   updateHTMLOptions,
   showRelatedHTML,
-  syncHTMLValue
+  syncHTMLValue,
+  createCustomEvent,
 } from "@/components/helper";
 
 import charword_table from '!/charword_table.json'
@@ -494,19 +495,19 @@ export default class Voice {
   get listeners() {
     return [
       {
-        event: "voice-set-usevoice", handler: e => this.useVoice = e.detail
+        event: Events.SetUseVoice.name, handler: e => this.useVoice = e.detail
       }, {
-        event: "voice-set-language", handler: e => this.language = e.detail
+        event: Events.SetLanguage.name, handler: e => this.language = e.detail
       }, {
-        event: "voice-set-duration", handler: e => this.duration = e.detail
+        event: Events.SetDuration.name, handler: e => this.duration = e.detail
       }, {
-        event: "voice-set-usesubtitle", handler: e => this.useSubtitle = e.detail
+        event: Events.SetUseSubtitle.name, handler: e => this.useSubtitle = e.detail
       }, {
-        event: "voice-set-subtitlelanguage", handler: e => this.subtitleLanguage = e.detail
+        event: Events.SetSubtitleLanguage.name, handler: e => this.subtitleLanguage = e.detail
       }, {
-        event: "voice-set-subtitleposition", handler: e => this.position = e.detail
+        event: Events.SetSubtitlePosition.name, handler: e => this.position = e.detail
       }, {
-        event: "voice-set-usevoiceactor", handler: e => this.useVoiceActor = e.detail
+        event: Events.SetUseVoiceActor.name, handler: e => this.useVoiceActor = e.detail
       }, {
         id: "voice", event: "click", handler: e => {
           showRelatedHTML(e.currentTarget, "voice-realted");
@@ -570,4 +571,14 @@ export default class Voice {
       }
     ]
   }
+}
+
+export const Events = {
+  SetUseVoice: createCustomEvent("voice-set-usevoice", true),
+  SetLanguage: createCustomEvent("voice-set-language", true),
+  SetDuration: createCustomEvent("voice-set-duration", true),
+  SetUseSubtitle: createCustomEvent("voice-set-usesubtitle", true),
+  SetSubtitleLanguage: createCustomEvent("voice-set-subtitlelanguage", true),
+  SetSubtitlePosition: createCustomEvent("voice-set-subtitleposition", true),
+  SetUseVoiceActor: createCustomEvent("voice-set-usevoiceactor", true),
 }

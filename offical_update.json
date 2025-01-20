@@ -1,6 +1,7 @@
 {
-    "length": 57,
+    "length": 59,
     "dates": [
+        "2025-01-01",
         "2024-12-09",
         "2024-12-01",
         "2024-10-01",
@@ -30,6 +31,28 @@
         "2020-11-01",
         "2020-05-01",
         "2020-01-01"
+    ],
+    "2025-01-01": [
+        {
+            "color": null,
+            "codename": {
+                "zh-CN": "春日宴 · 黍",
+                "en-US": "Spring Feast"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501936.html",
+            "id": "202501936"
+        },
+        {
+            "color": null,
+            "codename": {
+                "zh-CN": "余",
+                "en-US": "yu"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501414.html",
+            "id": "202501414"
+        }
     ],
     "2024-12-09": [
         {

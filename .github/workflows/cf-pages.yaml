@@ -1,4 +1,4 @@
-name: Build release and push to Github
+name: Build release and push to CF Pages
 
 on:
   push:

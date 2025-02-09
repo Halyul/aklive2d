@@ -94,3 +94,6 @@ operators:
   chongyue_allround_actor: !include config/chongyue_allround_actor.yaml
   nian_thunderbolt_director: !include config/nian_thunderbolt_director.yaml
   amiya_solo_around_the_world: !include config/amiya_solo_around_the_world.yaml
+  zuole_youthful_journey: !include config/zuole_youthful_journey.yaml
+  shu_spring_feast: !include config/shu_spring_feast.yaml
+  yu: !include config/yu.yaml

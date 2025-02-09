@@ -1,19 +1,13 @@
-import * as Counterscale from "@counterscale/tracker";
 import React from 'react';
 
-Counterscale.init({
-  siteId: "aklive2d",
-  reporterUrl: "https://insight.halyul.dev/collect",
-  autoTrackPageviews: false,
-});
-
-export default (path = "", skipPageView = false) => {
+export default (path = null, skipPageView = false) => {
   React.useEffect(() => {
     if (!skipPageView && import.meta.env.MODE !== 'development') {
       try {
-        Counterscale.trackPageview({
-          url: `/${path}`
-        });
+        window.counterscale = {
+          q: [["set", "siteId", import.meta.env.VITE_INSIGHT_ID], ["trackPageview", {path}]],
+        };
+        window.counterscaleOnDemandTrack()
       } catch (err) {
         console.warn && console.warn(err.message)
       }

@@ -1,5 +1,4 @@
-import * as Counterscale from "@counterscale/tracker";
-import { createCustomEvent } from "@/components/helper"
+import {createCustomEvent} from "@/components/helper"
 
 export default class Insight {
   #isInsightInited = false
@@ -13,19 +12,14 @@ export default class Insight {
     this.#isInsightInited = true
     if (doNotTrack) return
     try {
-      const canonical = document.querySelector('link[rel="canonical"][href]')
-      if (!canonical) {
-        return;
+      const config = {
+        path: `/${import.meta.env.VITE_LINK}`
       }
-      if (isFromWallpaperEngine) canonical.href = "file://wallpaperengine.local/";
-      Counterscale.init({
-        siteId: "aklive2d",
-        reporterUrl: "https://insight.halyul.dev/collect",
-        autoTrackPageviews: false,
-      });
-      Counterscale.trackPageview({
-        url: `/${import.meta.env.VITE_LINK}`
-      });
+      if (isFromWallpaperEngine) config.hostname = "file://wallpaperengine.local";
+      window.counterscale = {
+        q: [["set", "siteId", import.meta.env.VITE_INSIGHT_ID], ["trackPageview", config]],
+      };
+      window.counterscaleOnDemandTrack();
     } catch (e) {
       console.warn && console.warn(e.message)
     }

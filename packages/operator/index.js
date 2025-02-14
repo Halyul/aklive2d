@@ -65,8 +65,7 @@ const operators = generateMapping()
 export default operators
 
 export function getOperatorId(operatorConfig) {
-    // return operatorConfig.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4')
-    return operatorConfig.fallback_name.replace(/^(char_[\d]+)(_[\w]+)(_.+)$/g, '$1$2$3')
+    return operatorConfig.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4')
 }
 
 export const build = async (namesToBuild) => {

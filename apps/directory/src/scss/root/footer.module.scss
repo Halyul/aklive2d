@@ -1,0 +1,42 @@
+.footer {
+    user-select: none;
+
+    .section {
+        border-top: 1px solid var(--border-color);
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        font-family:
+            'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans',
+            sans-serif;
+    }
+
+    .links {
+        flex-direction: row;
+        height: 2rem;
+        overflow-y: hidden;
+
+        .item {
+            text-align: center;
+            padding: 0 1rem;
+            border-left: 2px solid var(--border-color);
+            height: inherit;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+
+            &:first-of-type {
+                border-left: none;
+            }
+        }
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 12px;
+    }
+}

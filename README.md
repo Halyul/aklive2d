@@ -14,36 +14,32 @@ A list of supported operators can be found at [Directory](https://gura.ch/aklive
 ### Command Line Tool
 
 ``` bash
-$ npm run generate {operator_name}
-To generate operator assets for showcase page
+$ pnpm run update
+Update data from official website and github repo
 ```
 ``` bash
-$ npm run dev {operator_name}
-Live showcase page server for development
+$ pnpm run lint
+ESLint and StyleLint
 ```
 ``` bash
-$ npm run build {operator_name}
+$ pnpm run build
+Build showcase webpage for all operators and directory page
+```
+``` bash
+$ name=<name> pnpm run build
 Build showcase webpage for an operator
 ```
 ``` bash
-$ npm run build-all
-To generate all operator assets for showcase page
-```
-``` bash
-$ npm run init {operator_name}
+$ name=<name> id=<id> pnpm run init
 To initialize folder and config file for an operator
 ```
 ``` bash
-$ npm run readme {operator_name}
-To add operator info to README.md
+$ name=<name> pnpm run dev:showcase
+Run dev server for showcase webpage for an operator
 ```
 ``` bash
-$ npm run directory
-To generate directory.json
-```
-``` bash
-$ npm run charword
-To generate the latest charword_table.json
+$ name=<name> pnpm run preview:showcase
+Preview built showcase webpage for an operator
 ```
 ### Webpage & JavaScript
 
@@ -55,6 +51,7 @@ Using JS events to change settings is recommended.
 
 ## Config
 ### General Config
+in `packages/config/config.yaml`
 ``` yaml
 folder: 
   operator: ./operator/ # folder for operator assets
@@ -83,20 +80,38 @@ operators:
   passager_dream_in_a_moment: !include config/passager_dream_in_a_moment.yaml
   mizuki_summer_feast: !include config/mizuki_summer_feast.yaml
 ```
-### Operator Config
+### Operators Config
+in `packages/operator/config.yaml`
 ```yaml
-link: chen # the link to access showcase page for this operator
-type: operator # operator live2d or skin live2d
-date: 2021/08 # release date
-title: 'Arknights: Ch''en/Chen the Holungday - 明日方舟：假日威龙陈' # page title
+chen: !include config/chen.yaml
+dusk: !include config/dusk.yaml
+dusk_everything_is_a_miracle: !include config/dusk_everything_is_a_miracle.yaml
+ling: !include config/ling.yaml
+nearl: !include config/nearl.yaml
+nian: !include config/nian.yaml
+nian_unfettered_freedom: !include config/nian_unfettered_freedom.yaml
+phatom_focus: !include config/phatom_focus.yaml
+rosmontis: !include config/rosmontis.yaml
+skadi: !include config/skadi.yaml
+skadi_sublimation: !include config/skadi_sublimation.yaml
+w: !include config/w.yaml
+...
+```
+### Operator Config
+in `packages/operator/config/<name>.yaml`
+```yaml
 filename: dyn_illust_char_1013_chen2 # live2d assets name
 logo: logo_rhodes_override # operator logo
 fallback_name: char_1013_chen2_2 # fallback image name
 viewport_left: 0 # live2d view port settings
 viewport_right: 0
-viewport_top: 1
-viewport_bottom: 1
+viewport_top: 0
+viewport_bottom: 0
 invert_filter: false # operator logo invert filter
+codename: # operator name
+  zh-CN: 假日威龙陈
+  en-US: Ch'en/Chen the Holungday
+use_json: false # whether the spine skel is in json format
 ```
 ## LICENSE
 
@@ -104,12 +119,14 @@ The `LICENSE` file applies to all files unless listed specifically.
 
 `LICENSE_SPINE` file applies to following files including adapted code for this repo:
 
-- `src/libs/spine-player.css`
-- `src/libs/spine-player.js`
+- `apps/module/libs/spine-player.css`
+- `apps/module/libs/spine-player.js`
 
 `Copyright © 2017 - 2023 Arknights/Hypergryph Co., Ltd` applies to following files:
 
-- all files under `operator` folder and its sub-folders
+- all files under `packages/operator/data` folder and its sub-folders
+- all files under `packages/music/data` folder and its sub-folders
+- all files under `packages/background/data` folder and its sub-folders
 
 ## Instructions on Extracting In-Game Assets
 I'm still struggling to find a command-line tool to extract in-game assets. But [AssetRipper](https://github.com/AssetRipper/AssetRipper) seems to have a command-line interface, I'm too lazy to have a deeper inverstigation.

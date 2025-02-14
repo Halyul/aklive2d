@@ -130,7 +130,6 @@ dist
 .pnp.*
 
 # custom
-release/*
 spine-runtimes/*
 _*.json
 .DS_Store
@@ -138,5 +137,4 @@ _*.json
 *_v2/*
 assets/*
 temp/*
-operator/*
-data/operator/*
+.turbo

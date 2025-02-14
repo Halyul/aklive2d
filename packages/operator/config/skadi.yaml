@@ -1,0 +1,13 @@
+filename: dyn_illust_char_1012_skadi2
+logo: logo_egir
+fallback_name: char_1012_skadi2_2
+viewport_left: -5
+viewport_right: -10
+viewport_top: 0
+viewport_bottom: -12
+invert_filter: true
+codename:
+    zh-CN: 浊心斯卡蒂
+    en-US: Skadi the Corrupting Heart
+use_json: false
+official_id: '20220396'

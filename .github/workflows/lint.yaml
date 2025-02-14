@@ -22,5 +22,8 @@ jobs:
         with:
           run_install: true
 
-      - name: Run linters
-        run: pnpm run lint
+      - name: Super-linter
+        uses: super-linter/super-linter@v7.2.1 # x-release-please-version
+        env:
+          # To report GitHub Actions status checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

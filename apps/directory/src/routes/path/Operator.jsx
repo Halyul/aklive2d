@@ -168,8 +168,8 @@ export default function Operator() {
     useEffect(() => {
         if (spineRef.current?.children.length === 0 && spineData && config) {
             const playerConfig = {
-                skelUrl: `./assets/${config.filename.replace('#', '%23')}.skel`,
-                atlasUrl: `./assets/${config.filename.replace('#', '%23')}.atlas`,
+                skelUrl: `./assets/${config.filename.replace(/#/g, '%23')}.skel`,
+                atlasUrl: `./assets/${config.filename.replace(/#/g, '%23')}.atlas`,
                 rawDataURIs: spineData,
                 animation: spineAnimationName,
                 premultipliedAlpha: true,
@@ -219,9 +219,9 @@ export default function Operator() {
             }
 
             if (config.use_json) {
-                playerConfig.jsonUrl = `./assets/${config.filename.replace('#', '%23')}.json`
+                playerConfig.jsonUrl = `./assets/${config.filename.replace(/#/g, '%23')}.json`
             } else {
-                playerConfig.skelUrl = `./assets/${config.filename.replace('#', '%23')}.skel`
+                playerConfig.skelUrl = `./assets/${config.filename.replace(/#/g, '%23')}.skel`
             }
             setSpinePlayer(
                 new spine.SpinePlayer(spineRef.current, playerConfig)

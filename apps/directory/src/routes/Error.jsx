@@ -16,7 +16,7 @@ import buildConfig from '!/config.json'
 const voiceOnAtom = atomWithStorage('voiceOn', false)
 const config = buildConfig.error_files
 const obj = config.files[Math.floor(Math.random() * config.files.length)]
-const filename = obj.key.replace('#', '%23')
+const filename = obj.key.replace(/#/g, '%23')
 const padding = obj.paddings
 let lastVoiceState = 'ended'
 

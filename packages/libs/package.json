@@ -1,0 +1,15 @@
+{
+  "name": "@aklive2d/libs",
+  "private": true,
+  "version": "0.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@aklive2d/eslint-config": "workspace:*",
+    "sharp": "^0.33.5",
+    "yaml": "^2.7.0"
+  },
+  "scripts": {
+    "lint": "eslint \"*.js\" \"**/*.js\""
+  }
+}

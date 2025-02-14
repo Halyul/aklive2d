@@ -1,0 +1,93 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "@aklive2d/directory#build": {
+      "env": ["name"],
+      "inputs": ["$TURBO_DEFAULT$", "../../packages/assets/dist/**"],
+      "outputs": ["../../dist/index.html", "../../dist/_assets/**", "../../dist/_directory/**"],
+      "dependsOn": ["^@aklive2d/showcase#build"]
+    },
+    "@aklive2d/showcase#build": {
+      "env": ["name"],
+      "inputs": ["$TURBO_DEFAULT$", "../../packages/assets/dist/**"],
+      "outputs": ["../../dist/**"],
+      "dependsOn": ["@aklive2d/assets#build"]
+    },
+    "@aklive2d/background#build": {
+      "inputs": ["../music/auto_update/music_table.json"],
+      "outputs": ["dist/bg_*.png", "dist/operator_bg.png"]
+    },
+    "@aklive2d/charword-table#build": {
+      "env": ["name"],
+      "inputs": ["../official-info/auto_update/official_info.json", "../operator/operators.yaml"],
+      "outputs": ["dist/**/charword_table.json"]
+    },
+    "@aklive2d/operator#build": {
+      "env": ["name"],
+      "dependsOn": ["@aklive2d/charword-table#build"],
+      "inputs": ["../official-info/auto_update/official_info.json", "operators.yaml"],
+      "outputs": ["dist/**"]
+    },
+    "@aklive2d/project-json#build": {
+      "env": ["name"],
+      "dependsOn": ["@aklive2d/background#build", "@aklive2d/charword-table#build", "@aklive2d/music#build"],
+      "inputs": ["../operator/operators.yaml"],
+      "outputs": ["dist/**"]
+    },
+    "@aklive2d/assets#build": {
+      "dependsOn": ["@aklive2d/background#build", "@aklive2d/charword-table#build", "@aklive2d/operator#build", "@aklive2d/project-json#build"],
+      "outputs": ["dist/**"]
+    },
+    "build": {
+      "env": ["name"],
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["dist/**"]
+    },
+    "@aklive2d/charword-table#update": {
+      "cache": false,
+      "outputs": ["auto_update/charword_table*.json"]
+    },
+    "@aklive2d/music#update": {
+      "cache": false,
+      "outputs": ["auto_update/audio_data*.json", "auto_update/display_meta_table*.json", "auto_update/music_table.json"]
+    },
+    "@aklive2d/official-info#update": {
+      "cache": false,
+      "outputs": ["auto_update/official_info.json"]
+    },
+    "update": {
+      "dependsOn": []
+    },
+    "init": {
+      "dependsOn": []
+    },
+    "lint": {
+      "cache": false
+    },
+    "dev:directory": {
+      "env": ["name"],
+      "dependsOn": ["^@aklive2d/assets#build"],
+      "cache": false,
+      "persistent": true
+    },
+    "preview:directory": {
+      "env": ["name"],
+      "dependsOn": ["^@aklive2d/assets#build"],
+      "cache": false,
+      "persistent": true
+    },
+    "dev:showcase": {
+      "env": ["name"],
+      "dependsOn": ["^@aklive2d/assets#build"],
+      "cache": false,
+      "persistent": true
+    },
+    "preview:showcase": {
+      "env": ["name"],
+      "dependsOn": ["^@aklive2d/showcase#build"],
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

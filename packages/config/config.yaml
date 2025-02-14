@@ -1,0 +1,85 @@
+akassets: 
+  project_name: akassets
+  url: https://akassets.halyul.dev
+insight_id: aklive2d
+module:
+  background:
+    background: background
+    operator_bg_png: operator_bg.png
+  charword_table:
+    charword_table_json: charword_table.json
+  music:
+    music_table_json: music_table.json
+    display_meta_table_json: display_meta_table.json
+    audio_data_json: audio_data.json
+  official_info:
+    official_info_json: official_info.json
+  operator:
+    config: config
+    template_yaml: _template.yaml
+    config_yaml: config.yaml
+    portraits: _portraits
+    logos_assets: _logos
+    directory_assets: _directory
+    MonoBehaviour: MonoBehaviour
+    Texture2D: Texture2D
+    assets_json: assets.json
+    title:
+      zh-CN: "明日方舟："
+      en-US: "Arknights: "
+  project_json:
+    project_json: project.json
+    preview_jpg: preview.jpg
+    template_yaml: project_json.yaml
+dir_name:
+  assets: assets
+  data: data
+  dist: dist
+  extracted: extracted
+  auto_update: auto_update
+  operator: operator
+  background: background
+  music: music
+  logos: logos
+  public: public
+  charword_table: charword_table
+  project_json: project_json
+  config_json: config.json
+  voice:
+      main: voice
+      sub:
+        - name: jp
+          lang: JP
+        - name: cn
+          lang: CN_MANDARIN
+        - name: en
+          lang: EN
+        - name: kr
+          lang: KR
+        - name: custom
+          lang: CUSTOM
+share:
+  title:
+    zh-CN: "明日方舟："
+    en-US: "Arknights: "
+directory:
+  assets_dir: _assets
+  title: AKLive2D
+  voice: jp/CN_037.ogg
+  error:
+    files: 
+      - key: build_char_128_plosis_epoque#3
+        paddings:
+          left: -120
+          right: 150
+          top: 10
+          bottom: 0
+      - key: build_char_128_plosis
+        paddings:
+          left: -90
+          right: 100
+          top: 10
+          bottom: 0
+    voice: 
+     file: CN_034.ogg
+     target: error.ogg

@@ -1,0 +1,42 @@
+.totop-button {
+  position: fixed;
+  user-select: none;
+  z-index: 2;
+  cursor: pointer;
+  right: 2rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 3rem;
+  height: 3rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+
+  &.show {
+    opacity: 1;
+    visibility: unset;
+  }
+
+  .bar {
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    background-color: var(--text-color-full);
+    will-change: auto;
+  }
+
+  .bar:nth-child(1) {
+    transform: rotateZ(45deg) scaleX(0.5) translateX(45%);
+  }
+
+  .bar:nth-child(2) {
+    transform: rotateZ(-45deg) scaleX(0.5) translateX(-45%);
+  }
+
+  .bar:nth-child(3), .bar:nth-child(4) {
+    transform: translateY(450%) rotateZ(90deg) scaleX(0.5);
+  }
+}

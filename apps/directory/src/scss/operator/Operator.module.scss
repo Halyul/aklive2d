@@ -1,0 +1,140 @@
+@use "@/scss/page_base";
+
+.main {
+  padding: 3rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    margin-bottom: 2rem;
+    user-select: none;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+
+    .wrapper {
+      position: absolute;
+      inset: 0;
+    }
+
+    @media (width <= 1280px) {
+      width: 100%;
+      position: relative;
+      margin-bottom: 2rem;
+
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+    }
+  }
+
+  .settings {
+    margin-right: 1.5rem;
+    user-select: none;
+    margin-left: 1rem;
+
+    .title {
+      font-size: 1.25rem;
+      border-left: 3px solid currentcolor;
+      padding-left: 0.75rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+
+      .switch {
+        bottom: -10px;
+        position: relative;
+      }
+    }
+  }
+
+  .text {
+    color: var(--text-color);
+    line-height: 1.2;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: auto;
+    opacity: 0.3;
+  }
+
+  .voice {
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    z-index: 1;
+    max-width: 480px;
+    width: 85%;
+    opacity: 0;
+    margin: 16px;
+    transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    visibility: hidden;
+    font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans', sans-serif;
+
+    .type {
+      background-color: #9e9e9e;
+      color: #000;
+      display: inline-block;
+      position: absolute;
+      top: -12px;
+      left: -8px;
+      padding: 2px 8px;
+      font-size: 14px;
+      max-width: 180px;
+      width: 65%;
+      box-shadow: 0 3px 6px #00000080;
+      z-index: 1;
+    }
+
+    .subtitle {
+      background-color: #000000a6;
+      color: #fff;
+      padding: 16px;
+      font-size: 18px;
+      box-shadow: 0 6px 12px #00000080;
+      position: relative;
+      word-break: break-word;
+    }
+
+    .triangle {
+      position: absolute;
+      bottom: 0;
+      right: 8px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px;
+      border-color: white transparent transparent;
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @media (width <= 1280px) {
+      bottom: 0;
+    }
+  }
+
+  @media (width <= 1280px) {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+}

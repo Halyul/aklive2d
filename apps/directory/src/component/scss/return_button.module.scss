@@ -1,0 +1,55 @@
+.return-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.6rem 0;
+  width: 3rem;
+  cursor: pointer;
+
+  %arrow-shared {
+    border-top: 0.24rem solid transparent;
+    border-bottom: 0.24rem solid transparent;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    &:nth-child(1) {
+    transform: translateY(-0.1rem) rotate(45deg);
+  }
+
+  &:nth-child(2) {
+    transform: translateY(-0.1rem) translate(90%, -100%) rotate(-45deg);
+  }
+
+  &:nth-child(3) {
+    transform: translateY(-0.1rem) translateY(150%) rotate(315deg);
+  }
+
+  &:nth-child(4) {
+    transform: translateY(-0.1rem) translate(90%, 50%) rotate(225deg);
+  }
+  }
+
+  .bar {
+    width: 1rem;
+    height: 0.4rem;
+    background-color: currentcolor;
+    transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+  }
+
+  .arrow-left {
+    @extend %arrow-shared;
+
+    border-right: 0.3rem solid currentcolor;
+  }
+
+  .arrow-right {
+    @extend %arrow-shared;
+
+    border-left: 0.3rem solid currentcolor;
+  }
+}

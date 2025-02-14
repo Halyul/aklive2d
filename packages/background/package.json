@@ -1,0 +1,19 @@
+{
+    "name": "@aklive2d/background",
+    "private": true,
+    "version": "0.0.0",
+    "main": "index.js",
+    "type": "module",
+    "dependencies": {
+        "sharp": "^0.33.5",
+        "@aklive2d/libs": "workspace:*",
+        "@aklive2d/config": "workspace:*",
+        "@aklive2d/music": "workspace:*",
+        "@aklive2d/eslint-config": "workspace:*"
+    },
+    "scripts": {
+        "build": "mode=build node runner.js",
+        "lint": "eslint \"*.js\" \"**/*.js\""
+    }
+}
+  

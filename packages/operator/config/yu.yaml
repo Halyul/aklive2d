@@ -1,0 +1,13 @@
+filename: dyn_illust_char_2026_yu
+logo: logo_sui
+fallback_name: char_2026_yu_2
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true
+codename:
+  zh-CN: 余
+  en-US: Yu
+use_json: false
+official_id: "202501414"

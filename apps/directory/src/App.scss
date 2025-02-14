@@ -1,0 +1,101 @@
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap";
+@import "https://fonts.cdnfonts.com/css/bender";
+@import "https://fonts.cdnfonts.com/css/geometos";
+
+@mixin light-theme() {
+  --text-color: rgb(0 0 0 / 87%);
+  --text-color-full: #000;
+  --secondary-text-color: #97958d;
+  --date-color: rgb(0 0 0 / 20%);
+  --border-color: #8f8f8f;
+  --link-highlight-color: #33b5e5;
+  --drawer-background-color: rgb(255 255 255 / 88%);
+  --root-background-color: #ececec;
+  --home-item-hover-background-color: rgb(188 188 188 / 30%);
+  --home-item-background-linear-gradient-color: rgb(0 0 0 / 10%);
+  --home-item-outline-color: rgb(41 41 41 / 30%);
+  --button-color: #999;
+}
+
+@mixin dark-theme() {
+  --text-color: rgb(255 255 255 / 87%);
+  --text-color-full: #fff;
+  --secondary-text-color: #686a72;
+  --date-color: rgb(255 255 255 / 20%);
+  --border-color: #707070;
+  --link-highlight-color: #33b5e5;
+  --drawer-background-color: rgb(0 0 0 / 88%);
+  --root-background-color: #131313;
+  --home-item-hover-background-color: rgb(67 67 67 / 30%);
+  --home-item-background-linear-gradient-color: rgb(255 255 255 / 10%);
+  --home-item-outline-color: rgb(214 214 214 / 30%);
+  --button-color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark-theme;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include light-theme;
+  }
+}
+
+:root {
+  font-family: Geometos, 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--root-background-color);
+  min-height: 100vh;
+
+  @media only screen and (width <= 430px) {
+    & {
+      font-size: 12px;
+    }
+  }
+
+  @media only screen and (width <= 1600px) {
+    & {
+      font-size: 14px;
+    }
+  }
+}
+
+#root {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+:root::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+#root::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+:root::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border: 5px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease-in-out;
+}
+
+:root::-webkit-scrollbar-thumb:hover {
+  border: 4px solid transparent;
+  background-color: var(--text-color);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}

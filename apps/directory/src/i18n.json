@@ -1,0 +1,163 @@
+{
+    "available": [
+        "zh-CN", "en-US"
+    ],
+    "key": {
+      "dynamic_compile": {
+        "zh-CN": "动态集录",
+        "en-US": "Dynamic Compile"
+      },
+      "home": {
+        "zh-CN": "首页",
+        "en-US": "Home"
+      },
+      "official_page": {
+        "zh-CN": "官方页面",
+        "en-US": "Official Page"
+      },
+      "disclaimer": {
+        "zh-CN": "免责声明",
+        "en-US": "Disclaimer"
+      },
+      "disclaimer_content": {
+        "zh-CN": "本网站由 Halyul 设立并为明日方舟社区服务，Halyul 声明本网站完全独立运营，与 上海鹰角网络科技有限公司, Esoteric Software LLC 或其任何关联实体并无任何联系。",
+        "en-US": "This website is set up and operated by Halyul for the benefit of the Arknights Community. Halyul hereby states that this website is dedicated, but not related to Hypergryph Co., Ltd, Esoteric Software LLC or any of its affiliated entity."
+      },
+      "privacy_policy": {
+        "zh-CN": "隐私政策",
+        "en-US": "Privacy Policy"
+      },
+      "contact_us": {
+        "zh-CN": "联系我们",
+        "en-US": "Contact Us"
+      },
+      "all": {
+        "zh-CN": "综合",
+        "en-US": "All"
+      },
+      "operator": {
+        "zh-CN": "精英2",
+        "en-US": "Elite 2"
+      },
+      "skin": {
+        "zh-CN": "时装",
+        "en-US": "Skin"
+      },
+      "voice": {
+        "zh-CN": "语音",
+        "en-US": "Voice"
+      },
+      "music": {
+        "zh-CN": "音乐",
+        "en-US": "Music"
+      },
+      "showcase": {
+        "zh-CN": "壁纸",
+        "en-US": "Wallpaper"
+      },
+      "directory": {
+        "zh-CN": "目录页",
+        "en-US": "Directory Page"
+      },
+      "animation": {
+        "zh-CN": "动画",
+        "en-US": "Animation"
+      },
+      "backgrounds": {
+        "zh-CN": "背景",
+        "en-US": "Backgrounds"
+      },
+      "CN_MANDARIN": {
+        "zh-CN": "普通话",
+        "en-US": "Mandarin"
+      },
+      "JP": {
+        "zh-CN": "日语",
+        "en-US": "Japanese"
+      },
+      "KR": {
+        "zh-CN": "韩语",
+        "en-US": "Korean"
+      },
+      "EN": {
+        "zh-CN": "英语",
+        "en-US": "English"
+      },
+      "ITA": {
+        "zh-CN": "意大利语",
+        "en-US": "Italian"
+      },
+      "CN_TOPOLECT": {
+        "zh-CN": "中文方言",
+        "en-US": "Chinese Topolect"
+      },
+      "steam_workshop": {
+        "zh-CN": "壁纸引擎版",
+        "en-US": "Wallpaper Engine Version"
+      },
+      "external_links": {
+        "zh-CN": "外部链接",
+        "en-US": "External Links"
+      },
+      "web_version": {
+        "zh-CN": "全功能网页版",
+        "en-US": "Full Feature Web Version"
+      },
+      "idle": {
+        "zh-CN": "待机",
+        "en-US": "Idle"
+      },
+      "interact": {
+        "zh-CN": "交互",
+        "en-US": "Interact"
+      },
+      "special": {
+        "zh-CN": "特殊",
+        "en-US": "Special"
+      },
+      "subtitle": {
+        "zh-CN": "字幕",
+        "en-US": "Subtitle"
+      },
+      "zh-CN": {
+        "zh-CN": "简体中文",
+        "en-US": "Chinese (Simplified)"
+      },
+      "en-US": {
+        "zh-CN": "英语",
+        "en-US": "English"
+      },
+      "zh-TW": {
+        "zh-CN": "繁体中文",
+        "en-US": "Chinese (Traditional)"
+      },
+      "ja-JP": {
+        "zh-CN": "日语",
+        "en-US": "Japanese"
+      },
+      "ko-KR": {
+        "zh-CN": "韩语",
+        "en-US": "Korean"
+      },
+      "switch_language": {
+        "zh-CN": "🌐 切换语言",
+        "en-US": "🌐 Switch Language"
+      },
+      "fast_navigation": {
+        "zh-CN": "🧭 快速导航",
+        "en-US": "🧭 Fast Navigation"
+      },
+      "return": {
+        "zh-CN": "↩️ 返回",
+        "en-US": "↩️ Return"
+      },
+      "search_by_name": {
+        "zh-CN": "名字搜索",
+        "en-US": "Search by Name"
+      },
+      "new_op_wait_to_update": {
+        "zh-CN": "个新干员等待更新",
+        "en-US": "New Operator(s) Waiting to Update"
+      }
+    }
+}

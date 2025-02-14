@@ -1,0 +1,20 @@
+{
+    "name": "@aklive2d/charword-table",
+    "private": true,
+    "version": "0.0.0",
+    "main": "index.js",
+    "type": "module",
+    "dependencies": {
+        "@aklive2d/libs": "workspace:*",
+        "@aklive2d/config": "workspace:*",
+        "@aklive2d/downloader": "workspace:*",
+        "@aklive2d/operator": "workspace:*",
+        "@aklive2d/eslint-config": "workspace:*"
+    },
+    "scripts": {
+        "update": "mode=update node runner.js",
+        "build": "mode=build node runner.js",
+        "lint": "eslint \"*.js\" \"**/*.js\""
+    }
+}
+  

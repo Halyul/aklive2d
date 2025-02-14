@@ -1,0 +1,13 @@
+filename: dyn_illust_char_4058_pepe
+logo: logo_sargon
+fallback_name: char_4058_pepe_2
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true
+codename:
+  zh-CN: 佩佩
+  en-US: Pepe
+use_json: true
+official_id: "202407013"

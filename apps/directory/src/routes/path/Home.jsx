@@ -340,7 +340,7 @@ VoiceSwitchElement.propTypes = {
 
 function ImageElement({ item }) {
   const { language } = useLanguage()
-  return <img src={`/${buildConfig.directory_folder}/${item.fallback_name.replace("#", "%23")}_portrait.png`} alt={item.codename[language]} />
+  return <img src={`/${buildConfig.directory_folder}/${item.fallback_name.replace(/#/g, "%23")}_portrait.png`} alt={item.codename[language]} />
 }
 ImageElement.propTypes = {
   item: PropTypes.object.isRequired,

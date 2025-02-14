@@ -56,9 +56,9 @@ export const copyShowcaseData = (name, {
   const buildConfig = {
     insight_id: config.insight_id,
     link: operators[name].link,
-    filename: operators[name].filename.replace('#', '%23'),
+    filename: operators[name].filename.replace(/#/g, '%23'),
     logo_filename: operators[name].logo,
-    fallback_filename: operators[name].fallback_name.replace('#', '%23'),
+    fallback_filename: operators[name].fallback_name.replace(/#/g, '%23'),
     viewport_left: operators[name].viewport_left,
     viewport_right: operators[name].viewport_right,
     viewport_top: operators[name].viewport_top,

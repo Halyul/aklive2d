@@ -65,7 +65,8 @@ const operators = generateMapping()
 export default operators
 
 export function getOperatorId(operatorConfig) {
-    return operatorConfig.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4')
+    // return operatorConfig.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4')
+    return operatorConfig.fallback_name.replace(/^(char_[\d]+)(_[\w]+)(_.+)$/g, '$1$2$3')
 }
 
 export const build = async (namesToBuild) => {
@@ -141,8 +142,8 @@ export const generateAssetsJson = async (filename, extractedDir, useJSON = false
         }
         assetsJson[`./assets/${item}`] = BASE64_PNG_PREFIX + buffer.toString('base64')
     }
-    assetsJson[`./assets/${skelFilename.replace('#', '%23')}`] = BASE64_BINARY_PREFIX + skel.toString('base64')
-    assetsJson[`./assets/${atlasFilename.replace('#', '%23')}`] = BASE64_BINARY_PREFIX + Buffer.from(atlas).toString('base64')
+    assetsJson[`./assets/${skelFilename.replace(/#/g, '%23')}`] = BASE64_BINARY_PREFIX + skel.toString('base64')
+    assetsJson[`./assets/${atlasFilename.replace(/#/g, '%23')}`] = BASE64_BINARY_PREFIX + Buffer.from(atlas).toString('base64')
     return {
         dimensions,
         assetsJson

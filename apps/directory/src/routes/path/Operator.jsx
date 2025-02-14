@@ -118,7 +118,7 @@ export default function Operator() {
     if (config) {
       setConfig(config)
       configRef.current = config
-      fetch(`/${buildConfig.directory_folder}/${config.filename.replace("#", "%23")}.json`).then(res => res.json()).then(data => {
+      fetch(`/${buildConfig.directory_folder}/${config.filename.replace(/#/g, "%23")}.json`).then(res => res.json()).then(data => {
         setSpineAnimationName(defaultSpineAnimationName)
         setSpineData(data)
       })

@@ -32,9 +32,6 @@ importers:
       '@aklive2d/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@aklive2d/helpers':
-        specifier: workspace:*
-        version: link:../../packages/helpers
       '@aklive2d/libs':
         specifier: workspace:*
         version: link:../../packages/libs
@@ -56,6 +53,9 @@ importers:
       '@aklive2d/stylelint-config':
         specifier: workspace:*
         version: link:../../packages/stylelint-config
+      '@aklive2d/vite-helpers':
+        specifier: workspace:*
+        version: link:../../packages/vite-helpers
       jotai:
         specifier: ^2.11.3
         version: 2.12.0(@types/react@19.0.8)(react@19.0.0)
@@ -119,9 +119,6 @@ importers:
       '@aklive2d/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@aklive2d/helpers':
-        specifier: workspace:*
-        version: link:../../packages/helpers
       '@aklive2d/libs':
         specifier: workspace:*
         version: link:../../packages/libs
@@ -140,6 +137,9 @@ importers:
       '@aklive2d/stylelint-config':
         specifier: workspace:*
         version: link:../../packages/stylelint-config
+      '@aklive2d/vite-helpers':
+        specifier: workspace:*
+        version: link:../../packages/vite-helpers
       vite:
         specifier: ^6.1.0
         version: 6.1.0(sass@1.85.0)(yaml@2.7.0)
@@ -245,33 +245,6 @@ importers:
       globals:
         specifier: ^15.14.0
         version: 15.15.0
-
-  packages/helpers:
-    dependencies:
-      '@aklive2d/assets':
-        specifier: workspace:*
-        version: link:../assets
-      '@aklive2d/background':
-        specifier: workspace:*
-        version: link:../background
-      '@aklive2d/config':
-        specifier: workspace:*
-        version: link:../config
-      '@aklive2d/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@aklive2d/libs':
-        specifier: workspace:*
-        version: link:../libs
-      '@aklive2d/music':
-        specifier: workspace:*
-        version: link:../music
-      '@aklive2d/operator':
-        specifier: workspace:*
-        version: link:../operator
-      '@aklive2d/prettier-config':
-        specifier: workspace:*
-        version: link:../prettier-config
 
   packages/libs:
     dependencies:
@@ -395,6 +368,33 @@ importers:
       stylelint-prettier:
         specifier: ^5.0.3
         version: 5.0.3(prettier@3.5.1)(stylelint@16.14.1(typescript@5.7.3))
+
+  packages/vite-helpers:
+    dependencies:
+      '@aklive2d/assets':
+        specifier: workspace:*
+        version: link:../assets
+      '@aklive2d/background':
+        specifier: workspace:*
+        version: link:../background
+      '@aklive2d/config':
+        specifier: workspace:*
+        version: link:../config
+      '@aklive2d/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@aklive2d/libs':
+        specifier: workspace:*
+        version: link:../libs
+      '@aklive2d/music':
+        specifier: workspace:*
+        version: link:../music
+      '@aklive2d/operator':
+        specifier: workspace:*
+        version: link:../operator
+      '@aklive2d/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
 
   packages/wrangler:
     dependencies:

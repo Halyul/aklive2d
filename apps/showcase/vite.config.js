@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import path from 'node:path'
 import { has } from '@aklive2d/operator'
 import { envParser } from '@aklive2d/libs'
-import { vite } from '@aklive2d/helpers'
+import { copyShowcaseData } from '@aklive2d/vite-helpers'
 import * as dirs from './index.js'
 
 // https://vite.dev/config/
@@ -24,7 +24,7 @@ export default defineConfig(({ command, isPreview }) => {
         if (isPreview) {
             newOutDir = path.join(dirs.DIST_DIR, name)
         } else {
-            vite.copyShowcaseData(name, {
+            copyShowcaseData(name, {
                 dataDir: dirs.DATA_DIR,
                 publicAssetsDir: dirs.PUBLIC_ASSETS_DIR,
             })

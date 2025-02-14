@@ -19,7 +19,7 @@
         "@aklive2d/libs": "workspace:*",
         "@aklive2d/assets": "workspace:*",
         "@aklive2d/operator": "workspace:*",
-        "@aklive2d/helpers": "workspace:*",
+        "@aklive2d/vite-helpers": "workspace:*",
         "@aklive2d/module": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*"
     }

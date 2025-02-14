@@ -3,13 +3,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import config from '@aklive2d/config'
 import * as showcaseDirs from '@aklive2d/showcase'
-import { vite } from '@aklive2d/helpers'
+import { copyDirectoryData } from '@aklive2d/helpers'
 
 // https://vite.dev/config/
 export default defineConfig(async () => {
     const dataDir = path.resolve(import.meta.dirname, config.dir_name.data)
     const publicDir = path.resolve(showcaseDirs.DIST_DIR)
-    await vite.copyDirectoryData({ dataDir, publicDir })
+    await copyDirectoryData({ dataDir, publicDir })
     return {
         envDir: dataDir,
         plugins: [react()],

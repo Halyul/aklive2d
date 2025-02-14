@@ -2,14 +2,14 @@ import path from 'node:path'
 import { build as viteBuild } from 'vite'
 import operators from '@aklive2d/operator'
 import { envParser, file } from '@aklive2d/libs'
-import { vite } from '@aklive2d/helpers'
+import { copyShowcaseData, copyProjectJSON } from '@aklive2d/vite-helpers'
 import * as dirs from './index.js'
 
 const build = async (namesToBuild) => {
     const names = !namesToBuild.length ? Object.keys(operators) : namesToBuild
     console.log('Generating assets for', names.length, 'operators')
     for (const name of names) {
-        vite.copyShowcaseData(name, {
+        copyShowcaseData(name, {
             dataDir: dirs.DATA_DIR,
             publicAssetsDir: dirs.PUBLIC_ASSETS_DIR,
         })
@@ -17,7 +17,7 @@ const build = async (namesToBuild) => {
         const releaseDir = path.join(dirs.DIST_DIR, name)
         file.mv(dirs.OUT_DIR, releaseDir)
         file.rm(dirs.DATA_DIR)
-        vite.copyProjectJSON(name, {
+        copyProjectJSON(name, {
             releaseDir,
         })
     }

@@ -1,7 +1,8 @@
 {
-    "name": "@aklive2d/helpers",
+    "name": "@aklive2d/vite-helpers",
     "private": true,
     "version": "0.0.0",
+    "license": "MIT",
     "main": "index.js",
     "type": "module",
     "dependencies": {

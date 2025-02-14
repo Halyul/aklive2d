@@ -1,291 +1,324 @@
 import {
-  insertHTMLChild,
-  updateHTMLOptions,
-  showRelatedHTML,
-  syncHTMLValue,
-  createCustomEvent,
-} from "@/components/helper";
+    insertHTMLChild,
+    updateHTMLOptions,
+    showRelatedHTML,
+    syncHTMLValue,
+    createCustomEvent,
+} from '@/components/helper'
 import { spine } from '@aklive2d/module'
 import assets from '!/assets.json'
 import '@/components/player.css'
-import buildConfig from "!/config.json"
+import buildConfig from '!/config.json'
 
 export default class Player {
-  #el = document.createElement("div")
-  #parentEl
-  #showControls = (new URLSearchParams(window.location.search)).has("controls")
-  #resetTime = window.performance.now()
-  #isPlayingInteract = false
-  #spine
-  #default = {
-    fps: 60,
-    padding: {
-      left: parseInt(buildConfig.viewport_left),
-      right: parseInt(buildConfig.viewport_right),
-      top: parseInt(buildConfig.viewport_top),
-      bottom: parseInt(buildConfig.viewport_bottom),
-    },
-    scale: 1,
-  }
-  #config = {
-    fps: this.#default.fps,
-    useStartAnimation: true,
-    usePadding: false,
-    padding: {
-      ...this.#default.padding
-    },
-    scale: this.#default.scale
-  }
+    #el = document.createElement('div')
+    #parentEl
+    #showControls = new URLSearchParams(window.location.search).has('controls')
+    #resetTime = window.performance.now()
+    #isPlayingInteract = false
+    #spine
+    #default = {
+        fps: 60,
+        padding: {
+            left: parseInt(buildConfig.viewport_left),
+            right: parseInt(buildConfig.viewport_right),
+            top: parseInt(buildConfig.viewport_top),
+            bottom: parseInt(buildConfig.viewport_bottom),
+        },
+        scale: 1,
+    }
+    #config = {
+        fps: this.#default.fps,
+        useStartAnimation: true,
+        usePadding: false,
+        padding: {
+            ...this.#default.padding,
+        },
+        scale: this.#default.scale,
+    }
 
-  constructor(el) {
-    this.#parentEl = el
-    this.#el.id = "player-box"
-    insertHTMLChild(this.#parentEl, this.#el)
-    const _this = this
-    const playerConfig = {
-      atlasUrl: `./assets/${buildConfig.filename}.atlas`,
-      rawDataURIs: assets,
-      premultipliedAlpha: true,
-      alpha: true,
-      backgroundColor: "#00000000",
-      viewport: {
-        debugRender: false,
-        padLeft: `${buildConfig.viewport_left}%`,
-        padRight: `${buildConfig.viewport_right}%`,
-        padTop: `${buildConfig.viewport_top}%`,
-        padBottom: `${buildConfig.viewport_bottom}%`,
-        x: 0,
-        y: 0,
-      },
-      showControls: _this.#showControls,
-      touch: _this.#showControls,
-      fps: 60,
-      defaultMix: 0,
-      success: function (widget) {
-        if (widget.skeleton.data.animations.map(e => e.name).includes("Start") && _this.useStartAnimation) {
-          widget.animationState.setAnimation(0, "Start", false)
+    constructor(el) {
+        this.#parentEl = el
+        this.#el.id = 'player-box'
+        insertHTMLChild(this.#parentEl, this.#el)
+        const _this = this
+        const playerConfig = {
+            atlasUrl: `./assets/${buildConfig.filename}.atlas`,
+            rawDataURIs: assets,
+            premultipliedAlpha: true,
+            alpha: true,
+            backgroundColor: '#00000000',
+            viewport: {
+                debugRender: false,
+                padLeft: `${buildConfig.viewport_left}%`,
+                padRight: `${buildConfig.viewport_right}%`,
+                padTop: `${buildConfig.viewport_top}%`,
+                padBottom: `${buildConfig.viewport_bottom}%`,
+                x: 0,
+                y: 0,
+            },
+            showControls: _this.#showControls,
+            touch: _this.#showControls,
+            fps: 60,
+            defaultMix: 0,
+            success: function (widget) {
+                if (
+                    widget.skeleton.data.animations
+                        .map((e) => e.name)
+                        .includes('Start') &&
+                    _this.useStartAnimation
+                ) {
+                    widget.animationState.setAnimation(0, 'Start', false)
+                }
+                widget.animationState.addAnimation(0, 'Idle', true, 0)
+                widget.animationState.addListener({
+                    end: (e) => {
+                        if (e.animation.name == 'Interact') {
+                            _this.#isPlayingInteract = false
+                        }
+                    },
+                    complete: () => {
+                        if (
+                            window.performance.now() - _this.#resetTime >=
+                                8 * 1000 &&
+                            Math.random() < 0.3
+                        ) {
+                            _this.#resetTime = window.performance.now()
+                            let entry = widget.animationState.setAnimation(
+                                0,
+                                'Special',
+                                false
+                            )
+                            entry.mixDuration = 0.3
+                            widget.animationState.addAnimation(
+                                0,
+                                'Idle',
+                                true,
+                                0
+                            )
+                        }
+                    },
+                })
+                widget.canvas.onclick = function () {
+                    if (_this.#isPlayingInteract) {
+                        return
+                    }
+                    _this.#isPlayingInteract = true
+                    let entry = widget.animationState.setAnimation(
+                        0,
+                        'Interact',
+                        false
+                    )
+                    entry.mixDuration = 0.3
+                    widget.animationState.addAnimation(0, 'Idle', true, 0)
+                }
+                document.dispatchEvent(Events.Ready.handler())
+            },
         }
-        widget.animationState.addAnimation(0, "Idle", true, 0);
-        widget.animationState.addListener({
-          end: (e) => {
-            if (e.animation.name == "Interact") {
-              _this.#isPlayingInteract = false;
-            }
-          },
-          complete: () => {
-            if (window.performance.now() - _this.#resetTime >= 8 * 1000 && Math.random() < 0.3) {
-              _this.#resetTime = window.performance.now();
-              let entry = widget.animationState.setAnimation(0, "Special", false);
-              entry.mixDuration = 0.3;
-              widget.animationState.addAnimation(0, "Idle", true, 0);
-            }
-          },
-        });
-        widget.canvas.onclick = function () {
-          if (_this.#isPlayingInteract) {
-            return;
-          }
-          _this.#isPlayingInteract = true;
-          let entry = widget.animationState.setAnimation(0, "Interact", false);
-          entry.mixDuration = 0.3;
-          widget.animationState.addAnimation(0, "Idle", true, 0);
+        if (buildConfig.use_json === 'true') {
+            playerConfig.jsonUrl = `./assets/${buildConfig.filename}.json`
+        } else {
+            playerConfig.skelUrl = `./assets/${buildConfig.filename}.skel`
         }
-        document.dispatchEvent(Events.Ready.handler());
-      },
+        this.#spine = new spine.SpinePlayer(this.#el, playerConfig)
     }
-    if (buildConfig.use_json === "true") {
-      playerConfig.jsonUrl = `./assets/${buildConfig.filename}.json`
-    } else {
-      playerConfig.skelUrl = `./assets/${buildConfig.filename}.skel`
+
+    success() {
+        this.#loadViewport()
+        updateHTMLOptions(
+            this.#spine.skeleton.data.animations.map((e) => e.name),
+            'animation-selection'
+        )
     }
-    this.#spine = new spine.SpinePlayer(this.#el, playerConfig)
-  }
 
-  success() {
-    this.#loadViewport()
-    updateHTMLOptions(this.#spine.skeleton.data.animations.map(e => e.name), "animation-selection")
-  }
-
-  resetPadding() {
-    this.padding = {...this.#default.padding}
-    document.getElementById("position-padding-left-slider").value = this.#default.padding.left
-    document.getElementById("position-padding-left-input").value = this.#default.padding.left
-    document.getElementById("position-padding-right-slider").value = this.#default.padding.right
-    document.getElementById("position-padding-right-input").value = this.#default.padding.right
-    document.getElementById("position-padding-top-slider").value = this.#default.padding.top
-    document.getElementById("position-padding-top-input").value = this.#default.padding.top
-    document.getElementById("position-padding-bottom-slider").value = this.#default.padding.bottom
-    document.getElementById("position-padding-bottom-input").value = this.#default.padding.bottom
-  }
-
-  resetScale() {
-    this.scale = this.#default.scale
-  }
-
-  resetFPS() {
-    this.fps = this.#default.fps
-    document.getElementById("fps-slider").value = this.#default.fps
-    document.getElementById("fps-input").value = this.#default.fps
-  }
-
-  reset() {
-    this.resetFPS()
-    this.resetPadding()
-    this.resetScale()
-    this.#spine.play()
-  }
-
-  #loadViewport() {
-    this.#spine.updateViewport({
-      padLeft: `${this.#config.padding.left}%`,
-      padRight: `${this.#config.padding.right}%`,
-      padTop: `${this.#config.padding.top}%`,
-      padBottom: `${this.#config.padding.bottom}%`,
-    })
-  }
-
-  get usePadding() {
-    return this.#config.usePadding
-  }
-
-  set usePadding(v) {
-    this.#config.usePadding = v
-  }
-
-  set useStartAnimation(v) {
-    this.#config.useStartAnimation = v
-  }
-
-  get useStartAnimation() {
-    return this.#config.useStartAnimation
-  }
-
-  get spine() {
-    return this.#spine
-  }
-
-  set fps(v) {
-    this.#config.fps = v
-    this.#spine.setFps(v)
-  }
-
-  get fps() {
-    return this.#config.fps
-  }
-
-  set scale(v) {
-    this.#config.scale = 1 / v
-    this.#spine.setOperatorScale(1 / v)
-  }
-
-  get scale() {
-    return this.#config.scale
-  }
-
-  get node() {
-    return this.#el
-  }
-
-  get padLeft() {
-    return this.padding.left
-  }
-
-  set padLeft(v) {
-    this.padding = {
-      left: v
+    resetPadding() {
+        this.padding = { ...this.#default.padding }
+        document.getElementById('position-padding-left-slider').value =
+            this.#default.padding.left
+        document.getElementById('position-padding-left-input').value =
+            this.#default.padding.left
+        document.getElementById('position-padding-right-slider').value =
+            this.#default.padding.right
+        document.getElementById('position-padding-right-input').value =
+            this.#default.padding.right
+        document.getElementById('position-padding-top-slider').value =
+            this.#default.padding.top
+        document.getElementById('position-padding-top-input').value =
+            this.#default.padding.top
+        document.getElementById('position-padding-bottom-slider').value =
+            this.#default.padding.bottom
+        document.getElementById('position-padding-bottom-input').value =
+            this.#default.padding.bottom
     }
-  }
 
-  get padRight() {
-    return this.padding.right
-  }
-
-  set padRight(v) {
-    this.padding = {
-      right: v
+    resetScale() {
+        this.scale = this.#default.scale
     }
-  }
 
-  get padTop() {
-    return this.padding.top
-  }
-
-  set padTop(v) {
-    this.padding = {
-      top: v
+    resetFPS() {
+        this.fps = this.#default.fps
+        document.getElementById('fps-slider').value = this.#default.fps
+        document.getElementById('fps-input').value = this.#default.fps
     }
-  }
 
-  get padBottom() {
-    return this.padding.bottom
-  }
-
-  set padBottom(v) {
-    this.padding = {
-      bottom: v
+    reset() {
+        this.resetFPS()
+        this.resetPadding()
+        this.resetScale()
+        this.#spine.play()
     }
-  }
 
-  get padding() {
-    return this.#config.padding
-  }
+    #loadViewport() {
+        this.#spine.updateViewport({
+            padLeft: `${this.#config.padding.left}%`,
+            padRight: `${this.#config.padding.right}%`,
+            padTop: `${this.#config.padding.top}%`,
+            padBottom: `${this.#config.padding.bottom}%`,
+        })
+    }
 
-  set padding(v) {
-    if (typeof v !== "object") return;
-    if (v.left) this.#config.padding.left = v.left;
-    if (v.right) this.#config.padding.right = v.right ;
-    if (v.top) this.#config.padding.top = v.top;
-    if (v.bottom) this.#config.padding.bottom = v.bottom;
-    this.#loadViewport()
-  }
+    get usePadding() {
+        return this.#config.usePadding
+    }
 
-  get backCompatibilityFns() {
-    const _this = this
-    return {
-      spinePlayer: _this.#spine,
-      setFPS: (fps) => _this.fps = fps,
-      loadViewport: _this.#loadViewport,
-      setScale: (v) => this.scale = v,
-      scale: _this.scale,
-      positionPadding: (key, value) => {
-        switch (key) {
-          case "left":
-            this.padding = {
-              left: value
-            }
-            break;
-          case "right":
-            this.padding = {
-              right: value
-            }
-            break;
-          case "top":
-            this.padding = {
-              top: value
-            }
-            break;
-          case "bottom":
-            this.padding = {
-              bottom: value
-            }
-            break;
-          default:
-            this.#config.padding = value
-            break;
+    set usePadding(v) {
+        this.#config.usePadding = v
+    }
+
+    set useStartAnimation(v) {
+        this.#config.useStartAnimation = v
+    }
+
+    get useStartAnimation() {
+        return this.#config.useStartAnimation
+    }
+
+    get spine() {
+        return this.#spine
+    }
+
+    set fps(v) {
+        this.#config.fps = v
+        this.#spine.setFps(v)
+    }
+
+    get fps() {
+        return this.#config.fps
+    }
+
+    set scale(v) {
+        this.#config.scale = 1 / v
+        this.#spine.setOperatorScale(1 / v)
+    }
+
+    get scale() {
+        return this.#config.scale
+    }
+
+    get node() {
+        return this.#el
+    }
+
+    get padLeft() {
+        return this.padding.left
+    }
+
+    set padLeft(v) {
+        this.padding = {
+            left: v,
         }
-      },
-      positionReset: _this.resetPadding,
-      scaleReset: _this.resetScale,
-      useStartAnimation: _this.useStartAnimation
     }
-  }
 
-  get config() {
-    return {...this.#config}
-  }
+    get padRight() {
+        return this.padding.right
+    }
 
-  get HTML() {
-    return `
+    set padRight(v) {
+        this.padding = {
+            right: v,
+        }
+    }
+
+    get padTop() {
+        return this.padding.top
+    }
+
+    set padTop(v) {
+        this.padding = {
+            top: v,
+        }
+    }
+
+    get padBottom() {
+        return this.padding.bottom
+    }
+
+    set padBottom(v) {
+        this.padding = {
+            bottom: v,
+        }
+    }
+
+    get padding() {
+        return this.#config.padding
+    }
+
+    set padding(v) {
+        if (typeof v !== 'object') return
+        if (v.left) this.#config.padding.left = v.left
+        if (v.right) this.#config.padding.right = v.right
+        if (v.top) this.#config.padding.top = v.top
+        if (v.bottom) this.#config.padding.bottom = v.bottom
+        this.#loadViewport()
+    }
+
+    get backCompatibilityFns() {
+        const _this = this
+        return {
+            spinePlayer: _this.#spine,
+            setFPS: (fps) => (_this.fps = fps),
+            loadViewport: _this.#loadViewport,
+            setScale: (v) => (this.scale = v),
+            scale: _this.scale,
+            positionPadding: (key, value) => {
+                switch (key) {
+                    case 'left':
+                        this.padding = {
+                            left: value,
+                        }
+                        break
+                    case 'right':
+                        this.padding = {
+                            right: value,
+                        }
+                        break
+                    case 'top':
+                        this.padding = {
+                            top: value,
+                        }
+                        break
+                    case 'bottom':
+                        this.padding = {
+                            bottom: value,
+                        }
+                        break
+                    default:
+                        this.#config.padding = value
+                        break
+                }
+            },
+            positionReset: _this.resetPadding,
+            scaleReset: _this.resetScale,
+            useStartAnimation: _this.useStartAnimation,
+        }
+    }
+
+    get config() {
+        return { ...this.#config }
+    }
+
+    get HTML() {
+        return `
     <div>
       <div>
         <label for="fps">FPS</label>
@@ -309,8 +342,8 @@ export default class Player {
       </div>
       <div>
         <label for="position">Position</label>
-        <input type="checkbox" id="position" name="position" ${this.usePadding ? "checked" : ""}/>
-        <div id="position-realted" ${this.usePadding ? "" : "hidden"}>
+        <input type="checkbox" id="position" name="position" ${this.usePadding ? 'checked' : ''}/>
+        <div id="position-realted" ${this.usePadding ? '' : 'hidden'}>
           <div>
             <label for="position-padding-left">Padding Left</label>
             <input type="range" min="-100" max="100" id="position-padding-left-slider" value="${this.padding.left}" />
@@ -335,137 +368,229 @@ export default class Player {
       </div>
     </div>
     `
-  }
+    }
 
-  get listeners() {
-    return [
-      {
-        event: Events.SetFPS.name, handler: e => this.fps = e.detail
-      }, {
-        event: Events.SetScale.name, handler: e => this.scale = e.detail
-      }, {
-        event: Events.SetPadding.name, handler: e => this.padding = e.detail
-      }, {
-        event: Events.ResetPadding.name, handler: () => this.resetPadding()
-      }, {
-        event: Events.SetUseStartAnimation.name, handler: e => this.useStartAnimation = e.detail
-      }, {
-        id: "fps-slider", event: "change", handler: e => {
-          syncHTMLValue(e.currentTarget, "fps-input");
-          this.fps = e.currentTarget.value;
-        }
-      }, {
-        id: "fps-slider", event: "input", handler: e => {
-          syncHTMLValue(e.currentTarget, "fps-input");
-        }
-      }, {
-        id: "fps-input", event: "change", handler: e => {
-          syncHTMLValue(e.currentTarget, "fps-slider");
-          this.fps = e.currentTarget.value;
-        }
-      }, {
-        id: "animation-selection", event: "change", handler: e => {
-          this.spine.animationState.setAnimation(0, e.currentTarget.value, false, 0)
-          this.spine.animationState.addAnimation(0, "Idle", true, 0);
-        }
-      }, {
-        id: "use-start-animation", event: "click", handler: e => {
-          this.useStartAnimation = e.currentTarget.checked;
-        }
-      }, {
-        id: "player-play", event: "click", handler: e => {
-          this.spine.play();
-          e.currentTarget.disabled = true;
-          document.getElementById("player-pause").disabled = false;
-        }
-      }, {
-        id: "player-pause", event: "click", handler: e => {
-          this.spine.pause();
-          e.currentTarget.disabled = true;
-          document.getElementById("player-play").disabled = false;
-        }
-      }, {
-        id: "scale-slider", event: "input", handler: e => {
-          syncHTMLValue(e.currentTarget, "scale-input");
-          this.scale = e.currentTarget.value;
-        }
-      }, {
-        id: "scale-input", event: "change", handler: e => {
-          syncHTMLValue(e.currentTarget, "scale-slider");
-          this.scale = e.currentTarget.value;
-        }
-      }, {
-        id: "position", event: "click", handler: e => {
-          showRelatedHTML(e.currentTarget, "position-realted");
-          this.usePadding = e.currentTarget.checked;
-          if (!e.currentTarget.checked) this.resetPadding();
-        }
-      }, {
-        id: "position-padding-left-slider", event: "input", handler: e => {
-          syncHTMLValue(e.currentTarget, "position-padding-left-input");
-          this.padding = {
-            left: e.currentTarget.value
-          }
-        }
-      }, {
-        id: "position-padding-left-input", event: "change", handler: e => {
-          syncHTMLValue(e.currentTarget, "position-padding-left-slider");
-          this.padding = {
-            left: e.currentTarget.value
-          }
-        }
-      }, {
-        id: "position-padding-right-slider", event: "input", handler: e => {
-          syncHTMLValue(e.currentTarget, "position-padding-right-input");
-          this.padding = {
-            right: e.currentTarget.value
-          }
-        }
-      }, {
-        id: "position-padding-right-input", event: "change", handler: e => {
-          syncHTMLValue(e.currentTarget, "position-padding-right-slider");
-          this.padding = {
-            right: e.currentTarget.value
-          }
-        }
-      }, {
-        id: "position-padding-top-slider", event: "input", handler: e => {
-          syncHTMLValue(e.currentTarget, "position-padding-top-input");
-          this.padding = {
-            top: e.currentTarget.value
-          }
-        }
-      }, {
-        id: "position-padding-top-input", event: "change", handler: e => {
-          syncHTMLValue(e.currentTarget, "position-padding-top-slider");
-          this.padding = {
-            top: e.currentTarget.value
-          }
-        }
-      }, {
-        id: "position-padding-bottom-slider", event: "input", handler: e => {
-          syncHTMLValue(e.currentTarget, "position-padding-bottom-input");
-          this.padding = {
-            bottom: e.currentTarget.value
-          }
-        }
-      }, {
-        id: "position-padding-bottom-input", event: "change", handler: e => {
-          syncHTMLValue(e.currentTarget, "position-padding-bottom-slider");
-          this.padding = {
-            bottom: e.currentTarget.value
-          }
-        }
-      },
-    ]
-  }
+    get listeners() {
+        return [
+            {
+                event: Events.SetFPS.name,
+                handler: (e) => (this.fps = e.detail),
+            },
+            {
+                event: Events.SetScale.name,
+                handler: (e) => (this.scale = e.detail),
+            },
+            {
+                event: Events.SetPadding.name,
+                handler: (e) => (this.padding = e.detail),
+            },
+            {
+                event: Events.ResetPadding.name,
+                handler: () => this.resetPadding(),
+            },
+            {
+                event: Events.SetUseStartAnimation.name,
+                handler: (e) => (this.useStartAnimation = e.detail),
+            },
+            {
+                id: 'fps-slider',
+                event: 'change',
+                handler: (e) => {
+                    syncHTMLValue(e.currentTarget, 'fps-input')
+                    this.fps = e.currentTarget.value
+                },
+            },
+            {
+                id: 'fps-slider',
+                event: 'input',
+                handler: (e) => {
+                    syncHTMLValue(e.currentTarget, 'fps-input')
+                },
+            },
+            {
+                id: 'fps-input',
+                event: 'change',
+                handler: (e) => {
+                    syncHTMLValue(e.currentTarget, 'fps-slider')
+                    this.fps = e.currentTarget.value
+                },
+            },
+            {
+                id: 'animation-selection',
+                event: 'change',
+                handler: (e) => {
+                    this.spine.animationState.setAnimation(
+                        0,
+                        e.currentTarget.value,
+                        false,
+                        0
+                    )
+                    this.spine.animationState.addAnimation(0, 'Idle', true, 0)
+                },
+            },
+            {
+                id: 'use-start-animation',
+                event: 'click',
+                handler: (e) => {
+                    this.useStartAnimation = e.currentTarget.checked
+                },
+            },
+            {
+                id: 'player-play',
+                event: 'click',
+                handler: (e) => {
+                    this.spine.play()
+                    e.currentTarget.disabled = true
+                    document.getElementById('player-pause').disabled = false
+                },
+            },
+            {
+                id: 'player-pause',
+                event: 'click',
+                handler: (e) => {
+                    this.spine.pause()
+                    e.currentTarget.disabled = true
+                    document.getElementById('player-play').disabled = false
+                },
+            },
+            {
+                id: 'scale-slider',
+                event: 'input',
+                handler: (e) => {
+                    syncHTMLValue(e.currentTarget, 'scale-input')
+                    this.scale = e.currentTarget.value
+                },
+            },
+            {
+                id: 'scale-input',
+                event: 'change',
+                handler: (e) => {
+                    syncHTMLValue(e.currentTarget, 'scale-slider')
+                    this.scale = e.currentTarget.value
+                },
+            },
+            {
+                id: 'position',
+                event: 'click',
+                handler: (e) => {
+                    showRelatedHTML(e.currentTarget, 'position-realted')
+                    this.usePadding = e.currentTarget.checked
+                    if (!e.currentTarget.checked) this.resetPadding()
+                },
+            },
+            {
+                id: 'position-padding-left-slider',
+                event: 'input',
+                handler: (e) => {
+                    syncHTMLValue(
+                        e.currentTarget,
+                        'position-padding-left-input'
+                    )
+                    this.padding = {
+                        left: e.currentTarget.value,
+                    }
+                },
+            },
+            {
+                id: 'position-padding-left-input',
+                event: 'change',
+                handler: (e) => {
+                    syncHTMLValue(
+                        e.currentTarget,
+                        'position-padding-left-slider'
+                    )
+                    this.padding = {
+                        left: e.currentTarget.value,
+                    }
+                },
+            },
+            {
+                id: 'position-padding-right-slider',
+                event: 'input',
+                handler: (e) => {
+                    syncHTMLValue(
+                        e.currentTarget,
+                        'position-padding-right-input'
+                    )
+                    this.padding = {
+                        right: e.currentTarget.value,
+                    }
+                },
+            },
+            {
+                id: 'position-padding-right-input',
+                event: 'change',
+                handler: (e) => {
+                    syncHTMLValue(
+                        e.currentTarget,
+                        'position-padding-right-slider'
+                    )
+                    this.padding = {
+                        right: e.currentTarget.value,
+                    }
+                },
+            },
+            {
+                id: 'position-padding-top-slider',
+                event: 'input',
+                handler: (e) => {
+                    syncHTMLValue(e.currentTarget, 'position-padding-top-input')
+                    this.padding = {
+                        top: e.currentTarget.value,
+                    }
+                },
+            },
+            {
+                id: 'position-padding-top-input',
+                event: 'change',
+                handler: (e) => {
+                    syncHTMLValue(
+                        e.currentTarget,
+                        'position-padding-top-slider'
+                    )
+                    this.padding = {
+                        top: e.currentTarget.value,
+                    }
+                },
+            },
+            {
+                id: 'position-padding-bottom-slider',
+                event: 'input',
+                handler: (e) => {
+                    syncHTMLValue(
+                        e.currentTarget,
+                        'position-padding-bottom-input'
+                    )
+                    this.padding = {
+                        bottom: e.currentTarget.value,
+                    }
+                },
+            },
+            {
+                id: 'position-padding-bottom-input',
+                event: 'change',
+                handler: (e) => {
+                    syncHTMLValue(
+                        e.currentTarget,
+                        'position-padding-bottom-slider'
+                    )
+                    this.padding = {
+                        bottom: e.currentTarget.value,
+                    }
+                },
+            },
+        ]
+    }
 }
 
 export const Events = {
-  Ready: createCustomEvent("player-ready"),
-  SetFPS: createCustomEvent("player-set-fps", true),
-  SetScale: createCustomEvent("player-set-scale", true),
-  SetPadding: createCustomEvent("player-set-padding", true),
-  ResetPadding: createCustomEvent("player-reset-padding"),
-  SetUseStartAnimation: createCustomEvent("player-set-usestartanimation", true),
+    Ready: createCustomEvent('player-ready'),
+    SetFPS: createCustomEvent('player-set-fps', true),
+    SetScale: createCustomEvent('player-set-scale', true),
+    SetPadding: createCustomEvent('player-set-padding', true),
+    ResetPadding: createCustomEvent('player-reset-padding'),
+    SetUseStartAnimation: createCustomEvent(
+        'player-set-usestartanimation',
+        true
+    ),
 }

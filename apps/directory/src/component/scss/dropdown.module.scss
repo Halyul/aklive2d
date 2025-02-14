@@ -1,185 +1,187 @@
 .dropdown {
-  position: relative;
-  display: inline-block;
-  user-select: none;
-  z-index: 2;
-  padding: 0.5em;
-  cursor: pointer;
-
-  .text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: var(--text-color);
-    height: 2em;
-    min-width: 2em;
-
-    .popup {
-      opacity: 0;
-      position: absolute;
-      background-color: var(--root-background-color);
-      width: max-content;
-      height: max-content;
-      max-height: 61.8vh;
-      max-width: 61.8vw;
-      z-index: -1;
-      top: 2.5em;
-      right: 0;
-      cursor: auto;
-      transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-      overflow: auto;
-      padding: 0.5rem;
-      border: 1px solid var(--border-color);
-      visibility: hidden;
-
-      .text {
-        font-size: 1rem;
-      }
-    }
-
-    &:hover {
-      .popup {
-        visibility: unset;
-        opacity: 1;
-      }
-    }
-  }
-
-  .content {
-    padding-right: 1.2em;
-    height: 1em;
-  }
-
-  .icon {
-    position: absolute;
-    bottom: 0.5em;
-    right: 0.6em;
-    width: 0.5em;
-    height: 0.5em;
+    position: relative;
     display: inline-block;
-    vertical-align: middle;
-    border-left: 0.15em solid var(--text-color);
-    border-bottom: 0.15em solid var(--text-color);
-    border-right: 0.15em solid var(--text-color);
-    border-top: 0.15em solid var(--text-color);
-    transform: translateY(-0.7em) rotate(-45deg);
-  }
+    user-select: none;
+    z-index: 2;
+    padding: 0.5em;
+    cursor: pointer;
 
-  .menu {
-    scrollbar-gutter: stable;
-    opacity: 0;
-    position: absolute;
-    background-color: var(--root-background-color);
-    width: max-content;
-    max-height: 61.8vh;
-    max-width: 61.8vw;
-    z-index: -1;
-    top: 2.5em;
-    right: 0;
-    display: flex;
-    align-items: stretch;
-    flex-flow: column nowrap;
-    transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-    overflow: auto;
-    padding: 0.5rem;
-    border: 1px solid var(--border-color);
-    visibility: hidden;
-    color: var(--link-highlight-color);
-    cursor: auto;
+    .text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: var(--text-color);
+        height: 2em;
+        min-width: 2em;
+
+        .popup {
+            opacity: 0;
+            position: absolute;
+            background-color: var(--root-background-color);
+            width: max-content;
+            height: max-content;
+            max-height: 61.8vh;
+            max-width: 61.8vw;
+            z-index: -1;
+            top: 2.5em;
+            right: 0;
+            cursor: auto;
+            transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+            overflow: auto;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            visibility: hidden;
+
+            .text {
+                font-size: 1rem;
+            }
+        }
+
+        &:hover {
+            .popup {
+                visibility: unset;
+                opacity: 1;
+            }
+        }
+    }
+
+    .content {
+        padding-right: 1.2em;
+        height: 1em;
+    }
+
+    .icon {
+        position: absolute;
+        bottom: 0.5em;
+        right: 0.6em;
+        width: 0.5em;
+        height: 0.5em;
+        display: inline-block;
+        vertical-align: middle;
+        border-left: 0.15em solid var(--text-color);
+        border-bottom: 0.15em solid var(--text-color);
+        border-right: 0.15em solid var(--text-color);
+        border-top: 0.15em solid var(--text-color);
+        transform: translateY(-0.7em) rotate(-45deg);
+    }
+
+    .menu {
+        scrollbar-gutter: stable;
+        opacity: 0;
+        position: absolute;
+        background-color: var(--root-background-color);
+        width: max-content;
+        max-height: 61.8vh;
+        max-width: 61.8vw;
+        z-index: -1;
+        top: 2.5em;
+        right: 0;
+        display: flex;
+        align-items: stretch;
+        flex-flow: column nowrap;
+        transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+        overflow: auto;
+        padding: 0.5rem;
+        border: 1px solid var(--border-color);
+        visibility: hidden;
+        color: var(--link-highlight-color);
+        cursor: auto;
+
+        &.left {
+            left: 0;
+            right: unset;
+        }
+
+        .date {
+            font-family:
+                Bender, 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR',
+                'Noto Sans', sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .line {
+                height: 1px;
+                flex-grow: 1;
+                background-color: var(--text-color);
+                margin: 0.5rem;
+            }
+        }
+
+        .item {
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .text {
+                flex: 1;
+                transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+                margin-left: 1rem;
+            }
+
+            .item-icon svg {
+                transition: fill cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+                width: 1rem;
+                fill: var(--text-color);
+            }
+
+            &:hover,
+            &:focus,
+            &.active {
+                .text {
+                    color: currentcolor;
+                }
+
+                .item-icon svg {
+                    fill: currentcolor;
+                }
+            }
+        }
+    }
 
     &.left {
-      left: 0;
-      right: unset;
-    }
-
-    .date {
-      font-family: Bender, "Noto Sans SC", "Noto Sans JP", "Noto Sans KR",
-        "Noto Sans", sans-serif;
-      font-weight: bold;
-      font-size: 1.5rem;
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-
-      .line {
-        height: 1px;
-        flex-grow: 1;
-        background-color: var(--text-color);
-        margin: 0.5rem;
-      }
-    }
-
-    .item {
-      cursor: pointer;
-      padding: 0.5rem;
-      font-size: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .text {
-        flex: 1;
-        transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-        margin-left: 1rem;
-      }
-
-      .item-icon svg {
-        transition: fill cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
-        width: 1rem;
-        fill: var(--text-color);
-      }
-
-      &:hover,
-      &:focus,
-      &.active {
-        .text {
-          color: currentcolor;
+        /* stylelint-disable no-descending-specificity */
+        .popup,
+        .menu {
+            left: 0;
+            right: unset;
         }
+    }
 
-        .item-icon svg {
-          fill: currentcolor;
+    .overlay {
+        z-index: -1;
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        cursor: auto;
+    }
+
+    &.active,
+    &:hover {
+        .icon {
+            animation: icon-flash 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
         }
-      }
     }
-  }
 
-  &.left {
-    /* stylelint-disable no-descending-specificity */
-    .popup, .menu {
-      left: 0;
-      right: unset;
+    &.active {
+        .menu {
+            visibility: visible;
+            opacity: 1;
+            z-index: 2;
+        }
     }
-  }
-
-  .overlay {
-    z-index: -1;
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    cursor: auto;
-  }
-
-  &.active,
-  &:hover {
-    .icon {
-      animation: icon-flash 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
-    }
-  }
-
-  &.active {
-    .menu {
-      visibility: visible;
-      opacity: 1;
-      z-index: 2;
-    }
-  }
 }
 
 @keyframes icon-flash {
-  50% {
-    opacity: 0.2;
-  }
+    50% {
+        opacity: 0.2;
+    }
 }

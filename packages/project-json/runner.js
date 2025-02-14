@@ -1,21 +1,21 @@
-import { envParser } from "@aklive2d/libs";
-import { build } from "./index.js";
+import { envParser } from '@aklive2d/libs'
+import { build } from './index.js'
 
 async function main() {
     const { mode, name } = envParser.parse({
         mode: {
-            type: "string",
-            short: "m",
+            type: 'string',
+            short: 'm',
         },
         name: {
-            type: "string",
-            short: "n",
+            type: 'string',
+            short: 'n',
             multiple: true,
-            default: []
+            default: [],
         },
     })
     switch (mode) {
-        case "build":
+        case 'build':
             build(name)
             break
         default:

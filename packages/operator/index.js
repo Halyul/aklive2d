@@ -1,17 +1,30 @@
 import path from 'node:path'
-import { Buffer } from 'node:buffer';
+import { Buffer } from 'node:buffer'
 import { stringify } from 'yaml'
 import { yaml, file, alphaComposite } from '@aklive2d/libs'
-import config from "@aklive2d/config"
-import { mapping as officialInfoMapping } from "@aklive2d/official-info"
+import config from '@aklive2d/config'
+import { mapping as officialInfoMapping } from '@aklive2d/official-info'
 
-export const CONFIG_PATH = path.resolve(import.meta.dirname, config.module.operator.config_yaml)
+export const CONFIG_PATH = path.resolve(
+    import.meta.dirname,
+    config.module.operator.config_yaml
+)
 const CONFIG = yaml.read(CONFIG_PATH)
-export const OPERATOR_SOURCE_FOLDER = path.resolve(import.meta.dirname, config.dir_name.data)
+export const OPERATOR_SOURCE_FOLDER = path.resolve(
+    import.meta.dirname,
+    config.dir_name.data
+)
 const DIST_DIR = path.join(import.meta.dirname, config.dir_name.dist)
 
 const getVoiceFolders = (name) => {
-    return config.dir_name.voice.sub.map((sub) => path.join(OPERATOR_SOURCE_FOLDER, name, config.dir_name.voice.main, sub.name))
+    return config.dir_name.voice.sub.map((sub) =>
+        path.join(
+            OPERATOR_SOURCE_FOLDER,
+            name,
+            config.dir_name.voice.main,
+            sub.name
+        )
+    )
 }
 
 const getExtractedFolder = (name) => {
@@ -35,7 +48,7 @@ const generateMapping = () => {
         for (const [operatorName, operator] of Object.entries(CONFIG)) {
             const operatorInfo = officialInfoMapping[operator.official_id]
             // add title
-            operator.title = `${config.module.operator.title["en-US"]}${operator.codename["en-US"]} - ${config.module.operator.title["zh-CN"]}${operator.codename["zh-CN"]}`
+            operator.title = `${config.module.operator.title['en-US']}${operator.codename['en-US']} - ${config.module.operator.title['zh-CN']}${operator.codename['zh-CN']}`
             // add type
             operator.type = operatorInfo.type
 
@@ -43,7 +56,10 @@ const generateMapping = () => {
             operator.link = operatorName
 
             // id
-            operator.id = getOperatorId(operator).replace(/^(char_)(\d+)(_.+)$/g, '$2')
+            operator.id = getOperatorId(operator).replace(
+                /^(char_)(\d+)(_.+)$/g,
+                '$2'
+            )
 
             operator.date = operatorInfo.date
         }
@@ -53,11 +69,17 @@ const generateMapping = () => {
 }
 
 const copyVoices = (name) => {
-    file.symlinkAll(path.join(OPERATOR_SOURCE_FOLDER, name, config.dir_name.voice.main), path.join(DIST_DIR, config.dir_name.voice.main, name))
+    file.symlinkAll(
+        path.join(OPERATOR_SOURCE_FOLDER, name, config.dir_name.voice.main),
+        path.join(DIST_DIR, config.dir_name.voice.main, name)
+    )
 }
 
 const copyLogos = () => {
-    file.symlink(path.join(OPERATOR_SOURCE_FOLDER, config.module.operator.logos_assets), path.join(DIST_DIR, config.dir_name.logos))
+    file.symlink(
+        path.join(OPERATOR_SOURCE_FOLDER, config.module.operator.logos_assets),
+        path.join(DIST_DIR, config.dir_name.logos)
+    )
 }
 
 const operators = generateMapping()
@@ -65,12 +87,15 @@ const operators = generateMapping()
 export default operators
 
 export function getOperatorId(operatorConfig) {
-    return operatorConfig.filename.replace(/^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g, '$2$3$4')
+    return operatorConfig.filename.replace(
+        /^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g,
+        '$2$3$4'
+    )
 }
 
 export const build = async (namesToBuild) => {
-    const names = !namesToBuild.length ? Object.keys(operators) : namesToBuild;
-    console.log("Generating assets for", names.length, "operators")
+    const names = !namesToBuild.length ? Object.keys(operators) : namesToBuild
+    console.log('Generating assets for', names.length, 'operators')
     for (const name of names) {
         await generateAssets(name)
         copyVoices(name)
@@ -88,39 +113,90 @@ const generateAssets = async (name) => {
     const fallbackFilename = `${fallback_name}.png`
     const alphaCompositeFilename = `${path.parse(fallbackFilename).name}[alpha].png`
     if (file.exists(path.join(extractedDir, alphaCompositeFilename))) {
-        const fallbackBuffer = await alphaComposite.process(fallbackFilename, alphaCompositeFilename, extractedDir)
-        file.writeSync(fallbackBuffer, path.join(getDistFolder(name), fallbackFilename))
+        const fallbackBuffer = await alphaComposite.process(
+            fallbackFilename,
+            alphaCompositeFilename,
+            extractedDir
+        )
+        file.writeSync(
+            fallbackBuffer,
+            path.join(getDistFolder(name), fallbackFilename)
+        )
     } else {
-        await file.copy(path.join(extractedDir, fallbackFilename), path.join(getDistFolder(name), fallbackFilename))
+        await file.copy(
+            path.join(extractedDir, fallbackFilename),
+            path.join(getDistFolder(name), fallbackFilename)
+        )
     }
 
     // generate portrait
-    const portraitDir = path.join(OPERATOR_SOURCE_FOLDER, config.module.operator.portraits)
-    const portraitHub = JSON.parse(file.readSync(path.join(portraitDir, config.module.operator.MonoBehaviour, "portrait_hub.json")))
+    const portraitDir = path.join(
+        OPERATOR_SOURCE_FOLDER,
+        config.module.operator.portraits
+    )
+    const portraitHub = JSON.parse(
+        file.readSync(
+            path.join(
+                portraitDir,
+                config.module.operator.MonoBehaviour,
+                'portrait_hub.json'
+            )
+        )
+    )
     const fallback_name_lowerCase = fallback_name.toLowerCase()
-    const portraitAtlas = portraitHub._sprites.find((item) => item.name.toLowerCase() === fallback_name_lowerCase).atlas
-    const portraitJson = JSON.parse(file.readSync(path.join(portraitDir, config.module.operator.MonoBehaviour, `portraits#${portraitAtlas}.json`)))
-    const item = portraitJson._sprites.find((item) => item.name.toLowerCase() === fallback_name_lowerCase)
+    const portraitAtlas = portraitHub._sprites.find(
+        (item) => item.name.toLowerCase() === fallback_name_lowerCase
+    ).atlas
+    const portraitJson = JSON.parse(
+        file.readSync(
+            path.join(
+                portraitDir,
+                config.module.operator.MonoBehaviour,
+                `portraits#${portraitAtlas}.json`
+            )
+        )
+    )
+    const item = portraitJson._sprites.find(
+        (item) => item.name.toLowerCase() === fallback_name_lowerCase
+    )
     const rect = {
         ...item.rect,
-        rotate: item.rotate
+        rotate: item.rotate,
     }
     const protraitFilename = `portraits#${portraitAtlas}.png`
-    const portraitBuffer = await alphaComposite.process(protraitFilename, `${path.parse(protraitFilename).name}a.png`, path.join(portraitDir, config.module.operator.Texture2D))
+    const portraitBuffer = await alphaComposite.process(
+        protraitFilename,
+        `${path.parse(protraitFilename).name}a.png`,
+        path.join(portraitDir, config.module.operator.Texture2D)
+    )
     const croppedBuffer = await alphaComposite.crop(portraitBuffer, rect)
-    file.writeSync(croppedBuffer, path.join(getDistFolder(name), `${fallback_name}_portrait.png`))
+    file.writeSync(
+        croppedBuffer,
+        path.join(getDistFolder(name), `${fallback_name}_portrait.png`)
+    )
 
-    const assetContent = await generateAssetsJson(operators[name].filename, extractedDir, operators[name].use_json)
+    const assetContent = await generateAssetsJson(
+        operators[name].filename,
+        extractedDir,
+        operators[name].use_json
+    )
 
-    file.writeSync(JSON.stringify(assetContent.assetsJson, null), path.join(outDir, config.module.operator.assets_json))
+    file.writeSync(
+        JSON.stringify(assetContent.assetsJson, null),
+        path.join(outDir, config.module.operator.assets_json)
+    )
 }
 
-export const generateAssetsJson = async (filename, extractedDir, useJSON = false) => {
+export const generateAssetsJson = async (
+    filename,
+    extractedDir,
+    useJSON = false
+) => {
     const BASE64_BINARY_PREFIX = 'data:application/octet-stream;base64,'
     const BASE64_PNG_PREFIX = 'data:image/png;base64,'
     const assetsJson = {}
 
-    let skelFilename;
+    let skelFilename
     if (useJSON) {
         skelFilename = `${filename}.json`
     } else {
@@ -129,23 +205,33 @@ export const generateAssetsJson = async (filename, extractedDir, useJSON = false
     const skel = await file.read(path.join(extractedDir, skelFilename), null)
     const atlasFilename = `${filename}.atlas`
     const atlas = await file.read(path.join(extractedDir, atlasFilename))
-    const dimensions = atlas.match(new RegExp(/^size:(.*),(.*)/gm))[0].replace('size: ', '').split(',')
+    const dimensions = atlas
+        .match(new RegExp(/^size:(.*),(.*)/gm))[0]
+        .replace('size: ', '')
+        .split(',')
     const matches = atlas.match(new RegExp(/(.*).png/g))
     for (const item of matches) {
-        let buffer;
+        let buffer
         const alphaCompositeFilename = `${path.parse(item).name}[alpha].png`
         if (file.exists(path.join(extractedDir, alphaCompositeFilename))) {
-            buffer = await alphaComposite.process(item, alphaCompositeFilename, extractedDir)
+            buffer = await alphaComposite.process(
+                item,
+                alphaCompositeFilename,
+                extractedDir
+            )
         } else {
             buffer = await alphaComposite.toBuffer(item, extractedDir)
         }
-        assetsJson[`./assets/${item}`] = BASE64_PNG_PREFIX + buffer.toString('base64')
+        assetsJson[`./assets/${item}`] =
+            BASE64_PNG_PREFIX + buffer.toString('base64')
     }
-    assetsJson[`./assets/${skelFilename.replace(/#/g, '%23')}`] = BASE64_BINARY_PREFIX + skel.toString('base64')
-    assetsJson[`./assets/${atlasFilename.replace(/#/g, '%23')}`] = BASE64_BINARY_PREFIX + Buffer.from(atlas).toString('base64')
+    assetsJson[`./assets/${skelFilename.replace(/#/g, '%23')}`] =
+        BASE64_BINARY_PREFIX + skel.toString('base64')
+    assetsJson[`./assets/${atlasFilename.replace(/#/g, '%23')}`] =
+        BASE64_BINARY_PREFIX + Buffer.from(atlas).toString('base64')
     return {
         dimensions,
-        assetsJson
+        assetsJson,
     }
 }
 
@@ -155,18 +241,23 @@ export const init = (name, id) => {
     const operatorConfigFolder = getConfigFolder()
     const foldersToCreate = [extractedFolder, ...voiceFolders]
 
-    const template = yaml.read(path.resolve(operatorConfigFolder, config.module.operator.template_yaml))
+    const template = yaml.read(
+        path.resolve(operatorConfigFolder, config.module.operator.template_yaml)
+    )
     foldersToCreate.forEach((dir) => {
         file.mkdir(dir)
     })
-    const currentOpertor = officialInfoMapping[id];
+    const currentOpertor = officialInfoMapping[id]
     if (currentOpertor === undefined) {
         throw new Error('Invalid operator id')
     }
     template.official_id = currentOpertor.id
     template.codename = currentOpertor.codename
 
-    file.writeSync(stringify(template), path.resolve(operatorConfigFolder, `${name}.yaml`))
+    file.writeSync(
+        stringify(template),
+        path.resolve(operatorConfigFolder, `${name}.yaml`)
+    )
     file.appendSync(
         `\n${name}: !include ${config.module.operator.config}/${name}.yaml`,
         CONFIG_PATH

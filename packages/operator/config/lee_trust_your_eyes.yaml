@@ -6,8 +6,8 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-codename: 
-  zh-CN: 手到牌来 · 老鲤
-  en-US: Trust Your Eyes / Lee
+codename:
+    zh-CN: 手到牌来 · 老鲤
+    en-US: Trust Your Eyes / Lee
 use_json: false
-official_id: "202210279"
+official_id: '202210279'

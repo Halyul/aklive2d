@@ -6,8 +6,8 @@ viewport_right: 6
 viewport_top: 1
 viewport_bottom: 0
 invert_filter: false
-codename: 
-  zh-CN: 缤纷奇境 CW03 · 史尔特尔
-  en-US: Colorful Wonderland CW03 / Surtr
+codename:
+    zh-CN: 缤纷奇境 CW03 · 史尔特尔
+    en-US: Colorful Wonderland CW03 / Surtr
 use_json: false
-official_id: "202208297"
+official_id: '202208297'

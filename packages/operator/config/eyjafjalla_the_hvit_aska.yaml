@@ -7,7 +7,7 @@ viewport_top: 5
 viewport_bottom: 5
 invert_filter: true
 codename:
-  zh-CN: 纯烬艾雅法拉
-  en-US: Eyjafjalla the Hvít Aska
+    zh-CN: 纯烬艾雅法拉
+    en-US: Eyjafjalla the Hvít Aska
 use_json: false
-official_id: "202307865"
+official_id: '202307865'

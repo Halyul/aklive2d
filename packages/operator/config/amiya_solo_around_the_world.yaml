@@ -7,7 +7,7 @@ viewport_top: 0
 viewport_bottom: 0
 invert_filter: false
 codename:
-  zh-CN: 寰宇独奏 · 阿米娅
-  en-US: Solo Around The World / Amiya
+    zh-CN: 寰宇独奏 · 阿米娅
+    en-US: Solo Around The World / Amiya
 use_json: false
-official_id: "202412473"
+official_id: '202412473'

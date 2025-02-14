@@ -1,15 +1,15 @@
-import { envParser } from "@aklive2d/libs";
-import { update } from "./index.js";
+import { envParser } from '@aklive2d/libs'
+import { update } from './index.js'
 
 async function main() {
     const { mode } = envParser.parse({
         mode: {
-            type: "string",
-            short: "m",
-        }
+            type: 'string',
+            short: 'm',
+        },
     })
     switch (mode) {
-        case "update":
+        case 'update':
             await update()
             break
         default:

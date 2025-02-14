@@ -1,10 +1,11 @@
-import { atom, useAtom } from 'jotai';
+import { atom, useAtom } from 'jotai'
 
-const extraAreaAtom = atom([]);
+const extraAreaAtom = atom([])
 
 export function useAppbar() {
-    const [extraArea, setExtraArea] = useAtom(extraAreaAtom);
+    const [extraArea, setExtraArea] = useAtom(extraAreaAtom)
     return {
-        extraArea, setExtraArea
+        extraArea,
+        setExtraArea,
     }
 }

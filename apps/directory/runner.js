@@ -1,5 +1,5 @@
 import { build as viteBuild } from 'vite'
-import { envParser } from "@aklive2d/libs"
+import { envParser } from '@aklive2d/libs'
 
 const build = async (namesToBuild) => {
     if (!namesToBuild.length) {
@@ -12,11 +12,11 @@ const build = async (namesToBuild) => {
 async function main() {
     const { name } = envParser.parse({
         name: {
-            type: "string",
-            short: "n",
+            type: 'string',
+            short: 'n',
             multiple: true,
-            default: []
-        }
+            default: [],
+        },
     })
     await build(name)
 }

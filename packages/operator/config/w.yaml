@@ -6,8 +6,8 @@ viewport_right: -3
 viewport_top: 0
 viewport_bottom: 1
 invert_filter: true
-codename: 
-  zh-CN: W
-  en-US: W
+codename:
+    zh-CN: W
+    en-US: W
 use_json: false
-official_id: "20220319"
+official_id: '20220319'

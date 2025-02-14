@@ -1,84 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>%VITE_APP_TITLE%</title>
+        <script
+            id="counterscale-script"
+            src="https://insight.halyul.dev/on-demand.js"
+            defer
+        ></script>
+        <style>
+            .loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                opacity: 1;
+            }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>%VITE_APP_TITLE%</title>
-  <script
-    id="counterscale-script"
-    src="https://insight.halyul.dev/on-demand.js"
-    defer
-  ></script>
-  <style>
-    .loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 1;
-    }
+            .loader.loaded {
+                opacity: 0;
+                transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+            }
 
-    .loader.loaded {
-      opacity: 0;
-      transition: opacity cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;;
-    }
+            .loader .icon,
+            .loader .flasher {
+                display: block;
+                margin: 0 auto;
+                width: 2rem;
+                height: 2rem;
+                border-left: 0.3rem solid;
+                border-bottom: 0.3rem solid;
+                border-right: 0.3rem solid;
+                border-top: 0.3rem solid;
+                transform: rotate(-45deg);
+                box-shadow:
+                    inset 0 0 16px 2px rgb(200 14 0),
+                    0 0 18px 5px rgb(200 14 0);
+                border-color: rgba(54, 0, 0, 87%);
+            }
 
-    .loader .icon, .loader .flasher {
-      display: block;
-      margin: 0 auto;
-      width: 2rem;
-      height: 2rem;
-      border-left: 0.3rem solid;
-      border-bottom: 0.3rem solid;
-      border-right: 0.3rem solid;
-      border-top: 0.3rem solid;
-      transform: rotate(-45deg);
-      box-shadow: inset 0 0 16px 2px rgb(200 14 0), 0 0 18px 5px rgb(200 14 0);
-      border-color: rgba(54, 0, 0, 87%);
-    }
+            .loader .flasher {
+                position: absolute;
+                box-shadow: unset;
+                animation: icon-flash 1.2s cubic-bezier(0.2, 0.6, 0.2, 1)
+                    infinite;
+            }
 
-    .loader .flasher {
-      position: absolute;
-      box-shadow: unset;
-      animation: icon-flash 1.2s cubic-bezier(0.2, 0.6, 0.2, 1) infinite;
-    }
+            @media (prefers-color-scheme: dark) {
+                .loader {
+                    background-color: #131313;
+                }
+            }
 
-    @media (prefers-color-scheme: dark) {
-      .loader {
-        background-color: #131313;
-      }
-    }
+            @media (prefers-color-scheme: light) {
+                .loader {
+                    background-color: #ececec;
+                }
+            }
 
-    @media (prefers-color-scheme: light) {
-      .loader {
-        background-color: #ececec;
-      }
-    }
+            @keyframes icon-flash {
+                100% {
+                    opacity: 0;
+                    width: 4rem;
+                    height: 4rem;
+                    border-color: rgb(0, 0, 0);
+                }
+            }
+        </style>
+    </head>
 
-    @keyframes icon-flash {
-      100%{
-        opacity: 0;
-        width: 4rem;
-        height: 4rem;
-        border-color: rgb(0, 0, 0);
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div id="root"></div>
-  <div class="loader">
-    <span class="icon"></span>
-    <span class="flasher"></span>
-  </div>
-  <script type="module" src="/src/App.jsx"></script>
-</body>
-
+    <body>
+        <div id="root"></div>
+        <div class="loader">
+            <span class="icon"></span>
+            <span class="flasher"></span>
+        </div>
+        <script type="module" src="/src/App.jsx"></script>
+    </body>
 </html>

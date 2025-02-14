@@ -6,8 +6,8 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-codename: 
-  zh-CN: 缄默德克萨斯
-  en-US: Texas the Omertosa
+codename:
+    zh-CN: 缄默德克萨斯
+    en-US: Texas the Omertosa
 use_json: false
-official_id: "202210210"
+official_id: '202210210'

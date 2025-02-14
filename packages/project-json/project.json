@@ -1,25 +1,25 @@
 {
-  "contentrating": "Everyone",
-  "description": "",
-  "file": "index.html",
-  "general": {
-    "localization": {},
-    "properties": {
-      "schemecolor": {
-        "order": 0,
-        "text": "ui_browse_properties_scheme_color",
-        "type": "color",
-        "value": "0 0 0"
-      }
-    }
-  },
-  "preview": "preview.jpg",
-  "ratingsex": "none",
-  "ratingviolence": "none",
-  "snapshotformat": -1,
-  "snapshotoverlay": "",
-  "tags": ["Game"],
-  "title": "",
-  "type": "web",
-  "version": 2
+    "contentrating": "Everyone",
+    "description": "",
+    "file": "index.html",
+    "general": {
+        "localization": {},
+        "properties": {
+            "schemecolor": {
+                "order": 0,
+                "text": "ui_browse_properties_scheme_color",
+                "type": "color",
+                "value": "0 0 0"
+            }
+        }
+    },
+    "preview": "preview.jpg",
+    "ratingsex": "none",
+    "ratingviolence": "none",
+    "snapshotformat": -1,
+    "snapshotoverlay": "",
+    "tags": ["Game"],
+    "title": "",
+    "type": "web",
+    "version": 2
 }

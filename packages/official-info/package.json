@@ -9,11 +9,11 @@
         "node-fetch": "^3.3.2",
         "@aklive2d/libs": "workspace:*",
         "@aklive2d/config": "workspace:*",
-        "@aklive2d/eslint-config": "workspace:*"
+        "@aklive2d/eslint-config": "workspace:*",
+        "@aklive2d/prettier-config": "workspace:*"
     },
     "scripts": {
         "update": "mode=update node runner.js",
-        "lint": "eslint \"*.js\" \"**/*.js\""
+        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
     }
 }
-  

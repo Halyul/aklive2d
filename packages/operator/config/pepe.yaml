@@ -7,7 +7,7 @@ viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
 codename:
-  zh-CN: 佩佩
-  en-US: Pepe
+    zh-CN: 佩佩
+    en-US: Pepe
 use_json: true
-official_id: "202407013"
+official_id: '202407013'

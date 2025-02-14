@@ -1,32 +1,32 @@
-import { envParser } from "@aklive2d/libs";
-import { build, init } from "./index.js";
+import { envParser } from '@aklive2d/libs'
+import { build, init } from './index.js'
 
 async function main() {
     const { mode, name, id } = envParser.parse({
         mode: {
-            type: "string",
-            short: "m",
+            type: 'string',
+            short: 'm',
         },
         name: {
-            type: "string",
-            short: "n",
+            type: 'string',
+            short: 'n',
             multiple: true,
-            default: []
+            default: [],
         },
         id: {
-            type: "string",
+            type: 'string',
         },
     })
     switch (mode) {
-        case "build":
+        case 'build':
             await build(name)
             break
-        case "init":
+        case 'init':
             if (!name.length) {
-                throw new Error("Please set the operator name.")
+                throw new Error('Please set the operator name.')
             }
             if (!id) {
-                throw new Error("Please set the operator id.")
+                throw new Error('Please set the operator id.')
             }
             init(name[0], id)
             break

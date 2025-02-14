@@ -1,6 +1,3 @@
-import baseConfig from "@aklive2d/eslint-config";
+import baseConfig from '@aklive2d/eslint-config'
 /** @type {import('eslint').Config} */
-export default [
-    ...baseConfig,
-    { ignores: ['src/libs/*'] },
-];
+export default [...baseConfig, { ignores: ['src/libs/*'] }]

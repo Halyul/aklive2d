@@ -6,8 +6,8 @@ viewport_right: -14
 viewport_top: -38
 viewport_bottom: -1
 invert_filter: true
-codename: 
-  zh-CN: 迷迭香
-  en-US: Rosmontis
+codename:
+    zh-CN: 迷迭香
+    en-US: Rosmontis
 use_json: false
-official_id: "20220378"
+official_id: '20220378'

@@ -6,8 +6,8 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-codename: 
-  zh-CN: 重岳
-  en-US: Chongyue
+codename:
+    zh-CN: 重岳
+    en-US: Chongyue
 use_json: false
-official_id: "202301606"
+official_id: '202301606'

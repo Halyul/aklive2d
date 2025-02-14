@@ -7,7 +7,7 @@ viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
 codename:
-  zh-CN: 博物 · 焰影苇草
-  en-US: Curator / Reed The Flame Shadow
+    zh-CN: 博物 · 焰影苇草
+    en-US: Curator / Reed The Flame Shadow
 use_json: false
-official_id: "202401871"
+official_id: '202401871'

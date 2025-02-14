@@ -1,22 +1,22 @@
 html {
-  user-select: none;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 body,
 #app {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  touch-action: none;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    touch-action: none;
 }
 
 #widget-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }

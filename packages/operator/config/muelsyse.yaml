@@ -7,7 +7,7 @@ viewport_top: 3
 viewport_bottom: 2
 invert_filter: true
 codename:
-  zh-CN: 缪尔赛思
-  en-US: Muelsyse
+    zh-CN: 缪尔赛思
+    en-US: Muelsyse
 use_json: false
-official_id: "202304611"
+official_id: '202304611'

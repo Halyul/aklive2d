@@ -7,7 +7,7 @@ viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
 codename:
-  zh-CN: 暗月的影子 · 锏
-  en-US: The Shadow Of The Dark Moon / Degenbrecher
+    zh-CN: 暗月的影子 · 锏
+    en-US: The Shadow Of The Dark Moon / Degenbrecher
 use_json: false
-official_id: "202410426"
+official_id: '202410426'

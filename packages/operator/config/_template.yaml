@@ -6,7 +6,7 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-codename: 
-  zh-CN: 假日威龙陈
-  en-US: Ch'en/Chen the Holungday
+codename:
+    zh-CN: 假日威龙陈
+    en-US: Ch'en/Chen the Holungday
 use_json: false

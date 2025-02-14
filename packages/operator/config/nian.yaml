@@ -6,8 +6,8 @@ viewport_right: 2
 viewport_top: 3
 viewport_bottom: 5
 invert_filter: true
-codename: 
-  zh-CN: 年
-  en-US: Nian
+codename:
+    zh-CN: 年
+    en-US: Nian
 use_json: false
-official_id: "202203231"
+official_id: '202203231'

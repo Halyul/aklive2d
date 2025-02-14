@@ -7,7 +7,7 @@ viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
 codename:
-  zh-CN: 新枝 · 缪尔赛思
-  en-US: Young Branch / Muelsyse
+    zh-CN: 新枝 · 缪尔赛思
+    en-US: Young Branch / Muelsyse
 use_json: false
-official_id: "202404090"
+official_id: '202404090'

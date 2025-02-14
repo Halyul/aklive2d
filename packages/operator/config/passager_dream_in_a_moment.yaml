@@ -6,8 +6,8 @@ viewport_right: 0
 viewport_top: 0
 viewport_bottom: 0
 invert_filter: true
-codename: 
-  zh-CN: 今昔须臾之梦 · 异客
-  en-US: Dream in a Moment / Passager
+codename:
+    zh-CN: 今昔须臾之梦 · 异客
+    en-US: Dream in a Moment / Passager
 use_json: false
-official_id: "202210664"
+official_id: '202210664'

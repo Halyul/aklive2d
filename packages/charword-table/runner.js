@@ -1,25 +1,25 @@
-import { build, update } from "./index.js";
-import { envParser, error } from "@aklive2d/libs"
+import { build, update } from './index.js'
+import { envParser, error } from '@aklive2d/libs'
 
 async function main() {
-    let err = [];
+    let err = []
     const { mode, name } = envParser.parse({
         mode: {
-            type: "string",
-            short: "m",
+            type: 'string',
+            short: 'm',
         },
         name: {
-            type: "string",
-            short: "n",
+            type: 'string',
+            short: 'n',
             multiple: true,
-            default: []
-        }
+            default: [],
+        },
     })
     switch (mode) {
-        case "build":
+        case 'build':
             err = await build(name)
             break
-        case "update":
+        case 'update':
             await update()
             break
         default:

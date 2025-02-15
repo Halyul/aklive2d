@@ -56,7 +56,6 @@ export default function Operator() {
     const { setTitle, setTabs, setHeaderIcon, setFastNavigation } = useHeader()
     const { setExtraArea } = useAppbar()
     const [config, setConfig] = useState(null)
-    const [spineData, setSpineData] = useState(null)
     // eslint-disable-next-line no-unused-vars
     const _trackEvt = useInsight(`/${key}`)
     const spineRef = useRef(null)
@@ -100,19 +99,11 @@ export default function Operator() {
     }, [setExtraArea, setFastNavigation])
 
     useEffect(() => {
-        setSpineData(null)
         const config = operators.find((item) => item.link === key)
         if (config) {
             setConfig(config)
             configRef.current = config
-            fetch(
-                `/${buildConfig.directory_folder}/${config.filename.replace(/#/g, '%23')}.json`
-            )
-                .then((res) => res.json())
-                .then((data) => {
-                    setSpineAnimationName(defaultSpineAnimationName)
-                    setSpineData(data)
-                })
+            setSpineAnimationName(defaultSpineAnimationName)
             setHeaderIcon(config.type)
             if (spineRef.current?.children.length > 0) {
                 spineRef.current?.removeChild(spineRef.current?.children[0])
@@ -166,11 +157,9 @@ export default function Operator() {
     }, [config, language, key, setTitle])
 
     useEffect(() => {
-        if (spineRef.current?.children.length === 0 && spineData && config) {
+        if (spineRef.current?.children.length === 0 && config) {
             const playerConfig = {
-                skelUrl: `./assets/${config.filename.replace(/#/g, '%23')}.skel`,
-                atlasUrl: `./assets/${config.filename.replace(/#/g, '%23')}.atlas`,
-                rawDataURIs: spineData,
+                atlasUrl: `./${key}/assets/${config.filename.replace(/#/g, '%23')}.atlas`,
                 animation: spineAnimationName,
                 premultipliedAlpha: true,
                 alpha: true,
@@ -219,15 +208,15 @@ export default function Operator() {
             }
 
             if (config.use_json) {
-                playerConfig.jsonUrl = `./assets/${config.filename.replace(/#/g, '%23')}.json`
+                playerConfig.jsonUrl = `./${key}/assets/${config.filename.replace(/#/g, '%23')}.json`
             } else {
-                playerConfig.skelUrl = `./assets/${config.filename.replace(/#/g, '%23')}.skel`
+                playerConfig.skelUrl = `./${key}/assets/${config.filename.replace(/#/g, '%23')}.skel`
             }
             setSpinePlayer(
                 new spine.SpinePlayer(spineRef.current, playerConfig)
             )
         }
-    }, [config, spineData, spineAnimationName, setSpinePlayer, spinePlayer])
+    }, [config, spineAnimationName, setSpinePlayer, spinePlayer, key])
 
     useEffect(() => {
         return () => {

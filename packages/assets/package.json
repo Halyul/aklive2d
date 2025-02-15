@@ -12,6 +12,7 @@
     },
     "scripts": {
         "build": "mode=build node runner.js",
+        "fetch": "mode=fetch node runner.js",
         "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
     }
 }

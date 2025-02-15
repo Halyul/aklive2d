@@ -2188,42 +2188,64 @@ var spine;
 			this.pathPrefix = pathPrefix;
 		}
 		AssetManager.prototype.downloadText = function (url, success, error) {
-			var request = new XMLHttpRequest();
-			request.overrideMimeType("text/html");
 			if (this.rawDataUris[url])
 				url = this.rawDataUris[url];
-			request.open("GET", url, true);
-			request.onload = function () {
-				if (request.status == 200) {
-					success(request.responseText);
+			fetch(url).then(function (response) {
+				if (!response.ok) {
+					error(response.status, response.statusText);
 				}
-				else {
-					error(request.status, request.responseText);
-				}
-			};
-			request.onerror = function () {
-				error(request.status, request.responseText);
-			};
-			request.send();
+				return response.text();
+			}).then(function (text) {
+				success(text);
+			});
+
+			// var request = new XMLHttpRequest();
+			// request.overrideMimeType("text/html");
+			
+			// request.open("GET", url, true);
+			// request.onload = function () {
+			// 	if (request.status == 200) {
+			// 		success(request.responseText);
+			// 	}
+			// 	else {
+			// 		error(request.status, request.responseText);
+			// 	}
+			// };
+			// request.onerror = function () {
+			// 	error(request.status, request.responseText);
+			// };
+			// request.send();
 		};
 		AssetManager.prototype.downloadBinary = function (url, success, error) {
-			var request = new XMLHttpRequest();
 			if (this.rawDataUris[url])
 				url = this.rawDataUris[url];
-			request.open("GET", url, true);
-			request.responseType = "arraybuffer";
-			request.onload = function () {
-				if (request.status == 200) {
-					success(new Uint8Array(request.response));
+			fetch(url).then(function (response) {
+				if (!response.ok) {
+					error(response.status, response.statusText);
 				}
-				else {
-					error(request.status, request.responseText);
-				}
-			};
-			request.onerror = function () {
-				error(request.status, request.responseText);
-			};
-			request.send();
+				return response.arrayBuffer();
+			}).then(function (arrayBuffer) {
+				success(new Uint8Array(arrayBuffer));
+			});
+
+
+			// var request = new XMLHttpRequest();
+			// if (this.rawDataUris[url])
+			// 	url = this.rawDataUris[url];
+			// request.open("GET", url, true);
+			// request.responseType = "arraybuffer";
+			// request.onload = function () {
+			// 	if (request.status == 200) {
+			// 		success(new Uint8Array(request.response));
+			// 	}
+			// 	else {
+			// 		error(request.status, request.responseText);
+			// 	}
+			// };
+			// request.onerror = function () {
+			// 	error(request.status, request.responseText);
+			// };
+			// request.send();
 		};
 		AssetManager.prototype.setRawDataURI = function (path, data) {
 			this.rawDataUris[this.pathPrefix + path] = data;

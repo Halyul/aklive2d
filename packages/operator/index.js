@@ -1,5 +1,4 @@
 import path from 'node:path'
-import { Buffer } from 'node:buffer'
 import { stringify } from 'yaml'
 import { yaml, file, alphaComposite } from '@aklive2d/libs'
 import config from '@aklive2d/config'
@@ -175,26 +174,21 @@ const generateAssets = async (name) => {
         path.join(getDistFolder(name), `${fallback_name}_portrait.png`)
     )
 
-    const assetContent = await generateAssetsJson(
+    await generateAssetsJson(
         operators[name].filename,
         extractedDir,
+        getDistFolder(name),
         operators[name].use_json
-    )
-
-    file.writeSync(
-        JSON.stringify(assetContent.assetsJson, null),
-        path.join(outDir, config.module.operator.assets_json)
     )
 }
 
 export const generateAssetsJson = async (
     filename,
     extractedDir,
+    targetDir,
     useJSON = false
 ) => {
-    const BASE64_BINARY_PREFIX = 'data:application/octet-stream;base64,'
-    const BASE64_PNG_PREFIX = 'data:image/png;base64,'
-    const assetsJson = {}
+    const assetsJson = []
 
     let skelFilename
     if (useJSON) {
@@ -202,13 +196,9 @@ export const generateAssetsJson = async (
     } else {
         skelFilename = `${filename}.skel`
     }
-    const skel = await file.read(path.join(extractedDir, skelFilename), null)
     const atlasFilename = `${filename}.atlas`
-    const atlas = await file.read(path.join(extractedDir, atlasFilename))
-    const dimensions = atlas
-        .match(new RegExp(/^size:(.*),(.*)/gm))[0]
-        .replace('size: ', '')
-        .split(',')
+    const atlasPath = path.join(extractedDir, atlasFilename)
+    let atlas = await file.read(atlasPath)
     const matches = atlas.match(new RegExp(/(.*).png/g))
     for (const item of matches) {
         let buffer
@@ -222,17 +212,27 @@ export const generateAssetsJson = async (
         } else {
             buffer = await alphaComposite.toBuffer(item, extractedDir)
         }
-        assetsJson[`./assets/${item}`] =
-            BASE64_PNG_PREFIX + buffer.toString('base64')
+        assetsJson.push({
+            filename: item,
+            content: buffer,
+        })
+        atlas = atlas.replace(item, item.replace(/#/g, '%23'))
     }
-    assetsJson[`./assets/${skelFilename.replace(/#/g, '%23')}`] =
-        BASE64_BINARY_PREFIX + skel.toString('base64')
-    assetsJson[`./assets/${atlasFilename.replace(/#/g, '%23')}`] =
-        BASE64_BINARY_PREFIX + Buffer.from(atlas).toString('base64')
-    return {
-        dimensions,
-        assetsJson,
-    }
+    assetsJson.push({
+        filename: skelFilename,
+        path: path.join(extractedDir, skelFilename),
+    })
+    assetsJson.push({
+        filename: atlasFilename,
+        content: atlas,
+    })
+    assetsJson.map((item) => {
+        if (item.content) {
+            file.writeSync(item.content, path.join(targetDir, item.filename))
+        } else {
+            file.symlink(item.path, path.join(targetDir, item.filename))
+        }
+    })
 }
 
 export const init = (name, id) => {

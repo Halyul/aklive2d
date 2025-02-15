@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import config from '@aklive2d/config'
 import * as showcaseDirs from '@aklive2d/showcase'
-import { copyDirectoryData } from '@aklive2d/helpers'
+import { copyDirectoryData } from '@aklive2d/vite-helpers'
 
 // https://vite.dev/config/
 export default defineConfig(async () => {

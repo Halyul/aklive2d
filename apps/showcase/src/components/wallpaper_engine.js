@@ -2,6 +2,7 @@ import Events from '@/components/events'
 
 window.wallpaperPropertyListener = {
     applyGeneralProperties: function (properties) {
+        document.dispatchEvent(Events.Misc.IsWallpaperEngine.handler())
         if (properties.fps) {
             document.dispatchEvent(Events.Player.SetFPS.handler(properties.fps))
         }

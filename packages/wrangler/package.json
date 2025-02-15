@@ -1,20 +1,21 @@
 {
-  "name": "@aklive2d/wrangler",
-  "version": "0.0.0",
-  "main": "index.js",
-  "type": "module",
-  "license": "MIT",
-  "dependencies": {
-    "p-throttle": "^7.0.0",
-    "wrangler": "^3.107.3",
-    "@aklive2d/libs": "workspace:*",
-    "@aklive2d/eslint-config": "workspace:*",
-    "@aklive2d/config": "workspace:*"
-  },
-  "scripts": {
-    "upload": "node runner.js --mode upload",
-    "download": "node runner.js --mode download",
-    "deploy": "node runner.js --mode deploy",
-    "lint": "eslint \"*.js\" \"**/*.js\""
-  }
+    "name": "@aklive2d/wrangler",
+    "version": "0.0.0",
+    "main": "index.js",
+    "type": "module",
+    "license": "MIT",
+    "dependencies": {
+        "p-throttle": "^7.0.0",
+        "wrangler": "^3.107.3",
+        "@aklive2d/libs": "workspace:*",
+        "@aklive2d/eslint-config": "workspace:*",
+        "@aklive2d/config": "workspace:*",
+        "@aklive2d/prettier-config": "workspace:*"
+    },
+    "scripts": {
+        "upload": "mode=upload node runner.js",
+        "download": "mode=download node runner.js",
+        "deploy": "mode=deploy node runner.js",
+        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
+    }
 }

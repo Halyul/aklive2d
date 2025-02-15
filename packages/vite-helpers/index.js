@@ -11,6 +11,14 @@ import { mapping as musicMapping } from '@aklive2d/music'
 
 export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
     file.mkdir(publicAssetsDir)
+    const operatorAssetsDir = path.join(
+        ASSETS_DIST_DIR,
+        config.dir_name.operator,
+        name
+    )
+    const spineFilenames = file
+        .readdirSync(operatorAssetsDir)
+        .filter((item) => item.startsWith('dyn_illust_'))
     const q = [
         {
             fn: file.symlink,
@@ -49,16 +57,6 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
         },
         {
             fn: file.symlink,
-            filename: config.module.operator.assets_json,
-            source: path.resolve(
-                ASSETS_DIST_DIR,
-                config.dir_name.operator,
-                name
-            ),
-            target: path.resolve(dataDir),
-        },
-        {
-            fn: file.symlink,
             filename: config.module.charword_table.charword_table_json,
             source: path.resolve(
                 ASSETS_DIST_DIR,
@@ -68,6 +66,14 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
             target: path.resolve(dataDir),
         },
     ]
+    spineFilenames.map((filename) => {
+        q.push({
+            fn: file.symlink,
+            filename,
+            source: operatorAssetsDir,
+            target: path.resolve(publicAssetsDir),
+        })
+    })
     q.map(({ fn, filename, source, target }) => {
         if (filename) {
             source = path.resolve(source, filename)
@@ -76,7 +82,8 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
         fn(source, target)
     })
     const buildConfig = {
-        insight_id: config.insight_id,
+        akassets_url: config.akassets.url,
+        insight_id: config.insight.id,
         link: operators[name].link,
         filename: operators[name].filename.replace(/#/g, '%23'),
         logo_filename: operators[name].logo,
@@ -104,6 +111,10 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
             {
                 key: 'app_title',
                 value: operators[name].title,
+            },
+            {
+                key: 'insight_url',
+                value: config.insight.url,
             },
         ]),
         path.join(path.resolve(dataDir), '.env')
@@ -159,19 +170,13 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
     ).sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date))
     await Promise.all(
         config.directory.error.files.map(async (key) => {
-            const assetContent = await generateAssetsJson(
-                key.key,
-                extractedFolder
-            )
-            file.writeSync(
-                JSON.stringify(assetContent.assetsJson, null),
-                path.join(targetFolder, `${key.key}.json`)
-            )
+            await generateAssetsJson(key.key, extractedFolder, targetFolder)
         })
     )
 
     const directoryConfig = {
-        insight_id: config.insight_id,
+        akassets_url: config.akassets.url,
+        insight_id: config.insight.id,
         app_voice_url: config.directory.voice,
         voice_folders: config.dir_name.voice,
         directory_folder: config.directory.assets_dir,
@@ -194,21 +199,16 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
                 key: 'app_title',
                 value: config.directory.title,
             },
+            {
+                key: 'insight_url',
+                value: config.insight.url,
+            },
         ]),
         path.join(dataDir, '.env')
     )
 
     filesToCopy.map((key) => {
         const portraitName = `${operators[key].fallback_name}_portrait.png`
-        file.cpSync(
-            path.join(
-                sourceFolder,
-                config.dir_name.operator,
-                key,
-                config.module.operator.assets_json
-            ),
-            path.join(targetFolder, `${operators[key].filename}.json`)
-        )
         file.cpSync(
             path.join(
                 sourceFolder,

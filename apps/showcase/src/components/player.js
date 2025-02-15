@@ -6,7 +6,6 @@ import {
     createCustomEvent,
 } from '@/components/helper'
 import { spine } from '@aklive2d/module'
-import assets from '!/assets.json'
 import '@/components/player.css'
 import buildConfig from '!/config.json'
 
@@ -44,7 +43,6 @@ export default class Player {
         const _this = this
         const playerConfig = {
             atlasUrl: `./assets/${buildConfig.filename}.atlas`,
-            rawDataURIs: assets,
             premultipliedAlpha: true,
             alpha: true,
             backgroundColor: '#00000000',

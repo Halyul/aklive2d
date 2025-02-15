@@ -65,6 +65,8 @@ async function main() {
         case 'build':
             await build()
             break
+        case 'fetch':
+            break
         default:
             throw new Error(`Unknown mode: ${mode}`)
     }

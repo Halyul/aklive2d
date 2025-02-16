@@ -170,7 +170,9 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
     ).sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date))
     await Promise.all(
         config.directory.error.files.map(async (key) => {
-            await generateAssetsJson(key.key, extractedFolder, targetFolder)
+            await generateAssetsJson(key.key, extractedFolder, targetFolder, {
+                useSymLink: false,
+            })
         })
     )
 
@@ -180,6 +182,7 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
         app_voice_url: config.directory.voice,
         voice_folders: config.dir_name.voice,
         directory_folder: config.directory.assets_dir,
+        default_background: config.module.background.operator_bg_png,
         background_files: backgroundFiles,
         background_folder: config.dir_name.background,
         available_operators: Object.keys(operators),

@@ -3,7 +3,6 @@ import { useCallback } from 'react'
 import { atom, useAtom } from 'jotai'
 
 const officialUpdateAtom = atom({})
-console.log(CONFIG)
 let operators = []
 CONFIG.operators.forEach((item) => {
     operators = [...operators, ...item]

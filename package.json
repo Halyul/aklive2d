@@ -6,20 +6,19 @@
     "preview:showcase": "turbo run preview:showcase --ui tui",
     "dev:directory": "turbo run dev:directory --ui tui",
     "preview:directory": "turbo run preview:directory --ui tui",
+    "preview": "http-server ./dist",
     "lint": "turbo run lint",
     "update": "turbo run update",
     "init": "turbo run init"
   },
   "devDependencies": {
     "eslint": "^9.20.1",
+    "http-server": "^14.1.1",
     "prettier": "^3.5.1",
     "stylelint": "^16.14.1",
     "turbo": "^2.4.2"
   },
   "packageManager": "pnpm@9.5.0",
   "name": "aklive2d",
-  "type": "module",
-  "prettier": {
-    "tabWidth": 2
-  }
+  "type": "module"
 }

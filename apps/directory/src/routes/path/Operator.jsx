@@ -23,7 +23,7 @@ const getVoiceFoler = (lang) => {
     return `${folderObject.main}/${voiceFolder.name}`
 }
 const defaultSpineAnimationName = 'Idle'
-const backgroundAtom = atom(buildConfig.background_files[0])
+const backgroundAtom = atom(buildConfig.default_background)
 
 const getPartialName = (type, input) => {
     let part
@@ -157,19 +157,19 @@ export default function Operator() {
     }, [config, language, key, setTitle])
 
     useEffect(() => {
-        if (spineRef.current?.children.length === 0 && config) {
+        if (spineRef.current?.children.length === 0 && configRef.current) {
             const playerConfig = {
-                atlasUrl: `./${key}/assets/${config.filename.replace(/#/g, '%23')}.atlas`,
+                atlasUrl: `./${key}/assets/${configRef.current.filename.replace(/#/g, '%23')}.atlas`,
                 animation: spineAnimationName,
                 premultipliedAlpha: true,
                 alpha: true,
                 backgroundColor: '#00000000',
                 viewport: {
                     debugRender: false,
-                    padLeft: `${config.viewport_left}%`,
-                    padRight: `${config.viewport_right}%`,
-                    padTop: `${config.viewport_top}%`,
-                    padBottom: `${config.viewport_bottom}%`,
+                    padLeft: `${configRef.current.viewport_left}%`,
+                    padRight: `${configRef.current.viewport_right}%`,
+                    padTop: `${configRef.current.viewport_top}%`,
+                    padBottom: `${configRef.current.viewport_bottom}%`,
                     x: 0,
                     y: 0,
                 },
@@ -207,16 +207,16 @@ export default function Operator() {
                 },
             }
 
-            if (config.use_json) {
-                playerConfig.jsonUrl = `./${key}/assets/${config.filename.replace(/#/g, '%23')}.json`
+            if (configRef.current.use_json) {
+                playerConfig.jsonUrl = `./${key}/assets/${configRef.current.filename.replace(/#/g, '%23')}.json`
             } else {
-                playerConfig.skelUrl = `./${key}/assets/${config.filename.replace(/#/g, '%23')}.skel`
+                playerConfig.skelUrl = `./${key}/assets/${configRef.current.filename.replace(/#/g, '%23')}.skel`
             }
             setSpinePlayer(
                 new spine.SpinePlayer(spineRef.current, playerConfig)
             )
         }
-    }, [config, spineAnimationName, setSpinePlayer, spinePlayer, key])
+    }, [spineAnimationName, setSpinePlayer, spinePlayer, key])
 
     useEffect(() => {
         return () => {

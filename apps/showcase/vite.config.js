@@ -43,20 +43,13 @@ export default defineConfig(({ command, isPreview }) => {
         envDir: dirs.DATA_DIR,
         publicDir: dirs.PUBLIC_DIR,
         build: {
-            chunkSizeWarningLimit: 15000,
+            chunkSizeWarningLimit: 10000,
             outDir: newOutDir,
             rollupOptions: {
                 output: {
                     entryFileNames: `assets/[name].js`,
                     chunkFileNames: `assets/[name].js`,
                     assetFileNames: `assets/[name].[ext]`,
-                    manualChunks: (id) => {
-                        if (id.includes('charword_table.json')) {
-                            return 'charword_table' // all other package goes here
-                        } else if (id.includes('assets.json')) {
-                            return 'assets'
-                        }
-                    },
                 },
             },
         },

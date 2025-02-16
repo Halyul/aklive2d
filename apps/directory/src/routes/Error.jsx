@@ -29,7 +29,6 @@ export default function Error() {
     const [voiceOn, setVoiceOn] = useAtom(voiceOnAtom)
     const [spineDone, _setSpineDone] = useState(false)
     const spineRef = useRef(null)
-    const [spineData, setSpineData] = useState(null)
     const spineDoneRef = useRef(spineDone)
     const voiceOnRef = useRef(voiceOn)
     const [voiceSrc, setVoiceSrc] = useState(null)
@@ -54,11 +53,6 @@ export default function Error() {
 
     useEffect(() => {
         console.log(error)
-        fetch(`/${buildConfig.directory_folder}/${filename}.json`)
-            .then((res) => res.json())
-            .then((data) => {
-                setSpineData(data)
-            })
     }, [error])
 
     useEffect(() => {
@@ -95,12 +89,11 @@ export default function Error() {
     }, [])
 
     useEffect(() => {
-        if (spineRef.current?.children.length === 0 && spineData) {
+        if (spineRef.current?.children.length === 0) {
             setSpinePlayer(
                 new spine.SpinePlayer(spineRef.current, {
-                    skelUrl: `./assets/${filename}.skel`,
-                    atlasUrl: `./assets/${filename}.atlas`,
-                    rawDataURIs: spineData,
+                    skelUrl: `./_assets/${filename}.skel`,
+                    atlasUrl: `./_assets/${filename}.atlas`,
                     animation: 'Relax',
                     premultipliedAlpha: true,
                     alpha: true,
@@ -163,7 +156,7 @@ export default function Error() {
                 spinePlayer.dispose()
             }
         }
-    }, [playVoice, spineData, spinePlayer])
+    }, [playVoice, spinePlayer])
 
     return (
         <section className={classes.error}>

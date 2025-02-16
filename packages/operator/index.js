@@ -178,7 +178,9 @@ const generateAssets = async (name) => {
         operators[name].filename,
         extractedDir,
         getDistFolder(name),
-        operators[name].use_json
+        {
+            useJSON: operators[name].use_json,
+        }
     )
 }
 
@@ -186,12 +188,15 @@ export const generateAssetsJson = async (
     filename,
     extractedDir,
     targetDir,
-    useJSON = false
+    _opts = {
+        useJSON: false,
+        useSymLink: true,
+    }
 ) => {
     const assetsJson = []
 
     let skelFilename
-    if (useJSON) {
+    if (_opts.useJSON) {
         skelFilename = `${filename}.json`
     } else {
         skelFilename = `${filename}.skel`
@@ -227,10 +232,15 @@ export const generateAssetsJson = async (
         content: atlas,
     })
     assetsJson.map((item) => {
+        const dir = path.join(targetDir, item.filename)
         if (item.content) {
-            file.writeSync(item.content, path.join(targetDir, item.filename))
+            file.writeSync(item.content, dir)
         } else {
-            file.symlink(item.path, path.join(targetDir, item.filename))
+            if (_opts.useSymLink) {
+                file.symlink(item.path, dir)
+            } else {
+                file.cpSync(item.path, dir)
+            }
         }
     })
 }

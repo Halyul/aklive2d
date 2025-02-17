@@ -8,6 +8,7 @@ import { DIST_DIR as ASSETS_DIST_DIR } from '@aklive2d/assets'
 import { file, env } from '@aklive2d/libs'
 import { files as backgroundFiles } from '@aklive2d/background'
 import { mapping as musicMapping } from '@aklive2d/music'
+import { defaultRegion } from '@aklive2d/charword-table'
 
 export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
     file.mkdir(publicAssetsDir)
@@ -63,7 +64,7 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
                 config.dir_name.charword_table,
                 name
             ),
-            target: path.resolve(dataDir),
+            target: path.resolve(publicAssetsDir),
         },
     ]
     spineFilenames.map((filename) => {
@@ -82,7 +83,6 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
         fn(source, target)
     })
     const buildConfig = {
-        akassets_url: config.akassets.url,
         insight_id: config.insight.id,
         link: operators[name].link,
         filename: operators[name].filename.replace(/#/g, '%23'),
@@ -95,8 +95,10 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
         invert_filter: operators[name].invert_filter,
         image_width: 2048,
         image_height: 2048,
+        default_background: config.module.background.operator_bg_png,
         background_files: backgroundFiles,
         background_folder: config.dir_name.background,
+        voice_default_region: defaultRegion,
         voice_folders: config.dir_name.voice,
         music_folder: config.dir_name.music,
         music_mapping: musicMapping.musicFileMapping,
@@ -119,6 +121,8 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
         ]),
         path.join(path.resolve(dataDir), '.env')
     )
+
+    return buildConfig
 }
 
 export const copyProjectJSON = (name, { releaseDir }) => {
@@ -177,7 +181,6 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
     )
 
     const directoryConfig = {
-        akassets_url: config.akassets.url,
         insight_id: config.insight.id,
         app_voice_url: config.directory.voice,
         voice_folders: config.dir_name.voice,
@@ -215,15 +218,6 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
         file.cpSync(
             path.join(
                 sourceFolder,
-                config.dir_name.charword_table,
-                key,
-                config.module.charword_table.charword_table_json
-            ),
-            path.join(targetFolder, `voice_${key}.json`)
-        )
-        file.cpSync(
-            path.join(
-                sourceFolder,
                 config.dir_name.operator,
                 key,
                 portraitName
@@ -236,4 +230,6 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
         path.join(extractedFolder, config.directory.error.voice.file),
         path.join(targetFolder, config.directory.error.voice.target)
     )
+
+    return directoryConfig
 }

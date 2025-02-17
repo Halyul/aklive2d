@@ -40,6 +40,9 @@ export default class Player {
         this.#parentEl = el
         this.#el.id = 'player-box'
         insertHTMLChild(this.#parentEl, this.#el)
+    }
+
+    async init() {
         const _this = this
         const playerConfig = {
             atlasUrl: `./assets/${buildConfig.filename}.atlas`,
@@ -196,6 +199,7 @@ export default class Player {
     }
 
     set fps(v) {
+        v = parseInt(v)
         this.#config.fps = v
         this.#spine.setFps(v)
     }
@@ -205,6 +209,7 @@ export default class Player {
     }
 
     set scale(v) {
+        v = parseInt(v)
         this.#config.scale = 1 / v
         this.#spine.setOperatorScale(1 / v)
     }
@@ -262,11 +267,16 @@ export default class Player {
     }
 
     set padding(v) {
+        if (!v) {
+            this.resetPadding()
+            return
+        }
         if (typeof v !== 'object') return
-        if (v.left) this.#config.padding.left = v.left
-        if (v.right) this.#config.padding.right = v.right
-        if (v.top) this.#config.padding.top = v.top
-        if (v.bottom) this.#config.padding.bottom = v.bottom
+        if (v.left) v.left = parseInt(v.left)
+        if (v.right) v.right = parseInt(v.right)
+        if (v.top) v.top = parseInt(v.top)
+        if (v.bottom) v.bottom = parseInt(v.bottom)
+        this.#config.padding = { ...this.#config.padding, ...v }
         this.#loadViewport()
     }
 
@@ -371,38 +381,11 @@ export default class Player {
     get listeners() {
         return [
             {
-                event: Events.SetFPS.name,
-                handler: (e) => (this.fps = e.detail),
-            },
-            {
-                event: Events.SetScale.name,
-                handler: (e) => (this.scale = e.detail),
-            },
-            {
-                event: Events.SetPadding.name,
-                handler: (e) => (this.padding = e.detail),
-            },
-            {
-                event: Events.ResetPadding.name,
-                handler: () => this.resetPadding(),
-            },
-            {
-                event: Events.SetUseStartAnimation.name,
-                handler: (e) => (this.useStartAnimation = e.detail),
-            },
-            {
                 id: 'fps-slider',
                 event: 'change',
                 handler: (e) => {
                     syncHTMLValue(e.currentTarget, 'fps-input')
                     this.fps = e.currentTarget.value
-                },
-            },
-            {
-                id: 'fps-slider',
-                event: 'input',
-                handler: (e) => {
-                    syncHTMLValue(e.currentTarget, 'fps-input')
                 },
             },
             {
@@ -579,16 +562,27 @@ export default class Player {
             },
         ]
     }
+
+    applyConfig(key, value) {
+        switch (key) {
+            case 'fps':
+                this.fps = value
+                break
+            case 'scale':
+                this.scale = value
+                break
+            case 'position':
+                this.padding = value
+                break
+            case 'use-start-animation':
+                this.useStartAnimation = value
+                break
+            default:
+                return
+        }
+    }
 }
 
 export const Events = {
     Ready: createCustomEvent('player-ready'),
-    SetFPS: createCustomEvent('player-set-fps', true),
-    SetScale: createCustomEvent('player-set-scale', true),
-    SetPadding: createCustomEvent('player-set-padding', true),
-    ResetPadding: createCustomEvent('player-reset-padding'),
-    SetUseStartAnimation: createCustomEvent(
-        'player-set-usestartanimation',
-        true
-    ),
 }

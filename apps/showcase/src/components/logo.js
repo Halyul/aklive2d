@@ -4,7 +4,6 @@ import {
     readFile,
     showRelatedHTML,
     syncHTMLValue,
-    createCustomEvent,
 } from '@/components/helper'
 import '@/components/logo.css'
 import buildConfig from '!/config.json'
@@ -40,6 +39,9 @@ export default class Logo {
       <img src="${this.#default.location + this.#default.image}" id="logo" alt="operator logo" />
     `
         insertHTMLChild(this.#parentEl, this.#el)
+    }
+
+    async init() {
         this.#imageEl = document.getElementById('logo')
         this.#setInvertFilter(this.#default.useInvertFilter)
         this.opacity = this.#default.opacity
@@ -128,6 +130,10 @@ export default class Logo {
     }
 
     set image(v) {
+        if (!v) {
+            this.resetImage()
+            return
+        }
         const update = (url, v = null) => {
             this.#config.name = {
                 isLocalFile: v !== null,
@@ -157,6 +163,7 @@ export default class Logo {
     }
 
     set ratio(v) {
+        v = parseInt(v)
         this.#config.ratio = v
         this.#resize(this, v)
     }
@@ -166,6 +173,7 @@ export default class Logo {
     }
 
     set opacity(v) {
+        v = parseInt(v)
         this.#imageEl.style.opacity = v / 100
         this.#config.opacity = v
     }
@@ -196,8 +204,9 @@ export default class Logo {
 
     set position(v) {
         if (typeof v !== 'object') return
-        if (v.x) this.#config.position.x = v.x
-        if (v.y) this.#config.position.y = v.y
+        if (v.x) v.x = parseInt(v.x)
+        if (v.y) v.y = parseInt(v.y)
+        this.#config.position = { ...this.#config.position, ...v }
         this.#updateLogoPosition()
     }
 
@@ -278,30 +287,6 @@ export default class Logo {
 
     get listeners() {
         return [
-            {
-                event: Events.SetHidden.name,
-                handler: (e) => (this.hidden = e.detail),
-            },
-            {
-                event: Events.SetRatio.name,
-                handler: (e) => (this.ratio = e.detail),
-            },
-            {
-                event: Events.SetOpacity.name,
-                handler: (e) => (this.opacity = e.detail),
-            },
-            {
-                event: Events.SetImage.name,
-                handler: (e) => (this.image = e.detail),
-            },
-            {
-                event: Events.ResetImage.name,
-                handler: () => this.resetImage(),
-            },
-            {
-                event: Events.SetPosition.name,
-                handler: (e) => (this.position = e.detail),
-            },
             {
                 id: 'operator-logo',
                 event: 'click',
@@ -401,13 +386,26 @@ export default class Logo {
             },
         ]
     }
-}
 
-export const Events = {
-    SetHidden: createCustomEvent('logo-set-hidden', true),
-    SetRatio: createCustomEvent('logo-set-ratio', true),
-    SetOpacity: createCustomEvent('logo-set-opacity', true),
-    SetImage: createCustomEvent('logo-set-image', true),
-    ResetImage: createCustomEvent('logo-reset-image'),
-    SetPosition: createCustomEvent('logo-set-position', true),
+    applyConfig(key, value) {
+        switch (key) {
+            case 'hidden':
+                this.hidden = value
+                break
+            case 'ratio':
+                this.ratio = value
+                break
+            case 'opacity':
+                this.opacity = value
+                break
+            case 'image':
+                this.image = value
+                break
+            case 'position':
+                this.position = value
+                break
+            default:
+                return
+        }
+    }
 }

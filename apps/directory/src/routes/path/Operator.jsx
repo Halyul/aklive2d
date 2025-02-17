@@ -108,7 +108,7 @@ export default function Operator() {
             if (spineRef.current?.children.length > 0) {
                 spineRef.current?.removeChild(spineRef.current?.children[0])
             }
-            fetch(`/${buildConfig.directory_folder}/voice_${config.link}.json`)
+            fetch(`/${key}/assets/charword_table.json`)
                 .then((res) => res.json())
                 .then((data) => {
                     setVoiceConfig(data)
@@ -484,7 +484,7 @@ export default function Operator() {
                         <section className={classes['styled-selection']}>
                             <Link
                                 reloadDocument
-                                to={`./index.html?settings`}
+                                to={`./index.html?aklive2d`}
                                 target="_blank"
                                 style={{
                                     color: config?.color,

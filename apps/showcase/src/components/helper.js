@@ -34,9 +34,10 @@ export const updateElementPosition = (el, position) => {
     el.style.transform = `translate(${xpx}px, ${ypx}px)`
 }
 
-export const updateHTMLOptions = (array, id = null) => {
+export const updateHTMLOptions = (array, id = null, selected = null) => {
     const value = array.map(
-        (item) => `<option value="${item}">${item}</option>`
+        (item) =>
+            `<option value="${item}" ${item === selected ? 'selected' : ''}>${item}</option>`
     )
     if (id) {
         document.getElementById(id).innerHTML = value.join('')

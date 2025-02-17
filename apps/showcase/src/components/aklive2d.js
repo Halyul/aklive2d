@@ -23,6 +23,10 @@ export default class AKLive2D {
     #player
     #background
     #logo
+    #configQ = []
+    #isInited = false
+    #isSelfInited = false
+    #isAllInited = false
     #insight = new Insight()
 
     constructor(appEl) {
@@ -43,53 +47,64 @@ export default class AKLive2D {
         } else {
             new Fallback(this.#appEl)
         }
-
-        this.#el.id = 'settings-box'
-        this.#el.hidden = true
-        this.#el.innerHTML = `
-    <div>
-      ${this.#logo.HTML}
-      ${this.#background.HTML}
-      ${this.#player.HTML}
-      ${this.#voice.HTML}
-      ${this.#music.HTML}
-      <div>
-        <button type="button" id="settings-reset">Reset</button>
-        <button type="button" id="settings-close">Close</button>
-        <button type="button" id="settings-to-directory">Back to Directory</button>
-      </div>
-    </div>
-    `
-        insertHTMLChild(this.#appEl, this.#el)
         addEventListeners([
             {
                 event: Events.Player.Ready.name,
-                handler: () => this.#success(),
+                handler: () => this.#selfInited(),
             },
             {
-                id: 'settings-reset',
-                event: 'click',
-                handler: () => this.reset(),
+                event: Events.RegisterConfig.name,
+                handler: (e) => this.#registerConfig(e),
             },
-            {
-                id: 'settings-close',
-                event: 'click',
-                handler: () => this.close(),
-            },
-            {
-                id: 'settings-to-directory',
-                event: 'click',
-                handler: () => {
-                    window.location.href = '/'
-                },
-            },
-            ...this.#logo.listeners,
-            ...this.#background.listeners,
-            ...this.#player.listeners,
-            ...this.#voice.listeners,
-            ...this.#music.listeners,
-            ...this.#insight.listeners,
         ])
+
+        Promise.all(
+            [
+                this.#logo,
+                this.#background,
+                this.#voice,
+                this.#music,
+                this.#player,
+            ].map(async (e) => e && (await e.init()))
+        ).then(() => this.#allInited())
+    }
+
+    #registerConfig(e) {
+        if (!this.#isInited) {
+            this.#configQ.push(e.detail)
+        } else {
+            this.#applyConfig(e.detail)
+        }
+    }
+
+    #applyConfig(config = null) {
+        if (config) {
+            let targetObj
+            const target = config.target
+            switch (target) {
+                case 'player':
+                    targetObj = this.#player
+                    break
+                case 'background':
+                    targetObj = this.#background
+                    break
+                case 'logo':
+                    targetObj = this.#logo
+                    break
+                case 'music':
+                    targetObj = this.#music
+                    break
+                case 'voice':
+                    targetObj = this.#voice
+                    break
+                default:
+                    return
+            }
+            targetObj.applyConfig(config.key, config.value)
+        } else {
+            this.#configQ.map((e) => this.#applyConfig(e))
+        }
+        return
     }
 
     get voice() {
@@ -146,7 +161,65 @@ export default class AKLive2D {
         this.#music.reset()
     }
 
+    #allInited() {
+        this.#isAllInited = true
+        if (this.#isSelfInited) {
+            this.#success()
+        }
+    }
+
+    #selfInited() {
+        this.#isSelfInited = true
+        if (this.#isAllInited) {
+            this.#success()
+        }
+    }
+
     #success() {
+        this.#isInited = true
+        this.#el.id = 'settings-box'
+        this.#el.hidden = true
+        this.#el.innerHTML = `
+    <div>
+      ${this.#logo.HTML}
+      ${this.#background.HTML}
+      ${this.#player.HTML}
+      ${this.#music.HTML}
+      ${this.#voice.HTML}
+      <div>
+        <button type="button" id="settings-reset">Reset</button>
+        <button type="button" id="settings-close">Close</button>
+        <button type="button" id="settings-to-directory">Back to Directory</button>
+      </div>
+    </div>
+    `
+        insertHTMLChild(this.#appEl, this.#el)
+        addEventListeners([
+            {
+                id: 'settings-reset',
+                event: 'click',
+                handler: () => this.reset(),
+            },
+            {
+                id: 'settings-close',
+                event: 'click',
+                handler: () => this.close(),
+            },
+            {
+                id: 'settings-to-directory',
+                event: 'click',
+                handler: () => {
+                    window.location.href = '/'
+                },
+            },
+            ...this.#logo.listeners,
+            ...this.#background.listeners,
+            ...this.#player.listeners,
+            ...this.#voice.listeners,
+            ...this.#music.listeners,
+            ...this.#insight.listeners,
+        ])
+
         this.#music.link(this.#background)
         this.#background.link(this.#music)
         this.#voice.link(this.#player)
@@ -154,6 +227,9 @@ export default class AKLive2D {
         this.#voice.success()
         this.#music.success()
         this.#insight.success()
+
+        this.#applyConfig()
+
         if (
             this.#queries.has('aklive2d') ||
             import.meta.env.MODE === 'development'

@@ -5,7 +5,6 @@ import {
     syncHTMLValue,
     readFile,
     getCurrentHTMLOptions,
-    createCustomEvent,
 } from '@/components/helper'
 import buildConfig from '!/config.json'
 
@@ -49,6 +48,9 @@ export default class Music {
       </audio>
     `
         insertHTMLChild(this.#parentEl, this.#el)
+    }
+
+    async init() {
         this.#music.list = Object.keys(this.#music.mapping)
         this.#audio.intro.el = document.getElementById(this.#audio.intro.id)
         this.#audio.loop.el = document.getElementById(this.#audio.loop.id)
@@ -135,6 +137,7 @@ export default class Music {
     }
 
     set timeOffset(value) {
+        value = value < 0 ? 0 : parseFloat(value)
         this.#config.timeOffset = value
     }
 
@@ -147,6 +150,7 @@ export default class Music {
     }
 
     set volume(value) {
+        value = value < 0 ? 0 : value > 100 ? 100 : parseInt(value)
         this.#config.volume = value
         this.#audio.intro.el.volume = this.#volume
         if (this.#audio.intro.el.paused)
@@ -191,6 +195,10 @@ export default class Music {
     }
 
     set custom(url) {
+        if (!url) {
+            this.reset()
+            return
+        }
         const update = (url, type, v = null) => {
             this.#config.name = {
                 isLocalFile: v !== null,
@@ -272,26 +280,6 @@ export default class Music {
     get listeners() {
         return [
             {
-                event: Events.SetMusic.name,
-                handler: (e) => (this.music = e.detail),
-            },
-            {
-                event: Events.SetUseMusic.name,
-                handler: (e) => (this.useMusic = e.detail),
-            },
-            {
-                event: Events.SetVolume.name,
-                handler: (e) => (this.volume = e.detail),
-            },
-            {
-                event: Events.SetCustom.name,
-                handler: (e) => (this.custom = e.detail),
-            },
-            {
-                event: Events.Reset.name,
-                handler: () => this.reset(),
-            },
-            {
                 id: 'music',
                 event: 'click',
                 handler: (e) => {
@@ -326,7 +314,7 @@ export default class Music {
                 event: 'input',
                 handler: (e) => {
                     syncHTMLValue(e.currentTarget, 'music-volume-input')
-                    this.volume = parseInt(e.currentTarget.value)
+                    this.volume = e.currentTarget.value
                 },
             },
             {
@@ -334,7 +322,7 @@ export default class Music {
                 event: 'change',
                 handler: (e) => {
                     syncHTMLValue(e.currentTarget, 'music-volume-slider')
-                    this.volume = parseInt(e.currentTarget.value)
+                    this.volume = e.currentTarget.value
                 },
             },
             {
@@ -342,7 +330,7 @@ export default class Music {
                 event: 'input',
                 handler: (e) => {
                     syncHTMLValue(e.currentTarget, 'music-switch-offset-input')
-                    this.timeOffset = parseFloat(e.currentTarget.value)
+                    this.timeOffset = e.currentTarget.value
                 },
             },
             {
@@ -350,17 +338,28 @@ export default class Music {
                 event: 'change',
                 handler: (e) => {
                     syncHTMLValue(e.currentTarget, 'music-switch-offset-slider')
-                    this.timeOffset = parseFloat(e.currentTarget.value)
+                    this.timeOffset = e.currentTarget.value
                 },
             },
         ]
     }
-}
 
-export const Events = {
-    SetMusic: createCustomEvent('music-set-music', true),
-    SetUseMusic: createCustomEvent('music-set-usemusic', true),
-    SetVolume: createCustomEvent('music-set-volume', true),
-    SetCustom: createCustomEvent('music-set-custom', true),
-    Reset: createCustomEvent('music-reset'),
+    applyConfig(key, value) {
+        switch (key) {
+            case 'music':
+                this.music = value
+                break
+            case 'use-music':
+                this.useMusic = value
+                break
+            case 'volume':
+                this.volume = value
+                break
+            case 'custom':
+                this.custom = value
+                break
+            default:
+                return
+        }
+    }
 }

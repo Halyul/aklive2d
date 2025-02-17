@@ -13,7 +13,8 @@
         "@aklive2d/config": "workspace:*",
         "@aklive2d/music": "workspace:*",
         "@aklive2d/background": "workspace:*",
-        "@aklive2d/prettier-config": "workspace:*"
+        "@aklive2d/prettier-config": "workspace:*",
+        "@aklive2d/charword-table": "workspace:*"
     },
     "scripts": {
         "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."

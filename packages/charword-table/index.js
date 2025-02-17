@@ -17,6 +17,7 @@ const REGION_URLS = {
     ko_KR: 'Kengxxiao/ArknightsGameData_YoStar',
 }
 const DEFAULT_REGION = REGIONS[0]
+export const defaultRegion = DEFAULT_REGION.replace('_', '-')
 const NICKNAME = {
     zh_CN: '博士',
     en_US: 'Doctor',
@@ -36,24 +37,15 @@ const CHARWORD_TABLE_FILE = path.resolve(
     AUTO_UPDATE_FOLDER,
     config.module.charword_table.charword_table_json
 )
-const CHARWORD_TABLE = JSON.parse(file.readSync(CHARWORD_TABLE_FILE)) || {
-    config: {
-        default_region: DEFAULT_REGION,
-        regions: REGIONS,
-    },
-    operators: {},
-}
+const CHARWORD_TABLE = JSON.parse(file.readSync(CHARWORD_TABLE_FILE)) || {}
 const DIST_DIR = path.resolve(import.meta.dirname, config.dir_name.dist)
 
 export const lookup = (operatorName) => {
     const operatorId = getOperatorId(operators[operatorName])
-    const operatorBlock = CHARWORD_TABLE.operators[operatorId]
-    return {
-        config: CHARWORD_TABLE.config,
-        operator: operatorBlock.ref
-            ? CHARWORD_TABLE.operators[operatorBlock.alternativeId]
-            : operatorBlock,
-    }
+    const operatorBlock = CHARWORD_TABLE[operatorId]
+    return operatorBlock.ref
+        ? CHARWORD_TABLE[operatorBlock.alternativeId]
+        : operatorBlock
 }
 
 const getDistDir = (name) => {
@@ -81,26 +73,15 @@ export const build = async (namesToBuild) => {
     for (const name of names) {
         const charwordTableLookup = lookup(name)
         const voiceJson = {}
-        voiceJson.config = {
-            default_region: charwordTableLookup.config.default_region.replace(
-                '_',
-                '-'
-            ),
-            regions: charwordTableLookup.config.regions.map((item) =>
-                item.replace('_', '-')
-            ),
-        }
         voiceJson.voiceLangs = {}
         voiceJson.subtitleLangs = {}
-        const subtitleInfo = Object.keys(charwordTableLookup.operator.info)
+        const subtitleInfo = Object.keys(charwordTableLookup.info)
         subtitleInfo.forEach((item) => {
-            if (
-                Object.keys(charwordTableLookup.operator.info[item]).length > 0
-            ) {
+            if (Object.keys(charwordTableLookup.info[item]).length > 0) {
                 const key = item.replace('_', '-')
                 voiceJson.subtitleLangs[key] = {}
                 for (const [id, subtitles] of Object.entries(
-                    charwordTableLookup.operator.voice[item]
+                    charwordTableLookup.voice[item]
                 )) {
                     const match = id.replace(/(.+?)([A-Z]\w+)/, '$2')
                     if (match === id) {
@@ -110,7 +91,7 @@ export const build = async (namesToBuild) => {
                     }
                 }
                 voiceJson.voiceLangs[key] = {}
-                Object.values(charwordTableLookup.operator.info[item]).forEach(
+                Object.values(charwordTableLookup.info[item]).forEach(
                     (item) => {
                         voiceJson.voiceLangs[key] = {
                             ...voiceJson.voiceLangs[key],
@@ -176,7 +157,7 @@ const updateFn = async (isLocalOnly = false) => {
         {}
     )
     OPERATOR_IDS.forEach((id) => {
-        CHARWORD_TABLE.operators[id] = {
+        CHARWORD_TABLE[id] = {
             alternativeId: id.replace(
                 /^(char_)([\d]+)(_[\w]+)(|(_.+))$/g,
                 '$1$2$3'
@@ -207,7 +188,7 @@ const load = async (region, isLocalOnly = false) => {
           )
 
     // put voice actor info into charword_table
-    for (const [id, element] of Object.entries(CHARWORD_TABLE.operators)) {
+    for (const [id, element] of Object.entries(CHARWORD_TABLE)) {
         let operatorId = id
         let useAlternativeId = false
         if (typeof data.voiceLangDict[operatorId] === 'undefined') {
@@ -253,7 +234,7 @@ const load = async (region, isLocalOnly = false) => {
 
     // put voice lines into charword_table
     Object.values(data.charWords).forEach((item) => {
-        const operatorInfo = Object.values(CHARWORD_TABLE.operators).filter(
+        const operatorInfo = Object.values(CHARWORD_TABLE).filter(
             (element) => element.info[region][item.wordKey]
         )
         if (operatorInfo.length > 0) {

@@ -4,7 +4,6 @@ import {
     showRelatedHTML,
     syncHTMLValue,
     insertHTMLChild,
-    createCustomEvent,
 } from '@/components/helper'
 import '@/components/background.css'
 import buildConfig from '!/config.json'
@@ -15,7 +14,7 @@ export default class Background {
     #videoEl
     #default = {
         location: `${import.meta.env.BASE_URL}assets/${buildConfig.background_folder}/`,
-        image: 'operator_bg.png',
+        image: buildConfig.default_background,
     }
     #config = {
         video: {
@@ -35,6 +34,9 @@ export default class Background {
       <video autoplay loop disablepictureinpicture id="video-src" />
     `
         insertHTMLChild(this.#parentEl, this.#el)
+    }
+
+    async init() {
         this.#videoEl = document.getElementById('video-src')
     }
 
@@ -74,6 +76,10 @@ export default class Background {
     }
 
     set video(v) {
+        if (!v) {
+            this.resetVideo()
+            return
+        }
         const update = (url, v = null) => {
             this.#config.video.name = {
                 isLocalFile: v !== null,
@@ -112,6 +118,10 @@ export default class Background {
     }
 
     set custom(v) {
+        if (!v) {
+            this.resetImage()
+            return
+        }
         const update = (url, v = null) => {
             this.#config.name = {
                 isLocalFile: v !== null,
@@ -156,7 +166,7 @@ export default class Background {
       <div>
         <label for="default-background-select">Choose a default background:</label>
         <select name="default-backgrounds" id="default-background-select">
-            ${updateHTMLOptions(buildConfig.background_files)}
+            ${updateHTMLOptions(buildConfig.background_files, null, this.#default.image)}
         </select>
       </div>
       <div>
@@ -196,30 +206,6 @@ export default class Background {
 
     get listeners() {
         return [
-            {
-                event: Events.SetDefault.name,
-                handler: (e) => (this.default = e.detail),
-            },
-            {
-                event: Events.SetCustom.name,
-                handler: (e) => (this.custom = e.detail),
-            },
-            {
-                event: Events.SetVideo.name,
-                handler: (e) => (this.video = e.detail),
-            },
-            {
-                event: Events.SetVolume.name,
-                handler: (e) => (this.volume = e.detail),
-            },
-            {
-                event: Events.ResetImage.name,
-                handler: () => this.resetImage(),
-            },
-            {
-                event: Events.ResetVideo.name,
-                handler: () => this.resetVideo(),
-            },
             {
                 id: 'default-background-select',
                 event: 'change',
@@ -290,13 +276,23 @@ export default class Background {
             },
         ]
     }
-}
 
-export const Events = {
-    SetDefault: createCustomEvent('background-set-default', true),
-    SetCustom: createCustomEvent('background-set-custom', true),
-    SetVideo: createCustomEvent('background-set-video', true),
-    SetVolume: createCustomEvent('background-set-volume', true),
-    ResetImage: createCustomEvent('background-reset-image'),
-    ResetVideo: createCustomEvent('background-reset-video'),
+    applyConfig(key, value) {
+        switch (key) {
+            case 'default':
+                this.default = value
+                break
+            case 'custom':
+                this.custom = value
+                break
+            case 'video':
+                this.video = value
+                break
+            case 'volume':
+                this.volume = value
+                break
+            default:
+                return
+        }
+    }
 }

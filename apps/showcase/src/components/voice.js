@@ -4,18 +4,16 @@ import {
     updateHTMLOptions,
     showRelatedHTML,
     syncHTMLValue,
-    createCustomEvent,
 } from '@/components/helper'
-
-import charword_table from '!/charword_table.json'
 import '@/components/voice.css'
 import buildConfig from '!/config.json'
 
 export default class Voice {
     #el = document.createElement('div')
     #parentEl
+    #charwordTable
     #default = {
-        region: charword_table.config.default_region,
+        region: buildConfig.voice_default_region,
         duration: {
             idle: 10 * 60 * 1000,
             next: 3 * 60 * 1000,
@@ -29,7 +27,6 @@ export default class Voice {
         },
     }
     #voice = {
-        languages: Object.keys(charword_table.voiceLangs[this.#default.region]),
         id: {
             current: null,
             last: null,
@@ -61,11 +58,6 @@ export default class Voice {
     #playerObj
 
     constructor(el) {
-        this.#default.language.voice = this.#voice.languages[0]
-        this.#config.language = this.#default.language.voice
-        this.#voice.locations = this.#getVoiceLocations()
-        this.#voice.list = Object.keys(this.#getVoices())
-
         this.#parentEl = el
         this.#el.id = 'voice-box'
         this.#el.hidden = true
@@ -88,6 +80,18 @@ export default class Voice {
       </div>
     `
         insertHTMLChild(this.#parentEl, this.#el)
+    }
+
+    async init() {
+        const res = await fetch('./assets/charword_table.json')
+        this.#charwordTable = await res.json()
+        this.#voice.languages = Object.keys(
+            this.#charwordTable.voiceLangs[this.#default.region]
+        )
+        this.#default.language.voice = this.#voice.languages[0]
+        this.#config.language = this.#default.language.voice
+        this.#voice.locations = this.#getVoiceLocations()
+        this.#voice.list = Object.keys(this.#getVoices())
     }
 
     success() {
@@ -145,7 +149,7 @@ export default class Voice {
     }
 
     #getVoices() {
-        return charword_table.subtitleLangs[this.#config.subtitle.language]
+        return this.#charwordTable.subtitleLangs[this.#config.subtitle.language]
             .default
     }
 
@@ -196,7 +200,7 @@ export default class Voice {
         const title = subtitle.title
         const content = subtitle.text
         const cvInfo =
-            charword_table.voiceLangs[this.subtitleLanguage][
+            this.#charwordTable.voiceLangs[this.subtitleLanguage][
                 this.#config.language
             ]
         document.getElementById('voice-title').innerText = title
@@ -212,7 +216,8 @@ export default class Voice {
     }
 
     #getSubtitleById(id) {
-        const obj = charword_table.subtitleLangs[this.#config.subtitle.language]
+        const obj =
+            this.#charwordTable.subtitleLangs[this.#config.subtitle.language]
         let key = 'default'
         if (obj[this.#config.language]) {
             key = this.#config.language
@@ -221,7 +226,7 @@ export default class Voice {
     }
 
     #getSubtitleLanguages() {
-        return Object.keys(charword_table.subtitleLangs)
+        return Object.keys(this.#charwordTable.subtitleLangs)
     }
 
     #updateSubtitlePosition() {
@@ -335,8 +340,10 @@ export default class Voice {
 
     set position(v) {
         if (typeof v !== 'object') return
-        if (v.x) this.#config.subtitle.x = v.x
-        if (v.y) this.#config.subtitle.y = v.y
+        if (v.x) v.x = parseInt(v.x)
+        if (v.y) v.y = parseInt(v.y)
+        this.#config.subtitle = { ...this.#config.subtitle, ...v }
+        console.log(v)
         this.#updateSubtitlePosition()
     }
 
@@ -509,34 +516,6 @@ export default class Voice {
     get listeners() {
         return [
             {
-                event: Events.SetUseVoice.name,
-                handler: (e) => (this.useVoice = e.detail),
-            },
-            {
-                event: Events.SetLanguage.name,
-                handler: (e) => (this.language = e.detail),
-            },
-            {
-                event: Events.SetDuration.name,
-                handler: (e) => (this.duration = e.detail),
-            },
-            {
-                event: Events.SetUseSubtitle.name,
-                handler: (e) => (this.useSubtitle = e.detail),
-            },
-            {
-                event: Events.SetSubtitleLanguage.name,
-                handler: (e) => (this.subtitleLanguage = e.detail),
-            },
-            {
-                event: Events.SetSubtitlePosition.name,
-                handler: (e) => (this.position = e.detail),
-            },
-            {
-                event: Events.SetUseVoiceActor.name,
-                handler: (e) => (this.useVoiceActor = e.detail),
-            },
-            {
                 id: 'voice',
                 event: 'click',
                 handler: (e) => {
@@ -631,14 +610,32 @@ export default class Voice {
             },
         ]
     }
-}
 
-export const Events = {
-    SetUseVoice: createCustomEvent('voice-set-usevoice', true),
-    SetLanguage: createCustomEvent('voice-set-language', true),
-    SetDuration: createCustomEvent('voice-set-duration', true),
-    SetUseSubtitle: createCustomEvent('voice-set-usesubtitle', true),
-    SetSubtitleLanguage: createCustomEvent('voice-set-subtitlelanguage', true),
-    SetSubtitlePosition: createCustomEvent('voice-set-subtitleposition', true),
-    SetUseVoiceActor: createCustomEvent('voice-set-usevoiceactor', true),
+    applyConfig(key, value) {
+        switch (key) {
+            case 'use-voice':
+                this.useVoice = value
+                break
+            case 'language':
+                this.language = value
+                break
+            case 'duration':
+                this.duration = value
+                break
+            case 'use-subtitle':
+                this.useSubtitle = value
+                break
+            case 'subtitle-language':
+                this.subtitleLanguage = value
+                break
+            case 'subtitle-position':
+                this.position = value
+                break
+            case 'use-voice-actor':
+                this.useVoiceActor = value
+                break
+            default:
+                return
+        }
+    }
 }

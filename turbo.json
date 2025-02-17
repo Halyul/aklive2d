@@ -3,13 +3,13 @@
   "tasks": {
     "@aklive2d/directory#build": {
       "env": ["name"],
-      "inputs": ["$TURBO_DEFAULT$", "../../packages/assets/dist/**"],
+      "inputs": ["$TURBO_DEFAULT$", "../../packages/assets/dist/**", "src/**"],
       "outputs": ["../../dist/index.html", "../../dist/_assets/**", "../../dist/_directory/**"],
       "dependsOn": ["^@aklive2d/showcase#build"]
     },
     "@aklive2d/showcase#build": {
       "env": ["name"],
-      "inputs": ["$TURBO_DEFAULT$", "../../packages/assets/dist/**"],
+      "inputs": ["$TURBO_DEFAULT$", "../../packages/assets/dist/**", "src/**"],
       "outputs": ["../../dist/**"],
       "dependsOn": ["@aklive2d/assets#build"]
     },

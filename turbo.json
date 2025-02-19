@@ -91,6 +91,12 @@
     },
     "download:game": {
       "cache": false
+    },
+    "upload": {
+      "cache": false
+    },
+    "download:data": {
+      "cache": false
     }
   }
 }

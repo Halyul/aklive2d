@@ -90,5 +90,19 @@
       "command": "pnpm run download:game",
       "cwd": "${workspaceFolder}"
     },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: upload",
+      "request": "launch",
+      "command": "pnpm run upload",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: download:data",
+      "request": "launch",
+      "command": "pnpm run download:data",
+      "cwd": "${workspaceFolder}"
+    },
   ]
 }

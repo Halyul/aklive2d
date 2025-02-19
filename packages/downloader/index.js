@@ -1,10 +1,9 @@
 import path from 'node:path'
 import fs from 'node:fs'
 import { Buffer } from 'node:buffer'
-import yauzl from 'yauzl'
 import { file as fileLib } from '@aklive2d/libs'
 
-export const github = async (history_url, raw_url, filepath) => {
+export const githubDownload = async (history_url, raw_url, filepath) => {
     const historyResponse = await fetch(history_url)
     const historyData = await historyResponse.json()
     const lastCommit = historyData[0]
@@ -37,7 +36,7 @@ export const github = async (history_url, raw_url, filepath) => {
     return data
 }
 
-export const unzip = async (
+export const unzipDownload = async (
     filesToDownload,
     targetDir,
     opts = {
@@ -59,7 +58,7 @@ export const unzip = async (
                 })
                 .then((arrayBuffer) => {
                     const buffer = Buffer.from(arrayBuffer)
-                    yauzl.fromBuffer(
+                    fileLib.unzip.fromBuffer(
                         buffer,
                         { lazyEntries: true },
                         (err, zipfile) => {

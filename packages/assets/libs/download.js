@@ -1,14 +1,12 @@
 import path from 'node:path'
 import { file } from '@aklive2d/libs'
-import { unzip } from '@aklive2d/downloader'
+import { unzipDownload } from '@aklive2d/downloader'
 import { getOperatorId, getOperatorAlternativeId } from '@aklive2d/operator'
 import { mapping } from '@aklive2d/music'
 import config from '../index.js'
 
 export default async (dataDir) => {
     const pidSet = new Set()
-    file.rmdir(dataDir)
-    file.mkdir(dataDir)
     const versionRes = await fetch(
         'https://ak-conf.hypergryph.com/config/prod/official/Android/version'
     )
@@ -46,7 +44,7 @@ export default async (dataDir) => {
             url: `https://ak.hycdn.cn/assetbundle/official/Android/assets/${version}/${item}.dat`,
         })
     })
-    await unzip(lpacksToDownload, dataDir, {
+    await unzipDownload(lpacksToDownload, dataDir, {
         matchRegExp: itemToDownloadRegExp,
     })
 }

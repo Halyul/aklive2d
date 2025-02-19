@@ -13,6 +13,7 @@ window.wallpaperPropertyListener = {
         }
     },
     applyUserProperties: function (properties) {
+        console.log(properties)
         if (properties.privacydonottrack) {
             document.dispatchEvent(
                 Events.Insight.Register.handler(

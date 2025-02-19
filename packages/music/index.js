@@ -1,6 +1,6 @@
 import path from 'path'
 import { file } from '@aklive2d/libs'
-import { github } from '@aklive2d/downloader'
+import { githubDownload } from '@aklive2d/downloader'
 import config from '@aklive2d/config'
 
 const AUTO_UPDATE_FOLDER = path.resolve(
@@ -22,12 +22,12 @@ const download = async () => {
         AUTO_UPDATE_FOLDER,
         config.module.music.audio_data_json
     )
-    const metaTable = await github(
+    const metaTable = await githubDownload(
         `https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=zh_CN/gamedata/excel/display_meta_table.json`,
         `https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/display_meta_table.json`,
         display_meta_table_json
     )
-    const audioDataTable = await github(
+    const audioDataTable = await githubDownload(
         `https://api.github.com/repos/Kengxxiao/ArknightsGameData/commits?path=zh_CN/gamedata/excel/audio_data.json`,
         `https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/audio_data.json`,
         audio_data_json

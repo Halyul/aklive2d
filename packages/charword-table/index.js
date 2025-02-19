@@ -1,6 +1,6 @@
 import path from 'node:path'
 import { file } from '@aklive2d/libs'
-import { github } from '@aklive2d/downloader'
+import { githubDownload } from '@aklive2d/downloader'
 import config from '@aklive2d/config'
 import operators, {
     getOperatorId,
@@ -259,7 +259,7 @@ const load = async (region, isLocalOnly = false) => {
 }
 
 const download = async (region, targetFilePath) => {
-    return await github(
+    return await githubDownload(
         `https://api.github.com/repos/${REGION_URLS[region]}/commits?path=${region}/gamedata/excel/charword_table.json`,
         `https://raw.githubusercontent.com/${REGION_URLS[region]}/master/${region}/gamedata/excel/charword_table.json`,
         targetFilePath

@@ -10,7 +10,9 @@
     "lint": "turbo run lint",
     "update": "turbo run update",
     "init": "turbo run init",
-    "download:game": "turbo run download:game"
+    "download:game": "turbo run download:game",
+    "upload": "turbo run upload",
+    "download:data": "turbo run download:data"
   },
   "devDependencies": {
     "eslint": "^9.20.1",

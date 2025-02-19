@@ -1,5 +1,7 @@
 import fs, { promises as fsP } from 'fs'
 import path from 'path'
+import yauzl from 'yauzl'
+import yazl from 'yazl'
 
 export async function write(content, filePath) {
     mkdir(path.dirname(filePath))
@@ -143,3 +145,22 @@ export const cpSync = (
         dereference: opts.dereference,
     })
 }
+
+export const relative = (source, target) => {
+    if (!exists(source)) {
+        console.warn(`Source file ${source} does not exist.`)
+        return
+    }
+    return path.relative(source, target)
+}
+
+export const size = (source) => {
+    if (!exists(source)) {
+        console.warn(`Source file ${source} does not exist.`)
+        return
+    }
+    return fs.statSync(source).size
+}
+
+export const unzip = yauzl
+export const zip = yazl

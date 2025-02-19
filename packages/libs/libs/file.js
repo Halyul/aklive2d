@@ -99,7 +99,8 @@ export const symlink = (source, target) => {
         fs.unlinkSync(target)
     }
     mkdir(path.dirname(target))
-    fs.symlinkSync(source, target)
+    const relative = path.relative(path.dirname(target), source)
+    fs.symlinkSync(relative, target)
 }
 
 export const symlinkAll = (source, target) => {

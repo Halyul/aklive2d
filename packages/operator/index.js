@@ -55,7 +55,7 @@ const generateMapping = () => {
             operator.link = operatorName
 
             // id
-            operator.id = getOperatorId(operator).replace(
+            operator.id = getOperatorId(operator.filename).replace(
                 /^(char_)(\d+)(_.+)$/g,
                 '$2'
             )
@@ -85,11 +85,12 @@ const operators = generateMapping()
 
 export default operators
 
-export function getOperatorId(operatorConfig) {
-    return operatorConfig.filename.replace(
-        /^(dyn_illust_)(char_[\d]+)(_[\w]+)(|(_.+))$/g,
-        '$2$3$4'
-    )
+export function getOperatorId(name, matcher = '$2$3$4') {
+    return name.replace(/^(.*)(char_[\d]+)(_[\w]+)(|_.*)$/g, matcher)
+}
+
+export const getOperatorAlternativeId = (id) => {
+    return getOperatorId(id, '$2$3')
 }
 
 export const build = async (namesToBuild) => {

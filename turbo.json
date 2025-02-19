@@ -88,6 +88,9 @@
       "dependsOn": ["^@aklive2d/showcase#build"],
       "cache": false,
       "persistent": true
+    },
+    "download:game": {
+      "cache": false
     }
   }
 }

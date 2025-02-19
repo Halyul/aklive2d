@@ -1,5 +1,4 @@
 import jsdom from 'jsdom'
-import fetch from 'node-fetch'
 import path from 'path'
 import { file } from '@aklive2d/libs'
 import config from '@aklive2d/config'

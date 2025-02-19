@@ -61,7 +61,7 @@ importers:
         version: link:../../packages/vite-helpers
       jotai:
         specifier: ^2.11.3
-        version: 2.12.0(@types/react@19.0.8)(react@19.0.0)
+        version: 2.12.1(@types/react@19.0.10)(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -80,10 +80,10 @@ importers:
     devDependencies:
       '@types/react':
         specifier: ^19.0.8
-        version: 19.0.8
+        version: 19.0.10
       '@types/react-dom':
         specifier: ^19.0.3
-        version: 19.0.3(@types/react@19.0.8)
+        version: 19.0.4(@types/react@19.0.10)
       '@vitejs/plugin-react-swc':
         specifier: ^3.5.0
         version: 3.8.0(vite@6.1.0(sass@1.85.0)(yaml@2.7.0))
@@ -152,12 +152,21 @@ importers:
       '@aklive2d/config':
         specifier: workspace:*
         version: link:../config
+      '@aklive2d/downloader':
+        specifier: workspace:*
+        version: link:../downloader
       '@aklive2d/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
       '@aklive2d/libs':
         specifier: workspace:*
         version: link:../libs
+      '@aklive2d/music':
+        specifier: workspace:*
+        version: link:../music
+      '@aklive2d/operator':
+        specifier: workspace:*
+        version: link:../operator
       '@aklive2d/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
@@ -227,9 +236,9 @@ importers:
       '@aklive2d/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
-      node-fetch:
-        specifier: ^3.3.2
-        version: 3.3.2
+      yauzl:
+        specifier: ^3.2.0
+        version: 3.2.0
 
   packages/eslint-config:
     dependencies:
@@ -299,9 +308,6 @@ importers:
       jsdom:
         specifier: ^26.0.0
         version: 26.0.0
-      node-fetch:
-        specifier: ^3.3.2
-        version: 3.3.2
 
   packages/operator:
     dependencies:
@@ -990,8 +996,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@keyv/serialize@1.0.2':
-    resolution: {integrity: sha512-+E/LyaAeuABniD/RvUezWVXKpeuvwLEA9//nE9952zBaOdBd2mQ3pPoM8cUe2X6IcMByfuSLzmYqnYshG60+HQ==}
+  '@keyv/serialize@1.0.3':
+    resolution: {integrity: sha512-qnEovoOp5Np2JDGonIDL6Ayihw0RhnRh6vxPuHo4RDn1UOzwEo4AeIfpL6UGIrsceWrCMiVPgwRjbHu4vYFc3g==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1270,13 +1276,13 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/react-dom@19.0.3':
-    resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
+  '@types/react-dom@19.0.4':
+    resolution: {integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==}
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.0.8':
-    resolution: {integrity: sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==}
+  '@types/react@19.0.10':
+    resolution: {integrity: sha512-JuRQ9KXLEjaUNjTWpzuR231Z2WpIwczOkBEIvbHNCzQefFIT0L8IqE6NV6ULLyC1SI/i234JnDoMkfg+RjQj2g==}
 
   '@vitejs/plugin-react-swc@3.8.0':
     resolution: {integrity: sha512-T4sHPvS+DIqDP51ifPqa9XIRAz/kIvIi8oXcnOZZgHmMotgmmdxe/DD5tMFlt5nuIRzT0/QuiwmKlH0503Aapw==}
@@ -1410,6 +1416,9 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
+  buffer-crc32@0.2.13:
+    resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
+
   buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
 
@@ -1517,10 +1526,6 @@ packages:
 
   data-uri-to-buffer@2.0.2:
     resolution: {integrity: sha512-ND9qDTLc6diwj+Xe5cdAgVTbLVdXbtxTJRXRhli8Mowuaan+0EJOtdqJ0QCHNSSPyoXGx9HX2/VMnKeC34AChA==}
-
-  data-uri-to-buffer@4.0.1:
-    resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
-    engines: {node: '>= 12'}
 
   data-urls@5.0.0:
     resolution: {integrity: sha512-ZYP5VBHshaDAiVZxjbRVcFJpc+4xGgT0bK3vzy1HLN8jTO975HEbuYzZJcHoQEY5K1a0z8YayJkyVETa08eNTg==}
@@ -1779,10 +1784,6 @@ packages:
   fastq@1.19.0:
     resolution: {integrity: sha512-7SFSRCNjBQIZH/xZR3iy5iQYR8aGBE0h3VG6/cwlbrpdciNYBMotQav8c1XI3HjHH+NikUpP53nPdlZSdWmFzA==}
 
-  fetch-blob@3.2.0:
-    resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
-    engines: {node: ^12.20 || >= 14.13}
-
   file-entry-cache@10.0.6:
     resolution: {integrity: sha512-0wvv16mVo9nN0Md3k7DMjgAPKG/TY4F/gYMBVb/wMThFRJvzrpaqBFqF6km9wf8QfYTN+mNg5aeaBLfy8k35uA==}
 
@@ -1809,8 +1810,8 @@ packages:
   flat-cache@6.1.6:
     resolution: {integrity: sha512-F+CKgSwp0pzLx67u+Zy1aCueVWFAHWbXepvXlZ+bWVTaASbm5SyCnSJ80Fp1ePEmS57wU+Bf6cx6525qtMZ4lQ==}
 
-  flatted@3.3.2:
-    resolution: {integrity: sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA==}
+  flatted@3.3.3:
+    resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
 
   follow-redirects@1.15.9:
     resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
@@ -1828,10 +1829,6 @@ packages:
   form-data@4.0.1:
     resolution: {integrity: sha512-tzN8e4TX8+kkxGPK8D5u0FNmjPUjw3lwC9lSLxxoB/+GtsJG91CO8bSWy73APlgAZzZbXEYZJuxjkHH2w+Ezhw==}
     engines: {node: '>= 6'}
-
-  formdata-polyfill@4.0.10:
-    resolution: {integrity: sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==}
-    engines: {node: '>=12.20.0'}
 
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
@@ -1939,8 +1936,8 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
-  hookified@1.7.0:
-    resolution: {integrity: sha512-XQdMjqC1AyeOzfs+17cnIk7Wdfu1hh2JtcyNfBf5u9jHrT3iZUlGHxLTntFBuk5lwkqJ6l3+daeQdHK5yByHVA==}
+  hookified@1.7.1:
+    resolution: {integrity: sha512-OXcdHsXeOiD7OJ5zvWj8Oy/6RCdLwntAX+wUrfemNcMGn6sux4xbEHi2QXwqePYhjQ/yvxxq2MvCRirdlHscBw==}
 
   html-encoding-sniffer@3.0.0:
     resolution: {integrity: sha512-oWv4T4yJ52iKrufjnyZPkrN0CH3QnrUqdB6In1g5Fe1mia8GmF36gnfNySxoZtxD5+NmYw1EElVXiBk93UeskA==}
@@ -2127,8 +2124,8 @@ packages:
     resolution: {integrity: sha512-H0dkQoCa3b2VEeKQBOxFph+JAbcrQdE7KC0UkqwpLmv2EC4P41QXP+rqo9wYodACiG5/WM5s9oDApTU8utwj9g==}
     engines: {node: '>= 0.4'}
 
-  jotai@2.12.0:
-    resolution: {integrity: sha512-j5B4NmUw8gbuN7AG4NufWw00rfpm6hexL2CVhKD7juoP2YyD9FEUV5ar921JMvadyrxQhU1NpuKUL3QfsAlVpA==}
+  jotai@2.12.1:
+    resolution: {integrity: sha512-VUW0nMPYIru5g89tdxwr9ftiVdc/nGV9jvHISN8Ucx+m1vI9dBeHemfqYzEuw5XSkmYjD/MEyApN9k6yrATsZQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -2300,14 +2297,6 @@ packages:
   node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
 
-  node-domexception@1.0.0:
-    resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
-    engines: {node: '>=10.5.0'}
-
-  node-fetch@3.3.2:
-    resolution: {integrity: sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
   node-releases@2.0.19:
     resolution: {integrity: sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==}
 
@@ -2411,6 +2400,9 @@ packages:
 
   pathe@2.0.2:
     resolution: {integrity: sha512-15Ztpk+nov8DR524R4BF7uEuzESgzUEAV4Ah7CUMNGXdE5ELuvxElxGXndBl32vMSsWa1jpNf22Z+Er3sKwq+w==}
+
+  pend@1.2.0:
+    resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -2975,10 +2967,6 @@ packages:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
 
-  web-streams-polyfill@3.3.3:
-    resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
-    engines: {node: '>= 8'}
-
   webidl-conversions@7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
@@ -3070,6 +3058,10 @@ packages:
     resolution: {integrity: sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA==}
     engines: {node: '>= 14'}
     hasBin: true
+
+  yauzl@3.2.0:
+    resolution: {integrity: sha512-Ow9nuGZE+qp1u4JIPvg+uCiUr7xGQWdff7JQSk5VGYTAZMDe2q8lxJ10ygv10qmSj031Ty/6FNJpLO4o1Sgc+w==}
+    engines: {node: '>=12'}
 
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
@@ -3454,7 +3446,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@keyv/serialize@1.0.2':
+  '@keyv/serialize@1.0.3':
     dependencies:
       buffer: 6.0.3
 
@@ -3648,11 +3640,11 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/react-dom@19.0.3(@types/react@19.0.8)':
+  '@types/react-dom@19.0.4(@types/react@19.0.10)':
     dependencies:
-      '@types/react': 19.0.8
+      '@types/react': 19.0.10
 
-  '@types/react@19.0.8':
+  '@types/react@19.0.10':
     dependencies:
       csstype: 3.1.3
 
@@ -3813,6 +3805,8 @@ snapshots:
       node-releases: 2.0.19
       update-browserslist-db: 1.1.2(browserslist@4.24.4)
 
+  buffer-crc32@0.2.13: {}
+
   buffer@6.0.3:
     dependencies:
       base64-js: 1.5.1
@@ -3820,7 +3814,7 @@ snapshots:
 
   cacheable@1.8.8:
     dependencies:
-      hookified: 1.7.0
+      hookified: 1.7.1
       keyv: 5.2.3
 
   call-bind-apply-helpers@1.0.1:
@@ -3917,8 +3911,6 @@ snapshots:
   csstype@3.1.3: {}
 
   data-uri-to-buffer@2.0.2: {}
-
-  data-uri-to-buffer@4.0.1: {}
 
   data-urls@5.0.0:
     dependencies:
@@ -4296,11 +4288,6 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
-  fetch-blob@3.2.0:
-    dependencies:
-      node-domexception: 1.0.0
-      web-streams-polyfill: 3.3.3
-
   file-entry-cache@10.0.6:
     dependencies:
       flat-cache: 6.1.6
@@ -4325,16 +4312,16 @@ snapshots:
 
   flat-cache@4.0.1:
     dependencies:
-      flatted: 3.3.2
+      flatted: 3.3.3
       keyv: 4.5.4
 
   flat-cache@6.1.6:
     dependencies:
       cacheable: 1.8.8
-      flatted: 3.3.2
-      hookified: 1.7.0
+      flatted: 3.3.3
+      hookified: 1.7.1
 
-  flatted@3.3.2: {}
+  flatted@3.3.3: {}
 
   follow-redirects@1.15.9: {}
 
@@ -4347,10 +4334,6 @@ snapshots:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
-
-  formdata-polyfill@4.0.10:
-    dependencies:
-      fetch-blob: 3.2.0
 
   fraction.js@4.3.7: {}
 
@@ -4465,7 +4448,7 @@ snapshots:
 
   he@1.2.0: {}
 
-  hookified@1.7.0: {}
+  hookified@1.7.1: {}
 
   html-encoding-sniffer@3.0.0:
     dependencies:
@@ -4673,9 +4656,9 @@ snapshots:
       has-symbols: 1.1.0
       set-function-name: 2.0.2
 
-  jotai@2.12.0(@types/react@19.0.8)(react@19.0.0):
+  jotai@2.12.1(@types/react@19.0.10)(react@19.0.0):
     optionalDependencies:
-      '@types/react': 19.0.8
+      '@types/react': 19.0.10
       react: 19.0.0
 
   js-tokens@4.0.0: {}
@@ -4735,7 +4718,7 @@ snapshots:
 
   keyv@5.2.3:
     dependencies:
-      '@keyv/serialize': 1.0.2
+      '@keyv/serialize': 1.0.3
 
   kind-of@6.0.3: {}
 
@@ -4846,14 +4829,6 @@ snapshots:
   node-addon-api@7.1.1:
     optional: true
 
-  node-domexception@1.0.0: {}
-
-  node-fetch@3.3.2:
-    dependencies:
-      data-uri-to-buffer: 4.0.1
-      fetch-blob: 3.2.0
-      formdata-polyfill: 4.0.10
-
   node-releases@2.0.19: {}
 
   normalize-path@3.0.0: {}
@@ -4954,6 +4929,8 @@ snapshots:
   pathe@1.1.2: {}
 
   pathe@2.0.2: {}
+
+  pend@1.2.0: {}
 
   picocolors@1.1.1: {}
 
@@ -5609,8 +5586,6 @@ snapshots:
     dependencies:
       xml-name-validator: 5.0.0
 
-  web-streams-polyfill@3.3.3: {}
-
   webidl-conversions@7.0.0: {}
 
   whatwg-encoding@2.0.0:
@@ -5716,6 +5691,11 @@ snapshots:
   xmlchars@2.2.0: {}
 
   yaml@2.7.0: {}
+
+  yauzl@3.2.0:
+    dependencies:
+      buffer-crc32: 0.2.13
+      pend: 1.2.0
 
   yocto-queue@0.1.0: {}
 

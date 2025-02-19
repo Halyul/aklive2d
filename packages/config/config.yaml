@@ -34,6 +34,7 @@ module:
         preview_jpg: preview.jpg
         template_yaml: project_json.yaml
 dir_name:
+    config_yaml: config.yaml
     assets: assets
     data: data
     dist: dist

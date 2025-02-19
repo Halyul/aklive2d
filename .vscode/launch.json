@@ -83,5 +83,12 @@
       "command": "pnpm run preview:showcase",
       "cwd": "${workspaceFolder}"
     },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: download:game",
+      "request": "launch",
+      "command": "pnpm run download:game",
+      "cwd": "${workspaceFolder}"
+    },
   ]
 }

@@ -5,10 +5,10 @@
     "main": "index.js",
     "type": "module",
     "dependencies": {
-        "node-fetch": "^3.3.2",
         "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/libs": "workspace:*",
-        "@aklive2d/prettier-config": "workspace:*"
+        "@aklive2d/prettier-config": "workspace:*",
+        "yauzl": "^3.2.0"
     },
     "scripts": {
         "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."

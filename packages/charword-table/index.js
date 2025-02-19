@@ -1,9 +1,10 @@
 import path from 'node:path'
 import { file } from '@aklive2d/libs'
-import Downloader from '@aklive2d/downloader'
+import { github } from '@aklive2d/downloader'
 import config from '@aklive2d/config'
 import operators, {
     getOperatorId,
+    getOperatorAlternativeId,
     OPERATOR_SOURCE_FOLDER,
 } from '@aklive2d/operator'
 
@@ -27,7 +28,7 @@ const NICKNAME = {
 }
 
 const OPERATOR_IDS = Object.values(operators).map((operator) => {
-    return getOperatorId(operator)
+    return getOperatorId(operator.filename)
 })
 const AUTO_UPDATE_FOLDER = path.resolve(
     import.meta.dirname,
@@ -41,7 +42,7 @@ const CHARWORD_TABLE = JSON.parse(file.readSync(CHARWORD_TABLE_FILE)) || {}
 const DIST_DIR = path.resolve(import.meta.dirname, config.dir_name.dist)
 
 export const lookup = (operatorName) => {
-    const operatorId = getOperatorId(operators[operatorName])
+    const operatorId = getOperatorId(operators[operatorName].filename)
     const operatorBlock = CHARWORD_TABLE[operatorId]
     return operatorBlock.ref
         ? CHARWORD_TABLE[operatorBlock.alternativeId]
@@ -76,6 +77,7 @@ export const build = async (namesToBuild) => {
         voiceJson.voiceLangs = {}
         voiceJson.subtitleLangs = {}
         const subtitleInfo = Object.keys(charwordTableLookup.info)
+        let voiceList = []
         subtitleInfo.forEach((item) => {
             if (Object.keys(charwordTableLookup.info[item]).length > 0) {
                 const key = item.replace('_', '-')
@@ -86,6 +88,8 @@ export const build = async (namesToBuild) => {
                     const match = id.replace(/(.+?)([A-Z]\w+)/, '$2')
                     if (match === id) {
                         voiceJson.subtitleLangs[key].default = subtitles
+                        if (key === defaultRegion)
+                            voiceList = Object.keys(subtitles)
                     } else {
                         voiceJson.subtitleLangs[key][match] = subtitles
                     }
@@ -135,11 +139,13 @@ export const build = async (namesToBuild) => {
                 config.dir_name.voice.main,
                 voiceSubFolderMapping.name
             )
-            if (file.readdirSync(voiceSubFolder).length === 0) {
-                err.push(
-                    `Voice folder ${voiceSubFolderMapping.name} for ${name} is empty.`
-                )
-            }
+            const voiceFileList = file.readdirSync(voiceSubFolder)
+            voiceList.map((item) => {
+                if (!voiceFileList.includes(`${item}.ogg`))
+                    err.push(
+                        `Voice folder ${voiceSubFolderMapping.name} for ${name} is missing ${item}.ogg`
+                    )
+            })
         }
     }
 
@@ -148,7 +154,6 @@ export const build = async (namesToBuild) => {
 
 export const update = async () => {
     await updateFn()
-    file.writeSync(JSON.stringify(CHARWORD_TABLE), CHARWORD_TABLE_FILE)
 }
 
 const updateFn = async (isLocalOnly = false) => {
@@ -158,10 +163,7 @@ const updateFn = async (isLocalOnly = false) => {
     )
     OPERATOR_IDS.forEach((id) => {
         CHARWORD_TABLE[id] = {
-            alternativeId: id.replace(
-                /^(char_)([\d]+)(_[\w]+)(|(_.+))$/g,
-                '$1$2$3'
-            ),
+            alternativeId: getOperatorAlternativeId(id),
             voice: structuredClone(regionObject),
             info: structuredClone(regionObject),
         }
@@ -257,7 +259,7 @@ const load = async (region, isLocalOnly = false) => {
 }
 
 const download = async (region, targetFilePath) => {
-    return await new Downloader().github(
+    return await github(
         `https://api.github.com/repos/${REGION_URLS[region]}/commits?path=${region}/gamedata/excel/charword_table.json`,
         `https://raw.githubusercontent.com/${REGION_URLS[region]}/master/${region}/gamedata/excel/charword_table.json`,
         targetFilePath

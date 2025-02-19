@@ -9,7 +9,8 @@
     "preview": "http-server ./dist",
     "lint": "turbo run lint",
     "update": "turbo run update",
-    "init": "turbo run init"
+    "init": "turbo run init",
+    "download:game": "turbo run download:game"
   },
   "devDependencies": {
     "eslint": "^9.20.1",

@@ -1,6 +1,8 @@
 import path from 'node:path'
 import fs from 'node:fs'
 import { Buffer } from 'node:buffer'
+import { pipeline } from 'node:stream/promises'
+import pThrottle from 'p-throttle'
 import { file as fileLib } from '@aklive2d/libs'
 
 export const githubDownload = async (history_url, raw_url, filepath) => {
@@ -44,65 +46,56 @@ export const unzipDownload = async (
     }
 ) => {
     let retry = filesToDownload
+    const throttle = pThrottle({
+        limit: 3,
+        interval: 1000,
+    })
     while (retry.length > 0) {
         const newRetry = []
-        for (const item of retry) {
-            const name = item.name
-            console.log(`Downloading ${name}`)
-            await fetch(item.url)
-                .then((resp) => {
-                    const status = resp.status
-                    if (status !== 200)
-                        throw new Error(`Status Code: ${status}`)
-                    return resp.arrayBuffer()
-                })
-                .then((arrayBuffer) => {
-                    const buffer = Buffer.from(arrayBuffer)
-                    fileLib.unzip.fromBuffer(
-                        buffer,
-                        { lazyEntries: true },
-                        (err, zipfile) => {
-                            if (err) throw err
-                            zipfile.readEntry()
-                            zipfile.on('entry', (entry) => {
-                                if (
-                                    /\/$/.test(entry.fileName) ||
-                                    !opts.matchRegExp?.test(entry.fileName)
-                                ) {
-                                    // Directory file names end with '/'.
-                                    // Note that entries for directories themselves are optional.
-                                    // An entry's fileName implicitly requires its parent directories to exist.
-                                    zipfile.readEntry()
-                                } else {
-                                    // file entry
-                                    const filePath = path.join(
-                                        targetDir,
-                                        entry.fileName
-                                    )
-                                    fileLib.mkdir(path.dirname(filePath))
-                                    zipfile.openReadStream(
-                                        entry,
-                                        (err, readStream) => {
-                                            if (err) throw err
-                                            const writeStream =
-                                                fs.createWriteStream(filePath)
-                                            readStream.on('end', () => {
-                                                zipfile.readEntry()
-                                            })
-                                            readStream.pipe(writeStream)
-                                            writeStream.on('finish', () => {
-                                                console.log(
-                                                    `Finish Writing to ${entry.fileName}`
-                                                )
-                                            })
-                                        }
-                                    )
-                                }
-                            })
+        await Promise.all(
+            retry.map(
+                throttle(async (item) => {
+                    const name = item.name
+                    console.log(`Downloading ${name}`)
+                    const zip = await fetch(item.url)
+                        .then((resp) => {
+                            const status = resp.status
+                            if (status !== 200)
+                                throw new Error(`Status Code: ${status}`)
+                            return resp.arrayBuffer()
+                        })
+                        .then((arrayBuffer) => {
+                            return fileLib.unzip.fromBuffer(
+                                Buffer.from(arrayBuffer)
+                            )
+                        })
+                        .catch((err) => {
+                            console.error(err)
+                        })
+                    try {
+                        for await (const entry of zip) {
+                            if (
+                                opts.matchRegExp &&
+                                !opts.matchRegExp.test(entry.filename)
+                            ) {
+                                continue
+                            }
+                            const filePath = path.join(
+                                targetDir,
+                                entry.filename
+                            )
+                            fileLib.mkdir(path.dirname(filePath))
+                            const readStream = await entry.openReadStream()
+                            const writeStream = fs.createWriteStream(filePath)
+                            await pipeline(readStream, writeStream)
+                            console.log(`Finish Writing to ${entry.filename}`)
                         }
-                    )
+                    } finally {
+                        await zip.close()
+                    }
                 })
-        }
+            )
+        )
         retry = newRetry
     }
 }

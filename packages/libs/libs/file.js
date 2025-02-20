@@ -1,6 +1,6 @@
 import fs, { promises as fsP } from 'fs'
 import path from 'path'
-import yauzl from 'yauzl'
+import yauzl from 'yauzl-promise'
 import yazl from 'yazl'
 
 export async function write(content, filePath) {

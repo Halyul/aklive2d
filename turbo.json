@@ -14,17 +14,19 @@
       "dependsOn": ["@aklive2d/assets#build"]
     },
     "@aklive2d/background#build": {
+      "dependsOn": ["@aklive2d/wrangler#download:data"],
       "inputs": ["../music/auto_update/music_table.json"],
       "outputs": ["dist/bg_*.png", "dist/operator_bg.png"]
     },
     "@aklive2d/charword-table#build": {
+      "dependsOn": ["@aklive2d/wrangler#download:data"],
       "env": ["name"],
       "inputs": ["../official-info/auto_update/official_info.json", "../operator/operators.yaml"],
       "outputs": ["dist/**/charword_table.json"]
     },
     "@aklive2d/operator#build": {
       "env": ["name"],
-      "dependsOn": ["@aklive2d/charword-table#build"],
+      "dependsOn": ["@aklive2d/charword-table#build", "@aklive2d/wrangler#download:data"],
       "inputs": ["../official-info/auto_update/official_info.json", "operators.yaml"],
       "outputs": ["dist/**"]
     },

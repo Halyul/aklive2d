@@ -1,0 +1,95 @@
+@use '@/scss/main_share';
+
+.main {
+    .header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+
+        @media only screen and (width <= 430px) {
+            & {
+                margin: 0 1rem;
+            }
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.2em;
+
+            .icon {
+                margin-right: 1.5rem;
+                display: inline-block;
+                vertical-align: middle;
+
+                svg {
+                    fill: var(--text-color);
+                    height: 2.5rem;
+                }
+            }
+
+            @media (width <= 600px) {
+                font-size: 2.5rem;
+            }
+
+            @media (width <= 480px) {
+                font-size: 2rem;
+            }
+        }
+
+        .tab {
+            flex: auto;
+            white-space: pre;
+            user-select: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            overflow: hidden;
+            z-index: 1;
+
+            .item {
+                font-size: 1.25rem;
+                line-height: 3em;
+                font-weight: 700;
+                padding: 0 1rem;
+                text-transform: uppercase;
+                border-bottom: 0.3rem solid transparent;
+                display: inline-block;
+                cursor: pointer;
+                text-decoration: none;
+
+                .text-wrapper {
+                    color: var(--text-color);
+                    transition: color cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+                }
+
+                &.active,
+                &:hover {
+                    color: var(--link-highlight-color);
+
+                    .text-wrapper,
+                    .text {
+                        color: currentcolor;
+                    }
+                }
+
+                &.active {
+                    border-bottom-color: currentcolor;
+                }
+
+                @media only screen and (width <= 430px) {
+                    line-height: 2em;
+                }
+            }
+        }
+
+        @media only screen and (width <= 430px) {
+            & {
+                padding-right: 0;
+            }
+        }
+    }
+}

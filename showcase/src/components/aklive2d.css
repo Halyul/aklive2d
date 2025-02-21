@@ -1,8 +1,0 @@
-#settings-box {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: white;
-    user-select: auto;
-    z-index: 999;
-}

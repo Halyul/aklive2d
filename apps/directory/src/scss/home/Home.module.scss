@@ -1,0 +1,23 @@
+@use '@/scss/page_base';
+
+.official-update {
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 1rem;
+        word-break: break-word;
+        margin-top: 1.25rem;
+
+        .content {
+            font-size: 1.5rem;
+            max-width: 100%;
+        }
+
+        .container {
+            .title {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}

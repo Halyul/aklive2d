@@ -1,0 +1,26 @@
+{
+    "name": "@aklive2d/showcase",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "dev:showcase": "vite --clearScreen false",
+        "build": "mode=build node runner.js",
+        "preview:showcase": "vite preview",
+        "lint": "eslint \"src/**/*.js\" && stylelint \"**/*.css\" && prettier --check ."
+    },
+    "devDependencies": {
+        "vite": "^6.1.0",
+        "@aklive2d/eslint-config": "workspace:*",
+        "@aklive2d/postcss-config": "workspace:*",
+        "@aklive2d/stylelint-config": "workspace:*",
+        "@aklive2d/config": "workspace:*",
+        "@aklive2d/libs": "workspace:*",
+        "@aklive2d/assets": "workspace:*",
+        "@aklive2d/operator": "workspace:*",
+        "@aklive2d/vite-helpers": "workspace:*",
+        "@aklive2d/module": "workspace:*",
+        "@aklive2d/prettier-config": "workspace:*"
+    }
+}

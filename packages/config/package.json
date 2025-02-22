@@ -1,0 +1,15 @@
+{
+    "name": "@aklive2d/config",
+    "version": "0.0.0",
+    "main": "index.js",
+    "type": "module",
+    "license": "MIT",
+    "dependencies": {
+        "@aklive2d/libs": "workspace:*",
+        "@aklive2d/eslint-config": "workspace:*",
+        "@aklive2d/prettier-config": "workspace:*"
+    },
+    "scripts": {
+        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
+    }
+}

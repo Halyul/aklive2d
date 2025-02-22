@@ -1,0 +1,21 @@
+{
+    "name": "@aklive2d/assets",
+    "version": "0.0.0",
+    "main": "index.js",
+    "type": "module",
+    "license": "MIT",
+    "dependencies": {
+        "@aklive2d/config": "workspace:*",
+        "@aklive2d/eslint-config": "workspace:*",
+        "@aklive2d/libs": "workspace:*",
+        "@aklive2d/prettier-config": "workspace:*",
+        "@aklive2d/downloader": "workspace:*",
+        "@aklive2d/operator": "workspace:*",
+        "@aklive2d/music": "workspace:*"
+    },
+    "scripts": {
+        "build": "mode=build node runner.js",
+        "download:game": "mode=download node runner.js",
+        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
+    }
+}

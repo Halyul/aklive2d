@@ -1,0 +1,13 @@
+filename: dyn_illust_char_2015_dusk
+logo: logo_sui
+fallback_name: char_2015_dusk_2
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true
+codename:
+    zh-CN: 夕
+    en-US: Dusk
+use_json: false
+official_id: '202203263'

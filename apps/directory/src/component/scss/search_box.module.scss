@@ -1,0 +1,78 @@
+.search-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0.5rem;
+
+    .icon {
+        position: absolute;
+        width: 0.8rem;
+        height: 0.8rem;
+        display: inline-block;
+        vertical-align: middle;
+        border-left: 0.15rem solid var(--text-color-full);
+        border-bottom: 0.15rem solid var(--text-color-full);
+        border-right: 0.15rem solid var(--text-color-full);
+        border-top: 0.15rem solid var(--text-color-full);
+        transform: translate(0.2rem, 0.3rem) rotate(-45deg);
+    }
+
+    .icon-dot {
+        position: absolute;
+        background-color: var(--text-color-full);
+        width: 0.15rem;
+        height: 0.6rem;
+        transform: translate(1.2rem, 1.1rem) rotate(-45deg);
+    }
+
+    .input {
+        flex-grow: 1;
+        font-size: 1.5rem;
+        width: 100%;
+        margin-left: 2rem;
+        padding-right: 2rem;
+        background-color: transparent;
+        border: unset;
+        border-bottom: 0.15em solid var(--home-item-outline-color);
+        color: var(--text-color);
+        transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+    }
+
+    .input:focus,
+    .input:hover {
+        outline: none;
+        border-bottom: 0.15em solid var(--text-color);
+    }
+
+    .icon-clear {
+        position: absolute;
+        right: 1rem;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        opacity: 0;
+        transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+        visibility: hidden;
+
+        &.active {
+            opacity: 1;
+            visibility: unset;
+        }
+
+        .line {
+            position: absolute;
+            width: 2rem;
+            height: 0.2rem;
+            background-color: var(--text-color);
+
+            &:nth-child(1) {
+                transform: translate(0, 0.8rem) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                transform: translate(0, 0.8rem) rotate(-45deg);
+            }
+        }
+    }
+}

@@ -3,12 +3,12 @@ name: Build release and push to CF Pages
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches:
+      - main
 
 env:
-  CACHE_ZIP_FILENAME: cache.zip
-  ASSETS_FOLDER: data/operator
-  RELEASE_FOLDER: release
-  CACHE_BASE_KEY: akassets
+  DO_NOT_TRACK: 1
 
 jobs:
   build:
@@ -19,42 +19,15 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           run_install: true
-      - name: Restore cached assets
-        id: cache-akassets-restore
-        uses: actions/cache@v4
-        with:
-          path: |
-            ${{ env.CACHE_ZIP_FILENAME }}
-          key: ${{ env.CACHE_BASE_KEY }}-${{ hashFiles('offical_update.json') }}
-          restore-keys: |
-            ${{ env.CACHE_BASE_KEY }}
-      - name: Unzip assets
-        run: |
-          if test -f ${{ env.CACHE_ZIP_FILENAME }}; then
-            unzip -qq ${{ env.CACHE_ZIP_FILENAME }} -d .
-          fi
-        shell: bash
-      - name: Download Assets
-        run: pnpm run cf:download
-      - name: Build all
-        run: pnpm run operator:build-all
-        timeout-minutes: 10
-      - name: Build directory
-        run: pnpm run directory:build
+      - name: Download Data
+        run: pnpm run download:data
+      - name: Build
+        run: pnpm run build
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: aklive2d
-          directory: ${{ env.RELEASE_FOLDER}}
+          directory: dist
           wranglerVersion: '3'
-      - name: Zip assets
-        run: zip -qq -9 -r ${{ env.CACHE_ZIP_FILENAME }} ${{ env.ASSETS_FOLDER }}
-      - name: Save assets
-        id: cache-akassets-save
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            ${{ env.CACHE_ZIP_FILENAME }}
-          key: ${{ env.CACHE_BASE_KEY }}-${{ hashFiles('offical_update.json') }}

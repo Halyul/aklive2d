@@ -9,87 +9,100 @@
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: charword",
+      "name": "Run Script: build chen",
       "request": "launch",
-      "command": "pnpm run charwords:update",
+      "env": {
+        "name": "chen"
+      },
+      "command": "pnpm run build",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: build mizuki_summer_feast",
+      "name": "Run Script: build all",
       "request": "launch",
-      "command": "pnpm run build mizuki_summer_feast",
+      "command": "pnpm run build",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: build-all",
+      "name": "Run Script: update",
       "request": "launch",
-      "command": "pnpm run operator:build-all",
+      "command": "pnpm run update",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: test",
+      "name": "Run Script: init",
+      "env": {
+        "name": "test",
+        "id": "202203231"
+      },
       "request": "launch",
-      "command": "pnpm run test",
+      "command": "pnpm run init",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: dev",
+      "name": "Run Script: lint",
       "request": "launch",
-      "command": "pnpm run dev kaltsit_remnant",
+      "command": "pnpm run lint",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: Directory dev",
+      "name": "Run Script: dev:directory",
       "request": "launch",
-      "command": "pnpm run vite:directory:dev",
+      "command": "pnpm run dev:directory",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: charwords:update",
+      "name": "Run Script: preview:directory",
       "request": "launch",
-      "command": "pnpm run charwords:update",
+      "command": "pnpm run preview:directory",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: charwords:build",
+      "name": "Run Script: dev:showcase",
+      "env": {
+        "name": "chen"
+      },
       "request": "launch",
-      "command": "pnpm run charwords:build",
+      "command": "pnpm run dev:showcase",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: music",
+      "name": "Run Script: preview:showcase",
+      "env": {
+        "name": "chen"
+      },
       "request": "launch",
-      "command": "pnpm run music",
+      "command": "pnpm run preview:showcase",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: offical_update",
+      "name": "Run Script: download:game",
       "request": "launch",
-      "command": "pnpm run offical_update",
+      "command": "pnpm run download:game",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: cf:upload",
+      "name": "Run Script: upload",
       "request": "launch",
-      "command": "pnpm run cf:upload",
+      "command": "pnpm run upload",
       "cwd": "${workspaceFolder}"
     },
     {
       "type": "node-terminal",
-      "name": "Run Script: cf:download",
+      "name": "Run Script: download:data",
       "request": "launch",
-      "command": "pnpm run cf:download",
+      "command": "pnpm run download:data",
       "cwd": "${workspaceFolder}"
-    }
+    },
   ]
 }

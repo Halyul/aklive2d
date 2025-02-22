@@ -416,6 +416,9 @@ importers:
 
   packages/wrangler:
     dependencies:
+      '@aklive2d/background':
+        specifier: workspace:*
+        version: link:../background
       '@aklive2d/config':
         specifier: workspace:*
         version: link:../config
@@ -428,6 +431,12 @@ importers:
       '@aklive2d/libs':
         specifier: workspace:*
         version: link:../libs
+      '@aklive2d/music':
+        specifier: workspace:*
+        version: link:../music
+      '@aklive2d/operator':
+        specifier: workspace:*
+        version: link:../operator
       '@aklive2d/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config

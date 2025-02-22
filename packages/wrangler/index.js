@@ -8,10 +8,11 @@ import { file as fileLib } from '@aklive2d/libs'
 import config from '@aklive2d/config'
 import { unzipDownload } from '@aklive2d/downloader'
 import * as showcaseDirs from '@aklive2d/showcase'
+import { OPERATOR_SOURCE_FOLDER as OPERATOR_DATA_DIR } from '@aklive2d/operator'
+import { DATA_DIR as MUSIC_DATA_DIR } from '@aklive2d/music'
+import { BACKGROUND_DIR as BACKGROUND_DATA_DIR } from '@aklive2d/background'
 
-const dataDir = fs.realpathSync(
-    path.join(import.meta.dirname, config.dir_name.data)
-)
+const dataDir = path.join(import.meta.dirname, config.dir_name.data)
 const distDir = path.join(import.meta.dirname, config.dir_name.dist)
 
 const getHash = (filePath) => {
@@ -268,6 +269,10 @@ const generateDownloadList = (data, baseDir, baseUrl = '') => {
 }
 
 export const download = async () => {
+    fileLib.mkdir(OPERATOR_DATA_DIR)
+    fileLib.mkdir(MUSIC_DATA_DIR)
+    fileLib.mkdir(BACKGROUND_DATA_DIR)
+
     const indexFile = `${config.akassets.url}/${config.module.wrangler.index_json}`
     const resp = await fetch(indexFile)
     const data = await resp.json()

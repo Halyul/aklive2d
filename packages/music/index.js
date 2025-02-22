@@ -7,7 +7,7 @@ const AUTO_UPDATE_FOLDER = path.resolve(
     import.meta.dirname,
     config.dir_name.auto_update
 )
-const DATA_DIR = path.resolve(import.meta.dirname, config.dir_name.data)
+export const DATA_DIR = path.resolve(import.meta.dirname, config.dir_name.data)
 const MUSIC_TABLE_JSON = path.join(
     AUTO_UPDATE_FOLDER,
     config.module.music.music_table_json

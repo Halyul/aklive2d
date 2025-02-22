@@ -4,7 +4,10 @@ import { file } from '@aklive2d/libs'
 import config from '@aklive2d/config'
 import { mapping as musicMapping } from '@aklive2d/music'
 
-const BACKGROUND_DIR = path.join(import.meta.dirname, config.dir_name.data)
+export const BACKGROUND_DIR = path.join(
+    import.meta.dirname,
+    config.dir_name.data
+)
 const DIST_DIR = path.resolve(import.meta.dirname, config.dir_name.dist)
 const EXTRACTED_DIR = path.join(BACKGROUND_DIR, config.dir_name.extracted)
 const DEFAULT_BACKGROUND_FILE = path.join(

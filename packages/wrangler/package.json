@@ -12,7 +12,10 @@
         "@aklive2d/config": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
         "@aklive2d/downloader": "workspace:*",
-        "@aklive2d/showcase": "workspace:*"
+        "@aklive2d/showcase": "workspace:*",
+        "@aklive2d/operator": "workspace:*",
+        "@aklive2d/music": "workspace:*",
+        "@aklive2d/background": "workspace:*"
     },
     "scripts": {
         "upload": "mode=upload node runner.js",

@@ -1,7 +1,7 @@
 site_id: aklive2d
 akassets:
     project_name: akassets
-    url: https://migrate-turbo.akassets.pages.dev
+    url: https://akassets.pages.dev
 insight:
     id: aklive2d
     url: https://insight.halyul.dev/on-demand.js

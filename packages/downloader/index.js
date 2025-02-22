@@ -42,7 +42,8 @@ export const unzipDownload = async (
     filesToDownload,
     targetDir,
     opts = {
-        matchRegExp: null,
+        defaultRegex: null,
+        matchRegExps: [],
     }
 ) => {
     let retry = filesToDownload
@@ -75,10 +76,20 @@ export const unzipDownload = async (
                     try {
                         for await (const entry of zip) {
                             if (
-                                opts.matchRegExp &&
-                                !opts.matchRegExp.test(entry.filename)
+                                opts.defaultRegex &&
+                                !opts.defaultRegex.test(entry.filename)
                             ) {
                                 continue
+                            }
+                            if (opts.matchRegExps.length > 0) {
+                                let shallContinue = false
+                                for (const regex of opts.matchRegExps) {
+                                    if (!regex.test(entry.filename)) {
+                                        shallContinue = true
+                                        break
+                                    }
+                                }
+                                if (shallContinue) continue
                             }
                             const filePath = path.join(
                                 targetDir,

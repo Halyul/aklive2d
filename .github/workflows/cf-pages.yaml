@@ -19,15 +19,10 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           run_install: true
-      # - name: Download Assets
-      #   run: pnpm run cf:download
-      # - name: Build all
-      #   run: pnpm run build
-      # - name: Publish to Cloudflare Pages
-      #   uses: cloudflare/pages-action@v1
-      #   with:
-      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      #     projectName: aklive2d
-      #     directory: ${{ env.RELEASE_FOLDER}}
-      #     wranglerVersion: '3'
+      - name: Download Data
+        run: pnpm run download:data
+      - name: Deploy
+        run: pnpm run deploy
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

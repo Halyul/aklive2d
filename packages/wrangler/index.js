@@ -7,6 +7,7 @@ import pThrottle from 'p-throttle'
 import { file as fileLib } from '@aklive2d/libs'
 import config from '@aklive2d/config'
 import { unzipDownload } from '@aklive2d/downloader'
+import * as showcaseDirs from '@aklive2d/showcase'
 
 const dataDir = fs.realpathSync(
     path.join(import.meta.dirname, config.dir_name.data)
@@ -189,6 +190,26 @@ const generateUploadDist = (item, depth = -1) => {
     }
 }
 
+const wranglerDeploy = (distDir, project_name) => {
+    const wrangler = spawn('pnpm', [
+        'wrangler',
+        'pages',
+        'deploy',
+        distDir,
+        '--project-name',
+        project_name,
+    ])
+    wrangler.stdout.on('data', (data) => {
+        console.log(data.toString())
+    })
+    wrangler.stderr.on('data', (data) => {
+        console.error(data.toString())
+    })
+    wrangler.on('close', () => {
+        fileLib.rmdir(distDir)
+    })
+}
+
 export const upload = async () => {
     const tree = await generateDirTree(dataDir)
     let ret = {}
@@ -210,23 +231,7 @@ export const upload = async () => {
         JSON.stringify(index, null),
         path.join(distDir, config.module.wrangler.index_json)
     )
-    const wrangler = spawn('pnpm', [
-        'wrangler',
-        'pages',
-        'deploy',
-        distDir,
-        '--project-name',
-        config.akassets.project_name,
-    ])
-    wrangler.stdout.on('data', (data) => {
-        console.log(data.toString())
-    })
-    wrangler.stderr.on('data', (data) => {
-        console.error(data.toString())
-    })
-    wrangler.on('close', () => {
-        fileLib.rmdir(distDir)
-    })
+    wranglerDeploy(distDir, config.akassets.project_name)
 }
 
 const generateDownloadList = (data, baseDir, baseUrl = '') => {
@@ -351,4 +356,9 @@ export const download = async () => {
         )
         list = retry
     }
+}
+
+export const deploy = async () => {
+    const distDir = path.resolve(showcaseDirs.DIST_DIR)
+    wranglerDeploy(distDir, config.site_id)
 }

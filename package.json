@@ -12,7 +12,8 @@
     "init": "turbo run init",
     "download:game": "turbo run download:game",
     "upload": "turbo run upload",
-    "download:data": "turbo run download:data"
+    "download:data": "turbo run download:data",
+    "deploy": "turbo run deploy"
   },
   "devDependencies": {
     "eslint": "^9.20.1",

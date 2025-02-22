@@ -77,7 +77,7 @@ export const build = async (namesToBuild) => {
         voiceJson.voiceLangs = {}
         voiceJson.subtitleLangs = {}
         const subtitleInfo = Object.keys(charwordTableLookup.info)
-        let voiceList = []
+        let voiceList = {}
         subtitleInfo.forEach((item) => {
             if (Object.keys(charwordTableLookup.info[item]).length > 0) {
                 const key = item.replace('_', '-')
@@ -88,8 +88,7 @@ export const build = async (namesToBuild) => {
                     const match = id.replace(/(.+?)([A-Z]\w+)/, '$2')
                     if (match === id) {
                         voiceJson.subtitleLangs[key].default = subtitles
-                        if (key === defaultRegion)
-                            voiceList = Object.keys(subtitles)
+                        voiceList[key] = Object.keys(subtitles)
                     } else {
                         voiceJson.subtitleLangs[key][match] = subtitles
                     }
@@ -130,6 +129,7 @@ export const build = async (namesToBuild) => {
                 return {
                     name: e.name,
                     lang: e.lang === 'CUSTOM' ? customVoiceName : e.lang,
+                    lookup_region: e.lookup_region.replace('_', '-'),
                 }
             })
         for (const voiceSubFolderMapping of voiceLangMapping) {
@@ -140,7 +140,7 @@ export const build = async (namesToBuild) => {
                 voiceSubFolderMapping.name
             )
             const voiceFileList = file.readdirSync(voiceSubFolder)
-            voiceList.map((item) => {
+            voiceList[voiceSubFolderMapping.lookup_region].map((item) => {
                 if (!voiceFileList.includes(`${item}.ogg`))
                     err.push(
                         `Voice folder ${voiceSubFolderMapping.name} for ${name} is missing ${item}.ogg`

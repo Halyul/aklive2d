@@ -44,7 +44,14 @@ export default async (dataDir) => {
             url: `https://ak.hycdn.cn/assetbundle/official/Android/assets/${version}/${item}.dat`,
         })
     })
+    const regexs = []
+    if (config.additional_regex.length > 0) {
+        for (const item of config.additional_regex) {
+            regexs.push(new RegExp(item))
+        }
+    }
     await unzipDownload(lpacksToDownload, dataDir, {
-        matchRegExp: itemToDownloadRegExp,
+        matchRegExps: regexs,
+        defaultRegex: itemToDownloadRegExp,
     })
 }

@@ -56,14 +56,19 @@ dir_name:
         sub:
             - name: jp
               lang: JP
+              lookup_region: zh_CN
             - name: cn
               lang: CN_MANDARIN
+              lookup_region: zh_CN
             - name: en
               lang: EN
+              lookup_region: en_US
             - name: kr
               lang: KR
+              lookup_region: ko_KR
             - name: custom
               lang: CUSTOM
+              lookup_region: zh_CN
 share:
     title:
         zh-CN: '明日方舟：'

@@ -1,5 +1,5 @@
 import { envParser } from '@aklive2d/libs'
-import { upload, download } from './index.js'
+import { upload, download, deploy } from './index.js'
 
 async function main() {
     const { mode } = envParser.parse({
@@ -16,6 +16,7 @@ async function main() {
             await download()
             break
         case 'deploy':
+            await deploy()
             break
         default:
             throw new Error(`Unknown mode: ${mode}`)

@@ -86,7 +86,7 @@ const operators = generateMapping()
 export default operators
 
 export function getOperatorId(name, matcher = '$2$3$4') {
-    return name.replace(/^(.*)(char_[\d]+)(_[\w]+)(|_.*)$/g, matcher)
+    return name.replace(/^(.*)(char_[\d]+)(_[A-Za-z0-9]+)(|_.*)$/g, matcher)
 }
 
 export const getOperatorAlternativeId = (id) => {

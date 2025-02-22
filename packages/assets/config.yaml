@@ -3,4 +3,6 @@ item_to_download:
   - homebackground/wrapper
   - ui_camp_logo
   - charportraits
-  
+  - voice.*/extra
+additional_regex:
+  - ^(?!(avg))(.*)$

@@ -431,6 +431,9 @@ importers:
       '@aklive2d/prettier-config':
         specifier: workspace:*
         version: link:../prettier-config
+      '@aklive2d/showcase':
+        specifier: workspace:*
+        version: link:../../apps/showcase
       p-throttle:
         specifier: ^7.0.0
         version: 7.0.0

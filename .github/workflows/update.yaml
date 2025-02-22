@@ -1,5 +1,8 @@
 name: Update
 
+env: 
+  DO_NOT_TRACK: 1
+
 on:
   schedule:
     - cron: '30 10 * * *'

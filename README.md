@@ -41,6 +41,30 @@ Run dev server for showcase webpage for an operator
 $ name=<name> pnpm run preview:showcase
 Preview built showcase webpage for an operator
 ```
+``` bash
+$ pnpm run dev:directory
+Run dev server for directory webpage
+```
+``` bash
+$ name=<name> pnpm run preview:directory
+Preview built directory webpage
+```
+``` bash
+$ pnpm run preview
+Preview built all webpages
+```
+``` bash
+$ name=<name> id=<id> pnpm run init
+Init new operator config
+```
+``` bash
+$ pnpm run download:game
+Download latest game data from Arknights
+```
+``` bash
+$ pnpm run download:data
+Download extracted game assets
+```
 ### Webpage & JavaScript
 
 Add query string `aklive2d` to bring up the settings panel to adjust your settings. 
@@ -52,33 +76,103 @@ Using JS events to change settings is recommended.
 ## Config
 ### General Config
 in `packages/config/config.yaml`
+
+Settings for the whole project
 ``` yaml
-folder: 
-  operator: ./operator/ # folder for operator assets
-  release: ./release/ # folder for released showcase page
-operators:
-  chen: !include config/chen.yaml # include the config for the operator under folder `config/chen.yaml`
-  dusk: !include config/dusk.yaml
-  dusk_everything_is_a_miracle: !include config/dusk_everything_is_a_miracle.yaml
-  ling: !include config/ling.yaml
-  nearl: !include config/nearl.yaml
-  nian: !include config/nian.yaml
-  nian_unfettered_freedom: !include config/nian_unfettered_freedom.yaml
-  phatom_focus: !include config/phatom_focus.yaml
-  rosmontis: !include config/rosmontis.yaml
-  skadi: !include config/skadi.yaml
-  skadi_sublimation: !include config/skadi_sublimation.yaml
-  w: !include config/w.yaml
-  w_fugue: !include config/w_fugue.yaml
-  specter: !include config/specter.yaml
-  gavial: !include config/gavial.yaml
-  surtr_colorful_wonderland: !include config/surtr_colorful_wonderland.yaml
-  lee_trust_your_eyes: !include config/lee_trust_your_eyes.yaml
-  texas_the_omertosa: !include config/texas_the_omertosa.yaml
-  nearl_relight: !include config/nearl_relight.yaml
-  rosmontis_become_anew: !include config/rosmontis_become_anew.yaml
-  passager_dream_in_a_moment: !include config/passager_dream_in_a_moment.yaml
-  mizuki_summer_feast: !include config/mizuki_summer_feast.yaml
+site_id: aklive2d
+akassets:
+    project_name: akassets
+    url: https://akassets.pages.dev
+insight:
+    id: aklive2d
+    url: https://insight.halyul.dev/on-demand.js
+module:
+    assets:
+        config_yaml: config.yaml
+        background: background
+        music: music
+        charword_table: charword_table
+        project_json: project_json
+    background:
+        operator_bg_png: operator_bg.png
+    charword_table:
+        charword_table_json: charword_table.json
+    music:
+        music_table_json: music_table.json
+        display_meta_table_json: display_meta_table.json
+        audio_data_json: audio_data.json
+    official_info:
+        official_info_json: official_info.json
+    operator:
+        operator: operator
+        config: config
+        template_yaml: _template.yaml
+        config_yaml: config.yaml
+        portraits: _portraits
+        logos_assets: _logos
+        logos: logos
+        directory_assets: _directory
+        MonoBehaviour: MonoBehaviour
+        Texture2D: Texture2D
+        title:
+            zh-CN: '明日方舟：'
+            en-US: 'Arknights: '
+    project_json:
+        project_json: project.json
+        preview_jpg: preview.jpg
+        template_yaml: project_json.yaml
+    wrangler:
+        index_json: index.json
+    vite_helpers:
+        config_json: config.json
+app:
+    showcase:
+        public: public
+        assets: assets
+dir_name:
+    data: data
+    dist: dist
+    extracted: extracted
+    auto_update: auto_update
+    voice:
+        main: voice
+        sub:
+            - name: jp
+              lang: JP
+              lookup_region: zh_CN
+            - name: cn
+              lang: CN_MANDARIN
+              lookup_region: zh_CN
+            - name: en
+              lang: EN
+              lookup_region: en_US
+            - name: kr
+              lang: KR
+              lookup_region: ko_KR
+            - name: custom
+              lang: CUSTOM
+              lookup_region: zh_CN
+directory:
+    assets_dir: _assets
+    title: AKLive2D
+    voice: jp/CN_037.ogg
+    error:
+        files:
+            - key: build_char_128_plosis_epoque#3
+              paddings:
+                  left: -120
+                  right: 150
+                  top: 10
+                  bottom: 0
+            - key: build_char_128_plosis
+              paddings:
+                  left: -90
+                  right: 100
+                  top: 10
+                  bottom: 0
+        voice:
+            file: CN_034.ogg
+            target: error.ogg
 ```
 ### Operators Config
 in `packages/operator/config.yaml`
@@ -129,12 +223,9 @@ The `LICENSE` file applies to all files unless listed specifically.
 - all files under `packages/background/data` folder and its sub-folders
 
 ## Instructions on Extracting In-Game Assets
-I'm still struggling to find a command-line tool to extract in-game assets. But [AssetRipper](https://github.com/AssetRipper/AssetRipper) seems to have a command-line interface, I'm too lazy to have a deeper inverstigation.
-
 | Assets Name | Location | Type |
 |-------------|----------|------|
-| Logos       | spritepack/ui_camp_logo_h2_0.ab | Sprite |
-| Logos for collaboration | spritepack/ui_camp_logo_h2_linkage_0.ab | Sprite |
+| Logos       | spritepack/ui_camp_logo_0.ab | Sprite |
 | Logo Mapping | gamedata/art/handbookpos_table.json<sup>3</sup> | TextAsset |
 | Dynaimc Character | arts/dynchars/ | Texture2D & TextAsset |
 | Static Image | Operator: chararts/ ; Skin: skinpack/ | Texture2D |
@@ -149,21 +240,3 @@ I'm still struggling to find a command-line tool to extract in-game assets. But 
 <sup>2</sup>: `gamedata/excel/display_meta_table.json->homeBackgroundData`<sup>3</sup> and `gamedata/excel/audio_data.json`<sup>3</sup> is required to locate the music.
 
 <sup>3</sup>: Data is encryped, decryped version can be obtained from [ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData) for the Chinese version and [Kengxxiao/ArknightsGameData_YoStar](https://github.com/Kengxxiao/ArknightsGameData_YoStar) for other regions.
-
-## URLs
-
-| Name | URL | Note |
-|------|-----|------|
-| Config | [link](https://ak-conf.hypergryph.com/config/prod/official/Android/version) | Version info |
-| Current Hot Update JSON | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/hot_update_list.json) | Directory JSON | 
-| Voice JP | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vcjp.dat) | Voice JP |
-| Voice CN | [link 1](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vccn.dat), [link 2](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vcbsc.dat) | Voice CN |
-| Voice KR | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vckr.dat) | Voice KR |
-| Voice EN | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vcen.dat) | Voice EN |
-| Voice Custom | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_vccsm.dat) | Voice Custom |
-| Misc | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_v052.dat) | Latest Home Background, Skin Static Image |
-| Init | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_init.dat) | Logos, Background, Portrait Images |
-| Dynaimc Characters | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_dynilst.dat) | Dynaimc Character |
-| Static Image | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_crart.dat) | Operator Static Image |
-| Home Music | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_music.dat) | Home Music |
-| L Com? | [link](https://ak.hycdn.cn/assetbundle/official/Android/assets/24-07-09-15-29-50-f0a675/lpack_lcom.dat) | portrait_hub.ab |

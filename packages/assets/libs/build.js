@@ -12,7 +12,7 @@ export default async (packageDir) => {
                 'background',
                 config.dir_name.dist
             ),
-            target: path.resolve(DIST_DIR, config.dir_name.background),
+            target: path.resolve(DIST_DIR, config.module.assets.background),
         },
         {
             fn: file.symlink,
@@ -21,12 +21,12 @@ export default async (packageDir) => {
                 'charword-table',
                 config.dir_name.dist
             ),
-            target: path.resolve(DIST_DIR, config.dir_name.charword_table),
+            target: path.resolve(DIST_DIR, config.module.assets.charword_table),
         },
         {
             fn: file.symlink,
             source: path.resolve(packageDir, 'music', config.dir_name.data),
-            target: path.resolve(DIST_DIR, config.dir_name.music),
+            target: path.resolve(DIST_DIR, config.module.assets.music),
         },
         {
             fn: file.symlinkAll,
@@ -40,7 +40,7 @@ export default async (packageDir) => {
                 'project-json',
                 config.dir_name.dist
             ),
-            target: path.resolve(DIST_DIR, config.dir_name.project_json),
+            target: path.resolve(DIST_DIR, config.module.assets.project_json),
         },
     ]
     copyQueue.map(({ fn, source, target }) => {

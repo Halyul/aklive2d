@@ -104,5 +104,12 @@
       "command": "pnpm run download:data",
       "cwd": "${workspaceFolder}"
     },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: deploy",
+      "request": "launch",
+      "command": "pnpm run deploy",
+      "cwd": "${workspaceFolder}"
+    },
   ]
 }

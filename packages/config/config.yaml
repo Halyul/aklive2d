@@ -6,8 +6,13 @@ insight:
     id: aklive2d
     url: https://insight.halyul.dev/on-demand.js
 module:
-    background:
+    assets:
+        config_yaml: config.yaml
         background: background
+        music: music
+        charword_table: charword_table
+        project_json: project_json
+    background:
         operator_bg_png: operator_bg.png
     charword_table:
         charword_table_json: charword_table.json
@@ -18,15 +23,16 @@ module:
     official_info:
         official_info_json: official_info.json
     operator:
+        operator: operator
         config: config
         template_yaml: _template.yaml
         config_yaml: config.yaml
         portraits: _portraits
         logos_assets: _logos
+        logos: logos
         directory_assets: _directory
         MonoBehaviour: MonoBehaviour
         Texture2D: Texture2D
-        assets_json: assets.json
         title:
             zh-CN: '明日方舟：'
             en-US: 'Arknights: '
@@ -36,21 +42,17 @@ module:
         template_yaml: project_json.yaml
     wrangler:
         index_json: index.json
+    vite_helpers:
+        config_json: config.json
+app:
+    showcase:
+        public: public
+        assets: assets
 dir_name:
-    config_yaml: config.yaml
-    assets: assets
     data: data
     dist: dist
     extracted: extracted
     auto_update: auto_update
-    operator: operator
-    background: background
-    music: music
-    logos: logos
-    public: public
-    charword_table: charword_table
-    project_json: project_json
-    config_json: config.json
     voice:
         main: voice
         sub:
@@ -69,10 +71,6 @@ dir_name:
             - name: custom
               lang: CUSTOM
               lookup_region: zh_CN
-share:
-    title:
-        zh-CN: '明日方舟：'
-        en-US: 'Arknights: '
 directory:
     assets_dir: _assets
     title: AKLive2D

@@ -35,7 +35,7 @@ const getConfigFolder = () => {
 }
 
 const getDistFolder = (name) => {
-    return path.join(DIST_DIR, config.dir_name.operator, name)
+    return path.join(DIST_DIR, config.module.operator.operator, name)
 }
 
 export const has = (name) => {
@@ -77,7 +77,7 @@ const copyVoices = (name) => {
 const copyLogos = () => {
     file.symlink(
         path.join(OPERATOR_SOURCE_FOLDER, config.module.operator.logos_assets),
-        path.join(DIST_DIR, config.dir_name.logos)
+        path.join(DIST_DIR, config.module.operator.logos)
     )
 }
 
@@ -270,7 +270,7 @@ export const init = (name, id) => {
         path.resolve(operatorConfigFolder, `${name}.yaml`)
     )
     file.appendSync(
-        `\n${name}: !include ${config.module.operator.config}/${name}.yaml`,
+        `${name}: !include ${config.module.operator.config}/${name}.yaml\n`,
         CONFIG_PATH
     )
 }

@@ -1,5 +1,4 @@
 import path from 'node:path'
-import fs from 'node:fs'
 import { envParser } from '@aklive2d/libs'
 import config from '@aklive2d/config'
 import build from './libs/build.js'

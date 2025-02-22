@@ -57,10 +57,17 @@
       "outputs": ["auto_update/official_info.json"]
     },
     "update": {
-      "dependsOn": []
+      "cache": false
+    },
+    "@aklive2d/operator#init": {
+      "env": ["name", "id"],
+      "cache": false,
+      "inputs": ["../official-info/auto_update/official_info.json"],
+      "outputs": ["config/*.yaml", "config.yaml"]
     },
     "init": {
-      "dependsOn": []
+      "env": ["name", "id"],
+      "cache": false
     },
     "lint": {
       "cache": false
@@ -89,17 +96,30 @@
       "cache": false,
       "persistent": true
     },
+    "@aklive2d/assets#download:game": {
+      "cache": false,
+      "outputs": ["data/**"]
+    },
     "download:game": {
       "cache": false
     },
+    "@aklive2d/wrangler#upload": {
+      "cache": false,
+      "inputs": ["data/**"]
+    },
     "upload": {
       "cache": false
+    },
+    "@aklive2d/wrangler#download:data": {
+      "cache": false,
+      "outputs": ["data/**"]
     },
     "download:data": {
       "cache": false
     },
     "@aklive2d/wrangler#deploy": {
       "env": ["CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN"],
+      "inputs": ["../../dist/**"],
       "dependsOn": ["@aklive2d/directory#build"]
     },
     "deploy": {

@@ -5,7 +5,7 @@ import { yaml } from '@aklive2d/libs'
 export const DIST_DIR = path.resolve(import.meta.dirname, config.dir_name.dist)
 export const CONFIG_PATH = path.resolve(
     import.meta.dirname,
-    config.dir_name.config_yaml
+    config.module.assets.config_yaml
 )
 const selfConfig = yaml.read(CONFIG_PATH)
 

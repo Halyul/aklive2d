@@ -14,7 +14,7 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
     file.mkdir(publicAssetsDir)
     const operatorAssetsDir = path.join(
         ASSETS_DIST_DIR,
-        config.dir_name.operator,
+        config.module.operator.operator,
         name
     )
     const spineFilenames = file
@@ -23,13 +23,19 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
     const q = [
         {
             fn: file.symlink,
-            source: path.resolve(ASSETS_DIST_DIR, config.dir_name.background),
-            target: path.resolve(publicAssetsDir, config.dir_name.background),
+            source: path.resolve(
+                ASSETS_DIST_DIR,
+                config.module.assets.background
+            ),
+            target: path.resolve(
+                publicAssetsDir,
+                config.module.assets.background
+            ),
         },
         {
             fn: file.symlink,
-            source: path.resolve(ASSETS_DIST_DIR, config.dir_name.music),
-            target: path.resolve(publicAssetsDir, config.dir_name.music),
+            source: path.resolve(ASSETS_DIST_DIR, config.module.assets.music),
+            target: path.resolve(publicAssetsDir, config.module.assets.music),
         },
         {
             fn: file.symlinkAll,
@@ -45,7 +51,7 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
             filename: `${operators[name].fallback_name}.png`,
             source: path.resolve(
                 ASSETS_DIST_DIR,
-                config.dir_name.operator,
+                config.module.operator.operator,
                 name
             ),
             target: path.resolve(publicAssetsDir),
@@ -53,7 +59,7 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
         {
             fn: file.symlink,
             filename: `${operators[name].logo}.png`,
-            source: path.resolve(ASSETS_DIST_DIR, config.dir_name.logos),
+            source: path.resolve(ASSETS_DIST_DIR, config.module.operator.logos),
             target: path.resolve(publicAssetsDir),
         },
         {
@@ -61,7 +67,7 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
             filename: config.module.charword_table.charword_table_json,
             source: path.resolve(
                 ASSETS_DIST_DIR,
-                config.dir_name.charword_table,
+                config.module.assets.charword_table,
                 name
             ),
             target: path.resolve(publicAssetsDir),
@@ -97,16 +103,16 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
         image_height: 2048,
         default_background: config.module.background.operator_bg_png,
         background_files: backgroundFiles,
-        background_folder: config.dir_name.background,
+        background_folder: config.module.assets.background,
         voice_default_region: defaultRegion,
         voice_folders: config.dir_name.voice,
-        music_folder: config.dir_name.music,
+        music_folder: config.module.assets.music,
         music_mapping: musicMapping.musicFileMapping,
         use_json: operators[name].use_json,
     }
     file.writeSync(
         JSON.stringify(buildConfig),
-        path.join(path.resolve(dataDir), config.dir_name.config_json)
+        path.join(path.resolve(dataDir), config.module.vite_helpers.config_json)
     )
     file.writeSync(
         env.generate([
@@ -127,7 +133,7 @@ export const copyShowcaseData = (name, { dataDir, publicAssetsDir }) => {
 
 export const copyProjectJSON = (name, { releaseDir }) => {
     file.cpSync(
-        path.resolve(ASSETS_DIST_DIR, config.dir_name.project_json, name),
+        path.resolve(ASSETS_DIST_DIR, config.module.assets.project_json, name),
         path.resolve(releaseDir),
         {
             dereference: true,
@@ -159,7 +165,7 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
                     file.readSync(
                         path.join(
                             ASSETS_DIST_DIR,
-                            config.dir_name.project_json,
+                            config.module.assets.project_json,
                             cur.link,
                             config.module.project_json.project_json
                         )
@@ -187,16 +193,16 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
         directory_folder: config.directory.assets_dir,
         default_background: config.module.background.operator_bg_png,
         background_files: backgroundFiles,
-        background_folder: config.dir_name.background,
+        background_folder: config.module.assets.background,
         available_operators: Object.keys(operators),
         error_files: config.directory.error,
-        music_folder: config.dir_name.music,
+        music_folder: config.module.assets.music,
         music_mapping: musicMapping.musicFileMapping,
         operators: operatorConfig,
     }
     file.writeSync(
         JSON.stringify(directoryConfig),
-        path.join(dataDir, config.dir_name.config_json)
+        path.join(dataDir, config.module.vite_helpers.config_json)
     )
 
     file.writeSync(
@@ -218,7 +224,7 @@ export const copyDirectoryData = async ({ dataDir, publicDir }) => {
         file.cpSync(
             path.join(
                 sourceFolder,
-                config.dir_name.operator,
+                config.module.operator.operator,
                 key,
                 portraitName
             ),

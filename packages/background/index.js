@@ -16,7 +16,16 @@ const DEFAULT_BACKGROUND_FILE = path.join(
 )
 
 const getFiles = () => {
-    return file.readdirSync(DIST_DIR)
+    const ret = file.readdirSync(DIST_DIR)
+    ret.unshift(
+        ret.splice(
+            ret.findIndex(
+                (e) => e === config.module.background.operator_bg_png
+            ),
+            1
+        )[0]
+    )
+    return ret
 }
 
 export let files = getFiles()

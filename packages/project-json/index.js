@@ -10,15 +10,27 @@ import { getLangs } from '@aklive2d/charword-table'
 const DIST_DIR = path.join(import.meta.dirname, config.dir_name.dist)
 
 export const build = (namesToBuild) => {
+    const err = []
     const names = !namesToBuild.length ? Object.keys(operators) : namesToBuild
     console.log('Generating assets for', names.length, 'operators')
+    const musicMapping = []
+    // sort music mapping based on background file order
+    for (const item of backgrounds) {
+        if (musics.musicFileMapping[item]) {
+            musicMapping.push(item)
+        } else {
+            err.push(
+                `Music folder doesn't contain music for ${item} background.`
+            )
+        }
+    }
     for (const name of names) {
         const { voiceLangs, subtitleLangs } = getLangs(name)
         load(name, {
             backgrounds,
             voiceLangs,
             subtitleLangs,
-            music: Object.keys(musics.musicFileMapping),
+            music: musicMapping,
         })
         file.symlink(
             path.join(
@@ -28,6 +40,7 @@ export const build = (namesToBuild) => {
             path.join(getDistDir(name), config.module.project_json.preview_jpg)
         )
     }
+    return err
 }
 
 const getDistDir = (name) => {

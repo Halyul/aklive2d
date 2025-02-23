@@ -69,7 +69,17 @@ Download extracted game assets
 
 Add query string `aklive2d` to bring up the settings panel to adjust your settings. 
 Settings can be adjusted under `window.aklive2d` or by dispatching custom events (under `window.aklive2d.events`) to `document`. 
-Examples can be found at `showcase/src/libs/wallpaper_engine.js`.
+Examples can be found at `apps/showcase/src/components/wallpaper_engine.js`.
+
+```js
+document.dispatchEvent(
+    window.aklive2d.events.RegisterConfig.handler({
+        target: 'background',
+        key: 'default',
+        value: 'bg_sui_1.png',
+    })
+)
+```
 
 Using JS events to change settings is recommended.
 

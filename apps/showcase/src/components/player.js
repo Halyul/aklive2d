@@ -116,7 +116,7 @@ export default class Player {
                 document.dispatchEvent(Events.Ready.handler())
             },
         }
-        if (buildConfig.use_json === 'true') {
+        if (buildConfig.use_json) {
             playerConfig.jsonUrl = `./assets/${buildConfig.filename}.json`
         } else {
             playerConfig.skelUrl = `./assets/${buildConfig.filename}.skel`

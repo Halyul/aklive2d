@@ -89,7 +89,6 @@ export default class Music {
     reset() {
         document.getElementById('custom-music').value = ''
         document.getElementById('custom-music-clear').disabled = true
-        this.#music.isUsingCustom = false
         this.#config.name = null
         if (this.#config.useMusic) {
             this.#playMusic()
@@ -99,12 +98,11 @@ export default class Music {
     #setMusic(data, type) {
         this.#audio.loop.el.src = data
         this.#audio.loop.el.querySelector('source').type = type
-        this.#music.isUsingCustom = true
         this.#playMusic()
     }
 
     #playMusic() {
-        if (!this.#music.isUsingCustom) {
+        if (!this.#config.name) {
             const introOgg = this.#music.mapping[this.#music.current].intro
             const intro = `./assets/${this.#music.location}/${introOgg}`
             const loop = `./assets/${this.#music.location}/${this.#music.mapping[this.#music.current].loop}`
@@ -179,13 +177,13 @@ export default class Music {
     }
 
     get isUsingCustom() {
-        return this.#music.isUsingCustom
+        return this.#config.name !== null
     }
 
     set music(name) {
         if (name !== null && name !== this.#music.current) {
             this.#music.current = name
-            if (this.#config.useMusic && !this.#music.isUsingCustom) {
+            if (this.#config.useMusic && !this.#config.name) {
                 this.#audio.loop.el.pause()
                 this.#audio.intro.el.pause()
                 this.#playMusic()

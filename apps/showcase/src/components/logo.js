@@ -15,7 +15,7 @@ export default class Logo {
     #default = {
         location: `${import.meta.env.BASE_URL}assets/`,
         image: `${buildConfig.logo_filename}.png`,
-        useInvertFilter: buildConfig.invert_filter === 'true',
+        useInvertFilter: buildConfig.invert_filter,
         ratio: 61.8,
         opacity: 30,
         hidden: false,

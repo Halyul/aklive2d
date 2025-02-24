@@ -24,7 +24,6 @@ export default class Background {
         useVideo: false,
         name: null,
     }
-    #musicObj
 
     constructor(el) {
         this.#parentEl = el
@@ -57,10 +56,6 @@ export default class Background {
     reset() {
         this.resetImage()
         this.resetVideo()
-    }
-
-    link(musicObj) {
-        this.#musicObj = musicObj
     }
 
     get useVideo() {
@@ -113,8 +108,8 @@ export default class Background {
 
     set default(v) {
         this.#default.image = v
-        this.#musicObj.music = v
-        this.image = this.#default.location + this.#default.image
+        if (!this.#config.name)
+            this.image = this.#default.location + this.#default.image
     }
 
     set custom(v) {

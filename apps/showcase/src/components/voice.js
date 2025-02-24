@@ -148,9 +148,10 @@ export default class Voice {
         return folders
     }
 
-    #getVoices() {
-        return this.#charwordTable.subtitleLangs[this.#config.subtitle.language]
-            .default
+    #getVoices(lang = null) {
+        return this.#charwordTable.subtitleLangs[
+            lang ? lang : this.#config.subtitle.language
+        ].default
     }
 
     #playEntryVoice() {
@@ -158,7 +159,7 @@ export default class Voice {
     }
 
     #playSpecialVoice(matcher) {
-        const voices = this.#getVoices()
+        const voices = this.#getVoices(buildConfig.voice_default_region)
         const voiceId = Object.keys(voices).find(
             (e) => voices[e].title === matcher
         )

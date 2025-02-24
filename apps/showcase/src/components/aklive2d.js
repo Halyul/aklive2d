@@ -221,14 +221,13 @@ export default class AKLive2D {
         ])
 
         this.#music.link(this.#background)
-        this.#background.link(this.#music)
         this.#voice.link(this.#player)
+        this.#applyConfig()
+
         this.#player.success()
         this.#voice.success()
         this.#music.success()
         this.#insight.success()
-
-        this.#applyConfig()
 
         if (
             this.#queries.has('aklive2d') ||

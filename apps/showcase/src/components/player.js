@@ -5,7 +5,7 @@ import {
     syncHTMLValue,
     createCustomEvent,
 } from '@/components/helper'
-import { spine } from '@aklive2d/module'
+import { Player as SpinePlayer } from '@aklive2d/module'
 import '@/components/player.css'
 import buildConfig from '!/config.json'
 
@@ -50,7 +50,6 @@ export default class Player {
             alpha: true,
             backgroundColor: '#00000000',
             viewport: {
-                debugRender: false,
                 padLeft: `${buildConfig.viewport_left}%`,
                 padRight: `${buildConfig.viewport_right}%`,
                 padTop: `${buildConfig.viewport_top}%`,
@@ -80,11 +79,10 @@ export default class Player {
                     },
                     complete: () => {
                         if (
-                            window.performance.now() - _this.#resetTime >=
-                                8 * 1000 &&
+                            performance.now() - _this.#resetTime >= 8 * 1000 &&
                             Math.random() < 0.3
                         ) {
-                            _this.#resetTime = window.performance.now()
+                            _this.#resetTime = performance.now()
                             let entry = widget.animationState.setAnimation(
                                 0,
                                 'Special',
@@ -121,7 +119,7 @@ export default class Player {
         } else {
             playerConfig.skelUrl = `./assets/${buildConfig.filename}.skel`
         }
-        this.#spine = new spine.SpinePlayer(this.#el, playerConfig)
+        this.#spine = new SpinePlayer(this.#el, playerConfig)
     }
 
     success() {
@@ -201,7 +199,7 @@ export default class Player {
     set fps(v) {
         v = parseInt(v)
         this.#config.fps = v
-        this.#spine.setFps(v)
+        this.#spine.fps = v
     }
 
     get fps() {
@@ -211,7 +209,7 @@ export default class Player {
     set scale(v) {
         v = parseInt(v)
         this.#config.scale = 1 / v
-        this.#spine.setOperatorScale(1 / v)
+        this.#spine.scale = 1 / v
     }
 
     get scale() {
@@ -345,7 +343,7 @@ export default class Player {
       <button type="button" id="player-pause">Pause</button>
       <div>
         <label for="scale">Scale</label>
-        <input type="range" min="0.1" max="10" step="0.1" id="scale-slider" value="${this.scale}" />
+        <input type="range" min="1" max="10" step="1" id="scale-slider" value="${this.scale}" />
         <input type="number" id="scale-input" name="scale" value="${this.scale}" step="0.1"/>
       </div>
       <div>

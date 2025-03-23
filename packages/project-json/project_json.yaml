@@ -354,8 +354,8 @@ properties:
           value: 1
           fraction: true
           max: 10
-          min: 0
-          step: 0.1
+          min: 1
+          step: 1
     - key: privacytitle
       value:
           text: ui_privacy_title

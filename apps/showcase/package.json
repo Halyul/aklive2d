@@ -11,7 +11,7 @@
         "lint": "eslint \"src/**/*.js\" && stylelint \"**/*.css\" && prettier --check ."
     },
     "devDependencies": {
-        "vite": "^6.1.4",
+        "vite": "^6.1.5",
         "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/postcss-config": "workspace:*",
         "@aklive2d/stylelint-config": "workspace:*",

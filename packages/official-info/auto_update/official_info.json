@@ -1,5 +1,5 @@
 {
-    "length": 62,
+    "length": 63,
     "dates": [
         "2025-04-22",
         "2025-04-01",
@@ -46,6 +46,15 @@
         }
     ],
     "2025-04-01": [
+        {
+            "codename": {
+                "zh-CN": "漫步于黄金之梦 · 缪尔赛思",
+                "en-US": "Golden Reverie"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504900.html",
+            "id": "202504900"
+        },
         {
             "codename": {
                 "zh-CN": "蝶舞华章 · 伊内丝",

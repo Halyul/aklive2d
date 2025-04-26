@@ -1,0 +1,3 @@
+[submodule "python/fsb5"]
+	path = python/fsb5
+	url = https://github.com/HearthSim/python-fsb5.git

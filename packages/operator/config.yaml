@@ -58,3 +58,6 @@ amiya_solo_around_the_world: !include config/amiya_solo_around_the_world.yaml
 zuole_youthful_journey: !include config/zuole_youthful_journey.yaml
 shu_spring_feast: !include config/shu_spring_feast.yaml
 yu: !include config/yu.yaml
+logos_radiant_serenity: !include config/logos_radiant_serenity.yaml
+muelsyse_golden_reverie: !include config/muelsyse_golden_reverie.yaml
+ines_melodic_flutter: !include config/ines_melodic_flutter.yaml

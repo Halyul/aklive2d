@@ -15,11 +15,5 @@
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/music": "workspace:*",
         "@aklive2d/background": "workspace:*"
-    },
-    "scripts": {
-        "upload": "mode=upload node runner.js",
-        "download:data": "mode=download node runner.js",
-        "deploy": "mode=deploy node runner.js",
-        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
     }
 }

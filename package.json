@@ -11,9 +11,6 @@
     "update": "turbo run update",
     "init": "turbo run init",
     "download:game": "turbo run download:game",
-    "upload": "turbo run upload",
-    "download:data": "turbo run download:data",
-    "deploy": "turbo run deploy",
     "build:cleanup": "turbo run build:cleanup"
   },
   "devDependencies": {
@@ -25,5 +22,12 @@
   },
   "packageManager": "pnpm@10.4.1",
   "name": "aklive2d",
-  "type": "module"
+  "type": "module",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "esbuild"
+    ]
+  }
 }

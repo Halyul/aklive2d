@@ -103,29 +103,6 @@
     "download:game": {
       "cache": false
     },
-    "@aklive2d/wrangler#upload": {
-      "cache": false,
-      "inputs": ["data/**"]
-    },
-    "upload": {
-      "cache": false
-    },
-    "@aklive2d/wrangler#download:data": {
-      "cache": false,
-      "outputs": ["data/**"]
-    },
-    "download:data": {
-      "cache": false
-    },
-    "@aklive2d/wrangler#deploy": {
-      "env": ["CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN"],
-      "inputs": ["../../dist/**"],
-      "dependsOn": ["@aklive2d/directory#build"]
-    },
-    "deploy": {
-      "env": ["CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN"],
-      "cache": false
-    },
     "@aklive2d/assets#build:cleanup": {
       "cache": false,
       "dependsOn": ["@aklive2d/directory#build"]

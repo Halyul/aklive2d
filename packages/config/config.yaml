@@ -1,4 +1,5 @@
 site_id: aklive2d
+total_size: 26214400 # 1024 * 1024 * 25
 akassets:
     project_name: akassets
     url: https://akassets.pages.dev

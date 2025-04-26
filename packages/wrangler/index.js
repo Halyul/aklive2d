@@ -138,14 +138,13 @@ const generateUploadDist = (item, depth = -1) => {
     if (item.type === 'dir' && depth === 1) {
         // shall zip dir
         const children = flattenChildren(item)
-        const totalSize = 1024 * 1024 * 20
         let count = 0,
             filesToZip = [],
             size = 0
         const ret = {}
         for (const child of children) {
             const currentsize = fileLib.size(path.join(dataDir, child.path))
-            if (size + currentsize >= totalSize) {
+            if (size + currentsize >= config.total_size) {
                 createZipFile(
                     `${item.name}-${count}`,
                     [...filesToZip],

@@ -16,7 +16,7 @@ export function useConfig() {
 
     const fetchOfficialUpdate = useCallback(async () => {
         const res = await fetch(
-            'https://raw.githubusercontent.com/Halyul/aklive2d/main/official_update.json'
+            'https://raw.githubusercontent.com/Halyul/aklive2d/refs/heads/main/packages/official-info/auto_update/official_info.json'
         )
         const data = await res.json().catch((e) => {
             console.error(e)

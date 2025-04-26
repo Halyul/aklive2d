@@ -15,6 +15,7 @@
     "scripts": {
         "update": "mode=update node runner.js",
         "build": "mode=build node runner.js",
-        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
+        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check .",
+        "build:cleanup": "rm -rf ./dist"
     }
 }

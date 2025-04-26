@@ -125,6 +125,29 @@
     "deploy": {
       "env": ["CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN"],
       "cache": false
+    },
+    "@aklive2d/assets#build:cleanup": {
+      "cache": false,
+      "dependsOn": ["@aklive2d/directory#build"]
+    },
+    "@aklive2d/background#build:cleanup": {
+      "cache": false,
+      "dependsOn": ["@aklive2d/directory#build"]
+    },
+    "@aklive2d/charword-table#build:cleanup": {
+      "cache": false,
+      "dependsOn": ["@aklive2d/directory#build"]
+    },
+    "@aklive2d/music#build:cleanup": {
+      "cache": false,
+      "dependsOn": ["@aklive2d/directory#build"]
+    },
+    "@aklive2d/operator#build:cleanup": {
+      "cache": false,
+      "dependsOn": ["@aklive2d/directory#build"]
+    },
+    "build:cleanup": {
+      "cache": false
     }
   }
 }

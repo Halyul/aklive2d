@@ -20,9 +20,9 @@ jobs:
         with:
           run_install: true
       - name: Download Data
-        run: pnpm run download:data
-      - name: Build
-        run: pnpm run build
+        run: pnpm run download:data --cache=
+      - name: Build and Clean Up
+        run: pnpm run build:cleanup --cache=
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:

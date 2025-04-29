@@ -1,5 +1,5 @@
 {
-    "length": 63,
+    "length": 66,
     "dates": [
         "2025-04-22",
         "2025-04-01",
@@ -46,6 +46,33 @@
         }
     ],
     "2025-04-01": [
+        {
+            "codename": {
+                "zh-CN": "至虔者荣光 · 空弦",
+                "en-US": "Glory of the Devout"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504953.html",
+            "id": "202504953"
+        },
+        {
+            "codename": {
+                "zh-CN": "星月漂流记 · 克洛丝",
+                "en-US": "Moonlit Voyage"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504992.html",
+            "id": "202504992"
+        },
+        {
+            "codename": {
+                "zh-CN": "新约能天使",
+                "en-US": "Exusiai the New Covenant"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504941.html",
+            "id": "202504941"
+        },
         {
             "codename": {
                 "zh-CN": "漫步于黄金之梦 · 缪尔赛思",

@@ -1,5 +1,5 @@
-import fs, { promises as fsP } from 'fs'
-import path from 'path'
+import fs, { promises as fsP } from 'node:fs'
+import path from 'node:path'
 import yauzl from 'yauzl-promise'
 import yazl from 'yazl'
 

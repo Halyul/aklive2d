@@ -1,5 +1,5 @@
 import sharp from 'sharp'
-import path from 'path'
+import path from 'node:path'
 
 export const process = async (filename, maskFilename, extractedDir) => {
     const image = sharp(path.join(extractedDir, filename)).removeAlpha()

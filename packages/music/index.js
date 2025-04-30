@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import { file } from '@aklive2d/libs'
 import { githubDownload } from '@aklive2d/downloader'
 import config from '@aklive2d/config'

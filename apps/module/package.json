@@ -1,12 +1,18 @@
 {
-  "name": "@aklive2d/module",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "build": "tsc"
-  },
-  "devDependencies": {
-    "typescript": "~5.7.3"
-  }
+    "name": "@aklive2d/module",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "lint": "eslint && prettier --check ."
+    },
+    "devDependencies": {
+        "@aklive2d/postcss-config": "workspace:*",
+        "@aklive2d/prettier-config": "workspace:*",
+        "@aklive2d/stylelint-config": "workspace:*",
+        "eslint-plugin-prettier": "^5.2.6",
+        "globals": "^16.0.0",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.31.1"
+    }
 }

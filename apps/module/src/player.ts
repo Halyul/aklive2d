@@ -25,9 +25,9 @@ export interface PlayerConfig {
     atlasUrl: string
 
     /* Raw data URIs, mapping from a path to base 64 encoded raw data. When the player
-   resolves a path of the `jsonUrl`, `skelUrl`, `atlasUrl`, or the image paths
-   referenced in the atlas, it will first look for that path in this array of
-   raw data URIs. This allows embedding of resources directly in HTML/JS. */
+    resolves a path of the `jsonUrl`, `skelUrl`, `atlasUrl`, or the image paths
+    referenced in the atlas, it will first look for that path in this array of
+    raw data URIs. This allows embedding of resources directly in HTML/JS. */
     rawDataURIs: spine.Map<string> | undefined
 
     fps: number
@@ -73,10 +73,10 @@ export interface PlayerConfig {
     backgroundColor: string
 
     /* Optional: callback when the widget and its assets have been successfully loaded. */
-    success: (widget: Player) => void
+    success: (_widget: Player) => void
 
     /* Optional: callback when the widget could not be loaded. */
-    error: (widget: Player, msg: string) => void
+    error: (_widget: Player, _msg: string) => void
 }
 
 export class Player {
@@ -117,7 +117,7 @@ export class Player {
     private eventListeners: {
         target: HTMLElement | Document | Window
         event: keyof HTMLElementEventMap
-        func: (this: HTMLElement, ev: Event) => any
+        func: EventListenerOrEventListenerObject
     }[] = []
 
     constructor(parent: HTMLElement | string, config: Partial<PlayerConfig>) {
@@ -227,14 +227,14 @@ export class Player {
     }
 
     private showError(error: string) {
-        let errorDom = findWithClass(this.dom, 'spine-player-error')[0]
+        const errorDom = findWithClass(this.dom, 'spine-player-error')[0]
         errorDom.classList.remove('spine-player-hidden')
         errorDom.innerHTML = `<p style="text-align: center; align-self: center;">${error}</p>`
         this.config.error(this, error)
     }
 
     private render(config: Partial<PlayerConfig>): HTMLElement {
-        let dom = (this.dom = createElement(`
+        const dom = (this.dom = createElement(`
             <div class="spine-player">
                 <canvas class="spine-player-canvas"></canvas>
                 <div class="spine-player-error spine-player-hidden"></div>
@@ -244,8 +244,8 @@ export class Player {
         try {
             // Validate the configuration
             this.config = this.validateConfig(config)
-        } catch (e: any) {
-            this.showError(e)
+        } catch (e: unknown) {
+            this.showError(e as string)
             return dom
         }
 
@@ -255,7 +255,7 @@ export class Player {
                 dom,
                 'spine-player-canvas'
             )[0] as HTMLCanvasElement
-            var webglConfig = { alpha: this.config.alpha }
+            const webglConfig = { alpha: this.config.alpha }
             this.context = new spine.webgl.ManagedWebGLRenderingContext(
                 this.canvas,
                 webglConfig
@@ -266,7 +266,7 @@ export class Player {
                 this.context,
                 true
             )
-        } catch (e) {
+        } catch {
             this.showError(
                 'Sorry, your browser does not support WebGL.<br><br>Please use the latest version of Firefox, Chrome, Edge, or Safari.'
             )
@@ -276,8 +276,8 @@ export class Player {
         // Load the assets
         this.assetManager = new spine.webgl.AssetManager(this.context)
         if (this.config.rawDataURIs) {
-            for (let path in this.config.rawDataURIs) {
-                let data = this.config.rawDataURIs[path]
+            for (const path in this.config.rawDataURIs) {
+                const data = this.config.rawDataURIs[path]
                 this.assetManager.setRawDataURI(path, data)
             }
         }
@@ -305,17 +305,18 @@ export class Player {
             this.canvas.height = Math.floor(h * this.devicePixelRatio)
         }
         this.context.gl.viewport(0, 0, this.canvas.width, this.canvas.height)
+        // eslint-disable-next-line
         if (resizeMode === spine.webgl.ResizeMode.Stretch) {
         } else if (resizeMode === spine.webgl.ResizeMode.Expand) {
             this.sceneRenderer.camera.setViewport(w, h)
         } else if (resizeMode === spine.webgl.ResizeMode.Fit) {
-            var sourceWidth = this.canvas.width,
+            const sourceWidth = this.canvas.width,
                 sourceHeight = this.canvas.height
-            var targetWidth = this.sceneRenderer.camera.viewportWidth,
+            const targetWidth = this.sceneRenderer.camera.viewportWidth,
                 targetHeight = this.sceneRenderer.camera.viewportHeight
-            var targetRatio = targetHeight / targetWidth
-            var sourceRatio = sourceHeight / sourceWidth
-            var scale =
+            const targetRatio = targetHeight / targetWidth
+            const sourceRatio = sourceHeight / sourceWidth
+            const scale =
                 targetRatio < sourceRatio
                     ? targetWidth / sourceWidth
                     : targetHeight / sourceHeight
@@ -347,11 +348,11 @@ export class Player {
                 this.config.animation &&
                 now - this.lastFrameTime > fpsInterval
             ) {
-                let ctx = this.context
-                let gl = ctx.gl
+                const ctx = this.context
+                const gl = ctx.gl
 
                 // Clear the viewport
-                let bg = new spine.Color().setFromString(
+                const bg = new spine.Color().setFromString(
                     this.config.backgroundColor
                 )
                 gl.clearColor(bg.r, bg.g, bg.b, bg.a)
@@ -359,9 +360,9 @@ export class Player {
 
                 this.lastFrameTime = now
                 this.time.update()
-                let delta = this.time.delta * this.speed
+                const delta = this.time.delta * this.speed
 
-                let animationDuration =
+                const animationDuration =
                     this.animationState.getCurrent(0).animation.duration
                 this.playTime += delta
                 while (
@@ -398,12 +399,12 @@ export class Player {
                     (this.currentViewport.padTop as number),
             }
 
-            let transitionAlpha =
+            const transitionAlpha =
                 (performance.now() - this.viewportTransitionStart) /
                 1000 /
                 this.config.viewport.transitionTime
             if (this.previousViewport && transitionAlpha < 1) {
-                let oldViewport = {
+                const oldViewport = {
                     x:
                         this.previousViewport.x -
                         (this.previousViewport.padLeft as number),
@@ -437,7 +438,7 @@ export class Player {
                 }
             }
 
-            let viewportSize = this.scaleViewport(
+            const viewportSize = this.scaleViewport(
                 viewport.width,
                 viewport.height,
                 this.canvas.width,
@@ -472,13 +473,13 @@ export class Player {
         targetWidth: number,
         targetHeight: number
     ): spine.Vector2 {
-        let targetRatio = targetHeight / targetWidth
-        let sourceRatio = sourceHeight / sourceWidth
-        let scale =
+        const targetRatio = targetHeight / targetWidth
+        const sourceRatio = sourceHeight / sourceWidth
+        const scale =
             targetRatio > sourceRatio
                 ? targetWidth / sourceWidth
                 : targetHeight / sourceHeight
-        let temp = new spine.Vector2()
+        const temp = new spine.Vector2()
         temp.x = sourceWidth * scale
         temp.y = sourceHeight * scale
         return temp
@@ -495,39 +496,39 @@ export class Player {
             return
         }
 
-        let atlas = this.assetManager.get(this.config.atlasUrl)
+        const atlas = this.assetManager.get(this.config.atlasUrl)
         let skeletonData: spine.SkeletonData
         if (this.config.jsonUrl) {
-            let jsonText = this.assetManager.get(this.config.jsonUrl)
-            let json = new spine.SkeletonJson(
+            const jsonText = this.assetManager.get(this.config.jsonUrl)
+            const json = new spine.SkeletonJson(
                 new spine.AtlasAttachmentLoader(atlas)
             )
             try {
                 skeletonData = json.readSkeletonData(jsonText)
-            } catch (e: any) {
+            } catch (e: unknown) {
                 this.showError(
                     'Error: could not load skeleton .json.<br><br>' +
-                        e.toString()
+                        (e as Error).toString()
                 )
                 return
             }
         } else {
-            let binaryData = this.assetManager.get(this.config.skelUrl!)
-            let binary = new spine.SkeletonBinary(
+            const binaryData = this.assetManager.get(this.config.skelUrl!)
+            const binary = new spine.SkeletonBinary(
                 new spine.AtlasAttachmentLoader(atlas)
             )
             try {
                 skeletonData = binary.readSkeletonData(binaryData)
-            } catch (e: any) {
+            } catch (e: unknown) {
                 this.showError(
                     'Error: could not load skeleton .skel.<br><br>' +
-                        e.toString()
+                        (e as Error).toString()
                 )
                 return
             }
         }
         this.skeleton = new spine.Skeleton(skeletonData)
-        let stateData = new spine.AnimationStateData(skeletonData)
+        const stateData = new spine.AnimationStateData(skeletonData)
         stateData.defaultMix = this.config.defaultMix
         this.animationState = new spine.AnimationState(stateData)
 
@@ -568,7 +569,7 @@ export class Player {
         // if all animations for which viewports where given
         // exist.
         if (!this.config.viewport) {
-            ;(this.config.viewport as any) = {
+            ;(this.config.viewport as unknown) = {
                 animations: {},
                 transitionTime: 0.2,
             }
@@ -645,10 +646,10 @@ export class Player {
     public setAnimation(animation: string, loop: boolean = true) {
         // Determine viewport
         this.previousViewport = this.currentViewport
-        let animViewport = this.calculateAnimationViewport(animation)
+        const animViewport = this.calculateAnimationViewport(animation)
 
         // The calculated animation viewport is the base
-        let viewport: Viewport = {
+        const viewport: Viewport = {
             x: animViewport.x,
             y: animViewport.y,
             width: animViewport.width,
@@ -660,7 +661,7 @@ export class Player {
         }
 
         // Override with global viewport settings if they exist
-        let globalViewport = this.config.viewport
+        const globalViewport = this.config.viewport
         if (
             typeof globalViewport.x !== 'undefined' &&
             typeof globalViewport.y !== 'undefined' &&
@@ -682,7 +683,7 @@ export class Player {
             viewport.padBottom = globalViewport.padBottom
 
         // Override with animation viewport settings given by user for final result.
-        let userAnimViewport = this.config.viewport.animations[animation]
+        const userAnimViewport = this.config.viewport.animations[animation]
         if (userAnimViewport) {
             if (
                 typeof userAnimViewport.x !== 'undefined' &&
@@ -753,21 +754,21 @@ export class Player {
     }
 
     private calculateAnimationViewport(animationName: string) {
-        let animation = this.skeleton.data.findAnimation(animationName)
+        const animation = this.skeleton.data.findAnimation(animationName)
         this.animationState.clearTracks()
         this.skeleton.setToSetupPose()
         this.animationState.setAnimationWith(0, animation, true)
 
-        let steps = 100
-        let stepTime = animation.duration > 0 ? animation.duration / steps : 0
+        const steps = 100
+        const stepTime = animation.duration > 0 ? animation.duration / steps : 0
         let minX = 100000000
         let maxX = -100000000
         let minY = 100000000
         let maxY = -100000000
-        let offset = new spine.Vector2()
-        let size = new spine.Vector2()
+        const offset = new spine.Vector2()
+        const size = new spine.Vector2()
 
-        for (var i = 0; i < steps; i++) {
+        for (let i = 0; i < steps; i++) {
             this.animationState.update(stepTime)
             this.animationState.apply(this.skeleton)
             this.skeleton.updateWorldTransform()
@@ -804,7 +805,7 @@ export class Player {
     private addEventListener(
         target: HTMLElement | Document | Window,
         event: keyof HTMLElementEventMap,
-        func: (this: HTMLElement, ev: Event) => any
+        func: EventListenerOrEventListenerObject
     ) {
         this.eventListeners.push({ target: target, event: event, func: func })
         target.addEventListener(event, func)
@@ -813,8 +814,8 @@ export class Player {
     public dispose() {
         this.sceneRenderer.dispose()
         this.assetManager.dispose()
-        for (var i = 0; i < this.eventListeners.length; i++) {
-            var eventListener = this.eventListeners[i]
+        for (let i = 0; i < this.eventListeners.length; i++) {
+            const eventListener = this.eventListeners[i]
             eventListener.target.removeEventListener(
                 eventListener.event,
                 eventListener.func
@@ -824,7 +825,7 @@ export class Player {
     }
 
     public updateViewport(viewport: Viewport) {
-        var _currentViewport = this.currentViewport
+        const _currentViewport = this.currentViewport
         _currentViewport.padLeft = this.percentageToWorldUnit(
             _currentViewport.width,
             viewport.padLeft
@@ -854,14 +855,14 @@ export class Player {
 }
 
 const findWithClass = (dom: HTMLElement, className: string): HTMLElement[] => {
-    let found = new Array<HTMLElement>()
-    let findRecursive = (
+    const found = new Array<HTMLElement>()
+    const findRecursive = (
         dom: HTMLElement,
         className: string,
         found: HTMLElement[]
     ) => {
-        for (var i = 0; i < dom.children.length; i++) {
-            let child = dom.children[i] as HTMLElement
+        for (let i = 0; i < dom.children.length; i++) {
+            const child = dom.children[i] as HTMLElement
             if (child.classList.contains(className)) found.push(child)
             findRecursive(child, className, found)
         }
@@ -871,7 +872,7 @@ const findWithClass = (dom: HTMLElement, className: string): HTMLElement[] => {
 }
 
 const createElement = (html: string): HTMLElement => {
-    let dom = document.createElement('div')
+    const dom = document.createElement('div')
     dom.innerHTML = html
     return dom.children[0] as HTMLElement
 }

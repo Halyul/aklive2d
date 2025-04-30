@@ -9,7 +9,7 @@ import ReturnButton from '@/component/return_button'
 import { Typewriter } from 'react-simple-typewriter'
 import { useHeader } from '@/state/header'
 import VoiceElement from '@/component/voice'
-import { spine } from '@aklive2d/module'
+import { Player as SpinePlayer } from '@aklive2d/module'
 import useInsight from '@/state/insight'
 import buildConfig from '!/config.json'
 
@@ -91,7 +91,7 @@ export default function Error() {
     useEffect(() => {
         if (spineRef.current?.children.length === 0) {
             setSpinePlayer(
-                new spine.SpinePlayer(spineRef.current, {
+                new SpinePlayer(spineRef.current, {
                     skelUrl: `./_assets/${filename}.skel`,
                     atlasUrl: `./_assets/${filename}.atlas`,
                     animation: 'Relax',

@@ -7,7 +7,7 @@ import { useHeader } from '@/state/header'
 import { useAppbar } from '@/state/appbar'
 import VoiceElement from '@/component/voice'
 import useInsight from '@/state/insight'
-import { spine } from '@aklive2d/module'
+import { Player as SpinePlayer } from '@aklive2d/module'
 import Border from '@/component/border'
 import { useI18n } from '@/state/language'
 import Switch from '@/component/switch'
@@ -212,9 +212,7 @@ export default function Operator() {
             } else {
                 playerConfig.skelUrl = `./${key}/assets/${configRef.current.filename.replace(/#/g, '%23')}.skel`
             }
-            setSpinePlayer(
-                new spine.SpinePlayer(spineRef.current, playerConfig)
-            )
+            setSpinePlayer(new SpinePlayer(spineRef.current, playerConfig))
         }
     }, [spineAnimationName, setSpinePlayer, spinePlayer, key])
 

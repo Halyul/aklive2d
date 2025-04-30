@@ -1,5 +1,5 @@
 {
-    "length": 66,
+    "length": 67,
     "dates": [
         "2025-04-22",
         "2025-04-01",
@@ -46,6 +46,15 @@
         }
     ],
     "2025-04-01": [
+        {
+            "codename": {
+                "zh-CN": "超新星 · 维什戴尔",
+                "en-US": "Supernova"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504974.html",
+            "id": "202504974"
+        },
         {
             "codename": {
                 "zh-CN": "至虔者荣光 · 空弦",

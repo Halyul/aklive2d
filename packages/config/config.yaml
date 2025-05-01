@@ -49,6 +49,7 @@ app:
     showcase:
         public: public
         assets: assets
+        release: release
 dir_name:
     data: data
     dist: dist

@@ -2,7 +2,7 @@
     "name": "@aklive2d/libs",
     "private": true,
     "version": "0.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "type": "module",
     "dependencies": {
         "@aklive2d/eslint-config": "workspace:*",
@@ -12,7 +12,16 @@
         "yauzl-promise": "^4.0.0",
         "yazl": "^3.3.1"
     },
+    "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript-eslint": ">=8.31.1",
+        "typescript": ">=5.8.2"
+    },
     "scripts": {
-        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
+        "lint": "eslint && prettier --check ."
+    },
+    "devDependencies": {
+        "@types/yauzl-promise": "^4.0.1",
+        "@types/yazl": "^2.4.6"
     }
 }

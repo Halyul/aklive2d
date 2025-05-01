@@ -139,3 +139,4 @@ assets/*
 temp/*
 .turbo
 data/*
+release

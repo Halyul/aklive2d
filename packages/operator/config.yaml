@@ -61,3 +61,7 @@ yu: !include config/yu.yaml
 logos_radiant_serenity: !include config/logos_radiant_serenity.yaml
 muelsyse_golden_reverie: !include config/muelsyse_golden_reverie.yaml
 ines_melodic_flutter: !include config/ines_melodic_flutter.yaml
+wisadel_supernova: !include config/wisadel_supernova.yaml
+archetto_glory_of_the_devout: !include config/archetto_glory_of_the_devout.yaml
+kroos_moonlit_voyage: !include config/kroos_moonlit_voyage.yaml
+exusiai_the_new_covenant: !include config/exusiai_the_new_covenant.yaml

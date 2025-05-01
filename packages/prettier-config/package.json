@@ -1,11 +1,12 @@
 {
-  "name": "@aklive2d/prettier-config",
-  "private": true,
-  "version": "0.0.0",
-  "license": "MIT",
-  "main": "index.js",
-  "type": "module",
-  "peerDependencies": {
-    "prettier": ">=3.0.0"
-  }
+    "name": "@aklive2d/prettier-config",
+    "private": true,
+    "version": "0.0.0",
+    "license": "MIT",
+    "main": "index.js",
+    "type": "module",
+    "peerDependencies": {
+        "prettier": ">=3.0.0",
+        "typescript": ">=5.8.2"
+    }
 }

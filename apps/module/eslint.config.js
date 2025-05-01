@@ -1,18 +1,15 @@
-import eslint from '@eslint/js'
+import { tsConfig } from '@aklive2d/eslint-config'
 import tseslint from 'typescript-eslint'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import globals from 'globals'
 
 /** @type {import('eslint').Config} */
 export default tseslint.config(
-    eslint.configs.recommended,
-    tseslint.configs.recommended,
-    eslintPluginPrettierRecommended,
+    ...tsConfig,
     {
         ignores: ['dist', 'spine-ts'],
     },
     {
-        files: ['**/*.{js,jsx}', '**/*.{ts,tsx}'],
+        files: ['**/*.js', '**/*.ts'],
         languageOptions: {
             ecmaVersion: 2022,
             globals: {

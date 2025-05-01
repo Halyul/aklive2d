@@ -1,7 +1,7 @@
 {
     "name": "@aklive2d/wrangler",
     "version": "0.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "type": "module",
     "license": "MIT",
     "dependencies": {
@@ -15,5 +15,10 @@
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/music": "workspace:*",
         "@aklive2d/background": "workspace:*"
+    },
+    "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript-eslint": ">=8.31.1",
+        "typescript": ">=5.8.2"
     }
 }

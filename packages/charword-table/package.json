@@ -2,7 +2,7 @@
     "name": "@aklive2d/charword-table",
     "private": true,
     "version": "0.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "type": "module",
     "dependencies": {
         "@aklive2d/libs": "workspace:*",
@@ -12,10 +12,15 @@
         "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*"
     },
+    "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript-eslint": ">=8.31.1",
+        "typescript": ">=5.8.2"
+    },
     "scripts": {
-        "update": "mode=update node runner.js",
-        "build": "mode=build node runner.js",
-        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check .",
+        "update": "mode=update bun runner.ts",
+        "build": "mode=build bun runner.ts",
+        "lint": "eslint && prettier --check .",
         "build:cleanup": "rm -rf ./dist"
     }
 }

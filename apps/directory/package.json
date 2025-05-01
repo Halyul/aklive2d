@@ -5,9 +5,9 @@
     "type": "module",
     "scripts": {
         "dev:directory": "vite --clearScreen false",
-        "build": "mode=build node runner.js",
+        "build": "mode=build bun runner.ts",
         "preview:directory": "vite preview",
-        "lint": "eslint \"src/**/*.js\" \"src/**/*.jsx\" && stylelint \"src/**/*.css\" \"src/**/*.scss\" && prettier --check ."
+        "lint": "eslint && stylelint \"src/**/*.css\" \"src/**/*.scss\" && prettier --check ."
     },
     "dependencies": {
         "react": "^19.0.0",
@@ -27,6 +27,11 @@
         "@aklive2d/showcase": "workspace:*",
         "@aklive2d/module": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*"
+    },
+    "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript-eslint": ">=8.31.1",
+        "typescript": ">=5.8.2"
     },
     "devDependencies": {
         "@types/react": "^19.0.8",

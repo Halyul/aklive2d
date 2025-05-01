@@ -1,0 +1,13 @@
+filename: dyn_illust_char_332_archet_sale#14
+logo: logo_Laterano
+fallback_name: char_332_archet_sale#14
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true
+codename:
+    zh-CN: 至虔者荣光 · 空弦
+    en-US: Glory of the Devout / Archetto
+use_json: false
+official_id: '202504953'

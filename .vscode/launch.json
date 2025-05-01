@@ -1,5 +1,6 @@
 {
   "configurations": [
+
     {
       "name": "Launch Chrome",
       "request": "launch",
@@ -109,6 +110,15 @@
       "name": "Run Script: deploy",
       "request": "launch",
       "command": "pnpm run deploy",
+      "cwd": "${workspaceFolder}"
+    },{
+      "type": "bun",
+      "name": "Run Script: build",
+      "request": "launch",
+      "env": {
+        "mode": "build"
+      },
+      "program": "index.ts",
       "cwd": "${workspaceFolder}"
     },
   ]

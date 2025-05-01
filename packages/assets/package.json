@@ -1,7 +1,7 @@
 {
     "name": "@aklive2d/assets",
     "version": "0.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "type": "module",
     "license": "MIT",
     "dependencies": {
@@ -13,10 +13,15 @@
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/music": "workspace:*"
     },
+    "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript-eslint": ">=8.31.1",
+        "typescript": ">=5.8.2"
+    },
     "scripts": {
-        "build": "mode=build node runner.js",
-        "download:game": "mode=download node runner.js",
-        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check .",
+        "build": "mode=build bun runner.ts",
+        "download:game": "mode=download bun runner.ts",
+        "lint": "eslint && prettier --check .",
         "build:cleanup": "rm -rf ./dist"
     }
 }

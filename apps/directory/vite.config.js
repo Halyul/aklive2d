@@ -8,12 +8,12 @@ import { copyDirectoryData } from '@aklive2d/vite-helpers'
 // https://vite.dev/config/
 export default defineConfig(async () => {
     const dataDir = path.resolve(import.meta.dirname, config.dir_name.data)
-    const publicDir = path.resolve(showcaseDirs.DIST_DIR)
-    await copyDirectoryData({ dataDir, publicDir })
+    const releaseDir = path.resolve(showcaseDirs.DIST_DIR)
+    await copyDirectoryData({ dataDir, publicDir: releaseDir })
     return {
         envDir: dataDir,
         plugins: [react()],
-        publicDir,
+        publicDir: releaseDir,
         resolve: {
             alias: {
                 '@': path.resolve('./src'),
@@ -22,7 +22,12 @@ export default defineConfig(async () => {
         },
         build: {
             emptyOutDir: false,
-            outDir: publicDir,
+            outDir: path.resolve(
+                import.meta.dirname,
+                '..',
+                '..',
+                config.dir_name.dist
+            ),
             rollupOptions: {
                 output: {
                     entryFileNames: `${config.directory.assets_dir}/[name]-[hash:8].js`,

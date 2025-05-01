@@ -2,7 +2,7 @@
     "name": "@aklive2d/downloader",
     "private": true,
     "version": "0.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "type": "module",
     "dependencies": {
         "@aklive2d/eslint-config": "workspace:*",
@@ -11,6 +11,6 @@
         "p-throttle": "^7.0.0"
     },
     "scripts": {
-        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
+        "lint": "eslint && prettier --check ."
     }
 }

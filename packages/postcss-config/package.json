@@ -1,14 +1,11 @@
 {
-  "name": "@aklive2d/postcss-config",
-  "private": true,
-  "version": "0.0.0",
-  "main": "index.js",
-  "type": "module",
-  "license": "MIT",
-  "dependencies": {
-    "postcss": "^8.5.1"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@aklive2d/postcss-config",
+    "private": true,
+    "version": "0.0.0",
+    "main": "index.js",
+    "type": "module",
+    "license": "MIT",
+    "dependencies": {
+        "postcss": "^8.5.1"
+    }
 }

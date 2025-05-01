@@ -4,12 +4,14 @@
     "": {
       "name": "aklive2d",
       "devDependencies": {
+        "@types/jsdom": "^21.1.7",
         "cz-conventional-changelog": "^3.3.0",
         "eslint": "^9.25.1",
         "http-server": "^14.1.1",
         "prettier": "^3.5.3",
         "stylelint": "^16.19.1",
         "turbo": "^2.5.2",
+        "typescript": "5.8.2",
       },
     },
     "apps/directory": {
@@ -46,18 +48,25 @@
         "sass": "^1.84.0",
         "vite": "^6.1.5",
       },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
+      },
     },
     "apps/module": {
       "name": "@aklive2d/module",
       "version": "0.0.0",
       "devDependencies": {
+        "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/postcss-config": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
         "@aklive2d/stylelint-config": "workspace:*",
-        "eslint-plugin-prettier": "^5.2.6",
-        "globals": "^16.0.0",
-        "typescript": "^5.8.3",
-        "typescript-eslint": "^8.31.1",
+      },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
       },
     },
     "apps/showcase": {
@@ -76,6 +85,11 @@
         "@aklive2d/vite-helpers": "workspace:*",
         "vite": "^6.1.5",
       },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
+      },
     },
     "packages/assets": {
       "name": "@aklive2d/assets",
@@ -89,6 +103,11 @@
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
       },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
+      },
     },
     "packages/background": {
       "name": "@aklive2d/background",
@@ -100,6 +119,11 @@
         "@aklive2d/music": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
         "sharp": "^0.33.5",
+      },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
       },
     },
     "packages/charword-table": {
@@ -113,6 +137,11 @@
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
       },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
+      },
     },
     "packages/config": {
       "name": "@aklive2d/config",
@@ -121,6 +150,11 @@
         "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/libs": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
+      },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
       },
     },
     "packages/downloader": {
@@ -140,8 +174,10 @@
         "@eslint/js": "^9.19.0",
         "eslint": "^9.19.0",
         "eslint-config-prettier": "^10.0.1",
-        "eslint-plugin-prettier": "^5.2.3",
-        "globals": "^15.14.0",
+        "eslint-plugin-prettier": "^5.2.6",
+        "globals": "^16.0.0",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.31.1",
       },
     },
     "packages/libs": {
@@ -155,6 +191,15 @@
         "yauzl-promise": "^4.0.0",
         "yazl": "^3.3.1",
       },
+      "devDependencies": {
+        "@types/yauzl-promise": "^4.0.1",
+        "@types/yazl": "^2.4.6",
+      },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
+      },
     },
     "packages/music": {
       "name": "@aklive2d/music",
@@ -165,6 +210,11 @@
         "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/libs": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
+      },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
       },
     },
     "packages/official-info": {
@@ -177,6 +227,11 @@
         "@aklive2d/prettier-config": "workspace:*",
         "jsdom": "^26.0.0",
       },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
+      },
     },
     "packages/operator": {
       "name": "@aklive2d/operator",
@@ -188,6 +243,11 @@
         "@aklive2d/official-info": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
         "yaml": "^2.7.0",
+      },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
       },
     },
     "packages/postcss-config": {
@@ -202,6 +262,7 @@
       "version": "0.0.0",
       "peerDependencies": {
         "prettier": ">=3.0.0",
+        "typescript": ">=5.8.2",
       },
     },
     "packages/project-json": {
@@ -216,6 +277,11 @@
         "@aklive2d/music": "workspace:*",
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
+      },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
       },
     },
     "packages/stylelint-config": {
@@ -240,6 +306,11 @@
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*",
       },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
+      },
     },
     "packages/wrangler": {
       "name": "@aklive2d/wrangler",
@@ -255,6 +326,11 @@
         "@aklive2d/prettier-config": "workspace:*",
         "@aklive2d/showcase": "workspace:*",
         "p-throttle": "^7.0.0",
+      },
+      "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript": ">=5.8.2",
+        "typescript-eslint": ">=8.31.1",
       },
     },
   },
@@ -597,6 +673,8 @@
 
     "@types/estree": ["@types/estree@1.0.7", "", {}, "sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ=="],
 
+    "@types/jsdom": ["@types/jsdom@21.1.7", "", { "dependencies": { "@types/node": "*", "@types/tough-cookie": "*", "parse5": "^7.0.0" } }, "sha512-yOriVnggzrnQ3a9OKOCxaVuSug3w3/SbOj5i7VwXWZEyUNl3bLF9V3MfxGbZKuwqJOQyRfqXyROBB1CoZLFWzA=="],
+
     "@types/json-schema": ["@types/json-schema@7.0.15", "", {}, "sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA=="],
 
     "@types/node": ["@types/node@22.15.3", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-lX7HFZeHf4QG/J7tBZqrCAXwz9J5RD56Y6MpP0eJkka8p+K0RY/yBTW7CYFJ4VGCclxqOLKmiGP5juQc6MKgcw=="],
@@ -604,6 +682,12 @@
     "@types/react": ["@types/react@19.1.2", "", { "dependencies": { "csstype": "^3.0.2" } }, "sha512-oxLPMytKchWGbnQM9O7D67uPa9paTNxO7jVoNMXgkkErULBPhPARCfkKL9ytcIJJRGjbsVwW4ugJzyFFvm/Tiw=="],
 
     "@types/react-dom": ["@types/react-dom@19.1.3", "", { "peerDependencies": { "@types/react": "^19.0.0" } }, "sha512-rJXC08OG0h3W6wDMFxQrZF00Kq6qQvw0djHRdzl3U5DnIERz0MRce3WVc7IS6JYBwtaP/DwYtRRjVlvivNveKg=="],
+
+    "@types/tough-cookie": ["@types/tough-cookie@4.0.5", "", {}, "sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA=="],
+
+    "@types/yauzl-promise": ["@types/yauzl-promise@4.0.1", "", { "dependencies": { "@types/node": "*" } }, "sha512-qYEC3rJwqiJpdQ9b+bPNeuSY0c3JUM8vIuDy08qfuVN7xHm3ZDsHn2kGphUIB0ruEXrPGNXZ64nMUcu4fDjViQ=="],
+
+    "@types/yazl": ["@types/yazl@2.4.6", "", { "dependencies": { "@types/node": "*" } }, "sha512-/ifFjQtcKaoZOjl5NNCQRR0fAKafB3Foxd7J/WvFPTMea46zekapcR30uzkwIkKAAuq5T6d0dkwz754RFH27hg=="],
 
     "@typescript-eslint/eslint-plugin": ["@typescript-eslint/eslint-plugin@8.31.1", "", { "dependencies": { "@eslint-community/regexpp": "^4.10.0", "@typescript-eslint/scope-manager": "8.31.1", "@typescript-eslint/type-utils": "8.31.1", "@typescript-eslint/utils": "8.31.1", "@typescript-eslint/visitor-keys": "8.31.1", "graphemer": "^1.4.0", "ignore": "^5.3.1", "natural-compare": "^1.4.0", "ts-api-utils": "^2.0.1" }, "peerDependencies": { "@typescript-eslint/parser": "^8.0.0 || ^8.0.0-alpha.0", "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, "sha512-oUlH4h1ABavI4F0Xnl8/fOtML/eu8nI2A1nYd+f+55XI0BLu+RIqKoCiZKNo6DtqZBEQm5aNKA20G3Z5w3R6GQ=="],
 
@@ -919,7 +1003,7 @@
 
     "global-prefix": ["global-prefix@3.0.0", "", { "dependencies": { "ini": "^1.3.5", "kind-of": "^6.0.2", "which": "^1.3.1" } }, "sha512-awConJSVCHVGND6x3tmMaKcQvwXLhjdkmomy2W+Goaui8YPgYgXJZewhg3fWC+DlfqqQuWg8AwqjGTD2nAPVWg=="],
 
-    "globals": ["globals@15.15.0", "", {}, "sha512-7ACyT3wmyp3I61S4fG682L0VA2RGD9otkqGJIwNUMF1SWUombIIk+af1unuDYgMm082aHYwD+mzJvv9Iu8dsgg=="],
+    "globals": ["globals@16.0.0", "", {}, "sha512-iInW14XItCXET01CQFqudPOWP2jYMl7T+QRQT+UNcR/iQncN/F0UNpgd76iFkBPgNQb4+X3LV9tLJYzwh+Gl3A=="],
 
     "globalthis": ["globalthis@1.0.4", "", { "dependencies": { "define-properties": "^1.2.1", "gopd": "^1.0.1" } }, "sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ=="],
 
@@ -1443,7 +1527,7 @@
 
     "typed-array-length": ["typed-array-length@1.0.7", "", { "dependencies": { "call-bind": "^1.0.7", "for-each": "^0.3.3", "gopd": "^1.0.1", "is-typed-array": "^1.1.13", "possible-typed-array-names": "^1.0.0", "reflect.getprototypeof": "^1.0.6" } }, "sha512-3KS2b+kL7fsuk/eJZ7EQdnEmQoaho/r6KUef7hxvltNA5DR8NAUM+8wJMbJyZ4G9/7i3v5zPBIMN5aybAh2/Jg=="],
 
-    "typescript": ["typescript@5.8.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ=="],
+    "typescript": ["typescript@5.8.2", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ=="],
 
     "typescript-eslint": ["typescript-eslint@8.31.1", "", { "dependencies": { "@typescript-eslint/eslint-plugin": "8.31.1", "@typescript-eslint/parser": "8.31.1", "@typescript-eslint/utils": "8.31.1" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, "sha512-j6DsEotD/fH39qKzXTQRwYYWlt7D+0HmfpOK+DVhwJOFLcdmn92hq3mBb7HlKJHbjjI/gTOqEcc9d6JfpFf/VA=="],
 
@@ -1509,7 +1593,7 @@
 
     "yocto-queue": ["yocto-queue@0.1.0", "", {}, "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="],
 
-    "@aklive2d/module/globals": ["globals@16.0.0", "", {}, "sha512-iInW14XItCXET01CQFqudPOWP2jYMl7T+QRQT+UNcR/iQncN/F0UNpgd76iFkBPgNQb4+X3LV9tLJYzwh+Gl3A=="],
+    "@aklive2d/eslint-config/typescript": ["typescript@5.8.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ=="],
 
     "@commitlint/config-validator/ajv": ["ajv@8.17.1", "", { "dependencies": { "fast-deep-equal": "^3.1.3", "fast-uri": "^3.0.1", "json-schema-traverse": "^1.0.0", "require-from-string": "^2.0.2" } }, "sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g=="],
 

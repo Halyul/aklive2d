@@ -2,7 +2,7 @@
     "name": "@aklive2d/official-info",
     "private": true,
     "version": "0.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "type": "module",
     "dependencies": {
         "jsdom": "^26.0.0",
@@ -11,8 +11,13 @@
         "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*"
     },
+    "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript-eslint": ">=8.31.1",
+        "typescript": ">=5.8.2"
+    },
     "scripts": {
-        "update": "mode=update node runner.js",
-        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
+        "update": "mode=update bun runner.ts",
+        "lint": "eslint && prettier --check ."
     }
 }

@@ -3,12 +3,17 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "main": "index.js",
+    "main": "index.ts",
     "scripts": {
         "dev:showcase": "vite --clearScreen false",
-        "build": "mode=build node runner.js",
+        "build": "mode=build bun runner.ts",
         "preview:showcase": "vite preview",
-        "lint": "eslint \"src/**/*.js\" && stylelint \"**/*.css\" && prettier --check ."
+        "lint": "eslint && prettier --check ."
+    },
+    "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript-eslint": ">=8.31.1",
+        "typescript": ">=5.8.2"
     },
     "devDependencies": {
         "vite": "^6.1.5",

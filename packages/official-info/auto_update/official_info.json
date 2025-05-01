@@ -34,671 +34,673 @@
         "2020-05-01",
         "2020-01-01"
     ],
-    "2025-04-22": [
-        {
-            "codename": {
-                "zh-CN": "辉煌的静谧 · 逻各斯",
-                "en-US": "Radiant Serenity"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504989.html",
-            "id": "202504989"
-        }
-    ],
-    "2025-04-01": [
-        {
-            "codename": {
-                "zh-CN": "超新星 · 维什戴尔",
-                "en-US": "Supernova"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504974.html",
-            "id": "202504974"
-        },
-        {
-            "codename": {
-                "zh-CN": "至虔者荣光 · 空弦",
-                "en-US": "Glory of the Devout"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504953.html",
-            "id": "202504953"
-        },
-        {
-            "codename": {
-                "zh-CN": "星月漂流记 · 克洛丝",
-                "en-US": "Moonlit Voyage"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504992.html",
-            "id": "202504992"
-        },
-        {
-            "codename": {
-                "zh-CN": "新约能天使",
-                "en-US": "Exusiai the New Covenant"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504941.html",
-            "id": "202504941"
-        },
-        {
-            "codename": {
-                "zh-CN": "漫步于黄金之梦 · 缪尔赛思",
-                "en-US": "Golden Reverie"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504900.html",
-            "id": "202504900"
-        },
-        {
-            "codename": {
-                "zh-CN": "蝶舞华章 · 伊内丝",
-                "en-US": "Melodic Flutter"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504968.html",
-            "id": "202504968"
-        }
-    ],
-    "2025-01-01": [
-        {
-            "codename": {
-                "zh-CN": "少年游 · 左乐",
-                "en-US": "Youthful Journey"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501927.html",
-            "id": "202501927"
-        },
-        {
-            "codename": {
-                "zh-CN": "春日宴 · 黍",
-                "en-US": "Spring Feast"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501936.html",
-            "id": "202501936"
-        },
-        {
-            "codename": {
-                "zh-CN": "余",
-                "en-US": "yu"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501414.html",
-            "id": "202501414"
-        }
-    ],
-    "2024-12-09": [
-        {
-            "codename": {
-                "zh-CN": "霹雳导演 · 年",
-                "en-US": "Thunderbolt Director"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412491.html",
-            "id": "202412491"
-        }
-    ],
-    "2024-12-01": [
-        {
-            "codename": {
-                "zh-CN": "寰宇独奏 · 阿米娅",
-                "en-US": "Solo Around The World"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412473.html",
-            "id": "202412473"
-        },
-        {
-            "codename": {
-                "zh-CN": "全能演员 · 重岳",
-                "en-US": "All-Round Actor"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412452.html",
-            "id": "202412452"
-        }
-    ],
-    "2024-10-01": [
-        {
-            "codename": {
-                "zh-CN": "荒芜拉普兰德",
-                "en-US": "Lappland the Decadenza"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410440.html",
-            "id": "202410440"
-        },
-        {
-            "codename": {
-                "zh-CN": "幽兰秘辛 · 缄默德克萨斯",
-                "en-US": "Il Segreto Della Notte"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410409.html",
-            "id": "202410409"
-        },
-        {
-            "codename": {
-                "zh-CN": "众志归一 · 圣约送葬人",
-                "en-US": "Allmind as one"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410488.html",
-            "id": "202410488"
-        },
-        {
-            "codename": {
-                "zh-CN": "无我唯识 · 塑心",
-                "en-US": "Diversity Oneness"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410467.html",
-            "id": "202410467"
-        },
-        {
-            "codename": {
-                "zh-CN": "暗月的影子 · 锏",
-                "en-US": "The Shadow Of The Dark Moon"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410426.html",
-            "id": "202410426"
-        }
-    ],
-    "2024-07-01": [
-        {
-            "codename": {
-                "zh-CN": "流辉 · 夜莺",
-                "en-US": "Iakhu of Flows"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407435.html",
-            "id": "202407435"
-        },
-        {
-            "codename": {
-                "zh-CN": "佩佩",
-                "en-US": "pepe"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407013.html",
-            "id": "202407013"
-        },
-        {
-            "codename": {
-                "zh-CN": "远行前的野餐 · 纯烬艾雅法拉",
-                "en-US": "A Picnic Before A Long Trip"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407072.html",
-            "id": "202407072"
-        },
-        {
-            "codename": {
-                "zh-CN": "夏卉 FA075 · 焰影苇草",
-                "en-US": "Summer Flowers FA075"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407051.html",
-            "id": "202407051"
-        }
-    ],
-    "2024-05-01": [
-        {
-            "codename": {
-                "zh-CN": "维什戴尔",
-                "en-US": "WISADEL"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404049.html",
-            "id": "202404049"
-        },
-        {
-            "codename": {
-                "zh-CN": "新枝 · 缪尔赛思",
-                "en-US": "Muelsyse"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404090.html",
-            "id": "202404090"
-        },
-        {
-            "codename": {
-                "zh-CN": "红女爵 · 浊心斯卡蒂",
-                "en-US": "Red Countess"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404008.html",
-            "id": "202404008"
-        },
-        {
-            "codename": {
-                "zh-CN": "燃烧天穹下 · 伊内丝",
-                "en-US": "INES"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404087.html",
-            "id": "202404087"
-        }
-    ],
-    "2024-04-01": [
-        {
-            "codename": {
-                "zh-CN": "不融冰 · 银灰",
-                "en-US": "Never-melting Ice"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404066.html",
-            "id": "202404066"
-        }
-    ],
-    "2024-02-29": [
-        {
-            "codename": {
-                "zh-CN": "黍",
-                "en-US": "shu"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401025.html",
-            "id": "202401025"
-        },
-        {
-            "codename": {
-                "zh-CN": "列瑶台 · 林",
-                "en-US": "Heavenly Mirage"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401034.html",
-            "id": "202401034"
-        }
-    ],
-    "2024-02-28": [
-        {
-            "codename": {
-                "zh-CN": "何处栖 · 重岳",
-                "en-US": "Alighting"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401812.html",
-            "id": "202401812"
-        }
-    ],
-    "2024-01-01": [
-        {
-            "codename": {
-                "zh-CN": "博物 · 焰影苇草",
-                "en-US": "Curator"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401871.html",
-            "id": "202401871"
-        }
-    ],
-    "2023-11-01": [
-        {
-            "codename": {
-                "zh-CN": "塑心",
-                "en-US": "Virtuosa"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310848.html",
-            "id": "202310848"
-        },
-        {
-            "codename": {
-                "zh-CN": "远路 · 玛恩纳",
-                "en-US": "W Dali"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310850.html",
-            "id": "202310850"
-        },
-        {
-            "codename": {
-                "zh-CN": "破翼者 · 缄默德克萨斯",
-                "en-US": "Wingbreaker"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310899.html",
-            "id": "202310899"
-        }
-    ],
-    "2023-08-01": [
-        {
-            "codename": {
-                "zh-CN": "崖高梦远 · 令",
-                "en-US": "Towering is cliff of nostalgia"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202308807.html",
-            "id": "202308807"
-        }
-    ],
-    "2023-07-01": [
-        {
-            "codename": {
-                "zh-CN": "悠然假日 HD26 · 百炼嘉维尔",
-                "en-US": "Gavial the Invincible HD26"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307886.html",
-            "id": "202307886"
-        },
-        {
-            "codename": {
-                "zh-CN": "纯烬艾雅法拉",
-                "en-US": "Eyjafjalla the Hvít Aska"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307865.html",
-            "id": "202307865"
-        },
-        {
-            "codename": {
-                "zh-CN": "夏卉 FA394 · 澄闪",
-                "en-US": "Summer Flowers FA394"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307824.html",
-            "id": "202307824"
-        }
-    ],
-    "2023-04-01": [
-        {
-            "codename": {
-                "zh-CN": "残余 · 凯尔希",
-                "en-US": "Remnant"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304833.html",
-            "id": "202304833"
-        },
-        {
-            "codename": {
-                "zh-CN": "缪尔赛思",
-                "en-US": "Muelsyse"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304611.html",
-            "id": "202304611"
-        },
-        {
-            "codename": {
-                "zh-CN": "生而为一 · 归溟幽灵鲨",
-                "en-US": "Born as One"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304670.html",
-            "id": "202304670"
-        },
-        {
-            "codename": {
-                "zh-CN": "万重山 · 假日威龙陈",
-                "en-US": "Ten Thousand Mountains"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304659.html",
-            "id": "202304659"
-        }
-    ],
-    "2023-02-01": [
-        {
-            "codename": {
-                "zh-CN": "字句中的雪原 · 鸿雪",
-                "en-US": "Snowy Plains in Words"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202302698.html",
-            "id": "202302698"
-        }
-    ],
-    "2023-01-01": [
-        {
-            "codename": {
-                "zh-CN": "重岳",
-                "en-US": "Chongyue"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301606.html",
-            "id": "202301606"
-        },
-        {
-            "codename": {
-                "zh-CN": "濯缨 · 令",
-                "en-US": "It Does Wash the Strings"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301647.html",
-            "id": "202301647"
-        }
-    ],
-    "2022-12-15": [
-        {
-            "codename": {
-                "zh-CN": "夏日餮宴 · 水月",
-                "en-US": "Summer Feast"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202211685.html",
-            "id": "202211685"
-        }
-    ],
-    "2022-11-01": [
-        {
-            "codename": {
-                "zh-CN": "缄默德克萨斯",
-                "en-US": "Texas the Omertosa"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210210.html",
-            "id": "202210210"
-        },
-        {
-            "codename": {
-                "zh-CN": "今昔须臾之梦 · 异客",
-                "en-US": "Dream in a Moment"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210664.html",
-            "id": "202210664"
-        },
-        {
-            "codename": {
-                "zh-CN": "复现荣光 · 耀骑士临光",
-                "en-US": "Relight"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210623.html",
-            "id": "202210623"
-        },
-        {
-            "codename": {
-                "zh-CN": "拥抱新生 · 迷迭香",
-                "en-US": "Become Anew"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210632.html",
-            "id": "202210632"
-        }
-    ],
-    "2022-10-01": [
-        {
-            "codename": {
-                "zh-CN": "手到牌来 · 老鲤",
-                "en-US": "Trust Your Eyes"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210279.html",
-            "id": "202210279"
-        }
-    ],
-    "2022-08-01": [
-        {
-            "codename": {
-                "zh-CN": "百炼嘉维尔 ",
-                "en-US": "Gavial the Invincible"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208258.html",
-            "id": "202208258"
-        },
-        {
-            "codename": {
-                "zh-CN": "缤纷奇境 CW03 · 史尔特尔",
-                "en-US": "Colorful Wonderland CW03"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208297.html",
-            "id": "202208297"
-        }
-    ],
-    "2022-05-01": [
-        {
-            "codename": {
-                "zh-CN": "归溟幽灵鲨",
-                "en-US": "SPECTER THE UNCHAINED"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204284.html",
-            "id": "202204284"
-        },
-        {
-            "codename": {
-                "zh-CN": "升华 · 浊心斯卡蒂",
-                "en-US": "SUBLIMATION"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204205.html",
-            "id": "202204205"
-        }
-    ],
-    "2022-04-30": [
-        {
-            "codename": {
-                "zh-CN": "焦点 · 傀影",
-                "en-US": "FOCUS"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203222.html",
-            "id": "202203222"
-        }
-    ],
-    "2022-01-01": [
-        {
-            "codename": {
-                "zh-CN": "令",
-                "en-US": "LING"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220383.html",
-            "id": "20220383"
-        },
-        {
-            "codename": {
-                "zh-CN": "染尘烟 · 夕",
-                "en-US": "EVERYTHING IS A MIRACLE"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220321.html",
-            "id": "20220321"
-        }
-    ],
-    "2021-11-01": [
-        {
-            "codename": {
-                "zh-CN": "耀骑士临光",
-                "en-US": "NEARL THE RADIANT KNIGHT"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220304.html",
-            "id": "20220304"
-        }
-    ],
-    "2021-08-01": [
-        {
-            "codename": {
-                "zh-CN": "假日威龙陈",
-                "en-US": "Ch'en the Holungday"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220345.html",
-            "id": "20220345"
-        }
-    ],
-    "2021-05-01": [
-        {
-            "codename": {
-                "zh-CN": "浊心斯卡蒂",
-                "en-US": "SKADI THE CORRUPTING HEART"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220396.html",
-            "id": "20220396"
-        }
-    ],
-    "2021-02-01": [
-        {
-            "codename": {
-                "zh-CN": "夕",
-                "en-US": "DUSK"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203263.html",
-            "id": "202203263"
-        },
-        {
-            "codename": {
-                "zh-CN": "乐逍遥 · 年",
-                "en-US": "UNFETTERED FREEDOM"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220362.html",
-            "id": "20220362"
-        }
-    ],
-    "2020-11-01": [
-        {
-            "codename": {
-                "zh-CN": "迷迭香",
-                "en-US": "ROSMONTIS"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220378.html",
-            "id": "20220378"
-        },
-        {
-            "codename": {
-                "zh-CN": "恍惚 · W",
-                "en-US": "Wonder"
-            },
-            "type": "skin",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202206246.html",
-            "id": "202206246"
-        }
-    ],
-    "2020-05-01": [
-        {
-            "codename": {
-                "zh-CN": "W",
-                "en-US": "W"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220319.html",
-            "id": "20220319"
-        }
-    ],
-    "2020-01-01": [
-        {
-            "codename": {
-                "zh-CN": "年",
-                "en-US": "NIAN"
-            },
-            "type": "operator",
-            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203231.html",
-            "id": "202203231"
-        }
-    ]
+    "info": {
+        "2025-04-22": [
+            {
+                "codename": {
+                    "zh-CN": "辉煌的静谧 · 逻各斯",
+                    "en-US": "Radiant Serenity"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504989.html",
+                "id": "202504989"
+            }
+        ],
+        "2025-04-01": [
+            {
+                "codename": {
+                    "zh-CN": "超新星 · 维什戴尔",
+                    "en-US": "Supernova"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504974.html",
+                "id": "202504974"
+            },
+            {
+                "codename": {
+                    "zh-CN": "至虔者荣光 · 空弦",
+                    "en-US": "Glory of the Devout"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504953.html",
+                "id": "202504953"
+            },
+            {
+                "codename": {
+                    "zh-CN": "星月漂流记 · 克洛丝",
+                    "en-US": "Moonlit Voyage"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504992.html",
+                "id": "202504992"
+            },
+            {
+                "codename": {
+                    "zh-CN": "新约能天使",
+                    "en-US": "Exusiai the New Covenant"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504941.html",
+                "id": "202504941"
+            },
+            {
+                "codename": {
+                    "zh-CN": "漫步于黄金之梦 · 缪尔赛思",
+                    "en-US": "Golden Reverie"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504900.html",
+                "id": "202504900"
+            },
+            {
+                "codename": {
+                    "zh-CN": "蝶舞华章 · 伊内丝",
+                    "en-US": "Melodic Flutter"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504968.html",
+                "id": "202504968"
+            }
+        ],
+        "2025-01-01": [
+            {
+                "codename": {
+                    "zh-CN": "少年游 · 左乐",
+                    "en-US": "Youthful Journey"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501927.html",
+                "id": "202501927"
+            },
+            {
+                "codename": {
+                    "zh-CN": "春日宴 · 黍",
+                    "en-US": "Spring Feast"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501936.html",
+                "id": "202501936"
+            },
+            {
+                "codename": {
+                    "zh-CN": "余",
+                    "en-US": "yu"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501414.html",
+                "id": "202501414"
+            }
+        ],
+        "2024-12-09": [
+            {
+                "codename": {
+                    "zh-CN": "霹雳导演 · 年",
+                    "en-US": "Thunderbolt Director"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412491.html",
+                "id": "202412491"
+            }
+        ],
+        "2024-12-01": [
+            {
+                "codename": {
+                    "zh-CN": "寰宇独奏 · 阿米娅",
+                    "en-US": "Solo Around The World"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412473.html",
+                "id": "202412473"
+            },
+            {
+                "codename": {
+                    "zh-CN": "全能演员 · 重岳",
+                    "en-US": "All-Round Actor"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412452.html",
+                "id": "202412452"
+            }
+        ],
+        "2024-10-01": [
+            {
+                "codename": {
+                    "zh-CN": "荒芜拉普兰德",
+                    "en-US": "Lappland the Decadenza"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410440.html",
+                "id": "202410440"
+            },
+            {
+                "codename": {
+                    "zh-CN": "幽兰秘辛 · 缄默德克萨斯",
+                    "en-US": "Il Segreto Della Notte"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410409.html",
+                "id": "202410409"
+            },
+            {
+                "codename": {
+                    "zh-CN": "众志归一 · 圣约送葬人",
+                    "en-US": "Allmind as one"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410488.html",
+                "id": "202410488"
+            },
+            {
+                "codename": {
+                    "zh-CN": "无我唯识 · 塑心",
+                    "en-US": "Diversity Oneness"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410467.html",
+                "id": "202410467"
+            },
+            {
+                "codename": {
+                    "zh-CN": "暗月的影子 · 锏",
+                    "en-US": "The Shadow Of The Dark Moon"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410426.html",
+                "id": "202410426"
+            }
+        ],
+        "2024-07-01": [
+            {
+                "codename": {
+                    "zh-CN": "流辉 · 夜莺",
+                    "en-US": "Iakhu of Flows"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407435.html",
+                "id": "202407435"
+            },
+            {
+                "codename": {
+                    "zh-CN": "佩佩",
+                    "en-US": "pepe"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407013.html",
+                "id": "202407013"
+            },
+            {
+                "codename": {
+                    "zh-CN": "远行前的野餐 · 纯烬艾雅法拉",
+                    "en-US": "A Picnic Before A Long Trip"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407072.html",
+                "id": "202407072"
+            },
+            {
+                "codename": {
+                    "zh-CN": "夏卉 FA075 · 焰影苇草",
+                    "en-US": "Summer Flowers FA075"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407051.html",
+                "id": "202407051"
+            }
+        ],
+        "2024-05-01": [
+            {
+                "codename": {
+                    "zh-CN": "维什戴尔",
+                    "en-US": "WISADEL"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404049.html",
+                "id": "202404049"
+            },
+            {
+                "codename": {
+                    "zh-CN": "新枝 · 缪尔赛思",
+                    "en-US": "Muelsyse"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404090.html",
+                "id": "202404090"
+            },
+            {
+                "codename": {
+                    "zh-CN": "红女爵 · 浊心斯卡蒂",
+                    "en-US": "Red Countess"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404008.html",
+                "id": "202404008"
+            },
+            {
+                "codename": {
+                    "zh-CN": "燃烧天穹下 · 伊内丝",
+                    "en-US": "INES"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404087.html",
+                "id": "202404087"
+            }
+        ],
+        "2024-04-01": [
+            {
+                "codename": {
+                    "zh-CN": "不融冰 · 银灰",
+                    "en-US": "Never-melting Ice"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404066.html",
+                "id": "202404066"
+            }
+        ],
+        "2024-02-29": [
+            {
+                "codename": {
+                    "zh-CN": "黍",
+                    "en-US": "shu"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401025.html",
+                "id": "202401025"
+            },
+            {
+                "codename": {
+                    "zh-CN": "列瑶台 · 林",
+                    "en-US": "Heavenly Mirage"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401034.html",
+                "id": "202401034"
+            }
+        ],
+        "2024-02-28": [
+            {
+                "codename": {
+                    "zh-CN": "何处栖 · 重岳",
+                    "en-US": "Alighting"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401812.html",
+                "id": "202401812"
+            }
+        ],
+        "2024-01-01": [
+            {
+                "codename": {
+                    "zh-CN": "博物 · 焰影苇草",
+                    "en-US": "Curator"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401871.html",
+                "id": "202401871"
+            }
+        ],
+        "2023-11-01": [
+            {
+                "codename": {
+                    "zh-CN": "塑心",
+                    "en-US": "Virtuosa"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310848.html",
+                "id": "202310848"
+            },
+            {
+                "codename": {
+                    "zh-CN": "远路 · 玛恩纳",
+                    "en-US": "W Dali"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310850.html",
+                "id": "202310850"
+            },
+            {
+                "codename": {
+                    "zh-CN": "破翼者 · 缄默德克萨斯",
+                    "en-US": "Wingbreaker"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310899.html",
+                "id": "202310899"
+            }
+        ],
+        "2023-08-01": [
+            {
+                "codename": {
+                    "zh-CN": "崖高梦远 · 令",
+                    "en-US": "Towering is cliff of nostalgia"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202308807.html",
+                "id": "202308807"
+            }
+        ],
+        "2023-07-01": [
+            {
+                "codename": {
+                    "zh-CN": "悠然假日 HD26 · 百炼嘉维尔",
+                    "en-US": "Gavial the Invincible HD26"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307886.html",
+                "id": "202307886"
+            },
+            {
+                "codename": {
+                    "zh-CN": "纯烬艾雅法拉",
+                    "en-US": "Eyjafjalla the Hvít Aska"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307865.html",
+                "id": "202307865"
+            },
+            {
+                "codename": {
+                    "zh-CN": "夏卉 FA394 · 澄闪",
+                    "en-US": "Summer Flowers FA394"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307824.html",
+                "id": "202307824"
+            }
+        ],
+        "2023-04-01": [
+            {
+                "codename": {
+                    "zh-CN": "残余 · 凯尔希",
+                    "en-US": "Remnant"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304833.html",
+                "id": "202304833"
+            },
+            {
+                "codename": {
+                    "zh-CN": "缪尔赛思",
+                    "en-US": "Muelsyse"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304611.html",
+                "id": "202304611"
+            },
+            {
+                "codename": {
+                    "zh-CN": "生而为一 · 归溟幽灵鲨",
+                    "en-US": "Born as One"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304670.html",
+                "id": "202304670"
+            },
+            {
+                "codename": {
+                    "zh-CN": "万重山 · 假日威龙陈",
+                    "en-US": "Ten Thousand Mountains"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304659.html",
+                "id": "202304659"
+            }
+        ],
+        "2023-02-01": [
+            {
+                "codename": {
+                    "zh-CN": "字句中的雪原 · 鸿雪",
+                    "en-US": "Snowy Plains in Words"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202302698.html",
+                "id": "202302698"
+            }
+        ],
+        "2023-01-01": [
+            {
+                "codename": {
+                    "zh-CN": "重岳",
+                    "en-US": "Chongyue"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301606.html",
+                "id": "202301606"
+            },
+            {
+                "codename": {
+                    "zh-CN": "濯缨 · 令",
+                    "en-US": "It Does Wash the Strings"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301647.html",
+                "id": "202301647"
+            }
+        ],
+        "2022-12-15": [
+            {
+                "codename": {
+                    "zh-CN": "夏日餮宴 · 水月",
+                    "en-US": "Summer Feast"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202211685.html",
+                "id": "202211685"
+            }
+        ],
+        "2022-11-01": [
+            {
+                "codename": {
+                    "zh-CN": "缄默德克萨斯",
+                    "en-US": "Texas the Omertosa"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210210.html",
+                "id": "202210210"
+            },
+            {
+                "codename": {
+                    "zh-CN": "今昔须臾之梦 · 异客",
+                    "en-US": "Dream in a Moment"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210664.html",
+                "id": "202210664"
+            },
+            {
+                "codename": {
+                    "zh-CN": "复现荣光 · 耀骑士临光",
+                    "en-US": "Relight"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210623.html",
+                "id": "202210623"
+            },
+            {
+                "codename": {
+                    "zh-CN": "拥抱新生 · 迷迭香",
+                    "en-US": "Become Anew"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210632.html",
+                "id": "202210632"
+            }
+        ],
+        "2022-10-01": [
+            {
+                "codename": {
+                    "zh-CN": "手到牌来 · 老鲤",
+                    "en-US": "Trust Your Eyes"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210279.html",
+                "id": "202210279"
+            }
+        ],
+        "2022-08-01": [
+            {
+                "codename": {
+                    "zh-CN": "百炼嘉维尔 ",
+                    "en-US": "Gavial the Invincible"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208258.html",
+                "id": "202208258"
+            },
+            {
+                "codename": {
+                    "zh-CN": "缤纷奇境 CW03 · 史尔特尔",
+                    "en-US": "Colorful Wonderland CW03"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208297.html",
+                "id": "202208297"
+            }
+        ],
+        "2022-05-01": [
+            {
+                "codename": {
+                    "zh-CN": "归溟幽灵鲨",
+                    "en-US": "SPECTER THE UNCHAINED"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204284.html",
+                "id": "202204284"
+            },
+            {
+                "codename": {
+                    "zh-CN": "升华 · 浊心斯卡蒂",
+                    "en-US": "SUBLIMATION"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204205.html",
+                "id": "202204205"
+            }
+        ],
+        "2022-04-30": [
+            {
+                "codename": {
+                    "zh-CN": "焦点 · 傀影",
+                    "en-US": "FOCUS"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203222.html",
+                "id": "202203222"
+            }
+        ],
+        "2022-01-01": [
+            {
+                "codename": {
+                    "zh-CN": "令",
+                    "en-US": "LING"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220383.html",
+                "id": "20220383"
+            },
+            {
+                "codename": {
+                    "zh-CN": "染尘烟 · 夕",
+                    "en-US": "EVERYTHING IS A MIRACLE"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220321.html",
+                "id": "20220321"
+            }
+        ],
+        "2021-11-01": [
+            {
+                "codename": {
+                    "zh-CN": "耀骑士临光",
+                    "en-US": "NEARL THE RADIANT KNIGHT"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220304.html",
+                "id": "20220304"
+            }
+        ],
+        "2021-08-01": [
+            {
+                "codename": {
+                    "zh-CN": "假日威龙陈",
+                    "en-US": "Ch'en the Holungday"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220345.html",
+                "id": "20220345"
+            }
+        ],
+        "2021-05-01": [
+            {
+                "codename": {
+                    "zh-CN": "浊心斯卡蒂",
+                    "en-US": "SKADI THE CORRUPTING HEART"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220396.html",
+                "id": "20220396"
+            }
+        ],
+        "2021-02-01": [
+            {
+                "codename": {
+                    "zh-CN": "夕",
+                    "en-US": "DUSK"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203263.html",
+                "id": "202203263"
+            },
+            {
+                "codename": {
+                    "zh-CN": "乐逍遥 · 年",
+                    "en-US": "UNFETTERED FREEDOM"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220362.html",
+                "id": "20220362"
+            }
+        ],
+        "2020-11-01": [
+            {
+                "codename": {
+                    "zh-CN": "迷迭香",
+                    "en-US": "ROSMONTIS"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220378.html",
+                "id": "20220378"
+            },
+            {
+                "codename": {
+                    "zh-CN": "恍惚 · W",
+                    "en-US": "Wonder"
+                },
+                "type": "skin",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202206246.html",
+                "id": "202206246"
+            }
+        ],
+        "2020-05-01": [
+            {
+                "codename": {
+                    "zh-CN": "W",
+                    "en-US": "W"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220319.html",
+                "id": "20220319"
+            }
+        ],
+        "2020-01-01": [
+            {
+                "codename": {
+                    "zh-CN": "年",
+                    "en-US": "NIAN"
+                },
+                "type": "operator",
+                "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203231.html",
+                "id": "202203231"
+            }
+        ]
+    }
 }

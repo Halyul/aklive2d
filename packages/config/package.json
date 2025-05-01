@@ -1,7 +1,7 @@
 {
     "name": "@aklive2d/config",
     "version": "0.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "type": "module",
     "license": "MIT",
     "dependencies": {
@@ -9,7 +9,12 @@
         "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*"
     },
+    "peerDependencies": {
+        "globals": ">=16.0.0",
+        "typescript-eslint": ">=8.31.1",
+        "typescript": ">=5.8.2"
+    },
     "scripts": {
-        "lint": "eslint \"*.js\" \"**/*.js\" && prettier --check ."
+        "lint": "eslint && prettier --check ."
     }
 }

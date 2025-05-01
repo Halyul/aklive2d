@@ -1,0 +1,13 @@
+filename: dyn_illust_char_124_kroos_sale#14
+logo: logo_reserve1
+fallback_name: char_124_kroos_sale#14
+viewport_left: 0
+viewport_right: 0
+viewport_top: 0
+viewport_bottom: 0
+invert_filter: true
+codename:
+    zh-CN: 星月漂流记 · 克洛丝
+    en-US: Moonlit Voyage / Kroos
+use_json: false
+official_id: '202504992'

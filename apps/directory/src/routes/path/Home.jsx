@@ -192,7 +192,7 @@ export default function Home() {
                                 >
                                     {officialUpdate.dates
                                         .reduce((acc, cur) => {
-                                            const op = officialUpdate[cur]
+                                            const op = officialUpdate.info[cur]
                                             return [...acc, ...op]
                                         }, [])
                                         .slice(

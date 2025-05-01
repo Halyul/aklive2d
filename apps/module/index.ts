@@ -1,3 +1,4 @@
-import { Player } from './src/player.ts'
+import { Player, PlayerConfig } from './src/player.ts'
 
 export { Player }
+export type { PlayerConfig }

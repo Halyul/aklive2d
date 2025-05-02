@@ -108,7 +108,9 @@ export default function Operator() {
             if (spineRef.current?.children.length > 0) {
                 spineRef.current?.removeChild(spineRef.current?.children[0])
             }
-            fetch(`/${key}/assets/charword_table.json`)
+            fetch(
+                `/${key}/${buildConfig.default_assets_dir}charword_table.json`
+            )
                 .then((res) => res.json())
                 .then((data) => {
                     setVoiceConfig(data)
@@ -159,7 +161,7 @@ export default function Operator() {
     useEffect(() => {
         if (spineRef.current?.children.length === 0 && configRef.current) {
             const playerConfig = {
-                atlasUrl: `./${key}/assets/${configRef.current.filename.replace(/#/g, '%23')}.atlas`,
+                atlasUrl: `./${key}/${buildConfig.default_assets_dir}${configRef.current.filename.replace(/#/g, '%23')}.atlas`,
                 animation: spineAnimationName,
                 premultipliedAlpha: true,
                 alpha: true,
@@ -200,7 +202,7 @@ export default function Operator() {
                         currentVoiceId = id
                         setCurrentVoiceId(id)
                         setVoiceSrc(
-                            `/${configRef.current.link}/assets/${getVoiceFoler(voiceLangRef.current)}/${id}.ogg`
+                            `/${configRef.current.link}/${buildConfig.default_assets_dir}${getVoiceFoler(voiceLangRef.current)}/${id}.ogg`
                         )
                         lastVoiceId = currentVoiceId
                     }
@@ -208,9 +210,9 @@ export default function Operator() {
             }
 
             if (configRef.current.use_json) {
-                playerConfig.jsonUrl = `./${key}/assets/${configRef.current.filename.replace(/#/g, '%23')}.json`
+                playerConfig.jsonUrl = `./${key}/${buildConfig.default_assets_dir}${configRef.current.filename.replace(/#/g, '%23')}.json`
             } else {
-                playerConfig.skelUrl = `./${key}/assets/${configRef.current.filename.replace(/#/g, '%23')}.skel`
+                playerConfig.skelUrl = `./${key}/${buildConfig.default_assets_dir}${configRef.current.filename.replace(/#/g, '%23')}.skel`
             }
             setSpinePlayer(new SpinePlayer(spineRef.current, playerConfig))
         }
@@ -267,7 +269,7 @@ export default function Operator() {
 
     useEffect(() => {
         if (voiceLang && isVoicePlaying) {
-            const audioUrl = `/assets/${getVoiceFoler(voiceLang)}/${currentVoiceId}.ogg`
+            const audioUrl = `/${buildConfig.default_assets_dir}${getVoiceFoler(voiceLang)}/${currentVoiceId}.ogg`
             if (
                 voiceSrc !==
                 window.location.href.replace(/\/$/g, '') + audioUrl
@@ -287,7 +289,7 @@ export default function Operator() {
                 if (id) {
                     setCurrentVoiceId(id)
                     setVoiceSrc(
-                        `/${key}/assets/${getVoiceFoler(voiceLangRef.current)}/${id}.ogg`
+                        `/${key}/${buildConfig.default_assets_dir}${getVoiceFoler(voiceLangRef.current)}/${id}.ogg`
                     )
                 }
             }
@@ -563,13 +565,13 @@ export default function Operator() {
                     className={classes.container}
                     style={
                         currentBackground && {
-                            backgroundImage: `url(/chen/assets/${buildConfig.background_folder}/${currentBackground})`,
+                            backgroundImage: `url(/${buildConfig.directory_folder}/${buildConfig.background_folder}/${currentBackground})`,
                         }
                     }
                 >
                     {config && (
                         <img
-                            src={`/${config.link}/assets/${config.logo}.png`}
+                            src={`/${buildConfig.directory_folder}/${buildConfig.logo_dir}${config.logo}.png`}
                             alt={config?.codename[language]}
                             className={classes.logo}
                             style={
@@ -630,8 +632,8 @@ function MusicElement() {
     useEffect(() => {
         if (background && enableMusic) {
             const introOgg = musicMapping[background].intro
-            const intro = `./chen/assets/${buildConfig.music_folder}/${introOgg}`
-            const loop = `./chen/assets/${buildConfig.music_folder}/${musicMapping[background].loop}`
+            const intro = `/${buildConfig.directory_folder}/${buildConfig.music_folder}/${introOgg}`
+            const loop = `/${buildConfig.directory_folder}/${buildConfig.music_folder}/${musicMapping[background].loop}`
             musicLoopRef.current.src = loop
             if (introOgg) {
                 musicIntroRef.current.src = intro || loop

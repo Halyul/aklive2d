@@ -65,6 +65,27 @@ export type Config = {
             assets: string
             release: string
         }
+        directory: {
+            assets: string
+            title: string
+            voice: string
+            portraits: string
+            error: {
+                files: {
+                    key: string
+                    paddings: {
+                        left: string
+                        right: string
+                        top: string
+                        bottom: string
+                    }
+                }[]
+                voice: {
+                    file: string
+                    target: string
+                }
+            }
+        }
     }
     dir_name: {
         data: string
@@ -78,26 +99,6 @@ export type Config = {
                 lang: string
                 lookup_region: string
             }[]
-        }
-    }
-    directory: {
-        assets_dir: string
-        title: string
-        voice: string
-        error: {
-            files: {
-                key: string
-                paddings: {
-                    left: string
-                    right: string
-                    top: string
-                    bottom: string
-                }
-            }[]
-            voice: {
-                file: string
-                target: string
-            }
         }
     }
 }

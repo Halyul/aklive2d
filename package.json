@@ -11,6 +11,7 @@
         "update": "turbo run update",
         "init": "turbo run init",
         "download:game": "turbo run download:game",
+        "build:directory": "turbo run build:directory",
         "build:cleanup": "turbo run build:cleanup"
     },
     "devDependencies": {

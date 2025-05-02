@@ -104,8 +104,8 @@ export default class Music {
     #playMusic() {
         if (!this.#config.name) {
             const introOgg = this.#music.mapping[this.#music.current].intro
-            const intro = `./assets/${this.#music.location}/${introOgg}`
-            const loop = `./assets/${this.#music.location}/${this.#music.mapping[this.#music.current].loop}`
+            const intro = `${import.meta.env.BASE_URL}${buildConfig.build_assets_dir}${this.#music.location}/${introOgg}`
+            const loop = `${import.meta.env.BASE_URL}${buildConfig.build_assets_dir}${this.#music.location}/${this.#music.mapping[this.#music.current].loop}`
             this.#audio.loop.el.src = loop
             this.#audio.loop.el.querySelector('source').type = 'audio/ogg'
             if (introOgg) {

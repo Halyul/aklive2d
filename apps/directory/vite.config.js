@@ -30,9 +30,9 @@ export default defineConfig(async () => {
             ),
             rollupOptions: {
                 output: {
-                    entryFileNames: `${config.directory.assets_dir}/[name]-[hash:8].js`,
-                    chunkFileNames: `${config.directory.assets_dir}/[name]-[hash:8].js`,
-                    assetFileNames: `${config.directory.assets_dir}/[name]-[hash:8].[ext]`,
+                    entryFileNames: `${config.app.directory.assets}/[name].js`,
+                    chunkFileNames: `${config.app.directory.assets}/[name].js`,
+                    assetFileNames: `${config.app.directory.assets}/[name].[ext]`,
                     manualChunks: (id) => {
                         if (id.includes('node_modules')) {
                             return 'vendor' // all other package goes here

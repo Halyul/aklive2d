@@ -1,4 +1,5 @@
 import { spine } from '../spine-ts/build/spine-webgl.js'
+import { TimeKeeper } from './libs/TimeKeeper.ts'
 
 /**
  * Adapted from 'spine-ts/player/src/Player.ts'
@@ -104,15 +105,13 @@ export class Player {
 
     private paused = false
     private playTime = 0
-    private speed = 1
-    private time = new spine.TimeKeeper()
+    private time = new TimeKeeper()
     private currentViewport!: Viewport
     private previousViewport!: Viewport
     private viewportTransitionStart = 0
     private parent: HTMLElement
 
     private devicePixelRatio = window.devicePixelRatio || 1
-    private lastFrameTime: number = 0
     private disposed = false
     private eventListeners: {
         target: HTMLElement | Document | Window
@@ -330,136 +329,134 @@ export class Player {
         if (this.disposed) return
         if (requestNextFrame) requestAnimationFrame(() => this.drawFrame())
 
-        // Have we finished loading the asset? Then set things up
-        if (this.assetManager.isLoadingComplete() && this.skeleton == null)
-            this.loadSkeleton()
+        this.time.update()
+        const delta = this.time.delta
+        if (delta !== -1) {
+            // Have we finished loading the asset? Then set things up
+            if (this.assetManager.isLoadingComplete() && this.skeleton == null)
+                this.loadSkeleton()
 
-        // Resize the canvas
-        this.resize(spine.webgl.ResizeMode.Expand)
+            // Resize the canvas
+            this.resize(spine.webgl.ResizeMode.Expand)
+            // Update and draw the skeleton
+            if (this.loaded) {
+                // Update animation and skeleton based on user selections
+                if (!this.paused && this.config.animation) {
+                    const ctx = this.context
+                    const gl = ctx.gl
 
-        // Update and draw the skeleton
+                    // Clear the viewport
+                    const bg = new spine.Color().setFromString(
+                        this.config.backgroundColor
+                    )
+                    gl.clearColor(bg.r, bg.g, bg.b, bg.a)
+                    gl.clear(gl.COLOR_BUFFER_BIT)
 
-        if (this.loaded) {
-            const fpsInterval = 1 / this.config.fps
-            const now = performance.now() / 1000
-            // Update animation and skeleton based on user selections
-            if (!this.paused && this.config.animation) {
-                const ctx = this.context
-                const gl = ctx.gl
+                    const animationDuration =
+                        this.animationState.getCurrent(0).animation.duration
+                    this.playTime += delta
+                    while (
+                        this.playTime >= animationDuration &&
+                        animationDuration != 0
+                    ) {
+                        this.playTime -= animationDuration
+                    }
+                    this.playTime = Math.max(
+                        0,
+                        Math.min(this.playTime, animationDuration)
+                    )
 
-                // Clear the viewport
-                const bg = new spine.Color().setFromString(
-                    this.config.backgroundColor
-                )
-                gl.clearColor(bg.r, bg.g, bg.b, bg.a)
-                gl.clear(gl.COLOR_BUFFER_BIT)
-
-                this.lastFrameTime = now
-                this.time.update()
-                const delta = this.time.delta * this.speed
-
-                const animationDuration =
-                    this.animationState.getCurrent(0).animation.duration
-                this.playTime += delta
-                while (
-                    this.playTime >= animationDuration &&
-                    animationDuration != 0
-                ) {
-                    this.playTime -= animationDuration
+                    this.animationState.update(delta)
+                    this.animationState.apply(this.skeleton)
                 }
-                this.playTime = Math.max(
-                    0,
-                    Math.min(this.playTime, animationDuration)
-                )
 
-                this.animationState.update(delta)
-                this.animationState.apply(this.skeleton)
-            }
+                this.skeleton.updateWorldTransform()
 
-            this.skeleton.updateWorldTransform()
-
-            let viewport = {
-                x:
-                    this.currentViewport.x -
-                    (this.currentViewport.padLeft as number),
-                y:
-                    this.currentViewport.y -
-                    (this.currentViewport.padBottom as number),
-                width:
-                    this.currentViewport.width +
-                    (this.currentViewport.padLeft as number) +
-                    (this.currentViewport.padRight as number),
-                height:
-                    this.currentViewport.height +
-                    (this.currentViewport.padBottom as number) +
-                    (this.currentViewport.padTop as number),
-            }
-
-            const transitionAlpha =
-                (performance.now() - this.viewportTransitionStart) /
-                1000 /
-                this.config.viewport.transitionTime
-            if (this.previousViewport && transitionAlpha < 1) {
-                const oldViewport = {
+                let viewport = {
                     x:
-                        this.previousViewport.x -
-                        (this.previousViewport.padLeft as number),
+                        this.currentViewport.x -
+                        (this.currentViewport.padLeft as number),
                     y:
-                        this.previousViewport.y -
-                        (this.previousViewport.padBottom as number),
+                        this.currentViewport.y -
+                        (this.currentViewport.padBottom as number),
                     width:
-                        this.previousViewport.width +
-                        (this.previousViewport.padLeft as number) +
-                        (this.previousViewport.padRight as number),
+                        this.currentViewport.width +
+                        (this.currentViewport.padLeft as number) +
+                        (this.currentViewport.padRight as number),
                     height:
-                        this.previousViewport.height +
-                        (this.previousViewport.padBottom as number) +
-                        (this.previousViewport.padTop as number),
+                        this.currentViewport.height +
+                        (this.currentViewport.padBottom as number) +
+                        (this.currentViewport.padTop as number),
                 }
 
-                viewport = {
-                    x:
-                        oldViewport.x +
-                        (viewport.x - oldViewport.x) * transitionAlpha,
-                    y:
-                        oldViewport.y +
-                        (viewport.y - oldViewport.y) * transitionAlpha,
-                    width:
-                        oldViewport.width +
-                        (viewport.width - oldViewport.width) * transitionAlpha,
-                    height:
-                        oldViewport.height +
-                        (viewport.height - oldViewport.height) *
-                            transitionAlpha,
+                const transitionAlpha =
+                    (performance.now() - this.viewportTransitionStart) /
+                    1000 /
+                    this.config.viewport.transitionTime
+                if (this.previousViewport && transitionAlpha < 1) {
+                    const oldViewport = {
+                        x:
+                            this.previousViewport.x -
+                            (this.previousViewport.padLeft as number),
+                        y:
+                            this.previousViewport.y -
+                            (this.previousViewport.padBottom as number),
+                        width:
+                            this.previousViewport.width +
+                            (this.previousViewport.padLeft as number) +
+                            (this.previousViewport.padRight as number),
+                        height:
+                            this.previousViewport.height +
+                            (this.previousViewport.padBottom as number) +
+                            (this.previousViewport.padTop as number),
+                    }
+
+                    viewport = {
+                        x:
+                            oldViewport.x +
+                            (viewport.x - oldViewport.x) * transitionAlpha,
+                        y:
+                            oldViewport.y +
+                            (viewport.y - oldViewport.y) * transitionAlpha,
+                        width:
+                            oldViewport.width +
+                            (viewport.width - oldViewport.width) *
+                                transitionAlpha,
+                        height:
+                            oldViewport.height +
+                            (viewport.height - oldViewport.height) *
+                                transitionAlpha,
+                    }
                 }
+
+                const viewportSize = this.scaleViewport(
+                    viewport.width,
+                    viewport.height,
+                    this.canvas.width,
+                    this.canvas.height
+                )
+
+                this.sceneRenderer.camera.zoom =
+                    ((viewport.width * this.devicePixelRatio) /
+                        viewportSize.x) *
+                    this.scale
+                this.sceneRenderer.camera.position.x =
+                    viewport.x + viewport.width / 2
+                this.sceneRenderer.camera.position.y =
+                    viewport.y + viewport.height / 2
+
+                this.sceneRenderer.begin()
+
+                // Draw skeleton and debug output
+                this.sceneRenderer.drawSkeleton(
+                    this.skeleton,
+                    this.config.premultipliedAlpha
+                )
+
+                this.sceneRenderer.end()
+
+                this.sceneRenderer.camera.zoom = 0
             }
-
-            const viewportSize = this.scaleViewport(
-                viewport.width,
-                viewport.height,
-                this.canvas.width,
-                this.canvas.height
-            )
-
-            this.sceneRenderer.camera.zoom =
-                ((viewport.width * this.devicePixelRatio) / viewportSize.x) *
-                this.scale
-            this.sceneRenderer.camera.position.x =
-                viewport.x + viewport.width / 2
-            this.sceneRenderer.camera.position.y =
-                viewport.y + viewport.height / 2
-
-            this.sceneRenderer.begin()
-
-            // Draw skeleton and debug output
-            this.sceneRenderer.drawSkeleton(
-                this.skeleton,
-                this.config.premultipliedAlpha
-            )
-
-            this.sceneRenderer.end()
-
-            this.sceneRenderer.camera.zoom = 0
         }
     }
 
@@ -621,7 +618,6 @@ export class Player {
         }
 
         this.config.success(this)
-        this.lastFrameTime = performance.now() / 1000
         this.loaded = true
     }
 
@@ -847,6 +843,7 @@ export class Player {
 
     set fps(v) {
         this.config.fps = v
+        this.time.setFps(v)
     }
 }
 

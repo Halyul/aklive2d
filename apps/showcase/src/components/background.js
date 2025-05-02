@@ -13,7 +13,7 @@ export default class Background {
     #parentEl
     #videoEl
     #default = {
-        location: `${import.meta.env.BASE_URL}assets/${buildConfig.background_folder}/`,
+        location: `${import.meta.env.BASE_URL}${buildConfig.build_assets_dir}${buildConfig.background_folder}/`,
         image: buildConfig.default_background,
     }
     #config = {

@@ -18,7 +18,11 @@ interface DirectoryOperatorConfig extends OperatorConfig {
 
 export const copyShowcaseData = (
     name: string,
-    { dataDir, publicAssetsDir }: { dataDir: string; publicAssetsDir: string }
+    {
+        dataDir,
+        publicAssetsDir,
+        mode,
+    }: { dataDir: string; publicAssetsDir: string; mode: string }
 ) => {
     file.mkdir(publicAssetsDir)
     const operatorAssetsDir = path.join(
@@ -40,11 +44,13 @@ export const copyShowcaseData = (
                 publicAssetsDir,
                 config.module.assets.background
             ),
+            condition: mode !== 'build:directory',
         },
         {
             fn: file.symlink,
             source: path.resolve(ASSETS_DIST_DIR, config.module.assets.music),
             target: path.resolve(publicAssetsDir, config.module.assets.music),
+            condition: mode !== 'build:directory',
         },
         {
             fn: file.symlinkAll,
@@ -70,6 +76,7 @@ export const copyShowcaseData = (
             filename: `${operators[name].logo}.png`,
             source: path.resolve(ASSETS_DIST_DIR, config.module.operator.logos),
             target: path.resolve(publicAssetsDir),
+            condition: mode !== 'build:directory',
         },
         {
             fn: file.symlink,
@@ -90,12 +97,14 @@ export const copyShowcaseData = (
             target: path.resolve(publicAssetsDir),
         })
     })
-    q.map(({ fn, filename, source, target }) => {
-        if (filename) {
-            source = path.resolve(source, filename)
-            target = path.resolve(target, filename)
+    q.map(({ fn, filename, source, target, condition = true }) => {
+        if (condition) {
+            if (filename) {
+                source = path.resolve(source, filename)
+                target = path.resolve(target, filename)
+            }
+            fn(source, target)
         }
-        fn(source, target)
     })
     const buildConfig = {
         insight_id: config.insight.id,
@@ -118,6 +127,15 @@ export const copyShowcaseData = (
         music_folder: config.module.assets.music,
         music_mapping: musicMapping.musicFileMapping,
         use_json: operators[name].use_json,
+        default_assets_dir: `${config.app.showcase.assets}/`,
+        logo_dir:
+            mode === 'build:directory'
+                ? `${config.module.operator.logos}/`
+                : '',
+        build_assets_dir:
+            mode === 'build:directory'
+                ? `../${config.app.directory.assets}/`
+                : `${config.app.showcase.assets}/`, // default is assets/, on build:directory mode is ../_assets
     }
     file.writeSync(
         JSON.stringify(buildConfig),
@@ -165,9 +183,9 @@ export const copyDirectoryData = async ({
         OPERATOR_SOURCE_FOLDER,
         config.module.operator.directory_assets
     )
-    const targetFolder = path.join(publicDir, config.directory.assets_dir)
+    const targetFolder = path.join(publicDir, config.app.directory.assets)
     const sourceFolder = path.join(ASSETS_DIST_DIR)
-    const filesToCopy = Object.keys(operators)
+    const operatorFilesToCopy = Object.keys(operators)
     const operatorConfig = Object.values(
         Object.values(operators).reduce(
             (acc, cur) => {
@@ -205,7 +223,7 @@ export const copyDirectoryData = async ({
         )
     ).sort((a, b) => Date.parse(b[0].date) - Date.parse(a[0].date))
     await Promise.all(
-        config.directory.error.files.map(async (key) => {
+        config.app.directory.error.files.map(async (key) => {
             await generateAssetsJson(key.key, extractedFolder, targetFolder, {
                 useSymLink: false,
             })
@@ -214,17 +232,20 @@ export const copyDirectoryData = async ({
 
     const directoryConfig = {
         insight_id: config.insight.id,
-        app_voice_url: config.directory.voice,
+        app_voice_url: config.app.directory.voice,
         voice_folders: config.dir_name.voice,
-        directory_folder: config.directory.assets_dir,
+        directory_folder: config.app.directory.assets,
         default_background: config.module.background.operator_bg_png,
         background_files: backgroundFiles,
         background_folder: config.module.assets.background,
         available_operators: Object.keys(operators),
-        error_files: config.directory.error,
+        error_files: config.app.directory.error,
         music_folder: config.module.assets.music,
         music_mapping: musicMapping.musicFileMapping,
         operators: operatorConfig,
+        default_assets_dir: `${config.app.showcase.assets}/`,
+        logo_dir: `${config.module.operator.logos}/`,
+        portraits: `${config.app.directory.portraits}/`,
     }
     file.writeSync(
         JSON.stringify(directoryConfig),
@@ -235,7 +256,7 @@ export const copyDirectoryData = async ({
         env.generate([
             {
                 key: 'app_title',
-                value: config.directory.title,
+                value: config.app.directory.title,
             },
             {
                 key: 'insight_url',
@@ -245,23 +266,51 @@ export const copyDirectoryData = async ({
         path.join(dataDir, '.env')
     )
 
-    filesToCopy.map((key) => {
+    const filesToCopy = [
+        {
+            src: path.join(
+                extractedFolder,
+                config.app.directory.error.voice.file
+            ),
+            dest: path.join(
+                targetFolder,
+                config.app.directory.error.voice.target
+            ),
+        },
+        {
+            src: path.resolve(ASSETS_DIST_DIR, config.module.assets.background),
+            dest: path.resolve(targetFolder, config.module.assets.background),
+        },
+        {
+            src: path.resolve(ASSETS_DIST_DIR, config.module.assets.music),
+            dest: path.resolve(targetFolder, config.module.assets.music),
+        },
+        {
+            src: path.resolve(ASSETS_DIST_DIR, config.module.operator.logos),
+            dest: path.resolve(targetFolder, config.module.operator.logos),
+        },
+    ]
+
+    operatorFilesToCopy.map((key) => {
         const portraitName = `${operators[key].fallback_name}_portrait.png`
-        file.cpSync(
-            path.join(
+        filesToCopy.push({
+            src: path.join(
                 sourceFolder,
                 config.module.operator.operator,
                 key,
                 portraitName
             ),
-            path.join(targetFolder, portraitName)
-        )
+            dest: path.join(
+                targetFolder,
+                config.app.directory.portraits,
+                portraitName
+            ),
+        })
     })
 
-    file.cpSync(
-        path.join(extractedFolder, config.directory.error.voice.file),
-        path.join(targetFolder, config.directory.error.voice.target)
-    )
+    filesToCopy.forEach((item) => {
+        file.symlink(item.src, item.dest)
+    })
 
     return directoryConfig
 }

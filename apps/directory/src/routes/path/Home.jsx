@@ -349,7 +349,7 @@ function OperatorElement({ item, hidden, handleVoicePlay }) {
                 <section
                     onMouseEnter={() =>
                         handleVoicePlay(
-                            `/${item.link}/assets/${buildConfig.voice_folders.main}/${buildConfig.app_voice_url}`
+                            `/${item.link}/${buildConfig.default_assets_dir}${buildConfig.voice_folders.main}/${buildConfig.app_voice_url}`
                         )
                     }
                 >
@@ -439,7 +439,7 @@ function ImageElement({ item }) {
     const { language } = useLanguage()
     return (
         <img
-            src={`/${buildConfig.directory_folder}/${item.fallback_name.replace(/#/g, '%23')}_portrait.png`}
+            src={`/${buildConfig.directory_folder}/${buildConfig.portraits}/${item.fallback_name.replace(/#/g, '%23')}_portrait.png`}
             alt={item.codename[language]}
         />
     )

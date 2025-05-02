@@ -83,7 +83,9 @@ export default class Voice {
     }
 
     async init() {
-        const res = await fetch('./assets/charword_table.json')
+        const res = await fetch(
+            `${import.meta.env.BASE_URL}${buildConfig.default_assets_dir}charword_table.json`
+        )
         this.#charwordTable = await res.json()
         this.#voice.languages = Object.keys(
             this.#charwordTable.voiceLangs[this.#default.region]
@@ -170,7 +172,7 @@ export default class Voice {
         if (!this.useVoice) return
         this.#voice.id.last = this.#voice.id.current
         this.#voice.id.current = id
-        this.#audio.el.src = `./assets/${this.#getVoiceLocation()}/${id}.ogg`
+        this.#audio.el.src = `${import.meta.env.BASE_URL}${buildConfig.default_assets_dir}${this.#getVoiceLocation()}/${id}.ogg`
         let startPlayPromise = this.#audio.el.play()
         if (startPlayPromise !== undefined) {
             startPlayPromise

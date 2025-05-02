@@ -45,7 +45,7 @@ export default class Player {
     async init() {
         const _this = this
         const playerConfig = {
-            atlasUrl: `./assets/${buildConfig.filename}.atlas`,
+            atlasUrl: `${import.meta.env.BASE_URL}${buildConfig.default_assets_dir}${buildConfig.filename}.atlas`,
             premultipliedAlpha: true,
             alpha: true,
             backgroundColor: '#00000000',
@@ -115,9 +115,9 @@ export default class Player {
             },
         }
         if (buildConfig.use_json) {
-            playerConfig.jsonUrl = `./assets/${buildConfig.filename}.json`
+            playerConfig.jsonUrl = `${import.meta.env.BASE_URL}${buildConfig.default_assets_dir}${buildConfig.filename}.json`
         } else {
-            playerConfig.skelUrl = `./assets/${buildConfig.filename}.skel`
+            playerConfig.skelUrl = `${import.meta.env.BASE_URL}${buildConfig.default_assets_dir}${buildConfig.filename}.skel`
         }
         this.#spine = new SpinePlayer(this.#el, playerConfig)
     }

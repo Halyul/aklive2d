@@ -30,7 +30,7 @@ export default class Fallback {
         this.#el.innerHTML = `
       <div id="fallback-container">
         <div id="fallback"
-          style="background-image: url(./assets/${buildConfig.fallback_name}.png)"
+          style="background-image: url(${import.meta.env.BASE_URL}${buildConfig.default_assets_dir}${buildConfig.fallback_name}.png)"
         />
       </div>
     `

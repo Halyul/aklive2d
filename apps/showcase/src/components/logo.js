@@ -13,7 +13,7 @@ export default class Logo {
     #imageEl
     #parentEl
     #default = {
-        location: `${import.meta.env.BASE_URL}assets/`,
+        location: `${import.meta.env.BASE_URL}${buildConfig.build_assets_dir}${buildConfig.logo_dir}`,
         image: `${buildConfig.logo_filename}.png`,
         useInvertFilter: buildConfig.invert_filter,
         ratio: 61.8,

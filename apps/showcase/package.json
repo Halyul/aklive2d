@@ -5,9 +5,10 @@
     "type": "module",
     "main": "index.ts",
     "scripts": {
-        "dev:showcase": "vite --clearScreen false",
+        "dev:showcase": "bunx --bun vite --clearScreen false",
         "build": "mode=build bun runner.ts",
-        "preview:showcase": "vite preview",
+        "build:directory": "mode=build:directory bun runner.ts",
+        "preview:showcase": "bunx --bun vite preview",
         "lint": "eslint && prettier --check ."
     },
     "peerDependencies": {

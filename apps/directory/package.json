@@ -4,9 +4,9 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev:directory": "vite --clearScreen false",
-        "build": "mode=build bun runner.ts",
-        "preview:directory": "vite preview",
+        "dev:directory": "bunx --bun vite --clearScreen false",
+        "build:directory": "mode=build:directory bun runner.ts",
+        "preview:directory": "bunx --bun vite preview",
         "lint": "eslint && stylelint \"src/**/*.css\" \"src/**/*.scss\" && prettier --check ."
     },
     "dependencies": {

@@ -137,6 +137,8 @@
             "persistent": true
         },
         "dev:showcase": {
+            "env": ["name"],
+            "dependsOn": ["^@aklive2d/assets#build"],
             "cache": false,
             "persistent": true
         },

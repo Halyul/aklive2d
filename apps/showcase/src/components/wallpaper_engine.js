@@ -141,6 +141,15 @@ window.wallpaperPropertyListener = {
                 })
             )
         }
+        if (properties.voice_volume) {
+            document.dispatchEvent(
+                Events.RegisterConfig.handler({
+                    target: 'voice',
+                    key: 'volume',
+                    value: properties.voice_volume.value,
+                })
+            )
+        }
         if (properties.voiceidle) {
             document.dispatchEvent(
                 Events.RegisterConfig.handler({

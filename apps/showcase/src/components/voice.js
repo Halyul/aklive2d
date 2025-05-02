@@ -54,6 +54,7 @@ export default class Voice {
             ...this.#default.subtitle,
         },
         duration: { ...this.#default.duration },
+        volume: 100,
     }
     #playerObj
 
@@ -90,6 +91,7 @@ export default class Voice {
         this.#voice.languages = Object.keys(
             this.#charwordTable.voiceLangs[this.#default.region]
         )
+        this.#audio.el.volume = this.#volume
         this.#default.language.voice = this.#voice.languages[0]
         this.#config.language = this.#default.language.voice
         this.#voice.locations = this.#getVoiceLocations()
@@ -415,6 +417,20 @@ export default class Voice {
         return this.duration.next
     }
 
+    get volume() {
+        return this.#config.volume
+    }
+
+    get #volume() {
+        return this.#config.volume / 100
+    }
+
+    set volume(value) {
+        value = value < 0 ? 0 : value > 100 ? 100 : parseInt(value)
+        this.#config.volume = value
+        this.#audio.el.volume = this.#volume
+    }
+
     set subtitleX(x) {
         // Note: Back Compatibility
         this.position = {
@@ -478,6 +494,11 @@ export default class Voice {
           </select>
         </div>
         <div>
+          <label for="voice-volume">Voice Volume</label>
+          <input type="range" min="0" max="100" step="1" id="voice-volume-slider" value="${this.volume}" />
+          <input type="number" id="voice-volume-input"  min="0" max="100" step="1" name="voice-volume" value="${this.volume}" />
+        </div>
+        <div>
           <label for="voice-idle-duration">Idle Duration (min)</label>
           <input type="number" id="voice-idle-duration-input" min="0" name="voice-idle-duration" value="${this.duration.idle}" />
         </div>
@@ -531,6 +552,22 @@ export default class Voice {
                 event: 'change',
                 handler: (e) => {
                     this.language = e.currentTarget.value
+                },
+            },
+            {
+                id: 'voice-volume-slider',
+                event: 'input',
+                handler: (e) => {
+                    syncHTMLValue(e.currentTarget, 'voice-volume-input')
+                    this.volume = e.currentTarget.value
+                },
+            },
+            {
+                id: 'voice-volume-input',
+                event: 'change',
+                handler: (e) => {
+                    syncHTMLValue(e.currentTarget, 'voice-volume-slider')
+                    this.volume = e.currentTarget.value
                 },
             },
             {
@@ -636,6 +673,9 @@ export default class Voice {
                 break
             case 'use-voice-actor':
                 this.useVoiceActor = value
+                break
+            case 'volume':
+                this.volume = value
                 break
             default:
                 return

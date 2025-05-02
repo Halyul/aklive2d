@@ -43,6 +43,7 @@ localization:
         ui_custom_video: Custom Video
         ui_video_volume: Volume
         ui_misc_title: <hr><h4>💡 Misc</h4><hr>
+        ui_voice_volume: Volume
     zh-chs:
         ui_notice_title: <hr><h4>📝 通知</h4><hr>
         ui_notice_set_fps: <span><b>在设置中设定FPS目标</b></span>
@@ -86,6 +87,7 @@ localization:
         ui_custom_video: 自定义视频
         ui_video_volume: 音量
         ui_misc_title: <hr><h4>💡 杂项</h4><hr>
+        ui_voice_volume: 音量
 properties:
     - key: notice_title
       value:
@@ -177,6 +179,15 @@ properties:
           condition: voicetitle.value == true
           value: !match ~{var('assets', "voiceLangs")[0]}
           options: !match ~{var('assets', "voiceLangsOptions")}
+    - key: voice_volume
+      value:
+          text: ui_voice_volume
+          type: slider
+          value: 100
+          condition: voicetitle.value == true
+          fraction: false
+          max: 100
+          min: 0
     - key: voiceidle
       value:
           text: ui_voice_idle

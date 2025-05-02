@@ -343,11 +343,7 @@ export class Player {
             const fpsInterval = 1 / this.config.fps
             const now = performance.now() / 1000
             // Update animation and skeleton based on user selections
-            if (
-                !this.paused &&
-                this.config.animation &&
-                now - this.lastFrameTime > fpsInterval
-            ) {
+            if (!this.paused && this.config.animation) {
                 const ctx = this.context
                 const gl = ctx.gl
 

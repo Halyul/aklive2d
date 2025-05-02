@@ -1,5 +1,4 @@
-import { spine } from '../spine-ts/build/spine-webgl.js'
-import { TimeKeeper } from './libs/TimeKeeper.ts'
+import spine from '../build/spine-webgl.js'
 
 /**
  * Adapted from 'spine-ts/player/src/Player.ts'
@@ -105,7 +104,7 @@ export class Player {
 
     private paused = false
     private playTime = 0
-    private time = new TimeKeeper()
+    private time = new spine.TimeKeeper()
     private currentViewport!: Viewport
     private previousViewport!: Viewport
     private viewportTransitionStart = 0

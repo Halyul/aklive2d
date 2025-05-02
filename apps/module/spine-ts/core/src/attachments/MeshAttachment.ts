@@ -82,7 +82,10 @@ module spine {
 			let u = this.region.u, v = this.region.v, width = 0, height = 0;
 			if (this.region instanceof TextureAtlasRegion) {
 				let region = this.region;
-				let textureWidth = region.texture.getImage().width, textureHeight = region.texture.getImage().height;
+				// let textureWidth = region.texture.getImage().width, textureHeight = region.texture.getImage().height;
+				let page = this.region.page;
+				let textureWidth = page.width,
+				textureHeight = page.height;
 				switch(region.degrees) {
 				case 90:
 					u -= (region.originalHeight - region.offsetY - region.height) / textureWidth;

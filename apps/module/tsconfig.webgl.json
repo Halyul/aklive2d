@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "none",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "build/spine-webgl.js",
+        "sourceMap": true,
+        "declaration": true,
+        "declarationMap": true,
+        "composite": true,
+        "esModuleInterop": true,
+        "target": "ES2020"
+    },
+    "include": ["spine-ts/core/src/**/*", "spine-ts/webgl/src/**/*"],
+    "exclude": ["spine-ts/build"]
+}

@@ -64,12 +64,8 @@ export default function Error() {
             setVoiceSrc(null)
         } else {
             setVoiceSrc(`/${buildConfig.directory_folder}/error.ogg`)
-            if (spinePlayer) {
-                spinePlayer.animationState.setAnimation(0, 'Interact', false, 0)
-                spinePlayer.animationState.addAnimation(0, 'Relax', true, 0)
-            }
         }
-    }, [spinePlayer, voiceOn])
+    }, [voiceOn])
 
     useEffect(() => {
         voiceOnRef.current = voiceOn

@@ -69,6 +69,12 @@ app:
                       right: 100
                       top: 10
                       bottom: 0
+                - key: build_char_128_plosis_yun#4
+                  paddings:
+                      left: -90
+                      right: 100
+                      top: 10
+                      bottom: 0
             voice:
                 file: CN_034.ogg
                 target: error.ogg

@@ -4,5 +4,6 @@ item_to_download:
     - ui_camp_logo
     - charportraits
     - voice.*/extra
+    - char_128
 additional_regex:
-    - ^(?!(avg))(.*)$
+    - ^(?!(avg|charpack))(.*)$

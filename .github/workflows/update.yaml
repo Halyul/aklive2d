@@ -1,32 +1,30 @@
 name: Update
 
-env: 
-  DO_NOT_TRACK: 1
+env:
+    DO_NOT_TRACK: 1
 
 on:
-  schedule:
-    - cron: '30 10 * * *'
-  pull_request:
-    branches:
-      - main
+    schedule:
+        - cron: '30 10 * * *'
+    pull_request:
+        branches:
+            - main
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+        permissions:
+            contents: write
 
-    permissions:
-      contents: write
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: true
-      - name: Update
-        run: pnpm run update
-      - name: Commit changes if any
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "chore: auto update"
+        steps:
+            - uses: actions/checkout@v3
+            - name: Use Bun
+              uses: oven-sh/setup-bun@v2
+            - run: bun install
+            - name: Update
+              run: bun run update
+            - name: Commit changes if any
+              uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: 'chore: auto update'

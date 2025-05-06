@@ -145,8 +145,8 @@ const generateMapping = () => {
             const type = operatorInfo.type
             const name =
                 type === 'skin'
-                    ? operatorInfo.codename['zh-CN'].split(' · ')[0]
-                    : operatorInfo.codename['en-US']
+                    ? operatorInfo.skinName['zh-CN']
+                    : operatorInfo.skinName['en-US']
             const skinEntry = findSkinEntry(skinTable, name, type)
             operator.filename = skinEntry.dynIllustId.replace(/_2$/, '')
             operator.fallback_name =

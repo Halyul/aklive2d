@@ -10,7 +10,7 @@ import {
     SkinTableJsonCharSkinEntry,
     Codename,
 } from '../types.ts'
-import type { OfficialInfoOperatorConfig } from '@aklive2d/official-info/types'
+import type { OfficialInfoOperatorConfigV2 } from '@aklive2d/official-info/types'
 
 export const getExtractedFolder = (name: string) => {
     return path.join(OPERATOR_SOURCE_FOLDER, name, config.dir_name.extracted)
@@ -111,7 +111,7 @@ export const findSkinEntry = (
  */
 export const findCodename = (
     skinEntry: SkinTableJsonCharSkinEntry,
-    officialInfo: OfficialInfoOperatorConfig
+    officialInfo: OfficialInfoOperatorConfigV2
 ) => {
     const UPPER_CASE_EXCEPTION_WORDS = [
         'the',
@@ -144,7 +144,7 @@ export const findCodename = (
         modelNameNormalized = modelNameNormalizedArray.join(' ')
     }
     if (skinEntry.displaySkin.skinName) {
-        let engSkinName = officialInfo.codename['en-US']
+        let engSkinName = officialInfo.skinName['en-US']
         const engkinNameArray = engSkinName.split(' ')
         engkinNameArray.forEach((word, index) => {
             if (/^[a-zA-Z]+$/.test(word)) {
@@ -158,10 +158,11 @@ export const findCodename = (
             }
         })
         engSkinName = engkinNameArray.join(' ')
-        codename['zh-CN'] = officialInfo.codename['zh-CN'].replace(/ +$/, '')
+        codename['zh-CN'] =
+            `${officialInfo.skinName['zh-CN']} · ${officialInfo.operatorName}`
         codename['en-US'] = `${engSkinName} / ${modelNameNormalized}`
     } else {
-        codename['zh-CN'] = officialInfo.codename['zh-CN'].replace(/ +$/, '')
+        codename['zh-CN'] = officialInfo.operatorName
         codename['en-US'] = modelNameNormalized
     }
     return codename

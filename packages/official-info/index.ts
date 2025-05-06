@@ -4,10 +4,10 @@ import { file } from '@aklive2d/libs'
 import config from '@aklive2d/config'
 import type {
     OfficialArray,
-    OfficialInfo,
+    OfficialInfoV2,
     OfficialOperatorInfo,
     OfficialInfoMapping,
-    OfficialInfoOperatorConfig,
+    OfficialInfoOperatorConfigV2,
 } from './types'
 
 const AUTO_UPDATE_FOLDER = path.resolve(
@@ -39,70 +39,64 @@ export const update = async () => {
     if (!data) throw new Error('No data found')
     const rows = (data as OfficialArray)[0][3].initialData
 
-    const dict: OfficialInfo = {
+    const dict: OfficialInfoV2 = {
         length: rows.length,
         dates: [],
-        info: {},
+        info: [],
     }
 
     let current_displayTime = rows[0].displayTime
-    let current_block = []
 
     for (const row of rows) {
         const displayTime = row.displayTime
         if (displayTime !== current_displayTime) {
-            dict.info[current_displayTime] = current_block
             dict.dates.push(current_displayTime)
             current_displayTime = row.displayTime
-            current_block = []
         }
-        current_block.push(get_row(row))
+        dict.info.push(get_row(row, current_displayTime))
     }
-    dict.info[current_displayTime] = current_block
     dict.dates.push(current_displayTime)
 
     file.writeSync(JSON.stringify(dict, null, 4), OFFICIAL_INFO_JSON)
 }
 
-const get_row = (row: OfficialOperatorInfo): OfficialInfoOperatorConfig => {
+const get_row = (
+    row: OfficialOperatorInfo,
+    date: string
+): OfficialInfoOperatorConfigV2 => {
     const type = row.type
-    let codename_zhCN, item_type: 'operator' | 'skin'
+    let item_type: 'operator' | 'skin'
     switch (type) {
         case 0:
-            codename_zhCN = row.charName
             item_type = 'operator'
             break
         case 1:
-            codename_zhCN = row.suitName + ' · ' + row.charName
             item_type = 'skin'
             break
         default:
             throw 'unknown type'
     }
     return {
-        codename: {
-            'zh-CN': codename_zhCN,
+        operatorName: row.charName,
+        skinName: {
+            'zh-CN': row.suitName,
             'en-US': row.codename,
         },
         type: item_type,
         link: `https://ak.hypergryph.com/archive/dynamicCompile/${row.cid}.html`,
-        id: row.cid,
+        id: Number(row.cid),
+        date,
     }
 }
 
 const generateMapping = () => {
     const mapping: OfficialInfoMapping = {}
-    const content = file.readSync(OFFICIAL_INFO_JSON)
+    const content = file.readSync(OFFICIAL_INFO_JSON) as string
     if (!content) throw new Error('Failed to read official info JSON')
-    const data: OfficialInfo = JSON.parse(content)
+    const data: OfficialInfoV2 = JSON.parse(content)
     if (!data) throw new Error('Failed to parse official info JSON')
-    Object.keys(data.info).forEach((date) => {
-        data.info[date].forEach((operator) => {
-            mapping[operator.id] = {
-                date,
-                ...operator,
-            }
-        })
+    data.info.forEach((e) => {
+        mapping[e.id] = e
     })
     return mapping
 }

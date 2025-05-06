@@ -31,8 +31,8 @@ export const init = (name: string, id: string) => {
     try {
         const entryName =
             currentOpertor.type === 'skin'
-                ? currentOpertor.codename['zh-CN'].split(' · ')[0]
-                : currentOpertor.codename['en-US']
+                ? currentOpertor.skinName['zh-CN']
+                : currentOpertor.skinName['en-US']
         const skinEntry = findSkinEntry(
             skinTable,
             entryName,
@@ -41,7 +41,16 @@ export const init = (name: string, id: string) => {
         template.codename = findCodename(skinEntry, currentOpertor)
     } catch (e: unknown) {
         console.log(e as string)
-        template.codename = currentOpertor.codename
+        template.codename =
+            currentOpertor.type === 'skin'
+                ? {
+                      'zh-CN': `${currentOpertor.skinName['zh-CN']} · ${currentOpertor.operatorName}`,
+                      'en-US': `${currentOpertor.skinName['en-US']} / ${currentOpertor.operatorName}`,
+                  }
+                : {
+                      'zh-CN': `${currentOpertor.operatorName}`,
+                      'en-US': `${currentOpertor.skinName['en-US']}`,
+                  }
     }
 
     file.writeSync(

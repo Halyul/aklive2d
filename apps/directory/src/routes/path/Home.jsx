@@ -21,7 +21,7 @@ const voiceOnAtom = atomWithStorage('voiceOn', false)
 let lastVoiceState = 'ended'
 
 export default function Home() {
-    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line
     const _trackEvt = useInsight()
     const { setTitle, setTabs, currentTab, setHeaderIcon, setFastNavigation } =
         useHeader()
@@ -190,15 +190,14 @@ export default function Home() {
                                 <section
                                     className={`${classes['styled-selection']}`}
                                 >
-                                    {officialUpdate.dates
-                                        .reduce((acc, cur) => {
-                                            const op = officialUpdate.info[cur]
-                                            return [...acc, ...op]
-                                        }, [])
-                                        .slice(
-                                            0,
-                                            officialUpdate.length -
-                                                operators.length
+                                    {officialUpdate.info
+                                        .filter(
+                                            (e) =>
+                                                !operators.find(
+                                                    (o) =>
+                                                        o.official_id ===
+                                                        e.id.toString()
+                                                )
                                         )
                                         .map((entry, index) => {
                                             return (
@@ -251,12 +250,21 @@ export default function Home() {
                                                                         classes.title
                                                                     }
                                                                 >
-                                                                    {
-                                                                        entry
-                                                                            .codename[
-                                                                            language
-                                                                        ]
-                                                                    }
+                                                                    {language ===
+                                                                    'zh-CN'
+                                                                        ? entry.type ===
+                                                                          'skin'
+                                                                            ? `${
+                                                                                  entry
+                                                                                      .skinName[
+                                                                                      'zh-CN'
+                                                                                  ]
+                                                                              } · ${entry.operatorName}`
+                                                                            : entry.operatorName
+                                                                        : entry
+                                                                              .skinName[
+                                                                              'en-US'
+                                                                          ]}
                                                                 </section>
                                                                 <section
                                                                     className={

@@ -1,13 +1,4 @@
-filename: dyn_illust_char_4133_logos_ambienceSynesthesia#6
-logo: logo_elite
-fallback_name: char_4133_logos_ambienceSynesthesia#6
-viewport_left: 0
-viewport_right: 0
-viewport_top: 0
-viewport_bottom: 0
-invert_filter: true
 codename:
   zh-CN: 辉煌的静谧 · 逻各斯
   en-US: Radiant Serenity / Logos
-use_json: false
 official_id: "202504989"

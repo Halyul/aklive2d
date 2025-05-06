@@ -1,13 +1,4 @@
-filename: dyn_illust_char_391_rosmon
-logo: logo_elite
-fallback_name: char_391_rosmon_2
-viewport_left: 0
-viewport_right: -14
-viewport_top: -38
-viewport_bottom: -1
-invert_filter: true
 codename:
     zh-CN: 迷迭香
     en-US: Rosmontis
-use_json: false
 official_id: '20220378'

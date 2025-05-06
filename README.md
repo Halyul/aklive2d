@@ -67,8 +67,8 @@ Download extracted game assets
 ```
 ### Webpage & JavaScript
 
-Add query string `aklive2d` to bring up the settings panel to adjust your settings. 
-Settings can be adjusted under `window.aklive2d` or by dispatching custom events (under `window.aklive2d.events`) to `document`. 
+Add query string `aklive2d` to bring up the settings panel to adjust your settings.
+Settings can be adjusted under `window.aklive2d` or by dispatching custom events (under `window.aklive2d.events`) to `document`.
 Examples can be found at `apps/showcase/src/components/wallpaper_engine.js`.
 
 ```js
@@ -194,7 +194,7 @@ ling: !include config/ling.yaml
 nearl: !include config/nearl.yaml
 nian: !include config/nian.yaml
 nian_unfettered_freedom: !include config/nian_unfettered_freedom.yaml
-phatom_focus: !include config/phatom_focus.yaml
+phantom_focus: !include config/phantom_focus.yaml
 rosmontis: !include config/rosmontis.yaml
 skadi: !include config/skadi.yaml
 skadi_sublimation: !include config/skadi_sublimation.yaml

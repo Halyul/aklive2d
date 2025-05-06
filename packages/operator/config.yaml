@@ -5,7 +5,7 @@ ling: !include config/ling.yaml
 nearl: !include config/nearl.yaml
 nian: !include config/nian.yaml
 nian_unfettered_freedom: !include config/nian_unfettered_freedom.yaml
-phatom_focus: !include config/phatom_focus.yaml
+phantom_focus: !include config/phantom_focus.yaml
 rosmontis: !include config/rosmontis.yaml
 skadi: !include config/skadi.yaml
 skadi_sublimation: !include config/skadi_sublimation.yaml
@@ -18,7 +18,7 @@ lee_trust_your_eyes: !include config/lee_trust_your_eyes.yaml
 texas_the_omertosa: !include config/texas_the_omertosa.yaml
 nearl_relight: !include config/nearl_relight.yaml
 rosmontis_become_anew: !include config/rosmontis_become_anew.yaml
-passager_dream_in_a_moment: !include config/passager_dream_in_a_moment.yaml
+passenger_dream_in_a_moment: !include config/passenger_dream_in_a_moment.yaml
 mizuki_summer_feast: !include config/mizuki_summer_feast.yaml
 chongyue: !include config/chongyue.yaml
 ling_it_does_wash_the_strings: !include config/ling_it_does_wash_the_strings.yaml

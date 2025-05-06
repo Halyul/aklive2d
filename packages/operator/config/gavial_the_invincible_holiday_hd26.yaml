@@ -1,13 +1,4 @@
-filename: dyn_illust_char_1026_gvial2_summer#12
-logo: logo_rhodes_override
-fallback_name: char_1026_gvial2_summer#12
-viewport_left: 0
-viewport_right: 0
-viewport_top: 0
-viewport_bottom: 0
-invert_filter: false
 codename:
     zh-CN: 悠然假日 HD26 · 百炼嘉维尔
     en-US: Holiday HD26 / Gavial the Invincible
-use_json: false
 official_id: '202307886'

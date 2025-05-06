@@ -17,7 +17,7 @@ export function read(
             return data
         },
     }
-    const file = fs.readFileSync(file_dir, 'utf8')
+    const file = fs.readFileSync(file_dir, { encoding: 'utf8' })
     return parse(file, {
         customTags: [include, ...customTags],
     } as SchemaOptions)

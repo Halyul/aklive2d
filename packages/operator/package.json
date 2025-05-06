@@ -5,12 +5,13 @@
     "main": "index.ts",
     "type": "module",
     "dependencies": {
-        "yaml": "^2.7.0",
-        "@aklive2d/libs": "workspace:*",
         "@aklive2d/config": "workspace:*",
-        "@aklive2d/official-info": "workspace:*",
         "@aklive2d/eslint-config": "workspace:*",
-        "@aklive2d/prettier-config": "workspace:*"
+        "@aklive2d/libs": "workspace:*",
+        "@aklive2d/official-info": "workspace:*",
+        "@aklive2d/prettier-config": "workspace:*",
+        "unidecode": "^1.1.0",
+        "yaml": "^2.7.0"
     },
     "peerDependencies": {
         "globals": ">=16.0.0",
@@ -18,9 +19,13 @@
         "typescript": ">=5.8.2"
     },
     "scripts": {
+        "update": "mode=update bun runner.ts",
         "build": "mode=build bun runner.ts",
         "init": "mode=init bun runner.ts",
         "lint": "eslint && prettier --check .",
         "build:cleanup": "rm -rf ./dist ./data"
+    },
+    "devDependencies": {
+        "@types/unidecode": "^1.1.0"
     }
 }

@@ -46,3 +46,21 @@ export interface OperatorConfig extends OfficialInfoOperatorConfig {
 export type OfficialInfoMapping = {
     [id: string]: OperatorConfig
 }
+
+export type OfficialInfoV2 = {
+    length: number
+    dates: string[]
+    info: OfficialInfoOperatorConfigV2[]
+}
+
+export type OfficialInfoOperatorConfigV2 = {
+    operatorName: string
+    skinName: {
+        'zh-CN': string
+        'en-US': string
+    }
+    type: 'operator' | 'skin'
+    link: string
+    id: number
+    date: string
+}

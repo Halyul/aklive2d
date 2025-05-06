@@ -1,13 +1,4 @@
-filename: dyn_illust_char_1041_angel2
-logo: logo_penguin
-fallback_name: char_1041_angel2_2
-viewport_left: 0
-viewport_right: 0
-viewport_top: 0
-viewport_bottom: 0
-invert_filter: true
 codename:
     zh-CN: 新约能天使
     en-US: Exusiai the New Covenant
-use_json: false
 official_id: '202504941'

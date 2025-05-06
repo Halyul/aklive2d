@@ -4,6 +4,11 @@ import operators, {
     OPERATOR_SOURCE_FOLDER,
     generateAssetsJson,
 } from '@aklive2d/operator'
+import {
+    getExtractedFolder,
+    getActualFilename,
+    findSkel,
+} from '@aklive2d/operator/libs/utils'
 import type { OperatorConfig } from '@aklive2d/operator/types'
 import { DIST_DIR as ASSETS_DIST_DIR } from '@aklive2d/assets'
 import { file, env } from '@aklive2d/libs'
@@ -106,10 +111,14 @@ export const copyShowcaseData = (
             fn(source, target)
         }
     })
+    const filename = getActualFilename(
+        operators[name].filename,
+        getExtractedFolder(name)
+    )
     const buildConfig = {
         insight_id: config.insight.id,
         link: operators[name].link,
-        filename: operators[name].filename.replace(/#/g, '%23'),
+        filename: filename.replace(/#/g, '%23'),
         logo_filename: operators[name].logo,
         fallback_filename: operators[name].fallback_name.replace(/#/g, '%23'),
         viewport_left: operators[name].viewport_left,
@@ -126,7 +135,7 @@ export const copyShowcaseData = (
         voice_folders: config.dir_name.voice,
         music_folder: config.module.assets.music,
         music_mapping: musicMapping.musicFileMapping,
-        use_json: operators[name].use_json,
+        use_json: findSkel(filename, getExtractedFolder(name)).endsWith('json'),
         default_assets_dir: `${config.app.showcase.assets}/`,
         logo_dir:
             mode === 'build:directory'
@@ -190,6 +199,14 @@ export const copyDirectoryData = async ({
         Object.values(operators).reduce(
             (acc, cur) => {
                 const curD = cur as DirectoryOperatorConfig
+                curD.filename = getActualFilename(
+                    operators[curD.link].filename,
+                    getExtractedFolder(curD.link)
+                )
+                curD.use_json = findSkel(
+                    curD.filename,
+                    getExtractedFolder(curD.link)
+                ).endsWith('json')
                 const date = curD.date
 
                 curD.workshopId = null
@@ -200,7 +217,7 @@ export const copyDirectoryData = async ({
                         cur.link,
                         config.module.project_json.project_json
                     )
-                )
+                ) as string
                 if (!text) {
                     console.log(`No workshop id for ${cur.link}!`)
                 } else {

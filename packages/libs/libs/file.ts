@@ -3,6 +3,11 @@ import path from 'node:path'
 import yauzl from 'yauzl-promise'
 import yazl from 'yazl'
 
+type ReadOpts = {
+    encoding?: BufferEncoding
+    useAsPrefix?: boolean
+}
+
 export async function write(
     content: string | NodeJS.ArrayBufferView,
     filePath: string
@@ -21,14 +26,32 @@ export function writeSync(
 
 export async function read(
     filePath: string,
-    encoding: BufferEncoding = 'utf8'
+    opts: ReadOpts = { encoding: 'utf8', useAsPrefix: false }
 ) {
-    return await fsP.readFile(filePath, { encoding, flag: 'r' })
+    return await fsP.readFile(filePath, { ...opts, flag: 'r' })
 }
 
-export function readSync(filePath: string, encoding: BufferEncoding = 'utf8') {
+export function readSync(
+    filePath: string,
+    opts: ReadOpts = { encoding: 'utf8', useAsPrefix: false }
+) {
+    const useAsPrefix = opts.useAsPrefix
+    delete opts.useAsPrefix
+    if (useAsPrefix) {
+        const parent = path.dirname(filePath)
+        const filename = path.parse(filePath).name
+        const ext = path.parse(filePath).ext
+        const file = readdirSync(parent).find(
+            (e) => e.startsWith(filename) && e.endsWith(ext)
+        )
+        if (!file) return null
+        return fs.readFileSync(path.join(parent, file), {
+            ...opts,
+            flag: 'r',
+        })
+    }
     if (exists(filePath)) {
-        return fs.readFileSync(filePath, { encoding, flag: 'r' })
+        return fs.readFileSync(filePath, { ...opts, flag: 'r' })
     }
     return null
 }

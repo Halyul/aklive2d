@@ -34,6 +34,8 @@ module:
         directory_assets: _directory
         MonoBehaviour: MonoBehaviour
         Texture2D: Texture2D
+        character_table_json: character_table.json
+        skin_table_json: skin_table.json
         title:
             zh-CN: '明日方舟：'
             en-US: 'Arknights: '

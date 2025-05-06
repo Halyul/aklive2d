@@ -1,5 +1,7 @@
 import { envParser } from '@aklive2d/libs'
-import { build, init } from './index.ts'
+import { init } from './libs/initer.ts'
+import { build } from './libs/builder.ts'
+import { update } from './libs/updater.ts'
 
 type Args = {
     mode: string
@@ -26,6 +28,9 @@ async function main() {
     switch (mode) {
         case 'build':
             await build(name)
+            break
+        case 'update':
+            await update()
             break
         case 'init':
             if (!name.length) {

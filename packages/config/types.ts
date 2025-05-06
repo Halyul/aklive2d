@@ -42,6 +42,8 @@ export type Config = {
             directory_assets: string
             MonoBehaviour: string
             Texture2D: string
+            character_table_json: string
+            skin_table_json: string
             title: {
                 'zh-CN': string
                 'en-US': string

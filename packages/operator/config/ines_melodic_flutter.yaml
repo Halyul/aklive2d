@@ -1,13 +1,4 @@
-filename: dyn_illust_char_4087_ines_ambienceSynesthesia
-logo: logo_babel
-fallback_name: char_4087_ines_ambienceSynesthesia#5
-viewport_left: 0
-viewport_right: 0
-viewport_top: 0
-viewport_bottom: 0
-invert_filter: true
 codename:
   zh-CN: 蝶舞华章 · 伊内丝
   en-US: Melodic Flutter / Ines
-use_json: false
 official_id: "202504968"

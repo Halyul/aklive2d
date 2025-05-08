@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { yaml, file, alphaComposite } from '@aklive2d/libs'
 import config from '@aklive2d/config'
+import { envParser } from '@aklive2d/libs'
 import { mapping as officialInfoMapping } from '@aklive2d/official-info'
 import type {
     Config,
@@ -140,6 +141,12 @@ export const skinTable = (() => {
 
 const generateMapping = () => {
     if (officialInfoMapping) {
+        const { mode } = envParser.parse({
+            mode: {
+                type: 'string',
+                short: 'm',
+            },
+        })
         for (const [operatorName, operator] of Object.entries(CONFIG)) {
             const operatorInfo = officialInfoMapping[operator.official_id]
             const type = operatorInfo.type
@@ -170,9 +177,11 @@ const generateMapping = () => {
 
             operator.voice_id = skinEntry.voiceId
 
-            const logo = findLogo(characterTable, skinEntry.charId)
-            operator.logo = logo.logo
-            operator.invert_filter = logo.invert_filter
+            if (mode !== 'update') {
+                const logo = findLogo(characterTable, skinEntry.charId)
+                operator.logo = logo.logo
+                operator.invert_filter = logo.invert_filter
+            }
 
             operator.color =
                 skinEntry.displaySkin.colorList.find((e) => e !== '') || '#000'

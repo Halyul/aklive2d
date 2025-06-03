@@ -1,6 +1,7 @@
 {
-    "length": 67,
+    "length": 68,
     "dates": [
+        "2025-06-01",
         "2025-04-22",
         "2025-04-01",
         "2025-01-01",
@@ -35,6 +36,17 @@
         "2020-01-01"
     ],
     "info": [
+        {
+            "operatorName": "阿斯卡纶",
+            "skinName": {
+                "zh-CN": "趋光之暗",
+                "en-US": "Phototaxis"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/202506915.html",
+            "id": 202506915,
+            "date": "2025-06-01"
+        },
         {
             "operatorName": "逻各斯",
             "skinName": {

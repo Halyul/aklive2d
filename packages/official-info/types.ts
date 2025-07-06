@@ -1,25 +1,27 @@
-export type OfficialOperatorInfo = {
+export type OfficialDataOperatorObj = {
     cid: string
-    charName: string
-    suitName: string
-    codename: string
-    type: number
-    displayTime: string
-    portraitSrc: string
+    name: string
+    content: {
+        type: number
+        charName: string
+        codename: string
+        suitName: string
+        displayTime: string
+    }
 }
 
-export type OfficialDataArray = [
-    '$',
-    string,
-    null,
-    {
-        initialData: OfficialOperatorInfo[]
-    },
-]
+type OfficialDataObj = {
+    list: Array<OfficialDataOperatorObj>
+    total: number
+    page: number
+    pageSize: number
+    end: boolean
+}
 
-type UnrelatedDataArray = ['$', string, null, unknown]
-
-export type OfficialArray = [OfficialDataArray, UnrelatedDataArray]
+export type OfficialDataResp = {
+    code: number
+    data: OfficialDataObj
+}
 
 export type OfficialInfoMapping = {
     [id: string]: OfficialInfoOperatorConfigV2
@@ -27,7 +29,7 @@ export type OfficialInfoMapping = {
 
 export type OfficialInfoV2 = {
     length: number
-    dates: string[]
+    dates: Set<string>
     info: OfficialInfoOperatorConfigV2[]
 }
 

@@ -1,11 +1,10 @@
-import jsdom from 'jsdom'
 import path from 'node:path'
 import { file } from '@aklive2d/libs'
 import config from '@aklive2d/config'
 import type {
-    OfficialArray,
+    OfficialDataResp,
     OfficialInfoV2,
-    OfficialOperatorInfo,
+    OfficialDataOperatorObj,
     OfficialInfoMapping,
     OfficialInfoOperatorConfigV2,
 } from './types'
@@ -20,51 +19,50 @@ const OFFICIAL_INFO_JSON = path.resolve(
 )
 
 export const update = async () => {
-    const f = await fetch('https://ak.hypergryph.com/archive/dynamicCompile/')
-    const html_text = await f.text()
-
-    const dom = new jsdom.JSDOM(html_text)
-    const scripts = dom.window.document.body.querySelectorAll('script')
-    let data: OfficialArray | null = null
-    scripts.forEach((e) => {
-        if (e.textContent?.includes('干员晋升')) {
-            data = JSON.parse(
-                e.textContent
-                    .replace('self.__next_f.push([1,"c:', '')
-                    .replace('\\n"])', '')
-                    .replaceAll('\\', '')
-            ) as OfficialArray
-        }
-    })
-    if (!data) throw new Error('No data found')
-    const rows = (data as OfficialArray)[0][3].initialData
-
+    const officialDataUrl =
+        'https://ak.hypergryph.com/api/archive/dynComp?type=&page='
+    let pageNum = 1
+    let end = false
     const dict: OfficialInfoV2 = {
-        length: rows.length,
-        dates: [],
+        length: 0,
+        dates: new Set(),
         info: [],
     }
 
-    let current_displayTime = rows[0].displayTime
-
-    for (const row of rows) {
-        const displayTime = row.displayTime
-        if (displayTime !== current_displayTime) {
-            dict.dates.push(current_displayTime)
-            current_displayTime = row.displayTime
+    while (!end) {
+        const f = await fetch(`${officialDataUrl}${pageNum++}`)
+        const data: OfficialDataResp = JSON.parse(await f.text())
+        if (!dict.length) {
+            dict.length = data.data.total
         }
-        dict.info.push(get_row(row, current_displayTime))
-    }
-    dict.dates.push(current_displayTime)
+        for (const row of data.data.list) {
+            const displayTime = row.content.displayTime.substring(0, 10)
+            dict.dates.add(displayTime)
+            dict.info.push(get_row(row, displayTime))
+        }
 
-    file.writeSync(JSON.stringify(dict, null, 4), OFFICIAL_INFO_JSON)
+        end = data.data.end
+    }
+
+    file.writeSync(
+        JSON.stringify(
+            {
+                length: dict.length,
+                dates: Array.from(dict.dates),
+                info: dict.info,
+            },
+            null,
+            4
+        ),
+        OFFICIAL_INFO_JSON
+    )
 }
 
 const get_row = (
-    row: OfficialOperatorInfo,
+    row: OfficialDataOperatorObj,
     date: string
 ): OfficialInfoOperatorConfigV2 => {
-    const type = row.type
+    const type = row.content.type
     let item_type: 'operator' | 'skin'
     switch (type) {
         case 0:
@@ -77,10 +75,10 @@ const get_row = (
             throw 'unknown type'
     }
     return {
-        operatorName: row.charName,
+        operatorName: row.content.charName,
         skinName: {
-            'zh-CN': row.suitName,
-            'en-US': row.codename,
+            'zh-CN': row.content.suitName,
+            'en-US': row.content.codename,
         },
         type: item_type,
         link: `https://ak.hypergryph.com/archive/dynamicCompile/${row.cid}.html`,

@@ -5,10 +5,9 @@
     "main": "index.ts",
     "type": "module",
     "dependencies": {
-        "jsdom": "^26.0.0",
-        "@aklive2d/libs": "workspace:*",
         "@aklive2d/config": "workspace:*",
         "@aklive2d/eslint-config": "workspace:*",
+        "@aklive2d/libs": "workspace:*",
         "@aklive2d/prettier-config": "workspace:*"
     },
     "peerDependencies": {

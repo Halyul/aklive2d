@@ -1,6 +1,7 @@
 {
-    "length": 68,
+    "length": 69,
     "dates": [
+        "2025-07-06",
         "2025-06-01",
         "2025-04-22",
         "2025-04-01",
@@ -36,6 +37,17 @@
         "2020-01-01"
     ],
     "info": [
+        {
+            "operatorName": "林",
+            "skinName": {
+                "zh-CN": "夏卉 FA137",
+                "en-US": "Summer Flowers FA137"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/0460.html",
+            "id": 460,
+            "date": "2025-07-06"
+        },
         {
             "operatorName": "阿斯卡纶",
             "skinName": {

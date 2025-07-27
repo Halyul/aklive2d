@@ -1,6 +1,7 @@
 {
-    "length": 69,
+    "length": 70,
     "dates": [
+        "2025-07-27",
         "2025-07-06",
         "2025-06-01",
         "2025-04-22",
@@ -37,6 +38,17 @@
         "2020-01-01"
     ],
     "info": [
+        {
+            "operatorName": "佩佩-星移",
+            "skinName": {
+                "zh-CN": "星移",
+                "en-US": "Nuit of the Nightsky"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/2237.html",
+            "id": 2237,
+            "date": "2025-07-27"
+        },
         {
             "operatorName": "林",
             "skinName": {

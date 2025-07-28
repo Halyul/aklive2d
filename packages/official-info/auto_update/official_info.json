@@ -1,6 +1,7 @@
 {
-    "length": 70,
+    "length": 71,
     "dates": [
+        "2025-07-28",
         "2025-07-27",
         "2025-07-06",
         "2025-06-01",
@@ -38,6 +39,17 @@
         "2020-01-01"
     ],
     "info": [
+        {
+            "operatorName": "引星棘刺",
+            "skinName": {
+                "zh-CN": "无际之帆",
+                "en-US": "Boundless Sail"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/3803.html",
+            "id": 3803,
+            "date": "2025-07-28"
+        },
         {
             "operatorName": "佩佩-星移",
             "skinName": {

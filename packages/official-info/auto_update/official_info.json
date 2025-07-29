@@ -1,6 +1,7 @@
 {
-    "length": 71,
+    "length": 72,
     "dates": [
+        "2025-07-29",
         "2025-07-28",
         "2025-07-27",
         "2025-07-06",
@@ -39,6 +40,17 @@
         "2020-01-01"
     ],
     "info": [
+        {
+            "operatorName": "斩业星熊",
+            "skinName": {
+                "zh-CN": "Hoshiguma the Breacher",
+                "en-US": "Hoshiguma the Breacher"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/7788.html",
+            "id": 7788,
+            "date": "2025-07-29"
+        },
         {
             "operatorName": "引星棘刺",
             "skinName": {

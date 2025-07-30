@@ -1,6 +1,7 @@
 {
-    "length": 72,
+    "length": 73,
     "dates": [
+        "2025-07-30",
         "2025-07-29",
         "2025-07-28",
         "2025-07-27",
@@ -40,6 +41,17 @@
         "2020-01-01"
     ],
     "info": [
+        {
+            "operatorName": "死芒",
+            "skinName": {
+                "zh-CN": "夏卉 FA161",
+                "en-US": "Summer Flowers FA161"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/4576.html",
+            "id": 4576,
+            "date": "2025-07-30"
+        },
         {
             "operatorName": "斩业星熊",
             "skinName": {

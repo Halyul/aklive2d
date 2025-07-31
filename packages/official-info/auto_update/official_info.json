@@ -1,6 +1,7 @@
 {
-    "length": 73,
+    "length": 74,
     "dates": [
+        "2025-07-31",
         "2025-07-30",
         "2025-07-29",
         "2025-07-28",
@@ -41,6 +42,17 @@
         "2020-01-01"
     ],
     "info": [
+        {
+            "operatorName": "假日威龙陈",
+            "skinName": {
+                "zh-CN": "悠然假日 HD79",
+                "en-US": "Summer Flowers FA161"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/1121.html",
+            "id": 1121,
+            "date": "2025-07-31"
+        },
         {
             "operatorName": "死芒",
             "skinName": {

@@ -51,7 +51,11 @@ export type DisplayMetaTable = {
             bgSortId: number
             bgStartTime: number
             bgName: string
-            bgMusicId: string
+            multiFormList: {
+                multiFormBgId: string
+                sortId: number
+                bgMusicId: string
+            }[]
             bgDes: string
             bgUsage: string
             obtainApproach: string

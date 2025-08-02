@@ -100,9 +100,11 @@ export const update = async () => {
     const musicBankAlias = audioDataTable.bankAlias
     const musicData: MusicDataItem[] =
         metaTable.homeBackgroundData.homeBgDataList.reduce((acc, cur) => {
+            if (cur.multiFormList.length > 1)
+                console.warn(`${cur.bgId} has multiple musicIds`)
             acc.push({
                 id: cur.bgId,
-                musicId: cur.bgMusicId,
+                musicId: cur.multiFormList[0].bgMusicId,
             })
             return acc
         }, [] as MusicDataItem[])

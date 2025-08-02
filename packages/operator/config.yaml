@@ -65,3 +65,10 @@ wisadel_supernova: !include config/wisadel_supernova.yaml
 archetto_glory_of_the_devout: !include config/archetto_glory_of_the_devout.yaml
 kroos_moonlit_voyage: !include config/kroos_moonlit_voyage.yaml
 exusiai_the_new_covenant: !include config/exusiai_the_new_covenant.yaml
+# ascalon_phototaxis: !include config/ascalon_phototaxis.yaml
+# lin_summer_flowers_fa137: !include config/lin_summer_flowers_fa137.yaml
+# pepe_nuit_of_the_nightsky: !include config/pepe_nuit_of_the_nightsky.yaml
+# thorns_the_lodestar_boundless_sail: !include config/thorns_the_lodestar_boundless_sail.yaml
+# hoshiguma_the_breacher: !include config/hoshiguma_the_breacher.yaml
+# necrass_summer_flowers_fa161: !include config/necrass_summer_flowers_fa161.yaml
+# chen_the_holungday_summer_flowers_fa161: !include config/chen_the_holungday_summer_flowers_fa161.yaml

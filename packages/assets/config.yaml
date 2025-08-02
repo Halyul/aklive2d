@@ -7,3 +7,6 @@ item_to_download:
     - char_128
 additional_regex:
     - ^(?!(avg|charpack))(.*)$
+servers:
+    - name: cn
+      url: https://ak-conf.hypergryph.com/config/prod/official/network_config

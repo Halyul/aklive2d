@@ -2,6 +2,10 @@ export type Config = {
     dynchars: string
     item_to_download: ItemToDownload[]
     additional_regex: string[]
+    servers: {
+        name: 'cn' | 'jp' | 'en' | 'kr'
+        url: string
+    }[]
 }
 
 export type ItemToDownload = string

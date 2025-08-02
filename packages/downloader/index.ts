@@ -70,7 +70,7 @@ export const unzipDownload = async (
             retry.map(
                 throttle(async (item) => {
                     const name = item.name
-                    console.log(`Downloading ${name}`)
+                    console.log(`Downloading ${name} to ${targetDir}`)
                     const zip = await fetch(item.url)
                         .then((resp) => {
                             const status = resp.status
@@ -114,7 +114,9 @@ export const unzipDownload = async (
                             const readStream = await entry.openReadStream()
                             const writeStream = fs.createWriteStream(filePath)
                             await pipeline(readStream, writeStream)
-                            console.log(`Finish Writing to ${entry.filename}`)
+                            console.log(
+                                `Finish Writing to ${targetDir}/${entry.filename}`
+                            )
                         }
                     } finally {
                         await zip.close()

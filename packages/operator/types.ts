@@ -21,6 +21,7 @@ export interface OperatorConfig {
     date: string
     voice_id: string | null
     color: string
+    isSP: boolean // kroos_moonlit_voyage_sp
 }
 
 export type Config = {

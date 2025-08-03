@@ -112,6 +112,9 @@ const generateAssets = async (name: string) => {
     await generateAssetsJson(
         operators[name].filename,
         extractedDir,
-        getDistFolder(name)
+        getDistFolder(name),
+        {
+            isSP: operators[name].isSP,
+        }
     )
 }

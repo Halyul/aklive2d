@@ -77,6 +77,7 @@ export default function Operator() {
     const [voiceSrc, setVoiceSrc] = useState(null)
     const [isVoicePlaying, _setIsVoicePlaying] = useState(false)
     const isVoicePlayingRef = useRef(isVoicePlaying)
+    const [spineAnimationList, setSpineAnimationList] = useState([])
 
     const setVoiceLang = (value) => {
         voiceLangRef.current = value
@@ -154,7 +155,7 @@ export default function Operator() {
 
     useEffect(() => {
         if (config) {
-            setTitle(getPartialName('name', config.codename[language]))
+            setTitle(config.codename[language])
         }
     }, [config, language, key, setTitle])
 
@@ -180,6 +181,9 @@ export default function Operator() {
                 fps: 60,
                 defaultMix: 0.3,
                 success: (player) => {
+                    setSpineAnimationList(
+                        player.skeleton.data.animations.map((e) => e.name)
+                    )
                     if (
                         player.skeleton.data.animations
                             .map((e) => e.name)
@@ -283,9 +287,9 @@ export default function Operator() {
         (animation) => {
             if (voiceLangRef.current) {
                 let id = null
-                if (animation === 'Idle') id = 'CN_011'
-                if (animation === 'Interact') id = 'CN_034'
-                if (animation === 'Special') id = 'CN_042'
+                if (animation.startsWith('Idle')) id = 'CN_011'
+                if (animation.startsWith('Interact')) id = 'CN_034'
+                if (animation.startsWith('Special')) id = 'CN_042'
                 if (id) {
                     setCurrentVoiceId(id)
                     setVoiceSrc(
@@ -320,29 +324,15 @@ export default function Operator() {
     const spineSettings = [
         {
             name: 'animation',
-            options: [
-                {
-                    name: 'idle',
-                    onClick: () => setSpineAnimation('Idle'),
+            options: spineAnimationList.map((name) => {
+                return {
+                    name,
+                    onClick: () => setSpineAnimation(name),
                     activeRule: () => {
-                        return spineAnimationName === 'Idle'
+                        return spineAnimationName === name
                     },
-                },
-                {
-                    name: 'interact',
-                    onClick: () => setSpineAnimation('Interact'),
-                    activeRule: () => {
-                        return spineAnimationName === 'Interact'
-                    },
-                },
-                {
-                    name: 'special',
-                    onClick: () => setSpineAnimation('Special'),
-                    activeRule: () => {
-                        return spineAnimationName === 'Special'
-                    },
-                },
-            ],
+                }
+            }),
         },
         {
             name: 'voice',

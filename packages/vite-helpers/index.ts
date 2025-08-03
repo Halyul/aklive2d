@@ -21,6 +21,8 @@ interface DirectoryOperatorConfig extends OperatorConfig {
     workshopId: string | null
 }
 
+const SPINE_FILENAME_PREFIX = 'dyn_illust_'
+
 export const copyShowcaseData = (
     name: string,
     {
@@ -37,7 +39,13 @@ export const copyShowcaseData = (
     )
     const spineFilenames = file
         .readdirSync(operatorAssetsDir)
-        .filter((item) => item.startsWith('dyn_illust_'))
+        .filter((item) =>
+            item.startsWith(
+                operators[name].isSP
+                    ? `${config.module.operator.sp_filename_prefix}${SPINE_FILENAME_PREFIX}`
+                    : SPINE_FILENAME_PREFIX
+            )
+        )
     const q = [
         {
             fn: file.symlink,
@@ -113,7 +121,8 @@ export const copyShowcaseData = (
     })
     const filename = getActualFilename(
         operators[name].filename,
-        getExtractedFolder(name)
+        getExtractedFolder(name),
+        operators[name].isSP
     )
     const buildConfig = {
         insight_id: config.insight.id,
@@ -201,7 +210,8 @@ export const copyDirectoryData = async ({
                 const curD = cur as DirectoryOperatorConfig
                 curD.filename = getActualFilename(
                     operators[curD.link].filename,
-                    getExtractedFolder(curD.link)
+                    getExtractedFolder(curD.link),
+                    operators[curD.link].isSP
                 )
                 curD.use_json = findSkel(
                     curD.filename,

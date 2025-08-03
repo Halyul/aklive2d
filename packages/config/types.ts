@@ -1,3 +1,8 @@
+export type TitleLanguages = {
+    'zh-CN': string
+    'en-US': string
+}
+
 export type Config = {
     site_id: string
     total_size: number
@@ -44,10 +49,9 @@ export type Config = {
             Texture2D: string
             character_table_json: string
             skin_table_json: string
-            title: {
-                'zh-CN': string
-                'en-US': string
-            }
+            title: TitleLanguages
+            sp_filename_prefix: string
+            sp_title: TitleLanguages
         }
         project_json: {
             project_json: string

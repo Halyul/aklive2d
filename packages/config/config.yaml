@@ -39,6 +39,10 @@ module:
         title:
             zh-CN: '明日方舟：'
             en-US: 'Arknights: '
+        sp_filename_prefix: sp_
+        sp_title:
+            zh-CN: '「SP」 '
+            en-US: '[SP] '
     project_json:
         project_json: project.json
         preview_jpg: preview.jpg

@@ -1,3 +1,4 @@
+import { TitleLanguages } from './../config/types'
 import path from 'node:path'
 import { yaml, file, alphaComposite } from '@aklive2d/libs'
 import config from '@aklive2d/config'
@@ -53,8 +54,10 @@ export const generateAssetsJson = async (
     extractedDir: string,
     targetDir: string,
     _opts: {
+        isSP?: boolean
         useSymLink?: boolean
     } = {
+        isSP: false,
         useSymLink: true,
     }
 ) => {
@@ -64,7 +67,7 @@ export const generateAssetsJson = async (
      * Special Cases:
      * - ines_melodic_flutter
      */
-    filename = getActualFilename(filename, extractedDir)
+    filename = getActualFilename(filename, extractedDir, _opts.isSP)
 
     const skelFilename = findSkel(filename, extractedDir)
     const atlasFilename = `${filename}.atlas`
@@ -160,8 +163,23 @@ const generateMapping = () => {
                 type === 'skin'
                     ? skinEntry.skinId.replace(/@/, '_')
                     : `${skinEntry.charId}_2`
+
+            const regions = Object.keys(
+                operator.codename
+            ) as (keyof TitleLanguages)[]
+            if (operator.isSP) {
+                regions.forEach((region: keyof TitleLanguages) => {
+                    operator.codename[region] =
+                        `${config.module.operator.sp_title[region]}${operator.codename[region]}`
+                })
+            }
             // add title
-            operator.title = `${config.module.operator.title['en-US']}${operator.codename['en-US']} - ${config.module.operator.title['zh-CN']}${operator.codename['zh-CN']}`
+            operator.title = regions
+                .map(
+                    (region: keyof TitleLanguages) =>
+                        `${config.module.operator.title[region]}${operator.codename[region]}`
+                )
+                .join(' - ')
 
             // add type
             operator.type = operatorInfo.type

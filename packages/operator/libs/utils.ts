@@ -168,7 +168,13 @@ export const findCodename = (
     return codename
 }
 
-export const getActualFilename = (filename: string, dir: string) => {
+export const getActualFilename = (
+    filename: string,
+    dir: string,
+    isSP: boolean = false
+) => {
+    if (isSP)
+        filename = `${config.module.operator.sp_filename_prefix}${filename}`
     const files = file.readdirSync(dir)
     const actualFilename = files.find((e) => {
         const name = path.parse(e).name

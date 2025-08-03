@@ -16,6 +16,7 @@ export default class Player {
     #resetTime = window.performance.now()
     #isPlayingInteract = false
     #spine
+    #animationList = []
     #default = {
         fps: 60,
         padding: {
@@ -62,6 +63,9 @@ export default class Player {
             fps: 60,
             defaultMix: 0,
             success: function (widget) {
+                _this.#animationList = widget.skeleton.data.animations.map(
+                    (e) => e.name
+                )
                 if (
                     widget.skeleton.data.animations
                         .map((e) => e.name)
@@ -70,10 +74,15 @@ export default class Player {
                 ) {
                     widget.animationState.setAnimation(0, 'Start', false)
                 }
-                widget.animationState.addAnimation(0, 'Idle', true, 0)
+                widget.animationState.addAnimation(
+                    0,
+                    _this.#selectRandomAnimation('Idle'),
+                    true,
+                    0
+                )
                 widget.animationState.addListener({
                     end: (e) => {
-                        if (e.animation.name == 'Interact') {
+                        if (e.animation.name.startsWith('Interact')) {
                             _this.#isPlayingInteract = false
                         }
                     },
@@ -85,13 +94,13 @@ export default class Player {
                             _this.#resetTime = performance.now()
                             let entry = widget.animationState.setAnimation(
                                 0,
-                                'Special',
+                                _this.#selectRandomAnimation('Special'),
                                 false
                             )
                             entry.mixDuration = 0.3
                             widget.animationState.addAnimation(
                                 0,
-                                'Idle',
+                                _this.#selectRandomAnimation('Idle'),
                                 true,
                                 0
                             )
@@ -105,11 +114,16 @@ export default class Player {
                     _this.#isPlayingInteract = true
                     let entry = widget.animationState.setAnimation(
                         0,
-                        'Interact',
+                        _this.#selectRandomAnimation('Interact'),
                         false
                     )
                     entry.mixDuration = 0.3
-                    widget.animationState.addAnimation(0, 'Idle', true, 0)
+                    widget.animationState.addAnimation(
+                        0,
+                        _this.#selectRandomAnimation('Idle'),
+                        true,
+                        0
+                    )
                 }
                 document.dispatchEvent(Events.Ready.handler())
             },
@@ -124,10 +138,7 @@ export default class Player {
 
     success() {
         this.#loadViewport()
-        updateHTMLOptions(
-            this.#spine.skeleton.data.animations.map((e) => e.name),
-            'animation-selection'
-        )
+        updateHTMLOptions(this.#animationList, 'animation-selection')
     }
 
     resetPadding() {
@@ -174,6 +185,13 @@ export default class Player {
             padTop: `${this.#config.padding.top}%`,
             padBottom: `${this.#config.padding.bottom}%`,
         })
+    }
+
+    #selectRandomAnimation(name) {
+        const animationList = this.#animationList.filter((animation) =>
+            animation.startsWith(name)
+        )
+        return animationList[Math.floor(Math.random() * animationList.length)]
     }
 
     get usePadding() {

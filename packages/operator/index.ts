@@ -170,10 +170,10 @@ const generateMapping = () => {
             operator.link = operatorName
 
             // add default viewport
-            operator.viewport_left = 0
-            operator.viewport_right = 0
-            operator.viewport_top = 0
-            operator.viewport_bottom = 0
+            if (!operator.viewport_left) operator.viewport_left = 0
+            if (!operator.viewport_right) operator.viewport_right = 0
+            if (!operator.viewport_top) operator.viewport_top = 0
+            if (!operator.viewport_bottom) operator.viewport_bottom = 0
 
             operator.voice_id = skinEntry.voiceId
 

@@ -83,6 +83,7 @@ const process = ({
     data: ProjectJSON
     template: TemplateYAML
 }) => {
+    const { r, g, b } = getRGBfromHEXColor(operators[name].color)
     return {
         ...data,
         description: template.description,
@@ -92,9 +93,27 @@ const process = ({
             localization: template.localization,
             properties: {
                 ...getProperties(template),
+                schemecolor: {
+                    order: 0,
+                    text: 'ui_browse_properties_scheme_color',
+                    type: 'color',
+                    value: `${r / 255} ${g / 255} ${b / 255}`,
+                },
             },
         },
     } as ProjectJSON
+}
+
+const getRGBfromHEXColor = (hex: string) => {
+    const hexNo = parseInt(hex.replace('#', ''), 16)
+    const r = (hexNo >> 16) & 255
+    const g = (hexNo >> 8) & 255
+    const b = hexNo & 255
+    return {
+        r,
+        g,
+        b,
+    }
 }
 
 const getProperties = (template: TemplateYAML) => {

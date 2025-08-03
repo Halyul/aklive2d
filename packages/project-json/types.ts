@@ -7,7 +7,7 @@ export type Assets = {
 
 export interface Property {
     text: string
-    type?: 'bool' | 'file' | 'slider' | 'combo' | 'textinput'
+    type?: 'bool' | 'file' | 'slider' | 'combo' | 'textinput' | 'color'
     value?: boolean | string
     condition?: string
     fraction?: boolean
@@ -20,7 +20,7 @@ export interface Property {
 }
 
 export interface ProjectJSONProperty extends Property {
-    index: number
+    index?: number
     order: number
 }
 

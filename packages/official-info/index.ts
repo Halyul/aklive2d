@@ -36,7 +36,7 @@ export const update = async () => {
             dict.length = data.data.total
         }
         for (const row of data.data.list) {
-            const displayTime = row.content.displayTime.substring(0, 10)
+            const displayTime = row.content.displayTime.substring(0, 7)
             dict.dates.add(displayTime)
             dict.info.push(get_row(row, displayTime))
         }

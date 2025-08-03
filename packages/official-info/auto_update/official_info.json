@@ -1,45 +1,37 @@
 {
     "length": 74,
     "dates": [
-        "2025-07-31",
-        "2025-07-30",
-        "2025-07-29",
-        "2025-07-28",
-        "2025-07-27",
-        "2025-07-06",
-        "2025-06-01",
-        "2025-04-22",
-        "2025-04-01",
-        "2025-01-01",
-        "2024-12-09",
-        "2024-12-01",
-        "2024-10-01",
-        "2024-07-01",
-        "2024-05-01",
-        "2024-04-01",
-        "2024-02-29",
-        "2024-02-28",
-        "2024-01-01",
-        "2023-11-01",
-        "2023-08-01",
-        "2023-07-01",
-        "2023-04-01",
-        "2023-02-01",
-        "2023-01-01",
-        "2022-12-15",
-        "2022-11-01",
-        "2022-10-01",
-        "2022-08-01",
-        "2022-05-01",
-        "2022-04-30",
-        "2022-01-01",
-        "2021-11-01",
-        "2021-08-01",
-        "2021-05-01",
-        "2021-02-01",
-        "2020-11-01",
-        "2020-05-01",
-        "2020-01-01"
+        "2025-07",
+        "2025-06",
+        "2025-04",
+        "2025-01",
+        "2024-12",
+        "2024-10",
+        "2024-07",
+        "2024-05",
+        "2024-04",
+        "2024-02",
+        "2024-01",
+        "2023-11",
+        "2023-08",
+        "2023-07",
+        "2023-04",
+        "2023-02",
+        "2023-01",
+        "2022-12",
+        "2022-11",
+        "2022-10",
+        "2022-08",
+        "2022-05",
+        "2022-04",
+        "2022-01",
+        "2021-11",
+        "2021-08",
+        "2021-05",
+        "2021-02",
+        "2020-11",
+        "2020-05",
+        "2020-01"
     ],
     "info": [
         {
@@ -51,7 +43,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/1121.html",
             "id": 1121,
-            "date": "2025-07-31"
+            "date": "2025-07"
         },
         {
             "operatorName": "死芒",
@@ -62,7 +54,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/4576.html",
             "id": 4576,
-            "date": "2025-07-30"
+            "date": "2025-07"
         },
         {
             "operatorName": "斩业星熊",
@@ -73,7 +65,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/7788.html",
             "id": 7788,
-            "date": "2025-07-29"
+            "date": "2025-07"
         },
         {
             "operatorName": "引星棘刺",
@@ -84,7 +76,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/3803.html",
             "id": 3803,
-            "date": "2025-07-28"
+            "date": "2025-07"
         },
         {
             "operatorName": "佩佩-星移",
@@ -95,7 +87,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/2237.html",
             "id": 2237,
-            "date": "2025-07-27"
+            "date": "2025-07"
         },
         {
             "operatorName": "林",
@@ -106,7 +98,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/0460.html",
             "id": 460,
-            "date": "2025-07-06"
+            "date": "2025-07"
         },
         {
             "operatorName": "阿斯卡纶",
@@ -117,7 +109,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202506915.html",
             "id": 202506915,
-            "date": "2025-06-01"
+            "date": "2025-06"
         },
         {
             "operatorName": "逻各斯",
@@ -128,7 +120,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504989.html",
             "id": 202504989,
-            "date": "2025-04-22"
+            "date": "2025-04"
         },
         {
             "operatorName": "维什戴尔",
@@ -139,7 +131,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504974.html",
             "id": 202504974,
-            "date": "2025-04-01"
+            "date": "2025-04"
         },
         {
             "operatorName": "空弦",
@@ -150,7 +142,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504953.html",
             "id": 202504953,
-            "date": "2025-04-01"
+            "date": "2025-04"
         },
         {
             "operatorName": "克洛丝",
@@ -161,7 +153,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504992.html",
             "id": 202504992,
-            "date": "2025-04-01"
+            "date": "2025-04"
         },
         {
             "operatorName": "新约能天使",
@@ -172,7 +164,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504941.html",
             "id": 202504941,
-            "date": "2025-04-01"
+            "date": "2025-04"
         },
         {
             "operatorName": "缪尔赛思",
@@ -183,7 +175,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504900.html",
             "id": 202504900,
-            "date": "2025-04-01"
+            "date": "2025-04"
         },
         {
             "operatorName": "伊内丝",
@@ -194,7 +186,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202504968.html",
             "id": 202504968,
-            "date": "2025-04-01"
+            "date": "2025-04"
         },
         {
             "operatorName": "左乐",
@@ -205,7 +197,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501927.html",
             "id": 202501927,
-            "date": "2025-01-01"
+            "date": "2025-01"
         },
         {
             "operatorName": "黍",
@@ -216,7 +208,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501936.html",
             "id": 202501936,
-            "date": "2025-01-01"
+            "date": "2025-01"
         },
         {
             "operatorName": "余",
@@ -227,7 +219,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202501414.html",
             "id": 202501414,
-            "date": "2025-01-01"
+            "date": "2025-01"
         },
         {
             "operatorName": "年",
@@ -238,7 +230,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412491.html",
             "id": 202412491,
-            "date": "2024-12-09"
+            "date": "2024-12"
         },
         {
             "operatorName": "阿米娅",
@@ -249,7 +241,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412473.html",
             "id": 202412473,
-            "date": "2024-12-01"
+            "date": "2024-12"
         },
         {
             "operatorName": "重岳",
@@ -260,7 +252,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202412452.html",
             "id": 202412452,
-            "date": "2024-12-01"
+            "date": "2024-12"
         },
         {
             "operatorName": "荒芜拉普兰德",
@@ -271,7 +263,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410440.html",
             "id": 202410440,
-            "date": "2024-10-01"
+            "date": "2024-10"
         },
         {
             "operatorName": "缄默德克萨斯",
@@ -282,7 +274,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410409.html",
             "id": 202410409,
-            "date": "2024-10-01"
+            "date": "2024-10"
         },
         {
             "operatorName": "圣约送葬人",
@@ -293,7 +285,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410488.html",
             "id": 202410488,
-            "date": "2024-10-01"
+            "date": "2024-10"
         },
         {
             "operatorName": "塑心",
@@ -304,7 +296,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410467.html",
             "id": 202410467,
-            "date": "2024-10-01"
+            "date": "2024-10"
         },
         {
             "operatorName": "锏",
@@ -315,7 +307,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202410426.html",
             "id": 202410426,
-            "date": "2024-10-01"
+            "date": "2024-10"
         },
         {
             "operatorName": "夜莺",
@@ -326,7 +318,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407435.html",
             "id": 202407435,
-            "date": "2024-07-01"
+            "date": "2024-07"
         },
         {
             "operatorName": "佩佩",
@@ -337,7 +329,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407013.html",
             "id": 202407013,
-            "date": "2024-07-01"
+            "date": "2024-07"
         },
         {
             "operatorName": "纯烬艾雅法拉",
@@ -348,7 +340,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407072.html",
             "id": 202407072,
-            "date": "2024-07-01"
+            "date": "2024-07"
         },
         {
             "operatorName": "焰影苇草",
@@ -359,7 +351,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202407051.html",
             "id": 202407051,
-            "date": "2024-07-01"
+            "date": "2024-07"
         },
         {
             "operatorName": "维什戴尔",
@@ -370,7 +362,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404049.html",
             "id": 202404049,
-            "date": "2024-05-01"
+            "date": "2024-05"
         },
         {
             "operatorName": "缪尔赛思",
@@ -381,7 +373,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404090.html",
             "id": 202404090,
-            "date": "2024-05-01"
+            "date": "2024-05"
         },
         {
             "operatorName": "浊心斯卡蒂",
@@ -392,7 +384,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404008.html",
             "id": 202404008,
-            "date": "2024-05-01"
+            "date": "2024-05"
         },
         {
             "operatorName": "伊内丝",
@@ -403,7 +395,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404087.html",
             "id": 202404087,
-            "date": "2024-05-01"
+            "date": "2024-05"
         },
         {
             "operatorName": "银灰",
@@ -414,7 +406,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202404066.html",
             "id": 202404066,
-            "date": "2024-04-01"
+            "date": "2024-04"
         },
         {
             "operatorName": "黍",
@@ -425,7 +417,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401025.html",
             "id": 202401025,
-            "date": "2024-02-29"
+            "date": "2024-02"
         },
         {
             "operatorName": "林",
@@ -436,7 +428,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401034.html",
             "id": 202401034,
-            "date": "2024-02-29"
+            "date": "2024-02"
         },
         {
             "operatorName": "重岳",
@@ -447,7 +439,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401812.html",
             "id": 202401812,
-            "date": "2024-02-28"
+            "date": "2024-02"
         },
         {
             "operatorName": "焰影苇草",
@@ -458,7 +450,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202401871.html",
             "id": 202401871,
-            "date": "2024-01-01"
+            "date": "2024-01"
         },
         {
             "operatorName": "塑心",
@@ -469,7 +461,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310848.html",
             "id": 202310848,
-            "date": "2023-11-01"
+            "date": "2023-11"
         },
         {
             "operatorName": "玛恩纳",
@@ -480,7 +472,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310850.html",
             "id": 202310850,
-            "date": "2023-11-01"
+            "date": "2023-11"
         },
         {
             "operatorName": "缄默德克萨斯",
@@ -491,7 +483,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202310899.html",
             "id": 202310899,
-            "date": "2023-11-01"
+            "date": "2023-11"
         },
         {
             "operatorName": "令",
@@ -502,7 +494,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202308807.html",
             "id": 202308807,
-            "date": "2023-08-01"
+            "date": "2023-08"
         },
         {
             "operatorName": "百炼嘉维尔",
@@ -513,7 +505,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307886.html",
             "id": 202307886,
-            "date": "2023-07-01"
+            "date": "2023-07"
         },
         {
             "operatorName": "纯烬艾雅法拉",
@@ -524,7 +516,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307865.html",
             "id": 202307865,
-            "date": "2023-07-01"
+            "date": "2023-07"
         },
         {
             "operatorName": "澄闪",
@@ -535,7 +527,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202307824.html",
             "id": 202307824,
-            "date": "2023-07-01"
+            "date": "2023-07"
         },
         {
             "operatorName": "凯尔希",
@@ -546,7 +538,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304833.html",
             "id": 202304833,
-            "date": "2023-04-01"
+            "date": "2023-04"
         },
         {
             "operatorName": "缪尔赛思",
@@ -557,7 +549,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304611.html",
             "id": 202304611,
-            "date": "2023-04-01"
+            "date": "2023-04"
         },
         {
             "operatorName": "归溟幽灵鲨",
@@ -568,7 +560,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304670.html",
             "id": 202304670,
-            "date": "2023-04-01"
+            "date": "2023-04"
         },
         {
             "operatorName": "假日威龙陈",
@@ -579,7 +571,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202304659.html",
             "id": 202304659,
-            "date": "2023-04-01"
+            "date": "2023-04"
         },
         {
             "operatorName": "鸿雪",
@@ -590,7 +582,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202302698.html",
             "id": 202302698,
-            "date": "2023-02-01"
+            "date": "2023-02"
         },
         {
             "operatorName": "重岳",
@@ -601,7 +593,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301606.html",
             "id": 202301606,
-            "date": "2023-01-01"
+            "date": "2023-01"
         },
         {
             "operatorName": "令",
@@ -612,7 +604,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202301647.html",
             "id": 202301647,
-            "date": "2023-01-01"
+            "date": "2023-01"
         },
         {
             "operatorName": "水月",
@@ -623,7 +615,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202211685.html",
             "id": 202211685,
-            "date": "2022-12-15"
+            "date": "2022-12"
         },
         {
             "operatorName": "缄默德克萨斯",
@@ -634,7 +626,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210210.html",
             "id": 202210210,
-            "date": "2022-11-01"
+            "date": "2022-11"
         },
         {
             "operatorName": "异客",
@@ -645,7 +637,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210664.html",
             "id": 202210664,
-            "date": "2022-11-01"
+            "date": "2022-11"
         },
         {
             "operatorName": "耀骑士临光",
@@ -656,7 +648,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210623.html",
             "id": 202210623,
-            "date": "2022-11-01"
+            "date": "2022-11"
         },
         {
             "operatorName": "迷迭香",
@@ -667,7 +659,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210632.html",
             "id": 202210632,
-            "date": "2022-11-01"
+            "date": "2022-11"
         },
         {
             "operatorName": "老鲤",
@@ -678,7 +670,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202210279.html",
             "id": 202210279,
-            "date": "2022-10-01"
+            "date": "2022-10"
         },
         {
             "operatorName": "百炼嘉维尔 ",
@@ -689,7 +681,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208258.html",
             "id": 202208258,
-            "date": "2022-08-01"
+            "date": "2022-08"
         },
         {
             "operatorName": "史尔特尔",
@@ -700,7 +692,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202208297.html",
             "id": 202208297,
-            "date": "2022-08-01"
+            "date": "2022-08"
         },
         {
             "operatorName": "归溟幽灵鲨",
@@ -711,7 +703,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204284.html",
             "id": 202204284,
-            "date": "2022-05-01"
+            "date": "2022-05"
         },
         {
             "operatorName": "浊心斯卡蒂",
@@ -722,7 +714,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202204205.html",
             "id": 202204205,
-            "date": "2022-05-01"
+            "date": "2022-05"
         },
         {
             "operatorName": "傀影",
@@ -733,7 +725,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203222.html",
             "id": 202203222,
-            "date": "2022-04-30"
+            "date": "2022-04"
         },
         {
             "operatorName": "令",
@@ -744,7 +736,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220383.html",
             "id": 20220383,
-            "date": "2022-01-01"
+            "date": "2022-01"
         },
         {
             "operatorName": "夕",
@@ -755,7 +747,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220321.html",
             "id": 20220321,
-            "date": "2022-01-01"
+            "date": "2022-01"
         },
         {
             "operatorName": "耀骑士临光",
@@ -766,7 +758,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220304.html",
             "id": 20220304,
-            "date": "2021-11-01"
+            "date": "2021-11"
         },
         {
             "operatorName": "假日威龙陈",
@@ -777,7 +769,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220345.html",
             "id": 20220345,
-            "date": "2021-08-01"
+            "date": "2021-08"
         },
         {
             "operatorName": "浊心斯卡蒂",
@@ -788,7 +780,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220396.html",
             "id": 20220396,
-            "date": "2021-05-01"
+            "date": "2021-05"
         },
         {
             "operatorName": "夕",
@@ -799,7 +791,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203263.html",
             "id": 202203263,
-            "date": "2021-02-01"
+            "date": "2021-02"
         },
         {
             "operatorName": "年",
@@ -810,7 +802,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220362.html",
             "id": 20220362,
-            "date": "2021-02-01"
+            "date": "2021-02"
         },
         {
             "operatorName": "迷迭香",
@@ -821,7 +813,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220378.html",
             "id": 20220378,
-            "date": "2020-11-01"
+            "date": "2020-11"
         },
         {
             "operatorName": "W",
@@ -832,7 +824,7 @@
             "type": "skin",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202206246.html",
             "id": 202206246,
-            "date": "2020-11-01"
+            "date": "2020-11"
         },
         {
             "operatorName": "W",
@@ -843,7 +835,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/20220319.html",
             "id": 20220319,
-            "date": "2020-05-01"
+            "date": "2020-05"
         },
         {
             "operatorName": "年",
@@ -854,7 +846,7 @@
             "type": "operator",
             "link": "https://ak.hypergryph.com/archive/dynamicCompile/202203231.html",
             "id": 202203231,
-            "date": "2020-01-01"
+            "date": "2020-01"
         }
     ]
 }

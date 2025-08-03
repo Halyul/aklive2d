@@ -260,7 +260,6 @@ export default class Voice {
                 list = list.filter((item) => item !== 'CN_043')
             }
             const id = list[Math.floor(Math.random() * list.length)]
-            console.log(id, list, this.#config.language)
             return id === this.#voice.id.last ? getVoiceId() : id
         }
         this.#playVoice(getVoiceId())

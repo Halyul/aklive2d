@@ -1,6 +1,7 @@
 {
-    "length": 74,
+    "length": 75,
     "dates": [
+        "2025-09",
         "2025-07",
         "2025-06",
         "2025-04",
@@ -34,6 +35,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "凯尔希",
+            "skinName": {
+                "zh-CN": "时遗",
+                "en-US": "The Remains of Time"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/9392.html",
+            "id": 9392,
+            "date": "2025-09"
+        },
         {
             "operatorName": "假日威龙陈",
             "skinName": {

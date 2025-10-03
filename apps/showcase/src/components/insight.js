@@ -1,5 +1,5 @@
-import { createCustomEvent } from '@/components/helper'
 import buildConfig from '!/config.json'
+import { createCustomEvent } from '@/components/helper'
 
 export default class Insight {
     #isInsightInited = false

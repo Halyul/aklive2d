@@ -1,9 +1,9 @@
 import {
+    insertHTMLChild,
     readFile,
-    updateHTMLOptions,
     showRelatedHTML,
     syncHTMLValue,
-    insertHTMLChild,
+    updateHTMLOptions,
 } from '@/components/helper'
 import '@/components/background.css'
 import buildConfig from '!/config.json'

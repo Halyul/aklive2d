@@ -1,5 +1,5 @@
-import React from 'react'
 import buildConfig from '!/config.json'
+import React from 'react'
 
 export default (path = null, skipPageView = false) => {
     React.useEffect(() => {

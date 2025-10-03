@@ -1,17 +1,17 @@
 import path from 'node:path'
-import Matcher from './libs/content_processor.ts'
-import { yaml, file } from '@aklive2d/libs'
-import config from '@aklive2d/config'
-import operators, { OPERATOR_SOURCE_FOLDER } from '@aklive2d/operator'
 import { files as backgrounds } from '@aklive2d/background'
-import { mapping as musics } from '@aklive2d/music'
 import { getLangs } from '@aklive2d/charword-table'
+import config from '@aklive2d/config'
+import { file, yaml } from '@aklive2d/libs'
+import { mapping as musics } from '@aklive2d/music'
+import operators, { OPERATOR_SOURCE_FOLDER } from '@aklive2d/operator'
 import type { ScalarTag } from 'yaml'
+import Matcher from './libs/content_processor.ts'
 import type {
     Assets,
-    TemplateYAML,
     ProjectJSON,
     ProjectJSONProperty,
+    TemplateYAML,
 } from './types.ts'
 
 const DIST_DIR = path.join(import.meta.dirname, config.dir_name.dist)

@@ -1,6 +1,6 @@
 import path from 'node:path'
-import { envParser } from '@aklive2d/libs'
 import config from '@aklive2d/config'
+import { envParser } from '@aklive2d/libs'
 import build from './libs/build.ts'
 import download from './libs/download.ts'
 

@@ -83,9 +83,9 @@ export const syncHTMLValue = (source, targetID) => {
     document.getElementById(targetID).value = source.value
 }
 
-export const readFile = (file, callback = () => {}) => {
+export const readFile = (file, callback = null) => {
     if (!file) return
-    callback(URL.createObjectURL(file.slice()), file.type)
+    callback && callback(URL.createObjectURL(file.slice()), file.type)
 }
 
 export const createCustomEvent = (name, withArg = false) => {

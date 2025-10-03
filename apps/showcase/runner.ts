@@ -1,8 +1,8 @@
 import path from 'node:path'
-import { build as viteBuild } from 'vite'
-import operators from '@aklive2d/operator'
 import { envParser, file } from '@aklive2d/libs'
-import { copyShowcaseData, copyProjectJSON } from '@aklive2d/vite-helpers'
+import operators from '@aklive2d/operator'
+import { copyProjectJSON, copyShowcaseData } from '@aklive2d/vite-helpers'
+import { build as viteBuild } from 'vite'
 import * as dirs from './index.js'
 
 const build = async (namesToBuild: string[], mode: string) => {

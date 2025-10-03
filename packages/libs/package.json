@@ -5,23 +5,20 @@
     "main": "index.ts",
     "type": "module",
     "dependencies": {
-        "@aklive2d/eslint-config": "workspace:*",
-        "@aklive2d/prettier-config": "workspace:*",
-        "sharp": "^0.33.5",
-        "yaml": "^2.7.0",
+        "sharp": "^0.34.4",
+        "yaml": "^2.8.1",
         "yauzl-promise": "^4.0.0",
         "yazl": "^3.3.1"
     },
     "peerDependencies": {
-        "globals": ">=16.0.0",
-        "typescript-eslint": ">=8.31.1",
-        "typescript": ">=5.8.2"
+        "typescript": ">=5.9.3"
     },
     "scripts": {
-        "lint": "eslint && prettier --check ."
+        "lint": "biome lint --write .",
+        "lint:fix": "biome check --write ."
     },
     "devDependencies": {
         "@types/yauzl-promise": "^4.0.1",
-        "@types/yazl": "^2.4.6"
+        "@types/yazl": "^3.3.0"
     }
 }

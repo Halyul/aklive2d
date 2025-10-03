@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
+import { useEffect, useRef } from 'react'
 
 export default function VoiceElement({ src, replay, handleAduioStateChange }) {
     const audioRef = useRef(null)

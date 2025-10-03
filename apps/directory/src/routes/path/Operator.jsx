@@ -1,18 +1,17 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
-import classes from '@/scss/operator/Operator.module.scss'
-import { useConfig } from '@/state/config'
-import { useLanguage } from '@/state/language'
-import { useHeader } from '@/state/header'
-import { useAppbar } from '@/state/appbar'
-import VoiceElement from '@/component/voice'
-import useInsight from '@/state/insight'
-import { Player as SpinePlayer } from '@aklive2d/module'
-import Border from '@/component/border'
-import { useI18n } from '@/state/language'
-import Switch from '@/component/switch'
-import { atom, useAtom } from 'jotai'
 import buildConfig from '!/config.json'
+import { Player as SpinePlayer } from '@aklive2d/module'
+import { atom, useAtom } from 'jotai'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import Border from '@/component/border'
+import Switch from '@/component/switch'
+import VoiceElement from '@/component/voice'
+import classes from '@/scss/operator/Operator.module.scss'
+import { useAppbar } from '@/state/appbar'
+import { useConfig } from '@/state/config'
+import { useHeader } from '@/state/header'
+import useInsight from '@/state/insight'
+import { useI18n, useLanguage } from '@/state/language'
 
 const musicMapping = buildConfig.music_mapping
 const getVoiceFoler = (lang) => {
@@ -56,7 +55,6 @@ export default function Operator() {
     const { setTitle, setTabs, setHeaderIcon, setFastNavigation } = useHeader()
     const { setExtraArea } = useAppbar()
     const [config, setConfig] = useState(null)
-    // eslint-disable-next-line no-unused-vars
     const _trackEvt = useInsight(`/${key}`)
     const spineRef = useRef(null)
     const [spineAnimationName, setSpineAnimationName] = useState(
@@ -567,8 +565,8 @@ export default function Operator() {
                             style={
                                 config.invert_filter
                                     ? {
-                                          filter: 'invert(1)',
-                                      }
+                                        filter: 'invert(1)',
+                                    }
                                     : {}
                             }
                         />

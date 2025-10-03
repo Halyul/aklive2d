@@ -9,24 +9,20 @@
         "build": "mode=build bun runner.ts",
         "build:directory": "mode=build:directory bun runner.ts",
         "preview:showcase": "bunx --bun vite preview",
-        "lint": "eslint && prettier --check ."
+        "lint": "biome lint --write .",
+        "lint:fix": "biome check --write ."
     },
     "peerDependencies": {
-        "globals": ">=16.0.0",
-        "typescript-eslint": ">=8.31.1",
-        "typescript": ">=5.8.2"
+        "typescript": ">=5.9.3"
     },
     "devDependencies": {
-        "vite": "^6.1.5",
-        "@aklive2d/eslint-config": "workspace:*",
+        "vite": "^7.1.9",
         "@aklive2d/postcss-config": "workspace:*",
-        "@aklive2d/stylelint-config": "workspace:*",
         "@aklive2d/config": "workspace:*",
         "@aklive2d/libs": "workspace:*",
         "@aklive2d/assets": "workspace:*",
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/vite-helpers": "workspace:*",
-        "@aklive2d/module": "workspace:*",
-        "@aklive2d/prettier-config": "workspace:*"
+        "@aklive2d/module": "workspace:*"
     }
 }

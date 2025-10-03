@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import classes from './scss/popup.module.scss'
-import ReturnButton from '@/component/return_button'
-import Border from '@/component/border'
 import PropTypes from 'prop-types'
+import { useState } from 'react'
+import Border from '@/component/border'
+import ReturnButton from '@/component/return_button'
+import classes from './scss/popup.module.scss'
 
 export default function Popup(props) {
     const [hidden, setHidden] = useState(true)

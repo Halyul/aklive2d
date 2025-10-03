@@ -1,12 +1,12 @@
 import path from 'node:path'
-import { file } from '@aklive2d/libs'
 import config from '@aklive2d/config'
+import { file } from '@aklive2d/libs'
 import type {
-    OfficialDataResp,
-    OfficialInfoV2,
     OfficialDataOperatorObj,
+    OfficialDataResp,
     OfficialInfoMapping,
     OfficialInfoOperatorConfigV2,
+    OfficialInfoV2,
 } from './types'
 
 const AUTO_UPDATE_FOLDER = path.resolve(

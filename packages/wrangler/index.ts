@@ -1,22 +1,22 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import crypto from 'node:crypto'
 import { Buffer } from 'node:buffer'
 import { spawn } from 'node:child_process'
-import pThrottle from 'p-throttle'
-import { file as fileLib } from '@aklive2d/libs'
+import crypto from 'node:crypto'
+import fs from 'node:fs'
+import path from 'node:path'
+import { BACKGROUND_DIR as BACKGROUND_DATA_DIR } from '@aklive2d/background'
 import config from '@aklive2d/config'
 import { unzipDownload } from '@aklive2d/downloader'
-import * as showcaseDirs from '@aklive2d/showcase'
-import { OPERATOR_SOURCE_FOLDER as OPERATOR_DATA_DIR } from '@aklive2d/operator'
+import { file as fileLib } from '@aklive2d/libs'
 import { DATA_DIR as MUSIC_DATA_DIR } from '@aklive2d/music'
-import { BACKGROUND_DIR as BACKGROUND_DATA_DIR } from '@aklive2d/background'
+import { OPERATOR_SOURCE_FOLDER as OPERATOR_DATA_DIR } from '@aklive2d/operator'
+import * as showcaseDirs from '@aklive2d/showcase'
+import pThrottle from 'p-throttle'
 import type {
-    GenerateDirTreeOpts,
     DirTree,
-    LookupTable,
-    HashItem,
     DownloadList,
+    GenerateDirTreeOpts,
+    HashItem,
+    LookupTable,
 } from './types.ts'
 
 const dataDir = path.join(import.meta.dirname, config.dir_name.data)

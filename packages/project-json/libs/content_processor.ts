@@ -1,4 +1,4 @@
-import type { OperatorConfig, Codename } from '@aklive2d/operator/types'
+import type { Codename, OperatorConfig } from '@aklive2d/operator/types'
 import type { Assets } from '../types.ts'
 
 export default class Matcher {

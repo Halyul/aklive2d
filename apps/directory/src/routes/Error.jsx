@@ -1,17 +1,17 @@
-import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
-import { useNavigate, useRouteError } from 'react-router-dom'
-import header from '@/scss/root/header.module.scss'
-import classes from '@/scss/error/Error.module.scss'
+import buildConfig from '!/config.json'
+import { Player as SpinePlayer } from '@aklive2d/module'
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
-import Switch from '@/component/switch'
-import ReturnButton from '@/component/return_button'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useNavigate, useRouteError } from 'react-router-dom'
 import { Typewriter } from 'react-simple-typewriter'
-import { useHeader } from '@/state/header'
+import ReturnButton from '@/component/return_button'
+import Switch from '@/component/switch'
 import VoiceElement from '@/component/voice'
-import { Player as SpinePlayer } from '@aklive2d/module'
+import classes from '@/scss/error/Error.module.scss'
+import header from '@/scss/root/header.module.scss'
+import { useHeader } from '@/state/header'
 import useInsight from '@/state/insight'
-import buildConfig from '!/config.json'
 
 const voiceOnAtom = atomWithStorage('voiceOn', false)
 const config = buildConfig.error_files
@@ -20,8 +20,7 @@ const filename = obj.key.replace(/#/g, '%23')
 const padding = obj.paddings
 let lastVoiceState = 'ended'
 
-export default function Error() {
-    // eslint-disable-next-line no-unused-vars
+export default function ErrorPage() {
     const _trackEvt = useInsight()
     const error = useRouteError()
     const navigate = useNavigate()

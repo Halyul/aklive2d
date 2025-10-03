@@ -1,9 +1,9 @@
 import {
     insertHTMLChild,
-    updateElementPosition,
     readFile,
     showRelatedHTML,
     syncHTMLValue,
+    updateElementPosition,
 } from '@/components/helper'
 import '@/components/logo.css'
 import buildConfig from '!/config.json'

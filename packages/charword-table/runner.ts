@@ -1,5 +1,5 @@
-import { build, update } from './index.ts'
 import { envParser, error } from '@aklive2d/libs'
+import { build, update } from './index.ts'
 
 async function main() {
     let err: string[] = []

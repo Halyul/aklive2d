@@ -1,20 +1,20 @@
 import path from 'node:path'
+import { DIST_DIR as ASSETS_DIST_DIR } from '@aklive2d/assets'
+import { files as backgroundFiles } from '@aklive2d/background'
+import { defaultRegion } from '@aklive2d/charword-table'
 import config from '@aklive2d/config'
+import { env, file } from '@aklive2d/libs'
+import { mapping as musicMapping } from '@aklive2d/music'
 import operators, {
-    OPERATOR_SOURCE_FOLDER,
     generateAssetsJson,
+    OPERATOR_SOURCE_FOLDER,
 } from '@aklive2d/operator'
 import {
-    getExtractedFolder,
-    getActualFilename,
     findSkel,
+    getActualFilename,
+    getExtractedFolder,
 } from '@aklive2d/operator/libs/utils'
 import type { OperatorConfig } from '@aklive2d/operator/types'
-import { DIST_DIR as ASSETS_DIST_DIR } from '@aklive2d/assets'
-import { file, env } from '@aklive2d/libs'
-import { files as backgroundFiles } from '@aklive2d/background'
-import { mapping as musicMapping } from '@aklive2d/music'
-import { defaultRegion } from '@aklive2d/charword-table'
 import type { ProjectJSON } from '@aklive2d/project-json/types'
 
 interface DirectoryOperatorConfig extends OperatorConfig {

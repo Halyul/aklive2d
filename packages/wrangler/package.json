@@ -5,11 +5,9 @@
     "type": "module",
     "license": "MIT",
     "dependencies": {
-        "p-throttle": "^7.0.0",
+        "p-throttle": "^8.0.0",
         "@aklive2d/libs": "workspace:*",
-        "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/config": "workspace:*",
-        "@aklive2d/prettier-config": "workspace:*",
         "@aklive2d/downloader": "workspace:*",
         "@aklive2d/showcase": "workspace:*",
         "@aklive2d/operator": "workspace:*",
@@ -17,8 +15,6 @@
         "@aklive2d/background": "workspace:*"
     },
     "peerDependencies": {
-        "globals": ">=16.0.0",
-        "typescript-eslint": ">=8.31.1",
-        "typescript": ">=5.8.2"
+        "typescript": ">=5.9.3"
     }
 }

@@ -208,7 +208,9 @@ export class Player {
                     : config.premultipliedAlpha,
             fps: config.fps ? config.fps : 60,
             scale: config.scale ? config.scale : 1,
+            // biome-ignore lint/suspicious/noEmptyBlockStatements: placeholder
             success: config.success ? config.success : (_widget) => {},
+            // biome-ignore lint/suspicious/noEmptyBlockStatements: placeholder
             error: config.error ? config.error : (_widget, _msg) => {},
             defaultMix:
                 typeof config.defaultMix === 'undefined'
@@ -303,7 +305,7 @@ export class Player {
             this.canvas.height = Math.floor(h * this.devicePixelRatio)
         }
         this.context.gl.viewport(0, 0, this.canvas.width, this.canvas.height)
-        // eslint-disable-next-line
+        // biome-ignore lint/suspicious/noEmptyBlockStatements: placeholder
         if (resizeMode === spine.webgl.ResizeMode.Stretch) {
         } else if (resizeMode === spine.webgl.ResizeMode.Expand) {
             this.sceneRenderer.camera.setViewport(w, h)

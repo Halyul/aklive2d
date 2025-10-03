@@ -1,14 +1,14 @@
 import path from 'node:path'
-import { stringify } from 'yaml'
-import { yaml, file } from '@aklive2d/libs'
 import config from '@aklive2d/config'
+import { file, yaml } from '@aklive2d/libs'
 import { mapping as officialInfoMapping } from '@aklive2d/official-info'
-import { CONFIG_PATH, skinTable, CONFIG_FOLDER } from '../index.ts'
+import { stringify } from 'yaml'
+import { CONFIG_FOLDER, CONFIG_PATH, skinTable } from '../index.ts'
 import {
-    getVoiceFolders,
-    getExtractedFolder,
-    findSkinEntry,
     findCodename,
+    findSkinEntry,
+    getExtractedFolder,
+    getVoiceFolders,
 } from './utils.ts'
 
 export const init = (name: string, id: string) => {

@@ -1,16 +1,16 @@
 import path from 'node:path'
-import unidecode from 'unidecode'
 import config from '@aklive2d/config'
-import { DIST_DIR, OPERATOR_SOURCE_FOLDER } from '../index.ts'
 import { file } from '@aklive2d/libs'
+import type { OfficialInfoOperatorConfigV2 } from '@aklive2d/official-info/types'
+import unidecode from 'unidecode'
+import { DIST_DIR, OPERATOR_SOURCE_FOLDER } from '../index.ts'
 import {
     CharacterTableJson,
-    SkinTableJson,
-    OperatorEntryType,
-    SkinTableJsonCharSkinEntry,
     Codename,
+    OperatorEntryType,
+    SkinTableJson,
+    SkinTableJsonCharSkinEntry,
 } from '../types.ts'
-import type { OfficialInfoOperatorConfigV2 } from '@aklive2d/official-info/types'
 
 export const getExtractedFolder = (name: string) => {
     return path.join(OPERATOR_SOURCE_FOLDER, name, config.dir_name.extracted)

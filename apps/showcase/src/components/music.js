@@ -1,12 +1,12 @@
+import buildConfig from '!/config.json'
 import {
+    getCurrentHTMLOptions,
     insertHTMLChild,
-    updateHTMLOptions,
+    readFile,
     showRelatedHTML,
     syncHTMLValue,
-    readFile,
-    getCurrentHTMLOptions,
+    updateHTMLOptions,
 } from '@/components/helper'
-import buildConfig from '!/config.json'
 
 export default class Music {
     #el = document.createElement('div')

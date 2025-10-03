@@ -6,21 +6,18 @@
     "license": "MIT",
     "dependencies": {
         "@aklive2d/libs": "workspace:*",
-        "@aklive2d/eslint-config": "workspace:*",
         "@aklive2d/config": "workspace:*",
         "@aklive2d/operator": "workspace:*",
         "@aklive2d/background": "workspace:*",
         "@aklive2d/charword-table": "workspace:*",
-        "@aklive2d/music": "workspace:*",
-        "@aklive2d/prettier-config": "workspace:*"
+        "@aklive2d/music": "workspace:*"
     },
     "peerDependencies": {
-        "globals": ">=16.0.0",
-        "typescript-eslint": ">=8.31.1",
-        "typescript": ">=5.8.2"
+        "typescript": ">=5.9.3"
     },
     "scripts": {
         "build": "mode=build bun runner.ts",
-        "lint": "eslint && prettier --check ."
+        "lint": "biome lint --write .",
+        "lint:fix": "biome check --write ."
     }
 }

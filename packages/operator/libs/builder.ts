@@ -1,13 +1,13 @@
 import path from 'node:path'
 import config from '@aklive2d/config'
-import { file, alphaComposite } from '@aklive2d/libs'
+import { alphaComposite, file } from '@aklive2d/libs'
 import operators, {
     DIST_DIR,
-    OPERATOR_SOURCE_FOLDER,
     generateAssetsJson,
+    OPERATOR_SOURCE_FOLDER,
 } from '../index.ts'
-import { getExtractedFolder, getDistFolder } from './utils.ts'
 import type { PortraitHub, PortraitJson } from '../types.ts'
+import { getDistFolder, getExtractedFolder } from './utils.ts'
 
 export const build = async (namesToBuild: string[]) => {
     const names = !namesToBuild.length ? Object.keys(operators) : namesToBuild

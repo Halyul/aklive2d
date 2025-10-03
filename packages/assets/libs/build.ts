@@ -1,6 +1,6 @@
 import path from 'node:path'
-import { file } from '@aklive2d/libs'
 import config from '@aklive2d/config'
+import { file } from '@aklive2d/libs'
 import { DIST_DIR } from '../index.ts'
 
 export default async (packageDir: string) => {

@@ -1,5 +1,5 @@
-import { useEffect, useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
+import { useCallback, useEffect, useState } from 'react'
 import classes from './scss/totop_button.module.scss'
 
 export default function ToTopButton(props) {

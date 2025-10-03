@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import PropTypes from 'prop-types'
-import classes from './scss/search_box.module.scss'
+import { useState } from 'react'
 import { useI18n } from '@/state/language'
+import classes from './scss/search_box.module.scss'
 
 export default function SearchBox(props) {
     const { i18n } = useI18n()

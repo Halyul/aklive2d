@@ -1,6 +1,6 @@
 import path from 'node:path'
-import { githubDownload } from '@aklive2d/downloader'
 import config from '@aklive2d/config'
+import { githubDownload } from '@aklive2d/downloader'
 import { AUTO_UPDATE_FOLDER } from '../index.ts'
 
 export const update = async () => {

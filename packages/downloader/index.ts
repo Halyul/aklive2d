@@ -1,9 +1,9 @@
-import path from 'node:path'
-import fs from 'node:fs'
 import { Buffer } from 'node:buffer'
+import fs from 'node:fs'
+import path from 'node:path'
 import { pipeline } from 'node:stream/promises'
-import pThrottle from 'p-throttle'
 import { file as fileLib } from '@aklive2d/libs'
+import pThrottle from 'p-throttle'
 
 export type UnzipDownloadItem = {
     name: string

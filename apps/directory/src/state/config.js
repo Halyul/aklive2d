@@ -1,6 +1,6 @@
 import CONFIG from '!/config.json'
-import { useCallback } from 'react'
 import { atom, useAtom } from 'jotai'
+import { useCallback } from 'react'
 
 const officialUpdateAtom = atom({})
 let operators = []

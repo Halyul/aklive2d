@@ -1,9 +1,9 @@
 import {
     insertHTMLChild,
-    updateElementPosition,
-    updateHTMLOptions,
     showRelatedHTML,
     syncHTMLValue,
+    updateElementPosition,
+    updateHTMLOptions,
 } from '@/components/helper'
 import '@/components/voice.css'
 import buildConfig from '!/config.json'

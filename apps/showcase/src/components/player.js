@@ -1,11 +1,11 @@
+import { Player as SpinePlayer } from '@aklive2d/module'
 import {
+    createCustomEvent,
     insertHTMLChild,
-    updateHTMLOptions,
     showRelatedHTML,
     syncHTMLValue,
-    createCustomEvent,
+    updateHTMLOptions,
 } from '@/components/helper'
-import { Player as SpinePlayer } from '@aklive2d/module'
 import '@/components/player.css'
 import buildConfig from '!/config.json'
 

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import type { CollectionTag, ScalarTag, SchemaOptions } from 'yaml'
 import { parse } from 'yaml'
-import type { Tags, ScalarTag, SchemaOptions, CollectionTag } from 'yaml'
 
 export function read(
     file_dir: string,

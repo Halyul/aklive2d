@@ -1,16 +1,16 @@
 import path from 'node:path'
-import { file } from '@aklive2d/libs'
-import { githubDownload } from '@aklive2d/downloader'
 import config from '@aklive2d/config'
+import { githubDownload } from '@aklive2d/downloader'
+import { file } from '@aklive2d/libs'
 import type {
-    DisplayMetaTable,
     AudioDataTable,
-    MusicTable,
+    DisplayMetaTable,
+    MusicDataItem,
     MusicFileMapping,
     MusicFiles,
     MusicItem,
-    MusicDataItem,
     MusicMapping,
+    MusicTable,
 } from './types.ts'
 
 const AUTO_UPDATE_FOLDER = path.resolve(

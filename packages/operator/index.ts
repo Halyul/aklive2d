@@ -1,21 +1,20 @@
-import { TitleLanguages } from './../config/types'
 import path from 'node:path'
-import { yaml, file, alphaComposite } from '@aklive2d/libs'
 import config from '@aklive2d/config'
-import { envParser } from '@aklive2d/libs'
+import { alphaComposite, envParser, file, yaml } from '@aklive2d/libs'
 import { mapping as officialInfoMapping } from '@aklive2d/official-info'
-import type {
-    Config,
-    AssetsJson,
-    CharacterTableJson,
-    SkinTableJson,
-} from './types.ts'
+import { TitleLanguages } from './../config/types'
 import {
     findLogo,
-    findSkinEntry,
     findSkel,
+    findSkinEntry,
     getActualFilename,
 } from './libs/utils.ts'
+import type {
+    AssetsJson,
+    CharacterTableJson,
+    Config,
+    SkinTableJson,
+} from './types.ts'
 
 export const AUTO_UPDATE_FOLDER = path.resolve(
     import.meta.dirname,

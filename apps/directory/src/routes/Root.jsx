@@ -1,26 +1,26 @@
-import { useState, useEffect, useMemo, useCallback } from 'react'
 import PropTypes from 'prop-types'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
-    Outlet,
     Link,
     NavLink,
-    useNavigate,
+    Outlet,
     ScrollRestoration,
+    useNavigate,
 } from 'react-router-dom'
-import classes from '@/scss/root/Root.module.scss'
-import header from '@/scss/root/header.module.scss'
-import footer from '@/scss/root/footer.module.scss'
-import drawer from '@/scss/root/drawer.module.scss'
-import routes from '@/routes'
-import { useConfig } from '@/state/config'
-import { useHeader } from '@/state/header'
-import { useAppbar } from '@/state/appbar'
-import { useI18n, useLanguage } from '@/state/language'
-import Dropdown from '@/component/dropdown'
-import Popup from '@/component/popup'
 import Border from '@/component/border'
 import CharIcon from '@/component/char_icon'
+import Dropdown from '@/component/dropdown'
+import Popup from '@/component/popup'
 import ToTopButton from '@/component/totop_button'
+import routes from '@/routes'
+import drawer from '@/scss/root/drawer.module.scss'
+import footer from '@/scss/root/footer.module.scss'
+import header from '@/scss/root/header.module.scss'
+import classes from '@/scss/root/Root.module.scss'
+import { useAppbar } from '@/state/appbar'
+import { useConfig } from '@/state/config'
+import { useHeader } from '@/state/header'
+import { useI18n, useLanguage } from '@/state/language'
 
 const currentYear = new Date().getFullYear()
 

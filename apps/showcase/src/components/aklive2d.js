@@ -1,17 +1,17 @@
-import Voice from '@/components/voice'
-import Fallback from '@/components/fallback'
-import Music from '@/components/music'
-import Player from '@/components/player'
 import Background from '@/components/background'
-import Logo from '@/components/logo'
-import Insight from '@/components/insight'
 import Events from '@/components/events'
+import Fallback from '@/components/fallback'
 import {
-    isWebGLSupported,
-    insertHTMLChild,
     addEventListeners,
+    insertHTMLChild,
+    isWebGLSupported,
     updateElementPosition,
 } from '@/components/helper'
+import Insight from '@/components/insight'
+import Logo from '@/components/logo'
+import Music from '@/components/music'
+import Player from '@/components/player'
+import Voice from '@/components/voice'
 import '@/components/aklive2d.css'
 
 export default class AKLive2D {

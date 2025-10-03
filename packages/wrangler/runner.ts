@@ -1,5 +1,5 @@
 import { envParser } from '@aklive2d/libs'
-import { upload, download, deploy } from './index.ts'
+import { deploy, download, upload } from './index.ts'
 
 async function main() {
     const { mode } = envParser.parse({

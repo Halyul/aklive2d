@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 import classes from './scss/dropdown.module.scss'
 
 export default function Dropdown(props) {

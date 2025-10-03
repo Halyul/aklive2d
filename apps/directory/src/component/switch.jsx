@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import classes from './scss/switch.module.scss'
+import { useEffect, useState } from 'react'
 import { useI18n } from '@/state/language'
+import classes from './scss/switch.module.scss'
 
 export default function Switch(props) {
     const [on, setOn] = useState(props.on)

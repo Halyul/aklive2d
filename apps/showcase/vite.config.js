@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
 import path from 'node:path'
-import { has } from '@aklive2d/operator'
 import { envParser, file } from '@aklive2d/libs'
+import { has } from '@aklive2d/operator'
 import { copyShowcaseData } from '@aklive2d/vite-helpers'
+import { defineConfig } from 'vite'
 import * as dirs from './index.js'
 
 // https://vite.dev/config/

@@ -1,9 +1,9 @@
 import path from 'node:path'
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
 import config from '@aklive2d/config'
 import * as showcaseDirs from '@aklive2d/showcase'
 import { copyDirectoryData } from '@aklive2d/vite-helpers'
+import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig(async () => {

@@ -1,10 +1,10 @@
 import path from 'node:path'
+import { type UnzipDownloadItem, unzipDownload } from '@aklive2d/downloader'
 import { file } from '@aklive2d/libs'
-import { unzipDownload, type UnzipDownloadItem } from '@aklive2d/downloader'
-import { getOperatorId, getOperatorAlternativeId } from '@aklive2d/operator'
 import { mapping } from '@aklive2d/music'
+import { getOperatorAlternativeId, getOperatorId } from '@aklive2d/operator'
 import config from '../index.ts'
-import type { UpdateList, ItemToDownload, AbInfosItem } from '../types.ts'
+import type { AbInfosItem, ItemToDownload, UpdateList } from '../types.ts'
 
 export default async (dataDir: string) => {
     await Promise.all(

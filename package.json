@@ -1,43 +1,42 @@
 {
-    "private": true,
-    "scripts": {
-        "build": "turbo run build",
-        "dev:showcase": "turbo run dev:showcase --ui tui",
-        "preview:showcase": "turbo run preview:showcase --ui tui",
-        "dev:directory": "turbo run dev:directory --ui tui",
-        "preview:directory": "turbo run preview:directory --ui tui",
-        "preview": "http-server ./dist",
-        "lint": "turbo run lint",
-        "update": "turbo run update",
-        "init": "turbo run init",
-        "download:game": "turbo run download:game",
-        "build:directory": "turbo run build:directory",
-        "build:cleanup": "turbo run build:cleanup"
-    },
-    "devDependencies": {
-        "@types/jsdom": "^21.1.7",
-        "cz-conventional-changelog": "^3.3.0",
-        "eslint": "^9.32.0",
-        "http-server": "^14.1.1",
-        "prettier": "^3.6.2",
-        "stylelint": "^16.23.0",
-        "turbo": "^2.5.5",
-        "typescript": "5.8.2"
-    },
-    "name": "aklive2d",
-    "type": "module",
-    "config": {
-        "commitizen": {
-            "path": "cz-conventional-changelog"
-        }
-    },
-    "packageManager": "bun@1.2.11",
-    "workspaces": [
-        "packages/*",
-        "apps/*"
-    ],
-    "trustedDependencies": [
-        "@parcel/watcher",
-        "@swc/core"
-    ]
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev:showcase": "turbo run dev:showcase --ui tui",
+    "preview:showcase": "turbo run preview:showcase --ui tui",
+    "dev:directory": "turbo run dev:directory --ui tui",
+    "preview:directory": "turbo run preview:directory --ui tui",
+    "preview": "http-server ./dist",
+    "lint": "turbo run lint",
+    "update": "turbo run update",
+    "init": "turbo run init",
+    "download:game": "turbo run download:game",
+    "build:directory": "turbo run build:directory",
+    "build:cleanup": "turbo run build:cleanup"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "http-server": "^14.1.1",
+    "turbo": "^2.5.8",
+    "typescript": "5.9.3"
+  },
+  "name": "aklive2d",
+  "type": "module",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "packageManager": "bun@1.2.11",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@swc/core",
+    "esbuild",
+    "sharp"
+  ]
 }

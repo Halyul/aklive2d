@@ -1,6 +1,6 @@
 import { envParser } from '@aklive2d/libs'
-import { init } from './libs/initer.ts'
 import { build } from './libs/builder.ts'
+import { init } from './libs/initer.ts'
 import { update } from './libs/updater.ts'
 
 type Args = {

@@ -1,19 +1,19 @@
 import path from 'node:path'
-import { file } from '@aklive2d/libs'
-import { githubDownload } from '@aklive2d/downloader'
 import config from '@aklive2d/config'
+import { githubDownload } from '@aklive2d/downloader'
+import { file } from '@aklive2d/libs'
 import operators, {
-    getOperatorId,
     getOperatorAlternativeId,
+    getOperatorId,
     OPERATOR_SOURCE_FOLDER,
 } from '@aklive2d/operator'
 import type {
-    Region,
-    CharwordTableJson,
-    OperatorCharwordTable,
     CharwordTable,
-    VoiceRegionObject,
+    CharwordTableJson,
     InfoRegionObject,
+    OperatorCharwordTable,
+    Region,
+    VoiceRegionObject,
 } from './types.ts'
 
 // zh_TW uses an older version of charword_table.json

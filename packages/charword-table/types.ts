@@ -108,7 +108,6 @@ export type OperatorCharwordTable = {
 }
 
 export type VoiceRegionObject = {
-    // eslint-disable-next-line
     [region in Region]: {
         [wordkey: string]: {
             [voiceId: string]: {
@@ -120,7 +119,6 @@ export type VoiceRegionObject = {
 }
 
 export type InfoRegionObject = {
-    // eslint-disable-next-line
     [region in Region]: {
         [wordkey: string]: {
             [voiceLangType: string]: string[]

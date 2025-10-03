@@ -1,27 +1,25 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
-import PropTypes from 'prop-types'
-import { NavLink, Link } from 'react-router-dom'
-import classes from '@/scss/home/Home.module.scss'
-import { useConfig } from '@/state/config'
-import { useI18n } from '@/state/language'
-import { useLanguage } from '@/state/language'
-import { useHeader } from '@/state/header'
-import { useAppbar } from '@/state/appbar'
-import VoiceElement from '@/component/voice'
+import buildConfig from '!/config.json'
 import { useAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
-import CharIcon from '@/component/char_icon'
+import PropTypes from 'prop-types'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import Border from '@/component/border'
-import useInsight from '@/state/insight'
-import Switch from '@/component/switch'
+import CharIcon from '@/component/char_icon'
 import SearchBox from '@/component/search_box'
-import buildConfig from '!/config.json'
+import Switch from '@/component/switch'
+import VoiceElement from '@/component/voice'
+import classes from '@/scss/home/Home.module.scss'
+import { useAppbar } from '@/state/appbar'
+import { useConfig } from '@/state/config'
+import { useHeader } from '@/state/header'
+import useInsight from '@/state/insight'
+import { useI18n, useLanguage } from '@/state/language'
 
 const voiceOnAtom = atomWithStorage('voiceOn', false)
 let lastVoiceState = 'ended'
 
 export default function Home() {
-    // eslint-disable-next-line
     const _trackEvt = useInsight()
     const { setTitle, setTabs, currentTab, setHeaderIcon, setFastNavigation } =
         useHeader()
@@ -122,7 +120,7 @@ export default function Home() {
         const list = navigationList.filter((item) => {
             return (
                 item.name.toLowerCase().indexOf(searchField.toLowerCase()) !==
-                    -1 || item.type === 'date'
+                -1 || item.type === 'date'
             )
         })
         const newList = []
@@ -239,7 +237,7 @@ export default function Home() {
                                                                         }
                                                                         viewBox={
                                                                             entry.type ===
-                                                                            'operator'
+                                                                                'operator'
                                                                                 ? '0 0 88.969 71.469'
                                                                                 : '0 0 94.563 67.437'
                                                                         }
@@ -251,25 +249,24 @@ export default function Home() {
                                                                     }
                                                                 >
                                                                     {language ===
-                                                                    'zh-CN'
+                                                                        'zh-CN'
                                                                         ? entry.type ===
-                                                                          'skin'
-                                                                            ? `${
-                                                                                  entry
-                                                                                      .skinName[
-                                                                                      'zh-CN'
-                                                                                  ]
-                                                                              } · ${entry.operatorName}`
+                                                                            'skin'
+                                                                            ? `${entry
+                                                                                .skinName[
+                                                                            'zh-CN'
+                                                                            ]
+                                                                            } · ${entry.operatorName}`
                                                                             : entry.operatorName
                                                                         : entry
-                                                                              .skinName[
-                                                                              'en-US'
-                                                                          ]}
+                                                                            .skinName[
+                                                                        'en-US'
+                                                                        ]}
                                                                 </section>
                                                                 <section
                                                                     className={
                                                                         classes[
-                                                                            'arrow-icon'
+                                                                        'arrow-icon'
                                                                         ]
                                                                     }
                                                                 >
@@ -386,9 +383,9 @@ function OperatorElement({ item, hidden, handleVoicePlay }) {
                             <span className={classes.text}>
                                 {
                                     item.codename[
-                                        language.startsWith('en')
-                                            ? alternateLang
-                                            : textDefaultLang
+                                    language.startsWith('en')
+                                        ? alternateLang
+                                        : textDefaultLang
                                     ]
                                 }
                             </span>

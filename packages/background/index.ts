@@ -1,8 +1,8 @@
 import path from 'node:path'
-import sharp from 'sharp'
-import { file } from '@aklive2d/libs'
 import config from '@aklive2d/config'
+import { file } from '@aklive2d/libs'
 import { mapping as musicMapping } from '@aklive2d/music'
+import sharp from 'sharp'
 
 export const BACKGROUND_DIR = path.join(
     import.meta.dirname,

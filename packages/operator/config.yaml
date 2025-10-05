@@ -73,3 +73,5 @@ thorns_the_lodestar_boundless_sail: !include config/thorns_the_lodestar_boundles
 hoshiguma_the_breacher: !include config/hoshiguma_the_breacher.yaml
 necrass_summer_flowers_fa161: !include config/necrass_summer_flowers_fa161.yaml
 chen_the_holungday_summer_flowers_fa161: !include config/chen_the_holungday_summer_flowers_fa161.yaml
+kaltsit_the_remains_of_time: !include config/kaltsit_the_remains_of_time.yaml
+kaltsit_the_remains_of_time_sp: !include config/kaltsit_the_remains_of_time_sp.yaml

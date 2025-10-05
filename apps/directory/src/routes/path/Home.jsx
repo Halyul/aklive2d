@@ -23,7 +23,7 @@ export default function Home() {
     const _trackEvt = useInsight()
     const { setTitle, setTabs, currentTab, setHeaderIcon, setFastNavigation } =
         useHeader()
-    const { config, operators, officialUpdate } = useConfig()
+    const { config, operators, newOperators } = useConfig()
     const { i18n } = useI18n()
     const [content, setContent] = useState([])
     const [voiceOn] = useAtom(voiceOnAtom)
@@ -174,7 +174,7 @@ export default function Home() {
 
     return (
         <section>
-            {officialUpdate.length > operators.length && (
+            {newOperators.length > 0 && (
                 <section>
                     <section
                         className={`${classes['official-update']} ${classes.group}`}
@@ -182,30 +182,17 @@ export default function Home() {
                         <section className={classes.info}>
                             <section className={classes.content}>
                                 <section className={classes.text}>
-                                    {officialUpdate.length - operators.length}{' '}
-                                    {i18n('new_op_wait_to_update')}
+                                    {`${newOperators.length} ${i18n('new_op_wait_to_update')}`}
                                 </section>
                                 <section
                                     className={`${classes['styled-selection']}`}
                                 >
-                                    {officialUpdate.info
-                                        .filter(
-                                            (e) =>
-                                                !operators.find(
-                                                    (o) =>
-                                                        o.official_id ===
-                                                        e.id.toString()
-                                                )
-                                        )
-                                        .map((entry, index) => {
+                                    {newOperators.map((entry, index) => {
                                             return (
                                                 <Link
                                                     reloadDocument
                                                     to={entry.link}
                                                     target="_blank"
-                                                    style={{
-                                                        color: entry.color,
-                                                    }}
                                                     key={index}
                                                 >
                                                     <section
@@ -301,7 +288,7 @@ export default function Home() {
                             </section>
                         </section>
                         <section className={classes.date}>
-                            {officialUpdate.latest}
+                            {newOperators[0].date}
                         </section>
                     </section>
                     <Border />

@@ -11,20 +11,21 @@
         "lint:fix": "biome check --write ."
     },
     "dependencies": {
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0",
-        "jotai": "^2.15.0",
-        "react-router-dom": "^7.9.3",
-        "react-simple-typewriter": "^5.0.1",
-        "reset-css": "^5.0.2",
-        "@aklive2d/postcss-config": "workspace:*",
+        "@aklive2d/assets": "workspace:*",
         "@aklive2d/config": "workspace:*",
         "@aklive2d/libs": "workspace:*",
-        "@aklive2d/assets": "workspace:*",
+        "@aklive2d/module": "workspace:*",
         "@aklive2d/operator": "workspace:*",
-        "@aklive2d/vite-helpers": "workspace:*",
+        "@aklive2d/postcss-config": "workspace:*",
         "@aklive2d/showcase": "workspace:*",
-        "@aklive2d/module": "workspace:*"
+        "@aklive2d/vite-helpers": "workspace:*",
+        "jotai": "^2.15.0",
+        "lodash-es": "^4.17.21",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "react-router-dom": "^7.9.3",
+        "react-simple-typewriter": "^5.0.1",
+        "reset-css": "^5.0.2"
     },
     "peerDependencies": {
         "typescript": ">=5.9.3"

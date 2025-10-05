@@ -1,18 +1,15 @@
 import CONFIG from '!/config.json'
 import { atom, useAtom } from 'jotai'
+import { difference } from 'lodash-es'
 import { useCallback } from 'react'
 
-const officialUpdateAtom = atom({})
-let operators = []
-CONFIG.operators.forEach((item) => {
-    operators = [...operators, ...item]
-})
-const OPERATORS = operators
+const newOperatorsAtom = atom({})
+const OPERATORS = CONFIG.operators.flat()
 
 export function useConfig() {
     const config = CONFIG
     const operators = OPERATORS
-    const [officialUpdate, setOfficialUpdate] = useAtom(officialUpdateAtom)
+    const [newOperators, setNewOperators] = useAtom(newOperatorsAtom)
 
     const fetchOfficialUpdate = useCallback(async () => {
         const res = await fetch(
@@ -24,8 +21,11 @@ export function useConfig() {
                 length: 0,
             }
         })
-        setOfficialUpdate(data)
-    }, [setOfficialUpdate])
+        const compiledIds = operators.map((item) => item.official_id.toString())
+        const updatedIds = data.info.map((item) => item.id.toString())
+        const newIds = difference(updatedIds, compiledIds)
+        setNewOperators(data.info.filter((item) => newIds.includes(item.id.toString())))
+    }, [])
 
-    return { config, operators, officialUpdate, fetchOfficialUpdate }
+    return { config, operators, newOperators, fetchOfficialUpdate }
 }

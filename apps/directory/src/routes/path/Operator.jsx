@@ -565,8 +565,8 @@ export default function Operator() {
                             style={
                                 config.invert_filter
                                     ? {
-                                        filter: 'invert(1)',
-                                    }
+                                          filter: 'invert(1)',
+                                      }
                                     : {}
                             }
                         />

@@ -24,7 +24,9 @@ export function useConfig() {
         const compiledIds = operators.map((item) => item.official_id.toString())
         const updatedIds = data.info.map((item) => item.id.toString())
         const newIds = difference(updatedIds, compiledIds)
-        setNewOperators(data.info.filter((item) => newIds.includes(item.id.toString())))
+        setNewOperators(
+            data.info.filter((item) => newIds.includes(item.id.toString()))
+        )
     }, [])
 
     return { config, operators, newOperators, fetchOfficialUpdate }

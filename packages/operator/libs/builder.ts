@@ -73,7 +73,8 @@ const generateAssets = async (name: string) => {
     ) as string
     if (!portraitHubContent) throw new Error('portrait_hub.json not found')
     const portraitHub: PortraitHub = JSON.parse(portraitHubContent)
-    const portrait_filename_lowerCase = operators[name].portrait_filename.toLowerCase()
+    const portrait_filename_lowerCase =
+        operators[name].portrait_filename.toLowerCase()
     const portraitItem = portraitHub._sprites.find(
         (item) => item.name.toLowerCase() === portrait_filename_lowerCase
     )

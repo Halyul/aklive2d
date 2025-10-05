@@ -8,6 +8,7 @@
     "preview:directory": "turbo run preview:directory --ui tui",
     "preview": "http-server ./dist",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "update": "turbo run update",
     "init": "turbo run init",
     "download:game": "turbo run download:game",

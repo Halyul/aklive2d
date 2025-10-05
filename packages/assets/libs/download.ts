@@ -48,7 +48,9 @@ const download = async (
     })
     mapping.musicFiles.map((item) => {
         if (!file.exists(path.join(item.source, item.filename))) {
-            const filename = item.filename.replace('.ogg', '').replace(/_(intro|loop)/, "")
+            const filename = item.filename
+                .replace('.ogg', '')
+                .replace(/_(intro|loop)/, '')
             itemToDownload.add(filename)
         }
     })

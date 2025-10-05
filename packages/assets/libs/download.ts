@@ -48,7 +48,7 @@ const download = async (
     })
     mapping.musicFiles.map((item) => {
         if (!file.exists(path.join(item.source, item.filename))) {
-            const filename = item.filename.replace('.ogg', '')
+            const filename = item.filename.replace('.ogg', '').replace(/_(intro|loop)/, "")
             itemToDownload.add(filename)
         }
     })
@@ -73,6 +73,7 @@ const download = async (
             regexs.push(new RegExp(item))
         }
     }
+    console.log(lpacksToDownload, itemToDownloadRegExp, regexs)
     await unzipDownload(lpacksToDownload, dataDir, {
         matchRegExps: regexs,
         defaultRegex: itemToDownloadRegExp,

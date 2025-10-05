@@ -11,7 +11,7 @@ export default async (dataDir: string) => {
         config.servers.map(async (server) => {
             const networkConfResp = await fetch(server.url)
             const networkConf = JSON.parse(
-                (await networkConfResp.json()).content.replace('\\', '')
+                (await networkConfResp.json()).content.replace(/\\/g, '')
             )
             const funcVer = networkConf.funcVer
             const networkConfUrls = networkConf.configs[funcVer].network

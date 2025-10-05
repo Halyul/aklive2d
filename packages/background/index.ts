@@ -1,7 +1,6 @@
 import path from 'node:path'
 import config from '@aklive2d/config'
 import { file } from '@aklive2d/libs'
-import { mapping as musicMapping } from '@aklive2d/music'
 import sharp from 'sharp'
 
 export const BACKGROUND_DIR = path.join(
@@ -35,7 +34,6 @@ const filesToBuild = file.readdirSync(EXTRACTED_DIR).filter((f) => {
 })
 
 export const build = async () => {
-    const err = []
     file.mkdir(DIST_DIR)
     await Promise.all(
         filesToBuild.map(async (f) => {
@@ -47,23 +45,6 @@ export const build = async () => {
         DEFAULT_BACKGROUND_FILE,
         path.join(DIST_DIR, config.module.background.operator_bg_png)
     )
-
-    const { musicFiles, musicFileMapping } = musicMapping
-
-    for (const e of musicFiles) {
-        const musicPath = path.join(e.source, e.filename)
-        if (!file.exists(musicPath)) {
-            err.push(`Music file ${e.filename} is not found in music folder.`)
-        }
-    }
-    files = getFiles()
-    for (const e of Object.keys(musicFileMapping)) {
-        if (!files.includes(e)) {
-            err.push(`Background file ${e} is not found in background folder.`)
-        }
-    }
-
-    return err
 }
 
 const composite = async (filenamePrefix: string, fileExt: string) => {

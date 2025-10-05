@@ -1,6 +1,7 @@
 import path from 'node:path'
 import config from '@aklive2d/config'
 import { githubDownload } from '@aklive2d/downloader'
+import {files as backgroundFiles} from "@aklive2d/background"
 import { file } from '@aklive2d/libs'
 import type {
     AudioDataTable,
@@ -83,6 +84,30 @@ const generateMapping = () => {
         } else {
             musicFileMapping[key].loop = null
         }
+    }
+
+    for (const e of musicFiles) {
+        const musicPath = path.join(e.source, e.filename)
+        if (!file.exists(musicPath)) {
+          throw new Error(`Music file ${e.filename} is not found in music folder.`)
+        }
+    }
+
+    for (const e of Object.keys(musicFileMapping)) {
+        if (!backgroundFiles.includes(e)) {
+            throw new Error(`Background file ${e} is not found in background folder.`)
+        }
+    }
+
+    for (const background of backgroundFiles) {
+       if (!musicFileMapping[background]) {
+            const alternativeMatch = background.replace(/_(form)(.*)(\.png)$/, "$3")
+            if (musicFileMapping[alternativeMatch]){
+              musicFileMapping[background] = structuredClone(musicFileMapping[alternativeMatch])
+            } else {
+              throw new Error(`Music mapping for background file ${background} is not found in music mapping.`)
+            }
+       }
     }
 
     return {

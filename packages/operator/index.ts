@@ -158,10 +158,10 @@ const generateMapping = () => {
                     : operatorInfo.skinName['en-US']
             const skinEntry = findSkinEntry(skinTable, name, type)
             operator.filename = skinEntry.dynIllustId.replace(/_2$/, '')
-            operator.fallback_name =
-                type === 'skin'
-                    ? skinEntry.skinId.replace(/@/, '_')
-                    : `${skinEntry.charId}_2`
+            operator.portrait_filename = type === 'skin'
+                ? skinEntry.skinId.replace(/@/, '_')
+                : `${skinEntry.charId}_2`
+            operator.fallback_name = `${operator.portrait_filename}${operator.isSP ? '_sp' : ''}`
 
             const regions = Object.keys(
                 operator.codename

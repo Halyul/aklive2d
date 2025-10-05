@@ -7,7 +7,8 @@
     "dependencies": {
         "@aklive2d/libs": "workspace:*",
         "@aklive2d/config": "workspace:*",
-        "@aklive2d/downloader": "workspace:*"
+        "@aklive2d/downloader": "workspace:*",
+        "@aklive2d/background": "workspace:*"
     },
     "peerDependencies": {
         "typescript": ">=5.9.3"

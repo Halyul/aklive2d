@@ -6,6 +6,7 @@ export interface OperatorConfig {
     filename: string
     logo: string
     fallback_name: string
+    portrait_filename: string
     viewport_left: number // should be default to 0 in the future
     viewport_right: number
     viewport_top: number

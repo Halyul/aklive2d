@@ -149,7 +149,7 @@ export const findCodename = (
         engkinNameArray.forEach((word, index) => {
             if (/^[a-zA-Z]+$/.test(word)) {
                 word = word.toLowerCase()
-                if (UPPER_CASE_EXCEPTION_WORDS.includes(word)) {
+                if (UPPER_CASE_EXCEPTION_WORDS.includes(word) && index !== 0) {
                     engkinNameArray[index] = word
                 } else {
                     engkinNameArray[index] =

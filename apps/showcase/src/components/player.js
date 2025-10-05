@@ -45,6 +45,8 @@ export default class Player {
 
     async init() {
         const _this = this
+        const hasOtherAnimation =
+            this.#animationList.filter((item) => item === 'Idle').length > 0
         const playerConfig = {
             atlasUrl: `${import.meta.env.BASE_URL}${buildConfig.default_assets_dir}${buildConfig.filename}.atlas`,
             premultipliedAlpha: true,
@@ -87,6 +89,7 @@ export default class Player {
                         }
                     },
                     complete: () => {
+                        if (!hasOtherAnimation) return
                         if (
                             performance.now() - _this.#resetTime >= 8 * 1000 &&
                             Math.random() < 0.3
@@ -108,6 +111,13 @@ export default class Player {
                     },
                 })
                 widget.canvas.onclick = function () {
+                    if (!hasOtherAnimation) return
+                    if (
+                        _this.#animationList.filter((item) => item === 'Idle')
+                            .length === 0
+                    ) {
+                        return
+                    }
                     if (_this.#isPlayingInteract) {
                         return
                     }
@@ -191,7 +201,11 @@ export default class Player {
         const animationList = this.#animationList.filter((animation) =>
             animation.startsWith(name)
         )
-        return animationList[Math.floor(Math.random() * animationList.length)]
+        if (animationList.length > 0)
+            return animationList[
+                Math.floor(Math.random() * animationList.length)
+            ]
+        else return 'Idle'
     }
 
     get usePadding() {

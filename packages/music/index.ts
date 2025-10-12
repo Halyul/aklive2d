@@ -2,7 +2,7 @@ import path from 'node:path'
 import { files as backgroundFiles } from '@aklive2d/background'
 import config from '@aklive2d/config'
 import { githubDownload } from '@aklive2d/downloader'
-import { file } from '@aklive2d/libs'
+import { envParser, file } from '@aklive2d/libs'
 import type {
     AudioDataTable,
     DisplayMetaTable,
@@ -50,6 +50,15 @@ const download = async () => {
 }
 
 const generateMapping = () => {
+    const { mode } = envParser.parse({
+        mode: {
+            type: 'string',
+            short: 'm',
+        },
+    })
+    if (mode === 'update') {
+        return
+    }
     const musicFolder = DATA_DIR
     const musicTableContent = file.readSync(MUSIC_TABLE_JSON)
     const musicTable: MusicTable = musicTableContent
@@ -137,7 +146,8 @@ export const update = async () => {
     const musicData: MusicDataItem[] =
         metaTable.homeBackgroundData.homeBgDataList.reduce((acc, cur) => {
             if (cur.multiFormList.length > 1)
-                console.warn(`${cur.bgId} has multiple musicIds`)
+            // TODO: support multiple backgrounds
+                console.warn(`${cur.bgId} has multiple musicIds`, cur.multiFormList)
             acc.push({
                 id: cur.bgId,
                 musicId: cur.multiFormList[0].bgMusicId,

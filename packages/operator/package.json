@@ -8,6 +8,7 @@
         "@aklive2d/config": "workspace:*",
         "@aklive2d/libs": "workspace:*",
         "@aklive2d/official-info": "workspace:*",
+        "@aklive2d/downloader": "workspace:*",
         "unidecode": "^1.1.0",
         "yaml": "^2.8.1"
     },

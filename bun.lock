@@ -91,7 +91,6 @@
       "dependencies": {
         "@aklive2d/config": "workspace:*",
         "@aklive2d/libs": "workspace:*",
-        "@aklive2d/music": "workspace:*",
         "sharp": "^0.34.4",
       },
       "peerDependencies": {
@@ -150,6 +149,7 @@
       "name": "@aklive2d/music",
       "version": "0.0.0",
       "dependencies": {
+        "@aklive2d/background": "workspace:*",
         "@aklive2d/config": "workspace:*",
         "@aklive2d/downloader": "workspace:*",
         "@aklive2d/libs": "workspace:*",
@@ -174,6 +174,7 @@
       "version": "0.0.0",
       "dependencies": {
         "@aklive2d/config": "workspace:*",
+        "@aklive2d/downloader": "workspace:*",
         "@aklive2d/libs": "workspace:*",
         "@aklive2d/official-info": "workspace:*",
         "unidecode": "^1.1.0",

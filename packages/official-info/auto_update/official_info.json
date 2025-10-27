@@ -1,6 +1,7 @@
 {
-    "length": 75,
+    "length": 76,
     "dates": [
+        "2025-10",
         "2025-09",
         "2025-07",
         "2025-06",
@@ -35,6 +36,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "荒芜拉普兰德\n",
+            "skinName": {
+                "zh-CN": "无序的谦卑",
+                "en-US": "Unruly Humbleness"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/0469.html",
+            "id": 469,
+            "date": "2025-10"
+        },
         {
             "operatorName": "凯尔希",
             "skinName": {

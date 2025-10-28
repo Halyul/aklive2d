@@ -1,5 +1,5 @@
 {
-    "length": 76,
+    "length": 77,
     "dates": [
         "2025-10",
         "2025-09",
@@ -36,6 +36,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "魔王",
+            "skinName": {
+                "zh-CN": "追悼",
+                "en-US": "Condolence"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/1120.html",
+            "id": 1120,
+            "date": "2025-10"
+        },
         {
             "operatorName": "荒芜拉普兰德\n",
             "skinName": {

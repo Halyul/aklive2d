@@ -1,5 +1,5 @@
 {
-    "length": 77,
+    "length": 78,
     "dates": [
         "2025-10",
         "2025-09",
@@ -36,6 +36,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "凛御银灰",
+            "skinName": {
+                "zh-CN": "SilverAsh the Reignfrost",
+                "en-US": "SilverAsh the Reignfrost"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/6054.html",
+            "id": 6054,
+            "date": "2025-10"
+        },
         {
             "operatorName": "魔王",
             "skinName": {

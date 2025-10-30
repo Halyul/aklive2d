@@ -1,5 +1,5 @@
 {
-    "length": 78,
+    "length": 79,
     "dates": [
         "2025-10",
         "2025-09",
@@ -36,6 +36,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "维娜·维多利亚",
+            "skinName": {
+                "zh-CN": "光耀之途",
+                "en-US": "Glorious Path"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/4575.html",
+            "id": 4575,
+            "date": "2025-10"
+        },
         {
             "operatorName": "凛御银灰",
             "skinName": {

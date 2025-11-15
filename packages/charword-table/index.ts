@@ -156,21 +156,8 @@ export const build = async (namesToBuild: string[]) => {
             )
             const voiceFileList = file.readdirSync(voiceSubFolder)
             voiceList[voiceSubFolderMapping.lookup_region].map((item) => {
-                // an exception for detecting file existence
                 if (
-                    item.endsWith('043') &&
-                    voiceFileList.includes(`${item}.ogg`) &&
-                    (voiceSubFolderMapping.name === 'kr' ||
-                        voiceSubFolderMapping.name === 'en')
-                ) {
-                    console.log(
-                        `Voice folder ${voiceSubFolderMapping.name} for ${name} has ${item}.ogg`
-                    )
-                }
-                if (
-                    !voiceFileList.includes(`${item}.ogg`) &&
-                    // make an exception
-                    !item.endsWith('043')
+                    !voiceFileList.includes(`${item}.ogg`)
                 ) {
                     err.push(
                         `Voice folder ${voiceSubFolderMapping.name} for ${name} is missing ${item}.ogg`

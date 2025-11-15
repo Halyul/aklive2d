@@ -251,15 +251,7 @@ export default class Voice {
 
     #nextVoice() {
         const getVoiceId = () => {
-            let list = this.#voice.list
-            if (
-                this.#config.language === 'EN' ||
-                this.#config.language === 'KR'
-            ) {
-                // filter out CN_043 as this voice is not available in en and kr
-                list = list.filter((item) => item !== 'CN_043')
-            }
-            const id = list[Math.floor(Math.random() * list.length)]
+            const id = this.#voice.list[Math.floor(Math.random() * this.#voice.list.length)]
             return id === this.#voice.id.last ? getVoiceId() : id
         }
         this.#playVoice(getVoiceId())

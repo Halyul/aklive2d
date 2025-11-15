@@ -56,8 +56,9 @@ const generateMapping = () => {
             short: 'm',
         },
     })
-    if (mode === 'update') {
-        return
+    let noCheck = false
+    if (mode === 'update' || mode === 'download') {
+      noCheck = true
     }
     const musicFolder = DATA_DIR
     const musicTableContent = file.readSync(MUSIC_TABLE_JSON)
@@ -95,39 +96,23 @@ const generateMapping = () => {
         }
     }
 
-    for (const e of musicFiles) {
-        const musicPath = path.join(e.source, e.filename)
-        if (!file.exists(musicPath)) {
-            throw new Error(
-                `Music file ${e.filename} is not found in music folder.`
-            )
-        }
-    }
+    if (!noCheck) {
+      for (const e of musicFiles) {
+          const musicPath = path.join(e.source, e.filename)
+          if (!file.exists(musicPath)) {
+              throw new Error(
+                  `Music file ${e.filename} is not found in music folder.`
+              )
+          }
+      }
 
-    for (const e of Object.keys(musicFileMapping)) {
-        if (!backgroundFiles.includes(e)) {
-            throw new Error(
-                `Background file ${e} is not found in background folder.`
-            )
-        }
-    }
-
-    for (const background of backgroundFiles) {
-        if (!musicFileMapping[background]) {
-            const alternativeMatch = background.replace(
-                /_(form)(.*)(\.png)$/,
-                '$3'
-            )
-            if (musicFileMapping[alternativeMatch]) {
-                musicFileMapping[background] = structuredClone(
-                    musicFileMapping[alternativeMatch]
-                )
-            } else {
-                throw new Error(
-                    `Music mapping for background file ${background} is not found in music mapping.`
-                )
-            }
-        }
+      for (const e of Object.keys(musicFileMapping)) {
+          if (!backgroundFiles.includes(e)) {
+              throw new Error(
+                  `Background file ${e} is not found in background folder.`
+              )
+          }
+      }
     }
 
     return {
@@ -145,12 +130,11 @@ export const update = async () => {
     const musicBankAlias = audioDataTable.bankAlias
     const musicData: MusicDataItem[] =
         metaTable.homeBackgroundData.homeBgDataList.reduce((acc, cur) => {
-            if (cur.multiFormList.length > 1)
-            // TODO: support multiple backgrounds
-                console.warn(`${cur.bgId} has multiple musicIds`, cur.multiFormList)
-            acc.push({
-                id: cur.bgId,
-                musicId: cur.multiFormList[0].bgMusicId,
+            cur.multiFormList.forEach(item => {
+                acc.push({
+                    id: item.multiFormBgId,
+                    musicId: item.bgMusicId,
+                })
             })
             return acc
         }, [] as MusicDataItem[])

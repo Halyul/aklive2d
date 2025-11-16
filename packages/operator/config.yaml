@@ -75,3 +75,7 @@ necrass_summer_flowers_fa161: !include config/necrass_summer_flowers_fa161.yaml
 chen_the_holungday_summer_flowers_fa161: !include config/chen_the_holungday_summer_flowers_fa161.yaml
 kaltsit_the_remains_of_time: !include config/kaltsit_the_remains_of_time.yaml
 kaltsit_the_remains_of_time_sp: !include config/kaltsit_the_remains_of_time_sp.yaml
+vina_victoria_glorious_path: !include config/vina_victoria_glorious_path.yaml
+silverash_the_reignfrost: !include config/silverash_the_reignfrost.yaml
+civilight_eterna_condolence: !include config/civilight_eterna_condolence.yaml
+lappland_the_decadenza_unruly_humbleness: !include config/lappland_the_decadenza_unruly_humbleness.yaml

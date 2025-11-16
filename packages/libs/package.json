@@ -5,7 +5,7 @@
     "main": "index.ts",
     "type": "module",
     "dependencies": {
-        "sharp": "^0.34.4",
+        "sharp": "^0.34.5",
         "yaml": "^2.8.1",
         "yauzl-promise": "^4.0.0",
         "yazl": "^3.3.1"

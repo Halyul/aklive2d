@@ -1,10 +1,8 @@
 import Background from '@/components/background'
 import Events from '@/components/events'
-import Fallback from '@/components/fallback'
 import {
     addEventListeners,
     insertHTMLChild,
-    isWebGLSupported,
     updateElementPosition,
 } from '@/components/helper'
 import Insight from '@/components/insight'
@@ -42,11 +40,7 @@ export default class AKLive2D {
         this.#background = new Background(this.#appEl)
         this.#voice = new Voice(this.#appEl)
         this.#music = new Music(this.#appEl)
-        if (isWebGLSupported()) {
-            this.#player = new Player(this.#appEl)
-        } else {
-            new Fallback(this.#appEl)
-        }
+        this.#player = new Player(this.#appEl)
         addEventListeners([
             {
                 event: Events.Player.Ready.name,

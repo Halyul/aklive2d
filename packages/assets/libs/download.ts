@@ -36,6 +36,7 @@ const download = async (
     const lpacksRes: Response = await fetch(
         `${urls.hu}/Android/assets/${version}/hot_update_list.json`
     )
+    console.log(urls, lpacksRes)
     const updateList: UpdateList = await lpacksRes.json()
     const itemToDownload: Set<ItemToDownload> = new Set(config.item_to_download)
     updateList.abInfos.map((item: AbInfosItem) => {

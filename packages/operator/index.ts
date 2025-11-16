@@ -162,7 +162,6 @@ const generateMapping = () => {
                 type === 'skin'
                     ? skinEntry.skinId.replace(/@/, '_')
                     : `${skinEntry.charId}_2`
-            operator.fallback_name = `${operator.portrait_filename}${operator.isSP ? '_sp' : ''}`
 
             const regions = Object.keys(
                 operator.codename

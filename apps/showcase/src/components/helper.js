@@ -1,15 +1,3 @@
-export const isWebGLSupported = () => {
-    try {
-        const canvas = document.createElement('canvas')
-        const ctx =
-            canvas.getContext('webgl') ||
-            canvas.getContext('experimental-webgl')
-        return ctx != null
-    } catch {
-        return false
-    }
-}
-
 export const insertHTMLChild = (parent, child) => {
     parent.appendChild(child)
 }

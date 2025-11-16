@@ -120,7 +120,7 @@ export default function Home() {
         const list = navigationList.filter((item) => {
             return (
                 item.name.toLowerCase().indexOf(searchField.toLowerCase()) !==
-                    -1 || item.type === 'date'
+                -1 || item.type === 'date'
             )
         })
         const newList = []
@@ -222,7 +222,7 @@ export default function Home() {
                                                                     }
                                                                     viewBox={
                                                                         entry.type ===
-                                                                        'operator'
+                                                                            'operator'
                                                                             ? '0 0 88.969 71.469'
                                                                             : '0 0 94.563 67.437'
                                                                     }
@@ -234,25 +234,24 @@ export default function Home() {
                                                                 }
                                                             >
                                                                 {language ===
-                                                                'zh-CN'
+                                                                    'zh-CN'
                                                                     ? entry.type ===
-                                                                      'skin'
-                                                                        ? `${
-                                                                              entry
-                                                                                  .skinName[
-                                                                                  'zh-CN'
-                                                                              ]
-                                                                          } · ${entry.operatorName}`
+                                                                        'skin'
+                                                                        ? `${entry
+                                                                            .skinName[
+                                                                        'zh-CN'
+                                                                        ]
+                                                                        } · ${entry.operatorName}`
                                                                         : entry.operatorName
                                                                     : entry
-                                                                          .skinName[
-                                                                          'en-US'
-                                                                      ]}
+                                                                        .skinName[
+                                                                    'en-US'
+                                                                    ]}
                                                             </section>
                                                             <section
                                                                 className={
                                                                     classes[
-                                                                        'arrow-icon'
+                                                                    'arrow-icon'
                                                                     ]
                                                                 }
                                                             >
@@ -369,9 +368,9 @@ function OperatorElement({ item, hidden, handleVoicePlay }) {
                             <span className={classes.text}>
                                 {
                                     item.codename[
-                                        language.startsWith('en')
-                                            ? alternateLang
-                                            : textDefaultLang
+                                    language.startsWith('en')
+                                        ? alternateLang
+                                        : textDefaultLang
                                     ]
                                 }
                             </span>
@@ -430,13 +429,13 @@ function ImageElement({ item }) {
     const { language } = useLanguage()
     return (
         <img
-            src={`/${buildConfig.directory_folder}/${buildConfig.portraits}/${item.fallback_name.replace(/#/g, '%23')}_portrait.png`}
+            src={`/${buildConfig.directory_folder}/${buildConfig.portraits}/${item.portrait_filename.replace(/#/g, '%23')}.png`}
             alt={item.codename[language]}
         />
     )
 }
 ImageElement.propTypes = {
     item: PropTypes.object.isRequired,
-    fallback_name: PropTypes.string,
+    portrait_filename: PropTypes.string,
     codename: PropTypes.object,
 }

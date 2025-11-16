@@ -90,6 +90,9 @@ export type CharwordTableJson = {
 }
 
 export type OperatorCharwordTable = {
+    availability: {
+        [languageCode: string]: string[]
+    }
     voiceLangs: {
         [languageCode: string]: {
             [voiceLangType: string]: string[]

@@ -95,7 +95,8 @@ export default class Voice {
         this.#default.language.voice = this.#voice.languages[0]
         this.#config.language = this.#default.language.voice
         this.#voice.locations = this.#getVoiceLocations()
-        this.#voice.list = this.#charwordTable.availability[this.#config.language]
+        this.#voice.list =
+            this.#charwordTable.availability[this.#config.language]
     }
 
     success() {
@@ -206,7 +207,7 @@ export default class Voice {
         const content = subtitle.text
         const cvInfo =
             this.#charwordTable.voiceLangs[this.subtitleLanguage][
-            this.#config.language
+                this.#config.language
             ]
         document.getElementById('voice-title').innerText = title
         document.getElementById('voice-subtitle').innerText = content
@@ -251,7 +252,10 @@ export default class Voice {
 
     #nextVoice() {
         const getVoiceId = () => {
-            const id = this.#voice.list[Math.floor(Math.random() * this.#voice.list.length)]
+            const id =
+                this.#voice.list[
+                    Math.floor(Math.random() * this.#voice.list.length)
+                ]
             return id === this.#voice.id.last ? getVoiceId() : id
         }
         this.#playVoice(getVoiceId())
@@ -355,7 +359,8 @@ export default class Voice {
             this.#voice.list = this.#charwordTable.availability[lang]
         } else {
             this.#config.language = this.#default.language.voice
-            this.#voice.list = this.#charwordTable.availability[this.#config.language]
+            this.#voice.list =
+                this.#charwordTable.availability[this.#config.language]
         }
         const availableSubtitleLang = this.#getSubtitleLanguages()
         if (!availableSubtitleLang.includes(this.#config.subtitle.language)) {

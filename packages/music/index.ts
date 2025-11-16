@@ -58,7 +58,7 @@ const generateMapping = () => {
     })
     let noCheck = false
     if (mode === 'update' || mode === 'download') {
-      noCheck = true
+        noCheck = true
     }
     const musicFolder = DATA_DIR
     const musicTableContent = file.readSync(MUSIC_TABLE_JSON)
@@ -97,22 +97,22 @@ const generateMapping = () => {
     }
 
     if (!noCheck) {
-      for (const e of musicFiles) {
-          const musicPath = path.join(e.source, e.filename)
-          if (!file.exists(musicPath)) {
-              throw new Error(
-                  `Music file ${e.filename} is not found in music folder.`
-              )
-          }
-      }
+        for (const e of musicFiles) {
+            const musicPath = path.join(e.source, e.filename)
+            if (!file.exists(musicPath)) {
+                throw new Error(
+                    `Music file ${e.filename} is not found in music folder.`
+                )
+            }
+        }
 
-      for (const e of Object.keys(musicFileMapping)) {
-          if (!backgroundFiles.includes(e)) {
-              throw new Error(
-                  `Background file ${e} is not found in background folder.`
-              )
-          }
-      }
+        for (const e of Object.keys(musicFileMapping)) {
+            if (!backgroundFiles.includes(e)) {
+                throw new Error(
+                    `Background file ${e} is not found in background folder.`
+                )
+            }
+        }
     }
 
     return {
@@ -130,7 +130,7 @@ export const update = async () => {
     const musicBankAlias = audioDataTable.bankAlias
     const musicData: MusicDataItem[] =
         metaTable.homeBackgroundData.homeBgDataList.reduce((acc, cur) => {
-            cur.multiFormList.forEach(item => {
+            cur.multiFormList.forEach((item) => {
                 acc.push({
                     id: item.multiFormBgId,
                     musicId: item.bgMusicId,

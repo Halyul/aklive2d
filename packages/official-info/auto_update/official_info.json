@@ -1,6 +1,7 @@
 {
-    "length": 79,
+    "length": 81,
     "dates": [
+        "2025-12",
         "2025-10",
         "2025-09",
         "2025-07",
@@ -36,6 +37,28 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "迷迭香",
+            "skinName": {
+                "zh-CN": "轻盈一梦",
+                "en-US": "An Airy Dream"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/3801.html",
+            "id": 3801,
+            "date": "2025-12"
+        },
+        {
+            "operatorName": "阿米娅",
+            "skinName": {
+                "zh-CN": "于万千宇宙之中",
+                "en-US": "In A Myriad of Universes"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/7786.html",
+            "id": 7786,
+            "date": "2025-12"
+        },
         {
             "operatorName": "维娜·维多利亚",
             "skinName": {

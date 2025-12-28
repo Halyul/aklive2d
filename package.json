@@ -20,7 +20,7 @@
     "@biomejs/biome": "2.3.5",
     "cz-conventional-changelog": "^3.3.0",
     "http-server": "^14.1.1",
-    "turbo": "^2.6.1",
+    "turbo": "^2.7.2",
     "typescript": "5.9.3"
   },
   "name": "aklive2d",

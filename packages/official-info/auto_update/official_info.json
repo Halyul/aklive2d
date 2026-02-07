@@ -1,6 +1,7 @@
 {
-    "length": 82,
+    "length": 83,
     "dates": [
+        "2026-02",
         "2026-01",
         "2025-12",
         "2025-10",
@@ -38,6 +39,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "余",
+            "skinName": {
+                "zh-CN": "愿清晓",
+                "en-US": "Clear morning view"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/3800.html",
+            "id": 3800,
+            "date": "2026-02"
+        },
         {
             "operatorName": "隐德来希",
             "skinName": {

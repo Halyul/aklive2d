@@ -1,5 +1,5 @@
 {
-    "length": 83,
+    "length": 84,
     "dates": [
         "2026-02",
         "2026-01",
@@ -39,6 +39,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "令",
+            "skinName": {
+                "zh-CN": "方遒卷",
+                "en-US": "A Gallant Dream"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/2234.html",
+            "id": 2234,
+            "date": "2026-02"
+        },
         {
             "operatorName": "余",
             "skinName": {

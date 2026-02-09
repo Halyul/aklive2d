@@ -1,5 +1,5 @@
 {
-    "length": 84,
+    "length": 86,
     "dates": [
         "2026-02",
         "2026-01",
@@ -39,6 +39,28 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "夕",
+            "skinName": {
+                "zh-CN": "青玉砚",
+                "en-US": "Hazy Jade"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/5617.html",
+            "id": 5617,
+            "date": "2026-02"
+        },
+        {
+            "operatorName": "望",
+            "skinName": {
+                "zh-CN": "Wang",
+                "en-US": "Wang"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/7785.html",
+            "id": 7785,
+            "date": "2026-02"
+        },
         {
             "operatorName": "令",
             "skinName": {

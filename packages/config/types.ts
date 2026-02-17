@@ -41,12 +41,9 @@ export type Config = {
             config: string
             template_yaml: string
             config_yaml: string
-            portraits: string
             logos_assets: string
             logos: string
             directory_assets: string
-            MonoBehaviour: string
-            Texture2D: string
             character_table_json: string
             skin_table_json: string
             title: TitleLanguages

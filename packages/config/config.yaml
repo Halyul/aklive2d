@@ -1,109 +1,106 @@
 site_id: aklive2d
 total_size: 26214400 # 1024 * 1024 * 25
 akassets:
-    project_name: akassets
-    url: https://akassets.pages.dev
+  project_name: akassets
+  url: https://akassets.pages.dev
 insight:
-    id: aklive2d
-    url: https://insight.halyul.dev/on-demand.js
+  id: aklive2d
+  url: https://insight.halyul.dev/on-demand.js
 module:
-    assets:
-        config_yaml: config.yaml
-        background: background
-        music: music
-        charword_table: charword_table
-        project_json: project_json
-    background:
-        operator_bg_png: operator_bg.png
-    charword_table:
-        charword_table_json: charword_table.json
-    music:
-        music_table_json: music_table.json
-        display_meta_table_json: display_meta_table.json
-        audio_data_json: audio_data.json
-    official_info:
-        official_info_json: official_info.json
-    operator:
-        operator: operator
-        config: config
-        template_yaml: _template.yaml
-        config_yaml: config.yaml
-        portraits: _portraits
-        logos_assets: _logos
-        logos: logos
-        directory_assets: _directory
-        MonoBehaviour: MonoBehaviour
-        Texture2D: Texture2D
-        character_table_json: character_table.json
-        skin_table_json: skin_table.json
-        title:
-            zh-CN: '明日方舟：'
-            en-US: 'Arknights: '
-        sp_filename_prefix: sp_
-        sp_title:
-            zh-CN: '「SP」 '
-            en-US: '[SP] '
-    project_json:
-        project_json: project.json
-        preview_jpg: preview.jpg
-        template_yaml: project_json.yaml
-    wrangler:
-        index_json: index.json
-    vite_helpers:
-        config_json: config.json
+  assets:
+    config_yaml: config.yaml
+    background: background
+    music: music
+    charword_table: charword_table
+    project_json: project_json
+  background:
+    operator_bg_png: operator_bg.png
+  charword_table:
+    charword_table_json: charword_table.json
+  music:
+    music_table_json: music_table.json
+    display_meta_table_json: display_meta_table.json
+    audio_data_json: audio_data.json
+  official_info:
+    official_info_json: official_info.json
+  operator:
+    operator: operator
+    config: config
+    template_yaml: _template.yaml
+    config_yaml: config.yaml
+    logos_assets: _logos
+    logos: logos
+    directory_assets: _directory
+    character_table_json: character_table.json
+    skin_table_json: skin_table.json
+    title:
+      zh-CN: "明日方舟："
+      en-US: "Arknights: "
+    sp_filename_prefix: sp_
+    sp_title:
+      zh-CN: "「SP」 "
+      en-US: "[SP] "
+  project_json:
+    project_json: project.json
+    preview_jpg: preview.jpg
+    template_yaml: project_json.yaml
+  wrangler:
+    index_json: index.json
+  vite_helpers:
+    config_json: config.json
 app:
-    showcase:
-        public: public
-        assets: assets
-        release: release
-    directory:
-        assets: _assets
-        title: AKLive2D
-        voice: jp/CN_037.ogg
-        portraits: portraits
-        error:
-            files:
-                - key: build_char_128_plosis_epoque#3
-                  paddings:
-                      left: -120
-                      right: 150
-                      top: 10
-                      bottom: 0
-                - key: build_char_128_plosis
-                  paddings:
-                      left: -90
-                      right: 100
-                      top: 10
-                      bottom: 0
-                - key: build_char_128_plosis_yun#4
-                  paddings:
-                      left: -90
-                      right: 100
-                      top: 10
-                      bottom: 0
-            voice:
-                file: CN_034.ogg
-                target: error.ogg
+  showcase:
+    public: public
+    assets: assets
+    release: release
+  directory:
+    assets: _assets
+    title: AKLive2D
+    voice: jp/CN_037.ogg
+    portraits: portraits
+    error:
+      files:
+        - key: build_char_128_plosis_epoque#3
+          paddings:
+            left: -120
+            right: 150
+            top: 10
+            bottom: 0
+        - key: build_char_128_plosis
+          paddings:
+            left: -90
+            right: 100
+            top: 10
+            bottom: 0
+        - key: build_char_128_plosis_yun#4
+          paddings:
+            left: -90
+            right: 100
+            top: 10
+            bottom: 0
+      voice:
+        file: CN_034.ogg
+        target: error.ogg
 dir_name:
-    data: data
-    dist: dist
-    extracted: extracted
-    auto_update: auto_update
-    voice:
-        main: voice
-        sub:
-            - name: jp
-              lang: JP
-              lookup_region: zh_CN
-            - name: cn
-              lang: CN_MANDARIN
-              lookup_region: zh_CN
-            - name: en
-              lang: EN
-              lookup_region: en_US
-            - name: kr
-              lang: KR
-              lookup_region: ko_KR
-            - name: custom
-              lang: CUSTOM
-              lookup_region: zh_CN
+  data: data
+  dist: dist
+  extracted: extracted
+  auto_update: auto_update
+  voice:
+    main: voice
+    sub:
+      - name: jp
+        lang: JP
+        lookup_region: zh_CN
+      - name: cn
+        lang: CN_MANDARIN
+        lookup_region: zh_CN
+      - name: en
+        lang: EN
+        lookup_region: en_US
+      - name: kr
+        lang: KR
+        lookup_region: ko_KR
+      - name: custom
+        lang: CUSTOM
+        lookup_region: zh_CN

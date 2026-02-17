@@ -76,7 +76,7 @@ export const copyShowcaseData = (
         },
         {
             fn: file.symlink,
-            filename: `${operators[name].fallback_name}.png`,
+            filename: `${operators[name].portrait_filename}.png`,
             source: path.resolve(
                 ASSETS_DIST_DIR,
                 config.module.operator.operator,
@@ -129,7 +129,10 @@ export const copyShowcaseData = (
         link: operators[name].link,
         filename: filename.replace(/#/g, '%23'),
         logo_filename: operators[name].logo,
-        fallback_filename: operators[name].fallback_name.replace(/#/g, '%23'),
+        portrait_filename: operators[name].portrait_filename.replace(
+            /#/g,
+            '%23'
+        ),
         viewport_left: operators[name].viewport_left,
         viewport_right: operators[name].viewport_right,
         viewport_top: operators[name].viewport_top,
@@ -319,7 +322,7 @@ export const copyDirectoryData = async ({
     ]
 
     operatorFilesToCopy.map((key) => {
-        const portraitName = `${operators[key].fallback_name}_portrait.png`
+        const portraitName = `${operators[key].portrait_filename}.png`
         filesToCopy.push({
             src: path.join(
                 sourceFolder,

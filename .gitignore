@@ -140,3 +140,5 @@ temp/*
 .turbo
 data/*
 release
+game_data_dist
+*.local.*

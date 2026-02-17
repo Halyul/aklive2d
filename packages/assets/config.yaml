@@ -1,12 +1,12 @@
 dynchars: dynchars
 item_to_download:
-    - homebackground/wrapper
-    - ui_camp_logo
-    - charportraits
-    - voice.*/extra
-    - char_128
+  - homebackground/wrapper
+  - ui_camp_logo
+  - voice.*/extra
+  - char_128
+  - spritepack/char_portrait.*
 additional_regex:
-    - ^(?!(avg|charpack))(.*)$
+  - ^(?!(avg|charpack))(.*)$
 servers:
-    - name: cn
-      url: https://ak-conf.hypergryph.com/config/prod/official/network_config
+  - name: cn
+    url: https://ak-conf.hypergryph.com/config/prod/official/network_config

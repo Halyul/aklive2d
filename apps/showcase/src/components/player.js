@@ -45,8 +45,7 @@ export default class Player {
 
     async init() {
         const _this = this
-        const hasOtherAnimation =
-            this.#animationList.filter((item) => item === 'Idle').length > 0
+        let hasOtherAnimation = false
         const playerConfig = {
             atlasUrl: `${import.meta.env.BASE_URL}${buildConfig.default_assets_dir}${buildConfig.filename}.atlas`,
             premultipliedAlpha: true,
@@ -68,6 +67,8 @@ export default class Player {
                 _this.#animationList = widget.skeleton.data.animations.map(
                     (e) => e.name
                 )
+                hasOtherAnimation =
+                    _this.#animationList.filter((item) => item === 'Idle').length > 0
                 if (
                     widget.skeleton.data.animations
                         .map((e) => e.name)

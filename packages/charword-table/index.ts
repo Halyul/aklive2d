@@ -70,7 +70,7 @@ export const getLangs = (
     if (!voiceJson) {
         const text = file.readSync(getDistDir(name))
         if (!text) throw new Error(`File not found: ${getDistDir(name)}`)
-        data = JSON.parse(text)
+        data = JSON.parse(text as string)
     } else {
         data = voiceJson
     }
@@ -89,6 +89,7 @@ export const build = async (namesToBuild: string[]) => {
         const voiceJson = {} as OperatorCharwordTable
         voiceJson.voiceLangs = {}
         voiceJson.subtitleLangs = {}
+        voiceJson.availability = {}
         const subtitleInfo = Object.keys(charwordTableLookup.info) as Region[]
         const voiceList = {} as {
             [key: string]: string[]
@@ -119,51 +120,74 @@ export const build = async (namesToBuild: string[]) => {
                 )
             }
         })
-        let voiceLangs = [] as string[]
         try {
-            voiceLangs = getLangs(name, voiceJson).voiceLangs
+            const voiceLangs = getLangs(name, voiceJson).voiceLangs
+
+            // check whether voice files has been added
+            const customVoiceName = voiceLangs.filter(
+                (i) => !config.dir_name.voice.sub.map((e) => e.lang).includes(i)
+            )[0]
+            const voiceLangMapping = config.dir_name.voice.sub
+                .filter((e) => {
+                    return (
+                        voiceLangs.includes(e.lang) ||
+                        (e.lang === 'CUSTOM' &&
+                            typeof customVoiceName !== 'undefined')
+                    )
+                })
+                .map((e) => {
+                    return {
+                        name: e.name,
+                        lang: e.lang === 'CUSTOM' ? customVoiceName : e.lang,
+                        lookup_region: e.lookup_region.replace('_', '-'),
+                    }
+                })
+            for (const voiceSubFolderMapping of voiceLangMapping) {
+                const voiceSubFolder = path.join(
+                    OPERATOR_SOURCE_FOLDER,
+                    name,
+                    config.dir_name.voice.main,
+                    voiceSubFolderMapping.name
+                )
+                const voiceFileList = file.readdirSync(voiceSubFolder)
+                voiceJson.availability[voiceSubFolderMapping.lang] =
+                    voiceFileList.map((item) => item.replace('.ogg', ''))
+                voiceJson.availability[voiceSubFolderMapping.lang].sort()
+                if (voiceList[voiceSubFolderMapping.lookup_region] === undefined) {
+                    console.log(
+                        `Voice folder ${voiceSubFolderMapping.name} for ${name} has no corresponding voice files.`
+                    )
+                    continue
+                }
+                voiceList[voiceSubFolderMapping.lookup_region].forEach(
+                    (item) => {
+                        // an exception for detecting file existence
+                        if (
+                            item.endsWith('043') &&
+                            voiceFileList.includes(`${item}.ogg`) &&
+                            (voiceSubFolderMapping.name === 'kr' ||
+                                voiceSubFolderMapping.name === 'en')
+                        ) {
+                            console.log(
+                                `Voice folder ${voiceSubFolderMapping.name} for ${name} has ${item}.ogg`
+                            )
+                        }
+                        if (
+                            !voiceFileList.includes(`${item}.ogg`) &&
+                            // make an exception
+                            !item.endsWith('043')
+                        ) {
+                            err.push(
+                                `Voice folder ${voiceSubFolderMapping.name} for ${name} is missing ${item}.ogg`
+                            )
+                        }
+                    }
+                )
+            }
 
             file.writeSync(JSON.stringify(voiceJson), getDistDir(name))
         } catch (e) {
             console.log(`charword_table is not available`, e)
-        }
-
-        // check whether voice files has been added
-        const customVoiceName = voiceLangs.filter(
-            (i) => !config.dir_name.voice.sub.map((e) => e.lang).includes(i)
-        )[0]
-        const voiceLangMapping = config.dir_name.voice.sub
-            .filter((e) => {
-                return (
-                    voiceLangs.includes(e.lang) ||
-                    (e.lang === 'CUSTOM' &&
-                        typeof customVoiceName !== 'undefined')
-                )
-            })
-            .map((e) => {
-                return {
-                    name: e.name,
-                    lang: e.lang === 'CUSTOM' ? customVoiceName : e.lang,
-                    lookup_region: e.lookup_region.replace('_', '-'),
-                }
-            })
-        for (const voiceSubFolderMapping of voiceLangMapping) {
-            const voiceSubFolder = path.join(
-                OPERATOR_SOURCE_FOLDER,
-                name,
-                config.dir_name.voice.main,
-                voiceSubFolderMapping.name
-            )
-            const voiceFileList = file.readdirSync(voiceSubFolder)
-            voiceList[voiceSubFolderMapping.lookup_region].map((item) => {
-                if (
-                    !voiceFileList.includes(`${item}.ogg`)
-                ) {
-                    err.push(
-                        `Voice folder ${voiceSubFolderMapping.name} for ${name} is missing ${item}.ogg`
-                    )
-                }
-            })
         }
     }
 
@@ -222,7 +246,7 @@ const load = async (
         if (!text) {
             data = await getOnlineData()
         } else {
-            data = JSON.parse(text)
+            data = JSON.parse(text as string)
         }
     } else {
         data = await getOnlineData()

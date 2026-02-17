@@ -6,7 +6,7 @@
     "type": "module",
     "dependencies": {
         "@aklive2d/libs": "workspace:*",
-        "p-throttle": "^8.0.0"
+        "p-throttle": "^8.1.0"
     },
     "scripts": {
         "lint": "biome lint --write .",

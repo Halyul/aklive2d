@@ -430,13 +430,13 @@ function ImageElement({ item }) {
     const { language } = useLanguage()
     return (
         <img
-            src={`/${buildConfig.directory_folder}/${buildConfig.portraits}/${item.fallback_name.replace(/#/g, '%23')}_portrait.png`}
+            src={`/${buildConfig.directory_folder}/${buildConfig.portraits}/${item.portrait_filename.replace(/#/g, '%23')}.png`}
             alt={item.codename[language]}
         />
     )
 }
 ImageElement.propTypes = {
     item: PropTypes.object.isRequired,
-    fallback_name: PropTypes.string,
+    portrait_filename: PropTypes.string,
     codename: PropTypes.object,
 }

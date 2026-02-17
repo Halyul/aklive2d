@@ -70,7 +70,7 @@ export const getLangs = (
     if (!voiceJson) {
         const text = file.readSync(getDistDir(name))
         if (!text) throw new Error(`File not found: ${getDistDir(name)}`)
-        data = JSON.parse(text)
+        data = JSON.parse(text as string)
     } else {
         data = voiceJson
     }
@@ -153,6 +153,12 @@ export const build = async (namesToBuild: string[]) => {
                 voiceJson.availability[voiceSubFolderMapping.lang] =
                     voiceFileList.map((item) => item.replace('.ogg', ''))
                 voiceJson.availability[voiceSubFolderMapping.lang].sort()
+                if (voiceList[voiceSubFolderMapping.lookup_region] === undefined) {
+                    console.log(
+                        `Voice folder ${voiceSubFolderMapping.name} for ${name} has no corresponding voice files.`
+                    )
+                    continue
+                }
                 voiceList[voiceSubFolderMapping.lookup_region].forEach(
                     (item) => {
                         // an exception for detecting file existence
@@ -240,7 +246,7 @@ const load = async (
         if (!text) {
             data = await getOnlineData()
         } else {
-            data = JSON.parse(text)
+            data = JSON.parse(text as string)
         }
     } else {
         data = await getOnlineData()

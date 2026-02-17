@@ -79,3 +79,11 @@ vina_victoria_glorious_path: !include config/vina_victoria_glorious_path.yaml
 silverash_the_reignfrost: !include config/silverash_the_reignfrost.yaml
 civilight_eterna_condolence: !include config/civilight_eterna_condolence.yaml
 lappland_the_decadenza_unruly_humbleness: !include config/lappland_the_decadenza_unruly_humbleness.yaml
+dusk_hazy_jade: !include config/dusk_hazy_jade.yaml
+wang: !include config/wang.yaml
+ling_a_gallant_dream: !include config/ling_a_gallant_dream.yaml
+yu_clear_morning_view: !include config/yu_clear_morning_view.yaml
+entelechia_dazzling_blue: !include config/entelechia_dazzling_blue.yaml
+rosmontis_an_airy_dream: !include config/rosmontis_an_airy_dream.yaml
+amiya_in_a_myriad_of_universes: !include config/amiya_in_a_myriad_of_universes.yaml
+amiya_in_a_myriad_of_universes_sp: !include config/amiya_in_a_myriad_of_universes_sp.yaml

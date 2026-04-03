@@ -1,6 +1,7 @@
 {
-    "length": 86,
+    "length": 87,
     "dates": [
+        "2026-04",
         "2026-02",
         "2026-01",
         "2025-12",
@@ -39,6 +40,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "史尔特尔 ",
+            "skinName": {
+                "zh-CN": " 超然序曲",
+                "en-US": "Prelude to Transcendence"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/7784.html",
+            "id": 7784,
+            "date": "2026-04"
+        },
         {
             "operatorName": "夕",
             "skinName": {

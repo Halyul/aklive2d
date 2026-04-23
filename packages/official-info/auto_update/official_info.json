@@ -1,5 +1,5 @@
 {
-    "length": 87,
+    "length": 88,
     "dates": [
         "2026-04",
         "2026-02",
@@ -40,6 +40,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "塞雷娅",
+            "skinName": {
+                "zh-CN": "黑白冷峻",
+                "en-US": "Unstained, Unshaken"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/2233.html",
+            "id": 2233,
+            "date": "2026-04"
+        },
         {
             "operatorName": "史尔特尔 ",
             "skinName": {

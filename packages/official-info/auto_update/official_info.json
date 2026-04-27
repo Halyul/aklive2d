@@ -1,5 +1,5 @@
 {
-    "length": 88,
+    "length": 89,
     "dates": [
         "2026-04",
         "2026-02",
@@ -40,6 +40,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "新约能天使",
+            "skinName": {
+                "zh-CN": "寻翼之歌",
+                "en-US": "The Legend Seeker"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/9398.html",
+            "id": 9398,
+            "date": "2026-04"
+        },
         {
             "operatorName": "塞雷娅",
             "skinName": {

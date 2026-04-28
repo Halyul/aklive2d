@@ -1,5 +1,5 @@
 {
-    "length": 89,
+    "length": 90,
     "dates": [
         "2026-04",
         "2026-02",
@@ -40,6 +40,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "Mon3tr",
+            "skinName": {
+                "zh-CN": "锋锐",
+                "en-US": "Sharpened Claws"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/5616.html",
+            "id": 5616,
+            "date": "2026-04"
+        },
         {
             "operatorName": "新约能天使",
             "skinName": {

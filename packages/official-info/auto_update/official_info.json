@@ -1,5 +1,5 @@
 {
-    "length": 90,
+    "length": 92,
     "dates": [
         "2026-04",
         "2026-02",
@@ -40,6 +40,28 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "遥",
+            "skinName": {
+                "zh-CN": "常世之幻",
+                "en-US": "Stranded in Utopia"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/4572.html",
+            "id": 4572,
+            "date": "2026-04"
+        },
+        {
+            "operatorName": "凯尔希·思衡托",
+            "skinName": {
+                "zh-CN": "Kal'tsit·Esperanta",
+                "en-US": "Kal'tsit·Esperanta"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/6051.html",
+            "id": 6051,
+            "date": "2026-04"
+        },
         {
             "operatorName": "Mon3tr",
             "skinName": {

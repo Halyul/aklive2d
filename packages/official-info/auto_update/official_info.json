@@ -1,5 +1,5 @@
 {
-    "length": 93,
+    "length": 94,
     "dates": [
         "2026-07",
         "2026-04",
@@ -41,6 +41,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "斩业星熊",
+            "skinName": {
+                "zh-CN": "一闪极意",
+                "en-US": "An Ultimate Flash"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/3808.html",
+            "id": 3808,
+            "date": "2026-07"
+        },
         {
             "operatorName": "圣聆初雪 ",
             "skinName": {

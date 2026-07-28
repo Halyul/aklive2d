@@ -1,5 +1,5 @@
 {
-    "length": 94,
+    "length": 95,
     "dates": [
         "2026-07",
         "2026-04",
@@ -41,6 +41,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "予愿安洁莉娜",
+            "skinName": {
+                "zh-CN": "Angelina the Mellow Wish",
+                "en-US": "Angelina the Mellow Wish"
+            },
+            "type": "operator",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/4571.html",
+            "id": 4571,
+            "date": "2026-07"
+        },
         {
             "operatorName": "斩业星熊",
             "skinName": {

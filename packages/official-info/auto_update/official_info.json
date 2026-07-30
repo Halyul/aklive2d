@@ -1,5 +1,5 @@
 {
-    "length": 95,
+    "length": 96,
     "dates": [
         "2026-07",
         "2026-04",
@@ -41,6 +41,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "纯烬艾雅法拉",
+            "skinName": {
+                "zh-CN": "后来的故事",
+                "en-US": "One More Story"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/8949.html",
+            "id": 8949,
+            "date": "2026-07"
+        },
         {
             "operatorName": "予愿安洁莉娜",
             "skinName": {

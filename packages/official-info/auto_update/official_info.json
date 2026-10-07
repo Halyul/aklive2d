@@ -1,6 +1,7 @@
 {
-    "length": 96,
+    "length": 97,
     "dates": [
+        "2026-10",
         "2026-07",
         "2026-04",
         "2026-02",
@@ -41,6 +42,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "酒神",
+            "skinName": {
+                "zh-CN": "真我自扼",
+                "en-US": "Know Thyself"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/6042.html",
+            "id": 6042,
+            "date": "2026-10"
+        },
         {
             "operatorName": "纯烬艾雅法拉",
             "skinName": {

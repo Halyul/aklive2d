@@ -1,5 +1,5 @@
 {
-    "length": 97,
+    "length": 98,
     "dates": [
         "2026-10",
         "2026-07",
@@ -42,6 +42,17 @@
         "2020-01"
     ],
     "info": [
+        {
+            "operatorName": "黍",
+            "skinName": {
+                "zh-CN": "源远流长",
+                "en-US": "Everflowing Waters"
+            },
+            "type": "skin",
+            "link": "https://ak.hypergryph.com/archive/dynamicCompile/5600.html",
+            "id": 5600,
+            "date": "2026-10"
+        },
         {
             "operatorName": "酒神",
             "skinName": {
